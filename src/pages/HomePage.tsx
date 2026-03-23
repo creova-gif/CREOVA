@@ -306,39 +306,64 @@ export function HomePage() {
         </motion.div>
       </section>
 
-      {/* Stats Bar - Enhanced */}
-      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#2C2C2C' }}>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: `repeating-linear-gradient(90deg, #A68F59 0px, transparent 2px, transparent 60px)` 
-          }}></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            {stats.map((stat, index) => (
+      {/* Stats — Editorial Impact Strip */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
+        {/* Gold hairlines */}
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.35)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.35)' }} />
+
+        {/* Ambient centre glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 50% 80% at 50% 50%, rgba(166,143,89,0.07) 0%, transparent 70%)'
+        }} />
+
+        <div className="relative flex flex-col md:flex-row">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              className="flex-1 flex flex-col items-center justify-center text-center py-14 px-8 relative group cursor-default"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: index * 0.12, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              {/* Vertical divider between items */}
+              {index > 0 && (
+                <div className="hidden md:block absolute left-0 top-8 bottom-8" style={{ width: '1px', backgroundColor: 'rgba(166,143,89,0.2)' }} />
+              )}
+
+              {/* Hover background */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
+                background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(166,143,89,0.05) 0%, transparent 70%)'
+              }} />
+
+              {/* Large number */}
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="group"
+                className="relative"
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.4 }}
               >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotateY: 180 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(166, 143, 89, 0.2)' }}
+                <span
+                  className="block font-light tracking-tight leading-none"
+                  style={{
+                    fontSize: 'clamp(64px, 8vw, 112px)',
+                    color: '#A68F59',
+                    fontVariantNumeric: 'tabular-nums',
+                  }}
                 >
-                  <stat.icon className="w-8 h-8" style={{ color: '#A68F59' }} />
-                </motion.div>
-                <div className="text-5xl md:text-6xl mb-3 group-hover:scale-110 transition-transform duration-300" style={{ color: '#A68F59' }}>
                   {stat.number}
-                </div>
-                <div className="text-base tracking-wider uppercase" style={{ color: '#E3DCD3' }}>{stat.label}</div>
+                </span>
               </motion.div>
-            ))}
-          </div>
+
+              {/* Thin gold rule */}
+              <div className="w-10 my-4" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.45)' }} />
+
+              {/* Label */}
+              <p className="text-xs tracking-[0.4em] uppercase" style={{ color: '#7A6F66' }}>
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
