@@ -929,10 +929,10 @@ export function EventsCollaboratePage() {
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src="/card-blackprint.jpg"
-                  alt="The Black Print closing session with Black Student Success Centre"
+                  src="/card-justin-panel.jpg"
+                  alt="CREOVA Founder Justin Mafie at the Innovation Showcase, Brock University LINC"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ objectPosition: 'center 20%' }}
+                  style={{ objectPosition: '60% 15%' }}
                 />
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(to top, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 50%, transparent 100%)'
