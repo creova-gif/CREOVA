@@ -141,6 +141,22 @@ export function CommunityPage() {
         : 'A transformative project funded by SSHRC Canada through the Match of Minds Program, dedicated to mobilizing subjugated knowledges to foster a just and inclusive Niagara.',
       logo: 'community partnership',
       website: '#'
+    },
+    {
+      name: 'Black Student Association (BLSA)',
+      description: language === 'fr'
+        ? 'L\'Association des étudiants noirs de l\'Université Brock unit, élève et célèbre les étudiants noirs à travers la culture, le leadership et la communauté. Dirigée par la présidente Ivie Omoregie et le vice-président Jason Asiruwa.'
+        : 'The Black Student Association at Brock University unites, elevates, and celebrates Black students through culture, leadership, and community. Led by President Ivie Omoregie and Vice President Jason Asiruwa.',
+      logo: 'blsa brock',
+      website: '#',
+      caption: {
+        org: 'BLACK STUDENT ASSOCIATION (BLSA)',
+        sub: 'Brock University',
+        roles: [
+          { role: 'President', name: 'Ivie Omoregie' },
+          { role: 'Vice President', name: 'Jason Asiruwa' }
+        ]
+      }
     }
   ];
 
@@ -706,8 +722,11 @@ export function CommunityPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {communityPartners.map((partner, index) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {communityPartners.map((partner, index) => {
+              const cardImages = ['/card-bssc.jpg', '/card-fbf.jpg', '/card-msk.jpg', '/card-blsa.jpg'];
+              const isBlsa = index === 3;
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -715,21 +734,48 @@ export function CommunityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
-                style={{ borderColor: '#E3DCD3', backgroundColor: '#FFFFFF' }}
+                style={{ borderColor: isBlsa ? '#A68F59' : '#E3DCD3', backgroundColor: '#FFFFFF' }}
               >
-                <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
+                <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
                   <img
-                    src={index === 0 ? '/card-bssc.jpg' : index === 1 ? '/card-fbf.jpg' : '/card-msk.jpg'}
+                    src={cardImages[index]}
                     alt={partner.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    style={{ objectPosition: 'center 30%' }}
+                    style={{ objectPosition: isBlsa ? 'center 20%' : 'center 30%' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <Award className="w-8 h-8 mb-2" style={{ color: '#A68F59' }} />
-                  </div>
+                  <div className={`absolute inset-0 ${isBlsa ? 'bg-gradient-to-t from-black/80 via-black/20 to-transparent' : 'bg-gradient-to-t from-black/60 to-transparent'}`} />
+                  {isBlsa ? (
+                    <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
+                      <div className="flex items-end justify-between">
+                        <div>
+                          <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#A68F59', fontFamily: 'var(--font-brand)' }}>BROCK UNIVERSITY</p>
+                          <h4 className="text-lg font-bold leading-tight" style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>BLACK STUDENT<br />ASSOCIATION</h4>
+                        </div>
+                        <div className="text-right space-y-1">
+                          <div className="flex flex-col items-end">
+                            <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>President</span>
+                            <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Ivie Omoregie</span>
+                          </div>
+                          <div className="flex flex-col items-end">
+                            <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>Vice President</span>
+                            <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Jason Asiruwa</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <Award className="w-8 h-8 mb-2" style={{ color: '#A68F59' }} />
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
+                  {isBlsa && (
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#A68F59', fontFamily: 'var(--font-brand)' }}>BLSA</span>
+                      <span className="text-[10px] tracking-widest uppercase" style={{ color: '#7A6F66' }}>Student Leadership</span>
+                    </div>
+                  )}
                   <h3 className="text-xl mb-3" style={{ color: '#121212' }}>{partner.name}</h3>
                   <p className="leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
                     {partner.description}
@@ -757,7 +803,8 @@ export function CommunityPage() {
                   )}
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
