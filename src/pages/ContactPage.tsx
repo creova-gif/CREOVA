@@ -221,6 +221,7 @@ export function ContactPage() {
                     <Label htmlFor="name">Name *</Label>
                     <Input
                       id="name"
+                      autoComplete="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -233,6 +234,7 @@ export function ContactPage() {
                     <Input
                       id="email"
                       type="email"
+                      autoComplete="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -246,6 +248,7 @@ export function ContactPage() {
                   <Input
                     id="phone"
                     type="tel"
+                    autoComplete="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="(123) 456-7890"

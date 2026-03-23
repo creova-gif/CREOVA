@@ -174,10 +174,7 @@ export function CheckoutPage() {
   const total = subtotal + hst + shipping;
 
   useEffect(() => {
-    // Redirect if cart is empty
-    if (items.length === 0) {
-      navigate('/shop');
-    }
+    // No redirect — handled by empty state below
   }, [items, navigate]);
 
   const handleCreatePaymentIntent = async (e: React.FormEvent) => {
@@ -237,7 +234,45 @@ export function CheckoutPage() {
   ];
 
   if (items.length === 0) {
-    return null;
+    return (
+      <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+        {/* Warm gradient top stripe */}
+        <div style={{ height: '2px', background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }} />
+        <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
+          <div
+            className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8"
+            style={{ backgroundColor: 'rgba(166,143,89,0.1)', border: '1px solid rgba(166,143,89,0.2)' }}
+          >
+            <CreditCard className="w-8 h-8" style={{ color: '#A68F59' }} />
+          </div>
+          <div className="flex items-center gap-4 mb-4">
+            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
+            <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>Checkout</p>
+            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
+          </div>
+          <h1 className="text-3xl md:text-4xl font-light mb-4" style={{ color: '#F5F1EB' }}>Your cart is empty</h1>
+          <p className="text-base mb-10 max-w-sm" style={{ color: '#7A6F66' }}>
+            Browse the SEEN collection or our digital resources to find something worth owning.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              onClick={() => navigate('/shop')}
+              className="px-8 py-3 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
+              style={{ background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }}
+            >
+              Browse the SEEN Shop
+            </button>
+            <button
+              onClick={() => navigate('/digital-products')}
+              className="px-8 py-3 rounded-lg text-sm font-medium border transition-colors"
+              style={{ borderColor: 'rgba(166,143,89,0.35)', color: '#C8C0B8', backgroundColor: 'transparent' }}
+            >
+              Digital Resources
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -289,6 +324,7 @@ export function CheckoutPage() {
                         <Label htmlFor="name">Full Name *</Label>
                         <Input
                           id="name"
+                          autoComplete="name"
                           required
                           value={customerInfo.name}
                           onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
@@ -302,6 +338,7 @@ export function CheckoutPage() {
                         <Input
                           id="email"
                           type="email"
+                          autoComplete="email"
                           required
                           value={customerInfo.email}
                           onChange={(e) => setCustomerInfo({ ...customerInfo, email: e.target.value })}
@@ -323,6 +360,7 @@ export function CheckoutPage() {
                         <Label htmlFor="address">Street Address *</Label>
                         <Input
                           id="address"
+                          autoComplete="street-address"
                           required
                           value={customerInfo.address}
                           onChange={(e) => setCustomerInfo({ ...customerInfo, address: e.target.value })}
@@ -336,6 +374,7 @@ export function CheckoutPage() {
                           <Label htmlFor="city">City *</Label>
                           <Input
                             id="city"
+                            autoComplete="address-level2"
                             required
                             value={customerInfo.city}
                             onChange={(e) => setCustomerInfo({ ...customerInfo, city: e.target.value })}
@@ -348,6 +387,7 @@ export function CheckoutPage() {
                           <Label htmlFor="province">Province *</Label>
                           <select
                             id="province"
+                            autoComplete="address-level1"
                             required
                             value={customerInfo.province}
                             onChange={(e) => setCustomerInfo({ ...customerInfo, province: e.target.value })}
@@ -365,6 +405,7 @@ export function CheckoutPage() {
                         <Label htmlFor="postalCode">Postal Code *</Label>
                         <Input
                           id="postalCode"
+                          autoComplete="postal-code"
                           required
                           value={customerInfo.postalCode}
                           onChange={(e) => setCustomerInfo({ ...customerInfo, postalCode: e.target.value.toUpperCase() })}
@@ -376,23 +417,11 @@ export function CheckoutPage() {
                     </div>
                   </div>
 
-                  <Button
+                  <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full py-6 rounded-xl text-lg transition-all duration-300"
-                    style={{ backgroundColor: '#121212' }}
-                    onMouseEnter={(e) => {
-                      if (!isLoading) {
-                        e.currentTarget.style.backgroundColor = '#A68F59';
-                        e.currentTarget.style.transform = 'translateY(-2px)';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!isLoading) {
-                        e.currentTarget.style.backgroundColor = '#121212';
-                        e.currentTarget.style.transform = 'translateY(0)';
-                      }
-                    }}
+                    className="w-full py-4 rounded-xl text-base font-medium text-white transition-opacity disabled:opacity-50"
+                    style={{ background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)', boxShadow: '0 4px 14px rgba(166,143,89,0.3)' }}
                   >
                     {isLoading ? (
                       <span className="flex items-center justify-center gap-2">
@@ -402,7 +431,7 @@ export function CheckoutPage() {
                     ) : (
                       'Continue to Payment'
                     )}
-                  </Button>
+                  </button>
                 </form>
               ) : (
                 <Elements stripe={stripePromise} options={{ clientSecret }}>

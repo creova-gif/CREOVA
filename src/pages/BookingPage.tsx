@@ -395,6 +395,7 @@ export function BookingPage() {
                     </Label>
                     <Input
                       id="name"
+                      autoComplete="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -411,6 +412,7 @@ export function BookingPage() {
                     <Input
                       id="email"
                       type="email"
+                      autoComplete="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
@@ -427,6 +429,7 @@ export function BookingPage() {
                     <Input
                       id="phone"
                       type="tel"
+                      autoComplete="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
@@ -488,6 +491,7 @@ export function BookingPage() {
                     </Label>
                     <Input
                       id="location"
+                      autoComplete="street-address"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       className="h-12"

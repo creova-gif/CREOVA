@@ -504,14 +504,13 @@ export function AuthPage() {
                 {/* Forgot Password */}
                 {mode === 'login' && (
                   <div className="text-center">
-                    <button
-                      type="button"
+                    <a
+                      href="mailto:support@creova.ca?subject=Password%20Reset%20Request"
                       className="text-sm underline"
                       style={{ color: '#A68F59' }}
-                      onClick={() => toast.info('Password reset functionality coming soon')}
                     >
-                      Forgot your password?
-                    </button>
+                      Forgot your password? Email us to reset
+                    </a>
                   </div>
                 )}
               </form>

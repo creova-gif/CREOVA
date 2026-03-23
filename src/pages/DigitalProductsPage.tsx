@@ -48,7 +48,7 @@ export function DigitalProductsPage() {
 
   const handlePurchase = (product: typeof digitalProducts[0]) => {
     addItem({ id: product.id, name: product.name, price: product.price, type: 'digital', image: product.image });
-    toast.success('Added to waitlist!', { description: `${product.name} — You'll be notified at launch in April 2026` });
+    toast.success('Added to waitlist!', { description: `${product.name} — You'll be notified at launch this Summer 2026` });
   };
 
   const filterTabs = [

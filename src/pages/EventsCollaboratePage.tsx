@@ -367,8 +367,9 @@ export function EventsCollaboratePage() {
           >
             {/* Editorial label */}
             <div className="flex items-center gap-5 mb-10">
-              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <div style={{ height: '1px', flex: 1, backgroundColor: 'rgba(166,143,89,0.4)' }} />
               <p className="text-xs tracking-[0.55em] uppercase" style={{ color: '#A68F59' }}>Experience</p>
+              <div style={{ height: '1px', flex: 1, backgroundColor: 'rgba(166,143,89,0.4)' }} />
             </div>
 
             <h1
@@ -1095,13 +1096,13 @@ export function EventsCollaboratePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <Label htmlFor="name" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Full Name *</Label>
-                  <Input id="name" required value={formData.name}
+                  <Input id="name" autoComplete="name" required value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your full name" className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
                 </div>
                 <div>
                   <Label htmlFor="email" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Email Address *</Label>
-                  <Input id="email" type="email" required value={formData.email}
+                  <Input id="email" type="email" autoComplete="email" required value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="your@email.com" className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
                 </div>
