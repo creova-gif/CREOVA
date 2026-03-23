@@ -330,13 +330,11 @@ export function HomePage() {
       </section>
 
       {/* SEEN Platform Teaser */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#06060F' }}>
-        <div className="absolute inset-0 pointer-events-none">
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
-            background: 'radial-gradient(ellipse 70% 80% at 60% 50%, rgba(74,173,204,0.07) 0%, transparent 65%)'
-          }} />
-          <div className="absolute inset-0" style={{
-            background: 'radial-gradient(ellipse 50% 60% at 10% 50%, rgba(200,133,58,0.05) 0%, transparent 60%)'
+            backgroundImage: `radial-gradient(circle at 70% 50%, #A68F59 0%, transparent 55%),
+                             radial-gradient(circle at 20% 70%, #B1643B 0%, transparent 50%)`
           }} />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -350,9 +348,9 @@ export function HomePage() {
               <div className="flex items-center gap-3 mb-6">
                 <span
                   className="w-2 h-2 rounded-full animate-pulse"
-                  style={{ backgroundColor: '#4AADCC' }}
+                  style={{ backgroundColor: '#A68F59' }}
                 />
-                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#4AADCC' }}>
+                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>
                   Upcoming Platform
                 </span>
               </div>
@@ -361,26 +359,26 @@ export function HomePage() {
                 style={{
                   fontSize: 'clamp(4rem, 10vw, 7rem)',
                   color: 'transparent',
-                  backgroundImage: 'linear-gradient(135deg, #FFFFFF 0%, rgba(74,173,204,0.85) 60%, rgba(200,133,58,0.7) 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #F5F1EB 0%, #A68F59 55%, #B1643B 100%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                 }}
               >
                 SEEN
               </h2>
-              <p className="text-base md:text-lg mb-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <p className="text-base md:text-lg mb-4 leading-relaxed" style={{ color: '#E3DCD3' }}>
                 Canada's culturally-centred storytelling platform — where Indigenous, Black Canadian, francophone, and immigrant voices own their stories.
               </p>
-              <p className="text-sm mb-10" style={{ color: 'rgba(255,255,255,0.35)' }}>
+              <p className="text-sm mb-10" style={{ color: '#7A6F66' }}>
                 Story worlds · Creator IP ownership · CMF-compliant · Multilingual · Audio-first
               </p>
               <Link
                 to="/seen"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90 group"
-                style={{ backgroundColor: '#4AADCC', color: '#06060F' }}
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-base font-medium tracking-wide transition-all duration-500 hover:shadow-2xl group"
+                style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
               >
                 Explore SEEN
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
             <motion.div
@@ -391,10 +389,10 @@ export function HomePage() {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { label: 'Story Worlds', desc: 'Immersive cultural narratives with ambient audio', accent: '#4AADCC' },
-                { label: 'Creator First', desc: '100% IP ownership — always', accent: '#C8853A' },
-                { label: 'Multilingual', desc: 'EN · FR · ES · Indigenous languages', accent: '#8BC34A' },
-                { label: 'CMF Ready', desc: 'Built for Canadian federal funding', accent: '#B06DC8' },
+                { label: 'Story Worlds', desc: 'Immersive cultural narratives with ambient audio' },
+                { label: 'Creator First', desc: '100% IP ownership — always' },
+                { label: 'Multilingual', desc: 'EN · FR · ES · Indigenous languages' },
+                { label: 'CMF Ready', desc: 'Built for Canadian federal funding' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -403,11 +401,11 @@ export function HomePage() {
                   transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
                   viewport={{ once: true }}
                   className="p-5 rounded-2xl"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+                  style={{ backgroundColor: 'rgba(166, 143, 89, 0.07)', border: '1px solid rgba(166, 143, 89, 0.15)' }}
                 >
-                  <div className="w-8 h-1 rounded-full mb-3" style={{ backgroundColor: item.accent }} />
-                  <div className="text-sm font-medium mb-1" style={{ color: '#FFFFFF' }}>{item.label}</div>
-                  <div className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>{item.desc}</div>
+                  <div className="w-8 h-1 rounded-full mb-3" style={{ backgroundColor: '#A68F59' }} />
+                  <div className="text-sm font-medium mb-1" style={{ color: '#F5F1EB' }}>{item.label}</div>
+                  <div className="text-xs leading-relaxed" style={{ color: '#7A6F66' }}>{item.desc}</div>
                 </motion.div>
               ))}
             </motion.div>
