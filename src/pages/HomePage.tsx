@@ -18,7 +18,8 @@ import photoCommunity1 from '../assets/photo-community-convo.jpg';
 import photoCommunity2 from '../assets/photo-community-chess.jpg';
 import photoWelcome from '../assets/photo-welcome-bash.jpg';
 import photoMonique from '../assets/photo-monique.jpg';
-import photoServicePhotography from '../assets/photo-service-photography.jpg';
+import photoServicePhotography from '../assets/photo-carnival-portrait.jpg';
+import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
 
 export function HomePage() {
@@ -53,7 +54,7 @@ export function HomePage() {
       title: 'Social Media',
       description: 'Content strategy and digital growth',
       link: '/services',
-      image: photoCommunity1,
+      image: photoSocialLaptop,
       accent: '#B1643B'
     },
     {
