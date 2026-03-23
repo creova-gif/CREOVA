@@ -23,6 +23,8 @@ import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
 import photoServiceVideography from '../assets/photo-service-videography.jpg';
 import photoCollage1 from '../assets/photo-collage-1.jpg';
+import photoCollage2 from '../assets/photo-collage-2.jpg';
+import photoCollage3 from '../assets/photo-collage-3.jpg';
 import photoCollage4 from '../assets/photo-collage-4.jpg';
 
 export function HomePage() {
@@ -530,11 +532,11 @@ export function HomePage() {
               </div>
               <div className="space-y-4 pt-8">
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
-                  <img src={photoWelcome} alt="CREOVA welcome event" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
+                  <img src={photoCollage2} alt="CREOVA community members" className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.3) 0%, transparent 70%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoCollage4} alt="CREOVA community portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center 15%' }} />
+                  <img src={photoCollage3} alt="CREOVA community gathering" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
                 </div>
               </div>
             </motion.div>
@@ -592,9 +594,25 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Community Photos Strip */}
-      <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', height: '2px' }}>
-        <div className="h-full w-full" style={{ background: 'linear-gradient(90deg, transparent, #A68F59, transparent)' }} />
+      {/* Cinematic Full-Width Photo Strip */}
+      <div className="relative overflow-hidden" style={{ height: '340px' }}>
+        <img
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85&fit=crop&crop=center"
+          alt="CREOVA creative community"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 40%' }}
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to bottom, rgba(18,18,18,0.55) 0%, rgba(18,18,18,0.2) 40%, rgba(18,18,18,0.2) 60%, rgba(18,18,18,0.55) 100%)'
+        }} />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-6">
+            <p className="text-sm tracking-[0.5em] uppercase mb-3" style={{ color: '#A68F59' }}>Creative Community</p>
+            <p className="text-2xl md:text-3xl font-light italic" style={{ color: '#F5F1EB' }}>
+              "Every story deserves to be told beautifully."
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Why CREOVA Section - Enhanced */}
