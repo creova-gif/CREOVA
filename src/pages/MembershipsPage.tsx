@@ -1,6 +1,20 @@
+import { useState } from 'react';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { useNavigate } from 'react-router';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
+import { Checkbox } from '../components/ui/checkbox';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '../components/ui/dialog';
+import { Star, Crown, Check, Mail, Loader2 } from 'lucide-react';
 
 export default function MembershipsPage() {
   const navigate = useNavigate();

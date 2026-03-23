@@ -1,8 +1,10 @@
 import { loadStripe } from '@stripe/stripe-js';
 import { projectId, publicAnonKey } from './supabase/info';
 
-// Initialize Stripe - You'll need to add your publishable key
-const stripePromise = loadStripe('pk_test_51QRuTsP3y0vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD0r8u8vBjJCn4xL0X5yU7r7gCOLNVB0nVXJpFm7gHGWxr8vBzNBqfWjf8yD');
+// Initialize Stripe with your publishable key from the VITE_STRIPE_PUBLISHABLE_KEY env var
+// Get your key from https://dashboard.stripe.com/apikeys
+const stripePublishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '';
+const stripePromise = loadStripe(stripePublishableKey);
 
 const API_URL = `https://${projectId}.supabase.co/functions/v1/make-server-feacf0d8`;
 
