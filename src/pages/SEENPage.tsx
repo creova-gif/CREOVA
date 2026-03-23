@@ -557,36 +557,37 @@ export function SEENPage() {
             />
           </motion.div>
 
-          {/* SEEN wordmark with shimmer */}
-          <div className="relative mb-6">
-
-            {/* Scan beam sweeping across */}
-            <div className="absolute inset-0 overflow-hidden rounded pointer-events-none z-20" style={{ mixBlendMode: 'overlay' }}>
-              <div style={{
-                position: 'absolute', top: 0, bottom: 0,
-                width: '30%',
-                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)',
-                animation: 'scanBeam 5s ease-in-out infinite',
-                animationDelay: '2s',
-              }} />
-            </div>
+          {/* SEEN wordmark — deep 3D motion */}
+          <div className="relative mb-6" style={{ perspective: '800px' }}>
 
             <motion.h1
               className="font-bold tracking-tight leading-none select-none relative"
               style={{
                 fontSize: 'clamp(6rem, 22vw, 18rem)',
-                backgroundImage: 'linear-gradient(105deg, #0D6B55 0%, #CCFFEE 18%, #FFFFFF 34%, #D4A843 50%, #FFFFFF 66%, #148F77 84%, #0D6B55 100%)',
-                backgroundSize: '400% auto',
+                backgroundImage: 'linear-gradient(135deg, #0A4A3A 0%, #148F77 28%, #CCFFEE 50%, #148F77 72%, #0D6B55 100%)',
+                backgroundSize: '300% auto',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 color: 'transparent',
-                animation: 'seenShimmer 8s linear infinite',
+                animation: 'seenShimmer 10s linear infinite',
                 fontFamily: 'var(--font-display)',
+                textShadow: 'none',
+                transformStyle: 'preserve-3d',
               }}
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              initial={{ opacity: 0, rotateX: 30, y: 40 }}
+              animate={{
+                opacity: 1,
+                rotateX: [0, -4, 2, -2, 0],
+                rotateY: [0, 3, -3, 1.5, 0],
+                y: 0,
+              }}
+              transition={{
+                opacity: { duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 },
+                rotateX: { duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1.5 },
+                rotateY: { duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 1.5 },
+                y: { duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 },
+              }}
             >
               SEEN
             </motion.h1>
