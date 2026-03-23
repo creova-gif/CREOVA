@@ -597,10 +597,10 @@ export function HomePage() {
       {/* Cinematic Full-Width Photo Strip */}
       <div className="relative overflow-hidden" style={{ height: '340px' }}>
         <img
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85&fit=crop&crop=center"
+          src="/community-photo.jpg"
           alt="CREOVA creative community"
           className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 40%' }}
+          style={{ objectPosition: 'center 30%' }}
         />
         <div className="absolute inset-0" style={{
           background: 'linear-gradient(to bottom, rgba(18,18,18,0.55) 0%, rgba(18,18,18,0.2) 40%, rgba(18,18,18,0.2) 60%, rgba(18,18,18,0.55) 100%)'
