@@ -21,14 +21,9 @@ import {
   Calendar
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { toast } from 'sonner@2.0.3';
 import { useState } from 'react';
 import { Input } from '../components/ui/input';
-import partnerImage1 from 'figma:asset/b2de5b3165ec4654c1f085d798694b51dec489ae.png';
-import partnerImage2 from 'figma:asset/92b3f19660479c0d75b7e673f10f66ec1bfcbba8.png';
-import partnerImage3 from 'figma:asset/e0dadd06cc6f52211a0e08bf3e35bcfc83d2bc23.png';
-import femaleOrgImage from 'figma:asset/19d4a7f8955ee93e73385f95d75ac53c7754f201.png';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 export function CommunityPage() {
@@ -124,7 +119,13 @@ export function CommunityPage() {
         ? 'Le centre académique et personnel de croissance professionnelle pour tous les étudiants noirs à Brock. Établi en 2023, le Centre renforce les connexions entre les étudiants, professeurs, anciens et personnel noirs, favorisant l\'excellence académique et le développement du leadership.'
         : 'The academic and personal hub of professional growth and development for all Black students at Brock. Established in 2023, the Centre strengthens connections between Black students, faculty, alumni, and staff, fostering academic excellence and leadership development.',
       logo: 'black student success',
-      website: 'https://brocku.ca/black-student-success-centre/'
+      website: 'https://brocku.ca/black-student-success-centre/',
+      image: '/card-bssc.jpg',
+      badge: 'BSSC',
+      badgeSub: 'Academic Hub',
+      captionLeft: { line1: 'BROCK UNIVERSITY', line2: 'BLACK STUDENT\nSUCCESS CENTRE' },
+      captionRight: null,
+      objectPosition: 'center 30%',
     },
     {
       name: 'Future Black Female (FBF)',
@@ -132,32 +133,14 @@ export function CommunityPage() {
         ? 'À travers de forts réseaux, des programmes d\'avancement des compétences et un plaidoyer basé sur les droits, Future Black Female (FBF) crée un accès à travers le Canada et le monde aux opportunités sociales, politiques et économiques pour les filles et jeunes femmes noires (16-22 ans).'
         : 'Through strong networks, skills advancement programs, and rights-based advocacy, Future Black Female (FBF) creates access across Canada and the globe to social, political and economic opportunities for Black girls and young women (16-22 years).',
       logo: 'black woman empowerment',
-      website: 'https://futureblackfemale.com/'
+      website: 'https://futureblackfemale.com/',
+      image: '/card-fbf.jpg',
+      badge: 'FBF',
+      badgeSub: 'Youth Empowerment',
+      captionLeft: { line1: 'CANADA & GLOBAL', line2: 'FUTURE\nBLACK FEMALE' },
+      captionRight: null,
+      objectPosition: 'center 25%',
     },
-    {
-      name: 'MSK Project - SSHRC Canada',
-      description: language === 'fr'
-        ? 'Un projet transformateur financé par SSHRC Canada à travers le programme Match of Minds, dédié à mobiliser les connaissances subjuguées pour favoriser un Niagara juste et inclusif.'
-        : 'A transformative project funded by SSHRC Canada through the Match of Minds Program, dedicated to mobilizing subjugated knowledges to foster a just and inclusive Niagara.',
-      logo: 'community partnership',
-      website: '#'
-    },
-    {
-      name: 'Black Student Association (BLSA)',
-      description: language === 'fr'
-        ? 'L\'Association des étudiants noirs de l\'Université Brock unit, élève et célèbre les étudiants noirs à travers la culture, le leadership et la communauté. Dirigée par la présidente Ivie Omoregie et le vice-président Jason Asiruwa.'
-        : 'The Black Student Association at Brock University unites, elevates, and celebrates Black students through culture, leadership, and community. Led by President Ivie Omoregie and Vice President Jason Asiruwa.',
-      logo: 'blsa brock',
-      website: '#',
-      caption: {
-        org: 'BLACK STUDENT ASSOCIATION (BLSA)',
-        sub: 'Brock University',
-        roles: [
-          { role: 'President', name: 'Ivie Omoregie' },
-          { role: 'Vice President', name: 'Jason Asiruwa' }
-        ]
-      }
-    }
   ];
 
   const communityBenefits = language === 'fr' ? [
@@ -487,14 +470,48 @@ export function CommunityPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative aspect-square overflow-hidden rounded-2xl"
-              style={{ backgroundColor: '#E3DCD3' }}
+              className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
+              style={{ borderColor: '#A68F59', backgroundColor: '#FFFFFF' }}
             >
-              <img 
-                src={partnerImage2}
-                alt="Team collaboration" 
-                className="w-full h-full object-cover opacity-90"
-              />
+              <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
+                <img
+                  src="/card-blsa.jpg"
+                  alt="Black Student Association — Ivie Omoregie & Jason Asiruwa"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: 'center 20%' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#A68F59', fontFamily: 'var(--font-brand)' }}>BROCK UNIVERSITY</p>
+                      <h4 className="text-lg font-bold leading-tight" style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>BLACK STUDENT<br />ASSOCIATION</h4>
+                    </div>
+                    <div className="text-right space-y-1">
+                      <div className="flex flex-col items-end">
+                        <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>President</span>
+                        <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Ivie Omoregie</span>
+                      </div>
+                      <div className="flex flex-col items-end">
+                        <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>Vice President</span>
+                        <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Jason Asiruwa</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#A68F59', fontFamily: 'var(--font-brand)' }}>BLSA</span>
+                  <span className="text-[10px] tracking-widest uppercase" style={{ color: '#7A6F66' }}>Student Leadership</span>
+                </div>
+                <h3 className="text-xl mb-3" style={{ color: '#121212' }}>Black Student Association (BLSA)</h3>
+                <p className="leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
+                  {language === 'fr'
+                    ? 'L\'Association des étudiants noirs de l\'Université Brock unit, élève et célèbre les étudiants noirs à travers la culture, le leadership et la communauté.'
+                    : 'The Black Student Association at Brock University unites, elevates, and celebrates Black students through culture, leadership, and community.'}
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -723,10 +740,7 @@ export function CommunityPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {communityPartners.map((partner, index) => {
-              const cardImages = ['/card-bssc.jpg', '/card-fbf.jpg', '/card-msk.jpg', '/card-blsa.jpg'];
-              const isBlsa = index === 3;
-              return (
+            {communityPartners.map((partner, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -734,54 +748,36 @@ export function CommunityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
-                style={{ borderColor: isBlsa ? '#A68F59' : '#E3DCD3', backgroundColor: '#FFFFFF' }}
+                style={{ borderColor: '#E3DCD3', backgroundColor: '#FFFFFF' }}
               >
                 <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
                   <img
-                    src={cardImages[index]}
+                    src={partner.image}
                     alt={partner.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    style={{ objectPosition: isBlsa ? 'center 20%' : 'center 30%' }}
+                    style={{ objectPosition: partner.objectPosition }}
                   />
-                  <div className={`absolute inset-0 ${isBlsa ? 'bg-gradient-to-t from-black/80 via-black/20 to-transparent' : 'bg-gradient-to-t from-black/60 to-transparent'}`} />
-                  {isBlsa ? (
-                    <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
-                      <div className="flex items-end justify-between">
-                        <div>
-                          <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#A68F59', fontFamily: 'var(--font-brand)' }}>BROCK UNIVERSITY</p>
-                          <h4 className="text-lg font-bold leading-tight" style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>BLACK STUDENT<br />ASSOCIATION</h4>
-                        </div>
-                        <div className="text-right space-y-1">
-                          <div className="flex flex-col items-end">
-                            <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>President</span>
-                            <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Ivie Omoregie</span>
-                          </div>
-                          <div className="flex flex-col items-end">
-                            <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>Vice President</span>
-                            <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Jason Asiruwa</span>
-                          </div>
-                        </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
+                    <div className="flex items-end justify-between">
+                      <div>
+                        <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#A68F59', fontFamily: 'var(--font-brand)' }}>{partner.captionLeft.line1}</p>
+                        <h4 className="text-lg font-bold leading-tight whitespace-pre-line" style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>{partner.captionLeft.line2}</h4>
                       </div>
                     </div>
-                  ) : (
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <Award className="w-8 h-8 mb-2" style={{ color: '#A68F59' }} />
-                    </div>
-                  )}
+                  </div>
                 </div>
                 <div className="p-6">
-                  {isBlsa && (
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#A68F59', fontFamily: 'var(--font-brand)' }}>BLSA</span>
-                      <span className="text-[10px] tracking-widest uppercase" style={{ color: '#7A6F66' }}>Student Leadership</span>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#A68F59', fontFamily: 'var(--font-brand)' }}>{partner.badge}</span>
+                    <span className="text-[10px] tracking-widest uppercase" style={{ color: '#7A6F66' }}>{partner.badgeSub}</span>
+                  </div>
                   <h3 className="text-xl mb-3" style={{ color: '#121212' }}>{partner.name}</h3>
                   <p className="leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
                     {partner.description}
                   </p>
                   {partner.website !== '#' ? (
-                    <a 
+                    <a
                       href={partner.website}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -803,8 +799,7 @@ export function CommunityPage() {
                   )}
                 </div>
               </motion.div>
-              );
-            })}
+            ))}
           </div>
         </div>
       </section>
