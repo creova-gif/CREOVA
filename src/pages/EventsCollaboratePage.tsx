@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner@2.0.3';
 import { Calendar, MapPin, Users, Clock, Lightbulb, Handshake, Star, ArrowRight, Award, FileText, ExternalLink, Check } from 'lucide-react';
-import photoSpotlight1 from '../assets/photo-event-networking.jpg';
+const photoSpotlight1 = '/card-justin-panel.jpg';
 import photoSpotlight2 from '../assets/photo-community-convo.jpg';
 import { motion } from 'motion/react';
 import { useCart } from '../context/CartContext';
