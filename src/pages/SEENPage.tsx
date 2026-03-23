@@ -401,18 +401,125 @@ export function SEENPage() {
   return (
     <div className="overflow-hidden" style={{ backgroundColor: '#121212' }}>
 
-      {/* Hero */}
+      {/* Hero — Motion Graphics */}
+      <style>{`
+        @keyframes seenShimmer {
+          0%   { background-position: -400% center; }
+          100% { background-position: 400% center; }
+        }
+        @keyframes scanBeam {
+          0%   { transform: translateX(-120%); opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { transform: translateX(120%); opacity: 0; }
+        }
+        @keyframes sonarPulse {
+          0%   { transform: scale(0.4); opacity: 0.6; }
+          100% { transform: scale(2.8); opacity: 0; }
+        }
+        @keyframes driftUp {
+          0%   { transform: translateY(0) translateX(0); opacity: 0; }
+          10%  { opacity: 0.5; }
+          90%  { opacity: 0.3; }
+          100% { transform: translateY(-160px) translateX(20px); opacity: 0; }
+        }
+        @keyframes orbitCW {
+          from { transform: rotate(0deg) translateX(260px) rotate(0deg); }
+          to   { transform: rotate(360deg) translateX(260px) rotate(-360deg); }
+        }
+        @keyframes orbitCCW {
+          from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+          to   { transform: rotate(-360deg) translateX(200px) rotate(360deg); }
+        }
+        @keyframes auroraShift {
+          0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+          33%  { transform: translate(-48%, -52%) scale(1.12) rotate(8deg); }
+          66%  { transform: translate(-52%, -48%) scale(0.94) rotate(-6deg); }
+        }
+      `}</style>
+
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 30% 50%, #A68F59 0%, transparent 50%),
-                             radial-gradient(circle at 70% 70%, #B1643B 0%, transparent 60%)`
+
+        {/* Aurora glow — animated */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div style={{
+            position: 'absolute',
+            top: '50%', left: '50%',
+            width: '140%', height: '140%',
+            background: 'radial-gradient(ellipse 60% 50% at 35% 45%, rgba(166,143,89,0.22) 0%, transparent 65%), radial-gradient(ellipse 50% 55% at 68% 60%, rgba(177,100,59,0.15) 0%, transparent 60%)',
+            animation: 'auroraShift 12s ease-in-out infinite',
           }} />
         </div>
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `repeating-linear-gradient(90deg, #A68F59 0px, transparent 2px, transparent 80px),
-                           repeating-linear-gradient(0deg, #A68F59 0px, transparent 2px, transparent 80px)`
+
+        {/* Perspective grid */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: `repeating-linear-gradient(90deg, #A68F59 0px, transparent 1px, transparent 80px),
+                            repeating-linear-gradient(0deg, #A68F59 0px, transparent 1px, transparent 80px)`
         }} />
+
+        {/* Sonar rings — expand outward from center */}
+        {[0, 1, 2, 3].map(i => (
+          <div key={i} className="absolute rounded-full pointer-events-none" style={{
+            width: '320px', height: '320px',
+            top: '50%', left: '50%',
+            marginTop: '-160px', marginLeft: '-160px',
+            border: '1px solid rgba(166,143,89,0.5)',
+            animation: `sonarPulse 4s ease-out infinite`,
+            animationDelay: `${i * 1}s`,
+          }} />
+        ))}
+
+        {/* Orbiting dots */}
+        <div className="absolute pointer-events-none" style={{ top: '50%', left: '50%', width: 0, height: 0 }}>
+          <div style={{
+            position: 'absolute',
+            width: '8px', height: '8px',
+            borderRadius: '50%',
+            backgroundColor: '#A68F59',
+            boxShadow: '0 0 12px 4px rgba(166,143,89,0.6)',
+            animation: 'orbitCW 8s linear infinite',
+            marginTop: '-4px', marginLeft: '-4px',
+          }} />
+          <div style={{
+            position: 'absolute',
+            width: '5px', height: '5px',
+            borderRadius: '50%',
+            backgroundColor: '#B1643B',
+            boxShadow: '0 0 10px 3px rgba(177,100,59,0.5)',
+            animation: 'orbitCCW 13s linear infinite',
+            marginTop: '-2.5px', marginLeft: '-2.5px',
+          }} />
+          <div style={{
+            position: 'absolute',
+            width: '4px', height: '4px',
+            borderRadius: '50%',
+            backgroundColor: '#F5F1EB',
+            opacity: 0.6,
+            animation: 'orbitCW 20s linear infinite',
+            animationDelay: '-6s',
+            marginTop: '-2px', marginLeft: '-2px',
+          }} />
+        </div>
+
+        {/* Floating cultural words */}
+        {[
+          { word: 'stories', x: '12%', delay: '0s', dur: '9s' },
+          { word: 'identity', x: '78%', delay: '2s', dur: '11s' },
+          { word: 'culture', x: '88%', delay: '4.5s', dur: '8s' },
+          { word: 'sound', x: '6%', delay: '7s', dur: '12s' },
+          { word: 'image', x: '70%', delay: '1s', dur: '10s' },
+          { word: 'community', x: '22%', delay: '5.5s', dur: '9s' },
+          { word: 'belong', x: '55%', delay: '3s', dur: '13s' },
+        ].map(({ word, x, delay, dur }) => (
+          <div key={word} className="absolute bottom-24 text-xs tracking-[0.35em] uppercase pointer-events-none select-none" style={{
+            left: x,
+            color: '#A68F59',
+            animation: `driftUp ${dur} ease-in-out infinite`,
+            animationDelay: delay,
+          }}>
+            {word}
+          </div>
+        ))}
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <motion.div
@@ -421,32 +528,62 @@ export function SEENPage() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-3 mb-10"
           >
-            <div className="w-8 h-px" style={{ backgroundColor: '#A68F59' }} />
+            <motion.div
+              animate={{ scaleX: [1, 1.4, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              className="h-px w-8" style={{ backgroundColor: '#A68F59' }}
+            />
             <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>
               A CREOVA ORIGINAL PLATFORM
             </span>
-            <div className="w-8 h-px" style={{ backgroundColor: '#A68F59' }} />
+            <motion.div
+              animate={{ scaleX: [1, 1.4, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+              className="h-px w-8" style={{ backgroundColor: '#A68F59' }}
+            />
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-6"
-          >
-            <h1
-              className="font-bold tracking-tight leading-none select-none"
+          {/* SEEN — letter-by-letter with shimmer */}
+          <div className="relative mb-6 inline-block">
+
+            {/* Scan beam sweeping across */}
+            <div className="absolute inset-0 overflow-hidden rounded pointer-events-none z-20" style={{ mixBlendMode: 'overlay' }}>
+              <div style={{
+                position: 'absolute', top: 0, bottom: 0,
+                width: '30%',
+                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)',
+                animation: 'scanBeam 5s ease-in-out infinite',
+                animationDelay: '2s',
+              }} />
+            </div>
+
+            <motion.h1
+              className="font-bold tracking-tight leading-none select-none relative"
               style={{
                 fontSize: 'clamp(6rem, 22vw, 18rem)',
-                color: 'transparent',
-                backgroundImage: 'linear-gradient(135deg, #F5F1EB 0%, #A68F59 55%, #B1643B 100%)',
+                backgroundImage: 'linear-gradient(105deg, #4A3E36 0%, #F5F1EB 18%, #A68F59 38%, #F5F1EB 52%, #B1643B 70%, #F5F1EB 84%, #4A3E36 100%)',
+                backgroundSize: '400% auto',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                color: 'transparent',
+                animation: 'seenShimmer 8s linear infinite',
               }}
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             >
               SEEN
-            </h1>
-          </motion.div>
+            </motion.h1>
+
+            {/* Glow halo behind text */}
+            <motion.div
+              className="absolute inset-0 -z-10 blur-3xl"
+              animate={{ opacity: [0.15, 0.35, 0.15], scale: [0.9, 1.05, 0.9] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              style={{ background: 'radial-gradient(ellipse, rgba(166,143,89,0.5) 0%, transparent 70%)' }}
+            />
+          </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
