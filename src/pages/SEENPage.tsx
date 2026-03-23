@@ -399,7 +399,7 @@ export function SEENPage() {
   ];
 
   return (
-    <div className="overflow-hidden" style={{ backgroundColor: '#121212' }}>
+    <div className="overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
 
       {/* Hero — Motion Graphics */}
       <style>{`
@@ -440,30 +440,30 @@ export function SEENPage() {
 
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4">
 
-        {/* Aurora glow — animated */}
+        {/* Aurora glow — SEEN teal palette */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div style={{
             position: 'absolute',
             top: '50%', left: '50%',
             width: '140%', height: '140%',
-            background: 'radial-gradient(ellipse 60% 50% at 35% 45%, rgba(166,143,89,0.22) 0%, transparent 65%), radial-gradient(ellipse 50% 55% at 68% 60%, rgba(177,100,59,0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(ellipse 60% 50% at 35% 45%, rgba(20,143,119,0.28) 0%, transparent 65%), radial-gradient(ellipse 50% 55% at 68% 60%, rgba(13,107,85,0.18) 0%, transparent 60%)',
             animation: 'auroraShift 12s ease-in-out infinite',
           }} />
         </div>
 
         {/* Perspective grid */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: `repeating-linear-gradient(90deg, #A68F59 0px, transparent 1px, transparent 80px),
-                            repeating-linear-gradient(0deg, #A68F59 0px, transparent 1px, transparent 80px)`
+        <div className="absolute inset-0 opacity-[0.05]" style={{
+          backgroundImage: `repeating-linear-gradient(90deg, #148F77 0px, transparent 1px, transparent 80px),
+                            repeating-linear-gradient(0deg, #148F77 0px, transparent 1px, transparent 80px)`
         }} />
 
-        {/* Sonar rings — expand outward from center */}
+        {/* Sonar rings — SEEN teal */}
         {[0, 1, 2, 3].map(i => (
           <div key={i} className="absolute rounded-full pointer-events-none" style={{
             width: '320px', height: '320px',
             top: '50%', left: '50%',
             marginTop: '-160px', marginLeft: '-160px',
-            border: '1px solid rgba(166,143,89,0.5)',
+            border: '1px solid rgba(20,143,119,0.55)',
             animation: `sonarPulse 4s ease-out infinite`,
             animationDelay: `${i * 1}s`,
           }} />
@@ -475,8 +475,8 @@ export function SEENPage() {
             position: 'absolute',
             width: '8px', height: '8px',
             borderRadius: '50%',
-            backgroundColor: '#A68F59',
-            boxShadow: '0 0 12px 4px rgba(166,143,89,0.6)',
+            backgroundColor: '#148F77',
+            boxShadow: '0 0 14px 5px rgba(20,143,119,0.7)',
             animation: 'orbitCW 8s linear infinite',
             marginTop: '-4px', marginLeft: '-4px',
           }} />
@@ -484,8 +484,8 @@ export function SEENPage() {
             position: 'absolute',
             width: '5px', height: '5px',
             borderRadius: '50%',
-            backgroundColor: '#B1643B',
-            boxShadow: '0 0 10px 3px rgba(177,100,59,0.5)',
+            backgroundColor: '#D4A843',
+            boxShadow: '0 0 10px 3px rgba(212,168,67,0.6)',
             animation: 'orbitCCW 13s linear infinite',
             marginTop: '-2.5px', marginLeft: '-2.5px',
           }} />
@@ -513,7 +513,7 @@ export function SEENPage() {
         ].map(({ word, x, delay, dur }) => (
           <div key={word} className="absolute bottom-24 text-xs tracking-[0.35em] uppercase pointer-events-none select-none" style={{
             left: x,
-            color: '#A68F59',
+            color: '#148F77',
             animation: `driftUp ${dur} ease-in-out infinite`,
             animationDelay: delay,
           }}>
@@ -531,15 +531,15 @@ export function SEENPage() {
             <motion.div
               animate={{ scaleX: [1, 1.4, 1] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="h-px w-8" style={{ backgroundColor: '#A68F59' }}
+              className="h-px w-8" style={{ backgroundColor: '#148F77' }}
             />
-            <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>
+            <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#148F77', fontFamily: 'var(--font-brand)' }}>
               A CREOVA ORIGINAL PLATFORM
             </span>
             <motion.div
               animate={{ scaleX: [1, 1.4, 1] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-              className="h-px w-8" style={{ backgroundColor: '#A68F59' }}
+              className="h-px w-8" style={{ backgroundColor: '#148F77' }}
             />
           </motion.div>
 
@@ -561,13 +561,14 @@ export function SEENPage() {
               className="font-bold tracking-tight leading-none select-none relative"
               style={{
                 fontSize: 'clamp(6rem, 22vw, 18rem)',
-                backgroundImage: 'linear-gradient(105deg, #4A3E36 0%, #F5F1EB 18%, #A68F59 38%, #F5F1EB 52%, #B1643B 70%, #F5F1EB 84%, #4A3E36 100%)',
+                backgroundImage: 'linear-gradient(105deg, #0D6B55 0%, #CCFFEE 18%, #FFFFFF 34%, #D4A843 50%, #FFFFFF 66%, #148F77 84%, #0D6B55 100%)',
                 backgroundSize: '400% auto',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 color: 'transparent',
                 animation: 'seenShimmer 8s linear infinite',
+                fontFamily: 'var(--font-display)',
               }}
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -581,7 +582,7 @@ export function SEENPage() {
               className="absolute inset-0 -z-10 blur-3xl"
               animate={{ opacity: [0.15, 0.35, 0.15], scale: [0.9, 1.05, 0.9] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              style={{ background: 'radial-gradient(ellipse, rgba(166,143,89,0.5) 0%, transparent 70%)' }}
+              style={{ background: 'radial-gradient(ellipse, rgba(20,143,119,0.55) 0%, transparent 70%)' }}
             />
           </div>
 
@@ -589,8 +590,8 @@ export function SEENPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-xl md:text-2xl mb-4 tracking-wide"
-            style={{ color: '#E3DCD3' }}
+            className="text-xl md:text-2xl mb-4 tracking-wide italic"
+            style={{ color: '#CCFFEE', fontFamily: 'var(--font-display)' }}
           >
             Canada's Cultural Storytelling Platform
           </motion.p>
@@ -599,7 +600,7 @@ export function SEENPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.55 }}
             className="text-sm md:text-base max-w-2xl mx-auto mb-12 leading-relaxed"
-            style={{ color: '#7A6F66' }}
+            style={{ color: 'rgba(204,255,238,0.6)', fontFamily: 'var(--font-body)' }}
           >
             Where Indigenous, Black Canadian, francophone, and immigrant voices own their stories — and audiences find the authentic Canada that mainstream platforms miss.
           </motion.p>
@@ -612,12 +613,12 @@ export function SEENPage() {
           >
             <span
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs tracking-widest uppercase"
-              style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid rgba(166, 143, 89, 0.3)', color: '#A68F59' }}
+              style={{ backgroundColor: 'rgba(20,143,119,0.12)', border: '1px solid rgba(20,143,119,0.4)', color: '#148F77' }}
             >
-              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#148F77' }} />
               In Development
             </span>
-            <span className="text-xs" style={{ color: '#4A3E36' }}>
+            <span className="text-xs" style={{ color: 'rgba(204,255,238,0.45)' }}>
               Beta launching 2025 · Canada-wide 2026
             </span>
           </motion.div>
@@ -631,10 +632,10 @@ export function SEENPage() {
             {submitted ? (
               <div
                 className="py-4 px-6 rounded-2xl text-center"
-                style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid rgba(166, 143, 89, 0.3)' }}
+                style={{ backgroundColor: 'rgba(20,143,119,0.12)', border: '1px solid rgba(20,143,119,0.35)' }}
               >
-                <Star className="w-6 h-6 mx-auto mb-2" style={{ color: '#A68F59' }} />
-                <p className="text-sm" style={{ color: '#A68F59' }}>You're on the list. We'll reach out first.</p>
+                <Star className="w-6 h-6 mx-auto mb-2" style={{ color: '#148F77' }} />
+                <p className="text-sm" style={{ color: '#CCFFEE' }}>You're on the list. We'll reach out first.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex gap-2">
@@ -646,23 +647,23 @@ export function SEENPage() {
                   required
                   className="flex-1 px-4 py-3 rounded-xl text-sm outline-none"
                   style={{
-                    backgroundColor: 'rgba(245, 241, 235, 0.07)',
-                    border: '1px solid rgba(227, 220, 211, 0.2)',
-                    color: '#F5F1EB',
-                    caretColor: '#A68F59'
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(20,143,119,0.3)',
+                    color: '#CCFFEE',
+                    caretColor: '#148F77'
                   }}
                 />
                 <button
                   type="submit"
                   className="px-5 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90 flex items-center gap-2"
-                  style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
+                  style={{ backgroundColor: '#148F77', color: '#FFFFFF' }}
                 >
                   Join Waitlist
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             )}
-            <p className="text-xs mt-3" style={{ color: '#4A3E36' }}>
+            <p className="text-xs mt-3" style={{ color: 'rgba(204,255,238,0.4)' }}>
               No spam. Early access for creators &amp; cultural communities.
             </p>
           </motion.div>
@@ -673,8 +674,8 @@ export function SEENPage() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 rounded-full flex items-start justify-center p-2" style={{ borderColor: '#A68F59' }}>
-            <div className="w-1 h-2 rounded-full" style={{ backgroundColor: '#A68F59' }} />
+          <div className="w-6 h-10 border-2 rounded-full flex items-start justify-center p-2" style={{ borderColor: '#148F77' }}>
+            <div className="w-1 h-2 rounded-full" style={{ backgroundColor: '#148F77' }} />
           </div>
         </motion.div>
       </section>
