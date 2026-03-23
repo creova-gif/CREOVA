@@ -299,8 +299,8 @@ export default function MembershipsPage() {
           <div className="inline-block px-4 py-2 rounded-full mb-6 text-sm tracking-widest uppercase" style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}>
             {t.availableBadge}
           </div>
-          <h1 className="text-5xl md:text-7xl mb-6" style={{ color: '#F5F1EB' }}>{t.title}</h1>
-          <p className="text-xl max-w-2xl mx-auto" style={{ color: '#E3DCD3' }}>{t.subtitle}</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-6" style={{ color: '#F5F1EB' }}>{t.title}</h1>
+          <p className="text-base sm:text-xl max-w-2xl mx-auto" style={{ color: '#E3DCD3' }}>{t.subtitle}</p>
         </div>
       </div>
 

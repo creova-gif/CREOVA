@@ -1,9 +1,12 @@
-import { X, Minus, Plus, Trash2 } from 'lucide-react';
+import { X, Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 import { Button } from './ui/button';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router';
+import { motion, AnimatePresence } from 'motion/react';
+
+const warmGradient = 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)';
 
 interface CartDrawerProps {
   open: boolean;
@@ -23,95 +26,181 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
   if (!open) return null;
 
   return (
-    <>
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-black/50 z-50"
-        onClick={onClose}
-      />
+    <AnimatePresence>
+      {open && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50"
+            style={{ backgroundColor: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}
+            onClick={onClose}
+          />
 
-      {/* Drawer */}
-      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col">
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b">
-          <h2 className="text-xl">{t('cart.title')}</h2>
-          <button onClick={onClose} className="text-neutral-500 hover:text-neutral-900" aria-label={t('a11y.close')}>
-            <X className="w-6 h-6" />
-          </button>
-        </div>
+          {/* Drawer */}
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed right-0 top-0 h-full w-full max-w-md z-50 flex flex-col"
+            style={{ backgroundColor: '#0A0A0A' }}
+          >
+            {/* Warm gradient top stripe */}
+            <div style={{ height: '2px', background: warmGradient, flexShrink: 0 }} />
 
-        {/* Items */}
-        <div className="flex-grow overflow-y-auto p-6">
-          {items.length === 0 ? (
-            <div className="text-center text-neutral-500 py-12">
-              <div className="mb-2">{t('cart.empty')}</div>
-              <div className="text-sm">{t('cart.empty.subtitle')}</div>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {items.map(item => (
-                <div key={item.id} className="flex gap-4 border-b pb-4">
-                  {item.image && (
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-20 h-20 object-cover rounded"
-                    />
-                  )}
-                  <div className="flex-grow">
-                    <h3 className="text-sm">{item.name}</h3>
-                    <p className="text-sm text-neutral-500">${item.price}</p>
-                    
-                    <div className="flex items-center gap-2 mt-2">
-                      <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="p-1 hover:bg-neutral-100 rounded"
-                      >
-                        <Minus className="w-4 h-4" />
-                      </button>
-                      <span className="text-sm w-8 text-center">{item.quantity}</span>
-                      <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="p-1 hover:bg-neutral-100 rounded"
-                      >
-                        <Plus className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={() => handleRemoveItem(item.id, item.name)}
-                        className="ml-auto p-1 hover:bg-red-50 text-red-600 rounded"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Footer */}
-        {items.length > 0 && (
-          <div className="border-t p-6 space-y-4">
-            <div className="flex justify-between">
-              <span>{t('cart.total')}</span>
-              <span className="text-xl">${totalPrice.toFixed(2)} {t('common.currency')}</span>
-            </div>
-            <Button className="w-full" size="lg" onClick={() => navigate('/checkout')}>
-              {t('cart.checkout')}
-            </Button>
-            <Button 
-              variant="outline" 
-              className="w-full" 
-              onClick={() => {
-                onClose();
-              }}
+            {/* Header */}
+            <div
+              className="flex items-center justify-between px-6 py-5"
+              style={{ borderBottom: '1px solid rgba(166,143,89,0.15)', flexShrink: 0 }}
             >
-              {t('cart.continue')}
-            </Button>
-          </div>
-        )}
-      </div>
-    </>
+              <div className="flex items-center gap-3">
+                <ShoppingBag className="w-4 h-4" style={{ color: '#A68F59' }} />
+                <div>
+                  <p className="text-xs tracking-[0.4em] uppercase mb-0.5" style={{ color: '#A68F59' }}>
+                    {t('cart.title')}
+                  </p>
+                  {items.length > 0 && (
+                    <p className="text-xs" style={{ color: '#7A6F66' }}>
+                      {items.length} {items.length === 1 ? 'item' : 'items'}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <button
+                onClick={onClose}
+                className="w-8 h-8 flex items-center justify-center rounded-full transition-colors"
+                style={{ backgroundColor: 'rgba(166,143,89,0.08)', color: '#C8C0B8' }}
+                aria-label={t('a11y.close')}
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Items */}
+            <div className="flex-grow overflow-y-auto">
+              {items.length === 0 ? (
+                <div className="flex flex-col items-center justify-center h-full px-8 py-16 text-center">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ backgroundColor: 'rgba(166,143,89,0.08)', border: '1px solid rgba(166,143,89,0.18)' }}
+                  >
+                    <ShoppingBag className="w-7 h-7" style={{ color: '#A68F59' }} />
+                  </div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div style={{ height: '1px', width: '28px', backgroundColor: 'rgba(166,143,89,0.35)' }} />
+                    <p className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>Your Bag</p>
+                    <div style={{ height: '1px', width: '28px', backgroundColor: 'rgba(166,143,89,0.35)' }} />
+                  </div>
+                  <p className="text-lg font-light mb-2" style={{ color: '#F5F1EB' }}>{t('cart.empty')}</p>
+                  <p className="text-sm mb-8 leading-relaxed" style={{ color: '#7A6F66' }}>
+                    Browse the SEEN shop or our digital resources to find something worth owning.
+                  </p>
+                  <button
+                    onClick={() => { onClose(); navigate('/shop'); }}
+                    className="w-full py-3 rounded-lg text-sm font-medium text-white mb-3"
+                    style={{ background: warmGradient }}
+                  >
+                    Browse SEEN Shop
+                  </button>
+                  <button
+                    onClick={() => { onClose(); navigate('/digital-products'); }}
+                    className="w-full py-3 rounded-lg text-sm font-medium border"
+                    style={{ borderColor: 'rgba(166,143,89,0.3)', color: '#C8C0B8', backgroundColor: 'transparent' }}
+                  >
+                    Digital Resources
+                  </button>
+                </div>
+              ) : (
+                <div className="px-6 py-4 space-y-0">
+                  {items.map((item, i) => (
+                    <div
+                      key={item.id}
+                      className="flex gap-4 py-5"
+                      style={{
+                        borderBottom: i < items.length - 1 ? '1px solid rgba(166,143,89,0.1)' : 'none'
+                      }}
+                    >
+                      {item.image && (
+                        <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0" style={{ border: '1px solid rgba(166,143,89,0.15)' }}>
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+                      <div className="flex-grow min-w-0">
+                        <h3 className="text-sm font-medium mb-1 truncate" style={{ color: '#F5F1EB' }}>{item.name}</h3>
+                        <p className="text-sm mb-3" style={{ color: '#A68F59' }}>${item.price} CAD</p>
+                        <div className="flex items-center justify-between">
+                          <div
+                            className="flex items-center gap-0 rounded-lg overflow-hidden"
+                            style={{ backgroundColor: 'rgba(166,143,89,0.08)', border: '1px solid rgba(166,143,89,0.18)' }}
+                          >
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="w-8 h-8 flex items-center justify-center transition-colors"
+                              style={{ color: '#C8C0B8' }}
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="text-xs w-8 text-center font-medium" style={{ color: '#F5F1EB' }}>{item.quantity}</span>
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              className="w-8 h-8 flex items-center justify-center transition-colors"
+                              style={{ color: '#C8C0B8' }}
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                          </div>
+                          <button
+                            onClick={() => handleRemoveItem(item.id, item.name)}
+                            className="w-8 h-8 flex items-center justify-center rounded-lg transition-colors"
+                            style={{ color: '#7A6F66', backgroundColor: 'rgba(255,80,80,0.06)' }}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Footer */}
+            {items.length > 0 && (
+              <div
+                className="px-6 py-6 space-y-4"
+                style={{ borderTop: '1px solid rgba(166,143,89,0.15)', flexShrink: 0 }}
+              >
+                <div className="flex justify-between items-baseline">
+                  <span className="text-xs tracking-[0.35em] uppercase" style={{ color: '#7A6F66' }}>{t('cart.total')}</span>
+                  <span className="text-xl font-light" style={{ color: '#F5F1EB' }}>${totalPrice.toFixed(2)} <span className="text-sm" style={{ color: '#7A6F66' }}>CAD</span></span>
+                </div>
+                <button
+                  className="w-full py-3.5 rounded-xl text-sm font-medium text-white"
+                  style={{ background: warmGradient }}
+                  onClick={() => { onClose(); navigate('/checkout'); }}
+                >
+                  {t('cart.checkout')}
+                </button>
+                <button
+                  className="w-full py-3 rounded-xl text-sm border transition-colors"
+                  style={{ borderColor: 'rgba(166,143,89,0.25)', color: '#C8C0B8', backgroundColor: 'transparent' }}
+                  onClick={onClose}
+                >
+                  {t('cart.continue')}
+                </button>
+              </div>
+            )}
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }

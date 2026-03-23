@@ -159,7 +159,7 @@ function AppContent() {
         Skip to main content
       </a>
       
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
         <ContactInfoBanner />
         <Navigation />
         <main id="main-content" className="flex-grow">
