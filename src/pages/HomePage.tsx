@@ -21,6 +21,7 @@ import photoMonique from '../assets/photo-monique.jpg';
 import photoServicePhotography from '../assets/photo-carnival-portrait.jpg';
 import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
+import photoServiceVideography from '../assets/photo-service-videography.jpg';
 
 export function HomePage() {
   const { t } = useLanguage();
@@ -38,7 +39,7 @@ export function HomePage() {
       title: 'Videography',
       description: 'Cinematic storytelling and event coverage',
       link: '/services',
-      image: photoWelcome,
+      image: photoServiceVideography,
       accent: '#B1643B'
     },
     {
