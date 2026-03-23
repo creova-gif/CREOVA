@@ -53,148 +53,148 @@ export function EventsCollaboratePage() {
 
   const upcomingEvents = [
     {
-      id: 'winter-brand-photography',
+      id: 'fall-brand-photography',
       name: 'Brand Photography Workshop for Entrepreneurs',
-      date: 'March 10, 2026',
+      date: 'September 9, 2026',
       time: '2:00 PM - 5:00 PM EST',
       location: 'St. Catharines, ON (In-Person)',
       capacity: '15 spots',
       price: 125,
-      image: 'https://images.unsplash.com/photo-1698663371785-677d13f21570?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwcGhvdG9ncmFwaHklMjBzdHVkaW8lMjBzZXR1cHxlbnwxfHx8fDE3Njc4MzY1NTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Learn how to create stunning brand photos for your business. Hands-on workshop covering lighting, composition, and editing.',
+      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=80&fit=crop',
+      description: 'Learn how to create stunning brand photos for your business. Hands-on workshop covering lighting, composition, and editing for entrepreneurs at every level.',
       includes: ['3-hour workshop', 'Workbook & templates', 'Light refreshments', 'Certificate of completion']
     },
     {
       id: 'social-media-masterclass',
       name: 'Social Media Content Creation Masterclass',
-      date: 'March 24, 2026',
+      date: 'September 23, 2026',
       time: '6:00 PM - 8:30 PM EST',
       location: 'Virtual (Zoom)',
       capacity: '50 spots',
       price: 75,
-      image: 'https://images.unsplash.com/photo-1602177281687-c8900253495b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMHdvbWFuJTIwc29jaWFsJTIwbWVkaWElMjBwaG9uZXxlbnwxfHx8fDE3NjMyNTU1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Master the art of creating scroll-stopping content for Instagram, TikTok, and Pinterest. Includes content planning and strategy.',
+      image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80&fit=crop',
+      description: 'Master the art of creating scroll-stopping content for Instagram, TikTok, and Pinterest. Includes content planning, strategy, and hands-on execution.',
       includes: ['2.5-hour virtual class', 'Content calendar template', 'Q&A session', 'Recording access for 30 days']
     },
     {
-      id: 'bipoc-creatives-winter-mixer',
-      name: 'BIPOC Creatives Winter Networking Mixer',
-      date: 'April 7, 2026',
-      time: '7:00 PM - 10:00 PM EST',
-      location: 'Niagara Falls, ON (In-Person)',
-      capacity: '40 spots',
-      price: 35,
-      image: 'https://images.unsplash.com/photo-1714978444599-6f9159ebdee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMGZyaWVuZHMlMjBuZXR3b3JraW5nJTIwY2VsZWJyYXRpb258ZW58MXx8fHwxNzYzMjU1NTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Connect with fellow BIPOC photographers, designers, videographers, and entrepreneurs in Greater Niagara.',
-      includes: ['Networking event', 'Food & beverages', 'Portfolio reviews', 'Swag bag']
-    },
-    {
-      id: 'lightroom-editing-workshop',
-      name: 'Lightroom Editing for Photographers',
-      date: 'April 21, 2026',
-      time: '1:00 PM - 4:00 PM EST',
-      location: 'Virtual (Zoom)',
-      capacity: '30 spots',
-      price: 95,
-      image: 'https://images.unsplash.com/photo-1648421829913-b0c2b117b297?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMG1hbiUyMGVkaXRpbmclMjBwaG90b3MlMjBpUGFkJTIwdGFibGV0fGVufDF8fHx8MTc2NTU2NTQ0Nnww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Deep dive into Adobe Lightroom. Learn professional editing workflows, color grading, and how to create your signature style.',
-      includes: ['3-hour live class', 'RAW practice files', 'Preset pack', 'Lifetime recording access']
-    },
-    {
-      id: 'pricing-strategies-workshop',
-      name: 'Pricing Your Creative Services Workshop',
-      date: 'May 5, 2026',
-      time: '10:00 AM - 12:00 PM EST',
-      location: 'Virtual (Zoom)',
-      capacity: '25 spots',
-      price: 65,
-      image: 'https://images.unsplash.com/photo-1610251064409-8d94b0939629?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMGVudHJlcHJlbmV1ciUyMGJ1c2luZXNzJTIwcGxhbm5pbmd8ZW58MXx8fHwxNzYzMjU1NTEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Stop undercharging! Learn how to price your photography, design, and creative services for profitability and value.',
-      includes: ['2-hour workshop', 'Pricing calculator template', 'Pricing guide template', 'Q&A session']
-    },
-    {
-      id: 'spring-creative-showcase',
-      name: 'CREOVA Spring Creative Showcase',
-      date: 'May 19, 2026',
-      time: '6:00 PM - 10:00 PM EST',
-      location: 'St. Catharines, ON (In-Person)',
-      capacity: '100 spots',
-      price: 45,
-      image: 'https://images.unsplash.com/photo-1552793084-49132af00ff1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMGFydGlzdHMlMjBleGhpYml0aW9uJTIwZ2FsbGVyeXxlbnwxfHx8fDE3NjMyNTU1MTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Celebrate BIPOC creativity! Exhibition featuring local photographers, artists, and designers. Live music, art, food, and networking.',
-      includes: ['Gallery access', 'Live performances', 'Food & drinks', 'Vendor marketplace']
-    },
-    {
-      id: 'summer-kickoff-niagara',
-      name: 'Summer Kickoff: Niagara Waterfront Photo Walk',
-      date: 'June 2, 2026',
-      time: '2:00 PM - 5:00 PM EST',
-      location: 'Niagara-on-the-Lake, ON (In-Person)',
-      capacity: '20 spots',
-      price: 45,
-      image: 'https://images.unsplash.com/photo-1536747582722-23aec5cf28d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMHlvdXRoJTIwZ3JvdXAlMjBwaG90b2dyYXBoeSUyMHdvcmtzaG9wJTIwQ2Fub24lMjBjYW1lcmFzfGVufDF8fHx8MTc2NTU2NTU1OXww&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Capture the beauty of Niagara in summer! Guided photo walk along the waterfront with tips on landscape and portrait photography.',
-      includes: ['3-hour guided walk', 'Photography tips', 'Light refreshments', 'Group photo critique']
-    },
-    {
-      id: 'sunset-sessions-grimsby',
-      name: 'Sunset Sessions: Portrait Photography at the Beach',
-      date: 'June 16, 2026',
-      time: '6:00 PM - 9:00 PM EST',
-      location: 'Grimsby Beach, ON (In-Person)',
-      capacity: '15 spots',
-      price: 85,
-      image: 'https://images.unsplash.com/photo-1601945447479-33e8d220a935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMHdvbWFuJTIwYmVhY2glMjBwb3J0cmFpdHxlbnwxfHx8fDE3Njc4MzYxOTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Master golden hour portrait photography at stunning Grimsby Beach. Learn natural light techniques and posing for summer shoots.',
-      includes: ['3-hour sunset workshop', 'Beach photo session', 'Editing guide', 'Certificate of completion']
-    },
-    {
-      id: 'outdoor-videography-summer',
-      name: 'Outdoor Videography: Summer in Niagara Falls',
-      date: 'June 30, 2026',
+      id: 'autumn-videography-niagara',
+      name: 'Outdoor Videography: Autumn in Niagara Falls',
+      date: 'October 1, 2026',
       time: '10:00 AM - 1:00 PM EST',
       location: 'Niagara Falls, ON (In-Person)',
       capacity: '18 spots',
       price: 95,
-      image: 'https://images.unsplash.com/photo-1660066895592-35b7b1039b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMHZpZGVvZ3JhcGhlciUyMG91dGRvb3IlMjBuYXR1cmUlMjBjaW5lbWF0aWN8ZW58MXx8fHwxNzY1NTY1NjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Learn to shoot cinematic outdoor video content in summer. Includes filming techniques, stabilization, and audio tips for outdoor shoots.',
+      image: 'https://images.unsplash.com/photo-1579187707643-35646d22b596?w=900&q=80&fit=crop',
+      description: 'Shoot cinematic outdoor video content against Niagara\'s breathtaking fall landscape. Covers filming techniques, stabilization, and audio for outdoor shoots.',
       includes: ['3-hour workshop', 'Equipment demos', 'Footage review', 'Editing cheat sheet']
     },
     {
+      id: 'bipoc-creatives-fall-mixer',
+      name: 'BIPOC Creatives Fall Networking Mixer',
+      date: 'October 7, 2026',
+      time: '7:00 PM - 10:00 PM EST',
+      location: 'Niagara Falls, ON (In-Person)',
+      capacity: '40 spots',
+      price: 35,
+      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80&fit=crop',
+      description: 'Connect with fellow BIPOC photographers, designers, videographers, and entrepreneurs in Greater Niagara. An evening of genuine community and creative conversation.',
+      includes: ['Networking event', 'Food & beverages', 'Portfolio reviews', 'Swag bag']
+    },
+    {
       id: 'vineyard-brand-shoot',
-      name: 'Brand Photography: Summer Vineyard Edition',
-      date: 'July 14, 2026',
+      name: 'Brand Photography: Harvest Season Vineyard Edition',
+      date: 'October 15, 2026',
       time: '1:00 PM - 4:00 PM EST',
       location: 'Niagara Wine Country, ON (In-Person)',
       capacity: '12 spots',
       price: 145,
-      image: 'https://images.unsplash.com/photo-1603400901809-428fc7789849?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMHdvbWFuJTIwd2luZSUyMHZpbmV5YXJkJTIwZWxlZ2FudHxlbnwxfHx8fDE3NjMyNTU1MTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Create stunning summer brand content at a picturesque Niagara vineyard. Perfect for entrepreneurs and small business owners.',
+      image: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=900&q=80&fit=crop',
+      description: 'Create stunning autumn brand content at a picturesque Niagara vineyard during harvest season. Perfect for entrepreneurs and small business owners seeking elevated imagery.',
       includes: ['3-hour vineyard session', 'Location access included', 'Editing workshop', 'Wine tasting']
     },
     {
-      id: 'bipoc-summer-social',
-      name: 'BIPOC Creatives Summer Waterfront Social',
-      date: 'July 28, 2026',
-      time: '5:00 PM - 8:00 PM EST',
-      location: 'St. Catharines Waterfront, ON (In-Person)',
-      capacity: '35 spots',
-      price: 40,
-      image: 'https://images.unsplash.com/photo-1748457306123-045e754fce74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCbGFjayUyMHBlb3BsZSUyMGJlYWNoJTIwTWlhbWklMjBzdW1tZXIlMjBmdW58ZW58MXx8fHwxNzY1NTY1MDc2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      description: 'Connect with fellow BIPOC creatives at a stunning waterfront summer social. Networking, collaboration, and summer celebrations!',
-      includes: ['Waterfront networking', 'BBQ & refreshments', 'Portfolio reviews', 'Swag bag']
+      id: 'lightroom-editing-workshop',
+      name: 'Lightroom Editing for Photographers',
+      date: 'October 22, 2026',
+      time: '1:00 PM - 4:00 PM EST',
+      location: 'Virtual (Zoom)',
+      capacity: '30 spots',
+      price: 95,
+      image: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=80&fit=crop',
+      description: 'Deep dive into Adobe Lightroom. Learn professional editing workflows, colour grading, and how to develop your unique visual signature style.',
+      includes: ['3-hour live class', 'RAW practice files', 'Preset pack', 'Lifetime recording access']
     },
     {
-      id: 'summer-showcase-niagara',
-      name: 'CREOVA Summer Showcase: Greater Niagara Edition',
-      date: 'August 11, 2026',
+      id: 'bipoc-fall-harvest-social',
+      name: 'BIPOC Creatives Fall Harvest Social',
+      date: 'October 28, 2026',
+      time: '5:00 PM - 8:00 PM EST',
+      location: 'St. Catharines, ON (In-Person)',
+      capacity: '35 spots',
+      price: 40,
+      image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80&fit=crop',
+      description: 'Celebrate the fall season with fellow BIPOC creatives at a warm harvest social. Networking, collaboration, and community — the CREOVA way.',
+      includes: ['Seasonal networking', 'Harvest refreshments', 'Portfolio reviews', 'Swag bag']
+    },
+    {
+      id: 'pricing-strategies-workshop',
+      name: 'Pricing Your Creative Services Workshop',
+      date: 'November 5, 2026',
+      time: '10:00 AM - 12:00 PM EST',
+      location: 'Virtual (Zoom)',
+      capacity: '25 spots',
+      price: 65,
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&fit=crop',
+      description: 'Stop undercharging! Learn how to price your photography, design, and creative services for profitability and real market value.',
+      includes: ['2-hour workshop', 'Pricing calculator template', 'Pricing guide template', 'Q&A session']
+    },
+    {
+      id: 'golden-hour-portraits-autumn',
+      name: 'Golden Hour Portraits: Niagara Autumn Edition',
+      date: 'November 12, 2026',
+      time: '4:00 PM - 7:00 PM EST',
+      location: 'Grimsby, ON (In-Person)',
+      capacity: '15 spots',
+      price: 85,
+      image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&fit=crop',
+      description: 'Master autumn golden hour portrait photography across stunning Greater Niagara locations. Learn natural light techniques, posing, and fall colour editing.',
+      includes: ['3-hour workshop', 'Outdoor photo session', 'Editing guide', 'Certificate of completion']
+    },
+    {
+      id: 'fall-creative-showcase',
+      name: 'CREOVA Fall Creative Showcase',
+      date: 'November 19, 2026',
+      time: '6:00 PM - 10:00 PM EST',
+      location: 'St. Catharines, ON (In-Person)',
+      capacity: '100 spots',
+      price: 45,
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80&fit=crop',
+      description: 'Celebrate BIPOC creativity at our flagship fall showcase! Exhibition featuring local photographers, artists, and designers. Live music, art, food, and community.',
+      includes: ['Gallery access', 'Live performances', 'Food & drinks', 'Vendor marketplace']
+    },
+    {
+      id: 'fall-foliage-photo-walk',
+      name: 'Fall Foliage Photo Walk: Niagara-on-the-Lake',
+      date: 'December 2, 2026',
+      time: '2:00 PM - 5:00 PM EST',
+      location: 'Niagara-on-the-Lake, ON (In-Person)',
+      capacity: '20 spots',
+      price: 45,
+      image: 'https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=900&q=80&fit=crop',
+      description: 'Capture the last colours of fall along the charming streets and vineyards of Niagara-on-the-Lake. Guided photo walk with expert tips on landscape and street photography.',
+      includes: ['3-hour guided walk', 'Photography tips', 'Light refreshments', 'Group photo critique']
+    },
+    {
+      id: 'holiday-showcase-niagara',
+      name: 'CREOVA Holiday Showcase: Greater Niagara Edition',
+      date: 'December 10, 2026',
       time: '4:00 PM - 9:00 PM EST',
       location: 'Niagara Falls, ON (In-Person)',
       capacity: '100 spots',
       price: 50,
-      image: 'https://images.unsplash.com/photo-1759807859616-54237daa894e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDYXJpYmJlYW4lMjBjYXJuaXZhbCUyMGZlc3RpdmFsJTIwcGFyYWRlfGVufDF8fHx8MTc2NzgzNjc0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      description: 'Celebrate summer and BIPOC creativity! Outdoor art exhibition, live performances, food vendors, and networking at Niagara Falls.',
-      includes: ['Outdoor gallery access', 'Live music & performances', 'Food trucks & drinks', 'Vendor marketplace']
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80&fit=crop',
+      description: 'Close out the year celebrating BIPOC creativity! Indoor gallery, live performances, food vendors, and community connection at Niagara Falls — a joyful holiday gathering.',
+      includes: ['Indoor gallery access', 'Live music & performances', 'Food & drinks', 'Vendor marketplace']
     }
   ];
 
@@ -840,6 +840,126 @@ export function EventsCollaboratePage() {
                 </div>
               </motion.article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CREOVA in the Spotlight */}
+      <section className="py-24" style={{ backgroundColor: '#121212' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#A68F59' }}></div>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#F5F1EB' }}>
+              CREOVA in the Spotlight
+            </h2>
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#7A6F66' }}>
+              Moments where our community showed up, spoke up, and made an impact
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Innovation Showcase */}
+            <motion.a
+              href="https://www.linkedin.com/posts/brock-linc_innovationshowcase2027-activity-7435428477895569408-uYf7"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-3xl block"
+              style={{ border: '1px solid rgba(166, 143, 89, 0.2)' }}
+            >
+              <div className="relative overflow-hidden aspect-video">
+                <img
+                  src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=900&q=80&fit=crop"
+                  alt="Innovation Showcase at Brock University LINC"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0" style={{
+                  background: 'linear-gradient(to top, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 50%, transparent 100%)'
+                }} />
+                <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
+                  style={{ backgroundColor: 'rgba(166, 143, 89, 0.9)', color: '#121212' }}>
+                  <ExternalLink className="w-3 h-3" />
+                  View Recap on LinkedIn
+                </div>
+              </div>
+              <div className="p-8" style={{ backgroundColor: '#1a1a1a' }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs tracking-widest uppercase px-2 py-1 rounded-full"
+                    style={{ backgroundColor: 'rgba(166, 143, 89, 0.12)', color: '#A68F59', border: '1px solid rgba(166, 143, 89, 0.25)' }}>
+                    Past Event · Recap
+                  </span>
+                  <span className="text-xs" style={{ color: '#4A3E36' }}>Brock University LINC</span>
+                </div>
+                <h3 className="text-2xl mb-3" style={{ color: '#F5F1EB' }}>
+                  Innovation Showcase
+                </h3>
+                <p className="leading-relaxed mb-5" style={{ color: '#7A6F66' }}>
+                  CREOVA was selected to present at Brock University's prestigious Innovation Showcase — a celebration of entrepreneurship and creative impact in the Niagara region. A milestone moment for our team and community.
+                </p>
+                <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#A68F59' }}>
+                  <span>See the full recap</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </motion.a>
+
+            {/* Female Founders Panel */}
+            <motion.a
+              href="https://www.linkedin.com/posts/brock-linc_brocklinc-brocku-femalefounders-activity-7438263863059492864-XQaO"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-3xl block"
+              style={{ border: '1px solid rgba(177, 100, 59, 0.2)' }}
+            >
+              <div className="relative overflow-hidden aspect-video">
+                <img
+                  src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80&fit=crop"
+                  alt="Female Founders Panel at Brock University LINC"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0" style={{
+                  background: 'linear-gradient(to top, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 50%, transparent 100%)'
+                }} />
+                <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
+                  style={{ backgroundColor: 'rgba(177, 100, 59, 0.9)', color: '#F5F1EB' }}>
+                  <ExternalLink className="w-3 h-3" />
+                  View on LinkedIn
+                </div>
+              </div>
+              <div className="p-8" style={{ backgroundColor: '#1a1a1a' }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs tracking-widest uppercase px-2 py-1 rounded-full"
+                    style={{ backgroundColor: 'rgba(177, 100, 59, 0.12)', color: '#B1643B', border: '1px solid rgba(177, 100, 59, 0.25)' }}>
+                    Speaking Engagement
+                  </span>
+                  <span className="text-xs" style={{ color: '#4A3E36' }}>Brock University LINC</span>
+                </div>
+                <h3 className="text-2xl mb-3" style={{ color: '#F5F1EB' }}>
+                  Female Founders Panel
+                </h3>
+                <p className="leading-relaxed mb-5" style={{ color: '#7A6F66' }}>
+                  CREOVA was invited to speak at Brock University's Female Founders Panel — sharing our story, the challenges of building a Black-owned creative agency, and our vision for amplifying BIPOC voices across Canada.
+                </p>
+                <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#B1643B' }}>
+                  <span>Read the post</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </motion.a>
           </div>
         </div>
       </section>

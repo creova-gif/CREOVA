@@ -252,7 +252,7 @@ export function DigitalProductsPage() {
                   onClick={() => setFilter(item.value)}
                   className="text-xs tracking-widest transition-colors"
                   style={{ 
-                    color: filter === item.value ? '#121212' : '#999999',
+                    color: filter === item.value ? '#121212' : '#7A6F66',
                     fontWeight: filter === item.value ? '600' : '400'
                   }}
                 >
@@ -350,7 +350,7 @@ export function DigitalProductsPage() {
                   <h3 className="text-xs tracking-wider" style={{ color: '#121212' }}>
                     {product.name}
                   </h3>
-                  <p className="text-[10px] tracking-wide" style={{ color: '#999999' }}>
+                  <p className="text-[10px] tracking-wide" style={{ color: '#7A6F66' }}>
                     {product.includes}
                   </p>
                   <p className="text-[10px] tracking-wide" style={{ color: '#7A6F66' }}>
@@ -411,7 +411,7 @@ export function DigitalProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 border-t" style={{ backgroundColor: '#121212', borderColor: '#3C3C3C' }}>
+      <section className="py-20 border-t" style={{ backgroundColor: '#121212', borderColor: '#2C2C2C' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -465,7 +465,7 @@ export function DigitalProductsPage() {
                       <h3 className="text-sm tracking-wider" style={{ color: '#121212' }}>
                         {magnet.title}
                       </h3>
-                      <p className="text-[10px] tracking-wide" style={{ color: '#999999' }}>
+                      <p className="text-[10px] tracking-wide" style={{ color: '#7A6F66' }}>
                         {magnet.description}
                       </p>
                       <p className="text-sm" style={{ color: '#121212' }}>

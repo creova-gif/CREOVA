@@ -60,7 +60,7 @@ export function AuthCallbackPage() {
         
         {status === 'success' && (
           <>
-            <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#10B981' }} />
+            <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#A68F59' }} />
             <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>{message}</h2>
           </>
         )}

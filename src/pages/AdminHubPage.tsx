@@ -30,7 +30,7 @@ export function AdminHubPage() {
       description: 'Process full and partial refunds for customer payments via Stripe',
       icon: DollarSign,
       path: '/admin/refunds',
-      color: '#8B7355',
+      color: '#A68F59',
       stats: 'Process refunds'
     },
     {
@@ -181,10 +181,10 @@ export function AdminHubPage() {
 
             <div 
               className="mt-6 p-4 rounded-xl border"
-              style={{ backgroundColor: '#FFF3E0', borderColor: '#FFB84D' }}
+              style={{ backgroundColor: 'rgba(166,143,89,0.08)', borderColor: 'rgba(166,143,89,0.3)' }}
             >
               <div className="flex items-start gap-3">
-                <Lock className="w-5 h-5 mt-0.5" style={{ color: '#FF9800' }} />
+                <Lock className="w-5 h-5 mt-0.5" style={{ color: '#A68F59' }} />
                 <div>
                   <p className="text-sm mb-1" style={{ color: '#121212' }}>
                     <strong>Default Admin Password:</strong> <code className="bg-white px-2 py-1 rounded">CREOVA2025!</code>

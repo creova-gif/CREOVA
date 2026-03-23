@@ -212,7 +212,7 @@ export function RefundManagementPage() {
 
             <div className="bg-white rounded-2xl p-6" style={{ borderColor: '#E3DCD3', border: '1px solid' }}>
               <div className="flex items-center gap-3 mb-2">
-                <RefreshCw className="w-6 h-6" style={{ color: '#8B7355' }} />
+                <RefreshCw className="w-6 h-6" style={{ color: '#A68F59' }} />
                 <span className="text-sm" style={{ color: '#7A6F66' }}>Total Refunds</span>
               </div>
               <div className="text-3xl" style={{ color: '#121212' }}>

@@ -502,7 +502,7 @@ export function ShopPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xs tracking-wider max-w-2xl mx-auto mb-4"
-              style={{ color: '#999999' }}
+              style={{ color: '#7A6F66' }}
             >
               ARTIST COLLABORATIONS • CREATIVE PARTNERSHIPS • CURATED BY CREOVA
             </motion.p>
@@ -541,7 +541,7 @@ export function ShopPage() {
                   onClick={() => setFilter(item.value)}
                   className="text-xs tracking-widest transition-colors whitespace-nowrap"
                   style={{ 
-                    color: filter === item.value ? '#121212' : '#999999',
+                    color: filter === item.value ? '#121212' : '#7A6F66',
                     fontWeight: filter === item.value ? '600' : '400'
                   }}
                 >
@@ -679,7 +679,7 @@ export function ShopPage() {
                       animate={{ opacity: 1, height: 'auto' }}
                       className="pt-2"
                     >
-                      <p className="text-[10px] tracking-wider mb-1" style={{ color: '#999999' }}>
+                      <p className="text-[10px] tracking-wider mb-1" style={{ color: '#7A6F66' }}>
                         SELECT SIZE
                       </p>
                       <div className="flex gap-1 flex-wrap">
@@ -708,7 +708,7 @@ export function ShopPage() {
                       animate={{ opacity: 1, height: 'auto' }}
                       className="pt-2"
                     >
-                      <p className="text-[10px] tracking-wider mb-1" style={{ color: '#999999' }}>
+                      <p className="text-[10px] tracking-wider mb-1" style={{ color: '#7A6F66' }}>
                         COLORS
                       </p>
                       <div className="flex gap-1 flex-wrap">
@@ -736,7 +736,7 @@ export function ShopPage() {
       </section>
 
       {/* Brand Statement */}
-      <section className="py-16 border-t" style={{ backgroundColor: '#121212', borderColor: '#3C3C3C' }}>
+      <section className="py-16 border-t" style={{ backgroundColor: '#121212', borderColor: '#2C2C2C' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -790,7 +790,7 @@ export function ShopPage() {
             <p className="text-xs tracking-wide mb-8" style={{ color: '#4A3E36' }}>
               All pieces are available in multiple colorways from our signature age-inclusive palette (5-90 years)
             </p>
-            <p className="text-[10px] tracking-widest" style={{ color: '#999999' }}>
+            <p className="text-[10px] tracking-widest" style={{ color: '#7A6F66' }}>
               TIMELESS, UNISEX, AND VERSATILE — DESIGNED TO WORK ACROSS ALL SKIN TONES
             </p>
           </div>

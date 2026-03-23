@@ -45,7 +45,7 @@ export function PaymentSuccessPage() {
           ) : (
             <CheckCircle2 
               className="w-24 h-24 mx-auto mb-8" 
-              style={{ color: '#4CAF50' }} 
+              style={{ color: '#A68F59' }} 
             />
           )}
         </motion.div>

@@ -43,7 +43,7 @@ export function AnalyticsDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState(30); // Default: last 30 days
 
-  const COLORS = ['#B1643B', '#A68F59', '#8B7355', '#E3DCD3', '#121212'];
+  const COLORS = ['#B1643B', '#A68F59', '#A68F59', '#E3DCD3', '#121212'];
 
   const fetchAnalytics = async () => {
     setLoading(true);

@@ -203,7 +203,7 @@ export function Sankofa() {
             style={{ backgroundColor: '#FFFFFF' }}
           >
             {/* Header */}
-            <div className="relative p-4 border-b" style={{ backgroundColor: '#121212', borderColor: '#3C3C3C' }}>
+            <div className="relative p-4 border-b" style={{ backgroundColor: '#121212', borderColor: '#2C2C2C' }}>
               <div className="absolute inset-0 bg-gradient-to-br from-[#A68F59]/20 to-[#B1643B]/20" />
               <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -214,7 +214,7 @@ export function Sankofa() {
                       className="w-full h-full object-cover"
                       style={{ filter: 'sepia(1) saturate(2) hue-rotate(-10deg) brightness(0.6)' }}
                     />
-                    <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2" style={{ backgroundColor: '#4CAF50', borderColor: '#121212' }} />
+                    <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2" style={{ backgroundColor: '#A68F59', borderColor: '#121212' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold" style={{ color: '#F5F1EB' }}>Sankofa</h3>
@@ -365,7 +365,7 @@ export function Sankofa() {
               style={{ backgroundColor: '#FFFFFF' }}
             >
               {/* Header */}
-              <div className="relative p-6 border-b" style={{ backgroundColor: '#121212', borderColor: '#3C3C3C' }}>
+              <div className="relative p-6 border-b" style={{ backgroundColor: '#121212', borderColor: '#2C2C2C' }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#A68F59]/20 to-[#B1643B]/20" />
                 <div className="relative flex items-center justify-between">
                   <div className="flex items-center gap-3">

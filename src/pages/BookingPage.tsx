@@ -423,7 +423,7 @@ export function BookingPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: date ? '#121212' : '#999999' }}
+                          style={{ color: date ? '#121212' : '#7A6F66' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {date ? format(date, 'PPP') : 'Pick a date'}

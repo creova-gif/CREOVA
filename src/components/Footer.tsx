@@ -119,7 +119,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-8 text-sm text-center" style={{ borderColor: '#3C3C3C' }}>
+        <div className="border-t pt-8 text-sm text-center" style={{ borderColor: '#2C2C2C' }}>
           <p className="text-xs mb-4" style={{ color: '#7A6F66' }}>
             * All prices displayed in Canadian Dollars (CAD). 13% GST/HST (Ontario) applies to all services, products, and memberships.
           </p>
