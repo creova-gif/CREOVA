@@ -718,10 +718,11 @@ export function CommunityPage() {
                 style={{ borderColor: '#E3DCD3', backgroundColor: '#FFFFFF' }}
               >
                 <div className="aspect-video relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
-                  <ImageWithFallback
-                    src={index === 0 ? partnerImage1 : index === 1 ? femaleOrgImage : partnerImage3}
+                  <img
+                    src={index === 0 ? '/card-bssc.jpg' : index === 1 ? '/card-fbf.jpg' : '/card-msk.jpg'}
                     alt={partner.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    style={{ objectPosition: 'center 30%' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
