@@ -239,14 +239,24 @@ export function BookingPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
-      {/* Hero */}
-      <section className="relative py-20 overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero — Editorial */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: `radial-gradient(ellipse 55% 80% at 15% 50%, rgba(166,143,89,0.09) 0%, transparent 60%),
+                       radial-gradient(ellipse 40% 60% at 85% 60%, rgba(177,100,59,0.07) 0%, transparent 55%)`
+        }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(166,143,89,0.06) 1px, transparent 1px)',
+          backgroundSize: '28px 28px'
+        }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-28">
           <Button
             variant="ghost"
             onClick={() => navigate(-1)}
-            className="mb-6 text-sm"
-            style={{ color: '#E3DCD3' }}
+            className="mb-10 text-sm"
+            style={{ color: 'rgba(166,143,89,0.7)' }}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
@@ -255,32 +265,41 @@ export function BookingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid #A68F59' }}>
-              <Star className="w-4 h-4" style={{ color: '#A68F59' }} />
-              <span className="text-sm tracking-wide" style={{ color: '#A68F59' }}>Professional Creative Services</span>
+            <div className="flex items-center justify-center gap-5 mb-10">
+              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.55em] uppercase" style={{ color: '#A68F59' }}>Professional Creative Services</p>
+              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6" style={{ color: '#F5F1EB' }}>
-              Book Your Session
+            <h1
+              className="font-light tracking-tight mb-8"
+              style={{ fontSize: 'clamp(36px, 6vw, 72px)', color: '#F5F1EB', lineHeight: 1.1 }}
+            >
+              Book Your<br />
+              <span style={{
+                backgroundImage: 'linear-gradient(135deg, #F5F1EB 0%, #A68F59 60%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent'
+              }}>Session</span>
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#E3DCD3' }}>
-              Let's start a conversation about your creative project. Share your vision with us — this is just the beginning of your story.
+            <p className="text-lg leading-relaxed" style={{ color: '#7A6F66', maxWidth: '500px', margin: '0 auto 40px' }}>
+              Let's start a conversation about your creative project. Share your vision — this is just the beginning of your story.
             </p>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-6 mt-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {[
                 { icon: Award, text: '20+ Projects Delivered' },
                 { icon: CheckCircle2, text: 'BIPOC-Led Team' },
                 { icon: Star, text: '5-Star Reviews' }
               ].map((badge, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <badge.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
-                  <span className="text-sm" style={{ color: '#E3DCD3' }}>{badge.text}</span>
-                </div>
+                <span key={i} className="flex items-center gap-2.5">
+                  <badge.icon className="w-4 h-4" style={{ color: '#A68F59' }} />
+                  <span className="text-sm tracking-wide" style={{ color: '#7A6F66' }}>{badge.text}</span>
+                </span>
               ))}
             </div>
           </motion.div>
@@ -288,14 +307,15 @@ export function BookingPage() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-16">
+      <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.form
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+            className="rounded-2xl p-8 md:p-12"
+            style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(18,18,18,0.1)' }}
           >
             <div className="space-y-8">
               {/* Service Selection */}
@@ -599,12 +619,22 @@ export function BookingPage() {
       </section>
 
       {/* Why Book With Us */}
-      <section className="py-16" style={{ backgroundColor: '#121212' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl text-center mb-12" style={{ color: '#F5F1EB' }}>
-            Why Book With CREOVA?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(166,143,89,0.07) 0%, transparent 65%)'
+        }} />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <div className="flex items-center gap-5 mb-3">
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Our Promise</p>
+            </div>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>Why Book With CREOVA?</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
                 icon: Star,
@@ -628,15 +658,20 @@ export function BookingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="p-8 rounded-2xl"
+                style={{ border: '1px solid rgba(166,143,89,0.18)', backgroundColor: 'rgba(166,143,89,0.04)' }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                  <feature.icon className="w-8 h-8" style={{ color: '#A68F59' }} />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ border: '1px solid rgba(166,143,89,0.3)', backgroundColor: 'rgba(166,143,89,0.08)' }}
+                >
+                  <feature.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
                 </div>
-                <h3 className="text-xl mb-3" style={{ color: '#F5F1EB' }}>
+                <div style={{ height: '1px', width: '24px', backgroundColor: 'rgba(166,143,89,0.4)', marginBottom: '16px' }} />
+                <h3 className="text-lg mb-3 tracking-tight" style={{ color: '#F5F1EB' }}>
                   {feature.title}
                 </h3>
-                <p style={{ color: '#E3DCD3' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#7A6F66' }}>
                   {feature.description}
                 </p>
               </motion.div>
