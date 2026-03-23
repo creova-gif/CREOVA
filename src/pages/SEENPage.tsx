@@ -451,10 +451,10 @@ export function SEENPage() {
           }} />
         </div>
 
-        {/* Perspective grid */}
-        <div className="absolute inset-0 opacity-[0.05]" style={{
-          backgroundImage: `repeating-linear-gradient(90deg, #148F77 0px, transparent 1px, transparent 80px),
-                            repeating-linear-gradient(0deg, #148F77 0px, transparent 1px, transparent 80px)`
+        {/* Perspective grid — CREOVA gold */}
+        <div className="absolute inset-0 opacity-[0.07]" style={{
+          backgroundImage: `repeating-linear-gradient(90deg, #A68F59 0px, transparent 1px, transparent 80px),
+                            repeating-linear-gradient(0deg, #A68F59 0px, transparent 1px, transparent 80px)`
         }} />
 
         {/* Sonar rings — SEEN teal */}
@@ -468,6 +468,20 @@ export function SEENPage() {
             animationDelay: `${i * 1}s`,
           }} />
         ))}
+
+        {/* Sankofa profile — center of sonar rings */}
+        <div className="absolute pointer-events-none" style={{
+          top: '50%', left: '50%',
+          width: '72px', height: '72px',
+          marginTop: '-36px', marginLeft: '-36px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          border: '2px solid rgba(166,143,89,0.7)',
+          boxShadow: '0 0 24px 8px rgba(20,143,119,0.35), 0 0 60px 20px rgba(20,143,119,0.12)',
+          zIndex: 5,
+        }}>
+          <img src="/sankofa-profile.jpg" alt="Sankofa" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
 
         {/* Orbiting dots */}
         <div className="absolute pointer-events-none" style={{ top: '50%', left: '50%', width: 0, height: 0 }}>
