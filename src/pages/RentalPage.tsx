@@ -407,7 +407,7 @@ export function RentalPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: startDate ? '#121212' : '#999999' }}
+                          style={{ color: startDate ? '#121212' : '#7A6F66' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {startDate ? format(startDate, 'PPP') : 'Pick start date'}
@@ -435,7 +435,7 @@ export function RentalPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: endDate ? '#121212' : '#999999' }}
+                          style={{ color: endDate ? '#121212' : '#7A6F66' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {endDate ? format(endDate, 'PPP') : 'Pick end date'}

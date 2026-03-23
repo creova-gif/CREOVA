@@ -83,7 +83,7 @@ function CheckoutForm({
   if (paymentSuccess) {
     return (
       <div className="text-center py-8">
-        <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#4CAF50' }} />
+        <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#A68F59' }} />
         <h3 className="text-xl mb-2">Payment Successful!</h3>
         <p className="text-sm" style={{ color: '#4A3E36' }}>
           Thank you for your purchase. You'll receive a confirmation email shortly.

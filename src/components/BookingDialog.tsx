@@ -105,7 +105,7 @@ export function BookingDialog({
 
           {step === 'success' ? (
             <div className="text-center py-8">
-              <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#4CAF50' }} />
+              <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#A68F59' }} />
               <h3 className="text-xl mb-2">Booking & Payment Successful!</h3>
               <p className="text-sm mb-4" style={{ color: '#4A3E36' }}>
                 You'll receive a confirmation email at {customerInfo.email} with all the details.
