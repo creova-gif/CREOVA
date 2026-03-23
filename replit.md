@@ -54,6 +54,18 @@ src/
 - `VITE_STRIPE_PUBLISHABLE_KEY` - Your Stripe publishable key (pk_test_... or pk_live_...)
 - `VITE_SENTRY_DSN` - Optional: Sentry DSN for error tracking
 
+## Design Language (Editorial CREOVA System)
+Applied consistently across all main pages (Home, Services, Pricing, Contact, Booking, Community, EventsCollaborate):
+- **Hero**: Near-black `#0A0A0A` with ambient gold radials, fine 28px dot texture, editorial label with flanking gold hairlines, `clamp()` large headline, gold gradient on second headline line, vertical `|` service tag separators
+- **Dark sections**: `#0E0E0E` or `#121212` with `rgba(166,143,89,0.3)` top/bottom hairlines, ambient radial glow
+- **Cards**: Two-zone (dark `#121212` header + white body), gold 2px top stripe, gold dot bullets, dark→gold hover CTA
+- **Section labels**: Small-caps gold text with flanking hairlines (left-aligned) or centered flanking rules
+- **Palette**: `#0A0A0A` near-black, `#121212` dark, `#F5F1EB` cream, `#A68F59` gold, `#B1643B` terracotta, `#7A6F66` muted text
+
+## Image Assets (public/)
+Compressed images in `public/`: card-bssc.jpg, card-fbf.jpg, card-msk.jpg, card-blsa.jpg, card-busu.jpg, card-justin-panel.jpg
+Compressed images in `src/assets/`: photo-event-networking.jpg, and various others (150-490KB each via ImageMagick)
+
 ## Known Issues / Post-Import TODOs
 
 ### 1. Missing Real Image Assets (CRITICAL for visual quality)

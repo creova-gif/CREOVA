@@ -38,61 +38,73 @@ export function PricingPage() {
 
   return (
     <div style={{ backgroundColor: '#F5F1EB' }}>
-      {/* Hero Section - Enhanced */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: `radial-gradient(circle at 30% 50%, #A68F59 0%, transparent 50%), 
-                             radial-gradient(circle at 70% 70%, #B1643B 0%, transparent 50%)` 
-          }}></div>
-        </div>
-        
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      {/* Hero Section — Editorial */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: `radial-gradient(ellipse 55% 80% at 20% 50%, rgba(166,143,89,0.09) 0%, transparent 60%),
+                       radial-gradient(ellipse 40% 60% at 80% 60%, rgba(177,100,59,0.07) 0%, transparent 55%)`
+        }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(166,143,89,0.06) 1px, transparent 1px)',
+          backgroundSize: '28px 28px'
+        }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
           >
-            <div className="h-1 w-20 mx-auto mb-8" style={{ backgroundColor: '#A68F59' }}></div>
-            <h1 className="text-5xl md:text-6xl mb-6 tracking-tight" style={{ color: '#F5F1EB', lineHeight: '1.1' }}>
-              Real Value.<br />Real Results.
+            <div className="flex items-center justify-center gap-5 mb-10">
+              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.55em] uppercase" style={{ color: '#A68F59' }}>Transparent Pricing</p>
+              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+            </div>
+            <h1
+              className="font-light tracking-tight mb-8"
+              style={{ fontSize: 'clamp(36px, 6vw, 76px)', color: '#F5F1EB', lineHeight: 1.1 }}
+            >
+              Real Value.<br />
+              <span style={{
+                backgroundImage: 'linear-gradient(135deg, #F5F1EB 0%, #A68F59 60%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent'
+              }}>Real Results.</span>
             </h1>
-            <p className="text-xl mb-6 leading-relaxed" style={{ color: '#E3DCD3' }}>
-              Our pricing reflects dedicated creative time, strategic thinking,<br className="hidden md:block" /> and long-term brand value for Canadian businesses
+            <p className="text-lg mb-10 leading-relaxed" style={{ color: '#7A6F66', maxWidth: '520px', margin: '0 auto 40px' }}>
+              Our pricing reflects dedicated creative time, strategic thinking, and long-term brand value for Canadian businesses
             </p>
-            <div className="flex flex-wrap gap-3 justify-center items-center text-sm" style={{ color: '#A68F59' }}>
-              <span>Professional Equipment</span>
-              <span>•</span>
-              <span>Expert Editing</span>
-              <span>•</span>
-              <span>Commercial License</span>
+            <div className="flex flex-wrap gap-6 justify-center items-center">
+              {['Professional Equipment', 'Expert Editing', 'Commercial License'].map((tag, i) => (
+                <span key={i} className="flex items-center gap-3">
+                  <span className="text-sm tracking-wider" style={{ color: '#A68F59' }}>{tag}</span>
+                  {i < 2 && <span style={{ width: '1px', height: '14px', backgroundColor: 'rgba(166,143,89,0.3)', display: 'inline-block' }} />}
+                </span>
+              ))}
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Quick Category Navigation */}
-      <section className="py-16 relative">
-        <div className="absolute top-0 left-0 w-full h-px" style={{ 
-          background: 'linear-gradient(90deg, transparent, #E3DCD3, transparent)' 
-        }}></div>
-        
+      <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <h2 className="text-3xl mb-3" style={{ color: '#121212' }}>
-              Choose Your Service
-            </h2>
-            <p className="text-lg" style={{ color: '#7A6F66' }}>
-              Select a category to view detailed pricing
-            </p>
+            <div className="flex items-center gap-5 mb-3">
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Browse By Category</p>
+            </div>
+            <h2 className="text-3xl font-light tracking-tight" style={{ color: '#121212' }}>Choose Your Service</h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
               { name: 'Family', id: '#family', icon: Users },
               { name: 'Brand', id: '#brand', icon: Briefcase },
@@ -109,19 +121,21 @@ export function PricingPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="bg-white rounded-2xl p-6 text-center border-2 transition-all duration-300 hover:shadow-xl"
-                  style={{ borderColor: '#E3DCD3' }}
+                  className="rounded-xl p-5 text-center transition-all duration-300"
+                  style={{ border: '1px solid rgba(18,18,18,0.12)', backgroundColor: '#FFFFFF' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#A68F59';
-                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.borderColor = 'rgba(166,143,89,0.5)';
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(166,143,89,0.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#E3DCD3';
+                    e.currentTarget.style.borderColor = 'rgba(18,18,18,0.12)';
                     e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <IconComponent className="w-8 h-8 mx-auto mb-2" style={{ color: '#A68F59' }} />
-                  <div className="text-sm" style={{ color: '#121212' }}>{category.name}</div>
+                  <IconComponent className="w-6 h-6 mx-auto mb-2" style={{ color: '#A68F59' }} />
+                  <div className="text-xs tracking-wide" style={{ color: '#121212' }}>{category.name}</div>
                 </motion.button>
               );
             })}
@@ -129,16 +143,20 @@ export function PricingPage() {
         </div>
       </section>
 
-      {/* Value Statement - Enhanced */}
-      <section className="py-20 bg-white">
+      {/* Value Statement */}
+      <section className="py-20" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
+            <div className="flex items-center gap-5 mb-3">
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Our Value</p>
+            </div>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#121212' }}>
               Why Our Pricing Reflects Our Value
             </h2>
           </motion.div>
