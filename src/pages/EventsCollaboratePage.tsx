@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner@2.0.3';
 import { Calendar, MapPin, Users, Clock, Lightbulb, Handshake, Star, ArrowRight, Award, FileText, ExternalLink, Check } from 'lucide-react';
-const photoSpotlight1 = '/card-justin-panel.jpg';
+import photoSpotlight1 from '../assets/photo-event-networking.jpg';
 import { motion } from 'motion/react';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -929,7 +929,7 @@ export function EventsCollaboratePage() {
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src="/card-justin-panel.jpg"
-                  alt="CREOVA Founder Justin Mafie at the Innovation Showcase, Brock University LINC"
+                  alt="The Black Print closing session at the Black Student Success Centre"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   style={{ objectPosition: 'center 25%' }}
                 />
