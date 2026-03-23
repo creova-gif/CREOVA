@@ -12,12 +12,14 @@ import heroBackground from '../assets/photo-community-celebration.jpg';
 import heroImage1 from '../assets/photo-duo-portrait.jpg';
 import heroImage3 from '../assets/photo-duo-bench.jpg';
 import teamPhoto from '../assets/photo-team-atrium.jpg';
-import clientImage from '../assets/photo-duo-portrait.jpg';
 import photoEvent1 from '../assets/photo-event-market.jpg';
 import photoEvent2 from '../assets/photo-event-networking.jpg';
 import photoCommunity1 from '../assets/photo-community-convo.jpg';
 import photoCommunity2 from '../assets/photo-community-chess.jpg';
 import photoWelcome from '../assets/photo-welcome-bash.jpg';
+import photoMonique from '../assets/photo-monique.jpg';
+import photoServicePhotography from '../assets/photo-service-photography.jpg';
+import photoServiceEvents from '../assets/photo-service-events.jpg';
 
 export function HomePage() {
   const { t } = useLanguage();
@@ -27,7 +29,7 @@ export function HomePage() {
       title: 'Photography',
       description: 'Brand, family, and professional portraiture',
       link: '/services',
-      image: photoEvent2,
+      image: photoServicePhotography,
       accent: '#A68F59'
     },
     {
@@ -67,7 +69,7 @@ export function HomePage() {
       title: 'Events',
       description: 'Workshops and creative gatherings',
       link: '/experience',
-      image: teamPhoto,
+      image: photoServiceEvents,
       accent: '#B1643B'
     }
   ];
@@ -605,7 +607,7 @@ export function HomePage() {
               >
                 <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-2xl">
                   <img
-                    src={clientImage}
+                    src={photoMonique}
                     alt="Monique Beauregard - Manager of Black Student Success Centre (BSSC) at Brock University"
                     className="w-full h-full object-cover"
                   />
