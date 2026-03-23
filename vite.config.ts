@@ -41,6 +41,7 @@
         'figma:asset/188848743a7955c420f3aa9e53b1ad8a36c37aef.png': path.resolve(__dirname, './src/assets/188848743a7955c420f3aa9e53b1ad8a36c37aef.png'),
         'figma:asset/1253f3bdc503d1419fa74efcfbe871b2538a54b3.png': path.resolve(__dirname, './src/assets/1253f3bdc503d1419fa74efcfbe871b2538a54b3.png'),
         'figma:asset/03c6badb4ca3300cb50c2776b203004544d11ab3.png': path.resolve(__dirname, './src/assets/03c6badb4ca3300cb50c2776b203004544d11ab3.png'),
+        'figma:asset/cfaeb5454460dc9e5a1c0e3885ebc636b897a0.png': path.resolve(__dirname, './src/assets/cfaeb5454460dc9e5a1c0e3885ebc636b897a0.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',
         'class-variance-authority@0.7.1': 'class-variance-authority',
@@ -79,7 +80,8 @@
       outDir: 'build',
     },
     server: {
-      port: 3000,
-      open: true,
+      port: 5000,
+      host: '0.0.0.0',
+      allowedHosts: true,
     },
   });
