@@ -819,57 +819,84 @@ export function CommunityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#B1643B' }}>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)` 
-          }}></div>
-        </div>
-        
+      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#0E0E0E' }}>
+        {/* Ambient gold radial glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(166,143,89,0.18) 0%, transparent 70%)',
+        }} />
+        {/* Subtle warm arc — top */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 80% 40% at 50% -10%, rgba(177,100,59,0.12) 0%, transparent 70%)',
+        }} />
+        {/* Fine grain dot texture */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
+          backgroundImage: `radial-gradient(circle, #A68F59 1px, transparent 1px)`,
+          backgroundSize: '28px 28px',
+        }} />
+
+        {/* Horizontal gold rule */}
+        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #A68F59, transparent)' }} />
+
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl mb-6" style={{ color: '#FFFFFF' }}>
-              {language === 'fr' 
-                ? 'Prêt à Faire Partie de Quelque Chose de Spécial?'
-                : 'Ready to Be Part of Something Special?'}
+            {/* Eyebrow */}
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-px w-12" style={{ backgroundColor: '#A68F59' }} />
+              <span className="text-xs tracking-[0.3em] uppercase" style={{ color: '#A68F59', fontFamily: 'var(--font-brand)' }}>
+                {language === 'fr' ? 'Rejoignez le Mouvement' : 'Join the Movement'}
+              </span>
+              <div className="h-px w-12" style={{ backgroundColor: '#A68F59' }} />
+            </div>
+
+            <h2 className="text-4xl md:text-6xl mb-6 leading-tight" style={{ color: '#F5F1EB', fontFamily: 'var(--font-display)' }}>
+              {language === 'fr'
+                ? <>Prêt à Faire Partie de<br /><em style={{ color: '#A68F59' }}>Quelque Chose de Spécial?</em></>
+                : <>Ready to Be Part of<br /><em style={{ color: '#A68F59' }}>Something Special?</em></>}
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: '#F5F1EB' }}>
+
+            <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(245,241,235,0.65)', fontFamily: 'var(--font-body)' }}>
               {language === 'fr'
                 ? 'Rejoignez CREOVA aujourd\'hui et déverrouillez un monde de créativité, communauté et culture.'
                 : 'Join CREOVA today and unlock a world of creativity, community, and culture.'}
             </p>
+
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="px-8 py-6 rounded-xl text-lg group"
-                style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+                className="px-10 py-6 rounded-xl text-base font-semibold group"
+                style={{ backgroundColor: '#A68F59', color: '#121212' }}
               >
                 {language === 'fr' ? 'Commencer Gratuitement' : 'Start Free'}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
+              <Button
                 onClick={() => navigate('/shop')}
-                className="px-8 py-6 rounded-xl text-lg border-2"
-                style={{ 
-                  backgroundColor: 'transparent', 
-                  color: '#FFFFFF',
-                  borderColor: '#FFFFFF'
+                className="px-10 py-6 rounded-xl text-base font-semibold border"
+                style={{
+                  backgroundColor: 'transparent',
+                  color: '#F5F1EB',
+                  borderColor: 'rgba(245,241,235,0.25)',
                 }}
               >
                 {language === 'fr' ? 'Magasiner SEEN' : 'Shop SEEN'}
               </Button>
             </div>
-            <p className="mt-6 text-sm" style={{ color: '#F5F1EB' }}>
+
+            <p className="mt-8 text-xs tracking-widest uppercase" style={{ color: 'rgba(245,241,235,0.3)', fontFamily: 'var(--font-brand)' }}>
               {language === 'fr'
                 ? 'Aucune carte de crédit requise pour l\'adhésion Communauté'
                 : 'No credit card required for Community membership'}
             </p>
           </motion.div>
         </div>
+
+        {/* Bottom gold rule */}
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #A68F59, transparent)' }} />
       </section>
 
       {/* Land Acknowledgment */}
