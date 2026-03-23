@@ -914,9 +914,9 @@ export function EventsCollaboratePage() {
               </div>
             </motion.a>
 
-            {/* Female Founders Panel */}
+            {/* The Black Print × BSSC */}
             <motion.a
-              href="https://www.linkedin.com/posts/brock-linc_brocklinc-brocku-femalefounders-activity-7438263863059492864-XQaO"
+              href="https://www.instagram.com/creova.ca"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
@@ -929,9 +929,10 @@ export function EventsCollaboratePage() {
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src={photoSpotlight2}
-                  alt="Female Founders Panel at Brock University LINC"
+                  src="/card-blackprint.jpg"
+                  alt="The Black Print closing session with Black Student Success Centre"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{ objectPosition: 'center 30%' }}
                 />
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(to top, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 50%, transparent 100%)'
@@ -939,22 +940,22 @@ export function EventsCollaboratePage() {
                 <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
                   style={{ backgroundColor: 'rgba(177, 100, 59, 0.9)', color: '#F5F1EB' }}>
                   <ExternalLink className="w-3 h-3" />
-                  View on LinkedIn
+                  View on Instagram
                 </div>
               </div>
               <div className="p-8" style={{ backgroundColor: '#1a1a1a' }}>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xs tracking-widest uppercase px-2 py-1 rounded-full"
                     style={{ backgroundColor: 'rgba(177, 100, 59, 0.12)', color: '#B1643B', border: '1px solid rgba(177, 100, 59, 0.25)' }}>
-                    Speaking Engagement
+                    Community Event
                   </span>
-                  <span className="text-xs" style={{ color: '#4A3E36' }}>Brock University LINC</span>
+                  <span className="text-xs" style={{ color: '#4A3E36' }}>Black Student Success Centre</span>
                 </div>
                 <h3 className="text-2xl mb-3" style={{ color: '#F5F1EB' }}>
-                  Female Founders Panel
+                  The Black Print — Closing Session
                 </h3>
                 <p className="leading-relaxed mb-5" style={{ color: '#7A6F66' }}>
-                  CREOVA was invited to speak at Brock University's Female Founders Panel — sharing our story, the challenges of building a Black-owned creative agency, and our vision for amplifying BIPOC voices across Canada.
+                  Wednesday's closing session of The Black Print, in partnership with the Black Student Success Centre — a conversation filled with joy, good vibes, and powerful moments of connection.
                 </p>
                 <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#B1643B' }}>
                   <span>Read the post</span>
