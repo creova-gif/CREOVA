@@ -22,6 +22,8 @@ import photoServicePhotography from '../assets/photo-carnival-portrait.jpg';
 import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
 import photoServiceVideography from '../assets/photo-service-videography.jpg';
+import photoCollage1 from '../assets/photo-collage-1.jpg';
+import photoCollage4 from '../assets/photo-collage-4.jpg';
 
 export function HomePage() {
   const { t } = useLanguage();
@@ -512,7 +514,7 @@ export function HomePage() {
             >
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoEvent2} alt="CREOVA community networking" className="w-full h-full object-cover" />
+                  <img src={photoCollage1} alt="CREOVA carnival community portrait" className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.4) 0%, transparent 60%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
@@ -525,7 +527,7 @@ export function HomePage() {
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.3) 0%, transparent 70%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoCommunity1} alt="CREOVA community gathering" className="w-full h-full object-cover" />
+                  <img src={photoCollage4} alt="CREOVA community portrait" className="w-full h-full object-cover" />
                 </div>
               </div>
             </motion.div>
