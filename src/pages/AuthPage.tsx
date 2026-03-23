@@ -69,9 +69,11 @@ export function AuthPage() {
   const handleCaptchaError = (error: string) => {
     setCaptchaToken(null);
     console.error('CAPTCHA error:', error);
-    toast.error('Security Verification Issue', {
-      description: error || 'Unable to verify. Please refresh and try again.'
-    });
+    if (window.location.hostname === 'creova.ca') {
+      toast.error('Security Verification Issue', {
+        description: error || 'Unable to verify. Please refresh and try again.'
+      });
+    }
   };
 
   const validateForm = () => {
