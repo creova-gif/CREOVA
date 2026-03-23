@@ -592,24 +592,80 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Cinematic Full-Width Photo Strip */}
-      <div className="relative overflow-hidden" style={{ height: '340px' }}>
+      {/* Editorial Statement Strip */}
+      <div className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A', minHeight: '520px' }}>
+        {/* Background photo — deeply faded */}
         <img
           src="/community-photo.jpg"
           alt="CREOVA creative community"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 30%' }}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: 'center 30%', opacity: 0.18 }}
         />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to bottom, rgba(18,18,18,0.55) 0%, rgba(18,18,18,0.2) 40%, rgba(18,18,18,0.2) 60%, rgba(18,18,18,0.55) 100%)'
+
+        {/* Ambient gold radial glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(166,143,89,0.10) 0%, transparent 70%)'
         }} />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-6">
-            <p className="text-sm tracking-[0.5em] uppercase mb-3" style={{ color: '#A68F59' }}>Creative Community</p>
-            <p className="text-2xl md:text-3xl font-light italic" style={{ color: '#F5F1EB' }}>
-              "Every story deserves to be told beautifully."
-            </p>
-          </div>
+
+        {/* Fine dot texture */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(166,143,89,0.06) 1px, transparent 1px)',
+          backgroundSize: '28px 28px'
+        }} />
+
+        {/* Gold hairlines top + bottom */}
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.35)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.35)' }} />
+
+        {/* Content */}
+        <div className="relative flex items-center justify-center" style={{ minHeight: '520px', padding: '80px 24px' }}>
+          <motion.div
+            className="text-center max-w-5xl"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            {/* Label with flanking rules */}
+            <div className="flex items-center justify-center gap-5 mb-10">
+              <div style={{ height: '1px', width: '60px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.55em] uppercase" style={{ color: '#A68F59' }}>Creative Community</p>
+              <div style={{ height: '1px', width: '60px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+            </div>
+
+            {/* Giant decorative opening quote */}
+            <div className="leading-none mb-2 select-none" style={{
+              fontSize: 'clamp(100px, 14vw, 180px)',
+              color: 'rgba(166,143,89,0.12)',
+              fontFamily: 'Georgia, "Times New Roman", serif',
+              lineHeight: '0.6',
+              marginBottom: '-10px'
+            }}>
+              "
+            </div>
+
+            {/* Hero quote */}
+            <h2
+              className="font-light italic"
+              style={{
+                fontSize: 'clamp(28px, 5vw, 64px)',
+                lineHeight: 1.25,
+                color: '#F5F1EB',
+                letterSpacing: '-0.01em'
+              }}
+            >
+              Every story deserves<br />to be told beautifully.
+            </h2>
+
+            {/* Attribution */}
+            <div className="flex items-center justify-center gap-4 mt-10">
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
+              <p className="text-xs tracking-[0.4em] uppercase" style={{ color: 'rgba(166,143,89,0.65)' }}>
+                CREOVA — Black-Owned Creative Agency
+              </p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
+            </div>
+          </motion.div>
         </div>
       </div>
 
