@@ -932,7 +932,7 @@ export function EventsCollaboratePage() {
                   src="/card-blackprint.jpg"
                   alt="The Black Print closing session with Black Student Success Centre"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ objectPosition: 'center 30%' }}
+                  style={{ objectPosition: 'center 20%' }}
                 />
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(to top, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 50%, transparent 100%)'
@@ -955,7 +955,7 @@ export function EventsCollaboratePage() {
                   The Black Print — Closing Session
                 </h3>
                 <p className="leading-relaxed mb-5" style={{ color: '#7A6F66' }}>
-                  Wednesday's closing session of The Black Print, in partnership with the Black Student Success Centre — a conversation filled with joy, good vibes, and powerful moments of connection.
+                  Wednesday's closing session of The Black Print, in partnership with the Black Student Success Centre — a conversation filled with joy, good vibes, and powerful moments of connection. CREOVA Founder Justin Mafie spoke on the panel, sharing insights on creativity, community, and building a Black-owned agency.
                 </p>
                 <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#B1643B' }}>
                   <span>Read the post</span>
