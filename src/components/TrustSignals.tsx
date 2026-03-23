@@ -1,24 +1,33 @@
 import { motion } from 'motion/react';
 import { Award, Star, Users } from 'lucide-react';
+import logoBrockU from '../assets/logo-brock-university.webp';
+import logoBSSC from '../assets/logo-bssc.png';
+import logoBLSA from '../assets/logo-blsa.png';
 
 export function TrustSignals() {
   const partners = [
     {
       name: 'Brock University',
       description: 'Creative assets for Black History Month & African Heritage Month',
-      logo: 'Brock University',
+      logo: logoBrockU,
+      logoAlt: 'Brock University',
+      logoBg: '#CC0000',
       year: '2024'
     },
     {
       name: 'Black Student Success Centre',
       description: 'Stock photography partnership',
-      logo: 'BSSC',
+      logo: logoBSSC,
+      logoAlt: 'BSSC — Black Student Success Centre',
+      logoBg: '#121212',
       year: '2025'
     },
     {
       name: 'Black Students Association',
       description: 'Event coverage & creative collaboration',
-      logo: 'BSA',
+      logo: logoBLSA,
+      logoAlt: 'BLSA — Black Student Association Brock University',
+      logoBg: '#FFFFFF',
       year: '2024-2025'
     }
   ];
@@ -80,8 +89,15 @@ export function TrustSignals() {
               className="p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300"
               style={{ backgroundColor: '#FFFFFF', border: '1px solid #E3DCD3' }}
             >
-              <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold" style={{ backgroundColor: '#121212', color: '#A68F59' }}>
-                {partner.logo}
+              <div
+                className="w-24 h-24 rounded-2xl mx-auto mb-5 flex items-center justify-center overflow-hidden"
+                style={{ backgroundColor: partner.logoBg }}
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.logoAlt}
+                  className="w-full h-full object-contain p-2"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-2" style={{ color: '#121212' }}>
                 {partner.name}
@@ -126,19 +142,16 @@ export function TrustSignals() {
               className="p-8 rounded-2xl hover:shadow-xl transition-all duration-300"
               style={{ backgroundColor: '#FFFFFF', border: '1px solid #E3DCD3' }}
             >
-              {/* Star Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-current" style={{ color: '#A68F59' }} />
                 ))}
               </div>
 
-              {/* Quote */}
               <p className="text-lg mb-6 italic leading-relaxed" style={{ color: '#4A3E36' }}>
                 "{testimonial.quote}"
               </p>
 
-              {/* Author */}
               <div className="border-t pt-4" style={{ borderColor: '#E3DCD3' }}>
                 <p className="font-semibold mb-1" style={{ color: '#121212' }}>
                   {testimonial.author}
