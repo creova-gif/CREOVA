@@ -181,82 +181,102 @@ export function ServicesPage() {
 
   return (
     <div style={{ backgroundColor: '#F5F1EB' }}>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: `radial-gradient(circle at 30% 50%, #A68F59 0%, transparent 50%), 
-                             radial-gradient(circle at 70% 70%, #B1643B 0%, transparent 50%)` 
-          }}></div>
-        </div>
-        
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+
+      {/* Hero Section — Editorial */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
+        {/* Ambient gold radials */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: `radial-gradient(ellipse 55% 80% at 20% 50%, rgba(166,143,89,0.09) 0%, transparent 60%),
+                       radial-gradient(ellipse 40% 60% at 80% 60%, rgba(177,100,59,0.07) 0%, transparent 55%)`
+        }} />
+        {/* Fine dot texture */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(166,143,89,0.06) 1px, transparent 1px)',
+          backgroundSize: '28px 28px'
+        }} />
+        {/* Bottom hairline */}
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
           >
-            <div className="h-1 w-20 mx-auto mb-8" style={{ backgroundColor: '#A68F59' }}></div>
-            <h1 className="text-5xl md:text-6xl mb-6 tracking-tight" style={{ color: '#F5F1EB', lineHeight: '1.1' }}>
-              Full-Service<br />Creative Solutions
+            {/* Editorial label */}
+            <div className="flex items-center justify-center gap-5 mb-10">
+              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.55em] uppercase" style={{ color: '#A68F59' }}>Creative Solutions</p>
+              <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+            </div>
+
+            <h1
+              className="font-light tracking-tight mb-8"
+              style={{ fontSize: 'clamp(36px, 6vw, 76px)', color: '#F5F1EB', lineHeight: 1.1 }}
+            >
+              Full-Service<br />
+              <span style={{
+                backgroundImage: 'linear-gradient(135deg, #F5F1EB 0%, #A68F59 60%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent'
+              }}>Creative Solutions</span>
             </h1>
-            <p className="text-xl mb-6 leading-relaxed" style={{ color: '#E3DCD3' }}>
-              For BIPOC brands, entrepreneurs, and cultural storytellers<br className="hidden md:block" /> across Ontario and Canada
+
+            <p className="text-lg mb-10 leading-relaxed" style={{ color: '#7A6F66', maxWidth: '560px', margin: '0 auto 40px' }}>
+              For BIPOC brands, entrepreneurs, and cultural storytellers across Ontario and Canada
             </p>
-            <div className="flex flex-wrap gap-3 justify-center items-center text-sm" style={{ color: '#A68F59' }}>
-              <span>Photography</span>
-              <span>•</span>
-              <span>Videography</span>
-              <span>•</span>
-              <span>Brand Design</span>
-              <span>•</span>
-              <span>Social Media</span>
+
+            <div className="flex flex-wrap gap-6 justify-center items-center">
+              {['Photography', 'Videography', 'Brand Design', 'Social Media'].map((tag, i) => (
+                <span key={i} className="flex items-center gap-3">
+                  <span className="text-sm tracking-wider" style={{ color: '#A68F59' }}>{tag}</span>
+                  {i < 3 && <span style={{ width: '1px', height: '14px', backgroundColor: 'rgba(166,143,89,0.3)', display: 'inline-block' }} />}
+                </span>
+              ))}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Service Category Tabs */}
-      <section id="services-tabs" className="sticky top-16 z-40 bg-white border-b-2" style={{ borderColor: '#E3DCD3' }}>
+      {/* Service Category Tabs — refined */}
+      <section id="services-tabs" className="sticky top-16 z-40 border-b" style={{ backgroundColor: '#0E0E0E', borderColor: 'rgba(166,143,89,0.2)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto gap-2 py-4 scrollbar-hide">
+          <div className="flex overflow-x-auto gap-1 py-3 scrollbar-hide">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => {
                   setActiveTab(tab.id);
-                  // Scroll to top of services list when tab changes
                   const servicesSection = document.querySelector('#services-list');
                   if (servicesSection) {
-                    const offset = 150; // Account for sticky header
+                    const offset = 150;
                     const elementPosition = servicesSection.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                   }
                 }}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl whitespace-nowrap transition-all duration-300 border-2"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg whitespace-nowrap transition-all duration-300"
                 style={{
-                  backgroundColor: activeTab === tab.id ? '#121212' : 'transparent',
-                  color: activeTab === tab.id ? '#F5F1EB' : '#121212',
-                  borderColor: activeTab === tab.id ? '#121212' : '#E3DCD3'
+                  backgroundColor: activeTab === tab.id ? 'rgba(166,143,89,0.15)' : 'transparent',
+                  color: activeTab === tab.id ? '#A68F59' : '#4A3E36',
+                  border: activeTab === tab.id ? '1px solid rgba(166,143,89,0.4)' : '1px solid transparent',
                 }}
                 onMouseEnter={(e) => {
                   if (activeTab !== tab.id) {
-                    e.currentTarget.style.borderColor = '#A68F59';
+                    e.currentTarget.style.color = '#A68F59';
+                    e.currentTarget.style.borderColor = 'rgba(166,143,89,0.2)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (activeTab !== tab.id) {
-                    e.currentTarget.style.borderColor = '#E3DCD3';
+                    e.currentTarget.style.color = '#4A3E36';
+                    e.currentTarget.style.borderColor = 'transparent';
                   }
                 }}
               >
-                <tab.icon className="w-4 h-4" />
-                <span className="text-sm">{tab.label}</span>
+                <tab.icon className="w-3.5 h-3.5" />
+                <span className="text-xs tracking-wide">{tab.label}</span>
               </button>
             ))}
           </div>
@@ -264,116 +284,126 @@ export function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section id="services-list" className="py-20">
+      <section id="services-list" className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+          <div className="space-y-12">
             {filteredServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white rounded-2xl p-8 border-2"
-                style={{ borderColor: '#E3DCD3' }}
+                transition={{ delay: index * 0.08, duration: 0.6 }}
+                className="overflow-hidden rounded-2xl"
+                style={{ border: '1px solid rgba(18,18,18,0.12)' }}
               >
-                <div className="flex items-start gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                    <service.icon className="w-7 h-7" style={{ color: '#A68F59' }} />
-                  </div>
-                  <div>
-                    <h2 className="text-3xl mb-3" style={{ color: '#121212' }}>{service.title}</h2>
-                    <p className="text-lg" style={{ color: '#7A6F66' }}>{service.description}</p>
+                {/* Service header — dark */}
+                <div className="relative overflow-hidden px-8 py-7" style={{ backgroundColor: '#121212' }}>
+                  <div className="absolute inset-0 pointer-events-none" style={{
+                    background: 'radial-gradient(ellipse 60% 100% at 0% 50%, rgba(166,143,89,0.07) 0%, transparent 60%)'
+                  }} />
+                  <div className="relative flex items-center gap-5">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ border: '1px solid rgba(166,143,89,0.3)', backgroundColor: 'rgba(166,143,89,0.08)' }}
+                    >
+                      <service.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl tracking-tight mb-1" style={{ color: '#F5F1EB' }}>{service.title}</h2>
+                      <p className="text-sm leading-relaxed" style={{ color: '#7A6F66' }}>{service.description}</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className={`grid ${service.packages.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-6`}>
-                  {service.packages.map((pkg, pkgIndex) => (
-                    <div 
-                      key={pkgIndex} 
-                      className="border-2 rounded-2xl p-6 hover:shadow-xl transition-all duration-300"
-                      style={{ borderColor: '#E3DCD3' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#B1643B';
-                        e.currentTarget.style.transform = 'translateY(-4px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = '#E3DCD3';
-                        e.currentTarget.style.transform = 'translateY(0)';
-                      }}
-                    >
-                      <h3 className="text-xl mb-2" style={{ color: '#121212' }}>{pkg.name}</h3>
-                      <p className="text-3xl mb-2" style={{ color: '#A68F59' }}>{pkg.price}</p>
-                      
-                      {/* Deposit Fee for Rentals */}
-                      {('deposit' in pkg) && (
-                        <div className="flex items-center gap-2 mb-4 p-2 rounded-lg" 
-                             style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}>
-                          <AlertCircle className="w-4 h-4" style={{ color: '#B1643B' }} />
-                          <span className="text-sm" style={{ color: '#B1643B' }}>
-                            Deposit: {(pkg as any).deposit}
-                          </span>
-                        </div>
-                      )}
-
-                      <ul className="space-y-2 text-sm mb-6" style={{ color: '#7A6F66' }}>
-                        {pkg.features.map((feature, featIndex) => (
-                          <li key={featIndex} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <Button 
-                        className="w-full group" 
-                        style={{ 
-                          backgroundColor: '#121212',
-                          color: '#F5F1EB'
-                        }}
-                        onClick={() => navigate(service.category === 'rental' ? '/rental' : '/booking')}
+                {/* Package cards — cream */}
+                <div className="p-6" style={{ backgroundColor: '#F9F6F1' }}>
+                  <div className={`grid ${service.packages.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
+                    {service.packages.map((pkg, pkgIndex) => (
+                      <motion.div
+                        key={pkgIndex}
+                        whileHover={{ y: -4 }}
+                        transition={{ duration: 0.25 }}
+                        className="flex flex-col rounded-xl overflow-hidden"
+                        style={{ border: '1px solid rgba(18,18,18,0.1)', backgroundColor: '#FFFFFF' }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = '#A68F59';
-                          e.currentTarget.style.transform = 'translateY(-2px)';
+                          (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.5)';
+                          (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(166,143,89,0.1)';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = '#121212';
-                          e.currentTarget.style.transform = 'translateY(0)';
+                          (e.currentTarget as HTMLElement).style.borderColor = 'rgba(18,18,18,0.1)';
+                          (e.currentTarget as HTMLElement).style.boxShadow = 'none';
                         }}
                       >
-                        {service.category === 'rental' ? 'Reserve Equipment' : 'Book Session'}
-                      </Button>
-                    </div>
-                  ))}
-                </div>
+                        {/* Top stripe */}
+                        <div style={{ height: '2px', backgroundColor: '#A68F59', opacity: 0.5 }} />
 
-                {/* Add-Ons for Video */}
-                {service.addOns && (
-                  <div className="mt-6">
-                    <h4 className="text-xl mb-2" style={{ color: '#121212' }}>Add-Ons</h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {service.addOns.map((addOn, addOnIndex) => (
-                        <div
-                          key={addOnIndex}
-                          className="border-2 rounded-2xl p-4 hover:shadow-lg transition-all duration-300"
-                          style={{ borderColor: '#E3DCD3' }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = '#B1643B';
-                            e.currentTarget.style.transform = 'translateY(-4px)';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = '#E3DCD3';
-                            e.currentTarget.style.transform = 'translateY(0)';
-                          }}
-                        >
-                          <h5 className="text-sm mb-1" style={{ color: '#121212' }}>{addOn.name}</h5>
-                          <p className="text-sm" style={{ color: '#A68F59' }}>{addOn.price}</p>
+                        <div className="p-6 flex flex-col flex-1">
+                          <p className="text-xs tracking-[0.3em] uppercase mb-2" style={{ color: '#A68F59' }}>{pkg.name}</p>
+                          <p className="text-3xl tracking-tight mb-1" style={{ color: '#121212' }}>{pkg.price}</p>
+
+                          {/* Deposit for rentals */}
+                          {('deposit' in pkg) && (
+                            <div className="flex items-center gap-2 mb-4 mt-2 px-3 py-2 rounded-lg"
+                                 style={{ backgroundColor: 'rgba(177,100,59,0.08)', border: '1px solid rgba(177,100,59,0.2)' }}>
+                              <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#B1643B' }} />
+                              <span className="text-xs" style={{ color: '#B1643B' }}>
+                                Deposit: {(pkg as any).deposit}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Thin divider */}
+                          <div className="my-4" style={{ height: '1px', backgroundColor: 'rgba(18,18,18,0.08)' }} />
+
+                          <ul className="space-y-2.5 text-sm flex-1 mb-6" style={{ color: '#4A3E36' }}>
+                            {pkg.features.map((feature, featIndex) => (
+                              <li key={featIndex} className="flex items-start gap-2.5">
+                                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59' }} />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <Button
+                            className="w-full mt-auto text-sm py-5 rounded-lg transition-all duration-300"
+                            style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+                            onClick={() => navigate(service.category === 'rental' ? '/rental' : '/booking')}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#A68F59';
+                              e.currentTarget.style.color = '#121212';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = '#121212';
+                              e.currentTarget.style.color = '#F5F1EB';
+                            }}
+                          >
+                            {service.category === 'rental' ? 'Reserve Equipment' : 'Book Session'}
+                          </Button>
                         </div>
-                      ))}
-                    </div>
+                      </motion.div>
+                    ))}
                   </div>
-                )}
+
+                  {/* Add-Ons for Video */}
+                  {service.addOns && (
+                    <div className="mt-6 pt-6" style={{ borderTop: '1px solid rgba(18,18,18,0.08)' }}>
+                      <p className="text-xs tracking-[0.35em] uppercase mb-4" style={{ color: '#7A6F66' }}>Add-Ons</p>
+                      <div className="flex flex-wrap gap-3">
+                        {service.addOns.map((addOn, addOnIndex) => (
+                          <div
+                            key={addOnIndex}
+                            className="flex items-center gap-3 px-5 py-3 rounded-xl"
+                            style={{ backgroundColor: '#F5F1EB', border: '1px solid rgba(18,18,18,0.1)' }}
+                          >
+                            <span className="text-sm" style={{ color: '#121212' }}>{addOn.name}</span>
+                            <span className="text-sm" style={{ color: '#A68F59' }}>{addOn.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -381,19 +411,29 @@ export function ServicesPage() {
       </section>
 
       {/* Add-Ons & Extras */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0E0E0E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(166,143,89,0.06) 0%, transparent 70%)'
+        }} />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>Add-Ons & Extras</h2>
-            <p className="text-xl" style={{ color: '#7A6F66' }}>Enhance any service package</p>
+            <div className="flex items-center gap-5 mb-3">
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Enhancements</p>
+            </div>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>Add-Ons & Extras</h2>
+            <p className="text-base mt-2" style={{ color: '#4A3E36' }}>Enhance any service package</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
               { name: 'Extra Hour (photo/video)', price: '$100-$150' },
               { name: 'Drone Footage Add-On', price: '$200' },
@@ -405,15 +445,23 @@ export function ServicesPage() {
             ].map((addon, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex justify-between items-center p-6 bg-white border-2 rounded-2xl hover:shadow-lg transition-all duration-300"
-                style={{ borderColor: '#E3DCD3' }}
+                className="flex justify-between items-center px-6 py-4 rounded-xl transition-all duration-300"
+                style={{ border: '1px solid rgba(166,143,89,0.15)', backgroundColor: 'rgba(166,143,89,0.04)' }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.35)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.08)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.15)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.04)';
+                }}
               >
-                <span style={{ color: '#121212' }}>{addon.name}</span>
-                <span className="text-lg" style={{ color: '#A68F59' }}>{addon.price}</span>
+                <span className="text-sm" style={{ color: '#E3DCD3' }}>{addon.name}</span>
+                <span className="text-sm font-light" style={{ color: '#A68F59' }}>{addon.price}</span>
               </motion.div>
             ))}
           </div>
@@ -422,44 +470,38 @@ export function ServicesPage() {
 
       {/* Equipment Rental Terms */}
       {(activeTab === 'rental' || activeTab === 'all') && (
-        <section className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
+        <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 border-2"
-              style={{ borderColor: '#E3DCD3' }}
+              className="rounded-2xl overflow-hidden"
+              style={{ border: '1px solid rgba(18,18,18,0.12)' }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                     style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}>
-                  <AlertCircle className="w-6 h-6" style={{ color: '#B1643B' }} />
+              <div className="px-8 py-5 flex items-center gap-4" style={{ backgroundColor: '#121212' }}>
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                     style={{ border: '1px solid rgba(177,100,59,0.4)', backgroundColor: 'rgba(177,100,59,0.1)' }}>
+                  <AlertCircle className="w-5 h-5" style={{ color: '#B1643B' }} />
                 </div>
-                <h3 className="text-2xl" style={{ color: '#121212' }}>Equipment Rental Terms</h3>
+                <h3 className="text-xl tracking-tight" style={{ color: '#F5F1EB' }}>Equipment Rental Terms</h3>
               </div>
 
-              <div className="space-y-4" style={{ color: '#7A6F66' }}>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                  <p><strong style={{ color: '#121212' }}>Deposit Required:</strong> Refundable security deposit due upon pickup. Returned within 5 business days after equipment is returned in good condition.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                  <p><strong style={{ color: '#121212' }}>Rental Period:</strong> 24-hour day (e.g., pickup 9am Monday, return by 9am Tuesday). Multi-day discounts available.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                  <p><strong style={{ color: '#121212' }}>Pickup/Return:</strong> Equipment must be picked up and returned at our Ontario location. Delivery available for additional fee.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                  <p><strong style={{ color: '#121212' }}>Damage Policy:</strong> Renter is responsible for equipment damage or loss. Insurance options available.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                  <p><strong style={{ color: '#121212' }}>Reservation:</strong> Book at least 48 hours in advance. Valid ID and signed rental agreement required.</p>
-                </div>
+              <div className="p-8 space-y-5" style={{ backgroundColor: '#FFFFFF' }}>
+                {[
+                  { label: 'Deposit Required', text: 'Refundable security deposit due upon pickup. Returned within 5 business days after equipment is returned in good condition.' },
+                  { label: 'Rental Period', text: '24-hour day (e.g., pickup 9am Monday, return by 9am Tuesday). Multi-day discounts available.' },
+                  { label: 'Pickup/Return', text: 'Equipment must be picked up and returned at our Ontario location. Delivery available for additional fee.' },
+                  { label: 'Damage Policy', text: 'Renter is responsible for equipment damage or loss. Insurance options available.' },
+                  { label: 'Reservation', text: 'Book at least 48 hours in advance. Valid ID and signed rental agreement required.' }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 pb-5" style={{ borderBottom: i < 4 ? '1px solid rgba(18,18,18,0.06)' : 'none' }}>
+                    <span className="mt-0.5 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59', marginTop: '8px' }} />
+                    <p className="text-sm leading-relaxed" style={{ color: '#4A3E36' }}>
+                      <strong style={{ color: '#121212' }}>{item.label}:</strong> {item.text}
+                    </p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -467,19 +509,27 @@ export function ServicesPage() {
       )}
 
       {/* Community & Loyalty Discounts */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(166,143,89,0.07) 0%, transparent 65%)'
+        }} />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
-            <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#A68F59' }}></div>
-            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>Community & Loyalty Discounts</h2>
+            <div className="flex items-center gap-5 mb-3">
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>For Our Community</p>
+            </div>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>Community & Loyalty Discounts</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-5 mb-12">
             {[
               { title: 'Students & Nonprofits', desc: 'Community pricing available', discount: '15% OFF' },
               { title: 'Returning Clients', desc: '15% off all services', discount: '15% OFF' },
@@ -491,28 +541,42 @@ export function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 bg-white border-2 rounded-2xl text-center hover:shadow-xl transition-all duration-300"
-                style={{ borderColor: '#E3DCD3' }}
+                className="p-8 rounded-2xl text-center transition-all duration-300"
+                style={{ border: '1px solid rgba(166,143,89,0.2)', backgroundColor: 'rgba(166,143,89,0.05)' }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.45)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.09)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.2)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.05)';
+                }}
               >
-                <div className="text-3xl mb-3" style={{ color: '#A68F59' }}>{item.discount}</div>
-                <h3 className="text-xl mb-2" style={{ color: '#121212' }}>{item.title}</h3>
-                <p style={{ color: '#7A6F66' }}>{item.desc}</p>
+                <div
+                  className="text-4xl font-light tracking-tight mb-4"
+                  style={{ color: '#A68F59' }}
+                >
+                  {item.discount}
+                </div>
+                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(166,143,89,0.4)', margin: '0 auto 16px' }} />
+                <h3 className="text-lg mb-2 tracking-tight" style={{ color: '#F5F1EB' }}>{item.title}</h3>
+                <p className="text-sm" style={{ color: '#7A6F66' }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center">
-            <Button 
+            <Button
               size="lg"
-              className="px-8 py-6 rounded-xl text-lg transition-all duration-300"
-              style={{ backgroundColor: '#121212' }}
+              className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
+              style={{ backgroundColor: '#A68F59', color: '#121212' }}
               onClick={() => navigate('/contact')}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#A68F59';
+                e.currentTarget.style.backgroundColor = '#F5F1EB';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#121212';
+                e.currentTarget.style.backgroundColor = '#A68F59';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -521,6 +585,7 @@ export function ServicesPage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
