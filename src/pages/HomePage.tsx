@@ -34,6 +34,7 @@ export function HomePage() {
       description: 'Brand, family, and professional portraiture',
       link: '/services',
       image: photoServicePhotography,
+      objectPosition: 'center 25%',
       accent: '#A68F59'
     },
     {
@@ -42,6 +43,7 @@ export function HomePage() {
       description: 'Cinematic storytelling and event coverage',
       link: '/services',
       image: photoServiceVideography,
+      objectPosition: 'center top',
       accent: '#B1643B'
     },
     {
@@ -50,6 +52,7 @@ export function HomePage() {
       description: 'Visual systems and strategic design',
       link: '/services',
       image: photoCommunity2,
+      objectPosition: 'center 20%',
       accent: '#A68F59'
     },
     {
@@ -58,6 +61,7 @@ export function HomePage() {
       description: 'Content strategy and digital growth',
       link: '/services',
       image: photoSocialLaptop,
+      objectPosition: 'center top',
       accent: '#B1643B'
     },
     {
@@ -66,6 +70,7 @@ export function HomePage() {
       description: 'CREOVA apparel and accessories',
       link: '/shop',
       image: photoEvent1,
+      objectPosition: 'center top',
       accent: '#A68F59'
     },
     {
@@ -74,6 +79,7 @@ export function HomePage() {
       description: 'Workshops and creative gatherings',
       link: '/experience',
       image: photoServiceEvents,
+      objectPosition: 'center 40%',
       accent: '#B1643B'
     }
   ];
@@ -466,6 +472,7 @@ export function HomePage() {
                     src={feature.image}
                     alt={feature.title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    style={{ objectPosition: feature.objectPosition || 'center center' }}
                   />
                   <div className="absolute inset-0" style={{
                     background: 'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.5) 50%, rgba(18,18,18,0.1) 100%)'
@@ -514,20 +521,20 @@ export function HomePage() {
             >
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoCollage1} alt="CREOVA carnival community portrait" className="w-full h-full object-cover" />
+                  <img src={photoCollage1} alt="CREOVA community event portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.4) 0%, transparent 60%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
-                  <img src={photoEvent1} alt="CREOVA market event" className="w-full h-full object-cover" />
+                  <img src={photoEvent1} alt="CREOVA carnival portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
-                  <img src={photoWelcome} alt="CREOVA welcome event" className="w-full h-full object-cover" />
+                  <img src={photoWelcome} alt="CREOVA welcome event" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.3) 0%, transparent 70%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoCollage4} alt="CREOVA community portrait" className="w-full h-full object-cover" />
+                  <img src={photoCollage4} alt="CREOVA community portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center 15%' }} />
                 </div>
               </div>
             </motion.div>
