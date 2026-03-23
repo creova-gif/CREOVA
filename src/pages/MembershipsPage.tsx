@@ -14,7 +14,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '../components/ui/dialog';
-import { Star, Crown, Check, Mail, Loader2 } from 'lucide-react';
+import { Star, Crown, Check, Mail, Loader2, Users, Smartphone, Palette, Zap } from 'lucide-react';
 
 export default function MembershipsPage() {
   const navigate = useNavigate();
@@ -30,48 +30,74 @@ export default function MembershipsPage() {
   const content = {
     en: {
       title: 'Memberships',
-      subtitle: 'Join the CREOVA creative community',
+      subtitle: 'Join the CREOVA creative family — free to start, powerful to grow',
       availableBadge: 'AVAILABLE NOW',
+      seenBadge: 'SEEN APP — EARLY ACCESS',
+      seenNote: 'All members get early access to the SEEN app — our platform where creatives and artists collaborate on exclusive collection drops.',
       notifyTitle: 'Stay Updated',
       notifyPlaceholder: 'Enter your email for updates',
       notifyButton: 'Subscribe',
       notifySuccess: '✓ You\'ll receive membership updates!',
+      community: {
+        name: 'COMMUNITY',
+        price: 'Free',
+        period: '',
+        description: 'Create your account and become part of the CREOVA family',
+        badge: 'GET STARTED',
+        features: [
+          'CREOVA Community member profile',
+          'Access to community events & RSVP',
+          'Browse the full SEEN collection',
+          'SEEN App — join the early access waitlist',
+          'Members-only newsletter & drops',
+          'Community feed & creator network',
+          'Early RSVP for CREOVA events',
+        ]
+      },
       creator: {
         name: 'CREATOR',
-        price: '$299',
+        price: '$199',
         period: '/year',
-        description: 'For creative professionals and entrepreneurs',
+        description: 'For creative professionals ready to grow their brand with CREOVA',
+        badge: 'MOST POPULAR',
         features: [
-          '20% off all CREOVA workshops & events',
-          '15% off all SEEN collection products',
-          'Exclusive monthly creator meetups',
-          'Access to equipment rental discounts',
-          'Free portfolio review (quarterly)',
-          'Early access to new product drops',
-          'Members-only resource library',
+          'Everything in Community',
+          '20% off all CREOVA services & workshops',
+          '15% off SEEN collection products',
+          'Submit your creative work to the SEEN collection',
+          'SEEN App — confirmed beta tester (early access)',
+          'Monthly creator meetups (virtual + in-person)',
+          'Equipment rental discounts',
+          'Quarterly portfolio review session',
           'Priority booking for services',
-          'CREOVA Creator digital badge'
+          'CREOVA Creator digital badge',
+          'Members-only resource library',
         ]
       },
       legacy: {
         name: 'LEGACY',
-        price: '$599',
+        price: '$499',
         period: '/year',
-        description: 'For established creatives building lasting impact',
+        description: 'For established creatives building lasting cultural impact with CREOVA',
+        badge: 'PREMIUM',
         features: [
-          'Everything in Creator membership',
-          '30% off all workshops & events',
-          '25% off all SEEN collection products',
+          'Everything in Creator',
+          '30% off all CREOVA services & workshops',
+          '25% off SEEN collection products',
+          'Featured as a collab artist in SEEN drops',
+          'Co-design SEEN pieces with the CREOVA team',
+          'SEEN App — founding member (lifetime early access)',
           'Quarterly 1-on-1 mentorship sessions',
-          'Free professional photoshoot (annual)',
+          'Annual professional photoshoot (included)',
           'Featured in CREOVA creator spotlight',
-          'Access to exclusive networking events',
-          'Complimentary equipment rental (2x/year)',
-          'Co-marketing opportunities',
-          'Lifetime archive of member work',
-          'Legacy Member physical badge & certificate'
+          'Exclusive networking & industry events',
+          '2× complimentary equipment rental per year',
+          'Co-marketing opportunities with CREOVA',
+          'Lifetime archive of member creative work',
+          'Legacy physical badge & certificate',
         ]
       },
+      joinFree: 'Create Free Account',
       joinNow: 'Subscribe Now',
       checkoutTitle: 'Complete Your Membership',
       checkoutDescription: 'Enter your details to start your annual membership subscription',
@@ -82,48 +108,74 @@ export default function MembershipsPage() {
     },
     fr: {
       title: 'Adhésions',
-      subtitle: 'Rejoignez la communauté créative CREOVA',
+      subtitle: 'Rejoignez la famille créative CREOVA — gratuit pour commencer, puissant pour grandir',
       availableBadge: 'DISPONIBLE MAINTENANT',
+      seenBadge: 'APP SEEN — ACCÈS ANTICIPÉ',
+      seenNote: 'Tous les membres obtiennent un accès anticipé à l\'application SEEN — notre plateforme où les créatifs et artistes collaborent sur des drops de collection exclusifs.',
       notifyTitle: 'Restez Informé',
       notifyPlaceholder: 'Entrez votre courriel pour les mises à jour',
       notifyButton: 'S\'abonner',
       notifySuccess: '✓ Vous recevrez les mises à jour d\'adhésion!',
+      community: {
+        name: 'COMMUNAUTÉ',
+        price: 'Gratuit',
+        period: '',
+        description: 'Créez votre compte et devenez membre de la famille CREOVA',
+        badge: 'COMMENCER',
+        features: [
+          'Profil de membre de la communauté CREOVA',
+          'Accès aux événements communautaires et RSVP',
+          'Parcourir toute la collection SEEN',
+          'App SEEN — rejoindre la liste d\'attente d\'accès anticipé',
+          'Bulletin et drops réservés aux membres',
+          'Fil de la communauté et réseau de créateurs',
+          'RSVP anticipé pour les événements CREOVA',
+        ]
+      },
       creator: {
         name: 'CRÉATEUR',
-        price: '299$',
+        price: '199$',
         period: '/an',
-        description: 'Pour les professionnels créatifs et entrepreneurs',
+        description: 'Pour les professionnels créatifs prêts à développer leur marque avec CREOVA',
+        badge: 'LE PLUS POPULAIRE',
         features: [
-          '20% de rabais sur tous les ateliers et événements CREOVA',
-          '15% de rabais sur tous les produits de la collection SEEN',
-          'Rencontres mensuelles exclusives de créateurs',
-          'Accès aux rabais de location d\'équipement',
-          'Révision de portfolio gratuite (trimestrielle)',
-          'Accès anticipé aux nouveaux produits',
-          'Bibliothèque de ressources réservée aux membres',
+          'Tout dans Communauté',
+          '20% de rabais sur tous les services et ateliers CREOVA',
+          '15% de rabais sur les produits de la collection SEEN',
+          'Soumettre votre travail créatif à la collection SEEN',
+          'App SEEN — bêta-testeur confirmé (accès anticipé)',
+          'Rencontres mensuelles de créateurs (virtuel + en personne)',
+          'Rabais de location d\'équipement',
+          'Session trimestrielle de révision de portfolio',
           'Réservation prioritaire pour les services',
-          'Badge numérique CREOVA Créateur'
+          'Badge numérique CREOVA Créateur',
+          'Bibliothèque de ressources réservée aux membres',
         ]
       },
       legacy: {
         name: 'HÉRITAGE',
-        price: '599$',
+        price: '499$',
         period: '/an',
-        description: 'Pour les créatifs établis construisant un impact durable',
+        description: 'Pour les créatifs établis construisant un impact culturel durable avec CREOVA',
+        badge: 'PREMIUM',
         features: [
-          'Tout dans l\'adhésion Créateur',
-          '30% de rabais sur tous les ateliers et événements',
-          '25% de rabais sur tous les produits de la collection SEEN',
-          'Séances de mentorat 1-à-1 trimestrielles',
-          'Séance photo professionnelle gratuite (annuelle)',
+          'Tout dans Créateur',
+          '30% de rabais sur tous les services et ateliers CREOVA',
+          '25% de rabais sur les produits de la collection SEEN',
+          'Présenté comme artiste collaborateur dans les drops SEEN',
+          'Co-concevoir des pièces SEEN avec l\'équipe CREOVA',
+          'App SEEN — membre fondateur (accès anticipé à vie)',
+          'Séances de mentorat trimestrielles 1-à-1',
+          'Séance photo professionnelle annuelle (incluse)',
           'Mise en vedette dans le spotlight des créateurs CREOVA',
-          'Accès à des événements de réseautage exclusifs',
-          'Location d\'équipement gratuite (2x/an)',
-          'Opportunités de co-marketing',
-          'Archive à vie du travail des membres',
-          'Badge physique et certificat Membre Héritage'
+          'Événements exclusifs de réseautage et d\'industrie',
+          '2× location d\'équipement gratuite par an',
+          'Opportunités de co-marketing avec CREOVA',
+          'Archive à vie du travail créatif des membres',
+          'Badge physique et certificat Héritage',
         ]
       },
+      joinFree: 'Créer un Compte Gratuit',
       joinNow: 'S\'abonner',
       checkoutTitle: 'Complétez Votre Adhésion',
       checkoutDescription: 'Entrez vos détails pour commencer votre abonnement annuel',
@@ -167,6 +219,7 @@ export default function MembershipsPage() {
     setSelectedMembership(type);
     setShowCheckoutDialog(true);
     setCustomerInfo({ name: '', email: '' });
+    setAgreedToTerms(false);
   };
 
   const handleProceedToPayment = async () => {
@@ -207,7 +260,6 @@ export default function MembershipsPage() {
       const data = await response.json();
 
       if (data.url) {
-        // Redirect to Stripe Checkout
         window.location.href = data.url;
       } else {
         throw new Error(data.error || 'Failed to create checkout session');
@@ -220,7 +272,7 @@ export default function MembershipsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F1EB]">
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
       {/* Language Toggle */}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
         <Button
@@ -242,21 +294,225 @@ export default function MembershipsPage() {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-[#121212] text-[#F5F1EB] py-20 px-4">
+      <div className="text-[#F5F1EB] py-24 px-4" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-block bg-[#B1643B] text-[#F5F1EB] px-4 py-2 rounded-full mb-6">
+          <div className="inline-block px-4 py-2 rounded-full mb-6 text-sm tracking-widest uppercase" style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}>
             {t.availableBadge}
           </div>
-          <h1 className="text-5xl md:text-7xl mb-6">{t.title}</h1>
-          <p className="text-xl text-[#E3DCD3] max-w-2xl mx-auto">{t.subtitle}</p>
+          <h1 className="text-5xl md:text-7xl mb-6" style={{ color: '#F5F1EB' }}>{t.title}</h1>
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: '#E3DCD3' }}>{t.subtitle}</p>
         </div>
       </div>
 
-      {/* Notify Me Section */}
-      <div className="py-12 px-4 bg-[#E3DCD3]">
+      {/* SEEN App Early Access Banner */}
+      <div className="py-6 px-4" style={{ backgroundColor: '#A68F59' }}>
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <Smartphone className="w-8 h-8" style={{ color: '#121212' }} />
+            <span className="font-semibold tracking-widest text-sm uppercase" style={{ color: '#121212' }}>
+              {t.seenBadge}
+            </span>
+          </div>
+          <div className="h-px sm:h-8 w-full sm:w-px" style={{ backgroundColor: 'rgba(18,18,18,0.2)' }} />
+          <p className="text-sm" style={{ color: '#121212' }}>
+            {t.seenNote}
+          </p>
+        </div>
+      </div>
+
+      {/* Membership Tiers */}
+      <div className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-sm mb-10" style={{ color: '#7A6F66' }}>
+            * Paid plans in CAD. 13% HST (Ontario) applies. Memberships auto-renew annually.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {/* Community — Free */}
+            <Card className="p-8 border-2 bg-white hover:shadow-xl transition-shadow flex flex-col" style={{ borderColor: '#E3DCD3' }}>
+              <div className="mb-6">
+                <div className="inline-block px-3 py-1 rounded-full text-xs tracking-widest uppercase mb-4" style={{ backgroundColor: '#F5F1EB', color: '#7A6F66', border: '1px solid #E3DCD3' }}>
+                  {t.community.badge}
+                </div>
+                <div className="flex items-center gap-3 mb-3">
+                  <Users className="w-7 h-7" style={{ color: '#7A6F66' }} />
+                  <h2 className="text-2xl tracking-wide" style={{ color: '#121212' }}>{t.community.name}</h2>
+                </div>
+                <div className="mb-3">
+                  <span className="text-5xl font-light" style={{ color: '#121212' }}>{t.community.price}</span>
+                </div>
+                <p className="text-sm" style={{ color: '#7A6F66' }}>{t.community.description}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {t.community.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#A68F59' }} />
+                    <span className="text-sm" style={{ color: '#4A3E36' }}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                onClick={() => navigate('/auth')}
+                className="w-full py-6 text-base"
+                style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+              >
+                {t.joinFree}
+              </Button>
+            </Card>
+
+            {/* Creator */}
+            <Card className="p-8 border-2 bg-white hover:shadow-2xl transition-shadow flex flex-col relative" style={{ borderColor: '#A68F59' }}>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs tracking-widest uppercase" style={{ backgroundColor: '#A68F59', color: '#F5F1EB' }}>
+                {t.creator.badge}
+              </div>
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-3 mt-2">
+                  <Star className="w-7 h-7" style={{ color: '#A68F59' }} />
+                  <h2 className="text-2xl tracking-wide" style={{ color: '#121212' }}>{t.creator.name}</h2>
+                </div>
+                <div className="mb-3">
+                  <span className="text-5xl font-light" style={{ color: '#121212' }}>{t.creator.price}</span>
+                  <span className="text-base ml-1" style={{ color: '#7A6F66' }}>{t.creator.period}</span>
+                </div>
+                <p className="text-sm" style={{ color: '#7A6F66' }}>{t.creator.description}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {t.creator.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#A68F59' }} />
+                    <span className="text-sm" style={{ color: '#4A3E36' }}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                onClick={() => handleSelectMembership('creator')}
+                className="w-full py-6 text-base"
+                style={{ backgroundColor: '#A68F59', color: '#F5F1EB' }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#B1643B')}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#A68F59')}
+              >
+                {t.joinNow}
+              </Button>
+            </Card>
+
+            {/* Legacy */}
+            <Card className="p-8 border-2 bg-white hover:shadow-2xl transition-shadow flex flex-col relative" style={{ borderColor: '#B1643B' }}>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs tracking-widest uppercase" style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}>
+                {t.legacy.badge}
+              </div>
+              <div className="mb-6">
+                <div className="flex items-center gap-3 mb-3 mt-2">
+                  <Crown className="w-7 h-7" style={{ color: '#B1643B' }} />
+                  <h2 className="text-2xl tracking-wide" style={{ color: '#121212' }}>{t.legacy.name}</h2>
+                </div>
+                <div className="mb-3">
+                  <span className="text-5xl font-light" style={{ color: '#121212' }}>{t.legacy.price}</span>
+                  <span className="text-base ml-1" style={{ color: '#7A6F66' }}>{t.legacy.period}</span>
+                </div>
+                <p className="text-sm" style={{ color: '#7A6F66' }}>{t.legacy.description}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {t.legacy.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#B1643B' }} />
+                    <span className="text-sm" style={{ color: '#4A3E36' }}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                onClick={() => handleSelectMembership('legacy')}
+                className="w-full py-6 text-base"
+                style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#121212')}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#B1643B')}
+              >
+                {t.joinNow}
+              </Button>
+            </Card>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Why Create an Account — Value Props */}
+      <div className="py-20 px-4" style={{ backgroundColor: '#121212' }}>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl text-center mb-4" style={{ color: '#F5F1EB' }}>
+            {language === 'en' ? 'Why Join the CREOVA Family?' : 'Pourquoi rejoindre la famille CREOVA?'}
+          </h2>
+          <p className="text-center mb-14 text-lg" style={{ color: '#E3DCD3' }}>
+            {language === 'en'
+              ? 'Every account unlocks a world of creative community and opportunity.'
+              : 'Chaque compte ouvre un monde de communauté créative et d\'opportunité.'}
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Users className="w-8 h-8" style={{ color: '#A68F59' }} />,
+                title: language === 'en' ? 'Community First' : 'Communauté d\'abord',
+                desc: language === 'en'
+                  ? 'Connect with BIPOC creatives, artists, and entrepreneurs across Ontario.'
+                  : 'Connectez-vous avec des créatifs, artistes et entrepreneurs BIPOC en Ontario.'
+              },
+              {
+                icon: <Smartphone className="w-8 h-8" style={{ color: '#A68F59' }} />,
+                title: language === 'en' ? 'SEEN App Access' : 'Accès App SEEN',
+                desc: language === 'en'
+                  ? 'Be among the first to experience our app where artists and collectors meet.'
+                  : 'Soyez parmi les premiers à découvrir notre app où artistes et collectionneurs se rencontrent.'
+              },
+              {
+                icon: <Palette className="w-8 h-8" style={{ color: '#A68F59' }} />,
+                title: language === 'en' ? 'Collab on SEEN Drops' : 'Collabs SEEN',
+                desc: language === 'en'
+                  ? 'Creator and Legacy members can submit work and co-design pieces in the SEEN collection.'
+                  : 'Les membres Créateur et Héritage peuvent soumettre leur travail et co-concevoir des pièces SEEN.'
+              },
+              {
+                icon: <Zap className="w-8 h-8" style={{ color: '#A68F59' }} />,
+                title: language === 'en' ? 'Exclusive Access' : 'Accès Exclusif',
+                desc: language === 'en'
+                  ? 'Members-only events, workshops, discounts, and priority booking for all CREOVA services.'
+                  : 'Événements, ateliers, rabais et réservation prioritaire réservés aux membres.'
+              }
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="flex justify-center mb-4">{item.icon}</div>
+                <h3 className="text-lg mb-2" style={{ color: '#F5F1EB' }}>{item.title}</h3>
+                <p className="text-sm" style={{ color: '#7A6F66' }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 text-center">
+            <Button
+              onClick={() => navigate('/auth')}
+              className="px-10 py-6 text-base rounded-full"
+              style={{ backgroundColor: '#A68F59', color: '#F5F1EB' }}
+            >
+              {language === 'en' ? 'Create Your Free Account' : 'Créer Votre Compte Gratuit'}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Notify Me */}
+      <div className="py-12 px-4" style={{ backgroundColor: '#E3DCD3' }}>
         <div className="max-w-md mx-auto text-center">
-          <Mail className="w-12 h-12 mx-auto mb-4 text-[#B1643B]" />
-          <h3 className="text-2xl mb-4 text-[#121212]">{t.notifyTitle}</h3>
+          <Mail className="w-10 h-10 mx-auto mb-4" style={{ color: '#B1643B' }} />
+          <h3 className="text-2xl mb-2" style={{ color: '#121212' }}>{t.notifyTitle}</h3>
+          <p className="text-sm mb-6" style={{ color: '#7A6F66' }}>
+            {language === 'en'
+              ? 'Get notified about new SEEN drops, events, and membership updates.'
+              : 'Soyez informé des nouveaux drops SEEN, événements et mises à jour d\'adhésion.'}
+          </p>
           <div className="flex gap-2">
             <Input
               type="email"
@@ -267,100 +523,14 @@ export default function MembershipsPage() {
             />
             <Button
               onClick={handleNotifyMe}
-              className="bg-[#121212] text-[#F5F1EB] hover:bg-[#B1643B]"
+              style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
             >
               {t.notifyButton}
             </Button>
           </div>
           {notifySuccess && (
-            <p className="mt-3 text-[#A68F59]">{t.notifySuccess}</p>
+            <p className="mt-3" style={{ color: '#A68F59' }}>{t.notifySuccess}</p>
           )}
-        </div>
-      </div>
-
-      {/* Membership Tiers */}
-      <div className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-sm mb-8" style={{ color: '#7A6F66' }}>
-            * All prices in CAD. 13% GST/HST (Ontario) applies to all memberships.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Creator Membership */}
-            <Card className="p-8 border-2 border-[#A68F59] bg-white hover:shadow-2xl transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <Star className="w-8 h-8 text-[#A68F59]" />
-                <h2 className="text-3xl">{t.creator.name}</h2>
-              </div>
-              <div className="mb-6">
-                <span className="text-5xl">{t.creator.price}</span>
-                <span className="text-xl text-gray-600">{t.creator.period}</span>
-              </div>
-              <p className="text-gray-600 mb-8">{t.creator.description}</p>
-              
-              <ul className="space-y-3 mb-8">
-                {t.creator.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#A68F59] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                onClick={() => handleSelectMembership('creator')}
-                className="w-full bg-[#A68F59] text-[#F5F1EB] hover:bg-[#B1643B] py-6 text-lg"
-              >
-                {t.joinNow}
-              </Button>
-            </Card>
-
-            {/* Legacy Membership */}
-            <Card className="p-8 border-2 border-[#B1643B] bg-white hover:shadow-2xl transition-shadow relative">
-              <div className="absolute top-4 right-4 bg-[#B1643B] text-[#F5F1EB] px-3 py-1 rounded-full text-sm">
-                PREMIUM
-              </div>
-              <div className="flex items-center gap-3 mb-4">
-                <Crown className="w-8 h-8 text-[#B1643B]" />
-                <h2 className="text-3xl">{t.legacy.name}</h2>
-              </div>
-              <div className="mb-6">
-                <span className="text-5xl">{t.legacy.price}</span>
-                <span className="text-xl text-gray-600">{t.legacy.period}</span>
-              </div>
-              <p className="text-gray-600 mb-8">{t.legacy.description}</p>
-              
-              <ul className="space-y-3 mb-8">
-                {t.legacy.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#B1643B] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                onClick={() => handleSelectMembership('legacy')}
-                className="w-full bg-[#B1643B] text-[#F5F1EB] hover:bg-[#121212] py-6 text-lg"
-              >
-                {t.joinNow}
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      {/* Community Section */}
-      <div className="bg-[#121212] text-[#F5F1EB] py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl mb-6">
-            {language === 'en' ? 'Join the Creative Community' : 'Rejoignez la Communauté Créative'}
-          </h2>
-          <p className="text-xl text-[#E3DCD3] mb-8">
-            {language === 'en' 
-              ? 'Connect with fellow BIPOC creatives, access exclusive resources, and build your legacy with CREOVA.'
-              : 'Connectez-vous avec d\'autres créatifs BIPOC, accédez à des ressources exclusives et construisez votre héritage avec CREOVA.'
-            }
-          </p>
         </div>
       </div>
 
@@ -383,7 +553,7 @@ export default function MembershipsPage() {
                 id="name"
                 value={customerInfo.name}
                 onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                placeholder="John Doe"
+                placeholder="Jane Doe"
                 className="mt-2"
               />
             </div>
@@ -395,26 +565,30 @@ export default function MembershipsPage() {
                 type="email"
                 value={customerInfo.email}
                 onChange={(e) => setCustomerInfo({ ...customerInfo, email: e.target.value })}
-                placeholder="john@example.com"
+                placeholder="jane@example.com"
                 className="mt-2"
               />
             </div>
 
             {selectedMembership && (
-              <div className="bg-[#F5F1EB] p-4 rounded-lg">
+              <div className="p-4 rounded-lg" style={{ backgroundColor: '#F5F1EB' }}>
                 <div className="flex justify-between items-center">
                   <span className="font-medium" style={{ color: '#121212' }}>
                     {selectedMembership === 'creator' ? t.creator.name : t.legacy.name} Membership
                   </span>
                   <span className="text-xl" style={{ color: '#B1643B' }}>
                     {selectedMembership === 'creator' ? t.creator.price : t.legacy.price}
-                    <span className="text-sm text-gray-600">{t.creator.period}</span>
+                    <span className="text-sm" style={{ color: '#7A6F66' }}>
+                      {selectedMembership === 'creator' ? t.creator.period : t.legacy.period}
+                    </span>
                   </span>
                 </div>
+                <p className="text-xs mt-2" style={{ color: '#7A6F66' }}>
+                  {language === 'en' ? '+ 13% HST (Ontario). Auto-renews annually.' : '+ 13% TVH (Ontario). Renouvellement automatique annuel.'}
+                </p>
               </div>
             )}
 
-            {/* Terms and Privacy Agreement */}
             <div className="flex items-start gap-3 pt-2">
               <Checkbox
                 id="terms"
@@ -469,8 +643,8 @@ export default function MembershipsPage() {
                   )}
                 </Label>
                 <p className="text-xs mt-1" style={{ color: '#7A6F66' }}>
-                  {language === 'en' 
-                    ? 'Required for subscription. Your membership will auto-renew annually.' 
+                  {language === 'en'
+                    ? 'Required for subscription. Your membership will auto-renew annually.'
                     : 'Requis pour l\'abonnement. Votre adhésion se renouvelle automatiquement chaque année.'}
                 </p>
               </div>
@@ -489,7 +663,8 @@ export default function MembershipsPage() {
             <Button
               onClick={handleProceedToPayment}
               disabled={isProcessing}
-              className="flex-1 bg-[#121212] text-[#F5F1EB] hover:bg-[#B1643B]"
+              className="flex-1 text-[#F5F1EB]"
+              style={{ backgroundColor: '#121212' }}
             >
               {isProcessing ? (
                 <>

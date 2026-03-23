@@ -10,7 +10,7 @@ import { supabase } from '../utils/supabase/client';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { toast } from 'sonner@2.0.3';
 import { motion } from 'motion/react';
-import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, Sparkles } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, Sparkles, Users, Smartphone, Palette, Tag } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { logger } from '../utils/logger';
 
@@ -142,7 +142,7 @@ export function AuthPage() {
       }
 
       if (data.user) {
-        toast.success('Account created! Please check your email to verify your account.');
+        toast.success('Welcome to the CREOVA family! Check your email to verify your account and activate your Community membership.');
         setMode('login');
         setFormData({ name: '', email: formData.email, password: '', confirmPassword: '' });
       }
@@ -241,16 +241,43 @@ export function AuthPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl mb-4" style={{ color: '#F5F1EB' }}>
-              {mode === 'login' ? 'Welcome Back' : 'Join CREOVA'}
+              {mode === 'login' ? 'Welcome Back' : 'Join the CREOVA Family'}
             </h1>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#E3DCD3' }}>
-              {mode === 'login' 
-                ? 'Sign in to access your membership and exclusive benefits' 
-                : 'Create an account to unlock member-only features and content'}
+              {mode === 'login'
+                ? 'Sign in to access your membership, SEEN collection, and exclusive community benefits'
+                : 'Free to join — get community access, SEEN app early entry, and exclusive member perks'}
             </p>
           </motion.div>
         </div>
       </section>
+
+      {/* Member Benefits Strip — show on signup to motivate sign-up */}
+      {mode === 'signup' && (
+        <div className="py-6 px-4" style={{ backgroundColor: '#2C2C2C' }}>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-xs tracking-widest uppercase mb-5" style={{ color: '#A68F59' }}>
+              What you unlock with a free account
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: <Users className="w-5 h-5" />, label: 'Community Membership', sub: 'Profile + community feed' },
+                { icon: <Smartphone className="w-5 h-5" />, label: 'SEEN App Access', sub: 'Early waitlist access' },
+                { icon: <Palette className="w-5 h-5" />, label: 'SEEN Collection', sub: 'Browse all artist drops' },
+                { icon: <Tag className="w-5 h-5" />, label: 'Member Discounts', sub: 'Upgrade anytime for deals' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 p-3 rounded-lg" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+                  <span style={{ color: '#A68F59' }}>{item.icon}</span>
+                  <div>
+                    <p className="text-xs font-medium" style={{ color: '#F5F1EB' }}>{item.label}</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#7A6F66' }}>{item.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Auth Form */}
       <section className="py-16">
