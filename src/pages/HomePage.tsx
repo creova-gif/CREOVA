@@ -527,7 +527,7 @@ export function HomePage() {
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.4) 0%, transparent 60%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
-                  <img src={photoEvent2} alt="CREOVA community networking event" className="w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} />
+                  <img src="/community-chess-new.jpg" alt="CREOVA community chess session" className="w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
