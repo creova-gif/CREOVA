@@ -6,7 +6,7 @@ import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { CartDrawer } from './CartDrawer';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import creovaLogo from 'figma:asset/1253f3bdc503d1419fa74efcfbe871b2538a54b3.png';
+import creovaLogo from '../assets/creova-logo.png';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +46,7 @@ export function Navigation() {
                 src={creovaLogo} 
                 alt="CREOVA - Creative Stories, Digital Impact" 
                 className="h-12 w-auto transition-all duration-300 group-hover:scale-105"
-                style={{ filter: 'brightness(1.1) contrast(1.2)' }}
+                style={{ mixBlendMode: 'multiply' }}
               />
             </Link>
 

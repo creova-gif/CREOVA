@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { Instagram, Mail, MapPin, Linkedin } from 'lucide-react';
-import creovaLogo from 'figma:asset/1253f3bdc503d1419fa74efcfbe871b2538a54b3.png';
+import creovaLogo from '../assets/creova-logo.png';
 import { useLanguage } from '../context/LanguageContext';
 
 export function Footer() {
@@ -15,6 +15,7 @@ export function Footer() {
               src={creovaLogo} 
               alt="CREOVA - Creative Stories, Digital Impact" 
               className="h-10 w-auto"
+              style={{ mixBlendMode: 'screen' }}
             />
           </div>
 
