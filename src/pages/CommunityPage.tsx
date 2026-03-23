@@ -141,6 +141,20 @@ export function CommunityPage() {
       captionRight: null,
       objectPosition: 'center 25%',
     },
+    {
+      name: 'MSK Project - SSHRC Canada',
+      description: language === 'fr'
+        ? 'Un projet transformateur financé par SSHRC Canada à travers le programme Match of Minds, dédié à mobiliser les connaissances subjuguées pour favoriser un Niagara juste et inclusif.'
+        : 'A transformative project funded by SSHRC Canada through the Match of Minds Program, dedicated to mobilizing subjugated knowledges to foster a just and inclusive Niagara.',
+      logo: 'community partnership',
+      website: '#',
+      image: '/card-msk.jpg',
+      badge: 'MSK',
+      badgeSub: 'SSHRC Canada',
+      captionLeft: { line1: 'NIAGARA REGION', line2: 'MSK\nPROJECT' },
+      captionRight: null,
+      objectPosition: 'center 30%',
+    },
   ];
 
   const communityBenefits = language === 'fr' ? [
@@ -739,7 +753,7 @@ export function CommunityPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {communityPartners.map((partner, index) => (
               <motion.div
                 key={index}
