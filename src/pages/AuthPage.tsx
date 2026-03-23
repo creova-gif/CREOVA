@@ -291,58 +291,49 @@ export function AuthPage() {
           >
             <Card className="bg-white rounded-2xl shadow-xl p-8">
               {/* Mode Toggle */}
-              <div className="flex gap-2 mb-8">
-                <Button
+              <div className="flex rounded-xl mb-8 overflow-hidden" style={{ backgroundColor: '#F5F1EB', padding: '4px', gap: '4px' }}>
+                <button
+                  type="button"
                   onClick={() => setMode('login')}
-                  variant={mode === 'login' ? 'default' : 'outline'}
-                  className="flex-1"
-                  style={mode === 'login' ? { backgroundColor: '#121212', color: '#F5F1EB' } : {}}
+                  className="flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-200"
+                  style={mode === 'login' ? {
+                    background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)',
+                    color: '#FFFFFF',
+                    boxShadow: '0 2px 8px rgba(166,143,89,0.35)'
+                  } : { color: '#7A6F66', background: 'transparent' }}
                 >
                   Login
-                </Button>
-                <Button
+                </button>
+                <button
+                  type="button"
                   onClick={() => setMode('signup')}
-                  variant={mode === 'signup' ? 'default' : 'outline'}
-                  className="flex-1"
-                  style={mode === 'signup' ? { backgroundColor: '#121212', color: '#F5F1EB' } : {}}
+                  className="flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-200"
+                  style={mode === 'signup' ? {
+                    background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)',
+                    color: '#FFFFFF',
+                    boxShadow: '0 2px 8px rgba(166,143,89,0.35)'
+                  } : { color: '#7A6F66', background: 'transparent' }}
                 >
                   Sign Up
-                </Button>
+                </button>
               </div>
 
               {/* OAuth Providers */}
-              <div className="space-y-3 mb-6">
+              <div className="mb-6">
                 <Button
                   onClick={() => handleOAuthLogin('google')}
                   variant="outline"
-                  className="w-full flex items-center justify-center gap-3"
+                  className="w-full flex items-center justify-center gap-3 h-12 text-sm font-medium border-2 hover:border-[#A68F59] transition-colors"
+                  style={{ borderColor: '#E3DCD3', color: '#121212' }}
                 >
-                  <Mail className="w-5 h-5" />
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
                   Continue with Google
                 </Button>
-                <div className="grid grid-cols-3 gap-2">
-                  <Button
-                    onClick={() => handleOAuthLogin('facebook')}
-                    variant="outline"
-                    className="flex items-center justify-center"
-                  >
-                    <Mail className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    onClick={() => handleOAuthLogin('github')}
-                    variant="outline"
-                    className="flex items-center justify-center"
-                  >
-                    <Mail className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    onClick={() => handleOAuthLogin('apple')}
-                    variant="outline"
-                    className="flex items-center justify-center"
-                  >
-                    <Mail className="w-5 h-5" />
-                  </Button>
-                </div>
               </div>
 
               <div className="relative mb-6">
@@ -365,6 +356,7 @@ export function AuthPage() {
                         id="name"
                         type="text"
                         placeholder="John Doe"
+                        autoComplete="name"
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
                         className="pl-10"
@@ -382,6 +374,7 @@ export function AuthPage() {
                       id="email"
                       type="email"
                       placeholder="john@example.com"
+                      autoComplete="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       className="pl-10"
@@ -398,6 +391,7 @@ export function AuthPage() {
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="••••••••"
+                      autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
                       value={formData.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
                       className="pl-10 pr-10"
@@ -444,6 +438,7 @@ export function AuthPage() {
                         id="confirmPassword"
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••"
+                        autoComplete="new-password"
                         value={formData.confirmPassword}
                         onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
                         className="pl-10"
@@ -497,14 +492,14 @@ export function AuthPage() {
                 )}
 
                 {/* Submit Button */}
-                <Button
+                <button
                   type="submit"
                   disabled={isLoading || !captchaToken}
-                  className="w-full py-6 text-lg"
-                  style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+                  className="w-full py-4 rounded-lg text-base font-medium text-white transition-opacity disabled:opacity-50"
+                  style={{ background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)', boxShadow: '0 4px 14px rgba(166,143,89,0.35)' }}
                 >
                   {isLoading ? 'Processing...' : mode === 'login' ? 'Sign In' : 'Create Account'}
-                </Button>
+                </button>
 
                 {/* Forgot Password */}
                 {mode === 'login' && (
