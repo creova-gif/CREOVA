@@ -65,6 +65,16 @@ export function Navigation() {
                 </Link>
               ))}
 
+              {/* SEEN Platform Link */}
+              <Link
+                to="/seen"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 hover:opacity-85 ml-2"
+                style={{ backgroundColor: '#4AADCC', color: '#06060F' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#06060F', opacity: 0.6 }} />
+                SEEN
+              </Link>
+
               {/* Pricing Dropdown */}
               <div 
                 className="relative"
@@ -173,6 +183,17 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
+
+              {/* SEEN - Mobile */}
+              <Link
+                to="/seen"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2 py-3 px-4 text-sm font-medium tracking-wide"
+                style={{ color: '#4AADCC' }}
+              >
+                <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#4AADCC' }} />
+                SEEN — Upcoming Platform
+              </Link>
 
               {/* Mobile Pricing Accordion */}
               <div>

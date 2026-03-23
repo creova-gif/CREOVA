@@ -458,7 +458,7 @@ export function ShopPage() {
           <div className="flex items-center justify-center gap-3 text-center flex-wrap">
             <Calendar className="w-4 h-4" style={{ color: '#FFFFFF' }} />
             <p className="text-xs md:text-sm tracking-wider" style={{ color: '#FFFFFF' }}>
-              <strong>PRE-ORDER NOW</strong> — Launching April 2026
+              <strong>PRE-ORDER NOW</strong> — Launching Summer 2026
             </p>
             <Package className="w-4 h-4" style={{ color: '#FFFFFF' }} />
           </div>
@@ -476,7 +476,7 @@ export function ShopPage() {
               className="mb-3"
             >
               <div className="inline-block px-4 py-1 mb-4 text-[10px] tracking-widest" style={{ backgroundColor: '#121212', color: '#F5F1EB' }}>
-                LAUNCHING APRIL 2026 — PRE-ORDER NOW
+                LAUNCHING SUMMER 2026 — PRE-ORDER NOW
               </div>
             </motion.div>
             <motion.h1 
@@ -515,7 +515,7 @@ export function ShopPage() {
             >
               <Calendar className="w-4 h-4" style={{ color: '#A68F59' }} />
               <span className="text-xs tracking-wide" style={{ color: '#A68F59' }}>
-                Pre-Order • Ships April 2026
+                Pre-Order • Ships Summer 2026
               </span>
             </motion.div>
           </div>
@@ -594,10 +594,10 @@ export function ShopPage() {
                     }}
                   />
                   
-                  {/* Coming Soon Overlay for ALL clothing - Coming April 2026 */}
+                  {/* Coming Soon Overlay for ALL clothing - Coming Summer 2026 */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ backgroundColor: 'rgba(18, 18, 18, 0.75)' }}>
                     <div className="px-6 py-3 text-xs tracking-widest text-center" style={{ backgroundColor: '#A68F59', color: '#FFFFFF' }}>
-                      COMING APRIL 2026
+                      COMING SUMMER 2026
                     </div>
                     <div className="mt-3 text-xs tracking-wide text-center" style={{ color: '#F5F1EB' }}>
                       Pre-Order Available Soon
@@ -617,7 +617,7 @@ export function ShopPage() {
                     </div>
                   )}
 
-                  {/* Quick Actions on Hover - DISABLED: All items coming April 2026 */}
+                  {/* Quick Actions on Hover - DISABLED: All items coming Summer 2026 */}
                   {false && (
                     <div 
                       className="absolute bottom-3 left-3 right-3 flex gap-2 transition-all duration-300"
