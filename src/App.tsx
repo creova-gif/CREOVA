@@ -37,6 +37,7 @@ import { Sankofa } from './components/Sankofa';
 import { AnalyticsTracker } from './components/AnalyticsTracker';
 import { ExitIntentModal } from './components/ExitIntentModal';
 import { ContactInfoBanner } from './components/ContactInfoBanner';
+import { SEENPage } from './pages/SEENPage';
 
 function AppContent() {
   const { language, t } = useLanguage();
@@ -190,6 +191,8 @@ function AppContent() {
             <Route path="/admin/hub" element={<AdminAuth><AdminHubPage /></AdminAuth>} />
             <Route path="/admin/database" element={<DatabaseAccessPage />} /> 
             
+            <Route path="/seen" element={<SEENPage />} />
+
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
             <Route path="/payment-success" element={<PaymentSuccessPage />} />

@@ -329,6 +329,92 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* SEEN Platform Teaser */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#06060F' }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            background: 'radial-gradient(ellipse 70% 80% at 60% 50%, rgba(74,173,204,0.07) 0%, transparent 65%)'
+          }} />
+          <div className="absolute inset-0" style={{
+            background: 'radial-gradient(ellipse 50% 60% at 10% 50%, rgba(200,133,58,0.05) 0%, transparent 60%)'
+          }} />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span
+                  className="w-2 h-2 rounded-full animate-pulse"
+                  style={{ backgroundColor: '#4AADCC' }}
+                />
+                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#4AADCC' }}>
+                  Upcoming Platform
+                </span>
+              </div>
+              <h2
+                className="font-bold leading-none mb-6 tracking-tight"
+                style={{
+                  fontSize: 'clamp(4rem, 10vw, 7rem)',
+                  color: 'transparent',
+                  backgroundImage: 'linear-gradient(135deg, #FFFFFF 0%, rgba(74,173,204,0.85) 60%, rgba(200,133,58,0.7) 100%)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                }}
+              >
+                SEEN
+              </h2>
+              <p className="text-base md:text-lg mb-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                Canada's culturally-centred storytelling platform — where Indigenous, Black Canadian, francophone, and immigrant voices own their stories.
+              </p>
+              <p className="text-sm mb-10" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                Story worlds · Creator IP ownership · CMF-compliant · Multilingual · Audio-first
+              </p>
+              <Link
+                to="/seen"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90 group"
+                style={{ backgroundColor: '#4AADCC', color: '#06060F' }}
+              >
+                Explore SEEN
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {[
+                { label: 'Story Worlds', desc: 'Immersive cultural narratives with ambient audio', accent: '#4AADCC' },
+                { label: 'Creator First', desc: '100% IP ownership — always', accent: '#C8853A' },
+                { label: 'Multilingual', desc: 'EN · FR · ES · Indigenous languages', accent: '#8BC34A' },
+                { label: 'CMF Ready', desc: 'Built for Canadian federal funding', accent: '#B06DC8' },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-5 rounded-2xl"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  <div className="w-8 h-1 rounded-full mb-3" style={{ backgroundColor: item.accent }} />
+                  <div className="text-sm font-medium mb-1" style={{ color: '#FFFFFF' }}>{item.label}</div>
+                  <div className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>{item.desc}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section - Enhanced with Images */}
       <section className="py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
