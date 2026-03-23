@@ -1014,7 +1014,7 @@ export function PricingPage() {
               <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>
                 Loyalty & Referral Discounts
               </h3>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <p className="text-sm mb-1" style={{ color: '#7A6F66' }}>Photo + Video Bundle</p>
                   <p className="text-2xl" style={{ color: '#A68F59' }}>10% OFF</p>

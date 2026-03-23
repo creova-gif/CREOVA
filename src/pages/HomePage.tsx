@@ -134,7 +134,7 @@ export function HomePage() {
 
               <div className="mb-8">
                 <motion.h1 
-                  className="text-6xl md:text-7xl lg:text-8xl mb-8 tracking-tight" 
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 tracking-tight" 
                   style={{ color: '#F5F1EB', lineHeight: '1.05' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ export function HomePage() {
               >
                 <Button 
                   size="lg" 
-                  className="group px-8 py-6 rounded-xl text-lg border-2 hover:shadow-2xl transition-all duration-500" 
+                  className="group px-6 py-4 sm:px-8 sm:py-6 rounded-xl text-base sm:text-lg border-2 hover:shadow-2xl transition-all duration-500" 
                   style={{ 
                     backgroundColor: '#F5F1EB', 
                     color: '#121212',
@@ -196,7 +196,7 @@ export function HomePage() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="px-8 py-6 rounded-xl text-lg border-2 backdrop-blur-sm hover:backdrop-blur-md transition-all duration-500"
+                  className="px-6 py-4 sm:px-8 sm:py-6 rounded-xl text-base sm:text-lg border-2 backdrop-blur-sm hover:backdrop-blur-md transition-all duration-500"
                   style={{ 
                     borderColor: '#A68F59',
                     color: '#A68F59',
@@ -209,7 +209,7 @@ export function HomePage() {
                 <Button 
                   size="lg" 
                   variant="ghost" 
-                  className="px-8 py-6 rounded-xl text-lg border-2 transition-all duration-500"
+                  className="px-6 py-4 sm:px-8 sm:py-6 rounded-xl text-base sm:text-lg border-2 transition-all duration-500"
                   style={{ 
                     borderColor: '#E3DCD3',
                     color: '#7A6F66',
@@ -424,7 +424,7 @@ export function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {[
                 { label: 'Story Worlds', desc: 'Immersive cultural narratives with ambient audio' },
@@ -470,10 +470,10 @@ export function HomePage() {
               <div className="w-12 h-px" style={{ backgroundColor: '#A68F59' }} />
               <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>Our Services</span>
             </div>
-            <h2 className="text-5xl md:text-6xl tracking-tight leading-tight" style={{ color: '#F5F1EB' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight" style={{ color: '#F5F1EB' }}>
               What We Offer
             </h2>
-            <p className="text-xl mt-6 max-w-2xl leading-relaxed" style={{ color: '#7A6F66' }}>
+            <p className="text-base sm:text-xl mt-6 max-w-2xl leading-relaxed" style={{ color: '#7A6F66' }}>
               Comprehensive creative services for brands, entrepreneurs, and cultural storytellers across Canada
             </p>
           </motion.div>
@@ -857,17 +857,17 @@ export function HomePage() {
             viewport={{ once: true }}
           >
             <div className="h-1 w-24 mx-auto mb-10" style={{ backgroundColor: '#A68F59' }}></div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight" style={{ color: '#F5F1EB', lineHeight: '1.1' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 tracking-tight" style={{ color: '#F5F1EB', lineHeight: '1.1' }}>
               Ready to Create<br />Something Extraordinary?
             </h2>
-            <p className="text-xl mb-12 leading-relaxed max-w-3xl mx-auto" style={{ color: '#E3DCD3' }}>
+            <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto" style={{ color: '#E3DCD3' }}>
               From brand identity to milestone moments, we bring vision to life with precision and purpose. 
               Let's collaborate to create something that resonates and inspires.
             </p>
-            <div className="flex flex-wrap gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center items-center">
               <Button 
                 size="lg" 
-                className="group px-10 py-7 rounded-xl text-xl border-2 hover:shadow-2xl hover:scale-105 transition-all duration-500" 
+                className="group w-full sm:w-auto px-8 py-5 sm:px-10 sm:py-7 rounded-xl text-base sm:text-xl border-2 hover:shadow-2xl hover:scale-105 transition-all duration-500" 
                 style={{ 
                   backgroundColor: '#F5F1EB', 
                   color: '#121212',
@@ -883,7 +883,7 @@ export function HomePage() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="px-10 py-7 rounded-xl text-xl border-2 backdrop-blur-sm hover:backdrop-blur-md hover:scale-105 transition-all duration-500"
+                className="w-full sm:w-auto px-8 py-5 sm:px-10 sm:py-7 rounded-xl text-base sm:text-xl border-2 backdrop-blur-sm hover:backdrop-blur-md hover:scale-105 transition-all duration-500"
                 style={{ 
                   borderColor: '#A68F59',
                   color: '#A68F59',
