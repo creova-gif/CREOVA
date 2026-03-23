@@ -932,7 +932,7 @@ export function EventsCollaboratePage() {
                   src="/card-justin-panel.jpg"
                   alt="CREOVA Founder Justin Mafie at the Innovation Showcase, Brock University LINC"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ objectPosition: '60% 15%' }}
+                  style={{ objectPosition: 'center 25%' }}
                 />
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(to top, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 50%, transparent 100%)'
