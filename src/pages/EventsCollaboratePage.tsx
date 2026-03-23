@@ -14,10 +14,10 @@ import { Captcha } from '../components/Captcha';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { logger } from '../utils/logger';
-import bsscImage from 'figma:asset/3fbc46d04b02165989d148069378d1cc20779417.png';
-import blsaImage from 'figma:asset/28224c9e999f1dac33e62c4b101cb36d5714b2be.png';
-import busuClubsImage from 'figma:asset/7ced599f4d655b3c3d798c5d031d02646d11bfc3.png';
-import fbfImage from 'figma:asset/b1f026e5b06da2564ae90baa5031d7c2c5ecfde1.png';
+const bsscImage = '/card-bssc.jpg';
+const blsaImage = '/card-blsa.jpg';
+const busuClubsImage = '/card-busu.jpg';
+const fbfImage = '/card-fbf.jpg';
 
 export function EventsCollaboratePage() {
   const { addItem } = useCart();
