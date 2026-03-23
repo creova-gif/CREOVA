@@ -4,7 +4,7 @@ import { Input } from './ui/input';
 import { MessageCircle, X, Send, Star, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
-import sankofaLogo from 'figma:asset/23503bc3325694b212c3983be418285b882f20c8.png';
+const sankofaLogo = '/sankofa-profile.jpg';
 
 interface Message {
   id: string;
@@ -181,7 +181,6 @@ export function Sankofa() {
                 src={sankofaLogo} 
                 alt="Sankofa" 
                 className="relative z-10 w-full h-full object-cover rounded-full"
-                style={{ filter: 'sepia(1) saturate(2) hue-rotate(-10deg) brightness(0.6)' }}
               />
               
               {/* Pulse animation */}
@@ -212,7 +211,6 @@ export function Sankofa() {
                       src={sankofaLogo} 
                       alt="Sankofa" 
                       className="w-full h-full object-cover"
-                      style={{ filter: 'sepia(1) saturate(2) hue-rotate(-10deg) brightness(0.6)' }}
                     />
                     <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2" style={{ backgroundColor: '#A68F59', borderColor: '#121212' }} />
                   </div>
