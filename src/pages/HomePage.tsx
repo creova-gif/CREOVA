@@ -12,16 +12,12 @@ import heroBackground from '../assets/photo-community-celebration.jpg';
 import heroImage1 from '../assets/photo-duo-portrait.jpg';
 import heroImage3 from '../assets/photo-duo-bench.jpg';
 import teamPhoto from '../assets/photo-team-atrium.jpg';
-import communityImage1 from 'figma:asset/03c6badb4ca3300cb50c2776b203004544d11ab3.png';
-import communityImage2 from 'figma:asset/cfaeb5454460dc9e5a1c0e3885ebc636b897a0.png';
-import communityImage3 from 'figma:asset/46ff4cae0f268156a0e7794e8a387a8d64db55da.png';
 import clientImage from '../assets/photo-duo-portrait.jpg';
-import photographyImage from 'figma:asset/1897beb0d120d7f8f93a7e51b8bc74e971678137.png';
-import brandIdentityImage from 'figma:asset/1253f3bdc503d1419fa74efcfbe871b2538a54b3.png';
-import videographyImage from 'figma:asset/9ff6eddef9ca70eee5f510a4e124926ae69f4254.png';
-import eventsImage from 'figma:asset/ca956e2128254b147edffd6b45ad64dc6e70ccc0.png';
-import socialMediaImage from 'figma:asset/9fa13760753c2875dd7d26a73dd47eccc00a364a.png';
-import shopSeenImage from 'figma:asset/aaa4c771f642b9d0ece5cd76547437241dde83d5.png';
+import photoEvent1 from '../assets/photo-event-market.jpg';
+import photoEvent2 from '../assets/photo-event-networking.jpg';
+import photoCommunity1 from '../assets/photo-community-convo.jpg';
+import photoCommunity2 from '../assets/photo-community-chess.jpg';
+import photoWelcome from '../assets/photo-welcome-bash.jpg';
 
 export function HomePage() {
   const { t } = useLanguage();
@@ -31,42 +27,48 @@ export function HomePage() {
       title: 'Photography',
       description: 'Brand, family, and professional portraiture',
       link: '/services',
-      image: photographyImage
+      image: photoEvent2,
+      accent: '#A68F59'
     },
     {
       icon: Video,
       title: 'Videography',
       description: 'Cinematic storytelling and event coverage',
       link: '/services',
-      image: videographyImage
+      image: photoWelcome,
+      accent: '#B1643B'
     },
     {
       icon: Palette,
       title: 'Brand Identity',
       description: 'Visual systems and strategic design',
       link: '/services',
-      image: brandIdentityImage
+      image: photoCommunity2,
+      accent: '#A68F59'
     },
     {
       icon: TrendingUp,
       title: 'Social Media',
       description: 'Content strategy and digital growth',
       link: '/services',
-      image: socialMediaImage
+      image: photoCommunity1,
+      accent: '#B1643B'
     },
     {
       icon: ShoppingBag,
       title: 'Shop SEEN',
       description: 'CREOVA apparel and accessories',
       link: '/shop',
-      image: shopSeenImage
+      image: photoEvent1,
+      accent: '#A68F59'
     },
     {
       icon: Calendar,
       title: 'Events',
       description: 'Workshops and creative gatherings',
-      link: '/events',
-      image: eventsImage
+      link: '/experience',
+      image: teamPhoto,
+      accent: '#B1643B'
     }
   ];
 
@@ -413,62 +415,74 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Services Section - Enhanced with Images */}
-      <section className="py-32 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Services Section — Cinematic */}
+      <section className="py-32 relative" style={{ backgroundColor: '#121212' }}>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-1/2 h-full" style={{
+            backgroundImage: `repeating-linear-gradient(90deg, #A68F59 0px, transparent 1px, transparent 80px)`
+          }} />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="mb-20"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 tracking-tight" style={{ color: '#121212' }}>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-px" style={{ backgroundColor: '#A68F59' }} />
+              <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>Our Services</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl tracking-tight leading-tight" style={{ color: '#F5F1EB' }}>
               What We Offer
             </h2>
-            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#4A3E36' }}>
+            <p className="text-xl mt-6 max-w-2xl leading-relaxed" style={{ color: '#7A6F66' }}>
               Comprehensive creative services for brands, entrepreneurs, and cultural storytellers across Canada
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
+                transition={{ duration: 0.7, delay: index * 0.08 }}
                 viewport={{ once: true }}
               >
                 <Link
                   to={feature.link}
-                  className="group block h-full overflow-hidden rounded-3xl border-2 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
-                  style={{ 
-                    backgroundColor: '#FFFFFF',
-                    borderColor: '#E3DCD3'
-                  }}
+                  className="group relative block overflow-hidden rounded-3xl transition-all duration-700 hover:shadow-2xl hover:scale-[1.02]"
+                  style={{ height: '380px' }}
                 >
-                  {/* Image Header */}
-                  <div className="relative h-64 overflow-hidden">
-                    <ImageWithFallback
-                      src={feature.image}
-                      alt={feature.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                      <feature.icon className="w-10 h-10 text-white" />
-                      <ArrowRight className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500" />
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.5) 50%, rgba(18,18,18,0.1) 100%)'
+                  }} />
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <div
+                      className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110"
+                      style={{ backgroundColor: 'rgba(166, 143, 89, 0.15)', border: `1px solid rgba(166,143,89,0.3)` }}
+                    >
+                      <feature.icon className="w-5 h-5" style={{ color: feature.accent }} />
                     </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8">
-                    <h3 className="text-2xl mb-3 tracking-tight group-hover:text-[#A68F59] transition-colors duration-300" style={{ color: '#121212' }}>
+                    <h3 className="text-2xl mb-2 tracking-tight" style={{ color: '#F5F1EB' }}>
                       {feature.title}
                     </h3>
-                    <p className="leading-relaxed" style={{ color: '#4A3E36' }}>{feature.description}</p>
-                    <div className="mt-6 h-1 w-0 group-hover:w-16 transition-all duration-500" style={{ backgroundColor: '#A68F59' }}></div>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: '#E3DCD3' }}>
+                      {feature.description}
+                    </p>
+                    <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
+                      style={{ color: feature.accent }}>
+                      <span className="text-sm font-medium">Explore</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                    <div className="h-px mt-3 w-0 group-hover:w-full transition-all duration-700" style={{ backgroundColor: feature.accent }} />
                   </div>
                 </Link>
               </motion.div>
@@ -480,153 +494,95 @@ export function HomePage() {
       {/* Community Insights */}
       <CommunityInsights />
 
-      {/* Upcoming Events Section - Innovation Showcase */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-96 h-96 rounded-full" 
-               style={{ backgroundColor: '#A68F59', filter: 'blur(100px)' }}></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full" 
-               style={{ backgroundColor: '#B1643B', filter: 'blur(100px)' }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" 
-                 style={{ backgroundColor: 'rgba(166, 143, 89, 0.15)', border: '1px solid rgba(166, 143, 89, 0.3)' }}>
-              <Calendar className="w-4 h-4" style={{ color: '#A68F59' }} />
-              <span className="text-sm font-medium" style={{ color: '#A68F59' }}>Upcoming Events</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#F5F1EB' }}>
-              Join Us at Our Next Event
-            </h2>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#E3DCD3' }}>
-              Connect with innovators, researchers, and creative minds at Brock University
-            </p>
-          </motion.div>
-
-          {/* Event Card - Innovation Showcase */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="bg-white rounded-3xl overflow-hidden shadow-2xl p-8 md:p-12">
-              {/* FREE EVENT Badge - Top */}
-              <div className="flex justify-between items-start mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" 
-                     style={{ backgroundColor: '#121212' }}>
-                  <span className="text-sm font-bold" style={{ color: '#F5F1EB' }}>FREE EVENT</span>
+      {/* Fall 2026 Community Season */}
+      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Photo collage */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <div className="space-y-4">
+                <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
+                  <img src={photoEvent2} alt="CREOVA community networking" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.4) 0%, transparent 60%)' }} />
                 </div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" 
-                     style={{ backgroundColor: '#F5F1EB' }}>
-                  <Award className="w-4 h-4" style={{ color: '#121212' }} />
-                  <span className="text-xs font-semibold" style={{ color: '#121212' }}>
-                    INNOVATION & RESEARCH
-                  </span>
+                <div className="relative overflow-hidden rounded-3xl aspect-square">
+                  <img src={photoEvent1} alt="CREOVA market event" className="w-full h-full object-cover" />
                 </div>
               </div>
+              <div className="space-y-4 pt-8">
+                <div className="relative overflow-hidden rounded-3xl aspect-square">
+                  <img src={photoWelcome} alt="CREOVA welcome event" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.3) 0%, transparent 70%)' }} />
+                </div>
+                <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
+                  <img src={photoCommunity1} alt="CREOVA community gathering" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </motion.div>
 
-              {/* Event Title */}
-              <h3 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#121212' }}>
-                Innovation Showcase 2026
-              </h3>
-
-              {/* Event Description */}
-              <p className="text-lg md:text-xl mb-10 leading-relaxed max-w-3xl" style={{ color: '#7A6F66' }}>
-                Brock University's annual celebration of research, entrepreneurship, and innovation. 
-                CREOVA will be showcasing alongside researchers, startups from the LINCubator, and 
-                community partners.
+            {/* Right: Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-px" style={{ backgroundColor: '#B1643B' }} />
+                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#B1643B' }}>Fall 2026 Season</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl mb-6 tracking-tight leading-tight" style={{ color: '#121212' }}>
+                This fall, we bring the community together.
+              </h2>
+              <p className="text-lg mb-8 leading-relaxed" style={{ color: '#4A3E36' }}>
+                From brand photography workshops to networking mixers, CREOVA's Fall 2026 season is built for BIPOC creatives and entrepreneurs across Ontario. Real skills, real connections, real impact.
               </p>
 
-              {/* Event Info Grid */}
-              <div className="grid md:grid-cols-2 gap-6 mb-10">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" 
-                       style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}>
-                    <Calendar className="w-6 h-6" style={{ color: '#B1643B' }} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold mb-1" style={{ color: '#121212' }}>Date & Time</p>
-                    <p className="text-base" style={{ color: '#7A6F66' }}>February 24, 2026</p>
-                    <p className="text-base" style={{ color: '#7A6F66' }}>3:00 PM - 5:00 PM EST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" 
-                       style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                    <Globe className="w-6 h-6" style={{ color: '#A68F59' }} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold mb-1" style={{ color: '#121212' }}>Location</p>
-                    <p className="text-base" style={{ color: '#7A6F66' }}>Rankin Family Pavilion</p>
-                    <p className="text-base" style={{ color: '#7A6F66' }}>Brock University</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Includes */}
-              <div className="bg-neutral-50 rounded-2xl p-8 mb-10">
-                <p className="text-base font-semibold mb-6" style={{ color: '#121212' }}>
-                  What's Included:
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {['FREE admission', 'CREOVA showcase booth', 'Networking opportunities', 'Innovation Awards ceremony'].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: '#A68F59' }} />
-                      <span className="text-base" style={{ color: '#7A6F66' }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <div className="flex gap-4">
-                <Link to="/experience" className="flex-1">
-                  <Button 
-                    className="w-full h-14 rounded-xl text-base font-semibold group transition-all duration-300 hover:shadow-xl"
-                    style={{ 
-                      backgroundColor: '#121212', 
-                      color: '#F5F1EB',
-                    }}
+              <div className="space-y-4 mb-10">
+                {[
+                  { label: 'September', desc: 'Brand Photography & Social Media Workshops' },
+                  { label: 'October', desc: 'Networking Mixers & Vineyard Brand Shoots' },
+                  { label: 'November', desc: 'Fall Showcase & Golden Hour Portraits' },
+                  { label: 'December', desc: 'CREOVA Holiday Showcase — Greater Niagara' }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-4 p-4 rounded-2xl"
+                    style={{ backgroundColor: 'rgba(166,143,89,0.06)', border: '1px solid rgba(166,143,89,0.12)' }}
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+                    <div className="text-sm font-medium w-24 flex-shrink-0 pt-0.5" style={{ color: '#A68F59' }}>{item.label}</div>
+                    <div className="text-sm" style={{ color: '#4A3E36' }}>{item.desc}</div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-          </motion.div>
 
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link 
-              to="/experience" 
-              className="inline-flex items-center gap-2 text-base font-medium hover:gap-3 transition-all duration-300"
-              style={{ color: '#A68F59' }}
-            >
-              View All Events & Workshops
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
+              <Link
+                to="/experience"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-base font-medium tracking-wide transition-all duration-500 hover:shadow-xl group"
+                style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+              >
+                View All Fall Events
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
+
+      {/* Community Photos Strip */}
+      <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', height: '2px' }}>
+        <div className="h-full w-full" style={{ background: 'linear-gradient(90deg, transparent, #A68F59, transparent)' }} />
+      </div>
 
       {/* Why CREOVA Section - Enhanced */}
       <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>

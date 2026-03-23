@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { toast } from 'sonner@2.0.3';
 import { Calendar, MapPin, Users, Clock, Lightbulb, Handshake, Star, ArrowRight, Award, FileText, ExternalLink, Check } from 'lucide-react';
+import photoSpotlight1 from '../assets/photo-event-networking.jpg';
+import photoSpotlight2 from '../assets/photo-community-convo.jpg';
 import { motion } from 'motion/react';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -878,7 +880,7 @@ export function EventsCollaboratePage() {
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=900&q=80&fit=crop"
+                  src={photoSpotlight1}
                   alt="Innovation Showcase at Brock University LINC"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -927,7 +929,7 @@ export function EventsCollaboratePage() {
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&q=80&fit=crop"
+                  src={photoSpotlight2}
                   alt="Female Founders Panel at Brock University LINC"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
