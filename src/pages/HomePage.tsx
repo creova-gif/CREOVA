@@ -636,9 +636,10 @@ export function HomePage() {
               >
                 <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-2xl">
                   <img
-                    src={photoMonique}
-                    alt="Monique Beauregard - Manager of Black Student Success Centre (BSSC) at Brock University"
+                    src="/photo-monique-stock.jpg"
+                    alt="Community partnership portrait"
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 15%' }}
                   />
                 </div>
                 {/* Floating Card with Client Info */}
