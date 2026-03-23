@@ -24,9 +24,6 @@ export function Sankofa() {
   const { language } = useLanguage();
   const { pathname } = useLocation();
 
-  // Hide on homepage — the intro page has its own hero CTA flow
-  if (pathname === '/') return null;
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -49,6 +46,9 @@ export function Sankofa() {
       setMessages([welcomeMsg]);
     }
   }, [isOpen]);
+
+  // Hide on homepage — all hooks must be called before any early return
+  if (pathname === '/') return null;
 
   const getBotResponse = (userMessage: string): string => {
     const msg = userMessage.toLowerCase();
