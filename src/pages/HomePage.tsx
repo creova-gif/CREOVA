@@ -6,7 +6,6 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 import { CommunityInsights } from '../components/CommunityInsights';
 import { TrustSignals } from '../components/TrustSignals';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { ErrorBoundaryTest } from '../components/ErrorBoundaryTest';
 import { useLanguage } from '../context/LanguageContext';
 import heroBackground from '../assets/photo-community-celebration.jpg';
 import heroImage1 from '../assets/photo-duo-portrait.jpg';
@@ -768,25 +767,6 @@ export function HomePage() {
       {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* Error Boundary Test Component - REMOVE BEFORE PRODUCTION */}
-      <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4" 
-                 style={{ backgroundColor: 'rgba(220, 38, 38, 0.1)', border: '1px solid rgba(220, 38, 38, 0.3)' }}>
-              <span className="text-sm font-semibold" style={{ color: '#DC2626' }}>⚠️ TESTING ONLY - REMOVE BEFORE PRODUCTION</span>
-            </div>
-            <h2 className="text-3xl mb-4" style={{ color: '#121212' }}>
-              Error Boundary Testing
-            </h2>
-            <p className="text-base max-w-2xl mx-auto" style={{ color: '#7A6F66' }}>
-              Click the button below to test our enterprise-grade error handling. 
-              The app won't crash - instead, you'll see a beautiful recovery screen.
-            </p>
-          </div>
-          <ErrorBoundaryTest />
-        </div>
-      </section>
 
       {/* Social Proof / Share Section */}
       <section className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
