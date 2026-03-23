@@ -46,7 +46,6 @@ export function Navigation() {
                 src={creovaLogo} 
                 alt="CREOVA - Creative Stories, Digital Impact" 
                 className="h-12 w-auto transition-all duration-300 group-hover:scale-105"
-                style={{ mixBlendMode: 'multiply' }}
               />
             </Link>
 
