@@ -521,17 +521,17 @@ export function SEENPage() {
           </div>
         ))}
 
-        <div className="relative z-10 max-w-5xl mx-auto">
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-3 mb-10"
+            className="flex items-center gap-3 mb-6 whitespace-nowrap"
           >
             <motion.div
               animate={{ scaleX: [1, 1.4, 1] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="h-px w-8" style={{ backgroundColor: '#148F77' }}
+              className="h-px w-8 flex-shrink-0" style={{ backgroundColor: '#148F77' }}
             />
             <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#148F77', fontFamily: 'var(--font-brand)' }}>
               A CREOVA ORIGINAL PLATFORM
@@ -539,12 +539,12 @@ export function SEENPage() {
             <motion.div
               animate={{ scaleX: [1, 1.4, 1] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-              className="h-px w-8" style={{ backgroundColor: '#148F77' }}
+              className="h-px w-8 flex-shrink-0" style={{ backgroundColor: '#148F77' }}
             />
           </motion.div>
 
-          {/* SEEN — letter-by-letter with shimmer */}
-          <div className="relative mb-6 inline-block">
+          {/* SEEN wordmark with shimmer */}
+          <div className="relative mb-6">
 
             {/* Scan beam sweeping across */}
             <div className="absolute inset-0 overflow-hidden rounded pointer-events-none z-20" style={{ mixBlendMode: 'overlay' }}>
