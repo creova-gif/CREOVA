@@ -523,11 +523,11 @@ export function HomePage() {
             >
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoCollage1} alt="CREOVA community event portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
+                  <img src={heroImage1} alt="CREOVA community portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.4) 0%, transparent 60%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
-                  <img src={photoEvent1} alt="CREOVA carnival portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+                  <img src={photoEvent2} alt="CREOVA community networking event" className="w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
@@ -536,7 +536,7 @@ export function HomePage() {
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.3) 0%, transparent 70%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
-                  <img src={photoCollage3} alt="CREOVA community gathering" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
+                  <img src={teamPhoto} alt="CREOVA team in atrium" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} />
                 </div>
               </div>
             </motion.div>
