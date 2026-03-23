@@ -17,7 +17,6 @@ import photoEvent2 from '../assets/photo-event-networking.jpg';
 import photoCommunity1 from '../assets/photo-community-convo.jpg';
 import photoCommunity2 from '../assets/photo-community-chess.jpg';
 import photoWelcome from '../assets/photo-welcome-bash.jpg';
-import photoMonique from '../assets/photo-monique.jpg';
 import photoServicePhotography from '../assets/photo-carnival-portrait.jpg';
 import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
@@ -625,52 +624,13 @@ export function HomePage() {
             viewport={{ once: true }}
           >
             <div className="h-1 w-24 mb-10" style={{ backgroundColor: '#B1643B' }}></div>
-            <div className="flex flex-col lg:flex-row gap-12 items-start mb-12">
-              {/* Left: Image - Smaller */}
+            <div className="mb-12">
+              {/* Content */}
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="flex-shrink-0 w-full lg:w-80"
-              >
-                <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-2xl">
-                  <img
-                    src="/photo-monique-stock.jpg"
-                    alt="Community partnership portrait"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center 15%' }}
-                  />
-                </div>
-                {/* Floating Card with Client Info */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="mt-6 bg-white p-6 rounded-2xl shadow-xl border-2"
-                  style={{ borderColor: '#E3DCD3' }}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
-                         style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                      <Heart className="w-6 h-6" style={{ color: '#A68F59' }} />
-                    </div>
-                    <div>
-                      <div className="mb-2" style={{ color: '#121212' }}>Monique Beauregard</div>
-                      <div className="text-xs leading-relaxed" style={{ color: '#7A6F66' }}>Manager of Black Student Success Centre (BSSC) at Brock University</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-
-              {/* Right: Content */}
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-                className="flex-1"
               >
                 <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 tracking-tight" style={{ color: '#121212' }}>
                   Crafted with Intention
@@ -679,7 +639,7 @@ export function HomePage() {
                   Every frame, every brand element, every story we tell is designed with purpose, 
                   cultural authenticity, and strategic thinking.
                 </p>
-                <div className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   {[
                     {
                       icon: Globe,
