@@ -13,7 +13,6 @@ import heroImage1 from '../assets/photo-duo-portrait.jpg';
 import heroImage3 from '../assets/photo-duo-bench.jpg';
 import teamPhoto from '../assets/photo-team-atrium.jpg';
 import photoEvent1 from '../assets/photo-event-market.jpg';
-import photoEvent2 from '../assets/photo-event-networking.jpg';
 import photoCommunity1 from '../assets/photo-community-convo.jpg';
 import photoCommunity2 from '../assets/photo-community-chess.jpg';
 import photoWelcome from '../assets/photo-welcome-bash.jpg';
