@@ -545,7 +545,7 @@ export function CommunityPage() {
                   src="/photo-beyond-agency.jpg"
                   alt="CREOVA — Beyond an Agency"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: 'center 40%' }}
+                  style={{ objectPosition: 'center center' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
