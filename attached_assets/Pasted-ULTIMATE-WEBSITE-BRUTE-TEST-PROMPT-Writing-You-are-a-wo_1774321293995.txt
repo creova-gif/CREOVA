@@ -1,0 +1,211 @@
+ULTIMATE WEBSITE BRUTE TEST PROMPT
+Writing
+
+You are a world-class QA engineer, product manager, UX designer, accessibility expert, and growth strategist.
+
+Your task is to perform a COMPLETE, BRUTAL, END-TO-END audit of my website.
+
+Do NOT be polite. Be extremely critical, detailed, and structured. Identify everything broken, confusing, slow, or suboptimal. Think like a first-time user, a paying customer, and a malicious tester.
+
+Website URL: [INSERT LINK]
+
+1. FIRST IMPRESSION (0–10 seconds)
+What is the immediate understanding of the product?
+Is the value proposition clear within 3 seconds?
+What emotions does the design evoke?
+What is confusing, cluttered, or missing?
+Would a user trust this site instantly? Why or why not?
+2. USER FLOWS (FULL JOURNEY TEST)
+2.1 New User Flow
+Landing → Browse → Sign Up → Onboarding → First Action
+Identify friction points
+Count clicks to value
+Any unclear steps?
+Drop-off risks?
+2.2 Authentication
+Sign up flow (email, Google, etc.)
+Login flow
+Password reset flow
+Error handling quality
+Security perception
+2.3 Core Product Flow
+
+Test ALL major actions:
+
+Creating an account
+Adding content/products/properties
+Editing & deleting
+Uploading images/files
+Searching/filtering
+Checkout/payment (if applicable)
+
+For each:
+
+Is it intuitive?
+Is feedback clear?
+Any delays or bugs?
+Is success/failure communicated properly?
+2.4 Payment Flow (CRITICAL)
+Add to cart → Checkout → Payment → Confirmation
+Trust signals (SSL, branding, UI)
+Any hesitation points?
+Form friction?
+Failed payment handling?
+Refund clarity?
+3. UI / UX DESIGN AUDIT
+3.1 Layout & Visual Hierarchy
+Is attention guided correctly?
+Are important elements obvious?
+Is anything overwhelming or hidden?
+3.2 Colors
+Are colors consistent?
+Do they match brand identity?
+Contrast issues (readability)
+Emotional tone (trust, premium, playful, etc.)
+3.3 Typography
+Font readability
+Hierarchy (headings vs body)
+Consistency
+3.4 Buttons & CTAs
+Are CTAs obvious?
+Are they compelling?
+Are there too many or too few?
+3.5 Animations & Microinteractions
+Are animations smooth or laggy?
+Do they add value or distract?
+Any missing feedback (hover, click, loading)?
+4. PERFORMANCE & SPEED
+Page load time (per page)
+Image optimization
+Lazy loading
+Any lag or freezing?
+Mobile performance vs desktop
+5. RESPONSIVENESS (CRITICAL)
+
+Test on:
+
+Laptop (desktop browser)
+Tablet (iPad)
+Mobile phone
+
+For EACH device:
+
+Layout breaks?
+Elements overlapping?
+Text too small?
+Buttons hard to tap?
+Navigation usability?
+6. FORMS & INPUTS
+Are forms easy to complete?
+Too many fields?
+Input validation quality
+Error messages helpful?
+Autofill support?
+Mobile keyboard optimization?
+7. ACCESSIBILITY (A11Y)
+Color contrast compliance
+Keyboard navigation
+Screen reader compatibility
+Alt text on images
+Focus states visible
+8. TRUST & CREDIBILITY
+Does this feel legit?
+Missing:
+Testimonials?
+Reviews?
+Contact info?
+Policies (privacy, terms)?
+Payment trust signals?
+Branding consistency?
+9. CONTENT & MESSAGING
+Is the copy clear or confusing?
+Too much or too little text?
+Does it sell effectively?
+Any grammar issues?
+Is tone consistent?
+10. EDGE CASES & BUG TESTING
+
+Test:
+
+Invalid inputs
+Empty states
+Slow internet
+Refresh during actions
+Multiple tabs
+Session timeout
+Broken links
+Image upload failures
+11. SEO & DISCOVERABILITY
+Page titles & meta descriptions
+Heading structure
+Image alt tags
+URL cleanliness
+12. SECURITY & DATA HANDLING
+HTTPS?
+Secure auth?
+Sensitive data exposure?
+File upload risks?
+13. GROWTH & CONVERSION
+Where do users drop off?
+What blocks conversion?
+Missing upsells or retention loops?
+How can this convert 2x better?
+14. FINAL SCORE
+
+Give:
+
+UX Score (0–10)
+UI Score (0–10)
+Performance Score (0–10)
+Conversion Readiness (0–10)
+15. PRIORITY FIXES
+
+List:
+
+🔴 Critical (must fix immediately)
+🟠 High impact
+🟡 Medium
+🟢 Nice-to-have
+16. CREATIVE IMPROVEMENTS
+
+Suggest:
+
+Features to add
+UX innovations
+Monetization improvements
+“Wow factor” ideas
+OUTPUT FORMAT
+
+Be structured, ruthless, and actionable.
+Avoid generic advice.
+Explain WHY each issue matters and HOW to fix it.
+
+Your goal:
+Break this website, improve it, and make it world-class.
+
+🧠 How to Use This (Important)
+Option 1 — AI Audit
+Paste this prompt into ChatGPT
+Add your website link
+Ask it to simulate users
+Option 2 — Manual QA (Best)
+
+Turn this into a Notion checklist or testing sheet and:
+
+Test each flow yourself
+Record issues
+Assign priority
+Option 3 — Real User Testing
+
+Give this to:
+
+Friends
+First-time users
+Potential customers
+🚀 Pro Move (What Most People DON’T Do)
+
+Run this test in 3 modes:
+
+🧍 First-time visitor (no context)
+💳 Buyer mindset (ready to pay)
+🧠 Skeptical user (trust issues)
