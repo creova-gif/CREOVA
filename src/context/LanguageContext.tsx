@@ -27,7 +27,6 @@ const translations = {
     // Home Page - SEO Optimized
     'home.hero.title': 'Black-Led Creative Studio in Ontario, Canada',
     'home.hero.subtitle': 'Videography, Photography, Brand Management & Fashion Design',
-    'home.hero.description': 'CREOVA is a premier creative agency serving BIPOC communities across Ontario. We specialize in authentic storytelling through video production, professional photography, strategic brand management, and our exclusive SEEN fashion collection.',
     'home.hero.cta': 'Explore Our Services',
     'home.hero.cta2': 'Shop SEEN Collection',
     
@@ -92,8 +91,6 @@ const translations = {
     'contact.form.error.description': 'Please try again or email us directly.',
     
     // Footer - SEO
-    'footer.tagline': 'Black-Led Creative Studio | Ontario, Canada',
-    'footer.description': 'Professional videography, photography, brand management, and fashion design services for BIPOC communities.',
     'footer.services': 'Services',
     'footer.company': 'Company',
     'footer.legal': 'Legal',
@@ -303,7 +300,6 @@ const translations = {
     // Home Page - SEO Optimized
     'home.hero.title': 'Studio Créatif Dirigé par des Noirs en Ontario, Canada',
     'home.hero.subtitle': 'Vidéographie, Photographie, Gestion de Marque & Design de Mode',
-    'home.hero.description': 'CREAOVA est une agence créative de premier plan servant les communautés BIPOC à travers l\'Ontario. Nous nous spécialisons dans la narration authentique à travers la production vidéo, la photographie professionnelle, la gestion de marque stratégique et notre collection de mode exclusive SEEN.',
     'home.hero.cta': 'Découvrir Nos Services',
     'home.hero.cta2': 'Magasiner la Collection SEEN',
     
@@ -368,8 +364,6 @@ const translations = {
     'contact.form.error.description': 'Veuillez réessayer ou nous contacter directement par courriel.',
     
     // Footer - SEO
-    'footer.tagline': 'Studio Créatif Dirigé par des Noirs | Ontario, Canada',
-    'footer.description': 'Services professionnels de vidéographie, photographie, gestion de marque et design de mode pour les communautés BIPOC.',
     'footer.services': 'Services',
     'footer.company': 'Entreprise',
     'footer.legal': 'Légal',
