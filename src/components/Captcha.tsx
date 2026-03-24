@@ -1,29 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
-import { logger } from '../utils/logger';
 
-// CAPTCHA component using Google reCAPTCHA v2
-// Using production keys for live deployment
+// Cloudflare Turnstile — replaces Google reCAPTCHA
+// Invisible by default, privacy-respecting, works on all domains
 
 interface CaptchaProps {
   onVerify: (token: string) => void;
   onExpire?: () => void;
   onError?: (error: string) => void;
   siteKey?: string;
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark' | 'auto';
   size?: 'normal' | 'compact' | 'invisible';
 }
 
-// Global flag to track if script is loaded
+// Cloudflare test keys work on any domain
+// Replace PROD_SITE_KEY with your key from dash.cloudflare.com/turnstile
+const PROD_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
+const DEFAULT_SITE_KEY =
+  typeof window !== 'undefined' && window.location.hostname === 'creova.ca'
+    ? PROD_SITE_KEY
+    : '1x00000000000000000000AA'; // Cloudflare test key — always passes visually
+
 let isScriptLoaded = false;
 let isScriptLoading = false;
 const scriptCallbacks: (() => void)[] = [];
-
-// Use production key on creova.ca, Google's official test key everywhere else
-const PROD_SITE_KEY = '6LfzJBAsAAAAAKSOz2kKYT4XjCkITC9N3-E1zeg6';
-const TEST_SITE_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; // Always passes — dev only
-const DEFAULT_SITE_KEY = typeof window !== 'undefined' && window.location.hostname === 'creova.ca'
-  ? PROD_SITE_KEY
-  : TEST_SITE_KEY;
 
 export function Captcha({
   onVerify,
@@ -31,187 +30,121 @@ export function Captcha({
   onError,
   siteKey = DEFAULT_SITE_KEY,
   theme = 'light',
-  size = 'normal'
 }: CaptchaProps) {
-  const captchaRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+  const isMountedRef = useRef(true);
   const [scriptReady, setScriptReady] = useState(isScriptLoaded);
-  const errorHandledRef = useRef(false); // Track if error was already handled
-  const isMountedRef = useRef(true); // Track if component is mounted
 
+  // Load the Turnstile script once
   useEffect(() => {
-    // Reset error flag on mount
-    errorHandledRef.current = false;
     isMountedRef.current = true;
-    
-    // If already loaded, just set ready
-    if (isScriptLoaded && window.grecaptcha && window.grecaptcha.render) {
+
+    if (isScriptLoaded) {
       setScriptReady(true);
       return;
     }
 
-    // If currently loading, add callback
     if (isScriptLoading) {
-      const callback = () => {
-        if (isMountedRef.current) {
-          setScriptReady(true);
-        }
-      };
-      scriptCallbacks.push(callback);
+      const cb = () => { if (isMountedRef.current) setScriptReady(true); };
+      scriptCallbacks.push(cb);
       return () => {
         isMountedRef.current = false;
-        const index = scriptCallbacks.indexOf(callback);
-        if (index > -1) scriptCallbacks.splice(index, 1);
+        const i = scriptCallbacks.indexOf(cb);
+        if (i > -1) scriptCallbacks.splice(i, 1);
       };
     }
 
-    // Check if script element already exists
-    const existingScript = document.querySelector('script[src*="recaptcha/api.js"]');
-    if (existingScript) {
+    const existing = document.querySelector('script[src*="turnstile"]');
+    if (existing) {
       isScriptLoading = true;
-      const callback = () => {
-        if (isMountedRef.current) {
-          setScriptReady(true);
-        }
-      };
-      scriptCallbacks.push(callback);
+      const cb = () => { if (isMountedRef.current) setScriptReady(true); };
+      scriptCallbacks.push(cb);
       return () => {
         isMountedRef.current = false;
-        const index = scriptCallbacks.indexOf(callback);
-        if (index > -1) scriptCallbacks.splice(index, 1);
+        const i = scriptCallbacks.indexOf(cb);
+        if (i > -1) scriptCallbacks.splice(i, 1);
       };
     }
 
-    // Load reCAPTCHA script
     isScriptLoading = true;
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     script.async = true;
     script.defer = true;
-    
-    let checkInterval: NodeJS.Timeout | null = null;
-    
+
     script.onload = () => {
-      // Wait a bit for grecaptcha to be fully ready with timeout
       let attempts = 0;
-      const maxAttempts = 50; // 5 seconds total
-      checkInterval = setInterval(() => {
+      const interval = setInterval(() => {
         attempts++;
-        if (window.grecaptcha && window.grecaptcha.render) {
-          if (checkInterval) clearInterval(checkInterval);
+        if (window.turnstile) {
+          clearInterval(interval);
           isScriptLoaded = true;
           isScriptLoading = false;
-          if (isMountedRef.current) {
-            setScriptReady(true);
-          }
-          // Execute all callbacks
+          if (isMountedRef.current) setScriptReady(true);
           scriptCallbacks.forEach(cb => cb());
           scriptCallbacks.length = 0;
-        } else if (attempts >= maxAttempts) {
-          if (checkInterval) clearInterval(checkInterval);
+        } else if (attempts > 50) {
+          clearInterval(interval);
           isScriptLoading = false;
-          console.error('reCAPTCHA failed to initialize after timeout');
-          // Don't call onError here - it's too aggressive
         }
       }, 100);
     };
 
-    script.onerror = () => {
-      console.error('Failed to load reCAPTCHA script');
-      isScriptLoading = false;
-      if (checkInterval) clearInterval(checkInterval);
-      // Don't call onError here - will be handled on render attempt
-    };
-
+    script.onerror = () => { isScriptLoading = false; };
     document.body.appendChild(script);
 
-    return () => {
-      isMountedRef.current = false;
-      // Clear the interval if it's still running
-      if (checkInterval) {
-        clearInterval(checkInterval);
-      }
-      // Cleanup widget on unmount
-      if (widgetIdRef.current !== null && window.grecaptcha) {
-        try {
-          window.grecaptcha.reset(widgetIdRef.current);
-        } catch (e) {
-          console.debug('Error resetting reCAPTCHA:', e);
-        }
-      }
-    };
+    return () => { isMountedRef.current = false; };
   }, []);
 
+  // Render the widget once script is ready
   useEffect(() => {
-    // Render the widget when script is ready
-    if (scriptReady && captchaRef.current && window.grecaptcha && widgetIdRef.current === null) {
-      try {
-        widgetIdRef.current = window.grecaptcha.render(captchaRef.current, {
-          sitekey: siteKey,
-          theme: theme,
-          size: size,
-          callback: (token: string) => {
-            logger.log('reCAPTCHA verified successfully');
-            errorHandledRef.current = false; // Reset error flag on success
-            onVerify(token);
-          },
-          'expired-callback': () => {
-            logger.log('reCAPTCHA expired');
-            if (onExpire) onExpire();
-          },
-          'error-callback': (error: any) => {
-            // Only handle error once to avoid duplicate toasts
-            if (errorHandledRef.current) {
-              console.debug('reCAPTCHA error already handled, skipping duplicate');
-              return;
-            }
-            
-            errorHandledRef.current = true;
-            
-            // Log for debugging but don't show error to user unless it's meaningful
-            console.debug('reCAPTCHA error callback triggered. Error value:', error, 'Type:', typeof error);
-            
-            // Only show error to user if there's a real error
-            // Undefined/null/empty errors are often false positives from Google's error detection
-            if (error !== undefined && error !== null && error !== '') {
-              const errorMessage = String(error);
-              console.error('reCAPTCHA error:', errorMessage);
-              if (onError) onError(errorMessage);
-            } else {
-              // Silent error - likely a false positive, just log it
-              console.debug('reCAPTCHA encountered a non-critical error (likely false positive)');
-              // Don't call onError - user can still try to complete CAPTCHA
-            }
-          },
-        });
-        logger.log('reCAPTCHA widget rendered successfully with ID:', widgetIdRef.current);
-      } catch (e) {
-        console.error('Error rendering reCAPTCHA:', e);
-        const errorMessage = e instanceof Error ? e.message : 'Failed to render reCAPTCHA. Please refresh the page.';
-        if (onError && !errorHandledRef.current) {
-          errorHandledRef.current = true;
-          onError(errorMessage);
-        }
-      }
+    if (!scriptReady || !containerRef.current || !window.turnstile || widgetIdRef.current) return;
+
+    try {
+      widgetIdRef.current = window.turnstile.render(containerRef.current, {
+        sitekey: siteKey,
+        theme,
+        callback: (token: string) => {
+          onVerify(token);
+        },
+        'expired-callback': () => {
+          widgetIdRef.current = null;
+          if (onExpire) onExpire();
+        },
+        'error-callback': () => {
+          widgetIdRef.current = null;
+          if (onError) onError('Verification failed. Please try again.');
+        },
+      });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : 'Failed to load verification widget.';
+      if (onError) onError(msg);
     }
-  }, [scriptReady, siteKey, theme, size, onVerify, onExpire, onError]);
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        try { window.turnstile.remove(widgetIdRef.current); } catch (_) {}
+        widgetIdRef.current = null;
+      }
+    };
+  }, [scriptReady, siteKey, theme, onVerify, onExpire, onError]);
 
   return (
     <div className="flex justify-center">
-      <div ref={captchaRef} />
+      <div ref={containerRef} />
     </div>
   );
 }
 
-// Type declarations for Google reCAPTCHA
+// Turnstile global type declarations
 declare global {
   interface Window {
-    grecaptcha: {
-      render: (container: HTMLElement, config: any) => number;
-      reset: (widgetId: number) => void;
-      execute: (widgetId: number) => void;
-      getResponse: (widgetId: number) => string;
+    turnstile: {
+      render: (container: HTMLElement, config: Record<string, unknown>) => string;
+      remove: (widgetId: string) => void;
+      reset: (widgetId: string) => void;
+      getResponse: (widgetId: string) => string;
     };
-    recaptchaOnLoad: () => void;
   }
 }

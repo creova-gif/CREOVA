@@ -798,33 +798,30 @@ app.post("/make-server-feacf0d8/submit-booking", async (c) => {
       return c.json({ error: "Service, name, email, and phone are required" }, 400);
     }
 
-    // Verify reCAPTCHA token
+    // Verify Cloudflare Turnstile token
     if (captchaToken) {
-      const recaptchaSecretKey = Deno.env.get("RECAPTCHA_SECRET_KEY");
-      
-      if (recaptchaSecretKey) {
-        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify`;
-        const verifyResponse = await fetch(verifyUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: new URLSearchParams({
-            secret: recaptchaSecretKey,
-            response: captchaToken
-          })
-        });
+      const turnstileSecretKey = Deno.env.get("TURNSTILE_SECRET_KEY");
 
+      if (turnstileSecretKey) {
+        const verifyResponse = await fetch(
+          'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+              secret: turnstileSecretKey,
+              response: captchaToken,
+            }),
+          }
+        );
         const verifyData = await verifyResponse.json();
-        
         if (!verifyData.success) {
-          console.log('reCAPTCHA verification failed:', verifyData);
-          return c.json({ error: "CAPTCHA verification failed. Please try again." }, 400);
+          console.log('Turnstile verification failed:', verifyData);
+          return c.json({ error: "Security verification failed. Please try again." }, 400);
         }
-        
-        console.log('reCAPTCHA verification successful');
+        console.log('Turnstile verification successful');
       } else {
-        console.warn('RECAPTCHA_SECRET_KEY not configured - skipping verification');
+        console.warn('TURNSTILE_SECRET_KEY not configured - skipping verification');
       }
     }
 
