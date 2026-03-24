@@ -900,10 +900,10 @@ export function EventsCollaboratePage() {
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src="/card-justin-panel.jpg"
+                  src="/card-blackprint-session.jpg"
                   alt="The Black Print closing session at the Black Student Success Centre"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ objectPosition: 'center 25%' }}
+                  style={{ objectPosition: 'center 40%' }}
                 />
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(to top, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.3) 55%, transparent 100%)'
