@@ -116,7 +116,7 @@ export function DigitalProductsPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs tracking-wide"
               style={{ background: warmGradient, color: '#FFFFFF' }}>
               <Download className="w-3.5 h-3.5" />
-              Available April 2026 — Join the waitlist
+              Coming Summer 2026 — Join the waitlist
             </div>
           </motion.div>
         </div>
@@ -331,7 +331,7 @@ export function DigitalProductsPage() {
                       disabled
                     >
                       <Gift className="w-3 h-3" />
-                      Coming April 2026
+                      Coming Summer 2026
                     </button>
                   </div>
                 </div>

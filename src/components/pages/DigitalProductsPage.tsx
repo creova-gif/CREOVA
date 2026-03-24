@@ -113,16 +113,16 @@ export function DigitalProductsPage({ addToCart }: DigitalProductsPageProps) {
           
           {/* Coming Soon Notice */}
           <div className="mt-8 bg-black text-white rounded-lg p-6 max-w-2xl mx-auto">
-            <h3 className="text-2xl mb-2">🚀 Launching April 2026</h3>
+            <h3 className="text-2xl mb-2">🚀 Launching Summer 2026</h3>
             <p className="text-gray-300 mb-4">
-              Our digital products collection launches in <strong>April 2026</strong>! 
+              Our digital products collection launches in <strong>Summer 2026</strong>! 
               Professional tools and resources to elevate your creative work.
             </p>
             <p className="text-sm text-gray-400 mb-4">
               Refined, expanded, and built with intention.
             </p>
             <Badge variant="secondary" style={{ backgroundColor: '#A68F59', color: '#121212' }}>
-              Available for purchase in April 2026
+              Available for purchase Summer 2026
             </Badge>
           </div>
         </div>
@@ -152,7 +152,7 @@ export function DigitalProductsPage({ addToCart }: DigitalProductsPageProps) {
                 {/* Coming Soon Badge */}
                 <div className="absolute top-4 left-4">
                   <Badge style={{ backgroundColor: '#A68F59', color: '#121212' }}>
-                    April 2026
+                    Summer 2026
                   </Badge>
                 </div>
               </div>
