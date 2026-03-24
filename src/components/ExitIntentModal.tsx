@@ -114,7 +114,7 @@ export function ExitIntentModal() {
                   </h2>
                   
                   <p className="text-lg mb-2" style={{ color: '#4A3E36' }}>
-                    Join our exclusive waitlist for the <strong>April 2026 launch</strong>
+                    Join our exclusive waitlist for the <strong>Summer 2026 launch</strong>
                   </p>
                   
                   <p className="text-base" style={{ color: '#7A6F66' }}>
@@ -164,7 +164,7 @@ export function ExitIntentModal() {
                 <div className="mt-6 pt-6 border-t flex justify-center gap-8" style={{ borderColor: '#E3DCD3' }}>
                   <div className="text-center">
                     <div className="text-2xl font-bold" style={{ color: '#121212' }}>
-                      April 2026
+                      Summer 2026
                     </div>
                     <div className="text-xs" style={{ color: '#7A6F66' }}>
                       Launch Date

@@ -256,7 +256,7 @@ export function BookingPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-28">
           <Button
             variant="ghost"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate('/pricing')}
             className="mb-10 text-sm"
             style={{ color: 'rgba(166,143,89,0.7)' }}
           >
@@ -608,7 +608,7 @@ export function BookingPage() {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => navigate(-1)}
+                  onClick={() => navigate('/pricing')}
                   className="h-14 px-8"
                 >
                   Cancel

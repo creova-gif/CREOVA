@@ -113,9 +113,9 @@ export function ShopPage({ addToCart }: ShopPageProps) {
           
           {/* Coming Soon Notice */}
           <div className="mt-8 bg-black text-white rounded-lg p-6 max-w-2xl mx-auto">
-            <h3 className="text-2xl mb-2">Launching April 2026</h3>
+            <h3 className="text-2xl mb-2">Launching Summer 2026</h3>
             <p className="text-gray-300 mb-4">
-              Our CREOVA merchandise collection launches in <strong>April 2026</strong>. 
+              Our CREOVA merchandise collection launches in <strong>Summer 2026</strong>. 
               Be the first to rep the brand.
             </p>
             <Badge variant="secondary" style={{ backgroundColor: '#A68F59', color: '#121212' }}>
@@ -131,7 +131,7 @@ export function ShopPage({ addToCart }: ShopPageProps) {
               {/* Coming Soon Overlay */}
               <div className="absolute top-0 left-0 right-0 z-10 bg-black text-white text-center py-2">
                 <Badge style={{ backgroundColor: '#A68F59', color: '#121212' }}>
-                  Launching April 2026
+                  Launching Summer 2026
                 </Badge>
               </div>
               
@@ -173,7 +173,7 @@ export function ShopPage({ addToCart }: ShopPageProps) {
                   disabled
                   style={{ opacity: 0.6 }}
                 >
-                  Coming April 2026
+                  Coming Summer 2026
                 </Button>
               </CardContent>
             </Card>
