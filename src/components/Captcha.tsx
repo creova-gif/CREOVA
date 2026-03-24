@@ -18,11 +18,18 @@ let isScriptLoaded = false;
 let isScriptLoading = false;
 const scriptCallbacks: (() => void)[] = [];
 
+// Use production key on creova.ca, Google's official test key everywhere else
+const PROD_SITE_KEY = '6LfzJBAsAAAAAKSOz2kKYT4XjCkITC9N3-E1zeg6';
+const TEST_SITE_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; // Always passes — dev only
+const DEFAULT_SITE_KEY = typeof window !== 'undefined' && window.location.hostname === 'creova.ca'
+  ? PROD_SITE_KEY
+  : TEST_SITE_KEY;
+
 export function Captcha({
   onVerify,
   onExpire,
   onError,
-  siteKey = '6LfzJBAsAAAAAKSOz2kKYT4XjCkITC9N3-E1zeg6', // Production site key
+  siteKey = DEFAULT_SITE_KEY,
   theme = 'light',
   size = 'normal'
 }: CaptchaProps) {
