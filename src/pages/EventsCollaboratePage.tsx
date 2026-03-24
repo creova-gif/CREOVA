@@ -852,9 +852,10 @@ export function EventsCollaboratePage() {
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
-                  src={photoSpotlight1}
-                  alt="Innovation Showcase at Brock University LINC"
+                  src="/card-justin-panel.jpg"
+                  alt="Justin Mafie presenting CREOVA at the Innovation Showcase at Brock University LINC"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{ objectPosition: 'center 20%' }}
                 />
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(to top, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.3) 55%, transparent 100%)'
