@@ -47,11 +47,6 @@ const pillars = [
     description: "Content flagging that includes \"cultural appropriation\" as a category, with escalation to cultural advisors — not just automated bans.",
   },
   {
-    icon: Globe,
-    title: "CMF Compliant",
-    description: "Designed to qualify for Canada Media Fund support — tracking Canadian content hours, equity-deserving creator demographics, and multilingual content.",
-  },
-  {
     icon: Mic,
     title: "Multilingual First",
     description: "English, French, Spanish, and Indigenous languages. Accessibility customization built into onboarding from day one.",
@@ -394,7 +389,7 @@ export function SEENPage() {
     },
     {
       q: "How is SEEN different from Spotify or Netflix?",
-      a: "Those platforms optimize for mass engagement. SEEN is optimized for cultural depth, community ownership, and Canadian representation — backed by CMF-compliant infrastructure."
+      a: "Those platforms optimize for mass engagement. SEEN is optimized for cultural depth, community ownership, and authentic Canadian representation."
     }
   ];
 
@@ -808,7 +803,7 @@ export function SEENPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { stat: 'CMF', label: 'Canada Media Fund Compliant' },
+              { stat: 'CA', label: 'Canadian-Built for Canadian Voices' },
               { stat: '3+', label: 'Languages at Launch' },
               { stat: '100%', label: 'Creator IP Ownership' },
               { stat: 'BIPOC', label: 'Led & Community-First' }
@@ -906,7 +901,7 @@ export function SEENPage() {
               {[
                 { icon: Award, text: 'Beta 2025' },
                 { icon: Globe, text: 'Canada-Wide 2026' },
-                { icon: Shield, text: 'CMF Backed' }
+                { icon: Shield, text: 'BIPOC Led' }
               ].map((badge, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <badge.icon className="w-4 h-4" style={{ color: '#A68F59' }} />
