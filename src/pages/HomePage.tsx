@@ -408,7 +408,7 @@ export function HomePage() {
                 Canada's culturally-centred storytelling platform — where Indigenous, Black Canadian, francophone, and immigrant voices own their stories.
               </p>
               <p className="text-sm mb-10" style={{ color: '#7A6F66' }}>
-                Story worlds · Creator IP ownership · CMF-compliant · Multilingual · Audio-first
+                Story worlds · Creator IP ownership · Multilingual · Audio-first
               </p>
               <Link
                 to="/seen"
@@ -430,7 +430,7 @@ export function HomePage() {
                 { label: 'Story Worlds', desc: 'Immersive cultural narratives with ambient audio' },
                 { label: 'Creator First', desc: '100% IP ownership — always' },
                 { label: 'Multilingual', desc: 'EN · FR · ES · Indigenous languages' },
-                { label: 'CMF Ready', desc: 'Built for Canadian federal funding' },
+                { label: 'Community Owned', desc: 'Revenue shared with creators' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
