@@ -373,7 +373,7 @@ export function SEENPage() {
   const faqs = [
     {
       q: "When does SEEN launch?",
-      a: "SEEN is currently in development. We're aiming for a 2025 beta with select creators, followed by a broader Canadian launch. Join the waitlist to be first."
+      a: "SEEN is currently in development. We're aiming for a beta with select creators by end of 2026, followed by a broader Canadian launch. Join the waitlist to be first."
     },
     {
       q: "Can I publish my own stories on SEEN?",
@@ -615,7 +615,7 @@ export function SEENPage() {
               In Development
             </span>
             <span className="text-xs" style={{ color: 'rgba(204,255,238,0.45)' }}>
-              Beta launching 2025 · Canada-wide 2026
+              Beta launching end of 2026 · Canada-wide launch to follow
             </span>
           </motion.div>
 
@@ -899,7 +899,7 @@ export function SEENPage() {
 
             <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
               {[
-                { icon: Award, text: 'Beta 2025' },
+                { icon: Award, text: 'Beta Late 2026' },
                 { icon: Globe, text: 'Canada-Wide 2026' },
                 { icon: Shield, text: 'BIPOC Led' }
               ].map((badge, i) => (
