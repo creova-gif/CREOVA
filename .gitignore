@@ -28,3 +28,14 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Large asset files (images, videos, etc.) — local-only, not tracked in git.
+# This keeps git pack size small and pushes fast.
+# These files remain on disk but are not committed to the repository.
+# If you intentionally need to version-control an asset, use:
+#   git add -f attached_assets/<file>
+# Files added this way are covered by the LFS rule in .gitattributes, so they
+# will be stored as Git LFS pointers rather than as raw binary blobs.
+# Note: history rewrite (BFG / git-filter-repo) is needed to purge pre-existing
+# large blobs from git history and reduce clone/fetch size for new contributors.
+attached_assets/
