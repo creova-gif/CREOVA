@@ -36,7 +36,7 @@ export function TestimonialsSection() {
     { value: '15+', label: 'Projects Delivered', icon: Award },
     { value: '5★', label: 'Average Rating', icon: CheckCircle },
     { value: '1+', label: 'Years in Business', icon: TrendingUp },
-    { value: '5+', label: 'Cities Reached', icon: Globe }
+    { value: '5+', label: 'Communities Reached', icon: Globe }
   ];
 
   // Auto-advance testimonial every 5 seconds

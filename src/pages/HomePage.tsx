@@ -123,7 +123,7 @@ export function HomePage() {
 
   const stats = [
     { number: '15+', label: 'Projects Delivered', icon: Award },
-    { number: '5+', label: 'Cities Reached', icon: Globe },
+    { number: '5+', label: 'Communities Reached', icon: Globe },
     { number: '1+', label: 'Years in Business', icon: Users },
   ];
 
