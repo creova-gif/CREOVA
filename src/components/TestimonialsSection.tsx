@@ -33,7 +33,7 @@ export function TestimonialsSection() {
   ];
 
   const stats = [
-    { value: '47+', label: 'Projects Delivered', icon: Award },
+    { value: '15+', label: 'Projects Delivered', icon: Award },
     { value: '5★', label: 'Average Rating', icon: CheckCircle },
     { value: '3+', label: 'Years in Business', icon: TrendingUp },
     { value: '12+', label: 'Cities Reached', icon: Globe }

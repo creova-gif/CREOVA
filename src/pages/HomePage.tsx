@@ -122,7 +122,7 @@ export function HomePage() {
   ];
 
   const stats = [
-    { number: '47+', label: 'Projects Delivered', icon: Award },
+    { number: '15+', label: 'Projects Delivered', icon: Award },
     { number: '12+', label: 'Cities Reached', icon: Globe },
     { number: '3+', label: 'Years in Business', icon: Users },
   ];
@@ -254,7 +254,7 @@ export function HomePage() {
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }}
                 className="flex flex-wrap gap-6 mt-10 pt-8 border-t" style={{ borderColor: 'rgba(227, 220, 211, 0.2)' }}>
                 {[
-                  { icon: Award, text: '47+ Projects Delivered' },
+                  { icon: Award, text: '15+ Projects Delivered' },
                   { icon: Heart, text: 'BIPOC-Owned & Operated' },
                   { icon: CheckCircle2, text: '5-Star Rated' },
                 ].map((badge, i) => (
