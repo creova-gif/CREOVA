@@ -410,6 +410,95 @@ export function ServicesPage() {
         </div>
       </section>
 
+      {/* Drone & Video Preview */}
+      {(activeTab === 'video' || activeTab === 'all') && (
+        <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
+          <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-px" style={{ backgroundColor: '#A68F59' }} />
+                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>Aerial & Video</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl tracking-tight font-light" style={{ color: '#F5F1EB' }}>
+                See the Work in Motion
+              </h2>
+              <p className="text-base mt-4 max-w-xl leading-relaxed" style={{ color: '#7A6F66' }}>
+                Cinematic drone aerials and brand reels — place your <code style={{ color: '#A68F59' }}>drone-reel.mp4</code> and <code style={{ color: '#A68F59' }}>brand-reel.mp4</code> in the <code style={{ color: '#A68F59' }}>public/</code> folder to activate these previews.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  label: 'Aerial Vision',
+                  sub: 'Drone & Aerial Photography',
+                  src: '/drone-reel.mp4',
+                  poster: '/card-blackprint.jpg',
+                  accent: '#A68F59',
+                },
+                {
+                  label: 'Brand Reel',
+                  sub: 'Videography & Content Creation',
+                  src: '/brand-reel.mp4',
+                  poster: '/card-blackprint-session.jpg',
+                  accent: '#B1643B',
+                },
+              ].map((vid, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: i * 0.15 }}
+                  viewport={{ once: true }}
+                  className="group relative overflow-hidden rounded-3xl"
+                  style={{ aspectRatio: '16/9', backgroundColor: '#111' }}
+                >
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-700"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster={vid.poster}
+                    aria-hidden="true"
+                  >
+                    <source src={vid.src} type="video/mp4" />
+                  </video>
+                  <img
+                    src={vid.poster}
+                    alt={vid.label}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%)',
+                  }} />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="w-8 h-0.5 mb-3 rounded-full" style={{ backgroundColor: vid.accent }} />
+                    <p className="text-xs tracking-[0.35em] uppercase mb-1" style={{ color: vid.accent }}>{vid.sub}</p>
+                    <h3 className="text-2xl tracking-tight" style={{ color: '#F5F1EB' }}>{vid.label}</h3>
+                    <div className="mt-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
+                      style={{ color: vid.accent }}>
+                      <div className="w-8 h-8 rounded-full border flex items-center justify-center"
+                        style={{ borderColor: vid.accent }}>
+                        <Plane className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-sm">Play preview</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Add-Ons & Extras */}
       <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0E0E0E' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />

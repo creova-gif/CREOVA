@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router';
+import { AnimatePresence } from 'motion/react';
+import { PageTransition } from './components/PageTransition';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
@@ -38,6 +40,47 @@ import { AnalyticsTracker } from './components/AnalyticsTracker';
 import { ExitIntentModal } from './components/ExitIntentModal';
 import { ContactInfoBanner } from './components/ContactInfoBanner';
 import { SEENPage } from './pages/SEENPage';
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <PageTransition locationKey={location.pathname}>
+        <Routes location={location}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/digital-products" element={<DigitalProductsPage />} />
+          <Route path="/experience" element={<EventsCollaboratePage />} />
+          <Route path="/events" element={<Navigate to="/experience" replace />} />
+          <Route path="/collaborate" element={<Navigate to="/experience" replace />} />
+          <Route path="/community" element={<CommunityPage />} />
+          <Route path="/about" element={<Navigate to="/community" replace />} />
+          <Route path="/memberships" element={<MembershipsPage />} />
+          <Route path="/membership" element={<Navigate to="/memberships" replace />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/rental" element={<RentalPage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/auth/callback" element={<AuthCallbackPage />} />
+          <Route path="/admin/submissions" element={<AdminAuth><AdminSubmissionsPage /></AdminAuth>} />
+          <Route path="/analytics/dashboard" element={<AdminAuth><AnalyticsDashboardPage /></AdminAuth>} />
+          <Route path="/admin/refunds" element={<AdminAuth><RefundManagementPage /></AdminAuth>} />
+          <Route path="/admin/hub" element={<AdminAuth><AdminHubPage /></AdminAuth>} />
+          <Route path="/admin/database" element={<DatabaseAccessPage />} />
+          <Route path="/seen" element={<SEENPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+          <Route path="/payment-success" element={<PaymentSuccessPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </PageTransition>
+    </AnimatePresence>
+  );
+}
 
 function AppContent() {
   const { language, t } = useLanguage();
@@ -163,43 +206,7 @@ function AppContent() {
         <ContactInfoBanner />
         <Navigation />
         <main id="main-content" className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/digital-products" element={<DigitalProductsPage />} />
-            <Route path="/experience" element={<EventsCollaboratePage />} />
-            <Route path="/events" element={<Navigate to="/experience" replace />} />
-            <Route path="/collaborate" element={<Navigate to="/experience" replace />} />
-            <Route path="/community" element={<CommunityPage />} />
-            <Route path="/about" element={<Navigate to="/community" replace />} />
-            <Route path="/memberships" element={<MembershipsPage />} />
-            <Route path="/membership" element={<Navigate to="/memberships" replace />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/booking" element={<BookingPage />} />
-            <Route path="/rental" element={<RentalPage />} />
-            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/auth" element={<AuthPage />} />
-            <Route path="/auth/callback" element={<AuthCallbackPage />} />
-            
-            {/* Protected Admin Routes */}
-            <Route path="/admin/submissions" element={<AdminAuth><AdminSubmissionsPage /></AdminAuth>} />
-            <Route path="/analytics/dashboard" element={<AdminAuth><AnalyticsDashboardPage /></AdminAuth>} />
-            <Route path="/admin/refunds" element={<AdminAuth><RefundManagementPage /></AdminAuth>} />
-            <Route path="/admin/hub" element={<AdminAuth><AdminHubPage /></AdminAuth>} />
-            <Route path="/admin/database" element={<DatabaseAccessPage />} /> 
-            
-            <Route path="/seen" element={<SEENPage />} />
-
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
-            <Route path="/payment-success" element={<PaymentSuccessPage />} />
-            
-            {/* Catch-all route - redirect to homepage */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <AnimatedRoutes />
         </main>
         <Footer />
         <Toaster richColors position="top-right" />
