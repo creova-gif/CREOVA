@@ -38,7 +38,7 @@ export function CaseStudy() {
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: 'url(/photo-monique-stock.jpg)',
+                backgroundImage: 'url(/photo-monique-bssc.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 20%',
                 filter: 'grayscale(15%) contrast(1.08)',
