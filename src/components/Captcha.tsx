@@ -15,8 +15,10 @@ interface CaptchaProps {
 // Cloudflare test keys work on any domain
 // Replace PROD_SITE_KEY with your key from dash.cloudflare.com/turnstile
 const PROD_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
+const LIVE_HOSTNAMES = ['creova.one', 'www.creova.one', 'creova.ca', 'www.creova.ca'];
+
 const DEFAULT_SITE_KEY =
-  typeof window !== 'undefined' && window.location.hostname === 'creova.ca'
+  typeof window !== 'undefined' && LIVE_HOSTNAMES.includes(window.location.hostname)
     ? PROD_SITE_KEY
     : '1x00000000000000000000AA'; // Cloudflare test key — always passes visually
 

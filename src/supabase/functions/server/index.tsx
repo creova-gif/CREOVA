@@ -701,14 +701,38 @@ app.post("/make-server-feacf0d8/create-subscription-checkout", rateLimit(5, 6000
 app.post("/make-server-feacf0d8/submit-contact", async (c) => {
   try {
     const body = await c.req.json();
-    const { name, email, phone, service, message, budget, timeline } = body;
+    const { name, email, phone, service, message, budget, timeline, captchaToken } = body;
 
     if (!name || !email || !message) {
       return c.json({ error: "Name, email, and message are required" }, 400);
     }
 
+    // Server-side Cloudflare Turnstile verification
+    const turnstileSecretKey = Deno.env.get("TURNSTILE_SECRET_KEY");
+    if (turnstileSecretKey) {
+      if (!captchaToken) {
+        return c.json({ error: "Security verification required" }, 400);
+      }
+      const verifyResponse = await fetch(
+        'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            secret: turnstileSecretKey,
+            response: captchaToken,
+          }),
+        }
+      );
+      const verifyData = await verifyResponse.json();
+      if (!verifyData.success) {
+        console.log('Turnstile verification failed for contact form:', verifyData);
+        return c.json({ error: "Security verification failed. Please try again." }, 400);
+      }
+    }
+
     const contactId = `contact_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    
+
     await kv.set(contactId, {
       name,
       email,
