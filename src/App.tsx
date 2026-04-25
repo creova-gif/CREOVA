@@ -123,7 +123,7 @@ function AppContent() {
           "name": "CREOVA Creative Agency",
           "description": "Black-owned creative agency specializing in photography, videography, and brand design",
           "url": "https://creova.ca",
-          "telephone": "+1-289-241-3136",
+          "telephone": "+1-437-260-8925",
           "email": "support@creova.ca",
           "address": {
             "@type": "PostalAddress",

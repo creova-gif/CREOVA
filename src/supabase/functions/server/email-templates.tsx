@@ -205,7 +205,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       </div>
       ` : ''}
       
-      <p><strong>Questions?</strong> Reply to this email or call us at <a href="tel:+12892413136" style="color: #A68F59;">+1 (289) 241-3136</a></p>
+      <p><strong>Questions?</strong> Reply to this email or call us at <a href="tel:+14372608925" style="color: #A68F59;">+1 (437) 260-8925</a></p>
       
       <p style="margin-top: 30px;">Best regards,<br><strong>The CREOVA Team</strong><br>Ontario, Canada</p>
     </div>
@@ -392,7 +392,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       </div>
       ` : ''}
       
-      <p><strong>Des questions?</strong> Répondez à cet email ou appelez-nous au <a href="tel:+12892413136" style="color: #A68F59;">+1 (289) 241-3136</a></p>
+      <p><strong>Des questions?</strong> Répondez à cet email ou appelez-nous au <a href="tel:+14372608925" style="color: #A68F59;">+1 (437) 260-8925</a></p>
       
       <p style="margin-top: 30px;">Cordialement,<br><strong>L'Équipe CREOVA</strong><br>Ontario, Canada</p>
     </div>

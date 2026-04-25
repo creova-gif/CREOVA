@@ -5,7 +5,7 @@ const warmGradient = 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)';
 
 export function ContactInfoBanner() {
   const contactInfo = [
-    { icon: Phone, label: 'CALL US', value: '+1 (289) 241-3136', href: 'tel:+12892413136' },
+    { icon: Phone, label: 'CALL US', value: '+1 (437) 260-8925', href: 'tel:+14372608925' },
     { icon: Mail, label: 'EMAIL', value: 'support@creova.ca', href: 'mailto:support@creova.ca' },
     { icon: MapPin, label: 'LOCATION', value: 'Niagara Region, Ontario', href: 'https://maps.google.com/?q=Niagara+Region+Ontario+Canada' },
     { icon: Clock, label: 'HOURS', value: 'Mon–Fri: 9AM–6PM EST', href: null }
@@ -27,7 +27,7 @@ export function ContactInfoBanner() {
         {/* Mobile: compact 2-item row */}
         <div className="flex md:hidden items-center justify-between py-2">
           <a
-            href="tel:+12892413136"
+            href="tel:+14372608925"
             className="flex items-center gap-2 group min-w-0"
           >
             <div className="w-6 h-6 flex items-center justify-center rounded-sm flex-shrink-0"
@@ -36,7 +36,7 @@ export function ContactInfoBanner() {
             </div>
             <div className="min-w-0">
               <p className="text-[9px] tracking-[0.3em] uppercase leading-none mb-0.5" style={{ color: '#4A3E36' }}>Call Us</p>
-              <p className="text-xs truncate group-hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>+1 (289) 241-3136</p>
+              <p className="text-xs truncate group-hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>+1 (437) 260-8925</p>
             </div>
           </a>
           <div style={{ width: '1px', height: '28px', backgroundColor: 'rgba(166,143,89,0.2)' }} />
