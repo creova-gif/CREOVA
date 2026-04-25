@@ -40,8 +40,8 @@ export function SplitText({
   const unitVariants = {
     hidden: {
       opacity: 0,
-      y: mode === 'chars' ? 24 : 18,
-      rotateX: mode === 'chars' ? 30 : 0,
+      y: mode === 'chars' ? 20 : 18,
+      rotateX: mode === 'chars' ? 20 : 0,
     },
     visible: {
       opacity: 1,
@@ -72,12 +72,11 @@ export function SplitText({
           <motion.span
             key={i}
             variants={unitVariants}
-            className="inline-block overflow-hidden"
+            className="inline-block"
             style={{ transformOrigin: 'bottom center' }}
             aria-hidden="true"
           >
             {unit === '' ? ' ' : unit}
-            {mode === 'words' && i < units.length - 1 ? '' : ''}
           </motion.span>
         ))}
       </motion.span>

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Camera, TrendingUp, Star } from 'lucide-react';
+import { ArrowRight, ExternalLink, Quote } from 'lucide-react';
 import { Link } from 'react-router';
 
 export function CaseStudy() {
@@ -16,7 +16,7 @@ export function CaseStudy() {
         >
           <div className="flex items-center gap-4 mb-5">
             <div className="w-12 h-px" style={{ backgroundColor: '#B1643B' }} />
-            <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#B1643B' }}>Client Results</span>
+            <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#B1643B' }}>Real Results</span>
           </div>
           <h2 className="text-4xl md:text-5xl tracking-tight" style={{ color: '#121212' }}>
             Work that moves the needle
@@ -24,141 +24,257 @@ export function CaseStudy() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Featured Case Study */}
+
+          {/* ── Featured Testimonial — Monique Beauregard ───────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-3xl group"
+            className="relative overflow-hidden rounded-3xl"
             style={{ backgroundColor: '#121212', minHeight: '480px' }}
           >
-            <div className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-700"
+            {/* Portrait background */}
+            <div
+              className="absolute inset-0"
               style={{
-                backgroundImage: 'url(https://picsum.photos/seed/bipoc-brand-shoot/800/600)',
+                backgroundImage: 'url(/photo-monique.jpg)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                filter: 'grayscale(30%) contrast(1.1)',
+                backgroundPosition: 'center 20%',
+                filter: 'grayscale(20%) contrast(1.05)',
+                opacity: 0.35,
               }}
             />
-            <div className="absolute inset-0" style={{
-              background: 'linear-gradient(to top, rgba(18,18,18,0.98) 0%, rgba(18,18,18,0.6) 50%, rgba(18,18,18,0.3) 100%)',
-            }} />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(to top, rgba(18,18,18,0.98) 0%, rgba(18,18,18,0.7) 45%, rgba(18,18,18,0.3) 100%)',
+              }}
+            />
 
-            <div className="relative h-full p-10 flex flex-col justify-end" style={{ minHeight: '480px' }}>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6 w-fit"
-                style={{ backgroundColor: 'rgba(166,143,89,0.15)', border: '1px solid rgba(166,143,89,0.3)' }}>
-                <Camera className="w-3.5 h-3.5" style={{ color: '#A68F59' }} />
-                <span className="text-xs tracking-wide" style={{ color: '#A68F59' }}>Brand Photography</span>
+            <div
+              className="relative h-full p-10 flex flex-col justify-end"
+              style={{ minHeight: '480px' }}
+            >
+              {/* BSSC logo + badge */}
+              <div className="flex items-center gap-3 mb-6">
+                <img
+                  src="/logo-bssc.png"
+                  alt="Brock University Black Student Success Centre"
+                  className="h-7 w-auto"
+                  style={{ filter: 'brightness(0) invert(1) opacity(0.6)' }}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                />
+                <span
+                  className="text-xs tracking-wider uppercase px-3 py-1 rounded-full"
+                  style={{
+                    backgroundColor: 'rgba(166,143,89,0.15)',
+                    border: '1px solid rgba(166,143,89,0.3)',
+                    color: '#A68F59',
+                  }}
+                >
+                  Brand + Events
+                </span>
               </div>
 
-              <h3 className="text-2xl md:text-3xl mb-3 tracking-tight" style={{ color: '#F5F1EB' }}>
-                Niagara Boutique Rebrand
-              </h3>
-              <p className="text-base mb-8 leading-relaxed" style={{ color: '#E3DCD3', maxWidth: '400px' }}>
-                A Niagara-based BIPOC fashion brand needed visuals that matched their premium positioning.
-                We delivered a full brand shoot — product, editorial, and lifestyle — in a single half-day session.
-              </p>
+              {/* Quote mark */}
+              <Quote
+                className="w-10 h-10 mb-4 opacity-30"
+                style={{ color: '#A68F59' }}
+              />
 
-              <div className="grid grid-cols-3 gap-4 mb-8 pt-6 border-t" style={{ borderColor: 'rgba(166,143,89,0.2)' }}>
-                {[
-                  { value: '1 day', label: 'turnaround' },
-                  { value: '80+', label: 'final images' },
-                  { value: '3×', label: 'engagement lift' },
-                ].map((item, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-xl font-light mb-1" style={{ color: '#A68F59' }}>{item.value}</div>
-                    <div className="text-xs uppercase tracking-wider" style={{ color: '#7A6F66' }}>{item.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <blockquote className="text-sm italic mb-6 leading-relaxed" style={{ color: '#E3DCD3' }}>
-                "They shot 80+ usable images in 4 hours. My online store sold out within two weeks of the rebrand launch."
+              <blockquote
+                className="text-lg md:text-xl leading-relaxed mb-6 font-light"
+                style={{ color: '#F5F1EB', fontFamily: 'var(--font-display)' }}
+              >
+                "CREOVA captured our brand essence perfectly. The professionalism
+                and cultural understanding made all the difference."
               </blockquote>
-              <p className="text-xs tracking-widest uppercase mb-6" style={{ color: '#A68F59' }}>
-                — Founder, Niagara Fashion Boutique
-              </p>
+
+              <div className="pt-5 border-t" style={{ borderColor: 'rgba(166,143,89,0.2)' }}>
+                <p className="text-base font-semibold mb-0.5" style={{ color: '#F5F1EB' }}>
+                  Monique Beauregard
+                </p>
+                <p className="text-sm" style={{ color: '#A68F59' }}>
+                  Brock University — Black Student Success Centre
+                </p>
+              </div>
             </div>
           </motion.div>
 
-          {/* Stats + Second Story */}
-          <div className="flex flex-col gap-8">
-            {/* Metric Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: TrendingUp, value: '3×', label: 'avg. engagement increase after brand shoot', color: '#A68F59' },
-                { icon: Star, value: '5.0', label: 'average Google rating across all delivered projects', color: '#B1643B' },
-              ].map((card, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-8 rounded-3xl"
-                  style={{ backgroundColor: '#F5F1EB', border: '1px solid rgba(0,0,0,0.06)' }}
-                >
-                  <card.icon className="w-6 h-6 mb-4" style={{ color: card.color }} />
-                  <div className="text-4xl font-light mb-2 tracking-tight" style={{ color: '#121212' }}>
-                    {card.value}
-                  </div>
-                  <p className="text-xs leading-relaxed" style={{ color: '#7A6F66' }}>{card.label}</p>
-                </motion.div>
-              ))}
-            </div>
+          {/* ── Right column: Brock LINC + Black Print ───────────────────── */}
+          <div className="flex flex-col gap-6">
 
-            {/* Second Mini Case Study */}
-            <motion.div
+            {/* Brock LINC Innovation Showcase */}
+            <motion.a
+              href="https://www.linkedin.com/posts/brock-linc_innovationshowcase2027-activity-7435428477895569408-uYf7"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-2xl flex-1"
+              style={{
+                backgroundColor: '#111111',
+                border: '1px solid rgba(166,143,89,0.15)',
+                minHeight: '200px',
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.4)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.15)'; }}
+            >
+              {/* Card image */}
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/7' }}>
+                <img
+                  src="/card-justin-panel.jpg"
+                  alt="Justin Mafie presenting CREOVA at the Innovation Showcase at Brock University LINC"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{ objectPosition: 'center 20%' }}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 60%, transparent 100%)',
+                  }}
+                />
+                <div
+                  className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
+                  style={{ backgroundColor: 'rgba(166,143,89,0.9)', color: '#121212' }}
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  LinkedIn Recap
+                </div>
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span
+                    className="text-xs tracking-widest uppercase px-2.5 py-1 rounded-full"
+                    style={{
+                      backgroundColor: 'rgba(166,143,89,0.1)',
+                      border: '1px solid rgba(166,143,89,0.2)',
+                      color: '#A68F59',
+                    }}
+                  >
+                    Past Event · Recap
+                  </span>
+                  <span className="text-xs" style={{ color: '#4A3E36' }}>Brock University LINC</span>
+                </div>
+                <h3 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>
+                  Innovation Showcase
+                </h3>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
+                  CREOVA was selected to present at Brock University's Innovation Showcase — a
+                  celebration of entrepreneurship and creative impact in the Niagara region.
+                </p>
+                <div
+                  className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300"
+                  style={{ color: '#A68F59' }}
+                >
+                  <span>See the full recap</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            </motion.a>
+
+            {/* The Black Print */}
+            <motion.a
+              href="https://www.instagram.com/creova.ca"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex-1 rounded-3xl p-8"
-              style={{ backgroundColor: '#F5F1EB', border: '1px solid rgba(0,0,0,0.06)' }}
+              className="group relative overflow-hidden rounded-2xl flex-1"
+              style={{
+                backgroundColor: '#111111',
+                border: '1px solid rgba(177,100,59,0.15)',
+                minHeight: '200px',
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(177,100,59,0.4)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(177,100,59,0.15)'; }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5 w-fit"
-                style={{ backgroundColor: 'rgba(177,100,59,0.08)', border: '1px solid rgba(177,100,59,0.2)' }}>
-                <span className="text-xs tracking-wide" style={{ color: '#B1643B' }}>Social Media + Strategy</span>
-              </div>
-              <h3 className="text-xl mb-3 tracking-tight" style={{ color: '#121212' }}>
-                Hamilton Entrepreneur — Brand Launch
-              </h3>
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: '#4A3E36' }}>
-                Monthly content strategy, caption writing, and bi-weekly photo sessions built a consistent Instagram
-                presence from 200 to 1,400 followers in 6 months — organically.
-              </p>
-              <div className="flex items-center gap-3 pt-5 border-t" style={{ borderColor: 'rgba(0,0,0,0.06)' }}>
-                <div>
-                  <div className="text-2xl font-light" style={{ color: '#B1643B' }}>7×</div>
-                  <div className="text-xs uppercase tracking-wider mt-1" style={{ color: '#7A6F66' }}>follower growth · 6 months</div>
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/7' }}>
+                <img
+                  src="/card-blackprint-session.jpg"
+                  alt="The Black Print closing session at the Black Student Success Centre"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{ objectPosition: 'center 40%' }}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 60%, transparent 100%)',
+                  }}
+                />
+                <div
+                  className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
+                  style={{ backgroundColor: 'rgba(177,100,59,0.9)', color: '#F5F1EB' }}
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  View on Instagram
                 </div>
-                <div className="mx-4 h-12 w-px" style={{ backgroundColor: 'rgba(0,0,0,0.08)' }} />
-                <div>
-                  <div className="text-2xl font-light" style={{ color: '#B1643B' }}>100%</div>
-                  <div className="text-xs uppercase tracking-wider mt-1" style={{ color: '#7A6F66' }}>organic — no paid ads</div>
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span
+                    className="text-xs tracking-widest uppercase px-2.5 py-1 rounded-full"
+                    style={{
+                      backgroundColor: 'rgba(177,100,59,0.1)',
+                      border: '1px solid rgba(177,100,59,0.2)',
+                      color: '#B1643B',
+                    }}
+                  >
+                    Community Event
+                  </span>
+                  <span className="text-xs" style={{ color: '#4A3E36' }}>Black Student Success Centre</span>
+                </div>
+                <h3 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>
+                  The Black Print — Closing Session
+                </h3>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
+                  Wednesday's closing session of The Black Print, in partnership with the Black Student
+                  Success Centre — a conversation filled with joy, good vibes, and powerful moments of
+                  connection.
+                </p>
+                <div
+                  className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300"
+                  style={{ color: '#B1643B' }}
+                >
+                  <span>Read the post</span>
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* CTA */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
+              className="flex items-center gap-4"
             >
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-500 hover:shadow-xl hover:scale-[1.02]"
+                className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-500 hover:shadow-xl hover:scale-[1.02]"
                 style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
               >
                 Start your project
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <p className="mt-3 text-xs" style={{ color: '#7A6F66' }}>
-                Free 20-minute discovery call · No obligation
-              </p>
+              <Link
+                to="/experience"
+                className="text-sm transition-opacity hover:opacity-60"
+                style={{ color: '#A68F59' }}
+              >
+                View all events →
+              </Link>
             </motion.div>
           </div>
         </div>

@@ -186,7 +186,7 @@ export function HomePage() {
                   text="CREOVA"
                   tag="h1"
                   className="tracking-tight mb-6"
-                  style={{ color: '#F5F1EB', lineHeight: '1.02', fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 10vw, 8rem)' }}
+                  style={{ color: '#F5F1EB', lineHeight: '1.02', fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 6.5vw, 5.5rem)' }}
                   delay={0.2}
                   stagger={0.06}
                   mode="chars"
