@@ -554,13 +554,24 @@ export function HomePage() {
               fontSize: 'clamp(100px, 14vw, 180px)', color: 'rgba(166,143,89,0.12)',
               fontFamily: 'Georgia, "Times New Roman", serif', lineHeight: '0.6', marginBottom: '-10px',
             }}>"</div>
-            <SplitText text="Every story deserves to be told beautifully." tag="h2"
-              className="font-light italic"
+            <motion.h2
+              className="font-light italic text-center"
               style={{
-                fontSize: 'clamp(28px, 5vw, 64px)', lineHeight: 1.25, color: '#F5F1EB',
-                letterSpacing: '-0.01em', fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2rem, 3.8vw, 4.5rem)',
+                lineHeight: 1.3,
+                color: '#F5F1EB',
+                letterSpacing: '-0.02em',
+                fontFamily: 'var(--font-display)',
               }}
-              mode="words" stagger={0.06} />
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
+            >
+              Every story deserves<br />
+              to be told{' '}
+              <span style={{ color: '#A68F59' }}>beautifully.</span>
+            </motion.h2>
             <div className="flex items-center justify-center gap-4 mt-10">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
               <p className="text-xs tracking-[0.4em] uppercase" style={{ color: 'rgba(166,143,89,0.65)' }}>

@@ -38,18 +38,18 @@ export function CaseStudy() {
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: 'url(/photo-monique.jpg)',
+                backgroundImage: 'url(/photo-monique-stock.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 20%',
-                filter: 'grayscale(20%) contrast(1.05)',
-                opacity: 0.35,
+                filter: 'grayscale(15%) contrast(1.08)',
+                opacity: 0.6,
               }}
             />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(to top, rgba(18,18,18,0.98) 0%, rgba(18,18,18,0.7) 45%, rgba(18,18,18,0.3) 100%)',
+                  'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.55) 50%, rgba(18,18,18,0.15) 100%)',
               }}
             />
 
