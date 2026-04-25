@@ -1,186 +1,479 @@
+import { useRef } from 'react';
 import { Link } from 'react-router';
-import { Instagram, Mail, MapPin, Linkedin, Star } from 'lucide-react';
+import { motion, useInView } from 'motion/react';
+import { ArrowUpRight, Instagram, Mail, Linkedin, Star, MapPin } from 'lucide-react';
 import creovaLogo from '../assets/creova-logo.png';
-import { useLanguage } from '../context/LanguageContext';
+import photoInline from '../assets/photo-duo-portrait.jpg';
+
+/* ─── DATA ─────────────────────────────────────────────────────────────── */
+
+const COLUMNS = [
+  {
+    title: 'Services',
+    links: [
+      { label: 'Photography',    href: '/services' },
+      { label: 'Videography',    href: '/services' },
+      { label: 'Brand Identity', href: '/services' },
+      { label: 'Aerial Drone',   href: '/services' },
+      { label: 'Social Media',   href: '/services' },
+      { label: 'Graphic Design', href: '/pricing#design' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'Our Story',       href: '/community' },
+      { label: 'Pricing',         href: '/pricing' },
+      { label: 'Book a Call',     href: '/contact' },
+      { label: 'Community',       href: '/community' },
+      { label: 'Terms of Service',href: '/terms-of-service' },
+      { label: 'Privacy Policy',  href: '/privacy-policy' },
+    ],
+  },
+  {
+    title: 'Platform',
+    links: [
+      { label: 'SEEN',             href: '/seen' },
+      { label: 'Shop',             href: '/shop' },
+      { label: 'Digital Products', href: '/digital-products' },
+      { label: 'Events',           href: '/experience' },
+      { label: 'Memberships',      href: '/memberships' },
+    ],
+  },
+  {
+    title: 'Connect',
+    links: [
+      { label: '@creativeinnovation__',     href: 'https://instagram.com/creativeinnovation__',         external: true },
+      { label: 'LinkedIn',                  href: 'https://www.linkedin.com/company/creovaspace/',       external: true },
+      { label: 'support@creova.ca',         href: 'mailto:support@creova.ca',                            external: true },
+      { label: 'Ontario, Canada',           href: '#',                                                   external: false },
+      { label: 'Leave a Google Review',     href: 'https://g.page/r/creova/review',                      external: true },
+    ],
+  },
+] as const;
+
+const MARQUEE_ITEMS = [
+  'Photography', '·', 'Videography', '·', 'Brand Identity',
+  '·', 'Drone Aerial', '·', 'Social Media', '·', 'Community',
+  '·', 'BIPOC Creative', '·', 'Ontario', '·', 'Cultural Storytelling',
+];
+
+/* ─── HELPERS ───────────────────────────────────────────────────────────── */
+
+const HEADLINE_TOKENS: Array<string | 'IMAGE'> = [
+  'Your', 'next', 'IMAGE', 'chapter', 'starts', 'here.'
+];
+
+function FooterMarquee() {
+  const doubled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
+  return (
+    <div className="overflow-hidden select-none" aria-hidden="true">
+      <div
+        className="flex whitespace-nowrap animate-marquee"
+        style={{ willChange: 'transform', gap: '2.5rem' }}
+      >
+        {doubled.map((item, i) => (
+          <span
+            key={i}
+            className="text-sm tracking-[0.35em] uppercase flex-shrink-0"
+            style={{ color: item === '·' ? '#A68F59' : 'rgba(227,220,211,0.35)' }}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SocialIcon({
+  href, label, children,
+}: { href: string; label: string; children: React.ReactNode }) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      whileHover={{ scale: 1.15, y: -3 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+      className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+      style={{
+        backgroundColor: 'rgba(245,241,235,0.05)',
+        border: '1px solid rgba(166,143,89,0.18)',
+        color: '#7A6F66',
+      }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#A68F59'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.45)'; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#7A6F66'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.18)'; }}
+    >
+      {children}
+    </motion.a>
+  );
+}
+
+/* ─── MAIN COMPONENT ─────────────────────────────────────────────────────── */
 
 export function Footer() {
-  const { t } = useLanguage();
+  const headlineRef = useRef<HTMLDivElement>(null);
+  const linksRef    = useRef<HTMLDivElement>(null);
+  const headlineInView = useInView(headlineRef, { once: true, margin: '-5% 0px' });
+  const linksInView    = useInView(linksRef,    { once: true, margin: '-5% 0px' });
+
   return (
-    <footer style={{ backgroundColor: '#121212', color: '#E3DCD3' }}>
-      {/* Book a Call CTA strip */}
-      <div className="border-b" style={{ borderColor: 'rgba(166,143,89,0.2)', backgroundColor: 'rgba(166,143,89,0.04)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold" style={{ color: '#F5F1EB' }}>
-              Ready to start your project?
-            </p>
-            <p className="text-xs mt-0.5" style={{ color: '#7A6F66' }}>
-              Free 20-minute discovery call · No obligation · Serving Ontario &amp; beyond
+    <footer
+      className="relative overflow-hidden"
+      style={{ backgroundColor: '#080808', color: '#E3DCD3' }}
+    >
+      {/* Ambient radial glow — bottom-right quadrant */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          inset: 0,
+          background:
+            'radial-gradient(ellipse 70% 60% at 85% 95%, rgba(166,143,89,0.08) 0%, transparent 65%), ' +
+            'radial-gradient(ellipse 40% 40% at 15% 85%, rgba(177,100,59,0.05) 0%, transparent 60%)',
+        }}
+      />
+      {/* Dot-grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #A68F59 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      {/* ── 1. AVAILABILITY STRIP ──────────────────────────────────────── */}
+      <div
+        className="relative border-b"
+        style={{ borderColor: 'rgba(166,143,89,0.12)' }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0"
+              style={{ backgroundColor: '#B1643B' }}
+            />
+            <p className="text-xs tracking-[0.08em]" style={{ color: '#7A6F66' }}>
+              <span style={{ color: '#E3DCD3' }}>Limited availability —</span>
+              {' '}currently accepting 4 new projects for Q3 2026
             </p>
           </div>
           <Link
             to="/contact"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90"
-            style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
+            className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:opacity-60"
+            style={{ color: '#A68F59' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
-            Book a Discovery Call
+            Book a free discovery call
+            <ArrowUpRight className="w-3 h-3" />
           </Link>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="space-y-4">
-            <img
-              src={creovaLogo}
-              alt="CREOVA - Creative Stories, Digital Impact"
-              className="h-10 w-auto"
-              style={{ mixBlendMode: 'screen' }}
-            />
+      {/* ── 2. MEGA CTA ────────────────────────────────────────────────── */}
+      <div
+        ref={headlineRef}
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ paddingTop: 'clamp(5rem, 10vw, 9rem)', paddingBottom: 'clamp(4rem, 7vw, 7rem)' }}
+      >
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-end">
+
+          {/* Headline + CTAs */}
+          <div>
+            {/* Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, x: -16 }}
+              animate={headlineInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-4 mb-8"
+            >
+              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>
+                CREOVA Creative Agency
+              </span>
+            </motion.div>
+
+            {/* Giant headline with inline portrait pill */}
+            <h2
+              className="leading-[0.9] tracking-tight mb-2 overflow-visible"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(3.2rem, 8vw, 9rem)',
+                color: '#F5F1EB',
+              }}
+            >
+              {HEADLINE_TOKENS.map((token, i) =>
+                token === 'IMAGE' ? (
+                  <motion.span
+                    key="img"
+                    className="inline-block align-middle overflow-hidden rounded-full mx-2 md:mx-4 flex-shrink-0"
+                    style={{
+                      width: 'clamp(4rem, 7vw, 8rem)',
+                      height: 'clamp(2.4rem, 4.2vw, 4.8rem)',
+                      verticalAlign: '-0.06em',
+                      boxShadow: '0 0 0 2px rgba(166,143,89,0.25)',
+                    }}
+                    initial={{ opacity: 0, scale: 0.7 }}
+                    animate={headlineInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ delay: 0.55, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <img
+                      src={photoInline}
+                      alt=""
+                      aria-hidden="true"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: 'center 15%', filter: 'grayscale(20%) contrast(1.08)' }}
+                    />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-[0.22em]"
+                    initial={{ opacity: 0, y: 48, rotateX: 18 }}
+                    animate={headlineInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+                    transition={{ delay: i * 0.09, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ display: 'inline-block', transformOrigin: 'bottom center' }}
+                  >
+                    {token === 'here.' ? (
+                      <span
+                        style={{
+                          backgroundImage: 'linear-gradient(135deg, #F5F1EB 10%, #A68F59 80%)',
+                          WebkitBackgroundClip: 'text',
+                          backgroundClip: 'text',
+                          color: 'transparent',
+                        }}
+                      >
+                        {token}
+                      </span>
+                    ) : token}
+                  </motion.span>
+                )
+              )}
+            </h2>
+
+            {/* Sub-text */}
+            <motion.p
+              className="text-base md:text-lg mb-10 max-w-xl leading-relaxed"
+              style={{ color: '#7A6F66' }}
+              initial={{ opacity: 0 }}
+              animate={headlineInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              Photography · Videography · Brand Identity for BIPOC founders across Ontario.
+              Free 20-minute discovery call. No commitment required.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 16 }}
+              animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.95, duration: 0.7 }}
+            >
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-400 hover:shadow-[0_8px_32px_rgba(166,143,89,0.2)] hover:-translate-y-0.5"
+                style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
+              >
+                Book a Discovery Call
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              </Link>
+              <Link
+                to="/pricing"
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-400 hover:-translate-y-0.5"
+                style={{
+                  backgroundColor: 'transparent',
+                  color: '#A68F59',
+                  border: '1px solid rgba(166,143,89,0.3)',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.6)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.3)'; }}
+              >
+                View Pricing
+              </Link>
+            </motion.div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="mb-4 tracking-wide" style={{ color: '#A68F59' }}>{t('footer.section.services')}</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/services" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  {t('services.photo.title')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  {t('services.video.title')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  {t('services.brand.title')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  {t('services.social.title')}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Shop */}
-          <div>
-            <h4 className="mb-4 tracking-wide" style={{ color: '#A68F59' }}>{t('nav.shop')}</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/shop" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  Merchandise
-                </Link>
-              </li>
-              <li>
-                <Link to="/digital-products" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  Digital Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/events" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  Events & Workshops
-                </Link>
-              </li>
-              <li>
-                <Link to="/events#contact-form" className="hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>
-                  Partner With Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="mb-4 tracking-wide" style={{ color: '#A68F59' }}>Connect</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
-                <span style={{ color: '#E3DCD3' }}>Ontario, Canada</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
-                <a 
-                  href="mailto:support@creova.ca" 
-                  className="hover:opacity-70 transition-opacity break-all"
-                  style={{ color: '#E3DCD3' }}
+          {/* Right column — contact quick-info */}
+          <motion.div
+            className="hidden lg:flex flex-col gap-5 pb-2"
+            initial={{ opacity: 0, x: 24 }}
+            animate={headlineInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.7, duration: 0.8 }}
+          >
+            {[
+              { Icon: MapPin, text: 'Ontario, Canada' },
+              { Icon: Mail,   text: 'support@creova.ca', href: 'mailto:support@creova.ca' },
+              { Icon: Star,   text: '5-Star Rated', href: 'https://g.page/r/creova/review' },
+            ].map(({ Icon, text, href }, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(166,143,89,0.08)', border: '1px solid rgba(166,143,89,0.14)' }}
                 >
-                  support@creova.ca
-                </a>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Instagram className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
-                <a 
-                  href="https://instagram.com/creativeinnovation__" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:opacity-70 transition-opacity text-sm"
-                  style={{ color: '#E3DCD3' }}
-                >
-                  @creativeinnovation__
-                </a>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Linkedin className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
-                <a
-                  href="https://www.linkedin.com/company/creovaspace/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-70 transition-opacity text-sm"
-                  style={{ color: '#E3DCD3' }}
-                >
-                  CREOVA
-                </a>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Star className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
-                <a
-                  href="https://g.page/r/creova/review"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-70 transition-opacity text-sm"
-                  style={{ color: '#E3DCD3' }}
-                >
-                  Leave a Google Review
-                </a>
-              </li>
-            </ul>
-          </div>
+                  <Icon className="w-4 h-4" style={{ color: '#A68F59' }} />
+                </div>
+                {href ? (
+                  <a
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                    className="text-sm hover:opacity-70 transition-opacity"
+                    style={{ color: '#E3DCD3' }}
+                  >
+                    {text}
+                  </a>
+                ) : (
+                  <span className="text-sm" style={{ color: '#E3DCD3' }}>{text}</span>
+                )}
+              </div>
+            ))}
+          </motion.div>
         </div>
+      </div>
 
-        <div className="border-t pt-8 text-sm text-center" style={{ borderColor: '#2C2C2C' }}>
-          <p className="text-xs mb-4" style={{ color: '#7A6F66' }}>
-            * All prices displayed in Canadian Dollars (CAD). 13% GST/HST (Ontario) applies to all services, products, and memberships.
-          </p>
-          <div className="flex flex-wrap justify-center gap-6 mb-4">
-            <Link 
-              to="/terms-of-service" 
-              className="hover:opacity-70 transition-opacity" 
-              style={{ color: '#A68F59' }}
+      {/* ── 3. MARQUEE DIVIDER ─────────────────────────────────────────── */}
+      <div
+        className="relative border-y py-5 overflow-hidden"
+        style={{ borderColor: 'rgba(166,143,89,0.1)' }}
+      >
+        <FooterMarquee />
+      </div>
+
+      {/* ── 4. LINKS GRID ──────────────────────────────────────────────── */}
+      <div
+        ref={linksRef}
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ paddingTop: 'clamp(3.5rem, 6vw, 5rem)', paddingBottom: 'clamp(3.5rem, 6vw, 5rem)' }}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+          {COLUMNS.map((col, colIdx) => (
+            <motion.div
+              key={col.title}
+              initial={{ opacity: 0, y: 24 }}
+              animate={linksInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: colIdx * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              Terms of Service
+              {/* Column header */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-4 h-px" style={{ backgroundColor: '#A68F59' }} />
+                <p
+                  className="text-xs tracking-[0.4em] uppercase"
+                  style={{ color: '#A68F59' }}
+                >
+                  {col.title}
+                </p>
+              </div>
+
+              <ul className="space-y-3.5">
+                {col.links.map((link, linkIdx) => (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={linksInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: colIdx * 0.1 + linkIdx * 0.05 + 0.15, duration: 0.5 }}
+                  >
+                    {'external' in link && link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-1.5 text-sm transition-all duration-250"
+                        style={{ color: '#7A6F66' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#E3DCD3'; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#7A6F66'; }}
+                      >
+                        {link.label}
+                        {link.href !== '#' && (
+                          <ArrowUpRight
+                            className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          />
+                        )}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-sm transition-all duration-250"
+                        style={{ color: '#7A6F66' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#E3DCD3'; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#7A6F66'; }}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── 5. BOTTOM BAR ──────────────────────────────────────────────── */}
+      <div
+        className="relative border-t"
+        style={{ borderColor: 'rgba(245,241,235,0.05)' }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5">
+
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0 group">
+              <img
+                src={creovaLogo}
+                alt="CREOVA"
+                className="h-8 w-auto transition-opacity duration-300 group-hover:opacity-70"
+                style={{ mixBlendMode: 'screen' }}
+              />
             </Link>
-            <Link 
-              to="/privacy-policy" 
-              className="hover:opacity-70 transition-opacity" 
-              style={{ color: '#A68F59' }}
-            >
-              Privacy Policy
-            </Link>
-            <Link 
-              to="/contact" 
-              className="hover:opacity-70 transition-opacity" 
-              style={{ color: '#A68F59' }}
-            >
-              Contact Us
-            </Link>
+
+            {/* Legal strip */}
+            <div className="flex flex-col items-center gap-1.5 text-center">
+              <p className="text-xs" style={{ color: '#3A3A3A' }}>
+                © {new Date().getFullYear()} CREOVA. All rights reserved.
+                {' '}·{' '}
+                BIPOC-Owned &amp; Operated · Ontario, Canada
+              </p>
+              <p className="text-xs" style={{ color: '#2C2C2C' }}>
+                All prices in CAD. 13% GST/HST (Ontario) applies.
+              </p>
+            </div>
+
+            {/* Social icons + legal links */}
+            <div className="flex flex-col items-end gap-3">
+              <div className="flex items-center gap-2">
+                <SocialIcon href="https://instagram.com/creativeinnovation__" label="Instagram">
+                  <Instagram className="w-4 h-4" />
+                </SocialIcon>
+                <SocialIcon href="https://www.linkedin.com/company/creovaspace/" label="LinkedIn">
+                  <Linkedin className="w-4 h-4" />
+                </SocialIcon>
+                <SocialIcon href="mailto:support@creova.ca" label="Email">
+                  <Mail className="w-4 h-4" />
+                </SocialIcon>
+                <SocialIcon href="https://g.page/r/creova/review" label="Google Review">
+                  <Star className="w-4 h-4" />
+                </SocialIcon>
+              </div>
+              <div className="flex items-center gap-4">
+                {[
+                  { label: 'Terms', href: '/terms-of-service' },
+                  { label: 'Privacy', href: '/privacy-policy' },
+                  { label: 'Contact', href: '/contact' },
+                ].map(({ label, href }) => (
+                  <Link
+                    key={label}
+                    to={href}
+                    className="text-xs transition-opacity duration-200 hover:opacity-70"
+                    style={{ color: '#3A3A3A' }}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-          <p style={{ color: '#A68F59' }}>© {new Date().getFullYear()} CREOVA. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>
