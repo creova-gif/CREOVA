@@ -3,13 +3,14 @@ import { Link } from 'react-router';
 import { Button } from '../components/ui/button';
 import {
   Camera, Video, Palette, TrendingUp, ShoppingBag, Calendar,
-  CheckCircle2, Globe, Users, ArrowRight, Shield, Heart, Award, Share2,
+  CheckCircle2, Globe, Users, ArrowRight, Heart, Award,
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { CommunityInsights } from '../components/CommunityInsights';
 import { TrustSignals } from '../components/TrustSignals';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { ClientLogos } from '../components/ClientLogos';
+import { CaseStudy } from '../components/CaseStudy';
 import { useLanguage } from '../context/LanguageContext';
 import { VideoHero } from '../components/VideoHero';
 import { SplitText } from '../components/SplitText';
@@ -121,9 +122,9 @@ export function HomePage() {
   ];
 
   const stats = [
-    { number: '15+', label: 'Creative Stories Told', icon: Award },
-    { number: '5+', label: 'Brands Elevated', icon: Users },
-    { number: '10+', label: 'Communities Reached', icon: Globe },
+    { number: '47+', label: 'Projects Delivered', icon: Award },
+    { number: '12+', label: 'Cities Reached', icon: Globe },
+    { number: '3+', label: 'Years in Business', icon: Users },
   ];
 
   const marqueeItems = [
@@ -190,20 +191,42 @@ export function HomePage() {
                   stagger={0.06}
                   mode="chars"
                 />
-                <motion.p className="text-2xl md:text-3xl mb-3" style={{ color: '#A68F59', letterSpacing: '0.05em' }}
-                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9, duration: 0.8 }}>
-                  {t('home.hero.creative.stories')}
+                <motion.p
+                  className="text-xl md:text-2xl font-medium leading-tight mb-2"
+                  style={{ color: '#A68F59', letterSpacing: '0.02em' }}
+                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9, duration: 0.8 }}
+                >
+                  Visual branding for BIPOC founders
                 </motion.p>
-                <motion.p className="text-2xl md:text-3xl" style={{ color: '#A68F59', letterSpacing: '0.05em' }}
-                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.0, duration: 0.8 }}>
-                  {t('home.hero.digital.impact')}
+                <motion.p
+                  className="text-xl md:text-2xl font-light"
+                  style={{ color: '#7A6F66', letterSpacing: '0.02em' }}
+                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.0, duration: 0.8 }}
+                >
+                  who refuse to blend in.
                 </motion.p>
               </div>
 
-              <motion.p className="text-xl mb-12 leading-relaxed max-w-xl" style={{ color: '#E3DCD3' }}
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }}>
-                {t('home.hero.description')}
+              <motion.p
+                className="text-lg mb-8 leading-relaxed max-w-xl"
+                style={{ color: '#E3DCD3' }}
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }}
+              >
+                Photography, videography, and brand strategy built for BIPOC entrepreneurs across Ontario.
+                From your first brand shoot to a full content engine — we deliver results, not just pretty pictures.
               </motion.p>
+
+              {/* Availability signal */}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.35, duration: 0.7 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+                style={{ backgroundColor: 'rgba(177,100,59,0.1)', border: '1px solid rgba(177,100,59,0.25)' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#B1643B' }} />
+                <span className="text-xs tracking-wide" style={{ color: '#B1643B' }}>
+                  4 client spots open for Q3 2026
+                </span>
+              </motion.div>
 
               <motion.div className="flex flex-wrap gap-4"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.4, duration: 0.8 }}>
@@ -229,8 +252,12 @@ export function HomePage() {
 
               <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 0.8 }}
-                className="flex flex-wrap gap-6 mt-12 pt-8 border-t" style={{ borderColor: 'rgba(227, 220, 211, 0.2)' }}>
-                {[{ icon: Award, text: '20+ Projects' }, { icon: Heart, text: 'BIPOC-Led' }, { icon: CheckCircle2, text: '5-Star Service' }].map((badge, i) => (
+                className="flex flex-wrap gap-6 mt-10 pt-8 border-t" style={{ borderColor: 'rgba(227, 220, 211, 0.2)' }}>
+                {[
+                  { icon: Award, text: '47+ Projects Delivered' },
+                  { icon: Heart, text: 'BIPOC-Owned & Operated' },
+                  { icon: CheckCircle2, text: '5-Star Rated' },
+                ].map((badge, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <badge.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
                     <span className="text-sm" style={{ color: '#E3DCD3' }}>{badge.text}</span>
@@ -409,6 +436,9 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Platforms We Create For — svgl logos */}
+      <ClientLogos />
 
       {/* Scroll Scrub Manifesto */}
       <section className="py-32 px-6 relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
@@ -599,34 +629,59 @@ export function HomePage() {
 
       <TrustSignals />
       <TestimonialsSection />
+      <CaseStudy />
 
-      {/* Social Proof */}
+      {/* Urgency + Mini Conversion Block */}
       <section className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }} viewport={{ once: true }}
-            className="text-center bg-white rounded-3xl p-12 border-2 shadow-xl"
+            className="bg-white rounded-3xl p-10 md:p-14 border-2 shadow-xl"
             style={{ borderColor: '#E3DCD3' }}>
-            <Share2 className="w-12 h-12 mx-auto mb-6" style={{ color: '#A68F59' }} />
-            <h3 className="text-3xl mb-4" style={{ color: '#121212' }}>Love What You See?</h3>
-            <p className="text-lg mb-8" style={{ color: '#7A6F66' }}>
-              Share CREOVA with your network and help us grow the community of creative excellence.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button variant="outline"
-                className="px-6 py-3 rounded-xl border-2 hover:scale-105 transition-all duration-300"
-                style={{ borderColor: '#A68F59', color: '#A68F59' }}
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({ title: 'CREOVA - Creative Agency', text: 'Check out this amazing creative agency!', url: window.location.href });
-                  }
-                }}>
-                Share This Site
-              </Button>
-              <Button className="px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300"
-                style={{ backgroundColor: '#121212' }} asChild>
-                <Link to="/contact">Work With Us</Link>
-              </Button>
+            <div className="flex flex-col md:flex-row gap-10 items-start">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
+                  style={{ backgroundColor: 'rgba(177,100,59,0.08)', border: '1px solid rgba(177,100,59,0.2)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#B1643B' }} />
+                  <span className="text-xs tracking-wide" style={{ color: '#B1643B' }}>Limited Availability</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl mb-4 tracking-tight" style={{ color: '#121212' }}>
+                  4 client spots remaining for Q3 2026
+                </h3>
+                <p className="text-base mb-6 leading-relaxed" style={{ color: '#7A6F66' }}>
+                  We keep our roster small on purpose — every client gets our full attention.
+                  If you're planning a launch, rebrand, or campaign this summer, now is the time to start the conversation.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button
+                    className="px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300"
+                    style={{ backgroundColor: '#121212', color: '#F5F1EB' }} asChild>
+                    <Link to="/contact" className="flex items-center gap-2">
+                      Claim Your Spot
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline"
+                    className="px-6 py-3 rounded-xl border-2 hover:scale-105 transition-all duration-300"
+                    style={{ borderColor: '#A68F59', color: '#A68F59' }} asChild>
+                    <Link to="/pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="flex-shrink-0 flex flex-col gap-4 w-full md:w-48">
+                {[
+                  { label: 'Free discovery call', check: true },
+                  { label: 'Response within 24 hrs', check: true },
+                  { label: 'No contracts required', check: true },
+                  { label: 'Ontario-based team', check: true },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: '#A68F59' }} />
+                    <span className="text-sm" style={{ color: '#4A3E36' }}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -655,17 +710,24 @@ export function HomePage() {
               <Button size="lg"
                 className="group w-full sm:w-auto px-8 py-5 sm:px-10 sm:py-7 rounded-xl text-base sm:text-xl border-2 hover:shadow-2xl hover:scale-105 transition-all duration-500"
                 style={{ backgroundColor: '#F5F1EB', color: '#121212', borderColor: '#F5F1EB' }} asChild>
-                <Link to="/pricing" className="flex items-center gap-2">
-                  View Pricing
+                <Link to="/contact" className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
+                  Book a Discovery Call
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline"
                 className="w-full sm:w-auto px-8 py-5 sm:px-10 sm:py-7 rounded-xl text-base sm:text-xl border-2 backdrop-blur-sm hover:backdrop-blur-md hover:scale-105 transition-all duration-500"
                 style={{ borderColor: '#A68F59', color: '#A68F59', backgroundColor: 'rgba(166, 143, 89, 0.1)' }} asChild>
-                <Link to="/contact">Start a Project</Link>
+                <Link to="/pricing">View Pricing</Link>
               </Button>
             </div>
+            <motion.p
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }} viewport={{ once: true }}
+              className="text-xs mt-4" style={{ color: '#7A6F66' }}>
+              Free 20-minute call · No commitment · Response within 24 hours
+            </motion.p>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }} viewport={{ once: true }}
               className="flex flex-wrap gap-8 justify-center mt-16 pt-12 border-t"

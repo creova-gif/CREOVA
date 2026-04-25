@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Instagram, Mail, MapPin, Linkedin } from 'lucide-react';
+import { Instagram, Mail, MapPin, Linkedin, Star } from 'lucide-react';
 import creovaLogo from '../assets/creova-logo.png';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -7,13 +7,35 @@ export function Footer() {
   const { t } = useLanguage();
   return (
     <footer style={{ backgroundColor: '#121212', color: '#E3DCD3' }}>
+      {/* Book a Call CTA strip */}
+      <div className="border-b" style={{ borderColor: 'rgba(166,143,89,0.2)', backgroundColor: 'rgba(166,143,89,0.04)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold" style={{ color: '#F5F1EB' }}>
+              Ready to start your project?
+            </p>
+            <p className="text-xs mt-0.5" style={{ color: '#7A6F66' }}>
+              Free 20-minute discovery call · No obligation · Serving Ontario &amp; beyond
+            </p>
+          </div>
+          <Link
+            to="/contact"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90"
+            style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
+            Book a Discovery Call
+          </Link>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img 
-              src={creovaLogo} 
-              alt="CREOVA - Creative Stories, Digital Impact" 
+            <img
+              src={creovaLogo}
+              alt="CREOVA - Creative Stories, Digital Impact"
               className="h-10 w-auto"
               style={{ mixBlendMode: 'screen' }}
             />
@@ -105,14 +127,26 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <Linkedin className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
-                <a 
-                  href="https://www.linkedin.com/company/creovaspace/" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/company/creovaspace/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70 transition-opacity text-sm"
                   style={{ color: '#E3DCD3' }}
                 >
                   CREOVA
+                </a>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Star className="w-4 h-4 mt-0.5" style={{ color: '#A68F59' }} />
+                <a
+                  href="https://g.page/r/creova/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-opacity text-sm"
+                  style={{ color: '#E3DCD3' }}
+                >
+                  Leave a Google Review
                 </a>
               </li>
             </ul>

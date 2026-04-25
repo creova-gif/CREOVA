@@ -129,7 +129,17 @@ export function Navigation() {
               <div className="hidden lg:flex">
                 <LanguageSwitcher />
               </div>
-              
+
+              {/* Book a Call — primary conversion CTA */}
+              <Link
+                to="/contact"
+                className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"
+                style={{ backgroundColor: '#121212', color: '#F5F1EB', border: '1px solid rgba(166,143,89,0.25)' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59' }} />
+                Book a Call
+              </Link>
+
               <Button
                 variant="ghost"
                 size="sm"
@@ -182,6 +192,17 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
+
+              {/* Book a Call - Mobile */}
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-2 mx-4 my-2 px-5 py-3 rounded-xl text-sm font-semibold tracking-wide text-center justify-center"
+                style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59' }} />
+                Book a Discovery Call
+              </Link>
 
               {/* SEEN - Mobile */}
               <Link

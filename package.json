@@ -43,6 +43,7 @@
     "hono": "*",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.487.0",
+    "@ridemountainpig/svgl-react": "*",
     "animejs": "^3.2.2",
     "gsap": "^3.12.5",
     "motion": "*",

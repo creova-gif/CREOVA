@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageCircle, Quote, Users, Globe, TrendingUp, CheckCircle, MapPin } from 'lucide-react';
+import { MessageCircle, Quote, Globe, TrendingUp, CheckCircle, MapPin, Award, Users } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function TestimonialsSection() {
@@ -33,10 +33,10 @@ export function TestimonialsSection() {
   ];
 
   const stats = [
-    { value: '60+', label: 'Community Members', icon: Users },
-    { value: '95%', label: 'Cultural Fashion Support', icon: TrendingUp },
-    { value: '4.2/5', label: 'Client Satisfaction', icon: CheckCircle },
-    { value: '12+', label: 'Cities Worldwide', icon: Globe }
+    { value: '47+', label: 'Projects Delivered', icon: Award },
+    { value: '5★', label: 'Average Rating', icon: CheckCircle },
+    { value: '3+', label: 'Years in Business', icon: TrendingUp },
+    { value: '12+', label: 'Cities Reached', icon: Globe }
   ];
 
   // Auto-advance testimonial every 5 seconds

@@ -38,6 +38,20 @@ export function PricingPage() {
 
   return (
     <div style={{ backgroundColor: '#F5F1EB' }}>
+      {/* Availability Banner */}
+      <div className="relative z-40 py-3 px-4 text-center" style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(166,143,89,0.25)' }}>
+        <p className="text-xs sm:text-sm tracking-wide" style={{ color: '#E3DCD3' }}>
+          <span className="inline-flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
+            <strong style={{ color: '#A68F59' }}>Limited availability:</strong>
+            {' '}Currently accepting 4 new client projects for Q3 2026 —{' '}
+            <Link to="/contact" className="underline underline-offset-2 hover:opacity-80 transition-opacity" style={{ color: '#F5F1EB' }}>
+              book your free discovery call →
+            </Link>
+          </span>
+        </p>
+      </div>
+
       {/* Hero Section — Editorial */}
       <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
