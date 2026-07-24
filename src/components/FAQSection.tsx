@@ -142,7 +142,7 @@ export function FAQSection({
             We're here to help! Reach out to our team for personalized assistance.
           </p>
           <a
-            href="mailto:support@creova.ca"
+            href="mailto:support@creova.one"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg"
             style={{ 
               backgroundColor: '#121212',

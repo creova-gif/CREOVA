@@ -49,7 +49,7 @@ export function EventsCollaboratePage() {
 
   const handleCaptchaError = (error: string) => {
     setCaptchaToken(null);
-    if (window.location.hostname === 'creova.ca') {
+    if (window.location.hostname === 'creova.one') {
       toast.error(fr ? 'Problème de vérification de sécurité' : 'Security Verification Issue', {
         description: error || (fr ? 'Vérification impossible. Veuillez actualiser et réessayer.' : 'Unable to verify. Please refresh and try again.')
       });

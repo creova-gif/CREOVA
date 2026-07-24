@@ -157,7 +157,7 @@ function AppContent() {
   const currentLang = language || 'en';
   const ogLocale = currentLang === 'fr' ? 'fr_CA' : 'en_CA';
   const ogLocaleAlternate = currentLang === 'fr' ? 'en_CA' : 'fr_CA';
-  const canonicalUrl = `https://creova.ca${location.pathname}`;
+  const canonicalUrl = `https://creova.one${location.pathname}`;
   
   return (
     <>
@@ -190,9 +190,9 @@ function AppContent() {
           "@type": "ProfessionalService",
           "name": "CREOVA Creative Agency",
           "description": t('seo.schema.desc'),
-          "url": "https://creova.ca",
+          "url": "https://creova.one",
           "telephone": "+1-437-260-8925",
-          "email": "support@creova.ca",
+          "email": "support@creova.one",
           "address": {
             "@type": "PostalAddress",
             "addressRegion": "ON",

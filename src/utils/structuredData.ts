@@ -1,4 +1,4 @@
-const SITE_URL = 'https://creova.ca';
+const SITE_URL = 'https://creova.one';
 
 /**
  * CREOVA has no public storefront — it's a service-area business, so this
@@ -16,7 +16,7 @@ export const organizationSchema = {
   description:
     "CREOVA is Ontario's Black-owned BIPOC creative agency offering professional photography, videography, brand management, event design, and social media services.",
   telephone: '+1-437-260-8925',
-  email: 'support@creova.ca',
+  email: 'support@creova.one',
   areaServed: {
     '@type': 'Place',
     name: 'Niagara Region, Ontario, Canada',

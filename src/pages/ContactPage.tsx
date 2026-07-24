@@ -41,7 +41,7 @@ export function ContactPage() {
 
   const handleCaptchaError = (error: string) => {
     setCaptchaToken(null);
-    if (window.location.hostname === 'creova.ca') {
+    if (window.location.hostname === 'creova.one') {
       toast.error(t('contact.toast.captcha.issue'), {
         description: error || t('contact.toast.captcha.desc')
       });
@@ -214,7 +214,7 @@ export function ContactPage() {
             >
               {[
                 { icon: Phone, label: 'Call Us', value: '+1 (437) 260-8925', href: 'tel:+14372608925' },
-                { icon: Mail, label: 'Email', value: 'support@creova.ca', href: 'mailto:support@creova.ca' },
+                { icon: Mail, label: 'Email', value: 'support@creova.one', href: 'mailto:support@creova.one' },
                 { icon: MapPin, label: 'Location', value: 'Niagara, Ontario', href: null },
                 { icon: Clock, label: 'Hours', value: 'Mon–Fri 9AM–6PM', href: null },
               ].map(({ icon: Icon, label, value, href }) => {

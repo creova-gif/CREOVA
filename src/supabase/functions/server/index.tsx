@@ -1092,10 +1092,10 @@ app.post("/make-server-feacf0d8/submit-contact", async (c) => {
               method: 'POST',
               headers: { 'Authorization': `Bearer ${emailApiKey}`, 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                from: 'CREOVA <support@creova.ca>',
+                from: 'CREOVA <support@creova.one>',
                 to: [email],
                 subject: "We've received your message — CREOVA",
-                html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#121212"><h2 style="color:#A68F59">Thanks for reaching out, ${name}!</h2><p>We've received your message and will get back to you within 1–2 business days.</p><p style="color:#7A6F66;font-size:14px">In the meantime, follow us on Instagram <a href="https://www.instagram.com/creova.ca" style="color:#A68F59">@creova.ca</a></p><p>— The CREOVA Team</p></div>`
+                html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#121212"><h2 style="color:#A68F59">Thanks for reaching out, ${name}!</h2><p>We've received your message and will get back to you within 1–2 business days.</p><p style="color:#7A6F66;font-size:14px">In the meantime, follow us on Instagram <a href="https://www.instagram.com/creova.ca" style="color:#A68F59">@creova.one</a></p><p>— The CREOVA Team</p></div>`
               })
             }),
             fetch('https://api.resend.com/emails', {
@@ -1262,7 +1262,7 @@ app.post("/make-server-feacf0d8/submit-booking", async (c) => {
               method: 'POST',
               headers: { 'Authorization': `Bearer ${emailApiKey}`, 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                from: 'CREOVA Bookings <bookings@creova.ca>',
+                from: 'CREOVA Bookings <bookings@creova.one>',
                 to: [email],
                 subject: 'Booking Request Received — CREOVA',
                 html: getBookingConfirmationTemplate('en', emailData)
@@ -1973,7 +1973,7 @@ app.post("/make-server-feacf0d8/send-booking-confirmation", async (c) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'CREOVA Bookings <bookings@creova.ca>',
+        from: 'CREOVA Bookings <bookings@creova.one>',
         to: [to],
         subject: customerSubject,
         html: customerEmailHtml

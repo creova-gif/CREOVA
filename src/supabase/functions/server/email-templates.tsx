@@ -551,7 +551,7 @@ export const adminBookingNotification = (data: BookingEmailData): string => {
       </div>
       
       <p style="text-align: center; margin-top: 30px;">
-        <a href="https://creova.ca/admin/bookings" style="display: inline-block; background-color: #121212; color: #F5F1EB; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 600;">View in Admin Dashboard</a>
+        <a href="https://creova.one/admin/bookings" style="display: inline-block; background-color: #121212; color: #F5F1EB; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 600;">View in Admin Dashboard</a>
       </p>
     </div>
   </div>

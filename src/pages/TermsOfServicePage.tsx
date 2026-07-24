@@ -329,9 +329,9 @@ export function TermsOfServicePage() {
                 {fr ? "Si vous avez des questions au sujet de ces conditions d'utilisation, veuillez nous joindre :" : 'If you have questions about these Terms of Service, please contact us:'}
               </p>
               <ul className="mt-3 space-y-2" style={{ color: '#7A6F66' }}>
-                <li><strong style={{ color: '#121212' }}>{fr ? 'Courriel :' : 'Email:'}</strong> support@creova.ca</li>
+                <li><strong style={{ color: '#121212' }}>{fr ? 'Courriel :' : 'Email:'}</strong> support@creova.one</li>
                 <li><strong style={{ color: '#121212' }}>{fr ? 'Lieu :' : 'Location:'}</strong> {fr ? 'Ontario, Canada' : 'Ontario, Canada'}</li>
-                <li><strong style={{ color: '#121212' }}>{fr ? 'Site web :' : 'Website:'}</strong> www.creova.com</li>
+                <li><strong style={{ color: '#121212' }}>{fr ? 'Site web :' : 'Website:'}</strong> www.creova.one</li>
               </ul>
             </div>
 

@@ -40,7 +40,7 @@ export function withLocale(path: string, locale: Locale): string {
 }
 
 /** Absolute https URL for a path in a given locale — used for canonical/hreflang. */
-export function absoluteUrl(path: string, locale: Locale, siteUrl = 'https://creova.ca'): string {
+export function absoluteUrl(path: string, locale: Locale, siteUrl = 'https://creova.one'): string {
   const localized = withLocale(path, locale);
   return `${siteUrl}${localized === '/' ? '' : localized}`;
 }

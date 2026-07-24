@@ -312,7 +312,7 @@ export function PrivacyPolicyPage() {
                     <><strong style={{ color: '#121212' }}>Object:</strong> Object to processing of your information</>,
                   ]).map((li, i) => <li key={i}>{li}</li>)}
                 </ul>
-                <p className="pt-3">{fr ? 'Pour exercer ces droits, joignez-nous à support@creova.ca. Nous répondrons dans un délai de 30 jours.' : 'To exercise these rights, contact us at support@creova.ca. We will respond within 30 days.'}</p>
+                <p className="pt-3">{fr ? 'Pour exercer ces droits, joignez-nous à support@creova.one. Nous répondrons dans un délai de 30 jours.' : 'To exercise these rights, contact us at support@creova.one. We will respond within 30 days.'}</p>
               </div>
             </div>
 
@@ -404,7 +404,7 @@ export function PrivacyPolicyPage() {
                 {fr ? 'Si vous avez des questions ou des préoccupations concernant la présente politique de confidentialité ou nos pratiques en matière de données :' : 'If you have questions or concerns about this Privacy Policy or our data practices:'}
               </p>
               <ul className="mt-3 space-y-2" style={{ color: '#7A6F66' }}>
-                <li><strong style={{ color: '#121212' }}>{fr ? 'Courriel :' : 'Email:'}</strong> support@creova.ca</li>
+                <li><strong style={{ color: '#121212' }}>{fr ? 'Courriel :' : 'Email:'}</strong> support@creova.one</li>
                 <li><strong style={{ color: '#121212' }}>{fr ? 'Objet :' : 'Subject Line:'}</strong> {fr ? '« Demande de confidentialité »' : '"Privacy Inquiry"'}</li>
                 <li><strong style={{ color: '#121212' }}>{fr ? 'Lieu :' : 'Location:'}</strong> Ontario, Canada</li>
               </ul>

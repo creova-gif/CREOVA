@@ -103,9 +103,9 @@ export function Footer() {
     {
       titleKey: 'footer.col.connect',
       links: [
-        { label: '@creova.ca',                 href: 'https://instagram.com/creova.ca',              external: true },
+        { label: '@creova.one',                 href: 'https://instagram.com/creova.ca',              external: true },
         { label: 'LinkedIn',                  href: 'https://www.linkedin.com/company/creovaspace/', external: true },
-        { label: 'support@creova.ca',         href: 'mailto:support@creova.ca',                     external: true },
+        { label: 'support@creova.one',         href: 'mailto:support@creova.one',                     external: true },
         { label: t('footer.contact.location'), href: 'https://maps.google.com/?q=Niagara+Region+Ontario+Canada', external: true },
         { labelKey: 'footer.contact.review',  href: 'https://g.page/r/creova/review',               external: true },
       ],
@@ -306,7 +306,7 @@ export function Footer() {
           >
             {[
               { Icon: MapPin, text: t('footer.contact.location') },
-              { Icon: Mail,   text: 'support@creova.ca', href: 'mailto:support@creova.ca' },
+              { Icon: Mail,   text: 'support@creova.one', href: 'mailto:support@creova.one' },
               { Icon: Star,   text: t('footer.contact.rating'), href: 'https://g.page/r/creova/review' },
             ].map(({ Icon, text, href }, i) => (
               <div key={i} className="flex items-center gap-3">
@@ -453,7 +453,7 @@ export function Footer() {
                 <SocialIcon href="https://www.linkedin.com/company/creovaspace/" label={t('footer.social.linkedin')}>
                   <Linkedin className="w-4 h-4" />
                 </SocialIcon>
-                <SocialIcon href="mailto:support@creova.ca" label={t('footer.social.email')}>
+                <SocialIcon href="mailto:support@creova.one" label={t('footer.social.email')}>
                   <Mail className="w-4 h-4" />
                 </SocialIcon>
                 <SocialIcon href="https://g.page/r/creova/review" label={t('footer.contact.review')}>

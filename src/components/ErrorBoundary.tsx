@@ -204,11 +204,11 @@ export class ErrorBoundary extends Component<Props, State> {
             >
               If this problem persists, please contact us at{' '}
               <a 
-                href="mailto:support@creova.ca" 
+                href="mailto:support@creova.one" 
                 className="underline"
                 style={{ color: '#B1643B' }}
               >
-                support@creova.ca
+                support@creova.one
               </a>
             </p>
           </motion.div>

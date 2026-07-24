@@ -53,11 +53,11 @@ export function PaymentSuccessPage() {
             <p className="text-sm">
               {fr ? 'Pour toute question, écrivez-nous à ' : 'If you have any questions, feel free to contact us at '}{' '}
               <a
-                href="mailto:support@creova.ca"
+                href="mailto:support@creova.one"
                 className="underline"
                 style={{ color: '#A68F59' }}
               >
-                support@creova.ca
+                support@creova.one
               </a>
             </p>
           </div>
