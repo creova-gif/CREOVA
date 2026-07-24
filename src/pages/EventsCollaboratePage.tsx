@@ -12,6 +12,7 @@ import { Captcha } from '../components/Captcha';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { logger } from '../utils/logger';
+import { useLanguage } from '../context/LanguageContext';
 const bsscImage = '/card-bssc.jpg';
 const blsaImage = '/card-blsa.jpg';
 const busuClubsImage = '/card-busu.jpg';
@@ -21,6 +22,8 @@ const warmGradient = 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)';
 
 export function EventsCollaboratePage() {
   const { addItem } = useCart();
+  // Community/events page → tu register (see mixed-register decision).
+  const fr = useLanguage().language === 'fr';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,14 +44,14 @@ export function EventsCollaboratePage() {
   const handleCaptchaExpire = () => {
     setCaptchaToken(null);
     logger.log('CAPTCHA expired, please verify again');
-    toast.error('Security verification expired. Please verify again.');
+    toast.error(fr ? 'La vérification de sécurité a expiré. Veuillez vérifier de nouveau.' : 'Security verification expired. Please verify again.');
   };
 
   const handleCaptchaError = (error: string) => {
     setCaptchaToken(null);
     if (window.location.hostname === 'creova.ca') {
-      toast.error('Security Verification Issue', {
-        description: error || 'Unable to verify. Please refresh and try again.'
+      toast.error(fr ? 'Problème de vérification de sécurité' : 'Security Verification Issue', {
+        description: error || (fr ? 'Vérification impossible. Veuillez actualiser et réessayer.' : 'Unable to verify. Please refresh and try again.')
       });
     }
   };
@@ -56,174 +59,174 @@ export function EventsCollaboratePage() {
   const upcomingEvents = [
     {
       id: 'fall-brand-photography',
-      name: 'Brand Photography Workshop for Entrepreneurs',
+      name: fr ? 'Atelier de photographie de marque pour entrepreneurs' : 'Brand Photography Workshop for Entrepreneurs',
       date: 'September 9, 2026',
       time: '2:00 PM - 5:00 PM EST',
-      location: 'St. Catharines, ON (In-Person)',
-      capacity: '15 spots',
+      location: fr ? 'St. Catharines, ON (en personne)' : 'St. Catharines, ON (In-Person)',
+      capacity: fr ? '15 places' : '15 spots',
       price: 125,
       image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=80&fit=crop',
-      description: 'Learn how to create stunning brand photos for your business. Hands-on workshop covering lighting, composition, and editing for entrepreneurs at every level.',
-      includes: ['3-hour workshop', 'Workbook & templates', 'Light refreshments', 'Certificate of completion']
+      description: fr ? "Apprends à créer de superbes photos de marque pour ton entreprise. Atelier pratique couvrant l'éclairage, la composition et le montage, pour les entrepreneurs de tous les niveaux." : 'Learn how to create stunning brand photos for your business. Hands-on workshop covering lighting, composition, and editing for entrepreneurs at every level.',
+      includes: fr ? ['Atelier de 3 heures', 'Cahier et gabarits', 'Rafraîchissements légers', 'Certificat de participation'] : ['3-hour workshop', 'Workbook & templates', 'Light refreshments', 'Certificate of completion']
     },
     {
       id: 'social-media-masterclass',
-      name: 'Social Media Content Creation Masterclass',
+      name: fr ? 'Classe de maître : création de contenu pour les médias sociaux' : 'Social Media Content Creation Masterclass',
       date: 'September 23, 2026',
       time: '6:00 PM - 8:30 PM EST',
-      location: 'Virtual (Zoom)',
-      capacity: '50 spots',
+      location: fr ? 'Virtuel (Zoom)' : 'Virtual (Zoom)',
+      capacity: fr ? '50 places' : '50 spots',
       price: 75,
       image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80&fit=crop',
-      description: 'Master the art of creating scroll-stopping content for Instagram, TikTok, and Pinterest. Includes content planning, strategy, and hands-on execution.',
-      includes: ['2.5-hour virtual class', 'Content calendar template', 'Q&A session', 'Recording access for 30 days']
+      description: fr ? "Maîtrise l'art de créer du contenu accrocheur pour Instagram, TikTok et Pinterest. Comprend la planification de contenu, la stratégie et la mise en pratique." : 'Master the art of creating scroll-stopping content for Instagram, TikTok, and Pinterest. Includes content planning, strategy, and hands-on execution.',
+      includes: fr ? ['Classe virtuelle de 2 h 30', 'Gabarit de calendrier de contenu', 'Période de questions', "Accès à l'enregistrement pendant 30 jours"] : ['2.5-hour virtual class', 'Content calendar template', 'Q&A session', 'Recording access for 30 days']
     },
     {
       id: 'autumn-videography-niagara',
-      name: 'Outdoor Videography: Autumn in Niagara Falls',
+      name: fr ? 'Vidéographie extérieure : l’automne aux chutes Niagara' : 'Outdoor Videography: Autumn in Niagara Falls',
       date: 'October 1, 2026',
       time: '10:00 AM - 1:00 PM EST',
-      location: 'Niagara Falls, ON (In-Person)',
-      capacity: '18 spots',
+      location: fr ? 'Niagara Falls, ON (en personne)' : 'Niagara Falls, ON (In-Person)',
+      capacity: fr ? '18 places' : '18 spots',
       price: 95,
       image: 'https://images.unsplash.com/photo-1579187707643-35646d22b596?w=900&q=80&fit=crop',
-      description: 'Shoot cinematic outdoor video content against Niagara\'s breathtaking fall landscape. Covers filming techniques, stabilization, and audio for outdoor shoots.',
-      includes: ['3-hour workshop', 'Equipment demos', 'Footage review', 'Editing cheat sheet']
+      description: fr ? "Filme du contenu vidéo cinématographique en plein air devant le paysage automnal à couper le souffle de Niagara. Couvre les techniques de tournage, la stabilisation et l'audio pour les tournages extérieurs." : 'Shoot cinematic outdoor video content against Niagara\'s breathtaking fall landscape. Covers filming techniques, stabilization, and audio for outdoor shoots.',
+      includes: fr ? ['Atelier de 3 heures', "Démonstrations d'équipement", 'Revue des séquences', 'Aide-mémoire de montage'] : ['3-hour workshop', 'Equipment demos', 'Footage review', 'Editing cheat sheet']
     },
     {
       id: 'bipoc-creatives-fall-mixer',
-      name: 'BIPOC Creatives Fall Networking Mixer',
+      name: fr ? 'Mixeur de réseautage automnal des créatifs BIPOC' : 'BIPOC Creatives Fall Networking Mixer',
       date: 'October 7, 2026',
       time: '7:00 PM - 10:00 PM EST',
-      location: 'Niagara Falls, ON (In-Person)',
-      capacity: '40 spots',
+      location: fr ? 'Niagara Falls, ON (en personne)' : 'Niagara Falls, ON (In-Person)',
+      capacity: fr ? '40 places' : '40 spots',
       price: 35,
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80&fit=crop',
-      description: 'Connect with fellow BIPOC photographers, designers, videographers, and entrepreneurs in Greater Niagara. An evening of genuine community and creative conversation.',
-      includes: ['Networking event', 'Food & beverages', 'Portfolio reviews', 'Swag bag']
+      description: fr ? "Rencontre d'autres photographes, designers, vidéastes et entrepreneurs BIPOC de la grande région de Niagara. Une soirée de communauté authentique et de conversations créatives." : 'Connect with fellow BIPOC photographers, designers, videographers, and entrepreneurs in Greater Niagara. An evening of genuine community and creative conversation.',
+      includes: fr ? ['Événement de réseautage', 'Nourriture et boissons', 'Revues de portfolio', 'Sac cadeau'] : ['Networking event', 'Food & beverages', 'Portfolio reviews', 'Swag bag']
     },
     {
       id: 'vineyard-brand-shoot',
-      name: 'Brand Photography: Harvest Season Vineyard Edition',
+      name: fr ? 'Photographie de marque : édition vignoble des récoltes' : 'Brand Photography: Harvest Season Vineyard Edition',
       date: 'October 15, 2026',
       time: '1:00 PM - 4:00 PM EST',
-      location: 'Niagara Wine Country, ON (In-Person)',
-      capacity: '12 spots',
+      location: fr ? 'Pays viticole de Niagara, ON (en personne)' : 'Niagara Wine Country, ON (In-Person)',
+      capacity: fr ? '12 places' : '12 spots',
       price: 145,
       image: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=900&q=80&fit=crop',
-      description: 'Create stunning autumn brand content at a picturesque Niagara vineyard during harvest season. Perfect for entrepreneurs and small business owners seeking elevated imagery.',
-      includes: ['3-hour vineyard session', 'Location access included', 'Editing workshop', 'Wine tasting']
+      description: fr ? "Crée un superbe contenu de marque automnal dans un pittoresque vignoble de Niagara pendant les récoltes. Parfait pour les entrepreneurs et propriétaires de petites entreprises en quête d'images raffinées." : 'Create stunning autumn brand content at a picturesque Niagara vineyard during harvest season. Perfect for entrepreneurs and small business owners seeking elevated imagery.',
+      includes: fr ? ['Séance de 3 heures au vignoble', 'Accès au lieu inclus', 'Atelier de montage', 'Dégustation de vin'] : ['3-hour vineyard session', 'Location access included', 'Editing workshop', 'Wine tasting']
     },
     {
       id: 'lightroom-editing-workshop',
-      name: 'Lightroom Editing for Photographers',
+      name: fr ? 'Montage Lightroom pour photographes' : 'Lightroom Editing for Photographers',
       date: 'October 22, 2026',
       time: '1:00 PM - 4:00 PM EST',
-      location: 'Virtual (Zoom)',
-      capacity: '30 spots',
+      location: fr ? 'Virtuel (Zoom)' : 'Virtual (Zoom)',
+      capacity: fr ? '30 places' : '30 spots',
       price: 95,
       image: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=80&fit=crop',
-      description: 'Deep dive into Adobe Lightroom. Learn professional editing workflows, colour grading, and how to develop your unique visual signature style.',
-      includes: ['3-hour live class', 'RAW practice files', 'Preset pack', 'Lifetime recording access']
+      description: fr ? "Plonge en profondeur dans Adobe Lightroom. Apprends des flux de montage professionnels, l'étalonnage des couleurs et comment développer ta signature visuelle unique." : 'Deep dive into Adobe Lightroom. Learn professional editing workflows, colour grading, and how to develop your unique visual signature style.',
+      includes: fr ? ['Classe en direct de 3 heures', "Fichiers RAW d'exercice", 'Trousse de préréglages', "Accès à vie à l'enregistrement"] : ['3-hour live class', 'RAW practice files', 'Preset pack', 'Lifetime recording access']
     },
     {
       id: 'bipoc-fall-harvest-social',
-      name: 'BIPOC Creatives Fall Harvest Social',
+      name: fr ? 'Social des récoltes automnales des créatifs BIPOC' : 'BIPOC Creatives Fall Harvest Social',
       date: 'October 28, 2026',
       time: '5:00 PM - 8:00 PM EST',
-      location: 'St. Catharines, ON (In-Person)',
-      capacity: '35 spots',
+      location: fr ? 'St. Catharines, ON (en personne)' : 'St. Catharines, ON (In-Person)',
+      capacity: fr ? '35 places' : '35 spots',
       price: 40,
       image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80&fit=crop',
-      description: 'Celebrate the fall season with fellow BIPOC creatives at a warm harvest social. Networking, collaboration, and community — the CREOVA way.',
-      includes: ['Seasonal networking', 'Harvest refreshments', 'Portfolio reviews', 'Swag bag']
+      description: fr ? "Célèbre la saison automnale avec d'autres créatifs BIPOC lors d'un chaleureux social des récoltes. Réseautage, collaboration et communauté — à la manière CREOVA." : 'Celebrate the fall season with fellow BIPOC creatives at a warm harvest social. Networking, collaboration, and community — the CREOVA way.',
+      includes: fr ? ['Réseautage saisonnier', 'Rafraîchissements des récoltes', 'Revues de portfolio', 'Sac cadeau'] : ['Seasonal networking', 'Harvest refreshments', 'Portfolio reviews', 'Swag bag']
     },
     {
       id: 'pricing-strategies-workshop',
-      name: 'Pricing Your Creative Services Workshop',
+      name: fr ? 'Atelier : fixer le prix de tes services créatifs' : 'Pricing Your Creative Services Workshop',
       date: 'November 5, 2026',
       time: '10:00 AM - 12:00 PM EST',
-      location: 'Virtual (Zoom)',
-      capacity: '25 spots',
+      location: fr ? 'Virtuel (Zoom)' : 'Virtual (Zoom)',
+      capacity: fr ? '25 places' : '25 spots',
       price: 65,
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&fit=crop',
-      description: 'Stop undercharging! Learn how to price your photography, design, and creative services for profitability and real market value.',
-      includes: ['2-hour workshop', 'Pricing calculator template', 'Pricing guide template', 'Q&A session']
+      description: fr ? "Arrête de sous-facturer ! Apprends à fixer le prix de tes services de photographie, de design et de création pour la rentabilité et une vraie valeur marchande." : 'Stop undercharging! Learn how to price your photography, design, and creative services for profitability and real market value.',
+      includes: fr ? ['Atelier de 2 heures', 'Gabarit de calculateur de prix', 'Gabarit de guide de tarification', 'Période de questions'] : ['2-hour workshop', 'Pricing calculator template', 'Pricing guide template', 'Q&A session']
     },
     {
       id: 'golden-hour-portraits-autumn',
-      name: 'Golden Hour Portraits: Niagara Autumn Edition',
+      name: fr ? "Portraits à l'heure dorée : édition automne à Niagara" : 'Golden Hour Portraits: Niagara Autumn Edition',
       date: 'November 12, 2026',
       time: '4:00 PM - 7:00 PM EST',
-      location: 'Grimsby, ON (In-Person)',
-      capacity: '15 spots',
+      location: fr ? 'Grimsby, ON (en personne)' : 'Grimsby, ON (In-Person)',
+      capacity: fr ? '15 places' : '15 spots',
       price: 85,
       image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&fit=crop',
-      description: 'Master autumn golden hour portrait photography across stunning Greater Niagara locations. Learn natural light techniques, posing, and fall colour editing.',
-      includes: ['3-hour workshop', 'Outdoor photo session', 'Editing guide', 'Certificate of completion']
+      description: fr ? "Maîtrise la photographie de portrait à l'heure dorée d'automne à travers de superbes lieux de la grande région de Niagara. Apprends les techniques de lumière naturelle, les poses et le montage des couleurs automnales." : 'Master autumn golden hour portrait photography across stunning Greater Niagara locations. Learn natural light techniques, posing, and fall colour editing.',
+      includes: fr ? ['Atelier de 3 heures', 'Séance photo en plein air', 'Guide de montage', 'Certificat de participation'] : ['3-hour workshop', 'Outdoor photo session', 'Editing guide', 'Certificate of completion']
     },
     {
       id: 'fall-creative-showcase',
-      name: 'CREOVA Fall Creative Showcase',
+      name: fr ? 'Vitrine créative automnale de CREOVA' : 'CREOVA Fall Creative Showcase',
       date: 'November 19, 2026',
       time: '6:00 PM - 10:00 PM EST',
-      location: 'St. Catharines, ON (In-Person)',
-      capacity: '100 spots',
+      location: fr ? 'St. Catharines, ON (en personne)' : 'St. Catharines, ON (In-Person)',
+      capacity: fr ? '100 places' : '100 spots',
       price: 45,
       image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80&fit=crop',
-      description: 'Celebrate BIPOC creativity at our flagship fall showcase! Exhibition featuring local photographers, artists, and designers. Live music, art, food, and community.',
-      includes: ['Gallery access', 'Live performances', 'Food & drinks', 'Vendor marketplace']
+      description: fr ? "Célèbre la créativité BIPOC à notre vitrine automnale phare ! Exposition mettant en vedette des photographes, artistes et designers locaux. Musique en direct, art, nourriture et communauté." : 'Celebrate BIPOC creativity at our flagship fall showcase! Exhibition featuring local photographers, artists, and designers. Live music, art, food, and community.',
+      includes: fr ? ['Accès à la galerie', 'Performances en direct', 'Nourriture et boissons', 'Marché de vendeurs'] : ['Gallery access', 'Live performances', 'Food & drinks', 'Vendor marketplace']
     },
     {
       id: 'fall-foliage-photo-walk',
-      name: 'Fall Foliage Photo Walk: Niagara-on-the-Lake',
+      name: fr ? "Marche photo des feuillages d'automne : Niagara-on-the-Lake" : 'Fall Foliage Photo Walk: Niagara-on-the-Lake',
       date: 'December 2, 2026',
       time: '2:00 PM - 5:00 PM EST',
-      location: 'Niagara-on-the-Lake, ON (In-Person)',
-      capacity: '20 spots',
+      location: fr ? 'Niagara-on-the-Lake, ON (en personne)' : 'Niagara-on-the-Lake, ON (In-Person)',
+      capacity: fr ? '20 places' : '20 spots',
       price: 45,
       image: 'https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=900&q=80&fit=crop',
-      description: 'Capture the last colours of fall along the charming streets and vineyards of Niagara-on-the-Lake. Guided photo walk with expert tips on landscape and street photography.',
-      includes: ['3-hour guided walk', 'Photography tips', 'Light refreshments', 'Group photo critique']
+      description: fr ? "Capte les dernières couleurs de l'automne le long des rues charmantes et des vignobles de Niagara-on-the-Lake. Marche photo guidée avec des conseils d'experts en photographie de paysage et de rue." : 'Capture the last colours of fall along the charming streets and vineyards of Niagara-on-the-Lake. Guided photo walk with expert tips on landscape and street photography.',
+      includes: fr ? ['Marche guidée de 3 heures', 'Conseils de photographie', 'Rafraîchissements légers', 'Critique photo de groupe'] : ['3-hour guided walk', 'Photography tips', 'Light refreshments', 'Group photo critique']
     },
     {
       id: 'holiday-showcase-niagara',
-      name: 'CREOVA Holiday Showcase: Greater Niagara Edition',
+      name: fr ? 'Vitrine des fêtes de CREOVA : édition grande région de Niagara' : 'CREOVA Holiday Showcase: Greater Niagara Edition',
       date: 'December 10, 2026',
       time: '4:00 PM - 9:00 PM EST',
-      location: 'Niagara Falls, ON (In-Person)',
-      capacity: '100 spots',
+      location: fr ? 'Niagara Falls, ON (en personne)' : 'Niagara Falls, ON (In-Person)',
+      capacity: fr ? '100 places' : '100 spots',
       price: 50,
       image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80&fit=crop',
-      description: 'Close out the year celebrating BIPOC creativity! Indoor gallery, live performances, food vendors, and community connection at Niagara Falls — a joyful holiday gathering.',
-      includes: ['Indoor gallery access', 'Live music & performances', 'Food & drinks', 'Vendor marketplace']
+      description: fr ? "Termine l'année en célébrant la créativité BIPOC ! Galerie intérieure, performances en direct, vendeurs de nourriture et liens communautaires aux chutes Niagara — un joyeux rassemblement des fêtes." : 'Close out the year celebrating BIPOC creativity! Indoor gallery, live performances, food vendors, and community connection at Niagara Falls — a joyful holiday gathering.',
+      includes: fr ? ['Accès à la galerie intérieure', 'Musique et performances en direct', 'Nourriture et boissons', 'Marché de vendeurs'] : ['Indoor gallery access', 'Live music & performances', 'Food & drinks', 'Vendor marketplace']
     }
   ];
 
   const collaborationTypes = [
     {
       icon: Users,
-      title: 'Brand Partnerships',
-      description: 'Partner with CREOVA for co-branded content, campaigns, or creative activations',
-      examples: ['Co-branded photo series', 'Social media campaigns', 'Product launches', 'Fashion capsule collaborations']
+      title: fr ? 'Partenariats de marque' : 'Brand Partnerships',
+      description: fr ? "Associe-toi à CREOVA pour du contenu co-marqué, des campagnes ou des activations créatives" : 'Partner with CREOVA for co-branded content, campaigns, or creative activations',
+      examples: fr ? ['Séries photo co-marquées', 'Campagnes sur les médias sociaux', 'Lancements de produits', 'Collaborations de capsules mode'] : ['Co-branded photo series', 'Social media campaigns', 'Product launches', 'Fashion capsule collaborations']
     },
     {
       icon: Lightbulb,
-      title: 'Creative Projects',
-      description: 'Collaborate on artistic projects, exhibitions, or cultural initiatives',
-      examples: ['Photography exhibitions', 'Documentary projects', 'Art installations', 'Community storytelling initiatives']
+      title: fr ? 'Projets créatifs' : 'Creative Projects',
+      description: fr ? "Collabore sur des projets artistiques, des expositions ou des initiatives culturelles" : 'Collaborate on artistic projects, exhibitions, or cultural initiatives',
+      examples: fr ? ['Expositions de photographie', 'Projets documentaires', 'Installations artistiques', 'Initiatives de récit communautaire'] : ['Photography exhibitions', 'Documentary projects', 'Art installations', 'Community storytelling initiatives']
     },
     {
       icon: Handshake,
-      title: 'Community Initiatives',
-      description: 'Work together on workshops, events, or programs that support BIPOC creatives',
-      examples: ['Free storytelling workshops', 'Skill-building panels', 'Mentorship programs', 'Cultural celebration events']
+      title: fr ? 'Initiatives communautaires' : 'Community Initiatives',
+      description: fr ? "Travaillons ensemble sur des ateliers, événements ou programmes qui soutiennent les créatifs BIPOC" : 'Work together on workshops, events, or programs that support BIPOC creatives',
+      examples: fr ? ['Ateliers de récit gratuits', 'Panels de développement des compétences', 'Programmes de mentorat', 'Événements de célébration culturelle'] : ['Free storytelling workshops', 'Skill-building panels', 'Mentorship programs', 'Cultural celebration events']
     },
     {
       icon: Star,
-      title: 'Custom Collaborations',
-      description: 'Have a unique idea? Let\'s explore how we can work together',
-      examples: ['Podcast features', 'Educational content', 'Research projects', 'Creative retreats', 'Sponsored content']
+      title: fr ? 'Collaborations sur mesure' : 'Custom Collaborations',
+      description: fr ? "Tu as une idée unique ? Explorons comment on peut travailler ensemble" : 'Have a unique idea? Let\'s explore how we can work together',
+      examples: fr ? ['Apparitions en balado', 'Contenu éducatif', 'Projets de recherche', 'Retraites créatives', 'Contenu commandité'] : ['Podcast features', 'Educational content', 'Research projects', 'Creative retreats', 'Sponsored content']
     }
   ];
 
@@ -232,8 +235,8 @@ export function EventsCollaboratePage() {
       title: 'Black Student Success Centre',
       partner: 'Brock University',
       image: bsscImage,
-      description: 'Stock photography for the BSSC - February 2025',
-      date: 'February 2025',
+      description: fr ? 'Photographie de banque pour le BSSC — février 2025' : 'Stock photography for the BSSC - February 2025',
+      date: fr ? 'Février 2025' : 'February 2025',
       social: {
         instagram: 'https://www.instagram.com/brockbssc/',
         website: 'https://brocku.ca/student-life-success/equity-diversity-inclusion/black-student-success-centre/'
@@ -243,8 +246,8 @@ export function EventsCollaboratePage() {
       title: 'Black Students Association',
       partner: 'Brock University - BLSA',
       image: blsaImage,
-      description: 'New executive team photos for 2025/26 school year at Cairn Complex',
-      date: 'September 2025',
+      description: fr ? "Nouvelles photos de l'équipe exécutive pour l'année scolaire 2025/26 au Cairn Complex" : 'New executive team photos for 2025/26 school year at Cairn Complex',
+      date: fr ? 'Septembre 2025' : 'September 2025',
       social: {
         instagram: 'https://www.instagram.com/brockblsa/',
         website: 'https://brocku.ca/'
@@ -254,7 +257,7 @@ export function EventsCollaboratePage() {
       title: 'Black BUSU Clubs',
       partner: 'Brock University',
       image: busuClubsImage,
-      description: 'Welcome Bash event photography - welcoming new Black students to Brock campus',
+      description: fr ? "Photographie de l'événement Welcome Bash — accueil des nouveaux étudiants noirs sur le campus de Brock" : 'Welcome Bash event photography - welcoming new Black students to Brock campus',
       date: '2025',
       social: {
         instagram: 'https://www.instagram.com/brocku/',
@@ -263,10 +266,10 @@ export function EventsCollaboratePage() {
     },
     {
       title: 'Future Black Female',
-      partner: 'NGO - Niagara',
+      partner: fr ? 'OBNL - Niagara' : 'NGO - Niagara',
       image: fbfImage,
-      description: 'Stock photography for upcoming podcast launch and research initiatives',
-      date: 'October 2025',
+      description: fr ? 'Photographie de banque pour le lancement à venir du balado et des initiatives de recherche' : 'Stock photography for upcoming podcast launch and research initiatives',
+      date: fr ? 'Octobre 2025' : 'October 2025',
       social: {
         instagram: 'https://www.instagram.com/futureblackfemale_/',
         website: 'https://www.futureblackfemale.com/'
@@ -286,17 +289,17 @@ export function EventsCollaboratePage() {
       type: 'event',
       image: event.image
     });
-    toast.success('Ticket added to cart!', {
+    toast.success(fr ? 'Billet ajouté au panier !' : 'Ticket added to cart!', {
       description: event.price > 0
-        ? `${event.name} - $${event.price} CAD (plus 13% HST at checkout)`
-        : `${event.name} - FREE`
+        ? (fr ? `${event.name} - ${event.price} $ CAD (plus TVH de 13 % au paiement)` : `${event.name} - $${event.price} CAD (plus 13% HST at checkout)`)
+        : `${event.name} - ${fr ? 'GRATUIT' : 'FREE'}`
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!captchaToken) {
-      toast.error('Please complete the CAPTCHA verification');
+      toast.error(fr ? 'Veuillez compléter la vérification CAPTCHA' : 'Please complete the CAPTCHA verification');
       return;
     }
     setIsSubmitting(true);
@@ -311,15 +314,15 @@ export function EventsCollaboratePage() {
       );
       const data = await response.json();
       if (response.ok) {
-        toast.success('Collaboration request submitted!', {
-          description: 'We\'ll review your proposal and get back to you within 2-3 business days.'
+        toast.success(fr ? 'Demande de collaboration envoyée !' : 'Collaboration request submitted!', {
+          description: fr ? 'Nous examinerons ta proposition et te reviendrons dans les 2 à 3 jours ouvrables.' : 'We\'ll review your proposal and get back to you within 2-3 business days.'
         });
         setFormData({ name: '', email: '', organization: '', collaborationType: '', projectDescription: '', timeline: '', budget: '' });
       } else {
         throw new Error(data.error || 'Failed to submit collaboration request');
       }
     } catch {
-      toast.error('Failed to submit request', { description: 'Please try again or email us directly.' });
+      toast.error(fr ? "Échec de l'envoi de la demande" : 'Failed to submit request', { description: fr ? 'Veuillez réessayer ou nous écrire directement.' : 'Please try again or email us directly.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -359,12 +362,12 @@ export function EventsCollaboratePage() {
             >
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-10 h-px" style={{ backgroundColor: '#A68F59' }} />
-                <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>Experience</span>
+                <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Expérience' : 'Experience'}</span>
               </div>
               {/* Scale contrast: MASSIVE first line, small italic second */}
               <h1 className="leading-none">
                 <span className="block font-light tracking-tighter mb-1" style={{ fontSize: 'clamp(64px, 12vw, 160px)', color: '#F5F1EB' }}>
-                  Events &
+                  {fr ? 'Événements et' : 'Events &'}
                 </span>
                 <span className="flex items-end gap-4 mb-8">
                   <span className="italic tracking-tight" style={{
@@ -374,12 +377,12 @@ export function EventsCollaboratePage() {
                     backgroundClip: 'text',
                     color: 'transparent',
                   }}>
-                    / Collaborations.
+                    {fr ? '/ Collaborations.' : '/ Collaborations.'}
                   </span>
                 </span>
               </h1>
               <p className="text-base leading-relaxed max-w-md" style={{ color: '#7A6F66' }}>
-                Join CREOVA's creative community through professional workshops, networking events, and meaningful partnerships across Ontario.
+                {fr ? "Rejoins la communauté créative de CREOVA à travers des ateliers professionnels, des événements de réseautage et des partenariats significatifs partout en Ontario." : "Join CREOVA's creative community through professional workshops, networking events, and meaningful partnerships across Ontario."}
               </p>
             </motion.div>
 
@@ -391,10 +394,10 @@ export function EventsCollaboratePage() {
               className="py-16 pl-0 lg:pl-12 grid grid-cols-2 gap-3"
             >
               {[
-                { icon: Calendar, label: 'Cultural Events', count: '10+' },
-                { icon: Lightbulb, label: 'Workshops', count: 'Quarterly' },
-                { icon: Handshake, label: 'Brand Collabs', count: 'Open' },
-                { icon: Users, label: 'Community', count: '500+' },
+                { icon: Calendar, label: fr ? 'Événements culturels' : 'Cultural Events', count: '10+' },
+                { icon: Lightbulb, label: fr ? 'Ateliers' : 'Workshops', count: fr ? 'Trimestriel' : 'Quarterly' },
+                { icon: Handshake, label: fr ? 'Collabs de marque' : 'Brand Collabs', count: fr ? 'Ouvert' : 'Open' },
+                { icon: Users, label: fr ? 'Communauté' : 'Community', count: '500+' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -445,10 +448,10 @@ export function EventsCollaboratePage() {
                    style={{ border: '1px solid rgba(166,143,89,0.3)', backgroundColor: 'rgba(166,143,89,0.1)' }}>
                 <Calendar className="w-4 h-4" style={{ color: '#A68F59' }} />
               </div>
-              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>Upcoming Workshops</h2>
-              <p className="text-xs leading-relaxed mb-5" style={{ color: '#4A3E36' }}>Photography & content creation workshops across Ontario</p>
+              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>{fr ? 'Ateliers à venir' : 'Upcoming Workshops'}</h2>
+              <p className="text-xs leading-relaxed mb-5" style={{ color: '#4A3E36' }}>{fr ? 'Ateliers de photographie et de création de contenu partout en Ontario' : 'Photography & content creation workshops across Ontario'}</p>
               <div className="flex items-center gap-2 text-xs group-hover:translate-x-1.5 transition-transform duration-300" style={{ color: '#A68F59' }}>
-                <span>Explore Events</span>
+                <span>{fr ? 'Explorer les événements' : 'Explore Events'}</span>
                 <ArrowRight className="w-3 h-3" />
               </div>
             </motion.button>
@@ -476,10 +479,10 @@ export function EventsCollaboratePage() {
                    style={{ border: '1px solid rgba(177,100,59,0.3)', backgroundColor: 'rgba(177,100,59,0.1)' }}>
                 <Handshake className="w-4 h-4" style={{ color: '#B1643B' }} />
               </div>
-              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>Partnership Opportunities</h2>
-              <p className="text-xs leading-relaxed mb-5" style={{ color: '#4A3E36' }}>Co-branded campaigns, creative projects & community initiatives</p>
+              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>{fr ? 'Occasions de partenariat' : 'Partnership Opportunities'}</h2>
+              <p className="text-xs leading-relaxed mb-5" style={{ color: '#4A3E36' }}>{fr ? 'Campagnes co-marquées, projets créatifs et initiatives communautaires' : 'Co-branded campaigns, creative projects & community initiatives'}</p>
               <div className="flex items-center gap-2 text-xs group-hover:translate-x-1.5 transition-transform duration-300" style={{ color: '#B1643B' }}>
-                <span>View Opportunities</span>
+                <span>{fr ? 'Voir les occasions' : 'View Opportunities'}</span>
                 <ArrowRight className="w-3 h-3" />
               </div>
             </motion.button>
@@ -507,10 +510,10 @@ export function EventsCollaboratePage() {
                    style={{ border: '1px solid rgba(166,143,89,0.3)', backgroundColor: 'rgba(166,143,89,0.1)' }}>
                 <Award className="w-4 h-4" style={{ color: '#A68F59' }} />
               </div>
-              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>Past Collaborations</h2>
-              <p className="text-xs leading-relaxed mb-5" style={{ color: '#4A3E36' }}>Partner orgs, universities and community organizations</p>
+              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F5F1EB' }}>{fr ? 'Collaborations passées' : 'Past Collaborations'}</h2>
+              <p className="text-xs leading-relaxed mb-5" style={{ color: '#4A3E36' }}>{fr ? 'Organismes partenaires, universités et organisations communautaires' : 'Partner orgs, universities and community organizations'}</p>
               <div className="flex items-center gap-2 text-xs group-hover:translate-x-1.5 transition-transform duration-300" style={{ color: '#A68F59' }}>
-                <span>See Our Work</span>
+                <span>{fr ? 'Voir nos réalisations' : 'See Our Work'}</span>
                 <ArrowRight className="w-3 h-3" />
               </div>
             </motion.button>
@@ -536,10 +539,10 @@ export function EventsCollaboratePage() {
                    style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}>
                 <FileText className="w-4 h-4" style={{ color: '#FFFFFF' }} />
               </div>
-              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#FFFFFF' }}>Submit Proposal</h2>
-              <p className="text-xs leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.75)' }}>Have an idea? Tell us about your project or partnership vision</p>
+              <h2 className="text-lg tracking-tight mb-2" style={{ color: '#FFFFFF' }}>{fr ? 'Soumettre une proposition' : 'Submit Proposal'}</h2>
+              <p className="text-xs leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.75)' }}>{fr ? "Tu as une idée ? Parle-nous de ton projet ou de ta vision de partenariat" : 'Have an idea? Tell us about your project or partnership vision'}</p>
               <div className="flex items-center gap-2 text-xs group-hover:translate-x-1.5 transition-transform duration-300" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                <span>Get Started</span>
+                <span>{fr ? 'Commencer' : 'Get Started'}</span>
                 <ArrowRight className="w-3 h-3" />
               </div>
             </motion.button>
@@ -559,13 +562,13 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Fall / Winter 2026</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Automne / Hiver 2026' : 'Fall / Winter 2026'}</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>
-              Upcoming Workshops & Events
+              {fr ? 'Ateliers et événements à venir' : 'Upcoming Workshops & Events'}
             </h2>
             <p className="text-base mt-3 max-w-2xl" style={{ color: '#7A6F66' }}>
-              Professional photography workshops, content creation masterclasses, and networking events for BIPOC creatives in Toronto, Hamilton, Niagara Falls, and St. Catharines
+              {fr ? "Ateliers de photographie professionnels, classes de maître en création de contenu et événements de réseautage pour les créatifs BIPOC à Toronto, Hamilton, Niagara Falls et St. Catharines" : 'Professional photography workshops, content creation masterclasses, and networking events for BIPOC creatives in Toronto, Hamilton, Niagara Falls, and St. Catharines'}
             </p>
           </motion.div>
 
@@ -603,7 +606,7 @@ export function EventsCollaboratePage() {
                         ${event.price}
                       </div>
                       <div className="text-xs" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                        {event.price === 0 ? 'FREE' : 'CAD + HST'}
+                        {event.price === 0 ? (fr ? 'GRATUIT' : 'FREE') : (fr ? 'CAD + TVH' : 'CAD + HST')}
                       </div>
                     </div>
                   </div>
@@ -615,14 +618,14 @@ export function EventsCollaboratePage() {
                       <span
                         className="text-xs px-3 py-1 rounded-full tracking-wide"
                         style={{
-                          background: event.location.includes('Virtual')
+                          background: /Virtual|Virtuel/.test(event.location)
                             ? 'rgba(166,143,89,0.1)'
                             : 'rgba(18,18,18,0.07)',
-                          color: event.location.includes('Virtual') ? '#A68F59' : '#121212',
-                          border: `1px solid ${event.location.includes('Virtual') ? 'rgba(166,143,89,0.3)' : 'rgba(18,18,18,0.15)'}`
+                          color: /Virtual|Virtuel/.test(event.location) ? '#A68F59' : '#121212',
+                          border: `1px solid ${/Virtual|Virtuel/.test(event.location) ? 'rgba(166,143,89,0.3)' : 'rgba(18,18,18,0.15)'}`
                         }}
                       >
-                        {event.location.includes('Virtual') ? 'Virtual' : 'In-Person'}
+                        {/Virtual|Virtuel/.test(event.location) ? (fr ? 'Virtuel' : 'Virtual') : (fr ? 'En personne' : 'In-Person')}
                       </span>
                       <span className="text-xs px-3 py-1 rounded-full tracking-wide"
                             style={{ backgroundColor: 'rgba(18,18,18,0.04)', color: '#7A6F66', border: '1px solid rgba(18,18,18,0.1)' }}>
@@ -679,7 +682,7 @@ export function EventsCollaboratePage() {
                       }}
                     >
                       <span className="flex items-center gap-2">
-                        Register Now
+                        {fr ? "S'inscrire" : 'Register Now'}
                         <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </Button>
@@ -708,10 +711,10 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Community</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Communauté' : 'Community'}</p>
             </div>
             <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>
-              Why Join CREOVA's Creative Community?
+              {fr ? 'Pourquoi rejoindre la communauté créative de CREOVA ?' : "Why Join CREOVA's Creative Community?"}
             </h2>
           </motion.div>
 
@@ -719,18 +722,18 @@ export function EventsCollaboratePage() {
             {[
               {
                 icon: Users,
-                title: 'BIPOC Creative Network',
-                description: 'Connect with photographers, designers, and entrepreneurs building meaningful careers in the creative industry'
+                title: fr ? 'Réseau créatif BIPOC' : 'BIPOC Creative Network',
+                description: fr ? "Rencontre des photographes, designers et entrepreneurs qui bâtissent des carrières significatives dans l'industrie créative" : 'Connect with photographers, designers, and entrepreneurs building meaningful careers in the creative industry'
               },
               {
                 icon: Calendar,
-                title: 'Expert-Led Workshops',
-                description: 'Learn from working professionals with real industry experience in photography, branding, and content creation'
+                title: fr ? 'Ateliers menés par des experts' : 'Expert-Led Workshops',
+                description: fr ? "Apprends de professionnels actifs ayant une réelle expérience de l'industrie en photographie, image de marque et création de contenu" : 'Learn from working professionals with real industry experience in photography, branding, and content creation'
               },
               {
                 icon: MapPin,
-                title: 'Accessible Locations',
-                description: 'Virtual and in-person events across Ontario including Toronto, Hamilton, Niagara Falls, and St. Catharines'
+                title: fr ? 'Lieux accessibles' : 'Accessible Locations',
+                description: fr ? 'Événements virtuels et en personne partout en Ontario, dont Toronto, Hamilton, Niagara Falls et St. Catharines' : 'Virtual and in-person events across Ontario including Toronto, Hamilton, Niagara Falls, and St. Catharines'
               }
             ].map((item, index) => (
               <motion.div
@@ -776,11 +779,11 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(177,100,59,0.4)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#B1643B' }}>Partner With Us</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#B1643B' }}>{fr ? 'Associe-toi à nous' : 'Partner With Us'}</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>Partner with CREOVA</h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>{fr ? "S'associer à CREOVA" : 'Partner with CREOVA'}</h2>
             <p className="text-base mt-3 max-w-2xl" style={{ color: '#7A6F66' }}>
-              From brand partnerships to community initiatives, we collaborate with organizations, businesses, and creatives who share our commitment to amplifying BIPOC voices
+              {fr ? "Des partenariats de marque aux initiatives communautaires, nous collaborons avec des organisations, des entreprises et des créatifs qui partagent notre engagement à amplifier les voix BIPOC" : 'From brand partnerships to community initiatives, we collaborate with organizations, businesses, and creatives who share our commitment to amplifying BIPOC voices'}
             </p>
           </motion.div>
 
@@ -809,7 +812,7 @@ export function EventsCollaboratePage() {
                 {/* Card body */}
                 <div className="p-7" style={{ backgroundColor: '#FFFFFF' }}>
                   <p className="text-sm mb-5 leading-relaxed" style={{ color: '#7A6F66' }}>{type.description}</p>
-                  <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: '#A68F59' }}>Examples</p>
+                  <p className="text-xs tracking-[0.35em] uppercase mb-3" style={{ color: '#A68F59' }}>{fr ? 'Exemples' : 'Examples'}</p>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                     {type.examples.map((example, idx) => (
                       <div key={idx} className="flex items-start gap-2">
@@ -842,13 +845,13 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Featured Moments</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Moments en vedette' : 'Featured Moments'}</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>
-              CREOVA in the Spotlight
+              {fr ? 'CREOVA sous les projecteurs' : 'CREOVA in the Spotlight'}
             </h2>
             <p className="text-base mt-3" style={{ color: '#4A3E36' }}>
-              Moments where our community showed up, spoke up, and made an impact
+              {fr ? "Des moments où notre communauté s'est présentée, a pris la parole et a eu un impact" : 'Moments where our community showed up, spoke up, and made an impact'}
             </p>
           </motion.div>
 
@@ -878,23 +881,23 @@ export function EventsCollaboratePage() {
                 <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
                   style={{ backgroundColor: 'rgba(166,143,89,0.9)', color: '#121212' }}>
                   <ExternalLink className="w-3 h-3" />
-                  View Recap on LinkedIn
+                  {fr ? 'Voir le récap sur LinkedIn' : 'View Recap on LinkedIn'}
                 </div>
               </div>
               <div className="p-7" style={{ backgroundColor: '#111111' }}>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-full"
                     style={{ backgroundColor: 'rgba(166,143,89,0.12)', color: '#A68F59', border: '1px solid rgba(166,143,89,0.25)' }}>
-                    Past Event · Recap
+                    {fr ? 'Événement passé · Récap' : 'Past Event · Recap'}
                   </span>
                   <span className="text-xs" style={{ color: '#4A3E36' }}>Brock University LINC</span>
                 </div>
-                <h3 className="text-2xl tracking-tight mb-3" style={{ color: '#F5F1EB' }}>Innovation Showcase</h3>
+                <h3 className="text-2xl tracking-tight mb-3" style={{ color: '#F5F1EB' }}>{fr ? "Vitrine de l'innovation" : 'Innovation Showcase'}</h3>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: '#7A6F66' }}>
-                  CREOVA was selected to present at Brock University's prestigious Innovation Showcase — a celebration of entrepreneurship and creative impact in the Niagara region.
+                  {fr ? "CREOVA a été choisie pour présenter à la prestigieuse Vitrine de l'innovation de l'Université Brock — une célébration de l'entrepreneuriat et de l'impact créatif dans la région de Niagara." : "CREOVA was selected to present at Brock University's prestigious Innovation Showcase — a celebration of entrepreneurship and creative impact in the Niagara region."}
                 </p>
                 <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#A68F59' }}>
-                  <span>See the full recap</span>
+                  <span>{fr ? 'Voir le récap complet' : 'See the full recap'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
@@ -926,23 +929,23 @@ export function EventsCollaboratePage() {
                 <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
                   style={{ backgroundColor: 'rgba(177,100,59,0.9)', color: '#F5F1EB' }}>
                   <ExternalLink className="w-3 h-3" />
-                  View on Instagram
+                  {fr ? 'Voir sur Instagram' : 'View on Instagram'}
                 </div>
               </div>
               <div className="p-7" style={{ backgroundColor: '#111111' }}>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-full"
                     style={{ backgroundColor: 'rgba(177,100,59,0.12)', color: '#B1643B', border: '1px solid rgba(177,100,59,0.25)' }}>
-                    Community Event
+                    {fr ? 'Événement communautaire' : 'Community Event'}
                   </span>
                   <span className="text-xs" style={{ color: '#4A3E36' }}>Black Student Success Centre</span>
                 </div>
-                <h3 className="text-2xl tracking-tight mb-3" style={{ color: '#F5F1EB' }}>The Black Print — Closing Session</h3>
+                <h3 className="text-2xl tracking-tight mb-3" style={{ color: '#F5F1EB' }}>{fr ? 'The Black Print — Séance de clôture' : 'The Black Print — Closing Session'}</h3>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: '#7A6F66' }}>
-                  Wednesday's closing session of The Black Print, in partnership with the Black Student Success Centre — a conversation filled with joy, good vibes, and powerful moments of connection.
+                  {fr ? "La séance de clôture de mercredi de The Black Print, en partenariat avec le Black Student Success Centre — une conversation remplie de joie, de bonnes vibrations et de moments de connexion puissants." : "Wednesday's closing session of The Black Print, in partnership with the Black Student Success Centre — a conversation filled with joy, good vibes, and powerful moments of connection."}
                 </p>
                 <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#B1643B' }}>
-                  <span>Read the post</span>
+                  <span>{fr ? 'Lire la publication' : 'Read the post'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
@@ -962,13 +965,13 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Our Partners</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Nos partenaires' : 'Our Partners'}</p>
             </div>
             <h2 className="text-4xl font-light tracking-tight" style={{ color: '#121212' }}>
-              Trusted by Community and Organizations
+              {fr ? 'La confiance de la communauté et des organisations' : 'Trusted by Community and Organizations'}
             </h2>
             <p className="text-base mt-3" style={{ color: '#7A6F66' }}>
-              CREOVA has partnered with universities, NGOs, and community organizations across Ontario
+              {fr ? "CREOVA s'est associée à des universités, des OBNL et des organisations communautaires partout en Ontario" : 'CREOVA has partnered with universities, NGOs, and community organizations across Ontario'}
             </p>
           </motion.div>
 
@@ -1026,10 +1029,10 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>How We Work</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Notre façon de travailler' : 'How We Work'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>Our Collaboration Process</h2>
-            <p className="text-base mt-3" style={{ color: '#4A3E36' }}>A simple, transparent approach to working together</p>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>{fr ? 'Notre processus de collaboration' : 'Our Collaboration Process'}</h2>
+            <p className="text-base mt-3" style={{ color: '#4A3E36' }}>{fr ? 'Une approche simple et transparente pour travailler ensemble' : 'A simple, transparent approach to working together'}</p>
           </motion.div>
 
           <div className="relative">
@@ -1038,10 +1041,10 @@ export function EventsCollaboratePage() {
 
             <div className="space-y-6">
               {[
-                { step: '01', title: 'Initial Review & Assessment', description: 'We review your proposal within 2-3 business days and assess alignment with our values, mission, and current capacity' },
-                { step: '02', title: 'Discovery Call', description: 'If it\'s a strong fit, we\'ll schedule a video call to discuss your vision, goals, timeline, and budget in detail' },
-                { step: '03', title: 'Custom Proposal & Agreement', description: 'We create a tailored proposal outlining project scope, deliverables, timeline, and pricing with a professional service agreement' },
-                { step: '04', title: 'Collaboration Launch', description: 'We begin the project with clear communication, regular check-ins, and milestone-based delivery to ensure quality results' }
+                { step: '01', title: fr ? 'Examen et évaluation initiaux' : 'Initial Review & Assessment', description: fr ? "Nous examinons ta proposition dans les 2 à 3 jours ouvrables et évaluons l'alignement avec nos valeurs, notre mission et notre capacité actuelle" : 'We review your proposal within 2-3 business days and assess alignment with our values, mission, and current capacity' },
+                { step: '02', title: fr ? 'Appel de découverte' : 'Discovery Call', description: fr ? "Si le courant passe, nous planifierons un appel vidéo pour discuter en détail de ta vision, tes objectifs, ton échéancier et ton budget" : 'If it\'s a strong fit, we\'ll schedule a video call to discuss your vision, goals, timeline, and budget in detail' },
+                { step: '03', title: fr ? 'Proposition et entente sur mesure' : 'Custom Proposal & Agreement', description: fr ? "Nous créons une proposition adaptée décrivant la portée du projet, les livrables, l'échéancier et les prix, accompagnée d'une entente de service professionnelle" : 'We create a tailored proposal outlining project scope, deliverables, timeline, and pricing with a professional service agreement' },
+                { step: '04', title: fr ? 'Lancement de la collaboration' : 'Collaboration Launch', description: fr ? "Nous démarrons le projet avec une communication claire, des suivis réguliers et une livraison par étapes pour garantir des résultats de qualité" : 'We begin the project with clear communication, regular check-ins, and milestone-based delivery to ensure quality results' }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -1084,13 +1087,13 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Submit a Proposal</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Soumets une proposition' : 'Submit a Proposal'}</p>
             </div>
             <h2 className="text-4xl font-light tracking-tight" style={{ color: '#121212' }}>
-              Submit a Collaboration Proposal
+              {fr ? 'Soumets une proposition de collaboration' : 'Submit a Collaboration Proposal'}
             </h2>
             <p className="text-base mt-3" style={{ color: '#7A6F66' }}>
-              Tell us about your project, partnership idea, or event concept and let's explore how we can work together
+              {fr ? "Parle-nous de ton projet, ton idée de partenariat ou ton concept d'événement, et explorons comment on peut travailler ensemble" : "Tell us about your project, partnership idea, or event concept and let's explore how we can work together"}
             </p>
           </motion.div>
 
@@ -1105,35 +1108,35 @@ export function EventsCollaboratePage() {
           >
             {/* Form header */}
             <div className="px-8 py-5" style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(166,143,89,0.2)' }}>
-              <p className="text-sm" style={{ color: '#7A6F66' }}>We review all proposals within 2-3 business days and respond to all inquiries</p>
+              <p className="text-sm" style={{ color: '#7A6F66' }}>{fr ? 'Nous examinons toutes les propositions dans les 2 à 3 jours ouvrables et répondons à toutes les demandes' : 'We review all proposals within 2-3 business days and respond to all inquiries'}</p>
             </div>
 
             <div className="p-8 md:p-10 space-y-6" style={{ backgroundColor: '#FFFFFF' }}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="name" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Full Name *</Label>
+                  <Label htmlFor="name" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Nom complet *' : 'Full Name *'}</Label>
                   <Input id="name" autoComplete="name" required value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Your full name" className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
+                    placeholder={fr ? 'Ton nom complet' : 'Your full name'} className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
                 </div>
                 <div>
-                  <Label htmlFor="email" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Email Address *</Label>
+                  <Label htmlFor="email" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Adresse courriel *' : 'Email Address *'}</Label>
                   <Input id="email" type="email" autoComplete="email" required value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="your@email.com" className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
+                    placeholder="ton@courriel.com" className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="organization" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Organization / Brand Name</Label>
+                <Label htmlFor="organization" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Nom de l’organisation / de la marque' : 'Organization / Brand Name'}</Label>
                 <Input id="organization" value={formData.organization}
                   onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                  placeholder="Your organization, company, or personal brand"
+                  placeholder={fr ? 'Ton organisation, entreprise ou marque personnelle' : 'Your organization, company, or personal brand'}
                   className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
               </div>
 
               <div>
-                <Label htmlFor="collaborationType" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Type of Collaboration *</Label>
+                <Label htmlFor="collaborationType" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Type de collaboration *' : 'Type of Collaboration *'}</Label>
                 <select
                   id="collaborationType" required
                   value={formData.collaborationType}
@@ -1141,33 +1144,33 @@ export function EventsCollaboratePage() {
                   className="w-full border-2 rounded-xl px-4 py-3 focus:border-[#A68F59] focus:outline-none transition-colors"
                   style={{ color: '#121212' }}
                 >
-                  <option value="">Select collaboration type</option>
-                  <option value="brand-partnership">Brand Partnership</option>
-                  <option value="creative-project">Creative Project</option>
-                  <option value="community-initiative">Community Initiative</option>
-                  <option value="event-workshop">Event or Workshop</option>
-                  <option value="custom">Custom Collaboration</option>
+                  <option value="">{fr ? 'Sélectionne un type de collaboration' : 'Select collaboration type'}</option>
+                  <option value="brand-partnership">{fr ? 'Partenariat de marque' : 'Brand Partnership'}</option>
+                  <option value="creative-project">{fr ? 'Projet créatif' : 'Creative Project'}</option>
+                  <option value="community-initiative">{fr ? 'Initiative communautaire' : 'Community Initiative'}</option>
+                  <option value="event-workshop">{fr ? 'Événement ou atelier' : 'Event or Workshop'}</option>
+                  <option value="custom">{fr ? 'Collaboration sur mesure' : 'Custom Collaboration'}</option>
                 </select>
               </div>
 
               <div>
-                <Label htmlFor="projectDescription" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Project Description *</Label>
+                <Label htmlFor="projectDescription" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Description du projet *' : 'Project Description *'}</Label>
                 <Textarea id="projectDescription" required value={formData.projectDescription}
                   onChange={(e) => setFormData({ ...formData, projectDescription: e.target.value })}
-                  placeholder="Describe your collaboration idea, goals, what you envision, and how CREOVA can contribute..."
+                  placeholder={fr ? "Décris ton idée de collaboration, tes objectifs, ce que tu envisages et comment CREOVA peut contribuer..." : 'Describe your collaboration idea, goals, what you envision, and how CREOVA can contribute...'}
                   rows={6} className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="timeline" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Preferred Timeline</Label>
+                  <Label htmlFor="timeline" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Échéancier préféré' : 'Preferred Timeline'}</Label>
                   <Input id="timeline" value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                    placeholder="e.g., Q1 2026, 3 months, ASAP"
+                    placeholder={fr ? 'p. ex. T1 2026, 3 mois, dès que possible' : 'e.g., Q1 2026, 3 months, ASAP'}
                     className="rounded-xl border-2 focus:border-[#A68F59] transition-colors" />
                 </div>
                 <div>
-                  <Label htmlFor="budget" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>Budget Range (CAD)</Label>
+                  <Label htmlFor="budget" className="text-xs tracking-widest uppercase mb-2 block" style={{ color: '#7A6F66' }}>{fr ? 'Fourchette budgétaire (CAD)' : 'Budget Range (CAD)'}</Label>
                   <Input id="budget" value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     placeholder="e.g., $2,000-$5,000"
@@ -1176,7 +1179,7 @@ export function EventsCollaboratePage() {
               </div>
 
               <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#7A6F66' }}>Security Verification</p>
+                <p className="text-xs tracking-widest uppercase mb-4" style={{ color: '#7A6F66' }}>{fr ? 'Vérification de sécurité' : 'Security Verification'}</p>
                 <Captcha onVerify={handleCaptchaVerify} onExpire={handleCaptchaExpire} onError={handleCaptchaError} />
               </div>
 
@@ -1200,7 +1203,7 @@ export function EventsCollaboratePage() {
                 }}
               >
                 <span className="flex items-center justify-center gap-2">
-                  {isSubmitting ? 'Submitting...' : 'Submit Collaboration Proposal'}
+                  {isSubmitting ? (fr ? 'Envoi...' : 'Submitting...') : (fr ? 'Soumettre la proposition' : 'Submit Collaboration Proposal')}
                   {!isSubmitting && <ArrowRight className="w-5 h-5" />}
                 </span>
               </Button>
@@ -1229,7 +1232,7 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center justify-center gap-5 mb-10">
               <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
-              <p className="text-xs tracking-[0.55em] uppercase" style={{ color: 'rgba(255,255,255,0.7)' }}>Let's Connect</p>
+              <p className="text-xs tracking-[0.55em] uppercase" style={{ color: 'rgba(255,255,255,0.7)' }}>{fr ? 'Connectons-nous' : "Let's Connect"}</p>
               <div style={{ height: '1px', width: '50px', backgroundColor: 'rgba(255,255,255,0.4)' }} />
             </div>
 
@@ -1237,10 +1240,10 @@ export function EventsCollaboratePage() {
               className="font-light tracking-tight mb-6"
               style={{ fontSize: 'clamp(32px, 5vw, 68px)', color: '#FFFFFF', lineHeight: 1.1 }}
             >
-              Ready to Create Something Meaningful?
+              {fr ? 'Prêt à créer quelque chose de significatif ?' : 'Ready to Create Something Meaningful?'}
             </h2>
             <p className="text-lg mb-12 leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)', maxWidth: '520px', margin: '0 auto 48px' }}>
-              Whether you're booking a workshop ticket or exploring a partnership opportunity, we're here to collaborate
+              {fr ? "Que tu réserves un billet d'atelier ou que tu explores une occasion de partenariat, on est là pour collaborer" : "Whether you're booking a workshop ticket or exploring a partnership opportunity, we're here to collaborate"}
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -1260,7 +1263,7 @@ export function EventsCollaboratePage() {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                View Workshops
+                {fr ? 'Voir les ateliers' : 'View Workshops'}
               </Button>
               <Button
                 size="lg"
@@ -1279,7 +1282,7 @@ export function EventsCollaboratePage() {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                Submit Proposal
+                {fr ? 'Soumettre une proposition' : 'Submit Proposal'}
               </Button>
             </div>
           </motion.div>
