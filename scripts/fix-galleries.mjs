@@ -17,9 +17,9 @@
  *     The password is read from the env var YOU set — it is never stored here
  *     and never printed.
  *
- * Page-2 covers are intentionally NOT changed here — Pixieset's lazy-loaded
- * page 2 couldn't be scraped reliably, so those galleries keep their current
- * image until captured separately.
+ * Idempotent: re-running only applies what still differs. Round 1 fixed the
+ * page-1 galleries; the page-2 covers were added in a later pass and are
+ * applied on the next run.
  */
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -44,7 +44,7 @@ const CORRECTIONS = [
   { match: 'documentingandarchivingblacklife',    url: `${P}/documentingandarchivingblacklifeworkandscholarshipadialogueonethicsandpractice/`, image: `${IMG}/079770011/89fee18671e7fa07309a486661645b67-large.jpeg` },
   { match: 'healthrelationshipsblackhistorymonth', url: `${P}/healthrelationshipsblackhistorymonthedition/`, image: `${IMG}/612334901/f9f8a142ec856a4176d79bcda79f198b-large.png` },
   { match: 'hairmattersblackhistorymonthedition', url: `${P}/hairmatters/`,                               image: `${IMG}/449234901/b892167a679630b4c7a1e0b350bf97c9-large.png` },
-  { match: 'pinkcourtroom',                       url: `${P}/pinkcourtroom/` },
+  { match: 'pinkcourtroom',                       url: `${P}/pinkcourtroom/`, image: `${IMG}/092688101/e0db69d6d071618208bc55db0e068b5c-large.jpeg` },
   { match: 'allvideos',                           url: `${P}/allvideoscreova/`,                          image: `${IMG}/981017311/027b136fb0f155a0bd0fd6ec7c040b1c-large.png` },
   { match: 'graphicandpromotionalmaterials',      url: `${P}/graphicandpromotinalmaterials/`,            image: `${IMG}/541217311/e5aaa0502b7c455b28357cb4cedc664d-large.png` },
 
@@ -60,6 +60,19 @@ const CORRECTIONS = [
   { match: 'lulumixingbowls',                     image: `${IMG}/768784801/9402bc808f1919835987b5992f55e408-large.jpeg` },
   // Black Print — client-supplied photo, not the Pixieset cover
   { match: 'wellnessandwork',                     image: `/card-blackprint-event.jpg` },
+
+  // --- page-2 cover fixes (captured in a later pass; links already correct) ---
+  { match: 'kingpinbowling',                      image: `${IMG}/187909701/b7776476db5740c0c82da7f80694c738-large.jpeg` },
+  { match: 'hoopforstars',                        image: `${IMG}/879847401/d70e81268067346d2b2c0610998011ea-large.jpeg` },
+  { match: 'levelupsymposium',                    image: `${IMG}/496623401/c2aeaf89b0c22c0f77a35eba67d65e67-large.jpeg` },
+  { match: 'debatenight',                         image: `${IMG}/932502401/2c1c04f8b021203c48314f82f3713ec6-large.jpeg` },
+  { match: 'paintnight',                          image: `${IMG}/252561401/f56020ad4e656a23df5c771218ab9b28-large.jpeg` },
+  { match: 'essencelab',                          image: `${IMG}/343325301/27bbfc59b16c2b259008137a38124525-large.JPG` },
+  { match: 'futureblackfemale',                   image: `${IMG}/777864201/3d2cefd9055e72cde08632b6710024af-large.jpg` },
+  { match: 'eastafricavswestafrica',              image: `${IMG}/284050201/e12620051338209a611b10f04f14fcbb-large.jpeg` },
+  { match: 'blsaphotoshoot',                      image: `${IMG}/920059001/d98751200422cae4372915b3f898945a-large.jpg` },
+  { match: 'bsscstock',                           image: `${IMG}/361473001/4ba07816942e8456a045e2939aadfcb8-large.jpg` },
+  { match: 'welcomebashbrock',                    image: `${IMG}/52035099/a4e1c24cdd086d66882f02f3c6ac4a5c-large.jpeg` },
 ];
 
 // Removed entirely. Substrings chosen to be unambiguous.
