@@ -103,7 +103,7 @@ export function Footer() {
     {
       titleKey: 'footer.col.connect',
       links: [
-        { label: '@creova.one',                 href: 'https://instagram.com/creova.ca',              external: true },
+        { label: '@creativeinnovation__',                 href: 'https://instagram.com/creativeinnovation__',              external: true },
         { label: 'LinkedIn',                  href: 'https://www.linkedin.com/company/creovaspace/', external: true },
         { label: 'support@creova.one',         href: 'mailto:support@creova.one',                     external: true },
         { label: t('footer.contact.location'), href: 'https://maps.google.com/?q=Niagara+Region+Ontario+Canada', external: true },
@@ -447,7 +447,7 @@ export function Footer() {
             {/* Social icons + legal links */}
             <div className="flex flex-col items-end gap-3">
               <div className="flex items-center gap-2">
-                <SocialIcon href="https://instagram.com/creova.ca" label={t('footer.social.instagram')}>
+                <SocialIcon href="https://instagram.com/creativeinnovation__" label={t('footer.social.instagram')}>
                   <Instagram className="w-4 h-4" />
                 </SocialIcon>
                 <SocialIcon href="https://www.linkedin.com/company/creovaspace/" label={t('footer.social.linkedin')}>

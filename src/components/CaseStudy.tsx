@@ -184,7 +184,7 @@ export function CaseStudy() {
 
             {/* The Black Print */}
             <motion.a
-              href="https://www.instagram.com/creova.ca"
+              href="https://www.instagram.com/creativeinnovation__"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: 30 }}

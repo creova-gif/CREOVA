@@ -207,7 +207,7 @@ function AppContent() {
           "priceRange": "$$",
           "openingHours": "Mo-Fr 09:00-18:00",
           "sameAs": [
-            "https://www.instagram.com/creova.ca"
+            "https://www.instagram.com/creativeinnovation__"
           ],
           "areaServed": [
             { "@type": "City", "name": "Toronto" },

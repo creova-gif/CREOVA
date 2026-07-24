@@ -27,7 +27,7 @@ export const organizationSchema = {
     addressCountry: 'CA',
   },
   sameAs: [
-    'https://instagram.com/creova.ca',
+    'https://instagram.com/creativeinnovation__',
     'https://www.linkedin.com/company/creovaspace/',
   ],
   priceRange: '$450-$950',
