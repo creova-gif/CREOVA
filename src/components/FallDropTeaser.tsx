@@ -181,7 +181,7 @@ export function FallDropTeaser() {
               className="font-light leading-none tracking-tighter"
               style={{ fontSize: 'clamp(48px, 8vw, 112px)', color: '#F5F1EB' }}
             >
-              SEEN.
+              VERSE.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -326,7 +326,7 @@ export function FallDropTeaser() {
             Early Access · FW Capsule
           </p>
           <p className="text-xs mb-4 font-light" style={{ color: 'rgba(245,241,235,0.3)' }}>
-            Be first in line when SEEN Fall/Winter 2026 drops.
+            Be first in line when VERSE Fall/Winter 2026 drops.
           </p>
 
           <AnimatePresence mode="wait">
@@ -391,7 +391,7 @@ export function FallDropTeaser() {
         {/* Bottom stamp */}
         <div className="mt-16 pt-8 border-t flex flex-wrap items-center justify-between gap-4" style={{ borderColor: 'rgba(166,143,89,0.1)' }}>
           <span className="text-[9px] tracking-[0.5em] uppercase" style={{ color: 'rgba(245,241,235,0.15)' }}>
-            SEEN · Fall/Winter Capsule · Vol. 01 · Apparel · Footwear · Accessories
+            VERSE · Fall/Winter Capsule · Vol. 01 · Apparel · Footwear · Accessories
           </span>
           <span className="text-[9px] tracking-[0.5em] uppercase" style={{ color: 'rgba(245,241,235,0.15)' }}>
             Studio CREOVA · FW 2026 · Confidential

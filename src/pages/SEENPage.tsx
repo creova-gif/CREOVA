@@ -913,20 +913,20 @@ export function SEENPage() {
             viewport={{ once: true }}
           >
             <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: '#A68F59' }}>
-              {fr ? 'Un écosystème, deux expressions' : 'One Ecosystem, Two Expressions'}
+              {fr ? 'Deux marques sœurs, une vision' : 'Two Sibling Brands, One Vision'}
             </p>
             <h2 className="text-3xl md:text-5xl mb-6" style={{ color: '#F5F1EB' }}>
-              {fr ? 'SEEN est une plateforme — et une collection.' : 'SEEN is a platform — and a collection.'}
+              {fr ? 'SEEN raconte l’histoire. VERSE la fait porter.' : 'SEEN tells the story. VERSE lets you wear it.'}
             </h2>
             <p className="text-base max-w-xl mx-auto mb-10" style={{ color: '#7A6F66' }}>
-              {fr ? "En plus de l'application de récits, SEEN by CREOVA est aussi une capsule vestimentaire AH2026 — créée par la même équipe créative, lancée en novembre. Même nom, même histoire, portée à même la peau." : 'Alongside the storytelling app, SEEN by CREOVA is also a wearable FW2026 capsule — built by the same creative team, launching this November. Same name, same story, worn on your sleeve.'}
+              {fr ? "Aux côtés de l'application de récits SEEN, CREOVA lance VERSE — une capsule vestimentaire AH2026 conçue par la même équipe créative, lancée en novembre. Deux marques sœurs, la même histoire, portée à même la peau." : 'Alongside the SEEN storytelling app, CREOVA is launching VERSE — a wearable FW2026 capsule built by the same creative team, dropping this November. Two sibling brands, one story, worn on your sleeve.'}
             </p>
             <Link
               to="/shop"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90"
               style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid rgba(166, 143, 89, 0.3)', color: '#A68F59' }}
             >
-              {fr ? 'Explorer la capsule AH2026' : 'Explore the FW2026 Capsule'}
+              {fr ? 'Explorer la capsule VERSE' : 'Explore the VERSE Capsule'}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>

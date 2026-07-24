@@ -39,9 +39,9 @@ export const SEO_FR: Record<string, SeoCopy> = {
       "Tarifs transparents pour la photographie, la vidéographie, l'image de marque, les médias sociaux et la couverture d'événements. Forfaits à partir de 450 $ en Ontario.",
   },
   '/shop': {
-    title: 'Boutique — Capsule automne/hiver SEEN',
+    title: 'Boutique — Capsule automne/hiver VERSE',
     description:
-      "SEEN par CREOVA — collection capsule vol. 01 automne/hiver 2026. 14 styles de streetwear, chaussures et accessoires ancrés dans la culture. Précommandez maintenant, livraison en novembre 2026.",
+      "VERSE par CREOVA — collection capsule vol. 01 automne/hiver 2026. 14 styles de streetwear, chaussures et accessoires ancrés dans la culture. Précommandez maintenant, livraison en novembre 2026.",
   },
   '/shop/digital': {
     title: 'Produits numériques',

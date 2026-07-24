@@ -84,7 +84,7 @@ export function TermsOfServicePage() {
                     'Services de gestion des médias sociaux',
                     "Services de couverture d'événements",
                     "Services de location d'équipement",
-                    'Ventes en ligne (collection mode SEEN et marchandise)',
+                    'Ventes en ligne (collection mode VERSE et marchandise)',
                     'Ventes de produits numériques (préréglages, gabarits, guides)',
                     "Billetterie d'événements et inscription aux ateliers",
                   ] : [
@@ -94,7 +94,7 @@ export function TermsOfServicePage() {
                     'Social media management services',
                     'Event coverage services',
                     'Equipment rental services',
-                    'E-commerce sales (SEEN fashion collection and merchandise)',
+                    'E-commerce sales (VERSE fashion collection and merchandise)',
                     'Digital product sales (presets, templates, guides)',
                     'Event ticketing and workshop registration',
                   ]).map((li, i) => <li key={i}>{li}</li>)}
@@ -194,11 +194,11 @@ export function TermsOfServicePage() {
                 <p className="pt-3"><strong style={{ color: '#121212' }}>{fr ? 'Retours de produits :' : 'Product Returns:'}</strong></p>
                 <ul className="list-disc pl-6 space-y-2">
                   {(fr ? [
-                    "Produits physiques (collection SEEN) : politique de retour de 30 jours pour les articles non portés, inutilisés et avec les étiquettes d'origine",
+                    "Produits physiques (collection VERSE) : politique de retour de 30 jours pour les articles non portés, inutilisés et avec les étiquettes d'origine",
                     'Produits numériques : aucun remboursement en raison de la nature du contenu numérique',
                     "Billets d'événement : non remboursables, sauf si l'événement est annulé par CREOVA",
                   ] : [
-                    'Physical products (SEEN collection): 30-day return policy for unworn, unused items with original tags',
+                    'Physical products (VERSE collection): 30-day return policy for unworn, unused items with original tags',
                     'Digital products: No refunds due to the nature of digital content',
                     'Event tickets: Non-refundable unless event is cancelled by CREOVA',
                   ]).map((li, i) => <li key={i}>{li}</li>)}

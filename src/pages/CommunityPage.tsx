@@ -179,7 +179,7 @@ export function CommunityPage() {
     icon: Heart,
     color: '#A68F59',
     perks: language === 'fr' ? [
-      '10% de réduction sur votre première commande SEEN',
+      '10% de réduction sur votre première commande VERSE',
       'Accès à la newsletter exclusive mensuelle',
       'Invitations aux événements communautaires',
       'Contenu des coulisses',
@@ -188,7 +188,7 @@ export function CommunityPage() {
       'Accès aux tutoriels de création de contenu',
       'Support communautaire prioritaire'
     ] : [
-      '10% off your first SEEN order',
+      '10% off your first VERSE order',
       'Access to exclusive monthly newsletter',
       'Invitations to community events',
       'Behind-the-scenes content',
@@ -828,7 +828,7 @@ export function CommunityPage() {
                   borderColor: 'rgba(245,241,235,0.25)',
                 }}
               >
-                {language === 'fr' ? 'Magasiner SEEN' : 'Shop SEEN'}
+                {language === 'fr' ? 'Magasiner VERSE' : 'Shop VERSE'}
               </Button>
             </div>
 

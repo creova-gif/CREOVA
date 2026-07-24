@@ -254,7 +254,7 @@ export function CheckoutPage() {
           </div>
           <h1 className="text-3xl md:text-4xl font-light mb-4" style={{ color: '#F5F1EB' }}>{fr ? 'Votre panier est vide' : 'Your cart is empty'}</h1>
           <p className="text-base mb-10 max-w-sm" style={{ color: '#7A6F66' }}>
-            {fr ? 'Parcourez la collection SEEN ou nos ressources numériques pour trouver quelque chose qui en vaut la peine.' : 'Browse the SEEN collection or our digital resources to find something worth owning.'}
+            {fr ? 'Parcourez la collection VERSE ou nos ressources numériques pour trouver quelque chose qui en vaut la peine.' : 'Browse the VERSE collection or our digital resources to find something worth owning.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <button
@@ -262,7 +262,7 @@ export function CheckoutPage() {
               className="px-8 py-3 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }}
             >
-              {fr ? 'Parcourir la boutique SEEN' : 'Browse the SEEN Shop'}
+              {fr ? 'Parcourir la boutique VERSE' : 'Browse the VERSE Shop'}
             </button>
             <button
               onClick={() => navigate('/shop/digital')}

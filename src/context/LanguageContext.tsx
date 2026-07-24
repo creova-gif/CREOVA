@@ -18,7 +18,7 @@ const translations = {
     'home.feature.3.desc': 'Visual systems and strategic design',
     'home.feature.4.title': 'Social Media',
     'home.feature.4.desc': 'Content strategy and digital growth',
-    'home.feature.5.title': 'Shop SEEN',
+    'home.feature.5.title': 'Shop VERSE',
     'home.feature.5.desc': 'CREOVA apparel and accessories',
     'home.feature.6.title': 'Events',
     'home.feature.6.desc': 'Workshops and creative gatherings',
@@ -153,7 +153,7 @@ const translations = {
     'home.hero.title': 'Black-Led Creative Studio in Ontario, Canada',
     'home.hero.subtitle': 'Videography, Photography, Brand Management & Fashion Design',
     'home.hero.cta': 'Explore Our Services',
-    'home.hero.cta2': 'Shop SEEN Collection',
+    'home.hero.cta2': 'Shop VERSE Collection',
     
     // Services - SEO
     'services.title': 'Professional Creative Services in Ontario',
@@ -168,9 +168,9 @@ const translations = {
     'services.social.desc': 'Content strategy, social media marketing, community management, and analytics for Instagram, TikTok, and other platforms.',
     
     // Shop - SEO
-    'shop.title': 'SEEN: A Season of Soft Power',
+    'shop.title': 'VERSE: A Season of Soft Power',
     'shop.subtitle': 'Black-Led Fashion Brand | Afro-Minimalism | Age-Inclusive Design',
-    'shop.description': 'Shop the SEEN collection: premium streetwear, graphic tees, hoodies, and accessories designed for ages 5-90. Sustainable fashion with timeless style.',
+    'shop.description': 'Shop the VERSE collection: premium streetwear, graphic tees, hoodies, and accessories designed for ages 5-90. Sustainable fashion with timeless style.',
     'shop.filter.all': 'All',
     'shop.filter.tees': 'Tees',
     'shop.filter.hoodies': 'Hoodies',
@@ -451,7 +451,7 @@ const translations = {
     'cart.item': 'item',
     'cart.items': 'items',
     'cart.empty.desc': 'Browse our fashion collection or digital products and add something you love.',
-    'cart.btn.shop': 'Shop SEEN Collection',
+    'cart.btn.shop': 'Shop VERSE Collection',
     'cart.btn.digital': 'Browse Digital Products',
 
     // Case Study
@@ -494,7 +494,7 @@ const translations = {
     'footer.link.terms': 'Terms of Service',
     'footer.link.privacy': 'Privacy Policy',
     'footer.link.seen': 'SEEN Platform',
-    'footer.link.shop': 'Shop SEEN',
+    'footer.link.shop': 'Shop VERSE',
     'footer.link.digital': 'Digital Products',
     'footer.link.events': 'Events',
     'footer.contact.location': 'Niagara Region, Ontario',
@@ -738,7 +738,7 @@ const translations = {
     'home.feature.3.desc': 'Systèmes visuels et conception stratégique',
     'home.feature.4.title': 'Médias Sociaux',
     'home.feature.4.desc': 'Stratégie de contenu et croissance numérique',
-    'home.feature.5.title': 'Boutique SEEN',
+    'home.feature.5.title': 'Boutique VERSE',
     'home.feature.5.desc': 'Vêtements et accessoires CREOVA',
     'home.feature.6.title': 'Événements',
     'home.feature.6.desc': 'Ateliers et rencontres créatives',
@@ -872,7 +872,7 @@ const translations = {
     'home.hero.title': 'Studio Créatif Dirigé par des Noirs en Ontario, Canada',
     'home.hero.subtitle': 'Vidéographie, Photographie, Gestion de Marque & Design de Mode',
     'home.hero.cta': 'Découvrir Nos Services',
-    'home.hero.cta2': 'Magasiner la Collection SEEN',
+    'home.hero.cta2': 'Magasiner la Collection VERSE',
     
     // Services - SEO
     'services.title': 'Services Créatifs Professionnels en Ontario',
@@ -887,9 +887,9 @@ const translations = {
     'services.social.desc': 'Stratégie de contenu, marketing sur les médias sociaux, gestion de communauté et analyses pour Instagram, TikTok et autres plateformes.',
     
     // Shop - SEO
-    'shop.title': 'SEEN : Une Saison de Pouvoir Doux',
+    'shop.title': 'VERSE : Une Saison de Pouvoir Doux',
     'shop.subtitle': 'Marque de Mode Dirigée par des Noirs | Afro-Minimalisme | Design Inclusif',
-    'shop.description': 'Magasinez la collection SEEN : vêtements urbains haut de gamme, t-shirts graphiques, chandails à capuche et accessoires conçus pour les âges de 5 à 90 ans. Mode durable au style intemporel.',
+    'shop.description': 'Magasinez la collection VERSE : vêtements urbains haut de gamme, t-shirts graphiques, chandails à capuche et accessoires conçus pour les âges de 5 à 90 ans. Mode durable au style intemporel.',
     'shop.filter.all': 'Tout',
     'shop.filter.tees': 'T-Shirts',
     'shop.filter.hoodies': 'Chandails',
@@ -1171,7 +1171,7 @@ const translations = {
     'cart.item': 'article',
     'cart.items': 'articles',
     'cart.empty.desc': "Parcourez notre collection de mode ou nos produits numériques et ajoutez quelque chose que vous aimez.",
-    'cart.btn.shop': 'Magasiner la Collection SEEN',
+    'cart.btn.shop': 'Magasiner la Collection VERSE',
     'cart.btn.digital': 'Parcourir les Produits Numériques',
 
     // Case Study
@@ -1214,7 +1214,7 @@ const translations = {
     "footer.link.terms": "Conditions d'Utilisation",
     'footer.link.privacy': 'Politique de Confidentialité',
     'footer.link.seen': 'Plateforme SEEN',
-    'footer.link.shop': 'Boutique SEEN',
+    'footer.link.shop': 'Boutique VERSE',
     'footer.link.digital': 'Produits Numériques',
     "footer.link.events": "Événements",
     'footer.contact.location': 'Région de Niagara, Ontario',

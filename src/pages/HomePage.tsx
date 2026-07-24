@@ -21,7 +21,6 @@ import heroBackground from '../assets/photo-community-celebration.jpg';
 import heroImage1 from '../assets/photo-duo-portrait.jpg';
 import heroImage3 from '../assets/photo-duo-bench.jpg';
 import teamPhoto from '../assets/photo-team-atrium.jpg';
-import photoEvent1 from '../assets/photo-event-market.jpg';
 import photoCommunity2 from '../assets/photo-community-chess.jpg';
 import photoServicePhotography from '../assets/photo-carnival-portrait.jpg';
 import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
@@ -140,7 +139,7 @@ export function HomePage() {
     { icon: Video, title: t('home.feature.2.title'), description: t('home.feature.2.desc'), link: '/services', image: photoServiceVideography, objectPosition: 'center top', accent: '#B1643B', startingPrice: '$500' },
     { icon: Palette, title: t('home.feature.3.title'), description: t('home.feature.3.desc'), link: '/services', image: photoCommunity2, objectPosition: 'center 20%', accent: '#A68F59', startingPrice: '$750' },
     { icon: TrendingUp, title: t('home.feature.4.title'), description: t('home.feature.4.desc'), link: '/services', image: photoSocialLaptop, objectPosition: 'center top', accent: '#B1643B', startingPrice: '$950/mo' },
-    { icon: ShoppingBag, title: t('home.feature.5.title'), description: t('home.feature.5.desc'), link: '/shop', image: photoEvent1, objectPosition: 'center top', accent: '#A68F59', startingPrice: '$15' },
+    { icon: ShoppingBag, title: t('home.feature.5.title'), description: t('home.feature.5.desc'), link: '/shop', image: 'https://images.unsplash.com/photo-1749413067075-d3d4efa2959a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', objectPosition: 'center', accent: '#A68F59', startingPrice: '$15' },
     { icon: Calendar, title: t('home.feature.6.title'), description: t('home.feature.6.desc'), link: '/experience', image: photoServiceEvents, objectPosition: 'center 40%', accent: '#B1643B', startingPrice: '$750' },
   ];
 
