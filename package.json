@@ -62,16 +62,19 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "4.1.12",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/animejs": "^3.1.13",
     "@types/node": "^20.10.0",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.7.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "4.1.12",
+    "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vite": "^6.4.2"
+  },
+  "overrides": {
+    "tar": "^7.5.21"
   },
   "scripts": {
     "dev": "vite",
