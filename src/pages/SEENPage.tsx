@@ -7,59 +7,61 @@ import seenOnboard from '../assets/seen-onboard.jpg';
 import seenRoles from '../assets/seen-roles.jpg';
 import seenSplash from '../assets/seen-splash.jpg';
 import { PageSEO } from '../components/PageSEO';
+import { useLanguage } from '../context/LanguageContext';
 
-const storyWorlds = [
+const storyWorlds = (fr: boolean) => [
   {
-    title: "Black Atlantic Canada",
-    description: "Oral histories, music, and resistance from the oldest Black communities in North America.",
+    title: fr ? "Canada atlantique noir" : "Black Atlantic Canada",
+    description: fr ? "Histoires orales, musique et résistance des plus anciennes communautés noires d'Amérique du Nord." : "Oral histories, music, and resistance from the oldest Black communities in North America.",
     lang: "EN / FR",
   },
   {
-    title: "Montreal's Jazz Scene",
-    description: "The underground sounds and hidden stories of a city that shaped Canadian music forever.",
+    title: fr ? "La scène jazz de Montréal" : "Montreal's Jazz Scene",
+    description: fr ? "Les sons underground et les histoires cachées d'une ville qui a façonné à jamais la musique canadienne." : "The underground sounds and hidden stories of a city that shaped Canadian music forever.",
     lang: "EN / FR",
   },
   {
     title: "Langues Autochtones",
-    description: "Indigenous language revitalization through story — Cree, Ojibwe, Michif, and more.",
-    lang: "FR / Indigenous",
+    description: fr ? "Revitalisation des langues autochtones par le récit — cri, ojibwé, michif et plus encore." : "Indigenous language revitalization through story — Cree, Ojibwe, Michif, and more.",
+    lang: fr ? "FR / Autochtone" : "FR / Indigenous",
   },
   {
-    title: "First Generation",
-    description: "Immigrant stories of arrival, belonging, and becoming Canadian — in every language.",
+    title: fr ? "Première génération" : "First Generation",
+    description: fr ? "Histoires d'immigrants sur l'arrivée, l'appartenance et le devenir canadien — dans toutes les langues." : "Immigrant stories of arrival, belonging, and becoming Canadian — in every language.",
     lang: "EN / FR / ES",
   }
 ];
 
-const pillars = [
+const pillars = (fr: boolean) => [
   {
     icon: BookOpen,
-    title: "Story Worlds",
-    description: "Not just content — immersive experiences combining narration, ambient audio, and text that transport you into a cultural moment.",
+    title: fr ? "Mondes narratifs" : "Story Worlds",
+    description: fr ? "Pas seulement du contenu — des expériences immersives combinant narration, audio d'ambiance et texte qui te transportent dans un moment culturel." : "Not just content — immersive experiences combining narration, ambient audio, and text that transport you into a cultural moment.",
   },
   {
     icon: Lock,
-    title: "Creator Ownership",
-    description: "You keep full IP rights. Always. SEEN makes no claims on your work. Publish, earn, and own your narrative.",
+    title: fr ? "Propriété du créateur" : "Creator Ownership",
+    description: fr ? "Tu conserves tous tes droits de propriété intellectuelle. Toujours. SEEN ne revendique rien sur ton œuvre. Publie, gagne et possède ton récit." : "You keep full IP rights. Always. SEEN makes no claims on your work. Publish, earn, and own your narrative.",
   },
   {
     icon: Shield,
-    title: "Cultural Moderation",
-    description: "Content flagging that includes \"cultural appropriation\" as a category, with escalation to cultural advisors — not just automated bans.",
+    title: fr ? "Modération culturelle" : "Cultural Moderation",
+    description: fr ? "Un signalement de contenu qui inclut « l'appropriation culturelle » comme catégorie, avec escalade vers des conseillers culturels — pas seulement des bannissements automatisés." : "Content flagging that includes \"cultural appropriation\" as a category, with escalation to cultural advisors — not just automated bans.",
   },
   {
     icon: Mic,
-    title: "Multilingual First",
-    description: "English, French, Spanish, and Indigenous languages. Accessibility customization built into onboarding from day one.",
+    title: fr ? "Multilingue d'abord" : "Multilingual First",
+    description: fr ? "Anglais, français, espagnol et langues autochtones. Personnalisation de l'accessibilité intégrée à l'intégration dès le premier jour." : "English, French, Spanish, and Indigenous languages. Accessibility customization built into onboarding from day one.",
   },
   {
     icon: Layers,
-    title: "Audio-First Design",
-    description: "Cinematic soundscapes and narration carry the story. SEEN is built for listening as much as reading.",
+    title: fr ? "Conception audio d'abord" : "Audio-First Design",
+    description: fr ? "Des paysages sonores cinématographiques et une narration portent l'histoire. SEEN est conçu autant pour l'écoute que pour la lecture." : "Cinematic soundscapes and narration carry the story. SEEN is built for listening as much as reading.",
   }
 ];
 
 function AppPreview3D() {
+  const fr = useLanguage().language === 'fr';
   const stageRef = useRef<HTMLDivElement>(null);
   const prefersReduced = useReducedMotion();
 
@@ -173,10 +175,10 @@ function AppPreview3D() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#A68F59' }}>App Preview</p>
-          <h2 className="text-3xl md:text-5xl mb-4" style={{ color: '#F5F1EB' }}>Experience SEEN</h2>
+          <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#A68F59' }}>{fr ? "Aperçu de l'application" : 'App Preview'}</p>
+          <h2 className="text-3xl md:text-5xl mb-4" style={{ color: '#F5F1EB' }}>{fr ? 'Découvre SEEN' : 'Experience SEEN'}</h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: '#7A6F66' }}>
-            A cultural operating system — available on every screen. Move your cursor to explore.
+            {fr ? "Un système d'exploitation culturel — disponible sur tous les écrans. Déplace ton curseur pour explorer." : 'A cultural operating system — available on every screen. Move your cursor to explore.'}
           </p>
         </motion.div>
 
@@ -366,6 +368,8 @@ function AppPreview3D() {
 }
 
 export function SEENPage() {
+  // Brand/culture page → tu register (see mixed-register decision).
+  const fr = useLanguage().language === 'fr';
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -378,7 +382,28 @@ export function SEENPage() {
     }
   };
 
-  const faqs = [
+  const faqs = fr ? [
+    {
+      q: "Quand SEEN sera-t-il lancé ?",
+      a: "SEEN est présentement en développement. Nous visons une version bêta avec des créateurs sélectionnés d'ici la fin de 2026, suivie d'un lancement canadien plus large. Inscris-toi à la liste d'attente pour être parmi les premiers."
+    },
+    {
+      q: "Puis-je publier mes propres histoires sur SEEN ?",
+      a: "Oui — SEEN est conçu d'abord pour les créateurs. Tu conserves tous tes droits de propriété intellectuelle. Pendant notre phase d'accès anticipé, nous intégrons une cohorte sélectionnée de conteurs canadiens."
+    },
+    {
+      q: "Quelles langues SEEN prend-il en charge ?",
+      a: "Nous bâtissons le multilinguisme dès la base : anglais, français, espagnol et certaines langues autochtones. La personnalisation de l'accessibilité est au cœur de l'expérience d'intégration."
+    },
+    {
+      q: "SEEN est-il gratuit pour les auditeurs ?",
+      a: "Nous explorons plusieurs modèles d'accès. Notre priorité est de veiller à ce que les communautés sous-représentées puissent accéder à des récits culturels authentiques sans obstacles."
+    },
+    {
+      q: "En quoi SEEN se distingue-t-il de Spotify ou Netflix ?",
+      a: "Ces plateformes sont optimisées pour l'engagement de masse. SEEN est optimisé pour la profondeur culturelle, la propriété communautaire et une représentation canadienne authentique."
+    }
+  ] : [
     {
       q: "When does SEEN launch?",
       a: "SEEN is currently in development. We're aiming for a beta with select creators by end of 2026, followed by a broader Canadian launch. Join the waitlist to be first."
@@ -537,7 +562,7 @@ export function SEENPage() {
               className="h-px w-8 flex-shrink-0" style={{ backgroundColor: '#148F77' }}
             />
             <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#148F77', fontFamily: 'var(--font-display)' }}>
-              A CREOVA ORIGINAL PLATFORM
+              {fr ? 'UNE PLATEFORME ORIGINALE CREOVA' : 'A CREOVA ORIGINAL PLATFORM'}
             </span>
             <motion.div
               animate={{ scaleX: [1, 1.4, 1] }}
@@ -597,7 +622,7 @@ export function SEENPage() {
             className="text-xl md:text-2xl mb-4 tracking-wide italic"
             style={{ color: '#CCFFEE', fontFamily: 'var(--font-display)' }}
           >
-            Canada's Cultural Storytelling Platform
+            {fr ? 'La plateforme canadienne de récits culturels' : "Canada's Cultural Storytelling Platform"}
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -606,7 +631,7 @@ export function SEENPage() {
             className="text-sm md:text-base max-w-2xl mx-auto mb-12 leading-relaxed"
             style={{ color: 'rgba(204,255,238,0.6)', fontFamily: 'var(--font-body)' }}
           >
-            Where Indigenous, Black Canadian, francophone, and immigrant voices own their stories — and audiences find the authentic Canada that mainstream platforms miss.
+            {fr ? "Là où les voix autochtones, noires canadiennes, francophones et immigrantes possèdent leurs histoires — et où le public découvre le Canada authentique que les plateformes grand public ignorent." : 'Where Indigenous, Black Canadian, francophone, and immigrant voices own their stories — and audiences find the authentic Canada that mainstream platforms miss.'}
           </motion.p>
 
           <motion.div
@@ -620,10 +645,10 @@ export function SEENPage() {
               style={{ backgroundColor: 'rgba(20,143,119,0.12)', border: '1px solid rgba(20,143,119,0.4)', color: '#148F77' }}
             >
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#148F77' }} />
-              In Development
+              {fr ? 'En développement' : 'In Development'}
             </span>
             <span className="text-xs" style={{ color: 'rgba(204,255,238,0.45)' }}>
-              Beta launching end of 2026 · Canada-wide launch to follow
+              {fr ? 'Bêta lancée à la fin de 2026 · lancement pancanadien à suivre' : 'Beta launching end of 2026 · Canada-wide launch to follow'}
             </span>
           </motion.div>
 
@@ -639,7 +664,7 @@ export function SEENPage() {
                 style={{ backgroundColor: 'rgba(20,143,119,0.12)', border: '1px solid rgba(20,143,119,0.35)' }}
               >
                 <Star className="w-6 h-6 mx-auto mb-2" style={{ color: '#148F77' }} />
-                <p className="text-sm" style={{ color: '#CCFFEE' }}>You're on the list. We'll reach out first.</p>
+                <p className="text-sm" style={{ color: '#CCFFEE' }}>{fr ? "Tu es sur la liste. On te contactera en premier." : "You're on the list. We'll reach out first."}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex gap-2">
@@ -662,13 +687,13 @@ export function SEENPage() {
                   className="px-5 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90 flex items-center gap-2"
                   style={{ backgroundColor: '#148F77', color: '#FFFFFF' }}
                 >
-                  Join Waitlist
+                  {fr ? "S'inscrire" : 'Join Waitlist'}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             )}
             <p className="text-xs mt-3" style={{ color: 'rgba(204,255,238,0.4)' }}>
-              No spam. Early access for creators &amp; cultural communities.
+              {fr ? 'Pas de pourriel. Accès anticipé pour les créateurs et les communautés culturelles.' : 'No spam. Early access for creators & cultural communities.'}
             </p>
           </motion.div>
         </div>
@@ -696,18 +721,18 @@ export function SEENPage() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: '#B1643B' }}>The Gap</p>
+            <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: '#B1643B' }}>{fr ? "L'écart" : 'The Gap'}</p>
             <h2 className="text-3xl md:text-5xl mb-8 leading-tight" style={{ color: '#F5F1EB' }}>
-              Canada is one of the world's most multicultural countries.{' '}
+              {fr ? "Le Canada est l'un des pays les plus multiculturels au monde." : "Canada is one of the world's most multicultural countries."}{' '}
               <span style={{ color: '#4A3E36' }}>
-                Yet its streaming platforms tell one story.
+                {fr ? "Pourtant, ses plateformes de diffusion ne racontent qu'une seule histoire." : 'Yet its streaming platforms tell one story.'}
               </span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: '#7A6F66' }}>
-              Indigenous, Black Canadian, francophone, immigrant, and other equity-deserving communities are chronically underrepresented in the stories Canadians can access. Cultural knowledge — oral histories, community narratives, multilingual stories — gets lost in algorithm-driven platforms optimized for mass engagement.
+              {fr ? "Les communautés autochtones, noires canadiennes, francophones, immigrantes et d'autres méritant l'équité sont chroniquement sous-représentées dans les histoires auxquelles les Canadiens ont accès. Le savoir culturel — histoires orales, récits communautaires, histoires multilingues — se perd dans des plateformes régies par des algorithmes optimisés pour l'engagement de masse." : 'Indigenous, Black Canadian, francophone, immigrant, and other equity-deserving communities are chronically underrepresented in the stories Canadians can access. Cultural knowledge — oral histories, community narratives, multilingual stories — gets lost in algorithm-driven platforms optimized for mass engagement.'}
             </p>
             <p className="text-base md:text-lg leading-relaxed" style={{ color: '#7A6F66' }}>
-              Canadian creators from these communities have no dedicated, safe space to publish and own their work. Many lose IP rights to larger platforms.
+              {fr ? "Les créateurs canadiens de ces communautés n'ont aucun espace dédié et sécuritaire pour publier et posséder leur travail. Plusieurs perdent leurs droits de propriété intellectuelle au profit de plus grandes plateformes." : 'Canadian creators from these communities have no dedicated, safe space to publish and own their work. Many lose IP rights to larger platforms.'}
             </p>
           </motion.div>
         </div>
@@ -723,14 +748,14 @@ export function SEENPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#A68F59' }}>Story Worlds</p>
+            <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#A68F59' }}>{fr ? 'Mondes narratifs' : 'Story Worlds'}</p>
             <h2 className="text-3xl md:text-5xl" style={{ color: '#F5F1EB' }}>
-              Enter the narrative.
+              {fr ? 'Entre dans le récit.' : 'Enter the narrative.'}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {storyWorlds.map((world, i) => (
+            {storyWorlds(fr).map((world, i) => (
               <motion.div
                 key={world.title}
                 initial={{ opacity: 0, y: 40 }}
@@ -760,7 +785,7 @@ export function SEENPage() {
             ))}
           </div>
           <p className="text-center text-xs mt-8 tracking-wider" style={{ color: '#4A3E36' }}>
-            + MORE WORLDS IN DEVELOPMENT
+            {fr ? "+ D'AUTRES MONDES EN DÉVELOPPEMENT" : '+ MORE WORLDS IN DEVELOPMENT'}
           </p>
         </div>
       </section>
@@ -775,14 +800,14 @@ export function SEENPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#B1643B' }}>What SEEN Provides</p>
+            <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#B1643B' }}>{fr ? 'Ce que SEEN offre' : 'What SEEN Provides'}</p>
             <h2 className="text-3xl md:text-5xl" style={{ color: '#F5F1EB' }}>
-              Built different. By design.
+              {fr ? 'Conçu différemment. Par choix.' : 'Built different. By design.'}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pillars.map((pillar, i) => (
+            {pillars(fr).map((pillar, i) => (
               <motion.div
                 key={pillar.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -811,10 +836,10 @@ export function SEENPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { stat: 'CA', label: 'Canadian-Built for Canadian Voices' },
-              { stat: '3+', label: 'Languages at Launch' },
-              { stat: '100%', label: 'Creator IP Ownership' },
-              { stat: 'BIPOC', label: 'Led & Community-First' }
+              { stat: 'CA', label: fr ? 'Conçu au Canada pour les voix canadiennes' : 'Canadian-Built for Canadian Voices' },
+              { stat: '3+', label: fr ? 'Langues au lancement' : 'Languages at Launch' },
+              { stat: '100%', label: fr ? 'Propriété intellectuelle au créateur' : 'Creator IP Ownership' },
+              { stat: 'BIPOC', label: fr ? 'Dirigé et axé sur la communauté' : 'Led & Community-First' }
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -842,7 +867,7 @@ export function SEENPage() {
             className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#A68F59' }}>Questions</p>
-            <h2 className="text-3xl md:text-4xl" style={{ color: '#F5F1EB' }}>Common questions about SEEN</h2>
+            <h2 className="text-3xl md:text-4xl" style={{ color: '#F5F1EB' }}>{fr ? 'Questions fréquentes sur SEEN' : 'Common questions about SEEN'}</h2>
           </motion.div>
 
           <div className="space-y-3">
@@ -888,21 +913,20 @@ export function SEENPage() {
             viewport={{ once: true }}
           >
             <p className="text-xs tracking-[0.3em] uppercase mb-4" style={{ color: '#A68F59' }}>
-              One Ecosystem, Two Expressions
+              {fr ? 'Un écosystème, deux expressions' : 'One Ecosystem, Two Expressions'}
             </p>
             <h2 className="text-3xl md:text-5xl mb-6" style={{ color: '#F5F1EB' }}>
-              SEEN is a platform — and a collection.
+              {fr ? 'SEEN est une plateforme — et une collection.' : 'SEEN is a platform — and a collection.'}
             </h2>
             <p className="text-base max-w-xl mx-auto mb-10" style={{ color: '#7A6F66' }}>
-              Alongside the storytelling app, SEEN by CREOVA is also a wearable FW2026 capsule —
-              built by the same creative team, launching this November. Same name, same story, worn on your sleeve.
+              {fr ? "En plus de l'application de récits, SEEN by CREOVA est aussi une capsule vestimentaire AH2026 — créée par la même équipe créative, lancée en novembre. Même nom, même histoire, portée à même la peau." : 'Alongside the storytelling app, SEEN by CREOVA is also a wearable FW2026 capsule — built by the same creative team, launching this November. Same name, same story, worn on your sleeve.'}
             </p>
             <Link
               to="/shop"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90"
               style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid rgba(166, 143, 89, 0.3)', color: '#A68F59' }}
             >
-              Explore the FW2026 Capsule
+              {fr ? 'Explorer la capsule AH2026' : 'Explore the FW2026 Capsule'}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -930,17 +954,17 @@ export function SEENPage() {
               <Heart className="w-8 h-8" style={{ color: '#A68F59' }} />
             </div>
             <h2 className="text-3xl md:text-5xl mb-6" style={{ color: '#F5F1EB' }}>
-              Your story deserves to be seen.
+              {fr ? "Ton histoire mérite d'être vue." : 'Your story deserves to be seen.'}
             </h2>
             <p className="text-base mb-10" style={{ color: '#7A6F66' }}>
-              Join thousands of Canadians waiting for a platform built for them.
+              {fr ? "Rejoins des milliers de Canadiens qui attendent une plateforme conçue pour eux." : 'Join thousands of Canadians waiting for a platform built for them.'}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
               {[
-                { icon: Award, text: 'Beta Late 2026' },
-                { icon: Globe, text: 'Canada-Wide 2026' },
-                { icon: Shield, text: 'BIPOC Led' }
+                { icon: Award, text: fr ? 'Bêta fin 2026' : 'Beta Late 2026' },
+                { icon: Globe, text: fr ? 'Pancanadien 2026' : 'Canada-Wide 2026' },
+                { icon: Shield, text: fr ? 'Dirigé par des BIPOC' : 'BIPOC Led' }
               ].map((badge, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <badge.icon className="w-4 h-4" style={{ color: '#A68F59' }} />
@@ -955,7 +979,7 @@ export function SEENPage() {
                 style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid rgba(166, 143, 89, 0.3)', color: '#A68F59' }}
               >
                 <Star className="w-4 h-4" />
-                You're on the list
+                {fr ? 'Tu es sur la liste' : "You're on the list"}
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
@@ -977,7 +1001,7 @@ export function SEENPage() {
                   className="px-6 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90"
                   style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
                 >
-                  Get Early Access
+                  {fr ? "Obtenir l'accès anticipé" : 'Get Early Access'}
                 </button>
               </form>
             )}
