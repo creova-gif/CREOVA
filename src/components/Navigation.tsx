@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, NavLink } from '../i18n/LocaleLink';
-import { Menu, X, ShoppingCart, ChevronDown, ArrowUpRight } from 'lucide-react';
+import { Link } from '../i18n/LocaleLink';
+import { X, ShoppingCart, ArrowUpRight, LayoutGrid } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/button';
 import { useCart } from '../context/CartContext';
@@ -12,40 +12,64 @@ import { useFocusTrap } from '../hooks/useFocusTrap';
 import creovaLogo from '../assets/creova-logo.png';
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const [pricingDesktopOpen, setPricingDesktopOpen] = useState(false);
-  const [pricingMobileOpen, setPricingMobileOpen] = useState(false);
   const { totalItems } = useCart();
   const { t } = useLanguage();
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  // Lock body scroll while drawer open
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
-  }, [isOpen]);
+  }, [menuOpen]);
 
-  useFocusTrap(mobileMenuRef, isOpen, () => setIsOpen(false));
+  useFocusTrap(menuRef, menuOpen, () => setMenuOpen(false));
 
-  const navLinks = [
-    { name: t('nav.work'), path: '/work' },
-    { name: t('nav.services'), path: '/services' },
-    { name: t('nav.shop'), path: '/shop' },
-    { name: t('nav.experience'), path: '/experience' },
-    { name: t('nav.community'), path: '/community' },
-    { name: t('nav.contact'), path: '/contact' },
-  ];
+  const close = () => setMenuOpen(false);
 
-  const pricingCategories = [
-    { name: t('nav.pricing.all.label'), path: '/pricing', description: t('nav.pricing.all.desc') },
-    { name: t('nav.pricing.family'), path: '/pricing#family', description: t('nav.pricing.family.desc') },
-    { name: t('nav.pricing.brand'), path: '/pricing#brand', description: t('nav.pricing.brand.desc') },
-    { name: t('nav.pricing.product'), path: '/pricing#commerce', description: t('nav.pricing.product.desc') },
-    { name: t('nav.pricing.aerial'), path: '/pricing#aerial', description: t('nav.pricing.aerial.desc') },
-    { name: t('nav.pricing.events'), path: '/pricing#events', description: t('nav.pricing.events.desc') },
-    { name: t('nav.pricing.social'), path: '/pricing#social', description: t('nav.pricing.social.desc') },
-    { name: t('nav.pricing.design'), path: '/pricing#design', description: t('nav.pricing.design.desc') },
+  // The nine destinations collapse into four "worlds". SEEN (the app) and
+  // VERSE (the clothing label) are brand groups; Studio is the agency; the
+  // fourth gathers community + events + contact.
+  const groups = [
+    {
+      key: 'studio',
+      label: t('nav.group.studio'),
+      tag: t('nav.studio.tag'),
+      brand: false,
+      items: [
+        { name: t('nav.work'), path: '/work' },
+        { name: t('nav.services'), path: '/services' },
+        { name: t('nav.pricing'), path: '/pricing' },
+      ],
+    },
+    {
+      key: 'seen',
+      label: 'SEEN',
+      tag: t('nav.seen.tag'),
+      brand: true,
+      items: [{ name: t('nav.seen.cta'), path: '/seen' }],
+    },
+    {
+      key: 'verse',
+      label: 'VERSE',
+      tag: t('nav.verse.tag'),
+      brand: true,
+      items: [
+        { name: t('nav.verse.shop'), path: '/shop' },
+        { name: t('nav.verse.digital'), path: '/shop/digital' },
+      ],
+    },
+    {
+      key: 'community',
+      label: t('nav.group.community'),
+      tag: '',
+      brand: false,
+      items: [
+        { name: t('nav.community'), path: '/community' },
+        { name: t('nav.experience'), path: '/experience' },
+        { name: t('nav.contact'), path: '/contact' },
+      ],
+    },
   ];
 
   return (
@@ -54,126 +78,24 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center group" onClick={() => setIsOpen(false)}>
-              <img 
-                src={creovaLogo} 
-                alt="CREOVA - Creative Stories, Digital Impact" 
+            <Link to="/" className="flex items-center group" onClick={close}>
+              <img
+                src={creovaLogo}
+                alt="CREOVA - Creative Stories, Digital Impact"
                 width={48}
                 height={48}
                 className="h-12 w-auto transition-all duration-300 group-hover:scale-105 aspect-square"
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
-              {navLinks.map(link => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className="px-3.5 py-1.5 rounded-lg transition-all duration-250 text-sm tracking-wide font-medium"
-                  style={({ isActive }) => ({
-                    color: isActive ? '#B1643B' : '#4A3E36',
-                    backgroundColor: isActive ? 'rgba(177,100,59,0.08)' : 'transparent',
-                  })}
-                  onMouseEnter={(e) => {
-                    if (!e.currentTarget.getAttribute('aria-current')) {
-                      e.currentTarget.style.color = '#B1643B';
-                      e.currentTarget.style.backgroundColor = 'rgba(177,100,59,0.05)';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!e.currentTarget.getAttribute('aria-current')) {
-                      e.currentTarget.style.color = '#4A3E36';
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                    }
-                  }}
-                >
-                  {({ isActive }) => (
-                    <span aria-current={isActive ? 'page' : undefined}>
-                      {link.name}
-                    </span>
-                  )}
-                </NavLink>
-              ))}
-
-              {/* SEEN Platform Link */}
-              <Link
-                to="/seen"
-                title="SEEN — CREOVA Community Platform"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 hover:opacity-80 ml-2"
-                style={{ backgroundColor: '#121212', color: '#F5F1EB', border: '1px solid rgba(166,143,89,0.4)' }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
-                SEEN
-              </Link>
-
-              {/* Pricing Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={() => setPricingDesktopOpen(true)}
-                onMouseLeave={() => setPricingDesktopOpen(false)}
-              >
-                <button
-                  className="px-4 py-2 transition-colors duration-300 text-sm tracking-wide font-medium flex items-center hover:bg-transparent"
-                  style={{ color: pricingDesktopOpen ? '#B1643B' : '#4A3E36' }}
-                  aria-haspopup="true"
-                  aria-expanded={pricingDesktopOpen}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setPricingDesktopOpen(!pricingDesktopOpen);
-                    }
-                    if (e.key === 'Escape') setPricingDesktopOpen(false);
-                  }}
-                >
-                  {t('nav.pricing')}
-                  <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${pricingDesktopOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {pricingDesktopOpen && (
-                  <div 
-                    className="absolute left-0 mt-0 w-80 rounded-lg shadow-2xl overflow-hidden z-50"
-                    style={{ backgroundColor: '#FFFFFF', border: '1px solid #E3DCD3' }}
-                  >
-                    {pricingCategories.map((category, index) => (
-                      <Link
-                        key={category.path}
-                        to={category.path}
-                        onClick={() => setPricingDesktopOpen(false)}
-                        className={`block px-5 py-3 transition-all duration-200 ${index === 0 ? 'border-b-2' : ''}`}
-                        style={{ 
-                          borderColor: index === 0 ? '#A68F59' : 'transparent',
-                          backgroundColor: '#FFFFFF'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = '#F5F1EB';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = '#FFFFFF';
-                        }}
-                      >
-                        <div className="text-sm font-medium" style={{ color: '#121212' }}>
-                          {category.name}
-                        </div>
-                        <div className="text-xs mt-0.5" style={{ color: '#7A6F66' }}>
-                          {category.description}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Cart & Mobile Menu Button */}
-            <div className="flex items-center space-x-4">
-              {/* Language Switcher - Desktop */}
-              <div className="hidden lg:flex">
+            {/* Right cluster */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="hidden sm:flex">
                 <LanguageSwitcher />
               </div>
 
               {/* Book a Call — primary conversion CTA */}
-              <Magnetic strength={0.2} className="hidden lg:inline-flex">
+              <Magnetic strength={0.2} className="hidden md:inline-flex">
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"
@@ -194,7 +116,7 @@ export function Navigation() {
               >
                 <ShoppingCart className="w-5 h-5" />
                 {totalItems > 0 && (
-                  <span 
+                  <span
                     className="absolute -top-1 -right-1 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
                     style={{ backgroundColor: '#B1643B' }}
                   >
@@ -203,171 +125,142 @@ export function Navigation() {
                 )}
               </Button>
 
+              {/* Explore — opens the full-screen menu (all breakpoints) */}
               <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden transition-colors"
-                style={{ color: '#121212' }}
-                aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                aria-expanded={isOpen}
+                onClick={() => setMenuOpen(true)}
+                aria-haspopup="dialog"
+                aria-expanded={menuOpen}
+                className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-sm font-medium tracking-wide transition-all duration-300"
+                style={{ backgroundColor: 'rgba(18,18,18,0.06)', color: '#121212', border: '1px solid rgba(18,18,18,0.12)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(166,143,89,0.12)'; e.currentTarget.style.borderColor = 'rgba(166,143,89,0.4)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(18,18,18,0.06)'; e.currentTarget.style.borderColor = 'rgba(18,18,18,0.12)'; }}
               >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                <LayoutGrid className="w-4 h-4" style={{ color: '#A68F59' }} />
+                <span>{t('nav.explore')}</span>
               </button>
             </div>
           </div>
-
         </div>
       </nav>
 
-      {/* ── FULL-SCREEN MOBILE DRAWER ── */}
+      {/* ── FULL-SCREEN EXPLORE OVERLAY ── */}
       <AnimatePresence>
-        {isOpen && (
+        {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[200] lg:hidden flex flex-col overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[200] flex flex-col overflow-y-auto"
             style={{ backgroundColor: '#080808' }}
           >
-          <div
-            ref={mobileMenuRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Main menu"
-            className="contents"
-          >
-            {/* Header row */}
+            {/* Ambient warm glow */}
+            <div className="absolute inset-0 pointer-events-none" style={{
+              background: 'radial-gradient(ellipse 60% 50% at 20% 0%, rgba(166,143,89,0.10) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 90% 100%, rgba(177,100,59,0.08) 0%, transparent 55%)',
+            }} />
+
             <div
-              className="flex items-center justify-between px-6 py-4 flex-shrink-0 border-b"
-              style={{ borderColor: 'rgba(166,143,89,0.12)' }}
+              ref={menuRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Explore menu"
+              className="relative flex flex-col min-h-full"
             >
-              <Link to="/" onClick={() => setIsOpen(false)}>
-                <img src={creovaLogo} alt="CREOVA" className="h-10 w-auto" />
-              </Link>
-              <button
-                onClick={() => setIsOpen(false)}
-                aria-label="Close menu"
-                className="w-10 h-10 flex items-center justify-center rounded-full transition-colors"
-                style={{ color: '#F5F1EB', backgroundColor: 'rgba(245,241,235,0.06)' }}
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Nav links — large editorial */}
-            <div className="flex-1 px-6 py-6">
-              {[...navLinks, { name: t('nav.booking'), path: '/booking' }].map((link, i) => (
-                <motion.div
-                  key={link.path}
-                  initial={{ opacity: 0, x: 24 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04 + 0.05, duration: 0.3 }}
-                >
-                  <Link
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between py-4 border-b group"
-                    style={{ borderColor: 'rgba(166,143,89,0.08)' }}
-                  >
-                    <span
-                      className="font-light tracking-tight transition-colors duration-200 group-hover:text-[#A68F59]"
-                      style={{ fontSize: 'clamp(24px, 6vw, 34px)', color: '#F5F1EB' }}
-                    >
-                      {link.name}
-                    </span>
-                    <ArrowUpRight
-                      className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-200 -translate-x-1 group-hover:translate-x-0"
-                      style={{ color: '#A68F59' }}
-                    />
-                  </Link>
-                </motion.div>
-              ))}
-
-              {/* Pricing sub-links */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: (navLinks.length + 2) * 0.04 + 0.05, duration: 0.3 }}
-              >
-                <button
-                  onClick={() => setPricingMobileOpen(!pricingMobileOpen)}
-                  className="w-full flex items-center justify-between py-4 border-b"
-                  style={{ borderColor: 'rgba(166,143,89,0.08)' }}
-                >
-                  <span className="font-light tracking-tight" style={{ fontSize: 'clamp(24px, 6vw, 34px)', color: '#F5F1EB' }}>
-                    {t('nav.pricing')}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform duration-200 ${pricingMobileOpen ? 'rotate-180' : ''}`}
-                    style={{ color: '#A68F59' }}
-                  />
-                </button>
-                <AnimatePresence>
-                  {pricingMobileOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pl-4 py-2 space-y-1">
-                        {pricingCategories.map(cat => (
-                          <Link
-                            key={cat.path}
-                            to={cat.path}
-                            onClick={() => { setIsOpen(false); setPricingMobileOpen(false); }}
-                            className="block py-2.5 px-3 rounded-lg transition-colors"
-                            style={{ color: 'rgba(245,241,235,0.6)' }}
-                            onMouseEnter={e => e.currentTarget.style.color = '#A68F59'}
-                            onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,241,235,0.6)'}
-                          >
-                            <div className="text-sm">{cat.name}</div>
-                            <div className="text-xs mt-0.5" style={{ color: 'rgba(245,241,235,0.3)' }}>{cat.description}</div>
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-
-              {/* SEEN link */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: (navLinks.length + 3) * 0.04 + 0.05, duration: 0.3 }}
-              >
-                <Link
-                  to="/seen"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 py-4 border-b"
-                  style={{ borderColor: 'rgba(166,143,89,0.08)' }}
-                >
-                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
-                  <span className="font-light tracking-tight" style={{ fontSize: 'clamp(24px, 6vw, 34px)', color: '#A68F59' }}>
-                    SEEN
-                  </span>
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 lg:px-12 py-4 flex-shrink-0 border-b" style={{ borderColor: 'rgba(166,143,89,0.12)' }}>
+                <Link to="/" onClick={close}>
+                  <img src={creovaLogo} alt="CREOVA" className="h-10 w-auto" />
                 </Link>
-              </motion.div>
-            </div>
+                <button
+                  onClick={close}
+                  aria-label={t('nav.close')}
+                  className="inline-flex items-center gap-2 pl-4 pr-3 py-2 rounded-full text-xs tracking-widest uppercase transition-colors"
+                  style={{ color: '#F5F1EB', backgroundColor: 'rgba(245,241,235,0.06)' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(245,241,235,0.12)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(245,241,235,0.06)')}
+                >
+                  {t('nav.close')}
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
 
-            {/* Bottom bar */}
-            <div className="px-6 pb-10 pt-6 flex-shrink-0 space-y-4 border-t" style={{ borderColor: 'rgba(166,143,89,0.12)' }}>
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center gap-2 py-4 rounded-xl text-sm font-semibold tracking-wide"
-                style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#F5F1EB' }} />
-                {t('nav.book.call.mobile')}
-              </Link>
-              <div className="flex justify-center">
+              {/* Four worlds */}
+              <div className="flex-1 max-w-7xl w-full mx-auto px-6 lg:px-12 py-10 lg:py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
+                  {groups.map((group, gi) => (
+                    <motion.div
+                      key={group.key}
+                      initial={{ opacity: 0, y: 24 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.06 + gi * 0.07, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      {/* Group heading */}
+                      <div className="flex items-center gap-2.5 mb-1">
+                        {group.brand && (
+                          <span className="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style={{ backgroundColor: '#A68F59' }} />
+                        )}
+                        <span
+                          className={group.brand ? 'font-light tracking-tight' : 'text-xs tracking-[0.4em] uppercase'}
+                          style={{
+                            color: group.brand ? '#F5F1EB' : '#A68F59',
+                            fontSize: group.brand ? 'clamp(30px, 4vw, 44px)' : undefined,
+                          }}
+                        >
+                          {group.label}
+                        </span>
+                      </div>
+                      {group.tag && (
+                        <p className="text-xs mb-5" style={{ color: 'rgba(245,241,235,0.4)' }}>{group.tag}</p>
+                      )}
+                      {!group.tag && <div className="mb-5 mt-3" style={{ height: '1px', width: '32px', backgroundColor: 'rgba(166,143,89,0.4)' }} />}
+
+                      {/* Items */}
+                      <ul className="space-y-1">
+                        {group.items.map((item) => (
+                          <li key={item.path}>
+                            <Link
+                              to={item.path}
+                              onClick={close}
+                              className="group flex items-center justify-between py-2.5 border-b"
+                              style={{ borderColor: 'rgba(166,143,89,0.08)' }}
+                            >
+                              <span
+                                className="tracking-tight transition-colors duration-200 group-hover:text-[#A68F59]"
+                                style={{
+                                  color: '#E3DCD3',
+                                  fontSize: group.brand ? '0.95rem' : 'clamp(20px, 3.5vw, 28px)',
+                                  fontWeight: group.brand ? 400 : 300,
+                                }}
+                              >
+                                {item.name}
+                              </span>
+                              <ArrowUpRight
+                                className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-200 -translate-x-1 group-hover:translate-x-0 flex-shrink-0"
+                                style={{ color: '#A68F59' }}
+                              />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 lg:px-12 pb-10 pt-6 flex-shrink-0 border-t max-w-7xl w-full mx-auto" style={{ borderColor: 'rgba(166,143,89,0.12)' }}>
+                <Link
+                  to="/contact"
+                  onClick={close}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold tracking-wide"
+                  style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#F5F1EB' }} />
+                  {t('nav.book.call')}
+                </Link>
                 <LanguageSwitcher />
               </div>
             </div>
-          </div>
           </motion.div>
         )}
       </AnimatePresence>
