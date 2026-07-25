@@ -3,7 +3,7 @@
 :root {
   --font-size: 16px;
   --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'General Sans', system-ui, sans-serif;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -67,6 +67,36 @@ h5, h6 {
 
 p, span, a, li, label, input, textarea, button {
   font-family: var(--font-body);
+}
+
+/*
+  Inline elements *inside* a display heading must keep the heading (Instrument
+  Serif) font. The generic `span/a` rule above otherwise drags them back to the
+  body sans — which is why hero headings built from <span>s were rendering in
+  General Sans instead of the serif. Compound selectors (0,0,2) beat the plain
+  `span` rule (0,0,1) regardless of source order.
+*/
+h1 span, h1 a, h1 em, h1 i, h1 strong, h1 b,
+h2 span, h2 a, h2 em, h2 i, h2 strong, h2 b,
+h3 span, h3 a, h3 em, h3 i, h3 strong, h3 b,
+h4 span, h4 a, h4 em, h4 i, h4 strong, h4 b {
+  font-family: inherit;
+}
+
+/*
+  Instrument Serif's italic glyphs overhang to the right and its descenders
+  drop well below a `leading-none` line box. Combined with
+  -webkit-background-clip:text (used for the gradient accent words), the
+  trailing glyph and descenders get shaved off. Give those clipped display
+  spans a little right/bottom room — they're the accent words in every page
+  hero — so nothing is cut. box-decoration-break keeps it clean if they wrap.
+*/
+h1 span[style*="clip"], h2 span[style*="clip"],
+h3 span[style*="clip"], h4 span[style*="clip"] {
+  padding-right: 0.14em;
+  padding-bottom: 0.1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* Smooth scroll handled by Lenis */
