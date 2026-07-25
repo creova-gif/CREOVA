@@ -8,6 +8,7 @@ import { Footer } from './components/Footer';
 import { AdminAuth } from './components/AdminAuth';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { CartProvider } from './context/CartContext';
+import { ExploreMenuProvider } from './context/ExploreMenuContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Toaster } from './components/ui/sonner';
 import { BackToTop } from './components/BackToTop';
