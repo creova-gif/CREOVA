@@ -126,7 +126,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ backgroundColor: '#1A1A2E', color: '#E0E0E0' }}
+      style={{ backgroundColor: '#121212', color: '#E0E0E0' }}
     >
       {/* Ambient radial glow */}
       <div
@@ -276,7 +276,7 @@ export function Footer() {
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-400 hover:shadow-[0_8px_32px_rgba(212,168,67,0.2)] hover:-translate-y-0.5"
-                style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}
+                style={{ backgroundColor: '#F8F9FA', color: '#121212' }}
               >
                 {t('footer.cta.book')}
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />

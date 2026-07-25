@@ -26,14 +26,14 @@ export function FAQSection({
     light: {
       bg: '#FFFFFF',
       border: '#E0E0E0',
-      text: '#1A1A2E',
+      text: '#121212',
       subtext: '#777777',
       accent: '#D4A843',
       hoverBg: '#F8F9FA'
     },
     dark: {
-      bg: '#1A1A2E',
-      border: '#22314F',
+      bg: '#121212',
+      border: '#2A2A2A',
       text: '#F8F9FA',
       subtext: '#E0E0E0',
       accent: '#D4A843',
@@ -145,7 +145,7 @@ export function FAQSection({
             href="mailto:support@creova.one"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg"
             style={{ 
-              backgroundColor: '#1A1A2E',
+              backgroundColor: '#121212',
               color: '#F8F9FA'
             }}
           >

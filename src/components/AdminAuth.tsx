@@ -69,7 +69,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
         <PageSEO title="Admin" description="CREOVA staff admin dashboard." path={typeof window !== 'undefined' ? window.location.pathname : '/admin'} noIndex />
         <div className="animate-pulse text-center">
           <Shield className="w-12 h-12 mx-auto mb-4" style={{ color: '#C0392B' }} />
-          <p style={{ color: '#1A1A2E' }}>Verifying access...</p>
+          <p style={{ color: '#121212' }}>Verifying access...</p>
         </div>
       </div>
     );
@@ -96,7 +96,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
               >
                 <Lock className="w-8 h-8" style={{ color: '#C0392B' }} />
               </div>
-              <h2 className="text-3xl mb-2" style={{ color: '#1A1A2E' }}>
+              <h2 className="text-3xl mb-2" style={{ color: '#121212' }}>
                 Admin Access
               </h2>
               <p style={{ color: '#777777' }}>
@@ -107,7 +107,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
             {/* Login Form */}
             <form onSubmit={handleLogin} className="space-y-6">
               <div>
-                <label className="block text-sm mb-2" style={{ color: '#1A1A2E' }}>
+                <label className="block text-sm mb-2" style={{ color: '#121212' }}>
                   Password
                 </label>
                 <div className="relative">
@@ -154,7 +154,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
               <div className="flex items-start gap-3">
                 <Shield className="w-5 h-5 mt-0.5" style={{ color: '#C0392B' }} />
                 <div>
-                  <p className="text-sm mb-1" style={{ color: '#1A1A2E' }}>
+                  <p className="text-sm mb-1" style={{ color: '#121212' }}>
                     <strong>Secure Access</strong>
                   </p>
                   <p className="text-xs" style={{ color: '#777777' }}>
@@ -178,7 +178,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
           onClick={handleLogout}
           size="sm"
           className="rounded-xl shadow-lg"
-          style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+          style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
         >
           <Lock className="w-4 h-4 mr-2" />
           Logout

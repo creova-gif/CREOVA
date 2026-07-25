@@ -52,7 +52,7 @@ export function TestimonialsSection() {
   }, [activeTestimonial, testimonials.length]);
 
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full" style={{ backgroundColor: '#C0392B', filter: 'blur(100px)' }}></div>

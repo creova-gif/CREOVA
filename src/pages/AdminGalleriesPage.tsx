@@ -113,7 +113,7 @@ export function AdminGalleriesPage() {
         noIndex
       />
 
-      <section className="py-12" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-12" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between flex-wrap gap-4">
           <div>
             <h1 className="text-3xl md:text-4xl mb-2" style={{ color: '#F8F9FA' }}>
@@ -123,7 +123,7 @@ export function AdminGalleriesPage() {
               Add, edit, or remove galleries shown on /work and the homepage
             </p>
           </div>
-          <Button onClick={openCreateForm} style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}>
+          <Button onClick={openCreateForm} style={{ backgroundColor: '#D4A843', color: '#121212' }}>
             <ImagePlus className="w-4 h-4 mr-2" />
             Add Gallery
           </Button>
@@ -140,7 +140,7 @@ export function AdminGalleriesPage() {
               style={{ borderColor: '#E0E0E0' }}
             >
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl" style={{ color: '#1A1A2E' }}>
+                <h2 className="text-xl" style={{ color: '#121212' }}>
                   {editingId ? 'Edit Gallery' : 'New Gallery'}
                 </h2>
                 <button onClick={closeForm} style={{ color: '#777777' }}>
@@ -150,15 +150,15 @@ export function AdminGalleriesPage() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Title *</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Title *</label>
                   <Input value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} placeholder="e.g. Afro Caribbean Night" />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Subtitle</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Subtitle</label>
                   <Input value={form.subtitle} onChange={e => setForm({ ...form, subtitle: e.target.value })} placeholder="e.g. Part II" />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Category</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Category</label>
                   <select
                     value={form.category}
                     onChange={e => setForm({ ...form, category: e.target.value as GalleryCategory })}
@@ -171,39 +171,39 @@ export function AdminGalleriesPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Organization</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Organization</label>
                   <Input value={form.org} onChange={e => setForm({ ...form, org: e.target.value })} placeholder="e.g. BSSC · Brock University" />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Year</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Year</label>
                   <Input value={form.year} onChange={e => setForm({ ...form, year: e.target.value })} placeholder="2026" />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Accent color</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Accent color</label>
                   <Input value={form.accent} onChange={e => setForm({ ...form, accent: e.target.value })} placeholder="#D4A843" />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>
                     Cover image path *
                   </label>
                   <Input value={form.image} onChange={e => setForm({ ...form, image: e.target.value })} placeholder="/card-example.jpg" />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Image position</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Image position</label>
                   <Input value={form.objectPosition} onChange={e => setForm({ ...form, objectPosition: e.target.value })} placeholder="center 30%" />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm mb-1" style={{ color: '#1A1A2E' }}>Pixieset gallery URL *</label>
+                  <label className="block text-sm mb-1" style={{ color: '#121212' }}>Pixieset gallery URL *</label>
                   <Input value={form.url} onChange={e => setForm({ ...form, url: e.target.value })} placeholder="https://creova.pixieset.com/..." />
                 </div>
-                <label className="flex items-center gap-2 md:col-span-2 text-sm" style={{ color: '#1A1A2E' }}>
+                <label className="flex items-center gap-2 md:col-span-2 text-sm" style={{ color: '#121212' }}>
                   <input type="checkbox" checked={form.featured} onChange={e => setForm({ ...form, featured: e.target.checked })} />
                   Featured (appears larger in the "All Work" grid)
                 </label>
               </div>
 
               <div className="flex gap-3 mt-6">
-                <Button onClick={handleSave} disabled={saving} style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}>
+                <Button onClick={handleSave} disabled={saving} style={{ backgroundColor: '#121212', color: '#F8F9FA' }}>
                   {saving ? 'Saving...' : editingId ? 'Save Changes' : 'Add Gallery'}
                 </Button>
                 <Button variant="outline" onClick={closeForm}>Cancel</Button>
@@ -222,14 +222,14 @@ export function AdminGalleriesPage() {
                   <div className="relative" style={{ aspectRatio: '4/3', backgroundColor: '#111' }}>
                     <img src={gallery.image} alt={gallery.title} className="w-full h-full object-cover" style={{ objectPosition: gallery.objectPosition }} />
                     {gallery.featured && (
-                      <div className="absolute top-2 left-2 px-2 py-1 rounded-full flex items-center gap-1 text-[10px] uppercase" style={{ backgroundColor: 'rgba(212,168,67,0.9)', color: '#1A1A2E' }}>
+                      <div className="absolute top-2 left-2 px-2 py-1 rounded-full flex items-center gap-1 text-[10px] uppercase" style={{ backgroundColor: 'rgba(212,168,67,0.9)', color: '#121212' }}>
                         <Star className="w-3 h-3" /> Featured
                       </div>
                     )}
                   </div>
                   <div className="p-4">
                     <p className="text-[10px] uppercase tracking-widest mb-1" style={{ color: gallery.accent }}>{gallery.org}</p>
-                    <h3 className="text-lg mb-1" style={{ color: '#1A1A2E' }}>{gallery.title}</h3>
+                    <h3 className="text-lg mb-1" style={{ color: '#121212' }}>{gallery.title}</h3>
                     <p className="text-sm mb-3" style={{ color: '#777777' }}>{gallery.subtitle} · {gallery.category} · {gallery.year}</p>
                     <div className="flex items-center gap-2">
                       <Button size="sm" variant="outline" onClick={() => openEditForm(gallery)}>

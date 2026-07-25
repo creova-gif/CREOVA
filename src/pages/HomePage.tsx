@@ -168,7 +168,7 @@ export function HomePage() {
       <section
         ref={heroRef}
         className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ backgroundColor: '#1A1A2E' }}
+        style={{ backgroundColor: '#121212' }}
       >
         <motion.div className="absolute inset-0" style={{ y: heroParallax }}>
           <VideoHero
@@ -181,7 +181,7 @@ export function HomePage() {
         </motion.div>
 
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to right, rgba(26,26,46,0.97) 0%, rgba(26,26,46,0.75) 55%, rgba(26,26,46,0.35) 100%)',
+          background: 'linear-gradient(to right, rgba(18,18,18,0.97) 0%, rgba(18,18,18,0.75) 55%, rgba(18,18,18,0.35) 100%)',
         }} />
         <div className="absolute inset-0 pointer-events-none opacity-20" style={{
           backgroundImage: `radial-gradient(circle at 30% 50%, #D4A843 0%, transparent 50%),
@@ -261,7 +261,7 @@ export function HomePage() {
                 <Magnetic strength={0.22}>
                   <Button size="lg"
                     className="group px-6 py-4 sm:px-8 sm:py-6 rounded-xl text-base sm:text-lg border-2 hover:shadow-2xl transition-all duration-500"
-                    style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E', borderColor: '#F8F9FA' }} asChild>
+                    style={{ backgroundColor: '#F8F9FA', color: '#121212', borderColor: '#F8F9FA' }} asChild>
                     <Link to="/contact" className="flex items-center gap-2">
                       {t('home.cta.get.in.touch')}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -326,12 +326,12 @@ export function HomePage() {
       </section>
 
       {/* Infinite Marquee */}
-      <div className="py-5 overflow-hidden border-y" style={{ backgroundColor: '#1A1A2E', borderColor: 'rgba(212,168,67,0.2)' }}>
+      <div className="py-5 overflow-hidden border-y" style={{ backgroundColor: '#121212', borderColor: 'rgba(212,168,67,0.2)' }}>
         <InfiniteMarquee items={marqueeItems} speed={45} direction="left" />
       </div>
 
       {/* Stats — anime.js count-up */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.35)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.35)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -351,7 +351,7 @@ export function HomePage() {
       </section>
 
       {/* SEEN Platform Teaser */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <FloatingOrbs />
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
@@ -381,7 +381,7 @@ export function HomePage() {
               <Magnetic strength={0.22}>
                 <Link to="/seen"
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-base font-medium tracking-wide transition-all duration-500 hover:shadow-2xl group"
-                  style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}>
+                  style={{ backgroundColor: '#F8F9FA', color: '#121212' }}>
                   {t('home.seen.cta')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -412,7 +412,7 @@ export function HomePage() {
       </section>
 
       {/* Services */}
-      <section className="py-32 relative" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-32 relative" style={{ backgroundColor: '#121212' }}>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-1/2 h-full" style={{
             backgroundImage: `repeating-linear-gradient(90deg, #D4A843 0px, transparent 1px, transparent 80px)`,
@@ -450,7 +450,7 @@ export function HomePage() {
                     style={{ objectPosition: feature.objectPosition || 'center center' }}
                     loading="lazy" />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(to top, rgba(26,26,46,0.95) 0%, rgba(26,26,46,0.5) 50%, rgba(26,26,46,0.1) 100%)',
+                    background: 'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.5) 50%, rgba(18,18,18,0.1) 100%)',
                   }} />
                   <div className="absolute inset-0 p-8 flex flex-col justify-end z-[3]">
                     <div className="flex items-center justify-between mb-4">
@@ -459,7 +459,7 @@ export function HomePage() {
                         <feature.icon className="w-5 h-5" style={{ color: feature.accent }} />
                       </div>
                       <span className="text-xs font-semibold tracking-wide px-2.5 py-1 rounded-full"
-                        style={{ backgroundColor: 'rgba(26,26,46,0.7)', color: feature.accent, border: `1px solid ${feature.accent}40`, backdropFilter: 'blur(4px)' }}>
+                        style={{ backgroundColor: 'rgba(18,18,18,0.7)', color: feature.accent, border: `1px solid ${feature.accent}40`, backdropFilter: 'blur(4px)' }}>
                         From {feature.startingPrice}
                       </span>
                     </div>
@@ -484,7 +484,7 @@ export function HomePage() {
       <ClientLogos />
 
       {/* Selected Work */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 50% 60% at 50% 0%, rgba(212,168,67,0.07) 0%, transparent 60%)'
         }} />
@@ -575,7 +575,7 @@ export function HomePage() {
       </section>
 
       {/* Scroll Scrub Manifesto */}
-      <section className="py-32 px-6 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-32 px-6 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
           backgroundImage: 'radial-gradient(circle, rgba(212,168,67,0.04) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
@@ -604,7 +604,7 @@ export function HomePage() {
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
                   <img src={heroImage1} alt="CREOVA community portrait" className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} loading="lazy" />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.4) 0%, transparent 60%)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.4) 0%, transparent 60%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
                   <img src="/community-chess-new.jpg" alt="CREOVA community chess session" className="w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} loading="lazy" />
@@ -613,7 +613,7 @@ export function HomePage() {
               <div className="space-y-4 pt-8">
                 <div className="relative overflow-hidden rounded-3xl aspect-square">
                   <img src={photoCollage2} alt="CREOVA community members" className="w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} loading="lazy" />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(26,26,46,0.3) 0%, transparent 70%)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(18,18,18,0.3) 0%, transparent 70%)' }} />
                 </div>
                 <div className="relative overflow-hidden rounded-3xl aspect-[4/5]">
                   <img src={teamPhoto} alt="CREOVA team in atrium" className="w-full h-full object-cover" style={{ objectPosition: 'center 30%' }} loading="lazy" />
@@ -629,7 +629,7 @@ export function HomePage() {
               </div>
               <SplitText text={t('home.fall.heading')} tag="h2"
                 className="text-4xl md:text-5xl mb-6 tracking-tight leading-tight"
-                style={{ color: '#1A1A2E' }} mode="words" stagger={0.05} />
+                style={{ color: '#121212' }} mode="words" stagger={0.05} />
               <p className="text-lg mb-8 leading-relaxed" style={{ color: '#777777' }}>
                 {t('home.fall.desc')}
               </p>
@@ -652,7 +652,7 @@ export function HomePage() {
               </div>
               <Link to="/experience"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-base font-medium tracking-wide transition-all duration-500 hover:shadow-xl group"
-                style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}>
+                style={{ backgroundColor: '#121212', color: '#F8F9FA' }}>
                 {t('home.fall.cta')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -662,7 +662,7 @@ export function HomePage() {
       </section>
 
       {/* Editorial Quote Strip */}
-      <div className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', minHeight: '520px' }}>
+      <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', minHeight: '520px' }}>
         <img src="/community-photo.jpg" alt="" aria-hidden="true" loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 30%', opacity: 0.18 }} />
@@ -728,7 +728,7 @@ export function HomePage() {
                 transition={{ duration: 1 }} viewport={{ once: true }}>
                 <SplitText text={t('home.why.heading')} tag="h2"
                   className="text-4xl md:text-5xl lg:text-6xl mb-8 tracking-tight"
-                  style={{ color: '#1A1A2E' }} mode="words" stagger={0.06} />
+                  style={{ color: '#121212' }} mode="words" stagger={0.06} />
                 <p className="text-xl mb-10 leading-relaxed" style={{ color: '#777777' }}>
                   {t('home.why.sub')}
                 </p>
@@ -749,7 +749,7 @@ export function HomePage() {
                         <item.icon className="w-6 h-6" style={{ color: '#C0392B' }} />
                       </div>
                       <div>
-                        <h3 className="text-lg mb-2 group-hover:text-[#D4A843] transition-colors" style={{ color: '#1A1A2E' }}>{item.title}</h3>
+                        <h3 className="text-lg mb-2 group-hover:text-[#D4A843] transition-colors" style={{ color: '#121212' }}>{item.title}</h3>
                         <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>{item.desc}</p>
                       </div>
                     </motion.div>
@@ -758,7 +758,7 @@ export function HomePage() {
                 <div className="mt-10">
                   <Button size="lg"
                     className="group px-8 py-6 rounded-xl text-base border-2 hover:shadow-xl hover:scale-105 transition-all duration-300"
-                    style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA', borderColor: '#1A1A2E' }} asChild>
+                    style={{ backgroundColor: '#121212', color: '#F8F9FA', borderColor: '#121212' }} asChild>
                     <Link to="/community" className="flex items-center gap-2">
                       {t('home.why.cta')}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -783,7 +783,7 @@ export function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row items-center justify-between gap-8 rounded-3xl p-8 md:p-10"
-            style={{ backgroundColor: '#FFFFFF', border: '1px solid #E0E0E0', boxShadow: '0 4px 40px rgba(26,26,46,0.06)' }}
+            style={{ backgroundColor: '#FFFFFF', border: '1px solid #E0E0E0', boxShadow: '0 4px 40px rgba(18,18,18,0.06)' }}
           >
             <div className="flex flex-col sm:flex-row items-center gap-6">
               {/* Google G */}
@@ -798,9 +798,9 @@ export function HomePage() {
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
-                  <span className="ml-1 text-sm font-semibold" style={{ color: '#1A1A2E' }}>5.0</span>
+                  <span className="ml-1 text-sm font-semibold" style={{ color: '#121212' }}>5.0</span>
                 </div>
-                <p className="text-sm font-medium" style={{ color: '#1A1A2E' }}>Rated 5 stars on Google</p>
+                <p className="text-sm font-medium" style={{ color: '#121212' }}>Rated 5 stars on Google</p>
                 <p className="text-xs mt-0.5" style={{ color: '#777777' }}>Happy with our work? Share your experience.</p>
               </div>
             </div>
@@ -809,7 +809,7 @@ export function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"
-              style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+              style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
             >
               Leave a Review
               <ArrowRight className="w-4 h-4" />
@@ -837,7 +837,7 @@ export function HomePage() {
                   <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#C0392B' }} />
                   <span className="text-xs tracking-wide" style={{ color: '#C0392B' }}>{t('home.urgency.badge')}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl mb-4 tracking-tight" style={{ color: '#1A1A2E' }}>
+                <h3 className="text-2xl md:text-3xl mb-4 tracking-tight" style={{ color: '#121212' }}>
                   {t('home.urgency.heading')}
                 </h3>
                 <p className="text-base mb-6 leading-relaxed" style={{ color: '#777777' }}>
@@ -846,7 +846,7 @@ export function HomePage() {
                 <div className="flex flex-wrap gap-3">
                   <Button
                     className="px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300"
-                    style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }} asChild>
+                    style={{ backgroundColor: '#121212', color: '#F8F9FA' }} asChild>
                     <Link to="/contact" className="flex items-center gap-2">
                       {t('home.urgency.cta')}
                       <ArrowRight className="w-4 h-4" />
@@ -878,7 +878,7 @@ export function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 70% 30%, #D4A843 0%, transparent 50%),
@@ -898,7 +898,7 @@ export function HomePage() {
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center items-center">
               <Button size="lg"
                 className="group w-full sm:w-auto px-8 py-5 sm:px-10 sm:py-7 rounded-xl text-base sm:text-xl border-2 hover:shadow-2xl hover:scale-105 transition-all duration-500"
-                style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E', borderColor: '#F8F9FA' }} asChild>
+                style={{ backgroundColor: '#F8F9FA', color: '#121212', borderColor: '#F8F9FA' }} asChild>
                 <Link to="/contact" className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#D4A843' }} />
                   {t('home.cta.book')}

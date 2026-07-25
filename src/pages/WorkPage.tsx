@@ -82,7 +82,7 @@ function ProjectCard({
             <span
               className="text-[9px] tracking-[0.2em] uppercase px-2 py-1 rounded-full backdrop-blur-sm flex items-center gap-1"
               style={{
-                backgroundColor: 'rgba(26,26,46,0.6)',
+                backgroundColor: 'rgba(18,18,18,0.6)',
                 color: 'rgba(248,249,250,0.7)',
                 border: '1px solid rgba(248,249,250,0.15)',
               }}
@@ -213,7 +213,7 @@ export function WorkPage() {
 
   if (loading || galleries.length === 0) {
     return (
-      <div style={{ backgroundColor: '#1A1A2E', minHeight: '100vh' }} className="flex items-center justify-center px-4">
+      <div style={{ backgroundColor: '#121212', minHeight: '100vh' }} className="flex items-center justify-center px-4">
         <PageSEO
           title="Our Work"
           description="Explore CREOVA's portfolio of photography, videography, brand design, and creative campaigns for BIPOC entrepreneurs and cultural brands across Canada."
@@ -229,7 +229,7 @@ export function WorkPage() {
   }
 
   return (
-    <div style={{ backgroundColor: '#1A1A2E' }}>
+    <div style={{ backgroundColor: '#121212' }}>
       <PageSEO
         title="Our Work"
         description={`Explore CREOVA's ${sorted.length}-gallery portfolio of photography, videography, brand design, and creative campaigns for BIPOC entrepreneurs and cultural brands across Canada.`}
@@ -256,7 +256,7 @@ export function WorkPage() {
 
         {/* Layered gradient overlay */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to top, #1A1A2E 0%, rgba(10,10,10,0.78) 45%, rgba(10,10,10,0.25) 100%)'
+          background: 'linear-gradient(to top, #121212 0%, rgba(10,10,10,0.78) 45%, rgba(10,10,10,0.25) 100%)'
         }} />
         <div className="absolute inset-0" style={{
           background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(192,57,43,0.18) 0%, transparent 60%)'
@@ -405,7 +405,7 @@ export function WorkPage() {
       {/* ── MARQUEE STRIP ── */}
       <div
         className="overflow-hidden py-3 border-y"
-        style={{ backgroundColor: '#1A1A2E', borderColor: 'rgba(212,168,67,0.12)' }}
+        style={{ backgroundColor: '#121212', borderColor: 'rgba(212,168,67,0.12)' }}
         aria-hidden="true"
       >
         <div ref={marqueeRef} className="flex whitespace-nowrap">
@@ -427,7 +427,7 @@ export function WorkPage() {
         className="sticky z-40"
         style={{
           top: '64px',
-          backgroundColor: '#1A1A2E',
+          backgroundColor: '#121212',
           borderBottom: '1px solid rgba(212,168,67,0.12)',
         }}
       >
@@ -562,7 +562,7 @@ export function WorkPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm tracking-wide transition-all duration-300"
-                  style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
+                  style={{ backgroundColor: '#D4A843', color: '#121212' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = '#F8F9FA'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = '#D4A843'; }}
                 >

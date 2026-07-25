@@ -109,7 +109,7 @@ function AppPreview3D() {
     <section
       ref={stageRef}
       className="relative overflow-hidden select-none"
-      style={{ backgroundColor: '#1A1A2E', paddingTop: '6rem', paddingBottom: '6rem' }}
+      style={{ backgroundColor: '#121212', paddingTop: '6rem', paddingBottom: '6rem' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -209,7 +209,7 @@ function AppPreview3D() {
             }}>
               {/* Lid */}
               <div className="rounded-t-2xl overflow-hidden relative" style={{
-                backgroundColor: '#1A1A2E',
+                backgroundColor: '#121212',
                 padding: '16px 16px 0',
                 boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.1), 0 -4px 20px rgba(212,168,67,0.08)',
                 transformStyle: 'preserve-3d',
@@ -238,10 +238,10 @@ function AppPreview3D() {
                 </div>
               </div>
               {/* Hinge */}
-              <div style={{ height: '4px', background: 'linear-gradient(to bottom, #0a0a0a, #1A1A2E)' }} />
+              <div style={{ height: '4px', background: 'linear-gradient(to bottom, #0a0a0a, #121212)' }} />
               {/* Base */}
               <div className="rounded-b-xl flex flex-col items-center" style={{
-                backgroundColor: '#1A1A2E',
+                backgroundColor: '#121212',
                 padding: '12px 28px 16px',
                 boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.07)',
               }}>
@@ -303,9 +303,9 @@ function AppPreview3D() {
                 <div className="absolute top-5 left-1/2 -translate-x-1/2 z-10 rounded-full"
                   style={{ width: '68px', height: '20px', backgroundColor: '#000' }} />
                 {/* Buttons */}
-                <div className="absolute rounded-r-full" style={{ left: '-2px', top: '22%', width: '3px', height: '36px', backgroundColor: '#22314F' }} />
-                <div className="absolute rounded-r-full" style={{ left: '-2px', top: '38%', width: '3px', height: '36px', backgroundColor: '#22314F' }} />
-                <div className="absolute rounded-l-full" style={{ right: '-2px', top: '30%', width: '3px', height: '50px', backgroundColor: '#22314F' }} />
+                <div className="absolute rounded-r-full" style={{ left: '-2px', top: '22%', width: '3px', height: '36px', backgroundColor: '#2A2A2A' }} />
+                <div className="absolute rounded-r-full" style={{ left: '-2px', top: '38%', width: '3px', height: '36px', backgroundColor: '#2A2A2A' }} />
+                <div className="absolute rounded-l-full" style={{ right: '-2px', top: '30%', width: '3px', height: '50px', backgroundColor: '#2A2A2A' }} />
                 {/* Screen */}
                 <div className="rounded-[2.3rem] overflow-hidden relative" style={{ aspectRatio: '9/19.5', backgroundColor: '#000' }}>
                   <motion.img src={seenSplash} alt="SEEN splash" className="w-full h-full object-cover absolute inset-0"
@@ -427,7 +427,7 @@ export function SEENPage() {
   ];
 
   return (
-    <div className="overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+    <div className="overflow-hidden" style={{ backgroundColor: '#121212' }}>
 
       {/* Hero — Motion Graphics */}
       <style>{`
@@ -713,7 +713,7 @@ export function SEENPage() {
       <AppPreview3D />
 
       {/* The Problem */}
-      <section className="py-28 px-4" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-28 px-4" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -739,7 +739,7 @@ export function SEENPage() {
       </section>
 
       {/* Story Worlds Preview */}
-      <section className="py-24 px-4" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 px-4" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -764,7 +764,7 @@ export function SEENPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -6, scale: 1.02 }}
                 className="relative p-6 rounded-3xl overflow-hidden cursor-pointer"
-                style={{ backgroundColor: '#1A1A2E', border: '1px solid rgba(212, 168, 67, 0.15)' }}
+                style={{ backgroundColor: '#121212', border: '1px solid rgba(212, 168, 67, 0.15)' }}
               >
                 <div
                   className="absolute inset-0 opacity-10 rounded-3xl"
@@ -791,7 +791,7 @@ export function SEENPage() {
       </section>
 
       {/* 6 Pillars */}
-      <section className="py-28 px-4" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-28 px-4" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -815,7 +815,7 @@ export function SEENPage() {
                 transition={{ duration: 0.8, delay: i * 0.08 }}
                 viewport={{ once: true }}
                 className="p-8 rounded-3xl"
-                style={{ backgroundColor: '#1A1A2E', border: '1px solid rgba(212, 168, 67, 0.1)' }}
+                style={{ backgroundColor: '#121212', border: '1px solid rgba(212, 168, 67, 0.1)' }}
               >
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
@@ -832,7 +832,7 @@ export function SEENPage() {
       </section>
 
       {/* Credibility Bar */}
-      <section className="py-16 px-4" style={{ borderTop: '1px solid rgba(212, 168, 67, 0.15)', borderBottom: '1px solid rgba(212, 168, 67, 0.15)', backgroundColor: '#1A1A2E' }}>
+      <section className="py-16 px-4" style={{ borderTop: '1px solid rgba(212, 168, 67, 0.15)', borderBottom: '1px solid rgba(212, 168, 67, 0.15)', backgroundColor: '#121212' }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -857,7 +857,7 @@ export function SEENPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-28 px-4" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-28 px-4" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -884,7 +884,7 @@ export function SEENPage() {
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between p-6 text-left transition-colors"
-                  style={{ backgroundColor: openFaq === i ? 'rgba(212, 168, 67, 0.06)' : '#1A1A2E' }}
+                  style={{ backgroundColor: openFaq === i ? 'rgba(212, 168, 67, 0.06)' : '#121212' }}
                 >
                   <span className="text-sm md:text-base font-medium pr-4" style={{ color: '#F8F9FA' }}>{faq.q}</span>
                   <ChevronDown
@@ -893,7 +893,7 @@ export function SEENPage() {
                   />
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-6" style={{ backgroundColor: '#1A1A2E' }}>
+                  <div className="px-6 pb-6" style={{ backgroundColor: '#121212' }}>
                     <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>{faq.a}</p>
                   </div>
                 )}
@@ -904,7 +904,7 @@ export function SEENPage() {
       </section>
 
       {/* SEEN Ecosystem — App + Capsule */}
-      <section className="py-24 px-4" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 px-4" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -934,7 +934,7 @@ export function SEENPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-4 text-center relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-32 px-4 text-center relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute inset-0 opacity-15">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 50% 50%, #D4A843 0%, transparent 60%)`
@@ -999,7 +999,7 @@ export function SEENPage() {
                 <button
                   type="submit"
                   className="px-6 py-3 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90"
-                  style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}
+                  style={{ backgroundColor: '#F8F9FA', color: '#121212' }}
                 >
                   {fr ? "Obtenir l'accès anticipé" : 'Get Early Access'}
                 </button>

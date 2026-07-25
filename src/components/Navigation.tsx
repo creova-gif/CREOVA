@@ -94,7 +94,7 @@ export function Navigation() {
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"
-                  style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA', border: '1px solid rgba(212,168,67,0.25)' }}
+                  style={{ backgroundColor: '#121212', color: '#F8F9FA', border: '1px solid rgba(212,168,67,0.25)' }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D4A843' }} />
                   {t('nav.book.call')}
@@ -106,7 +106,7 @@ export function Navigation() {
                 size="sm"
                 onClick={() => setCartOpen(true)}
                 className="relative hover:bg-transparent"
-                style={{ color: '#1A1A2E' }}
+                style={{ color: '#121212' }}
                 aria-label={t('nav.cart.aria')}
               >
                 <ShoppingCart className="w-5 h-5" />
@@ -126,9 +126,9 @@ export function Navigation() {
                 aria-haspopup="dialog"
                 aria-expanded={menuOpen}
                 className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-sm font-medium tracking-wide transition-all duration-300"
-                style={{ backgroundColor: 'rgba(26,26,46,0.06)', color: '#1A1A2E', border: '1px solid rgba(26,26,46,0.12)' }}
+                style={{ backgroundColor: 'rgba(18,18,18,0.06)', color: '#121212', border: '1px solid rgba(18,18,18,0.12)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(212,168,67,0.12)'; e.currentTarget.style.borderColor = 'rgba(212,168,67,0.4)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(26,26,46,0.06)'; e.currentTarget.style.borderColor = 'rgba(26,26,46,0.12)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(18,18,18,0.06)'; e.currentTarget.style.borderColor = 'rgba(18,18,18,0.12)'; }}
               >
                 <LayoutGrid className="w-4 h-4" style={{ color: '#D4A843' }} />
                 <span>{t('nav.explore')}</span>
@@ -147,7 +147,7 @@ export function Navigation() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[200] flex flex-col overflow-y-auto"
-            style={{ backgroundColor: '#1A1A2E' }}
+            style={{ backgroundColor: '#121212' }}
           >
             {/* Ambient warm glow */}
             <div className="absolute inset-0 pointer-events-none" style={{

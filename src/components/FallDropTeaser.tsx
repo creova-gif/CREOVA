@@ -143,7 +143,7 @@ export function FallDropTeaser() {
   };
 
   return (
-    <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+    <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
       {/* Top gradient stripe */}
       <div className="absolute top-0 left-0 right-0" style={{ height: '2px', background: warmGradient }} />
 

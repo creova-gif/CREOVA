@@ -144,7 +144,7 @@ export function RefundManagementPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="text-center">
           <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#C0392B' }} />
-          <p style={{ color: '#1A1A2E' }}>Loading payment data...</p>
+          <p style={{ color: '#121212' }}>Loading payment data...</p>
         </div>
       </div>
     );
@@ -159,7 +159,7 @@ export function RefundManagementPage() {
         noIndex
       />
       {/* Header */}
-      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
@@ -187,7 +187,7 @@ export function RefundManagementPage() {
                 <DollarSign className="w-6 h-6" style={{ color: '#C0392B' }} />
                 <span className="text-sm" style={{ color: '#777777' }}>Total Revenue</span>
               </div>
-              <div className="text-3xl" style={{ color: '#1A1A2E' }}>
+              <div className="text-3xl" style={{ color: '#121212' }}>
                 ${totalRevenue.toFixed(2)}
               </div>
             </div>
@@ -197,7 +197,7 @@ export function RefundManagementPage() {
                 <CreditCard className="w-6 h-6" style={{ color: '#D4A843' }} />
                 <span className="text-sm" style={{ color: '#777777' }}>Total Payments</span>
               </div>
-              <div className="text-3xl" style={{ color: '#1A1A2E' }}>
+              <div className="text-3xl" style={{ color: '#121212' }}>
                 {totalPayments}
               </div>
             </div>
@@ -207,7 +207,7 @@ export function RefundManagementPage() {
                 <RefreshCw className="w-6 h-6" style={{ color: '#D4A843' }} />
                 <span className="text-sm" style={{ color: '#777777' }}>Total Refunds</span>
               </div>
-              <div className="text-3xl" style={{ color: '#1A1A2E' }}>
+              <div className="text-3xl" style={{ color: '#121212' }}>
                 {totalRefunds}
               </div>
             </div>
@@ -217,7 +217,7 @@ export function RefundManagementPage() {
                 <DollarSign className="w-6 h-6" style={{ color: '#777777' }} />
                 <span className="text-sm" style={{ color: '#777777' }}>Refunded Amount</span>
               </div>
-              <div className="text-3xl" style={{ color: '#1A1A2E' }}>
+              <div className="text-3xl" style={{ color: '#121212' }}>
                 ${totalRefundedAmount.toFixed(2)}
               </div>
             </div>
@@ -251,7 +251,7 @@ export function RefundManagementPage() {
                   style={
                     filterStatus === status
                       ? { backgroundColor: '#C0392B', color: '#F8F9FA' }
-                      : { color: '#1A1A2E', borderColor: '#E0E0E0' }
+                      : { color: '#121212', borderColor: '#E0E0E0' }
                   }
                 >
                   {status === 'all' && 'All Payments'}
@@ -269,12 +269,12 @@ export function RefundManagementPage() {
             <table className="w-full">
               <thead style={{ backgroundColor: '#F8F9FA' }}>
                 <tr>
-                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#1A1A2E' }}>Customer</th>
-                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#1A1A2E' }}>Payment ID</th>
-                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#1A1A2E' }}>Amount</th>
-                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#1A1A2E' }}>Date</th>
-                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#1A1A2E' }}>Status</th>
-                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#1A1A2E' }}>Actions</th>
+                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#121212' }}>Customer</th>
+                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#121212' }}>Payment ID</th>
+                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#121212' }}>Amount</th>
+                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#121212' }}>Date</th>
+                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#121212' }}>Status</th>
+                  <th className="text-left py-4 px-6 text-sm" style={{ color: '#121212' }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -289,7 +289,7 @@ export function RefundManagementPage() {
                     <tr key={payment.paymentId} style={{ borderTop: '1px solid #E0E0E0' }}>
                       <td className="py-4 px-6">
                         <div>
-                          <div className="text-sm" style={{ color: '#1A1A2E' }}>
+                          <div className="text-sm" style={{ color: '#121212' }}>
                             {payment.customer_name || 'N/A'}
                           </div>
                           <div className="text-xs" style={{ color: '#777777' }}>
@@ -298,12 +298,12 @@ export function RefundManagementPage() {
                         </div>
                       </td>
                       <td className="py-4 px-6">
-                        <code className="text-xs bg-gray-100 px-2 py-1 rounded" style={{ color: '#1A1A2E' }}>
+                        <code className="text-xs bg-gray-100 px-2 py-1 rounded" style={{ color: '#121212' }}>
                           {payment.stripe_payment_intent_id?.substring(0, 20)}...
                         </code>
                       </td>
                       <td className="py-4 px-6">
-                        <div className="text-sm" style={{ color: '#1A1A2E' }}>
+                        <div className="text-sm" style={{ color: '#121212' }}>
                           ${payment.amount.toFixed(2)} {payment.currency.toUpperCase()}
                         </div>
                         {payment.refund_amount && (
@@ -348,7 +348,7 @@ export function RefundManagementPage() {
                             </DialogTrigger>
                             <DialogContent className="max-w-md">
                               <DialogHeader>
-                                <DialogTitle style={{ color: '#1A1A2E' }}>Process Refund</DialogTitle>
+                                <DialogTitle style={{ color: '#121212' }}>Process Refund</DialogTitle>
                                 <DialogDescription style={{ color: '#777777' }}>
                                   Issue a full or partial refund for this payment
                                 </DialogDescription>
@@ -356,7 +356,7 @@ export function RefundManagementPage() {
                               
                               <div className="space-y-4 py-4">
                                 <div>
-                                  <Label className="text-sm mb-2 block" style={{ color: '#1A1A2E' }}>
+                                  <Label className="text-sm mb-2 block" style={{ color: '#121212' }}>
                                     Customer
                                   </Label>
                                   <div className="text-sm" style={{ color: '#777777' }}>
@@ -365,7 +365,7 @@ export function RefundManagementPage() {
                                 </div>
 
                                 <div>
-                                  <Label className="text-sm mb-2 block" style={{ color: '#1A1A2E' }}>
+                                  <Label className="text-sm mb-2 block" style={{ color: '#121212' }}>
                                     Original Amount
                                   </Label>
                                   <div className="text-2xl" style={{ color: '#C0392B' }}>
@@ -374,7 +374,7 @@ export function RefundManagementPage() {
                                 </div>
 
                                 <div>
-                                  <Label htmlFor="refund-amount" className="text-sm mb-2 block" style={{ color: '#1A1A2E' }}>
+                                  <Label htmlFor="refund-amount" className="text-sm mb-2 block" style={{ color: '#121212' }}>
                                     Refund Amount
                                   </Label>
                                   <Input
@@ -391,7 +391,7 @@ export function RefundManagementPage() {
                                 </div>
 
                                 <div>
-                                  <Label htmlFor="refund-reason" className="text-sm mb-2 block" style={{ color: '#1A1A2E' }}>
+                                  <Label htmlFor="refund-reason" className="text-sm mb-2 block" style={{ color: '#121212' }}>
                                     Reason
                                   </Label>
                                   <select
@@ -413,7 +413,7 @@ export function RefundManagementPage() {
                                 >
                                   <AlertCircle className="w-5 h-5 mt-0.5" style={{ color: '#FF9800' }} />
                                   <div>
-                                    <p className="text-sm" style={{ color: '#1A1A2E' }}>
+                                    <p className="text-sm" style={{ color: '#121212' }}>
                                       <strong>Warning:</strong> This action cannot be undone.
                                     </p>
                                     <p className="text-xs mt-1" style={{ color: '#777777' }}>
@@ -471,7 +471,7 @@ export function RefundManagementPage() {
         {/* Recent Refunds */}
         {refunds.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
               Recent Refunds
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

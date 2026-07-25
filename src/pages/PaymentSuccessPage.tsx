@@ -39,7 +39,7 @@ export function PaymentSuccessPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <h1 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+          <h1 className="text-4xl mb-4" style={{ color: '#121212' }}>
             {fr ? 'Paiement réussi !' : 'Payment Successful!'}
           </h1>
           <p className="text-xl mb-8" style={{ color: '#777777' }}>
@@ -75,7 +75,7 @@ export function PaymentSuccessPage() {
               onClick={() => navigate('/shop')}
               size="lg"
               className="px-8"
-              style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+              style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
             >
               {fr ? 'Continuer vos achats' : 'Continue Shopping'}
               <ArrowRight className="w-4 h-4 ml-2" />

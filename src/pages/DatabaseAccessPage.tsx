@@ -154,7 +154,7 @@ WHERE value::text LIKE '%customer@email.com%';
                   <Database className="w-8 h-8" style={{ color: '#D4A843' }} />
                 </div>
                 <div>
-                  <h1 className="text-3xl mb-1" style={{ color: '#1A1A2E' }}>
+                  <h1 className="text-3xl mb-1" style={{ color: '#121212' }}>
                     Supabase Database Access
                   </h1>
                   <p style={{ color: '#777777' }}>
@@ -165,7 +165,7 @@ WHERE value::text LIKE '%customer@email.com%';
               <Button
                 onClick={() => window.open('https://supabase.com/dashboard', '_blank')}
                 className="flex items-center gap-2"
-                style={{ backgroundColor: '#1A1A2E' }}
+                style={{ backgroundColor: '#121212' }}
               >
                 Open Supabase Dashboard
                 <ExternalLink className="w-4 h-4" />
@@ -193,7 +193,7 @@ WHERE value::text LIKE '%customer@email.com%';
                   <div className="p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
                     <div className="text-sm mb-2" style={{ color: '#777777' }}>Database Table</div>
                     <div className="flex items-center justify-between gap-4">
-                      <code className="text-lg" style={{ color: '#1A1A2E' }}>kv_store_feacf0d8</code>
+                      <code className="text-lg" style={{ color: '#121212' }}>kv_store_feacf0d8</code>
                       <Button
                         size="sm"
                         variant="outline"
@@ -207,7 +207,7 @@ WHERE value::text LIKE '%customer@email.com%';
                   <div className="p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
                     <div className="text-sm mb-2" style={{ color: '#777777' }}>Dashboard URL</div>
                     <div className="flex items-center justify-between gap-4">
-                      <div className="text-sm" style={{ color: '#1A1A2E' }}>supabase.com/dashboard</div>
+                      <div className="text-sm" style={{ color: '#121212' }}>supabase.com/dashboard</div>
                       <Button
                         size="sm"
                         variant="outline"
@@ -226,7 +226,7 @@ WHERE value::text LIKE '%customer@email.com%';
                   <div className="flex items-start gap-3">
                     <Database className="w-5 h-5 mt-0.5" style={{ color: '#D4A843' }} />
                     <div>
-                      <div className="mb-1" style={{ color: '#1A1A2E' }}>How to Access:</div>
+                      <div className="mb-1" style={{ color: '#121212' }}>How to Access:</div>
                       <ol className="text-sm space-y-1 list-decimal list-inside" style={{ color: '#777777' }}>
                         <li>Go to supabase.com/dashboard</li>
                         <li>Login to your account</li>
@@ -248,7 +248,7 @@ WHERE value::text LIKE '%customer@email.com%';
             transition={{ delay: 0.1 }}
             className="mb-12"
           >
-            <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
               Data Types in Your Database
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -276,7 +276,7 @@ WHERE value::text LIKE '%customer@email.com%';
                     </div>
                     <Copy className="w-4 h-4" style={{ color: '#777777' }} />
                   </div>
-                  <div className="mt-2" style={{ color: '#1A1A2E' }}>
+                  <div className="mt-2" style={{ color: '#121212' }}>
                     {item.type}
                   </div>
                 </motion.div>
@@ -290,7 +290,7 @@ WHERE value::text LIKE '%customer@email.com%';
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
               Ready-to-Use SQL Queries
             </h2>
             <div className="grid gap-6">
@@ -311,7 +311,7 @@ WHERE value::text LIKE '%customer@email.com%';
                         <Button
                           size="sm"
                           onClick={() => copyToClipboard(query.sql, 'Query')}
-                          style={{ backgroundColor: '#1A1A2E' }}
+                          style={{ backgroundColor: '#121212' }}
                         >
                           <Copy className="w-4 h-4 mr-2" />
                           Copy Query
@@ -358,7 +358,7 @@ WHERE value::text LIKE '%customer@email.com%';
                     style={{ borderColor: '#E0E0E0' }}
                   >
                     <Code className="w-6 h-6 mb-2" style={{ color: '#D4A843' }} />
-                    <div className="mb-1" style={{ color: '#1A1A2E' }}>Supabase Docs</div>
+                    <div className="mb-1" style={{ color: '#121212' }}>Supabase Docs</div>
                     <div className="text-sm" style={{ color: '#777777' }}>
                       Complete documentation
                     </div>
@@ -372,7 +372,7 @@ WHERE value::text LIKE '%customer@email.com%';
                     style={{ borderColor: '#E0E0E0' }}
                   >
                     <Database className="w-6 h-6 mb-2" style={{ color: '#C0392B' }} />
-                    <div className="mb-1" style={{ color: '#1A1A2E' }}>SQL Reference</div>
+                    <div className="mb-1" style={{ color: '#121212' }}>SQL Reference</div>
                     <div className="text-sm" style={{ color: '#777777' }}>
                       Learn SQL queries
                     </div>
@@ -387,7 +387,7 @@ WHERE value::text LIKE '%customer@email.com%';
                     style={{ borderColor: '#E0E0E0' }}
                   >
                     <Download className="w-6 h-6 mb-2" style={{ color: '#D4A843' }} />
-                    <div className="mb-1" style={{ color: '#1A1A2E' }}>Full Guide</div>
+                    <div className="mb-1" style={{ color: '#121212' }}>Full Guide</div>
                     <div className="text-sm" style={{ color: '#777777' }}>
                       View complete documentation
                     </div>

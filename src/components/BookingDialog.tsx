@@ -120,7 +120,7 @@ export function BookingDialog({
               <div className="p-4 rounded-lg" style={{ backgroundColor: '#F8F9FA' }}>
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h4 style={{ color: '#1A1A2E' }}>{service.name}</h4>
+                    <h4 style={{ color: '#121212' }}>{service.name}</h4>
                     {service.description && (
                       <p className="text-sm mt-1" style={{ color: '#777777' }}>
                         {service.description}
@@ -242,7 +242,7 @@ export function BookingDialog({
                   type="submit"
                   className="flex-1"
                   disabled={isCreating}
-                  style={{ backgroundColor: '#1A1A2E' }}
+                  style={{ backgroundColor: '#121212' }}
                 >
                   {isCreating ? (
                     <>

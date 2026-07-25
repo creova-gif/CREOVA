@@ -51,7 +51,7 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
                   <DialogPrimitive.Close asChild>
                     <button
                       className="absolute top-4 right-4 p-2 rounded-full transition-colors"
-                      style={{ backgroundColor: '#FFFFFF', color: '#1A1A2E' }}
+                      style={{ backgroundColor: '#FFFFFF', color: '#121212' }}
                       aria-label={t('a11y.close')}
                     >
                       <X className="w-5 h-5" />
@@ -59,7 +59,7 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
                   </DialogPrimitive.Close>
 
                   <DialogPrimitive.Title asChild>
-                    <h2 className="text-2xl mb-6 tracking-tight" style={{ color: '#1A1A2E' }}>
+                    <h2 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
                       {t('size.guide.title')}
                     </h2>
                   </DialogPrimitive.Title>
@@ -72,7 +72,7 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}>
+                    <tr style={{ backgroundColor: '#121212', color: '#F8F9FA' }}>
                       <th className="p-3 text-left text-sm">{t('cart.size')}</th>
                       <th className="p-3 text-left text-sm">{t('size.chest')}</th>
                       <th className="p-3 text-left text-sm">{t('size.waist')}</th>
@@ -85,7 +85,7 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
                         key={row.size}
                         style={{
                           backgroundColor: index % 2 === 0 ? '#FFFFFF' : '#E0E0E0',
-                          color: '#1A1A2E'
+                          color: '#121212'
                         }}
                       >
                         <td className="p-3 text-sm">{row.size}</td>
@@ -100,7 +100,7 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
 
               {/* How to Measure */}
               <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: '#E0E0E0' }}>
-                <h3 className="text-lg mb-4" style={{ color: '#1A1A2E' }}>
+                <h3 className="text-lg mb-4" style={{ color: '#121212' }}>
                   How to Measure
                 </h3>
                 <ul className="space-y-2 text-sm" style={{ color: '#777777' }}>

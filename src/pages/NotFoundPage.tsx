@@ -10,7 +10,7 @@ export function NotFoundPage() {
   // Transactional/utility page → vous register.
   const fr = useLanguage().language === 'fr';
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+    <div className="min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden" style={{ backgroundColor: '#121212' }}>
       <PageSEO
         title="Page Not Found"
         description="The page you're looking for doesn't exist or has moved."

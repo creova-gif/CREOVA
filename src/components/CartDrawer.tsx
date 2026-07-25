@@ -48,7 +48,7 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
               exit={{ x: '100%' }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="fixed right-0 top-0 h-full w-full max-w-md z-50 flex flex-col outline-none"
-              style={{ backgroundColor: '#1A1A2E' }}
+              style={{ backgroundColor: '#121212' }}
             >
             {/* Warm gradient top stripe */}
             <div style={{ height: '2px', background: warmGradient, flexShrink: 0 }} />

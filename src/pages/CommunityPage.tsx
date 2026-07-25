@@ -230,7 +230,7 @@ export function CommunityPage() {
       path="/community"
       />
       {/* Hero Section — Asymmetric Editorial */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, transparent, #D4A843, transparent)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.25)' }} />
 
@@ -318,7 +318,7 @@ export function CommunityPage() {
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C0392B' }}>Mission</p>
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
             </div>
-            <h2 className="text-3xl md:text-4xl mb-8 tracking-tight font-light" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-3xl md:text-4xl mb-8 tracking-tight font-light" style={{ color: '#121212' }}>
               {language === 'fr' ? 'Notre Mission' : 'Our Mission'}
             </h2>
             <p className="text-lg leading-relaxed mb-6" style={{ color: '#777777' }}>
@@ -336,7 +336,7 @@ export function CommunityPage() {
       </section>
 
       {/* What We Do */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -410,7 +410,7 @@ export function CommunityPage() {
                 <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(192,57,43,0.5)' }} />
                 <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#C0392B' }}>Vision</p>
               </div>
-              <h2 className="text-3xl md:text-4xl mb-6 tracking-tight font-light" style={{ color: '#1A1A2E' }}>
+              <h2 className="text-3xl md:text-4xl mb-6 tracking-tight font-light" style={{ color: '#121212' }}>
                 {language === 'fr' ? 'Plus Qu\'une Agence' : 'Beyond an Agency'}
               </h2>
               <div className="space-y-4" style={{ color: '#777777' }}>
@@ -440,7 +440,7 @@ export function CommunityPage() {
               className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
               style={{ borderColor: '#D4A843', backgroundColor: '#FFFFFF' }}
             >
-              <div className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', aspectRatio: '4/3' }}>
+              <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', aspectRatio: '4/3' }}>
                 <img
                   src="/photo-beyond-agency.jpg"
                   alt="CREOVA — Beyond an Agency"
@@ -469,10 +469,10 @@ export function CommunityPage() {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#1A1A2E', color: '#D4A843', fontFamily: 'var(--font-display)' }}>BLSA</span>
+                  <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#D4A843', fontFamily: 'var(--font-display)' }}>BLSA</span>
                   <span className="text-[10px] tracking-widest uppercase" style={{ color: '#777777' }}>Student Leadership</span>
                 </div>
-                <h3 className="text-xl mb-3" style={{ color: '#1A1A2E' }}>Black Student Association (BLSA)</h3>
+                <h3 className="text-xl mb-3" style={{ color: '#121212' }}>Black Student Association (BLSA)</h3>
                 <p className="leading-relaxed mb-4" style={{ color: '#777777' }}>
                   {language === 'fr'
                     ? 'L\'Association des étudiants noirs de l\'Université Brock unit, élève et célèbre les étudiants noirs à travers la culture, le leadership et la communauté.'
@@ -493,7 +493,7 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
               {language === 'fr' ? 'Rejoignez Notre Famille' : 'Join Our Family'}
             </h2>
             <p className="text-xl max-w-2xl mx-auto" style={{ color: '#777777' }}>
@@ -517,7 +517,7 @@ export function CommunityPage() {
                        style={{ backgroundColor: `${communityTier.color}20` }}>
                     <communityTier.icon className="w-8 h-8" style={{ color: communityTier.color }} />
                   </div>
-                  <h3 className="text-3xl mb-2" style={{ color: '#1A1A2E' }}>{communityTier.name}</h3>
+                  <h3 className="text-3xl mb-2" style={{ color: '#121212' }}>{communityTier.name}</h3>
                   <p className="text-sm mb-4" style={{ color: '#777777' }}>{communityTier.subtitle}</p>
 
                   <div className="mb-2">
@@ -531,7 +531,7 @@ export function CommunityPage() {
                   {communityTier.perks.map((perk, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <Check className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: communityTier.color }} />
-                      <span className="text-sm" style={{ color: '#1A1A2E' }}>{perk}</span>
+                      <span className="text-sm" style={{ color: '#121212' }}>{perk}</span>
                     </div>
                   ))}
                 </div>
@@ -575,7 +575,7 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
               {language === 'fr' ? 'Plus Qu\'une Adhésion' : 'More Than Membership'}
             </h2>
             <p className="text-xl max-w-2xl mx-auto" style={{ color: '#777777' }}>
@@ -598,7 +598,7 @@ export function CommunityPage() {
                          style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
                       <Icon className="w-6 h-6" style={{ color: '#D4A843' }} />
                     </div>
-                    <h3 className="text-xl mb-2" style={{ color: '#1A1A2E' }}>{benefit.title}</h3>
+                    <h3 className="text-xl mb-2" style={{ color: '#121212' }}>{benefit.title}</h3>
                     <p className="leading-relaxed" style={{ color: '#777777' }}>{benefit.description}</p>
                   </div>
                 </RevealOnScroll>
@@ -617,7 +617,7 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
               {language === 'fr' ? 'Nos Partenaires Communautaires' : 'Our Community Partners'}
             </h2>
             <p className="text-xl max-w-3xl mx-auto" style={{ color: '#777777' }}>
@@ -634,7 +634,7 @@ export function CommunityPage() {
                 className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
                 style={{ borderColor: '#E0E0E0', backgroundColor: '#FFFFFF' }}
               >
-                <div className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', aspectRatio: '4/3' }}>
+                <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', aspectRatio: '4/3' }}>
                   <img
                     src={partner.image}
                     alt={partner.name}
@@ -653,10 +653,10 @@ export function CommunityPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#1A1A2E', color: '#D4A843', fontFamily: 'var(--font-display)' }}>{partner.badge}</span>
+                    <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#D4A843', fontFamily: 'var(--font-display)' }}>{partner.badge}</span>
                     <span className="text-[10px] tracking-widest uppercase" style={{ color: '#777777' }}>{partner.badgeSub}</span>
                   </div>
-                  <h3 className="text-xl mb-3" style={{ color: '#1A1A2E' }}>{partner.name}</h3>
+                  <h3 className="text-xl mb-3" style={{ color: '#121212' }}>{partner.name}</h3>
                   <p className="leading-relaxed mb-4" style={{ color: '#777777' }}>
                     {partner.description}
                   </p>
@@ -691,7 +691,7 @@ export function CommunityPage() {
 
       {/* Recent Work with Our Partners */}
       {partnerGalleries.length > 0 && (
-        <section className="py-20" style={{ backgroundColor: '#1A1A2E' }}>
+        <section className="py-20" style={{ backgroundColor: '#121212' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -747,7 +747,7 @@ export function CommunityPage() {
                   }} />
                   {gallery.locked && (
                     <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full text-[9px] tracking-widest uppercase"
-                         style={{ backgroundColor: 'rgba(26,26,46,0.6)', color: 'rgba(248,249,250,0.7)', border: '1px solid rgba(248,249,250,0.15)' }}>
+                         style={{ backgroundColor: 'rgba(18,18,18,0.6)', color: 'rgba(248,249,250,0.7)', border: '1px solid rgba(248,249,250,0.15)' }}>
                       <Lock className="w-2.5 h-2.5" /> Private
                     </div>
                   )}
@@ -764,7 +764,7 @@ export function CommunityPage() {
       )}
 
       {/* CTA Section */}
-      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         {/* Ambient gold radial glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(212,168,67,0.18) 0%, transparent 70%)',
@@ -814,7 +814,7 @@ export function CommunityPage() {
               <Button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="px-10 py-6 rounded-xl text-base font-semibold group"
-                style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
+                style={{ backgroundColor: '#D4A843', color: '#121212' }}
               >
                 {language === 'fr' ? 'Commencer Gratuitement' : 'Start Free'}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -845,7 +845,7 @@ export function CommunityPage() {
       </section>
 
       {/* Land Acknowledgment */}
-      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

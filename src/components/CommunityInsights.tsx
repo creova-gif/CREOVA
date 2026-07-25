@@ -42,7 +42,7 @@ export function CommunityInsights() {
           className="text-center mb-16"
         >
           <div className="h-1 w-16 mx-auto mb-8" style={{ backgroundColor: '#C0392B' }}></div>
-          <h2 className="text-3xl md:text-4xl mb-4 tracking-tight" style={{ color: '#1A1A2E' }}>
+          <h2 className="text-3xl md:text-4xl mb-4 tracking-tight" style={{ color: '#121212' }}>
             {t('insights.heading')}
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: '#777777' }}>
@@ -86,7 +86,7 @@ export function CommunityInsights() {
             style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
           >
             <Heart className="w-8 h-8 mb-4" style={{ color: '#C0392B' }} />
-            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
               {t('insights.content.heading')}
             </h3>
             <div className="space-y-3">
@@ -109,7 +109,7 @@ export function CommunityInsights() {
             style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
           >
             <Globe className="w-8 h-8 mb-4" style={{ color: '#C0392B' }} />
-            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
               {t('insights.global.heading')}
             </h3>
             <div className="grid grid-cols-1 gap-2">
@@ -131,7 +131,7 @@ export function CommunityInsights() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="mt-12 text-center p-8"
-          style={{ backgroundColor: '#1A1A2E' }}
+          style={{ backgroundColor: '#121212' }}
         >
           <TrendingUp className="w-10 h-10 mx-auto mb-4" style={{ color: '#D4A843' }} />
           <h3 className="text-2xl mb-3" style={{ color: '#F8F9FA' }}>

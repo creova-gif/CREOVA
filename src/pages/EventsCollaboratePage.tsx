@@ -347,7 +347,7 @@ export function EventsCollaboratePage() {
       />
 
       {/* Hero — Asymmetric scale-contrast editorial */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: warmGradient }} />
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.25)' }} />
 
@@ -420,7 +420,7 @@ export function EventsCollaboratePage() {
       </section>
 
       {/* Navigation Cards — bold 2×2 dark grid */}
-      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
         <div className="absolute left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -561,10 +561,10 @@ export function EventsCollaboratePage() {
             className="mb-16"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.2)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Automne / Hiver 2026' : 'Fall / Winter 2026'}</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>
               {fr ? 'Ateliers et événements à venir' : 'Upcoming Workshops & Events'}
             </h2>
             <p className="text-base mt-3 max-w-2xl" style={{ color: '#777777' }}>
@@ -581,18 +581,18 @@ export function EventsCollaboratePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
                 className="group overflow-hidden rounded-2xl"
-                style={{ border: '1px solid rgba(26,26,46,0.1)' }}
+                style={{ border: '1px solid rgba(18,18,18,0.1)' }}
               >
                 <div className="flex flex-col md:flex-row">
                   {/* Left: image */}
-                  <div className="md:w-72 lg:w-80 relative overflow-hidden flex-shrink-0" style={{ backgroundColor: '#1A1A2E', minHeight: '200px' }}>
+                  <div className="md:w-72 lg:w-80 relative overflow-hidden flex-shrink-0" style={{ backgroundColor: '#121212', minHeight: '200px' }}>
                     <ImageWithFallback
                       src={event.image}
                       alt={`${event.name} - CREOVA Workshop in Ontario`}
                       className="w-full h-full object-cover aspect-[4/3] md:aspect-auto group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0" style={{
-                      background: 'linear-gradient(to right, rgba(26,26,46,0.5) 0%, transparent 60%)'
+                      background: 'linear-gradient(to right, rgba(18,18,18,0.5) 0%, transparent 60%)'
                     }} />
                     {/* Price badge over image */}
                     <div className="absolute bottom-4 left-4">
@@ -620,20 +620,20 @@ export function EventsCollaboratePage() {
                         style={{
                           background: /Virtual|Virtuel/.test(event.location)
                             ? 'rgba(212,168,67,0.1)'
-                            : 'rgba(26,26,46,0.07)',
-                          color: /Virtual|Virtuel/.test(event.location) ? '#D4A843' : '#1A1A2E',
-                          border: `1px solid ${/Virtual|Virtuel/.test(event.location) ? 'rgba(212,168,67,0.3)' : 'rgba(26,26,46,0.15)'}`
+                            : 'rgba(18,18,18,0.07)',
+                          color: /Virtual|Virtuel/.test(event.location) ? '#D4A843' : '#121212',
+                          border: `1px solid ${/Virtual|Virtuel/.test(event.location) ? 'rgba(212,168,67,0.3)' : 'rgba(18,18,18,0.15)'}`
                         }}
                       >
                         {/Virtual|Virtuel/.test(event.location) ? (fr ? 'Virtuel' : 'Virtual') : (fr ? 'En personne' : 'In-Person')}
                       </span>
                       <span className="text-xs px-3 py-1 rounded-full tracking-wide"
-                            style={{ backgroundColor: 'rgba(26,26,46,0.04)', color: '#777777', border: '1px solid rgba(26,26,46,0.1)' }}>
+                            style={{ backgroundColor: 'rgba(18,18,18,0.04)', color: '#777777', border: '1px solid rgba(18,18,18,0.1)' }}>
                         {event.capacity}
                       </span>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl tracking-tight mb-3" style={{ color: '#1A1A2E' }}>
+                    <h3 className="text-xl md:text-2xl tracking-tight mb-3" style={{ color: '#121212' }}>
                       {event.name}
                     </h3>
                     <p className="text-sm mb-5 leading-relaxed" style={{ color: '#777777' }}>
@@ -695,7 +695,7 @@ export function EventsCollaboratePage() {
       </section>
 
       {/* Why Join — dark editorial */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -781,7 +781,7 @@ export function EventsCollaboratePage() {
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C0392B' }}>{fr ? 'Associe-toi à nous' : 'Partner With Us'}</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#1A1A2E' }}>{fr ? "S'associer à CREOVA" : 'Partner with CREOVA'}</h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>{fr ? "S'associer à CREOVA" : 'Partner with CREOVA'}</h2>
             <p className="text-base mt-3 max-w-2xl" style={{ color: '#777777' }}>
               {fr ? "Des partenariats de marque aux initiatives communautaires, nous collaborons avec des organisations, des entreprises et des créatifs qui partagent notre engagement à amplifier les voix BIPOC" : 'From brand partnerships to community initiatives, we collaborate with organizations, businesses, and creatives who share our commitment to amplifying BIPOC voices'}
             </p>
@@ -796,10 +796,10 @@ export function EventsCollaboratePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="overflow-hidden rounded-2xl"
-                style={{ border: '1px solid rgba(26,26,46,0.1)' }}
+                style={{ border: '1px solid rgba(18,18,18,0.1)' }}
               >
                 {/* Card header */}
-                <div className="px-7 py-6 flex items-center gap-4" style={{ backgroundColor: '#1A1A2E' }}>
+                <div className="px-7 py-6 flex items-center gap-4" style={{ backgroundColor: '#121212' }}>
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{ border: '1px solid rgba(192,57,43,0.4)', backgroundColor: 'rgba(192,57,43,0.12)' }}
@@ -829,7 +829,7 @@ export function EventsCollaboratePage() {
       </section>
 
       {/* CREOVA in the Spotlight */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
           backgroundImage: 'radial-gradient(circle, rgba(212,168,67,0.04) 1px, transparent 1px)',
@@ -879,12 +879,12 @@ export function EventsCollaboratePage() {
                   background: 'linear-gradient(to top, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.3) 55%, transparent 100%)'
                 }} />
                 <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
-                  style={{ backgroundColor: 'rgba(212,168,67,0.9)', color: '#1A1A2E' }}>
+                  style={{ backgroundColor: 'rgba(212,168,67,0.9)', color: '#121212' }}>
                   <ExternalLink className="w-3 h-3" />
                   {fr ? 'Voir le récap sur LinkedIn' : 'View Recap on LinkedIn'}
                 </div>
               </div>
-              <div className="p-7" style={{ backgroundColor: '#1A1A2E' }}>
+              <div className="p-7" style={{ backgroundColor: '#121212' }}>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-full"
                     style={{ backgroundColor: 'rgba(212,168,67,0.12)', color: '#D4A843', border: '1px solid rgba(212,168,67,0.25)' }}>
@@ -932,7 +932,7 @@ export function EventsCollaboratePage() {
                   {fr ? 'Voir sur Instagram' : 'View on Instagram'}
                 </div>
               </div>
-              <div className="p-7" style={{ backgroundColor: '#1A1A2E' }}>
+              <div className="p-7" style={{ backgroundColor: '#121212' }}>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-full"
                     style={{ backgroundColor: 'rgba(192,57,43,0.12)', color: '#C0392B', border: '1px solid rgba(192,57,43,0.25)' }}>
@@ -964,10 +964,10 @@ export function EventsCollaboratePage() {
             className="mb-14"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.2)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Nos partenaires' : 'Our Partners'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#121212' }}>
               {fr ? 'La confiance de la communauté et des organisations' : 'Trusted by Community and Organizations'}
             </h2>
             <p className="text-base mt-3" style={{ color: '#777777' }}>
@@ -984,17 +984,17 @@ export function EventsCollaboratePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group overflow-hidden rounded-2xl"
-                style={{ border: '1px solid rgba(26,26,46,0.1)', backgroundColor: '#FFFFFF' }}
+                style={{ border: '1px solid rgba(18,18,18,0.1)', backgroundColor: '#FFFFFF' }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.4)';
                   (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(212,168,67,0.1)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,26,46,0.1)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(18,18,18,0.1)';
                   (e.currentTarget as HTMLElement).style.boxShadow = 'none';
                 }}
               >
-                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', backgroundColor: '#1A1A2E' }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', backgroundColor: '#121212' }}>
                   <img
                     src={collab.image}
                     alt={collab.title}
@@ -1005,7 +1005,7 @@ export function EventsCollaboratePage() {
                 <div className="p-5">
                   <time className="text-xs mb-2 block tracking-wide" style={{ color: '#D4A843' }}>{collab.date}</time>
                   <div style={{ height: '1px', width: '20px', backgroundImage: warmGradient, marginBottom: '10px' }} />
-                  <h3 className="text-base tracking-tight mb-1" style={{ color: '#1A1A2E' }}>{collab.title}</h3>
+                  <h3 className="text-base tracking-tight mb-1" style={{ color: '#121212' }}>{collab.title}</h3>
                   <p className="text-xs mb-2 font-medium" style={{ color: '#C0392B' }}>{collab.partner}</p>
                   <p className="text-xs leading-relaxed" style={{ color: '#777777' }}>{collab.description}</p>
                 </div>
@@ -1016,7 +1016,7 @@ export function EventsCollaboratePage() {
       </section>
 
       {/* Collaboration Process — warm-dot vertical timeline */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
 
@@ -1086,10 +1086,10 @@ export function EventsCollaboratePage() {
             className="mb-12"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.2)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Soumets une proposition' : 'Submit a Proposal'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#121212' }}>
               {fr ? 'Soumets une proposition de collaboration' : 'Submit a Collaboration Proposal'}
             </h2>
             <p className="text-base mt-3" style={{ color: '#777777' }}>
@@ -1104,10 +1104,10 @@ export function EventsCollaboratePage() {
             transition={{ delay: 0.2 }}
             onSubmit={handleSubmit}
             className="overflow-hidden rounded-2xl"
-            style={{ border: '1px solid rgba(26,26,46,0.1)' }}
+            style={{ border: '1px solid rgba(18,18,18,0.1)' }}
           >
             {/* Form header */}
-            <div className="px-8 py-5" style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.2)' }}>
+            <div className="px-8 py-5" style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(212,168,67,0.2)' }}>
               <p className="text-sm" style={{ color: '#777777' }}>{fr ? 'Nous examinons toutes les propositions dans les 2 à 3 jours ouvrables et répondons à toutes les demandes' : 'We review all proposals within 2-3 business days and respond to all inquiries'}</p>
             </div>
 
@@ -1142,7 +1142,7 @@ export function EventsCollaboratePage() {
                   value={formData.collaborationType}
                   onChange={(e) => setFormData({ ...formData, collaborationType: e.target.value })}
                   className="w-full border-2 rounded-xl px-4 py-3 focus:border-[#D4A843] focus:outline-none transition-colors"
-                  style={{ color: '#1A1A2E' }}
+                  style={{ color: '#121212' }}
                 >
                   <option value="">{fr ? 'Sélectionne un type de collaboration' : 'Select collaboration type'}</option>
                   <option value="brand-partnership">{fr ? 'Partenariat de marque' : 'Brand Partnership'}</option>
@@ -1253,7 +1253,7 @@ export function EventsCollaboratePage() {
                 className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
                 style={{ backgroundColor: '#FFFFFF', color: '#C0392B' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1A1A2E';
+                  e.currentTarget.style.backgroundColor = '#121212';
                   e.currentTarget.style.color = '#F8F9FA';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}

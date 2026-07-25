@@ -209,7 +209,7 @@ export function Sankofa() {
               className="w-16 h-16 rounded-full shadow-2xl relative overflow-hidden group p-0"
               style={{ backgroundColor: '#C0392B' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843] to-[#1A1A2E] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843] to-[#121212] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
                 src={sankofaLogo} 
                 alt="Sankofa" 
@@ -241,7 +241,7 @@ export function Sankofa() {
             className="contents"
           >
             {/* Header */}
-            <div className="relative p-4 border-b" style={{ backgroundColor: '#1A1A2E', borderColor: '#22314F' }}>
+            <div className="relative p-4 border-b" style={{ backgroundColor: '#121212', borderColor: '#2A2A2A' }}>
               <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843]/20 to-[#C0392B]/20" />
               <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -251,7 +251,7 @@ export function Sankofa() {
                       alt="Sankofa" 
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2" style={{ backgroundColor: '#D4A843', borderColor: '#1A1A2E' }} />
+                    <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2" style={{ backgroundColor: '#D4A843', borderColor: '#121212' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold" style={{ color: '#F8F9FA' }}>Sankofa</h3>
@@ -297,8 +297,8 @@ export function Sankofa() {
                       message.sender === 'user' ? 'rounded-tr-sm' : 'rounded-tl-sm'
                     }`}
                     style={{
-                      backgroundColor: message.sender === 'user' ? '#1A1A2E' : '#FFFFFF',
-                      color: message.sender === 'user' ? '#F8F9FA' : '#1A1A2E'
+                      backgroundColor: message.sender === 'user' ? '#121212' : '#FFFFFF',
+                      color: message.sender === 'user' ? '#F8F9FA' : '#121212'
                     }}
                   >
                     <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
@@ -346,7 +346,7 @@ export function Sankofa() {
                     style={{ 
                       backgroundColor: '#F8F9FA',
                       borderColor: '#D4A843',
-                      color: '#1A1A2E'
+                      color: '#121212'
                     }}
                   >
                     {action.label}
@@ -370,7 +370,7 @@ export function Sankofa() {
                   onClick={handleSend}
                   disabled={!input.trim()}
                   className="rounded-xl px-4"
-                  style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+                  style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
                 >
                   <Send className="w-4 h-4" />
                 </Button>
@@ -407,7 +407,7 @@ export function Sankofa() {
                 style={{ backgroundColor: '#FFFFFF' }}
               >
               {/* Header */}
-              <div className="relative p-6 border-b" style={{ backgroundColor: '#1A1A2E', borderColor: '#22314F' }}>
+              <div className="relative p-6 border-b" style={{ backgroundColor: '#121212', borderColor: '#2A2A2A' }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843]/20 to-[#C0392B]/20" />
                 <div className="relative flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -446,15 +446,15 @@ export function Sankofa() {
                 <div className="space-y-6">
                   {/* Meaning */}
                   <div>
-                    <h3 className="text-lg mb-3" style={{ color: '#1A1A2E' }}>
+                    <h3 className="text-lg mb-3" style={{ color: '#121212' }}>
                       {language === 'fr' ? 'La Sagesse de Sankofa' : 'The Wisdom of Sankofa'}
                     </h3>
-                    <p className="text-sm leading-relaxed mb-3" style={{ color: '#1A1A2E' }}>
+                    <p className="text-sm leading-relaxed mb-3" style={{ color: '#121212' }}>
                       {language === 'fr' 
                         ? 'Le symbole Sankofa représente un oiseau regardant en arrière tout en tenant un œuf dans son bec, incarnant l\'importance de retourner au passé pour récupérer des connaissances et des traditions précieuses afin de construire un meilleur avenir.'
                         : 'The Sankofa symbol represents a bird looking backward while holding an egg in its beak, embodying the importance of returning to the past to retrieve valuable knowledge and traditions for building a better future.'}
                     </p>
-                    <p className="text-sm leading-relaxed italic px-4 py-3 rounded-lg" style={{ backgroundColor: '#FFFFFF', color: '#1A1A2E' }}>
+                    <p className="text-sm leading-relaxed italic px-4 py-3 rounded-lg" style={{ backgroundColor: '#FFFFFF', color: '#121212' }}>
                       <strong>"Se wo were fi na wosankofa a yenkyi"</strong><br />
                       {language === 'fr' 
                         ? '"Il n\'est pas mal de retourner chercher ce que vous avez oublié"'
@@ -464,10 +464,10 @@ export function Sankofa() {
 
                   {/* Founder Connection */}
                   <div className="p-4 rounded-lg" style={{ backgroundColor: '#FFFFFF' }}>
-                    <h3 className="text-lg mb-3" style={{ color: '#1A1A2E' }}>
+                    <h3 className="text-lg mb-3" style={{ color: '#121212' }}>
                       {language === 'fr' ? 'Connexion avec le fondateur de CREOVA' : 'Connection to CREOVA\'s Founder'}
                     </h3>
-                    <p className="text-sm leading-relaxed mb-3" style={{ color: '#1A1A2E' }}>
+                    <p className="text-sm leading-relaxed mb-3" style={{ color: '#121212' }}>
                       {language === 'fr'
                         ? 'En 2024, le fondateur de CREOVA a développé les actifs créatifs pour le Mois de l\'histoire des Noirs et le Mois du patrimoine africain à l\'Université Brock en partenariat avec Human Rights & Equity (HRE).'
                         : 'In 2024, CREOVA\'s founder developed creative assets for Black History Month and African Heritage Month at Brock University in partnership with Human Rights & Equity (HRE).'}
@@ -476,7 +476,7 @@ export function Sankofa() {
 
                   {/* Thematic Rationale */}
                   <div>
-                    <h3 className="text-lg mb-3" style={{ color: '#1A1A2E' }}>
+                    <h3 className="text-lg mb-3" style={{ color: '#121212' }}>
                       {language === 'fr' ? 'Fondement thématique' : 'Thematic Rationale'}
                     </h3>
                     
@@ -485,7 +485,7 @@ export function Sankofa() {
                         <h4 className="text-sm mb-2" style={{ color: '#C0392B' }}>
                           {language === 'fr' ? '1. Sankofa : Réfléchir au passé pour éclairer l\'avenir' : '1. Sankofa: Reflecting on the Past to Inform the Future'}
                         </h4>
-                        <p className="text-sm leading-relaxed" style={{ color: '#1A1A2E' }}>
+                        <p className="text-sm leading-relaxed" style={{ color: '#121212' }}>
                           {language === 'fr'
                             ? 'Cela s\'aligne parfaitement avec l\'engagement de la Charte de Scarborough à aborder les barrières systémiques en reconnaissant les injustices historiques et en favorisant la responsabilité institutionnelle.'
                             : 'This aligns seamlessly with the Scarborough Charter\'s commitment to addressing systemic barriers by acknowledging historical injustices and fostering accountability in institutions.'}
@@ -496,12 +496,12 @@ export function Sankofa() {
                         <h4 className="text-sm mb-2" style={{ color: '#C0392B' }}>
                           {language === 'fr' ? '2. Intersectionnalité et la vision de Lorde' : '2. Intersectionality and Lorde\'s Vision'}
                         </h4>
-                        <p className="text-sm leading-relaxed mb-2" style={{ color: '#1A1A2E' }}>
+                        <p className="text-sm leading-relaxed mb-2" style={{ color: '#121212' }}>
                           {language === 'fr'
                             ? 'La citation d\'Audre Lorde nous rappelle la nature interconnectée des luttes telles que le racisme, le sexisme et d\'autres oppressions systémiques :'
                             : 'Audre Lorde\'s quote reminds us of the interconnected nature of struggles such as racism, sexism, and other systemic oppressions:'}
                         </p>
-                        <p className="text-sm italic px-3 py-2 rounded" style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}>
+                        <p className="text-sm italic px-3 py-2 rounded" style={{ backgroundColor: '#F8F9FA', color: '#121212' }}>
                           {language === 'fr'
                             ? '"Il n\'y a pas de lutte à un seul problème parce que nous ne vivons pas de vies à un seul problème."'
                             : '"There is no such thing as a single-issue struggle because we do not live single-issue lives."'}
@@ -512,7 +512,7 @@ export function Sankofa() {
                         <h4 className="text-sm mb-2" style={{ color: '#C0392B' }}>
                           {language === 'fr' ? '3. La Charte de Scarborough et la transformation institutionnelle' : '3. The Scarborough Charter and Institutional Transformation'}
                         </h4>
-                        <p className="text-sm leading-relaxed" style={{ color: '#1A1A2E' }}>
+                        <p className="text-sm leading-relaxed" style={{ color: '#121212' }}>
                           {language === 'fr'
                             ? 'Enracinée dans les valeurs d\'équité, de décolonisation et d\'anti-racisme envers les Noirs, la Charte de Scarborough est un plan pour une transformation inclusive au sein du milieu académique.'
                             : 'Rooted in the values of equity, decolonization, and anti-Black racism, the Scarborough Charter is a blueprint for inclusive transformation within academia.'}
@@ -522,7 +522,7 @@ export function Sankofa() {
                   </div>
 
                   {/* Why Sankofa for CREOVA */}
-                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}>
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#D4A843', color: '#121212' }}>
                     <h3 className="text-lg mb-3">
                       {language === 'fr' ? 'Pourquoi Sankofa pour CREOVA' : 'Why Sankofa for CREOVA'}
                     </h3>

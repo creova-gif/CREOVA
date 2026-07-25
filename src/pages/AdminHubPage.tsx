@@ -61,7 +61,7 @@ export function AdminHubPage() {
         noIndex
       />
       {/* Header */}
-      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -116,7 +116,7 @@ export function AdminHubPage() {
                   <tool.icon className="w-8 h-8" style={{ color: tool.color }} />
                 </div>
 
-                <h3 className="text-2xl mb-3" style={{ color: '#1A1A2E' }}>
+                <h3 className="text-2xl mb-3" style={{ color: '#121212' }}>
                   {tool.title}
                 </h3>
 
@@ -147,7 +147,7 @@ export function AdminHubPage() {
           >
             <div className="flex items-center gap-3 mb-6">
               <Activity className="w-6 h-6" style={{ color: '#C0392B' }} />
-              <h3 className="text-2xl" style={{ color: '#1A1A2E' }}>
+              <h3 className="text-2xl" style={{ color: '#121212' }}>
                 Admin Information
               </h3>
             </div>
@@ -157,7 +157,7 @@ export function AdminHubPage() {
                 <h4 className="text-sm mb-3" style={{ color: '#777777' }}>
                   🔐 Security
                 </h4>
-                <ul className="space-y-2 text-sm" style={{ color: '#1A1A2E' }}>
+                <ul className="space-y-2 text-sm" style={{ color: '#121212' }}>
                   <li className="flex items-start gap-2">
                     <span style={{ color: '#C0392B' }}>•</span>
                     <span>All admin pages are password-protected</span>
@@ -177,7 +177,7 @@ export function AdminHubPage() {
                 <h4 className="text-sm mb-3" style={{ color: '#777777' }}>
                   📊 Features
                 </h4>
-                <ul className="space-y-2 text-sm" style={{ color: '#1A1A2E' }}>
+                <ul className="space-y-2 text-sm" style={{ color: '#121212' }}>
                   <li className="flex items-start gap-2">
                     <span style={{ color: '#C0392B' }}>•</span>
                     <span>Real-time visitor tracking and analytics</span>
@@ -201,7 +201,7 @@ export function AdminHubPage() {
               <div className="flex items-start gap-3">
                 <Lock className="w-5 h-5 mt-0.5" style={{ color: '#D4A843' }} />
                 <div>
-                  <p className="text-sm mb-1" style={{ color: '#1A1A2E' }}>
+                  <p className="text-sm mb-1" style={{ color: '#121212' }}>
                     <strong>Admin Password</strong>
                   </p>
                   <p className="text-xs" style={{ color: '#777777' }}>
@@ -223,14 +223,14 @@ export function AdminHubPage() {
               className="bg-white rounded-2xl p-6 shadow-lg border"
               style={{ borderColor: '#E0E0E0' }}
             >
-              <h4 className="text-lg mb-3 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+              <h4 className="text-lg mb-3 flex items-center gap-2" style={{ color: '#121212' }}>
                 <BarChart3 className="w-5 h-5" style={{ color: '#C0392B' }} />
                 Analytics Guide
               </h4>
               <p className="text-sm mb-4" style={{ color: '#777777' }}>
                 Learn how to read visitor data, track campaigns, and understand user behavior
               </p>
-              <code className="text-xs bg-gray-100 px-2 py-1 rounded" style={{ color: '#1A1A2E' }}>
+              <code className="text-xs bg-gray-100 px-2 py-1 rounded" style={{ color: '#121212' }}>
                 /ANALYTICS_SYSTEM_GUIDE.md
               </code>
             </div>
@@ -239,14 +239,14 @@ export function AdminHubPage() {
               className="bg-white rounded-2xl p-6 shadow-lg border"
               style={{ borderColor: '#E0E0E0' }}
             >
-              <h4 className="text-lg mb-3 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+              <h4 className="text-lg mb-3 flex items-center gap-2" style={{ color: '#121212' }}>
                 <Shield className="w-5 h-5" style={{ color: '#C0392B' }} />
                 Security & Refund Guide
               </h4>
               <p className="text-sm mb-4" style={{ color: '#777777' }}>
                 Complete documentation for security features and refund processing
               </p>
-              <code className="text-xs bg-gray-100 px-2 py-1 rounded" style={{ color: '#1A1A2E' }}>
+              <code className="text-xs bg-gray-100 px-2 py-1 rounded" style={{ color: '#121212' }}>
                 /SECURITY_AND_REFUND_GUIDE.md
               </code>
             </div>

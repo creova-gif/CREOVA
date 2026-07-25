@@ -44,7 +44,7 @@ export function AnalyticsDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState(30); // Default: last 30 days
 
-  const COLORS = ['#C0392B', '#D4A843', '#D4A843', '#E0E0E0', '#1A1A2E'];
+  const COLORS = ['#C0392B', '#D4A843', '#D4A843', '#E0E0E0', '#121212'];
 
   const fetchAnalytics = async () => {
     setLoading(true);
@@ -90,7 +90,7 @@ export function AnalyticsDashboardPage() {
           </div>
         )}
       </div>
-      <div className="text-3xl mb-1" style={{ color: '#1A1A2E' }}>{value}</div>
+      <div className="text-3xl mb-1" style={{ color: '#121212' }}>{value}</div>
       <div className="text-sm" style={{ color: '#777777' }}>{label}</div>
     </motion.div>
   );
@@ -100,7 +100,7 @@ export function AnalyticsDashboardPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="text-center">
           <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#C0392B' }} />
-          <p style={{ color: '#1A1A2E' }}>Loading analytics...</p>
+          <p style={{ color: '#121212' }}>Loading analytics...</p>
         </div>
       </div>
     );
@@ -111,7 +111,7 @@ export function AnalyticsDashboardPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="text-center">
           <BarChart3 className="w-16 h-16 mx-auto mb-4" style={{ color: '#777777' }} />
-          <h3 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>No analytics data</h3>
+          <h3 className="text-2xl mb-2" style={{ color: '#121212' }}>No analytics data</h3>
           <p style={{ color: '#777777' }}>Start tracking to see your data here</p>
         </div>
       </div>
@@ -127,7 +127,7 @@ export function AnalyticsDashboardPage() {
         noIndex
       />
       {/* Header */}
-      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div>
@@ -151,7 +151,7 @@ export function AnalyticsDashboardPage() {
       </section>
 
       {/* Period Selector */}
-      <section className="py-6" style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid #E0E0E0' }}>
+      <section className="py-6" style={{ backgroundColor: '#121212', borderBottom: '1px solid #E0E0E0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <Calendar className="w-5 h-5" style={{ color: '#E0E0E0' }} />
@@ -214,7 +214,7 @@ export function AnalyticsDashboardPage() {
             className="bg-white rounded-2xl p-6 shadow-lg border"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
               <Activity className="w-5 h-5" style={{ color: '#C0392B' }} />
               Daily Traffic
             </h3>
@@ -229,7 +229,7 @@ export function AnalyticsDashboardPage() {
                 <YAxis tick={{ fill: '#777777' }} />
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#F8F9FA', border: '1px solid #E0E0E0', borderRadius: '8px' }}
-                  labelStyle={{ color: '#1A1A2E' }}
+                  labelStyle={{ color: '#121212' }}
                 />
                 <Line 
                   type="monotone" 
@@ -251,7 +251,7 @@ export function AnalyticsDashboardPage() {
             className="bg-white rounded-2xl p-6 shadow-lg border"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
               <BarChart3 className="w-5 h-5" style={{ color: '#C0392B' }} />
               Top Pages
             </h3>
@@ -284,7 +284,7 @@ export function AnalyticsDashboardPage() {
             className="bg-white rounded-2xl p-6 shadow-lg border"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
               <Monitor className="w-5 h-5" style={{ color: '#C0392B' }} />
               Devices
             </h3>
@@ -318,7 +318,7 @@ export function AnalyticsDashboardPage() {
             className="bg-white rounded-2xl p-6 shadow-lg border"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
               <Globe className="w-5 h-5" style={{ color: '#C0392B' }} />
               Browsers
             </h3>
@@ -352,14 +352,14 @@ export function AnalyticsDashboardPage() {
             className="bg-white rounded-2xl p-6 shadow-lg border"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
               <ExternalLink className="w-5 h-5" style={{ color: '#C0392B' }} />
               Traffic Sources
             </h3>
             <div className="space-y-3">
               {analytics.topReferrers.slice(0, 5).map((referrer, index) => (
                 <div key={index} className="flex items-center justify-between">
-                  <span className="text-sm truncate" style={{ color: '#1A1A2E' }}>
+                  <span className="text-sm truncate" style={{ color: '#121212' }}>
                     {referrer.referrer === 'direct' ? '🔗 Direct' : `🌐 ${referrer.referrer}`}
                   </span>
                   <div className="flex items-center gap-2">
@@ -387,7 +387,7 @@ export function AnalyticsDashboardPage() {
             className="bg-white rounded-2xl p-6 shadow-lg border mb-6"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
               <PieChart className="w-5 h-5" style={{ color: '#C0392B' }} />
               Top Events
             </h3>
@@ -399,7 +399,7 @@ export function AnalyticsDashboardPage() {
                   style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
                 >
                   <div className="text-2xl mb-1" style={{ color: '#C0392B' }}>{event.count}</div>
-                  <div className="text-sm" style={{ color: '#1A1A2E' }}>{event.event}</div>
+                  <div className="text-sm" style={{ color: '#121212' }}>{event.event}</div>
                 </div>
               ))}
             </div>
@@ -414,7 +414,7 @@ export function AnalyticsDashboardPage() {
           className="bg-white rounded-2xl p-6 shadow-lg border"
           style={{ borderColor: '#E0E0E0' }}
         >
-          <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#1A1A2E' }}>
+          <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
             <Activity className="w-5 h-5" style={{ color: '#C0392B' }} />
             Recent Pageviews
           </h3>
@@ -430,7 +430,7 @@ export function AnalyticsDashboardPage() {
               <tbody>
                 {analytics.recentPageviews.slice(0, 10).map((pv, index) => (
                   <tr key={index} style={{ borderBottom: '1px solid #E0E0E0' }}>
-                    <td className="py-3 px-4 text-sm" style={{ color: '#1A1A2E' }}>{pv.page}</td>
+                    <td className="py-3 px-4 text-sm" style={{ color: '#121212' }}>{pv.page}</td>
                     <td className="py-3 px-4 text-sm" style={{ color: '#777777' }}>
                       {pv.referrer || 'Direct'}
                     </td>

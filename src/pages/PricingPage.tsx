@@ -46,7 +46,7 @@ export function PricingPage() {
       path="/pricing"
       />
       {/* Availability Banner */}
-      <div className="relative z-40 py-3 px-4 text-center" style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.25)' }}>
+      <div className="relative z-40 py-3 px-4 text-center" style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(212,168,67,0.25)' }}>
         <p className="text-xs sm:text-sm tracking-wide" style={{ color: '#E0E0E0' }}>
           <span className="inline-flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#D4A843' }} />
@@ -60,7 +60,7 @@ export function PricingPage() {
       </div>
 
       {/* Hero Section — Asymmetric Editorial */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         {/* Left accent stripe */}
         <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, #D4A843, #C0392B, transparent)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.3)' }} />
@@ -153,10 +153,10 @@ export function PricingPage() {
             className="mb-12"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.2)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Parcourir par catégorie' : 'Browse By Category'}</p>
             </div>
-            <h2 className="text-3xl font-light tracking-tight" style={{ color: '#1A1A2E' }}>{fr ? 'Choisissez votre service' : 'Choose Your Service'}</h2>
+            <h2 className="text-3xl font-light tracking-tight" style={{ color: '#121212' }}>{fr ? 'Choisissez votre service' : 'Choose Your Service'}</h2>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -177,20 +177,20 @@ export function PricingPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
                   className="rounded-xl p-5 text-center transition-all duration-300"
-                  style={{ border: '1px solid rgba(26,26,46,0.12)', backgroundColor: '#FFFFFF' }}
+                  style={{ border: '1px solid rgba(18,18,18,0.12)', backgroundColor: '#FFFFFF' }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = 'rgba(212,168,67,0.5)';
                     e.currentTarget.style.transform = 'translateY(-3px)';
                     e.currentTarget.style.boxShadow = '0 8px 24px rgba(212,168,67,0.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(26,26,46,0.12)';
+                    e.currentTarget.style.borderColor = 'rgba(18,18,18,0.12)';
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
                   <IconComponent className="w-6 h-6 mx-auto mb-2" style={{ color: '#D4A843' }} />
-                  <div className="text-xs tracking-wide" style={{ color: '#1A1A2E' }}>{category.name}</div>
+                  <div className="text-xs tracking-wide" style={{ color: '#121212' }}>{category.name}</div>
                 </motion.button>
               );
             })}
@@ -208,10 +208,10 @@ export function PricingPage() {
             className="mb-12"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.2)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
               <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Notre valeur' : 'Our Value'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#121212' }}>
               {fr ? 'Pourquoi nos tarifs reflètent notre valeur' : 'Why Our Pricing Reflects Our Value'}
             </h2>
           </motion.div>
@@ -256,7 +256,7 @@ export function PricingPage() {
                        style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}>
                     <item.icon className="w-7 h-7" style={{ color: '#C0392B' }} />
                   </div>
-                  <h3 className="text-xl mb-3" style={{ color: '#1A1A2E' }}>
+                  <h3 className="text-xl mb-3" style={{ color: '#121212' }}>
                     {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>
@@ -279,7 +279,7 @@ export function PricingPage() {
             className="text-center mb-12"
           >
             <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#D4A843' }}></div>
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Tous les forfaits incluent' : 'All Packages Include'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -317,7 +317,7 @@ export function PricingPage() {
                 <div className="flex items-start gap-3">
                   <Check className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#D4A843' }} />
                   <div>
-                    <h3 className="mb-2" style={{ color: '#1A1A2E' }}>{item.title}</h3>
+                    <h3 className="mb-2" style={{ color: '#121212' }}>{item.title}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>
                       {item.description}
                     </p>
@@ -335,7 +335,7 @@ export function PricingPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <p className="text-sm" style={{ color: '#777777' }}>
-              <span style={{ color: '#1A1A2E' }}>{fr ? 'Note :' : 'Note:'}</span> {fr ? 'Tous les prix sont en dollars canadiens et assujettis à la TVH de 13 % (Ontario)' : 'All prices are in CAD and subject to 13% HST (Ontario)'}
+              <span style={{ color: '#121212' }}>{fr ? 'Note :' : 'Note:'}</span> {fr ? 'Tous les prix sont en dollars canadiens et assujettis à la TVH de 13 % (Ontario)' : 'All prices are in CAD and subject to 13% HST (Ontario)'}
             </p>
           </motion.div>
         </div>
@@ -350,7 +350,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Photographie de portraits de famille' : 'Family Portrait Photography'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -377,9 +377,9 @@ export function PricingPage() {
                     {fr ? 'LE PLUS POPULAIRE' : 'MOST POPULAR'}
                   </div>
                 )}
-                <h3 className="text-2xl mb-4" style={{ color: '#1A1A2E' }}>{pkg.name}</h3>
+                <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>{pkg.name}</h3>
                 <div className="mb-6">
-                  <span className="text-5xl" style={{ color: '#1A1A2E' }}>{pkg.price}</span>
+                  <span className="text-5xl" style={{ color: '#121212' }}>{pkg.price}</span>
                   <p className="text-sm mt-2" style={{ color: '#777777' }}>CAD</p>
                 </div>
                 <div className="space-y-3 mb-8">
@@ -395,15 +395,15 @@ export function PricingPage() {
                 <Button 
                   onClick={() => handleBookNow(pkg.name, pkg.priceNum, fr ? `Séance de ${pkg.time} • ${pkg.photos}` : `${pkg.time} session • ${pkg.photos}`)}
                   className="w-full rounded-xl py-6 transition-all duration-300"
-                  style={{ backgroundColor: pkg.popular ? '#1A1A2E' : '#F8F9FA', color: pkg.popular ? '#F8F9FA' : '#1A1A2E' }}
+                  style={{ backgroundColor: pkg.popular ? '#121212' : '#F8F9FA', color: pkg.popular ? '#F8F9FA' : '#121212' }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#D4A843';
                     e.currentTarget.style.color = '#F8F9FA';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = pkg.popular ? '#1A1A2E' : '#F8F9FA';
-                    e.currentTarget.style.color = pkg.popular ? '#F8F9FA' : '#1A1A2E';
+                    e.currentTarget.style.backgroundColor = pkg.popular ? '#121212' : '#F8F9FA';
+                    e.currentTarget.style.color = pkg.popular ? '#F8F9FA' : '#121212';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -426,7 +426,7 @@ export function PricingPage() {
             className="text-center mb-12"
           >
             <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#C0392B' }}></div>
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? "Série Identité de marque CREOVA" : 'CREOVA Brand Identity Series'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -474,9 +474,9 @@ export function PricingPage() {
                     {fr ? 'RECOMMANDÉ' : 'RECOMMENDED'}
                   </div>
                 )}
-                <h3 className="text-2xl mb-3" style={{ color: '#1A1A2E' }}>{pkg.name}</h3>
+                <h3 className="text-2xl mb-3" style={{ color: '#121212' }}>{pkg.name}</h3>
                 <div className="mb-4">
-                  <span className="text-4xl" style={{ color: '#1A1A2E' }}>{pkg.price}</span>
+                  <span className="text-4xl" style={{ color: '#121212' }}>{pkg.price}</span>
                   <span className="text-sm ml-2" style={{ color: '#777777' }}>{fr ? 'à partir de' : 'starting at'}</span>
                 </div>
                 <p className="text-sm mb-6 leading-relaxed" style={{ color: '#777777' }}>
@@ -498,13 +498,13 @@ export function PricingPage() {
                 <Button 
                   asChild
                   className="w-full rounded-xl py-6 transition-all duration-300"
-                  style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+                  style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#C0392B';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1A1A2E';
+                    e.currentTarget.style.backgroundColor = '#121212';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -526,7 +526,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Collection Commerce CREOVA' : 'CREOVA Commerce Collection'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -542,9 +542,9 @@ export function PricingPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <div className="text-center mb-8">
-              <h3 className="text-3xl mb-4" style={{ color: '#1A1A2E' }}>{fr ? 'Vitrine Produit' : 'Product Spotlight'}</h3>
+              <h3 className="text-3xl mb-4" style={{ color: '#121212' }}>{fr ? 'Vitrine Produit' : 'Product Spotlight'}</h3>
               <div className="mb-4">
-                <span className="text-5xl" style={{ color: '#1A1A2E' }}>$750</span>
+                <span className="text-5xl" style={{ color: '#121212' }}>$750</span>
                 <span className="text-lg ml-2" style={{ color: '#777777' }}>{fr ? 'à partir de' : 'starting at'}</span>
               </div>
               <p className="text-lg max-w-2xl mx-auto" style={{ color: '#777777' }}>
@@ -585,13 +585,13 @@ export function PricingPage() {
                 asChild
                 size="lg"
                 className="px-8 py-6 rounded-xl transition-all duration-300"
-                style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+                style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#D4A843';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1A1A2E';
+                  e.currentTarget.style.backgroundColor = '#121212';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -616,7 +616,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl mb-4 tracking-tight flex items-center justify-center gap-3" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl md:text-5xl mb-4 tracking-tight flex items-center justify-center gap-3" style={{ color: '#121212' }}>
               <Plane className="w-10 h-10" style={{ color: '#D4A843' }} />
               {fr ? 'Forfaits Vision aérienne CREOVA' : 'CREOVA Aerial Vision Packages'}
             </h2>
@@ -644,9 +644,9 @@ export function PricingPage() {
               }}
             >
               <div className="text-center mb-8">
-                <h3 className="text-3xl mb-4" style={{ color: '#1A1A2E' }}>{fr ? 'Séance Vision aérienne' : 'Aerial Vision Session'}</h3>
+                <h3 className="text-3xl mb-4" style={{ color: '#121212' }}>{fr ? 'Séance Vision aérienne' : 'Aerial Vision Session'}</h3>
                 <div className="mb-4">
-                  <span className="text-5xl" style={{ color: '#1A1A2E' }}>$500</span>
+                  <span className="text-5xl" style={{ color: '#121212' }}>$500</span>
                   <span className="text-lg ml-2" style={{ color: '#777777' }}>{fr ? 'à partir de' : 'starting at'}</span>
                 </div>
                 <p className="text-base leading-relaxed" style={{ color: '#777777' }}>
@@ -683,13 +683,13 @@ export function PricingPage() {
                 asChild
                 size="lg"
                 className="w-full px-8 py-6 rounded-xl transition-all duration-300"
-                style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+                style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#D4A843';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1A1A2E';
+                  e.currentTarget.style.backgroundColor = '#121212';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -725,9 +725,9 @@ export function PricingPage() {
               </div>
 
               <div className="text-center mb-8">
-                <h3 className="text-3xl mb-4" style={{ color: '#1A1A2E' }}>{fr ? 'Expérience cinématographique aérienne' : 'Aerial Cinematic Experience'}</h3>
+                <h3 className="text-3xl mb-4" style={{ color: '#121212' }}>{fr ? 'Expérience cinématographique aérienne' : 'Aerial Cinematic Experience'}</h3>
                 <div className="mb-4">
-                  <span className="text-5xl" style={{ color: '#1A1A2E' }}>$900</span>
+                  <span className="text-5xl" style={{ color: '#121212' }}>$900</span>
                   <span className="text-lg ml-2" style={{ color: '#777777' }}>{fr ? 'à partir de' : 'starting at'}</span>
                 </div>
                 <p className="text-base leading-relaxed" style={{ color: '#777777' }}>
@@ -800,7 +800,7 @@ export function PricingPage() {
             className="bg-white border-2 rounded-2xl p-8"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h4 className="text-2xl mb-6 text-center flex items-center justify-center gap-2" style={{ color: '#1A1A2E' }}>
+            <h4 className="text-2xl mb-6 text-center flex items-center justify-center gap-2" style={{ color: '#121212' }}>
               <Plus className="w-6 h-6" style={{ color: '#D4A843' }} />
               {fr ? 'Bonifications optionnelles' : 'Optional Enhancements'}
             </h4>
@@ -814,7 +814,7 @@ export function PricingPage() {
                 { name: fr ? 'Lieu supplémentaire' : 'Additional Location', detail: fr ? 'Par lieu' : 'Per location', price: '+ $150' }
               ].map((enhancement, idx) => (
                 <div key={idx} className="p-4 rounded-xl border" style={{ borderColor: '#E0E0E0', backgroundColor: '#F8F9FA' }}>
-                  <div className="mb-2" style={{ color: '#1A1A2E' }}>{enhancement.name}</div>
+                  <div className="mb-2" style={{ color: '#121212' }}>{enhancement.name}</div>
                   <div className="text-xs mb-2" style={{ color: '#777777' }}>{enhancement.detail}</div>
                   <div className="text-sm" style={{ color: '#D4A843' }}>{enhancement.price}</div>
                 </div>
@@ -833,7 +833,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? "Couverture d'événements (photo + vidéo)" : 'Event Coverage (Photo + Video)'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -860,9 +860,9 @@ export function PricingPage() {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <h3 className="text-2xl mb-4" style={{ color: '#1A1A2E' }}>{pkg.name}</h3>
+                <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>{pkg.name}</h3>
                 <div className="mb-6">
-                  <span className="text-5xl" style={{ color: '#1A1A2E' }}>{pkg.price}</span>
+                  <span className="text-5xl" style={{ color: '#121212' }}>{pkg.price}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 mb-8" style={{ color: '#777777' }}>
                   <Clock className="w-4 h-4" />
@@ -871,15 +871,15 @@ export function PricingPage() {
                 <Button
                   asChild
                   className="w-full rounded-xl py-6 transition-all duration-300"
-                  style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}
+                  style={{ backgroundColor: '#F8F9FA', color: '#121212' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1A1A2E';
+                    e.currentTarget.style.backgroundColor = '#121212';
                     e.currentTarget.style.color = '#F8F9FA';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#F8F9FA';
-                    e.currentTarget.style.color = '#1A1A2E';
+                    e.currentTarget.style.color = '#121212';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -898,24 +898,24 @@ export function PricingPage() {
             className="mt-12 bg-white border-2 rounded-2xl p-8"
             style={{ borderColor: '#E0E0E0' }}
           >
-            <h3 className="text-2xl mb-6 text-center" style={{ color: '#1A1A2E' }}>
+            <h3 className="text-2xl mb-6 text-center" style={{ color: '#121212' }}>
               {fr ? "Options d'événement populaires" : 'Popular Event Add-Ons'}
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex justify-between items-center p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
-                <span style={{ color: '#1A1A2E' }}>{fr ? 'Caméra cabine 360' : '360 Booth Camera'}</span>
+                <span style={{ color: '#121212' }}>{fr ? 'Caméra cabine 360' : '360 Booth Camera'}</span>
                 <span style={{ color: '#D4A843' }}>+$650</span>
               </div>
               <div className="flex justify-between items-center p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
-                <span style={{ color: '#1A1A2E' }}>{fr ? 'Images par drone' : 'Drone Footage'}</span>
+                <span style={{ color: '#121212' }}>{fr ? 'Images par drone' : 'Drone Footage'}</span>
                 <span style={{ color: '#D4A843' }}>+$200</span>
               </div>
               <div className="flex justify-between items-center p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
-                <span style={{ color: '#1A1A2E' }}>{fr ? 'Heure de couverture supplémentaire' : 'Extra Hour Coverage'}</span>
+                <span style={{ color: '#121212' }}>{fr ? 'Heure de couverture supplémentaire' : 'Extra Hour Coverage'}</span>
                 <span style={{ color: '#D4A843' }}>+$150</span>
               </div>
               <div className="flex justify-between items-center p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
-                <span style={{ color: '#1A1A2E' }}>{fr ? 'Vidéo montée le jour même' : 'Same-Day Edit Video'}</span>
+                <span style={{ color: '#121212' }}>{fr ? 'Vidéo montée le jour même' : 'Same-Day Edit Video'}</span>
                 <span style={{ color: '#D4A843' }}>+$300</span>
               </div>
             </div>
@@ -933,7 +933,7 @@ export function PricingPage() {
             className="text-center mb-12"
           >
             <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#C0392B' }}></div>
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Design graphique et image de marque' : 'Graphic Design & Branding'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -960,23 +960,23 @@ export function PricingPage() {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <h3 className="text-2xl mb-4" style={{ color: '#1A1A2E' }}>{pkg.name}</h3>
+                <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>{pkg.name}</h3>
                 <div className="mb-4">
-                  <span className="text-5xl" style={{ color: '#1A1A2E' }}>{pkg.price}</span>
+                  <span className="text-5xl" style={{ color: '#121212' }}>{pkg.price}</span>
                 </div>
                 <p className="text-sm mb-8" style={{ color: '#777777' }}>{pkg.desc}</p>
                 <Button
                   asChild
                   className="w-full rounded-xl py-6 transition-all duration-300"
-                  style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}
+                  style={{ backgroundColor: '#F8F9FA', color: '#121212' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1A1A2E';
+                    e.currentTarget.style.backgroundColor = '#121212';
                     e.currentTarget.style.color = '#F8F9FA';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#F8F9FA';
-                    e.currentTarget.style.color = '#1A1A2E';
+                    e.currentTarget.style.color = '#121212';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -998,7 +998,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Options et extras' : 'Add-Ons & Extras'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -1024,7 +1024,7 @@ export function PricingPage() {
                 className="bg-white border rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
                 style={{ borderColor: '#E0E0E0' }}
               >
-                <h3 className="mb-3" style={{ color: '#1A1A2E' }}>{addon.name}</h3>
+                <h3 className="mb-3" style={{ color: '#121212' }}>{addon.name}</h3>
                 <p className="text-2xl sm:text-3xl mb-2" style={{ color: '#D4A843' }}>{addon.price}</p>
                 <p className="text-sm" style={{ color: '#777777' }}>{addon.desc}</p>
               </motion.div>
@@ -1043,7 +1043,7 @@ export function PricingPage() {
             className="text-center mb-12"
           >
             <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#D4A843' }}></div>
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Offres spéciales et rabais' : 'Special Offers & Discounts'}
             </h2>
           </motion.div>
@@ -1060,7 +1060,7 @@ export function PricingPage() {
                    style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
                 <Star className="w-6 h-6" style={{ color: '#D4A843' }} />
               </div>
-              <h3 className="text-2xl mb-4" style={{ color: '#1A1A2E' }}>
+              <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>
                 {fr ? 'Tarifs communauté et étudiants' : 'Community & Student Rates'}
               </h3>
               <p className="mb-4 leading-relaxed" style={{ color: '#777777' }}>
@@ -1082,7 +1082,7 @@ export function PricingPage() {
                    style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}>
                 <Award className="w-6 h-6" style={{ color: '#C0392B' }} />
               </div>
-              <h3 className="text-2xl mb-4" style={{ color: '#1A1A2E' }}>
+              <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>
                 {fr ? 'Rabais fidélité et recommandation' : 'Loyalty & Referral Discounts'}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -1109,7 +1109,7 @@ export function PricingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mt-8 rounded-2xl p-8 text-center"
-            style={{ backgroundColor: '#1A1A2E' }}
+            style={{ backgroundColor: '#121212' }}
           >
             <h3 className="text-2xl mb-4" style={{ color: '#F8F9FA' }}>
               {fr ? 'Réservation et contact' : 'Booking & Contact'}
@@ -1138,7 +1138,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl mb-4" style={{ color: '#1A1A2E' }}>
+            <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Politiques et conditions de réservation' : 'Booking Policies & Terms'}
             </h2>
             <p className="text-xl" style={{ color: '#777777' }}>
@@ -1200,7 +1200,7 @@ export function PricingPage() {
                 className="border-2 rounded-2xl p-8"
                 style={{ borderColor: '#E0E0E0' }}
               >
-                <h3 className="text-xl mb-6 flex items-center gap-3" style={{ color: '#1A1A2E' }}>
+                <h3 className="text-xl mb-6 flex items-center gap-3" style={{ color: '#121212' }}>
                   <CheckCircle2 className="w-6 h-6" style={{ color: '#D4A843' }} />
                   {section.title}
                 </h3>
@@ -1220,7 +1220,7 @@ export function PricingPage() {
       </section>
 
       {/* Final CTA - Enhanced */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{ 
             backgroundImage: `radial-gradient(circle at 70% 30%, #D4A843 0%, transparent 50%), 
@@ -1245,7 +1245,7 @@ export function PricingPage() {
                 asChild
                 size="lg" 
                 className="px-8 py-6 rounded-xl text-lg transition-all duration-300"
-                style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}
+                style={{ backgroundColor: '#F8F9FA', color: '#121212' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#D4A843';
                   e.currentTarget.style.color = '#F8F9FA';
@@ -1253,7 +1253,7 @@ export function PricingPage() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#F8F9FA';
-                  e.currentTarget.style.color = '#1A1A2E';
+                  e.currentTarget.style.color = '#121212';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -1271,7 +1271,7 @@ export function PricingPage() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#F8F9FA';
-                  e.currentTarget.style.color = '#1A1A2E';
+                  e.currentTarget.style.color = '#121212';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {

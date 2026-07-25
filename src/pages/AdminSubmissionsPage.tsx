@@ -110,7 +110,7 @@ export function AdminSubmissionsPage() {
         noIndex
       />
       {/* Header */}
-      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div>
@@ -134,7 +134,7 @@ export function AdminSubmissionsPage() {
       </section>
 
       {/* Filters & Stats */}
-      <section className="py-8" style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid #E0E0E0' }}>
+      <section className="py-8" style={{ backgroundColor: '#121212', borderBottom: '1px solid #E0E0E0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-4">
             {/* Type Filter */}
@@ -210,12 +210,12 @@ export function AdminSubmissionsPage() {
           {loading ? (
             <div className="text-center py-20">
               <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#C0392B' }} />
-              <p style={{ color: '#1A1A2E' }}>Loading submissions...</p>
+              <p style={{ color: '#121212' }}>Loading submissions...</p>
             </div>
           ) : filteredSubmissions.length === 0 ? (
             <div className="text-center py-20">
               <FileText className="w-16 h-16 mx-auto mb-4" style={{ color: '#777777' }} />
-              <h3 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>No submissions found</h3>
+              <h3 className="text-2xl mb-2" style={{ color: '#121212' }}>No submissions found</h3>
               <p style={{ color: '#777777' }}>There are no submissions matching your filters</p>
             </div>
           ) : (
@@ -232,7 +232,7 @@ export function AdminSubmissionsPage() {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl" style={{ color: '#1A1A2E' }}>{submission.name}</h3>
+                        <h3 className="text-xl" style={{ color: '#121212' }}>{submission.name}</h3>
                         <span 
                           className="px-3 py-1 rounded-full text-xs flex items-center gap-1"
                           style={{ backgroundColor: getStatusColor(submission.status) + '20', color: getStatusColor(submission.status) }}
@@ -279,7 +279,7 @@ export function AdminSubmissionsPage() {
                               <Briefcase className="w-4 h-4 mt-1" style={{ color: '#D4A843' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Service: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.service}</span>
+                                <span style={{ color: '#121212' }}>{submission.service}</span>
                               </div>
                             </div>
                           )}
@@ -288,7 +288,7 @@ export function AdminSubmissionsPage() {
                               <DollarSign className="w-4 h-4 mt-1" style={{ color: '#D4A843' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Budget: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.budget}</span>
+                                <span style={{ color: '#121212' }}>{submission.budget}</span>
                               </div>
                             </div>
                           )}
@@ -297,14 +297,14 @@ export function AdminSubmissionsPage() {
                               <Clock className="w-4 h-4 mt-1" style={{ color: '#D4A843' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Timeline: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.timeline}</span>
+                                <span style={{ color: '#121212' }}>{submission.timeline}</span>
                               </div>
                             </div>
                           )}
                           {submission.message && (
                             <div className="mt-3 p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
                               <p className="text-sm mb-1" style={{ color: '#777777' }}>Message:</p>
-                              <p style={{ color: '#1A1A2E' }}>{submission.message}</p>
+                              <p style={{ color: '#121212' }}>{submission.message}</p>
                             </div>
                           )}
                         </div>
@@ -318,7 +318,7 @@ export function AdminSubmissionsPage() {
                               <Briefcase className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Organization: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.organization}</span>
+                                <span style={{ color: '#121212' }}>{submission.organization}</span>
                               </div>
                             </div>
                           )}
@@ -327,7 +327,7 @@ export function AdminSubmissionsPage() {
                               <FileText className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Type: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.collaborationType}</span>
+                                <span style={{ color: '#121212' }}>{submission.collaborationType}</span>
                               </div>
                             </div>
                           )}
@@ -336,7 +336,7 @@ export function AdminSubmissionsPage() {
                               <DollarSign className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Budget: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.budget}</span>
+                                <span style={{ color: '#121212' }}>{submission.budget}</span>
                               </div>
                             </div>
                           )}
@@ -345,14 +345,14 @@ export function AdminSubmissionsPage() {
                               <Clock className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Timeline: </span>
-                                <span style={{ color: '#1A1A2E' }}>{submission.timeline}</span>
+                                <span style={{ color: '#121212' }}>{submission.timeline}</span>
                               </div>
                             </div>
                           )}
                           {submission.projectDescription && (
                             <div className="mt-3 p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
                               <p className="text-sm mb-1" style={{ color: '#777777' }}>Project Description:</p>
-                              <p style={{ color: '#1A1A2E' }}>{submission.projectDescription}</p>
+                              <p style={{ color: '#121212' }}>{submission.projectDescription}</p>
                             </div>
                           )}
                         </div>
@@ -368,7 +368,7 @@ export function AdminSubmissionsPage() {
                       variant="outline"
                       className="rounded-lg"
                       disabled={submission.status === 'new'}
-                      style={{ borderColor: '#E0E0E0', color: '#1A1A2E' }}
+                      style={{ borderColor: '#E0E0E0', color: '#121212' }}
                     >
                       Mark as New
                     </Button>
@@ -378,7 +378,7 @@ export function AdminSubmissionsPage() {
                       variant="outline"
                       className="rounded-lg"
                       disabled={submission.status === 'contacted'}
-                      style={{ borderColor: '#E0E0E0', color: '#1A1A2E' }}
+                      style={{ borderColor: '#E0E0E0', color: '#121212' }}
                     >
                       Mark as Contacted
                     </Button>
@@ -388,7 +388,7 @@ export function AdminSubmissionsPage() {
                       variant="outline"
                       className="rounded-lg"
                       disabled={submission.status === 'completed'}
-                      style={{ borderColor: '#E0E0E0', color: '#1A1A2E' }}
+                      style={{ borderColor: '#E0E0E0', color: '#121212' }}
                     >
                       Mark as Completed
                     </Button>

@@ -129,7 +129,7 @@ export function LeadMagnetModal({ isOpen, onClose, leadMagnet }: LeadMagnetModal
                 style={{ backgroundColor: 'rgba(0,0,0,0.05)' }}
                 aria-label="Close"
               >
-                <X className="w-5 h-5" style={{ color: '#1A1A2E' }} />
+                <X className="w-5 h-5" style={{ color: '#121212' }} />
               </button>
             </DialogPrimitive.Close>
 
@@ -147,7 +147,7 @@ export function LeadMagnetModal({ isOpen, onClose, leadMagnet }: LeadMagnetModal
                 </motion.div>
 
                 <DialogPrimitive.Title asChild>
-                  <h3 className="text-2xl mb-3" style={{ color: '#1A1A2E' }}>
+                  <h3 className="text-2xl mb-3" style={{ color: '#121212' }}>
                     {t('leadmagnet.success.heading')}
                   </h3>
                 </DialogPrimitive.Title>
@@ -164,11 +164,11 @@ export function LeadMagnetModal({ isOpen, onClose, leadMagnet }: LeadMagnetModal
                   </div>
 
                   <DialogPrimitive.Title asChild>
-                    <h2 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>
+                    <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>
                       {t('leadmagnet.get.free')}{leadMagnet.fileType}
                     </h2>
                   </DialogPrimitive.Title>
-                  <p className="text-lg mb-3" style={{ color: '#1A1A2E' }}>
+                  <p className="text-lg mb-3" style={{ color: '#121212' }}>
                     {leadMagnet.title}
                   </p>
                   <p className="text-sm" style={{ color: '#777777' }}>
@@ -187,7 +187,7 @@ export function LeadMagnetModal({ isOpen, onClose, leadMagnet }: LeadMagnetModal
                 <form onSubmit={handleSubmit} className="p-8 pt-6">
                   <div className="space-y-4">
                     <div>
-                      <Label htmlFor="name" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                      <Label htmlFor="name" className="mb-2 block" style={{ color: '#121212' }}>
                         {t('leadmagnet.label.name')}
                       </Label>
                       <Input
@@ -202,7 +202,7 @@ export function LeadMagnetModal({ isOpen, onClose, leadMagnet }: LeadMagnetModal
                     </div>
 
                     <div>
-                      <Label htmlFor="email" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                      <Label htmlFor="email" className="mb-2 block" style={{ color: '#121212' }}>
                         {t('leadmagnet.label.email')}
                       </Label>
                       <Input
@@ -220,7 +220,7 @@ export function LeadMagnetModal({ isOpen, onClose, leadMagnet }: LeadMagnetModal
                       type="submit"
                       disabled={isSubmitting}
                       className="w-full h-12 text-base group"
-                      style={{ backgroundColor: '#1A1A2E' }}
+                      style={{ backgroundColor: '#121212' }}
                     >
                       {isSubmitting ? (
                         <>

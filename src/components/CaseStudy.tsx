@@ -23,7 +23,7 @@ export function CaseStudy() {
             <div className="w-12 h-px" style={{ backgroundColor: '#C0392B' }} />
             <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#C0392B' }}>{t('casestudy.badge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl tracking-tight" style={{ color: '#1A1A2E' }}>
+          <h2 className="text-4xl md:text-5xl tracking-tight" style={{ color: '#121212' }}>
             {t('casestudy.heading')}
           </h2>
         </motion.div>
@@ -37,7 +37,7 @@ export function CaseStudy() {
             transition={{ duration: 0.9 }}
             viewport={{ once: true }}
             className="relative overflow-hidden rounded-3xl"
-            style={{ backgroundColor: '#1A1A2E', minHeight: '480px' }}
+            style={{ backgroundColor: '#121212', minHeight: '480px' }}
           >
             {/* Portrait background */}
             <div
@@ -54,7 +54,7 @@ export function CaseStudy() {
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(to top, rgba(26,26,46,0.95) 0%, rgba(26,26,46,0.55) 50%, rgba(26,26,46,0.15) 100%)',
+                  'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.55) 50%, rgba(18,18,18,0.15) 100%)',
               }}
             />
 
@@ -121,7 +121,7 @@ export function CaseStudy() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-2xl flex-1"
               style={{
-                backgroundColor: '#1A1A2E',
+                backgroundColor: '#121212',
                 border: '1px solid rgba(212,168,67,0.15)',
                 minHeight: '200px',
               }}
@@ -145,7 +145,7 @@ export function CaseStudy() {
                 />
                 <div
                   className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
-                  style={{ backgroundColor: 'rgba(212,168,67,0.9)', color: '#1A1A2E' }}
+                  style={{ backgroundColor: 'rgba(212,168,67,0.9)', color: '#121212' }}
                 >
                   <ExternalLink className="w-3 h-3" />
                   {t('casestudy.card1.badge')}
@@ -193,7 +193,7 @@ export function CaseStudy() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-2xl flex-1"
               style={{
-                backgroundColor: '#1A1A2E',
+                backgroundColor: '#121212',
                 border: '1px solid rgba(192,57,43,0.15)',
                 minHeight: '200px',
               }}
@@ -264,7 +264,7 @@ export function CaseStudy() {
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-500 hover:shadow-xl hover:scale-[1.02]"
-                style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+                style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
               >
                 {t('casestudy.cta.start')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

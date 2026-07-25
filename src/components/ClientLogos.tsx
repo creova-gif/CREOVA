@@ -34,9 +34,9 @@ export function ClientLogos() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-5 mb-4">
-            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.15)' }} />
+            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.15)' }} />
             <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#777777' }}>Trusted By</p>
-            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(26,26,46,0.15)' }} />
+            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.15)' }} />
           </div>
           <p className="text-sm" style={{ color: '#777777' }}>
             BIPOC organizations, student unions & community institutions across Ontario
@@ -72,9 +72,9 @@ export function ClientLogos() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 mb-8">
-          <div className="flex-1" style={{ height: '1px', backgroundColor: 'rgba(26,26,46,0.08)' }} />
-          <span className="text-[10px] tracking-[0.35em] uppercase" style={{ color: 'rgba(26,26,46,0.25)' }}>And More</span>
-          <div className="flex-1" style={{ height: '1px', backgroundColor: 'rgba(26,26,46,0.08)' }} />
+          <div className="flex-1" style={{ height: '1px', backgroundColor: 'rgba(18,18,18,0.08)' }} />
+          <span className="text-[10px] tracking-[0.35em] uppercase" style={{ color: 'rgba(18,18,18,0.25)' }}>And More</span>
+          <div className="flex-1" style={{ height: '1px', backgroundColor: 'rgba(18,18,18,0.08)' }} />
         </div>
 
         {/* Text-badge clients */}
@@ -92,7 +92,7 @@ export function ClientLogos() {
               whileHover={{ scale: 1.05 }}
               className="px-4 py-2 rounded-lg transition-all duration-300"
               style={{
-                border: '1px solid rgba(26,26,46,0.12)',
+                border: '1px solid rgba(18,18,18,0.12)',
                 backgroundColor: 'rgba(255,255,255,0.6)',
                 color: '#777777',
               }}
@@ -101,7 +101,7 @@ export function ClientLogos() {
                 (e.currentTarget as HTMLElement).style.color = '#D4A843';
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,26,46,0.12)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(18,18,18,0.12)';
                 (e.currentTarget as HTMLElement).style.color = '#777777';
               }}
               title={client.name}

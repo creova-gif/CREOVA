@@ -238,7 +238,7 @@ export function BookingPage() {
           >
             <CheckCircle2 className="w-10 h-10" style={{ color: '#D4A843' }} />
           </div>
-          <h1 className="text-3xl font-light mb-3" style={{ color: '#1A1A2E' }}>{fr ? 'Demande de réservation reçue' : 'Booking Request Received'}</h1>
+          <h1 className="text-3xl font-light mb-3" style={{ color: '#121212' }}>{fr ? 'Demande de réservation reçue' : 'Booking Request Received'}</h1>
           <p className="text-base mb-8 leading-relaxed" style={{ color: '#777777' }}>
             {fr ? 'Merci ! Nous vous joindrons dans les 24 heures pour confirmer votre séance et discuter des détails.' : "Thank you! We'll reach out within 24 hours to confirm your session and discuss details."}
           </p>
@@ -246,7 +246,7 @@ export function BookingPage() {
             <Button
               onClick={() => navigate('/')}
               className="px-8 py-3 rounded-xl"
-              style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
+              style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
             >
               {fr ? "Retour à l'accueil" : 'Back to Home'}
             </Button>
@@ -271,7 +271,7 @@ export function BookingPage() {
       path="/booking"
       />
       {/* Hero — Editorial asymmetric */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', minHeight: '400px' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212', minHeight: '400px' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
                        radial-gradient(ellipse 35% 55% at 100% 30%, rgba(192,57,43,0.05) 0%, transparent 60%)`
@@ -390,12 +390,12 @@ export function BookingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             onSubmit={handleSubmit}
             className="rounded-2xl p-8 md:p-12"
-            style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(26,26,46,0.1)' }}
+            style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(18,18,18,0.1)' }}
           >
             <div className="space-y-8">
               {/* Service Selection */}
               <div>
-                <h2 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>
+                <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>
                   {fr ? 'Commençons par votre projet' : "Let's Start With Your Project"}
                 </h2>
                 <p className="text-sm mb-4" style={{ color: '#777777' }}>
@@ -416,8 +416,8 @@ export function BookingPage() {
                         }}
                       >
                         <div className="flex items-center gap-3">
-                          <Icon className="w-6 h-6" style={{ color: formData.service === service.id ? '#D4A843' : '#1A1A2E' }} />
-                          <span className="text-sm font-medium" style={{ color: '#1A1A2E' }}>
+                          <Icon className="w-6 h-6" style={{ color: formData.service === service.id ? '#D4A843' : '#121212' }} />
+                          <span className="text-sm font-medium" style={{ color: '#121212' }}>
                             {service.name}
                           </span>
                         </div>
@@ -434,7 +434,7 @@ export function BookingPage() {
                   animate={{ opacity: 1, height: 'auto' }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Label htmlFor="package" className="text-base mb-3 block" style={{ color: '#1A1A2E' }}>
+                  <Label htmlFor="package" className="text-base mb-3 block" style={{ color: '#121212' }}>
                     {fr ? 'Choisissez votre forfait *' : 'Choose Your Package *'}
                   </Label>
                   <Select value={formData.package} onValueChange={(value) => setFormData({ ...formData, package: value })}>
@@ -453,7 +453,7 @@ export function BookingPage() {
               )}
 
               <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
-                <h2 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>
+                <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>
                   {fr ? 'Comment pouvons-nous vous joindre ?' : 'How Can We Reach You?'}
                 </h2>
                 <p className="text-sm mb-6" style={{ color: '#777777' }}>
@@ -463,7 +463,7 @@ export function BookingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
-                    <Label htmlFor="name" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="name" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Nom complet *' : 'Full Name *'}
                     </Label>
                     <Input
@@ -479,7 +479,7 @@ export function BookingPage() {
 
                   {/* Email */}
                   <div>
-                    <Label htmlFor="email" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="email" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Adresse courriel *' : 'Email Address *'}
                     </Label>
                     <Input
@@ -496,7 +496,7 @@ export function BookingPage() {
 
                   {/* Phone */}
                   <div>
-                    <Label htmlFor="phone" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="phone" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Numéro de téléphone *' : 'Phone Number *'}
                     </Label>
                     <Input
@@ -513,7 +513,7 @@ export function BookingPage() {
 
                   {/* Date */}
                   <div>
-                    <Label className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Date préférée *' : 'Preferred Date *'}
                     </Label>
                     <Popover>
@@ -521,7 +521,7 @@ export function BookingPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: date ? '#1A1A2E' : '#777777' }}
+                          style={{ color: date ? '#121212' : '#777777' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {date ? format(date, 'PPP') : (fr ? 'Choisir une date' : 'Pick a date')}
@@ -541,7 +541,7 @@ export function BookingPage() {
 
                   {/* Preferred Time */}
                   <div>
-                    <Label htmlFor="preferredTime" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="preferredTime" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Heure préférée' : 'Preferred Time'}
                     </Label>
                     <Select value={formData.preferredTime} onValueChange={(value) => setFormData({ ...formData, preferredTime: value })}>
@@ -559,7 +559,7 @@ export function BookingPage() {
 
                   {/* Location */}
                   <div>
-                    <Label htmlFor="location" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="location" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Lieu/Emplacement' : 'Location/Venue'}
                     </Label>
                     <Input
@@ -576,14 +576,14 @@ export function BookingPage() {
 
               {/* Additional Details */}
               <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
                   {fr ? 'Détails supplémentaires' : 'Additional Details'}
                 </h2>
 
                 <div className="space-y-6">
                   {/* Number of People */}
                   <div>
-                    <Label htmlFor="numberOfPeople" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="numberOfPeople" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Nombre de personnes (le cas échéant)' : 'Number of People (if applicable)'}
                     </Label>
                     <Input
@@ -597,7 +597,7 @@ export function BookingPage() {
 
                   {/* Special Requests */}
                   <div>
-                    <Label htmlFor="specialRequests" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="specialRequests" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Demandes spéciales ou vision' : 'Special Requests or Vision'}
                     </Label>
                     <Textarea
@@ -611,7 +611,7 @@ export function BookingPage() {
 
                   {/* Budget */}
                   <div>
-                    <Label htmlFor="budget" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="budget" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Fourchette budgétaire' : 'Budget Range'}
                     </Label>
                     <Select value={formData.budget} onValueChange={(value) => setFormData({ ...formData, budget: value })}>
@@ -630,7 +630,7 @@ export function BookingPage() {
 
                   {/* How did you hear about us */}
                   <div>
-                    <Label htmlFor="hearAboutUs" className="mb-2 block" style={{ color: '#1A1A2E' }}>
+                    <Label htmlFor="hearAboutUs" className="mb-2 block" style={{ color: '#121212' }}>
                       {fr ? 'Comment avez-vous entendu parler de nous ?' : 'How did you hear about us?'}
                     </Label>
                     <Select value={formData.hearAboutUs} onValueChange={(value) => setFormData({ ...formData, hearAboutUs: value })}>
@@ -652,7 +652,7 @@ export function BookingPage() {
 
               {/* CAPTCHA */}
               <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
                   {fr ? 'Vérifiez votre réservation' : 'Verify Your Booking'}
                 </h2>
                 <Captcha onVerify={handleCaptchaVerify} onExpire={handleCaptchaExpire} onError={handleCaptchaError} />
@@ -664,7 +664,7 @@ export function BookingPage() {
                   type="submit"
                   disabled={isSubmitting}
                   className="flex-1 h-14 text-base group"
-                  style={{ backgroundColor: '#1A1A2E' }}
+                  style={{ backgroundColor: '#121212' }}
                 >
                   {isSubmitting ? (
                     <>
@@ -697,7 +697,7 @@ export function BookingPage() {
       </section>
 
       {/* Why Book With Us */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(212,168,67,0.07) 0%, transparent 65%)'

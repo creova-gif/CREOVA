@@ -36,7 +36,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
         <div
           className="relative flex rounded-xl overflow-hidden"
           style={{
-            backgroundColor: 'rgba(26,26,46,0.06)',
+            backgroundColor: 'rgba(18,18,18,0.06)',
             border: '1px solid rgba(212,168,67,0.2)',
             padding: '3px',
           }}
@@ -44,7 +44,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
           {/* Sliding pill */}
           <motion.div
             className="absolute top-[3px] bottom-[3px] rounded-lg"
-            style={{ backgroundColor: '#1A1A2E', width: 'calc(50% - 3px)' }}
+            style={{ backgroundColor: '#121212', width: 'calc(50% - 3px)' }}
             animate={{ x: isFR ? 'calc(100% + 3px)' : 0 }}
             transition={{ type: 'spring', stiffness: 500, damping: 38, mass: 0.6 }}
           />
@@ -73,7 +73,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
       <div
         className="relative flex items-center rounded-full overflow-hidden select-none"
         style={{
-          backgroundColor: 'rgba(26,26,46,0.05)',
+          backgroundColor: 'rgba(18,18,18,0.05)',
           border: '1px solid rgba(212,168,67,0.22)',
           padding: '3px',
           backdropFilter: 'blur(8px)',
@@ -83,7 +83,7 @@ export function LanguageSwitcher({ variant = 'desktop' }: LanguageSwitcherProps)
         <motion.div
           className="absolute top-[3px] bottom-[3px] rounded-full"
           style={{
-            backgroundColor: '#1A1A2E',
+            backgroundColor: '#121212',
             width: 'calc(50% - 3px)',
             boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
           }}

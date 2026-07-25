@@ -126,7 +126,7 @@ export function ContactPage() {
       {/* Hero — full-width dark with large email CTA treatment */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.15)' }}
+        style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(212,168,67,0.15)' }}
       >
         {/* Top accent stripe */}
         <div style={{ height: '2px', background: 'linear-gradient(90deg, #D4A843, #C0392B, transparent)' }} />
@@ -245,7 +245,7 @@ export function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Booking Callout — dark card */}
-            <div className="rounded-2xl p-6 mb-8 overflow-hidden" style={{ backgroundColor: '#1A1A2E', border: '1px solid rgba(212,168,67,0.25)' }}>
+            <div className="rounded-2xl p-6 mb-8 overflow-hidden" style={{ backgroundColor: '#121212', border: '1px solid rgba(212,168,67,0.25)' }}>
               <div className="flex items-start gap-4">
                 <div className="flex-1">
                   <h2 className="text-lg mb-1 tracking-tight" style={{ color: '#F8F9FA' }}>
@@ -256,7 +256,7 @@ export function ContactPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button
-                      style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
+                      style={{ backgroundColor: '#D4A843', color: '#121212' }}
                       onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F8F9FA'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#D4A843'; }}
                       asChild
@@ -279,12 +279,12 @@ export function ContactPage() {
 
             {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
-              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(26,26,46,0.1)' }} />
+              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(18,18,18,0.1)' }} />
               <p className="text-xs tracking-widest uppercase" style={{ color: '#777777' }}>{t('contact.form.or')}</p>
-              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(26,26,46,0.1)' }} />
+              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(18,18,18,0.1)' }} />
             </div>
 
-            <div className="rounded-2xl p-8 md:p-12" style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(26,26,46,0.1)' }}>
+            <div className="rounded-2xl p-8 md:p-12" style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(18,18,18,0.1)' }}>
               <h2 className="text-2xl mb-6">{t('contact.form.title')}</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -394,7 +394,7 @@ export function ContactPage() {
 
                 {/* CAPTCHA Verification */}
                 <div className="border-t pt-6" style={{ borderColor: '#E0E0E0' }}>
-                  <h3 className="text-lg mb-2" style={{ color: '#1A1A2E' }}>{t('contact.form.security')}</h3>
+                  <h3 className="text-lg mb-2" style={{ color: '#121212' }}>{t('contact.form.security')}</h3>
                   <p className="text-xs mb-4" style={{ color: '#777777' }}>
                     {t('contact.captcha.security')}
                   </p>
@@ -419,7 +419,7 @@ export function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section id="faq-section" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 50% 60% at 50% 100%, rgba(212,168,67,0.06) 0%, transparent 65%)'

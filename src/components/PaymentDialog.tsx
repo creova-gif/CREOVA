@@ -97,7 +97,7 @@ function CheckoutForm({
       <div className="border-t pt-4" style={{ borderColor: '#E0E0E0' }}>
         <div className="flex justify-between items-center mb-4">
           <span style={{ color: '#777777' }}>Total Amount:</span>
-          <span className="text-xl" style={{ color: '#1A1A2E' }}>
+          <span className="text-xl" style={{ color: '#121212' }}>
             ${amount.toFixed(2)} CAD
           </span>
         </div>
@@ -117,7 +117,7 @@ function CheckoutForm({
           type="submit"
           className="flex-1"
           disabled={!stripe || isProcessing}
-          style={{ backgroundColor: '#1A1A2E' }}
+          style={{ backgroundColor: '#121212' }}
         >
           {isProcessing ? (
             <>
@@ -222,7 +222,7 @@ export function PaymentDialog({
             <div className="border-t pt-4" style={{ borderColor: '#E0E0E0' }}>
               <div className="flex justify-between items-center mb-4">
                 <span style={{ color: '#777777' }}>Total Amount:</span>
-                <span className="text-xl" style={{ color: '#1A1A2E' }}>
+                <span className="text-xl" style={{ color: '#121212' }}>
                   ${amount.toFixed(2)} CAD
                 </span>
               </div>
@@ -251,7 +251,7 @@ export function PaymentDialog({
                 type="submit"
                 className="flex-1"
                 disabled={isCreating}
-                style={{ backgroundColor: '#1A1A2E' }}
+                style={{ backgroundColor: '#121212' }}
               >
                 {isCreating ? (
                   <>
@@ -273,7 +273,7 @@ export function PaymentDialog({
                 appearance: {
                   theme: 'stripe',
                   variables: {
-                    colorPrimary: '#1A1A2E',
+                    colorPrimary: '#121212',
                   }
                 }
               }}

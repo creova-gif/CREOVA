@@ -245,7 +245,7 @@ export function ExitIntentModal() {
                 </div>
 
                 {/* ── RIGHT: Form ── */}
-                <div className="p-8 flex flex-col justify-center" style={{ backgroundColor: '#1A1A2E' }}>
+                <div className="p-8 flex flex-col justify-center" style={{ backgroundColor: '#121212' }}>
                   <AnimatePresence mode="wait">
                     {submitted ? (
                       <motion.div

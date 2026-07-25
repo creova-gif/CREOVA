@@ -216,7 +216,7 @@ export function ServicesPage() {
       {/* Hero — Asymmetric editorial split */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: '#1A1A2E', minHeight: '480px' }}
+        style={{ backgroundColor: '#121212', minHeight: '480px' }}
       >
         {/* Warm left accent stripe */}
         <div
@@ -314,7 +314,7 @@ export function ServicesPage() {
       </section>
 
       {/* Service Category Tabs — refined */}
-      <section id="services-tabs" className="sticky top-16 z-40 border-b" style={{ backgroundColor: '#1A1A2E', borderColor: 'rgba(212,168,67,0.2)' }}>
+      <section id="services-tabs" className="sticky top-16 z-40 border-b" style={{ backgroundColor: '#121212', borderColor: 'rgba(212,168,67,0.2)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto gap-1 py-3 scrollbar-hide">
             {tabs.map((tab) => (
@@ -358,7 +358,7 @@ export function ServicesPage() {
       </section>
 
       {/* Services List — editorial numbered list */}
-      <section id="services-list" style={{ backgroundColor: '#1A1A2E' }}>
+      <section id="services-list" style={{ backgroundColor: '#121212' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div style={{ borderTop: '1px solid rgba(212,168,67,0.15)' }}>
             {filteredServices.map((service, index) => (
@@ -451,7 +451,7 @@ export function ServicesPage() {
                             onClick={() => navigate(service.category === 'rental' ? '/rental' : `/booking${'id' in service && service.id ? `?service=${service.id}` : ''}`)}
                             onMouseEnter={(e) => {
                               e.currentTarget.style.backgroundColor = '#D4A843';
-                              e.currentTarget.style.color = '#1A1A2E';
+                              e.currentTarget.style.color = '#121212';
                               e.currentTarget.style.borderColor = '#D4A843';
                             }}
                             onMouseLeave={(e) => {
@@ -491,7 +491,7 @@ export function ServicesPage() {
       </section>
 
       {/* Our Process */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.15)' }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -529,7 +529,7 @@ export function ServicesPage() {
               >
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center relative z-10"
-                  style={{ backgroundColor: '#1A1A2E', border: '1px solid rgba(212,168,67,0.35)' }}
+                  style={{ backgroundColor: '#121212', border: '1px solid rgba(212,168,67,0.35)' }}
                 >
                   <span className="text-xs tracking-[0.25em]" style={{ color: '#D4A843' }}>{item.step}</span>
                 </div>
@@ -549,7 +549,7 @@ export function ServicesPage() {
             <Button
               size="lg"
               className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
-              style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
+              style={{ backgroundColor: '#D4A843', color: '#121212' }}
               onClick={() => navigate('/contact')}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F8F9FA';
@@ -567,7 +567,7 @@ export function ServicesPage() {
       </section>
 
       {/* Marquee + Stats */}
-      <section className="overflow-hidden" style={{ backgroundColor: '#1A1A2E', borderTop: '1px solid rgba(212,168,67,0.15)', borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
+      <section className="overflow-hidden" style={{ backgroundColor: '#121212', borderTop: '1px solid rgba(212,168,67,0.15)', borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
         {/* Row 1 — scrolls left */}
         <div className="py-5 flex" style={{ borderBottom: '1px solid rgba(212,168,67,0.08)' }}>
           <motion.div
@@ -610,7 +610,7 @@ export function ServicesPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="py-16" style={{ backgroundColor: '#F8F9FA', borderBottom: '1px solid rgba(26,26,46,0.08)' }}>
+      <section className="py-16" style={{ backgroundColor: '#F8F9FA', borderBottom: '1px solid rgba(18,18,18,0.08)' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x" style={{ '--tw-divide-opacity': 1 } as React.CSSProperties}>
             {[
@@ -627,8 +627,8 @@ export function ServicesPage() {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="text-center md:px-8"
               >
-                <p className="text-4xl font-light tracking-tight mb-2" style={{ color: '#1A1A2E' }}>{stat.n}</p>
-                <p className="text-xs tracking-[0.3em] uppercase" style={{ color: 'rgba(26,26,46,0.4)' }}>{stat.label}</p>
+                <p className="text-4xl font-light tracking-tight mb-2" style={{ color: '#121212' }}>{stat.n}</p>
+                <p className="text-xs tracking-[0.3em] uppercase" style={{ color: 'rgba(18,18,18,0.4)' }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -636,7 +636,7 @@ export function ServicesPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212,168,67,0.05) 0%, transparent 60%)'
@@ -712,7 +712,7 @@ export function ServicesPage() {
 
       {/* Drone & Video Preview */}
       {(activeTab === 'video' || activeTab === 'all') && (
-        <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
           <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <motion.div
@@ -801,7 +801,7 @@ export function ServicesPage() {
       )}
 
       {/* Add-Ons & Extras */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -867,9 +867,9 @@ export function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden"
-              style={{ border: '1px solid rgba(26,26,46,0.12)' }}
+              style={{ border: '1px solid rgba(18,18,18,0.12)' }}
             >
-              <div className="px-8 py-5 flex items-center gap-4" style={{ backgroundColor: '#1A1A2E' }}>
+              <div className="px-8 py-5 flex items-center gap-4" style={{ backgroundColor: '#121212' }}>
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                      style={{ border: '1px solid rgba(192,57,43,0.4)', backgroundColor: 'rgba(192,57,43,0.1)' }}>
                   <AlertCircle className="w-5 h-5" style={{ color: '#C0392B' }} />
@@ -885,10 +885,10 @@ export function ServicesPage() {
                   { label: fr ? 'Politique de dommages' : 'Damage Policy', text: fr ? "Le locataire est responsable des dommages ou de la perte de l'équipement. Options d'assurance disponibles." : 'Renter is responsible for equipment damage or loss. Insurance options available.' },
                   { label: fr ? 'Réservation' : 'Reservation', text: fr ? "Réservez au moins 48 heures à l'avance. Pièce d'identité valide et entente de location signée requises." : 'Book at least 48 hours in advance. Valid ID and signed rental agreement required.' }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 pb-5" style={{ borderBottom: i < 4 ? '1px solid rgba(26,26,46,0.06)' : 'none' }}>
+                  <div key={i} className="flex items-start gap-4 pb-5" style={{ borderBottom: i < 4 ? '1px solid rgba(18,18,18,0.06)' : 'none' }}>
                     <span className="mt-0.5 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D4A843', marginTop: '8px' }} />
                     <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>
-                      <strong style={{ color: '#1A1A2E' }}>{item.label}:</strong> {item.text}
+                      <strong style={{ color: '#121212' }}>{item.label}:</strong> {item.text}
                     </p>
                   </div>
                 ))}
@@ -900,7 +900,7 @@ export function ServicesPage() {
 
       {/* Recent Work */}
       {recentGalleries.length > 0 && (
-        <section className="py-20" style={{ backgroundColor: '#1A1A2E', borderTop: '1px solid rgba(212,168,67,0.12)' }}>
+        <section className="py-20" style={{ backgroundColor: '#121212', borderTop: '1px solid rgba(212,168,67,0.12)' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -967,7 +967,7 @@ export function ServicesPage() {
       )}
 
       {/* Community & Loyalty Discounts */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(212,168,67,0.07) 0%, transparent 65%)'
@@ -1024,7 +1024,7 @@ export function ServicesPage() {
             <Button
               size="lg"
               className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
-              style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
+              style={{ backgroundColor: '#D4A843', color: '#121212' }}
               onClick={() => navigate('/booking')}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F8F9FA';

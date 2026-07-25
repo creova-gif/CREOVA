@@ -97,7 +97,7 @@ function CheckoutForm({ customerInfo }: CheckoutFormProps) {
             <CreditCard className="w-5 h-5" style={{ color: '#D4A843' }} />
           </div>
           <div>
-            <h3 className="text-lg" style={{ color: '#1A1A2E' }}>{fr ? 'Informations de paiement' : 'Payment Information'}</h3>
+            <h3 className="text-lg" style={{ color: '#121212' }}>{fr ? 'Informations de paiement' : 'Payment Information'}</h3>
             <p className="text-sm" style={{ color: '#777777' }}>{fr ? 'Paiement sécurisé propulsé par Stripe' : 'Secure payment powered by Stripe'}</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ function CheckoutForm({ customerInfo }: CheckoutFormProps) {
         type="submit"
         disabled={!stripe || isProcessing}
         className="w-full py-6 rounded-xl text-lg transition-all duration-300"
-        style={{ backgroundColor: '#1A1A2E' }}
+        style={{ backgroundColor: '#121212' }}
         onMouseEnter={(e) => {
           if (!isProcessing) {
             e.currentTarget.style.backgroundColor = '#D4A843';
@@ -129,7 +129,7 @@ function CheckoutForm({ customerInfo }: CheckoutFormProps) {
         }}
         onMouseLeave={(e) => {
           if (!isProcessing) {
-            e.currentTarget.style.backgroundColor = '#1A1A2E';
+            e.currentTarget.style.backgroundColor = '#121212';
             e.currentTarget.style.transform = 'translateY(0)';
           }
         }}
@@ -236,7 +236,7 @@ export function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div style={{ backgroundColor: '#1A1A2E', minHeight: '100vh' }}>
+      <div style={{ backgroundColor: '#121212', minHeight: '100vh' }}>
         <PageSEO title="Checkout" description="Complete your CREOVA purchase." path="/checkout" noIndex />
         {/* Warm gradient top stripe */}
         <div style={{ height: '2px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
@@ -301,7 +301,7 @@ export function CheckoutPage() {
               <ArrowLeft className="w-4 h-4 mr-2" />
               {fr ? 'Retour à la boutique' : 'Back to Shop'}
             </Button>
-            <h1 className="text-3xl md:text-4xl" style={{ color: '#1A1A2E' }}>{fr ? 'Paiement sécurisé' : 'Secure Checkout'}</h1>
+            <h1 className="text-3xl md:text-4xl" style={{ color: '#121212' }}>{fr ? 'Paiement sécurisé' : 'Secure Checkout'}</h1>
             <p className="text-lg mt-2" style={{ color: '#777777' }}>
               {fr ? 'Complétez votre achat avec un paiement sécurisé' : 'Complete your purchase with secure payment'}
             </p>
@@ -323,7 +323,7 @@ export function CheckoutPage() {
                 <form onSubmit={handleCreatePaymentIntent} className="space-y-6">
                   {/* Customer Information */}
                   <div className="bg-white rounded-2xl p-8">
-                    <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+                    <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
                       {fr ? 'Coordonnées' : 'Contact Information'}
                     </h2>
 
@@ -359,7 +359,7 @@ export function CheckoutPage() {
 
                   {/* Shipping Address */}
                   <div className="bg-white rounded-2xl p-8">
-                    <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+                    <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
                       {fr ? 'Adresse de livraison' : 'Shipping Address'}
                     </h2>
 
@@ -455,7 +455,7 @@ export function CheckoutPage() {
               transition={{ delay: 0.3 }}
             >
               <div className="bg-white rounded-2xl p-8 sticky top-24">
-                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
                   {fr ? 'Récapitulatif de commande' : 'Order Summary'}
                 </h2>
 
@@ -471,7 +471,7 @@ export function CheckoutPage() {
                         />
                       )}
                       <div className="flex-1">
-                        <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{item.name}</h3>
+                        <h3 className="mb-1" style={{ color: '#121212' }}>{item.name}</h3>
                         <p className="text-sm mb-1" style={{ color: '#777777' }}>
                           {fr ? 'Quantité' : 'Quantity'}: {item.quantity}
                         </p>
@@ -487,24 +487,24 @@ export function CheckoutPage() {
                 <div className="space-y-3 pb-4 mb-4 border-b" style={{ borderColor: '#E0E0E0' }}>
                   <div className="flex justify-between">
                     <span style={{ color: '#777777' }}>{fr ? 'Sous-total' : 'Subtotal'}</span>
-                    <span style={{ color: '#1A1A2E' }}>${subtotal.toFixed(2)}</span>
+                    <span style={{ color: '#121212' }}>${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span style={{ color: '#777777' }}>{fr ? 'Livraison' : 'Shipping'}</span>
-                    <span style={{ color: '#1A1A2E' }}>
+                    <span style={{ color: '#121212' }}>
                       {shipping === 0 ? (fr ? 'GRATUIT' : 'FREE') : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span style={{ color: '#777777' }}>{fr ? 'TVH (13 %)' : 'HST (13%)'}</span>
-                    <span style={{ color: '#1A1A2E' }}>${hst.toFixed(2)}</span>
+                    <span style={{ color: '#121212' }}>${hst.toFixed(2)}</span>
                   </div>
                 </div>
 
                 {/* Total */}
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-xl" style={{ color: '#1A1A2E' }}>{fr ? 'Total' : 'Total'}</span>
-                  <span className="text-3xl" style={{ color: '#1A1A2E' }}>
+                  <span className="text-xl" style={{ color: '#121212' }}>{fr ? 'Total' : 'Total'}</span>
+                  <span className="text-3xl" style={{ color: '#121212' }}>
                     ${total.toFixed(2)}
                   </span>
                 </div>

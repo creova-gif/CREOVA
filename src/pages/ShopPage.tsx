@@ -117,7 +117,7 @@ export function ShopPage() {
       </motion.div>
 
       {/* Hero — editorial asymmetric split */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', minHeight: '440px' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212', minHeight: '440px' }}>
         {/* Subtle ambient glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
@@ -231,7 +231,7 @@ export function ShopPage() {
       <nav
         aria-label="Shop collections"
         className="border-b"
-        style={{ backgroundColor: '#1A1A2E', borderColor: 'rgba(212,168,67,0.2)' }}
+        style={{ backgroundColor: '#121212', borderColor: 'rgba(212,168,67,0.2)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-1">
           {([
@@ -265,7 +265,7 @@ export function ShopPage() {
       <FallDropTeaser />
 
       {/* Dark filter bar */}
-      <section className="sticky z-40 py-0" style={{ top: '64px', backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
+      <section className="sticky z-40 py-0" style={{ top: '64px', backgroundColor: '#121212', borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex overflow-x-auto scrollbar-hide">
@@ -292,7 +292,7 @@ export function ShopPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredProducts.length === 0 && (
             <div className="py-20 text-center">
-              <p className="text-lg mb-2" style={{ color: '#1A1A2E' }}>No items in this category yet</p>
+              <p className="text-lg mb-2" style={{ color: '#121212' }}>No items in this category yet</p>
               <p className="text-sm" style={{ color: '#777777' }}>Check back soon — new drops coming.</p>
             </div>
           )}
@@ -336,7 +336,7 @@ export function ShopPage() {
                   {product.badge && (
                     <div className="absolute top-2 left-2 px-2 py-0.5 text-[8px] tracking-widest z-10"
                       style={{
-                        backgroundColor: product.badge === 'PREMIUM' ? 'rgba(212,168,67,0.9)' : product.badge === 'LIMITED' ? 'rgba(192,57,43,0.9)' : 'rgba(26,26,46,0.85)',
+                        backgroundColor: product.badge === 'PREMIUM' ? 'rgba(212,168,67,0.9)' : product.badge === 'LIMITED' ? 'rgba(192,57,43,0.9)' : 'rgba(18,18,18,0.85)',
                         color: '#FFFFFF'
                       }}>
                       {product.badge}
@@ -346,8 +346,8 @@ export function ShopPage() {
 
                 {/* Product info */}
                 <div className="space-y-1">
-                  <h3 className="text-[10px] tracking-wider leading-snug" style={{ color: '#1A1A2E' }}>{product.name}</h3>
-                  <p className="text-sm" style={{ color: '#1A1A2E' }}>${product.price} CAD</p>
+                  <h3 className="text-[10px] tracking-wider leading-snug" style={{ color: '#121212' }}>{product.name}</h3>
+                  <p className="text-sm" style={{ color: '#121212' }}>${product.price} CAD</p>
 
                   {/* Size hover */}
                   {hoveredProduct === product.id && product.sizes.length > 1 && (
@@ -368,9 +368,9 @@ export function ShopPage() {
                           <button key={size} onClick={() => setSelectedSizes(prev => ({ ...prev, [product.id]: size }))}
                             className="px-1.5 py-0.5 text-[9px] tracking-wide border transition-colors"
                             style={{
-                              borderColor: selectedSizes[product.id] === size ? '#1A1A2E' : '#E0E0E0',
-                              backgroundColor: selectedSizes[product.id] === size ? '#1A1A2E' : '#FFFFFF',
-                              color: selectedSizes[product.id] === size ? '#FFFFFF' : '#1A1A2E'
+                              borderColor: selectedSizes[product.id] === size ? '#121212' : '#E0E0E0',
+                              backgroundColor: selectedSizes[product.id] === size ? '#121212' : '#FFFFFF',
+                              color: selectedSizes[product.id] === size ? '#FFFFFF' : '#121212'
                             }}>
                             {size}
                           </button>
@@ -390,7 +390,7 @@ export function ShopPage() {
                             className="w-4 h-4 rounded-full border-2 transition-all"
                             style={{
                               backgroundColor: colorPalette[color as keyof typeof colorPalette],
-                              borderColor: selectedColors[product.id]?.name === color ? '#1A1A2E' : '#E0E0E0',
+                              borderColor: selectedColors[product.id]?.name === color ? '#121212' : '#E0E0E0',
                               transform: selectedColors[product.id]?.name === color ? 'scale(1.15)' : 'scale(1)'
                             }}
                             title={color}
@@ -407,7 +407,7 @@ export function ShopPage() {
       </section>
 
       {/* Brand Statement — dark editorial */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -432,7 +432,7 @@ export function ShopPage() {
       </section>
 
       {/* Info bar — cream editorial */}
-      <section className="py-16" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(26,26,46,0.08)' }}>
+      <section className="py-16" style={{ backgroundColor: '#F8F9FA', borderTop: '1px solid rgba(18,18,18,0.08)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-10 text-center mb-10">
             {[
@@ -442,13 +442,13 @@ export function ShopPage() {
             ].map((item, i) => (
               <div key={i}>
                 <div style={{ height: '2px', width: '24px', background: warmGradient, margin: '0 auto 12px' }} />
-                <h3 className="text-[10px] tracking-[0.4em] mb-2 uppercase" style={{ color: '#1A1A2E' }}>{item.title}</h3>
+                <h3 className="text-[10px] tracking-[0.4em] mb-2 uppercase" style={{ color: '#121212' }}>{item.title}</h3>
                 <p className="text-xs" style={{ color: '#777777' }}>{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="text-center pt-4" style={{ borderTop: '1px solid rgba(26,26,46,0.08)' }}>
+          <div className="text-center pt-4" style={{ borderTop: '1px solid rgba(18,18,18,0.08)' }}>
             <p className="text-xs tracking-wide mb-1" style={{ color: '#777777' }}>
               All pieces available in multiple colorways from our signature age-inclusive palette (5–90 years)
             </p>

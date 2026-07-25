@@ -48,7 +48,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
-      color: #1A1A2E;
+      color: #121212;
       margin: 0;
       padding: 0;
       background-color: #F8F9FA;
@@ -59,7 +59,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       background-color: #ffffff;
     }
     .header {
-      background-color: #1A1A2E;
+      background-color: #121212;
       color: #F8F9FA;
       padding: 40px 30px;
       text-align: center;
@@ -79,7 +79,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       padding: 40px 30px;
     }
     .content h2 {
-      color: #1A1A2E;
+      color: #121212;
       font-size: 24px;
       margin: 0 0 20px 0;
     }
@@ -94,7 +94,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       margin: 30px 0;
     }
     .details-box h3 {
-      color: #1A1A2E;
+      color: #121212;
       font-size: 18px;
       margin: 0 0 15px 0;
     }
@@ -112,7 +112,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       border-bottom: none;
     }
     .details-box strong {
-      color: #1A1A2E;
+      color: #121212;
       font-weight: 600;
     }
     .next-steps {
@@ -122,7 +122,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       border-radius: 4px;
     }
     .next-steps h3 {
-      color: #1A1A2E;
+      color: #121212;
       font-size: 18px;
       margin: 0 0 15px 0;
     }
@@ -146,7 +146,7 @@ export const bookingConfirmationEN = (data: BookingEmailData): string => {
       text-align: center;
     }
     .footer {
-      background-color: #1A1A2E;
+      background-color: #121212;
       color: #E0E0E0;
       padding: 30px;
       text-align: center;
@@ -235,7 +235,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
-      color: #1A1A2E;
+      color: #121212;
       margin: 0;
       padding: 0;
       background-color: #F8F9FA;
@@ -246,7 +246,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       background-color: #ffffff;
     }
     .header {
-      background-color: #1A1A2E;
+      background-color: #121212;
       color: #F8F9FA;
       padding: 40px 30px;
       text-align: center;
@@ -266,7 +266,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       padding: 40px 30px;
     }
     .content h2 {
-      color: #1A1A2E;
+      color: #121212;
       font-size: 24px;
       margin: 0 0 20px 0;
     }
@@ -281,7 +281,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       margin: 30px 0;
     }
     .details-box h3 {
-      color: #1A1A2E;
+      color: #121212;
       font-size: 18px;
       margin: 0 0 15px 0;
     }
@@ -299,7 +299,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       border-bottom: none;
     }
     .details-box strong {
-      color: #1A1A2E;
+      color: #121212;
       font-weight: 600;
     }
     .next-steps {
@@ -309,7 +309,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       border-radius: 4px;
     }
     .next-steps h3 {
-      color: #1A1A2E;
+      color: #121212;
       font-size: 18px;
       margin: 0 0 15px 0;
     }
@@ -333,7 +333,7 @@ export const bookingConfirmationFR = (data: BookingEmailData): string => {
       text-align: center;
     }
     .footer {
-      background-color: #1A1A2E;
+      background-color: #121212;
       color: #E0E0E0;
       padding: 30px;
       text-align: center;
@@ -421,7 +421,7 @@ export const adminBookingNotification = (data: BookingEmailData): string => {
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
-      color: #1A1A2E;
+      color: #121212;
       background-color: #F8F9FA;
       padding: 20px;
     }
@@ -434,7 +434,7 @@ export const adminBookingNotification = (data: BookingEmailData): string => {
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .header {
-      background: linear-gradient(135deg, #1A1A2E 0%, #22314F 100%);
+      background: linear-gradient(135deg, #121212 0%, #2A2A2A 100%);
       color: #F8F9FA;
       padding: 30px;
       text-align: center;
@@ -460,7 +460,7 @@ export const adminBookingNotification = (data: BookingEmailData): string => {
     }
     .info-label {
       font-weight: 600;
-      color: #1A1A2E;
+      color: #121212;
     }
     .info-value {
       color: #4A4A4A;
@@ -551,7 +551,7 @@ export const adminBookingNotification = (data: BookingEmailData): string => {
       </div>
       
       <p style="text-align: center; margin-top: 30px;">
-        <a href="https://creova.one/admin/bookings" style="display: inline-block; background-color: #1A1A2E; color: #F8F9FA; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 600;">View in Admin Dashboard</a>
+        <a href="https://creova.one/admin/bookings" style="display: inline-block; background-color: #121212; color: #F8F9FA; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 600;">View in Admin Dashboard</a>
       </p>
     </div>
   </div>
@@ -571,7 +571,7 @@ export const adminContactNotification = (data: ContactEmailData): string => {
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
-      color: #1A1A2E;
+      color: #121212;
       background-color: #F8F9FA;
       padding: 20px;
     }
@@ -583,7 +583,7 @@ export const adminContactNotification = (data: ContactEmailData): string => {
       overflow: hidden;
     }
     .header {
-      background-color: #1A1A2E;
+      background-color: #121212;
       color: #F8F9FA;
       padding: 30px;
       text-align: center;
@@ -599,7 +599,7 @@ export const adminContactNotification = (data: ContactEmailData): string => {
     }
     .info-label {
       font-weight: 600;
-      color: #1A1A2E;
+      color: #121212;
     }
     .message-box {
       background-color: #F8F9FA;
@@ -669,7 +669,7 @@ export const adminCollaborationNotification = (data: CollaborationEmailData): st
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
-      color: #1A1A2E;
+      color: #121212;
       background-color: #F8F9FA;
       padding: 20px;
     }
@@ -697,7 +697,7 @@ export const adminCollaborationNotification = (data: CollaborationEmailData): st
     }
     .info-label {
       font-weight: 600;
-      color: #1A1A2E;
+      color: #121212;
     }
     .message-box {
       background-color: #F8F9FA;

@@ -19,6 +19,7 @@ import { ExitIntentModal } from './components/ExitIntentModal';
 import { ContactInfoBanner } from './components/ContactInfoBanner';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { GrainOverlay } from './components/GrainOverlay';
+import { IntroLoader } from './components/IntroLoader';
 
 const HomePage = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
@@ -48,7 +49,7 @@ function PageLoader() {
   return (
     <div
       className="min-h-screen flex items-center justify-center"
-      style={{ backgroundColor: '#1A1A2E' }}
+      style={{ backgroundColor: '#121212' }}
       aria-label="Loading page"
     >
       <div
@@ -181,7 +182,7 @@ function AppContent() {
         <meta name="author" content="CREOVA Creative Agency" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="theme-color" content="#1A1A2E" />
+        <meta name="theme-color" content="#121212" />
       </Helmet>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -249,13 +250,14 @@ function AppContent() {
       }} />
       
       {/* <LenisProvider /> disabled: smooth-scroll library made scrolling feel laggy; using native scroll */}
+      <IntroLoader />
       <ScrollToTopOnMount />
       
       {isChanging && (
         <div
           className="fixed inset-0 z-[9999] pointer-events-none"
           style={{
-            backgroundColor: '#1A1A2E',
+            backgroundColor: '#121212',
             opacity: 0.18,
             transition: 'opacity 120ms ease',
           }}
@@ -265,7 +267,7 @@ function AppContent() {
 
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#1A1A2E] focus:text-[#F8F9FA] focus:px-4 focus:py-2 focus:rounded"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#121212] focus:text-[#F8F9FA] focus:px-4 focus:py-2 focus:rounded"
       >
         {t('a11y.skip.content')}
       </a>

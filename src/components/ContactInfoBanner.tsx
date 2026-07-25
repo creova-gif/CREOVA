@@ -48,7 +48,7 @@ export function ContactInfoBanner() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0, height: hidden ? 0 : 'auto' }}
       transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
-      style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.18)', overflow: 'hidden' }}
+      style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(212,168,67,0.18)', overflow: 'hidden' }}
     >
       {/* Warm gradient top stripe */}
       <div style={{ height: '2px', background: warmGradient }} />

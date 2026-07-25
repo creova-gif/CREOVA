@@ -111,7 +111,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div 
           className="min-h-screen flex items-center justify-center px-4"
-          style={{ backgroundColor: '#1A1A2E' }}
+          style={{ backgroundColor: '#121212' }}
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ export class ErrorBoundary extends Component<Props, State> {
             {/* Title */}
             <h1 
               className="text-3xl md:text-4xl font-bold mb-4"
-              style={{ color: '#1A1A2E' }}
+              style={{ color: '#121212' }}
             >
               Oops! Something went wrong
             </h1>
@@ -153,7 +153,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 className="mb-8 p-4 rounded-lg text-left overflow-auto max-h-64"
                 style={{ backgroundColor: '#E0E0E0' }}
               >
-                <p className="font-mono text-sm font-bold mb-2" style={{ color: '#1A1A2E' }}>
+                <p className="font-mono text-sm font-bold mb-2" style={{ color: '#121212' }}>
                   Error Details (Dev Only):
                 </p>
                 <p className="font-mono text-xs mb-2" style={{ color: '#C0392B' }}>

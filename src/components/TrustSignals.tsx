@@ -22,7 +22,7 @@ export function TrustSignals() {
       descKey: 'trust.partner2.desc',
       logo: logoBSSC,
       logoAlt: 'BSSC — Black Student Success Centre',
-      logoBg: '#1A1A2E',
+      logoBg: '#121212',
       year: '2025',
     },
     {
@@ -78,7 +78,7 @@ export function TrustSignals() {
             <Award className="w-4 h-4" style={{ color: '#D4A843' }} />
             <span className="text-sm tracking-wide font-medium" style={{ color: '#D4A843' }}>{t('trust.badge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
+          <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
             {t('trust.heading')}
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: '#777777' }}>
@@ -108,7 +108,7 @@ export function TrustSignals() {
                   className="w-full h-full object-contain p-2"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2" style={{ color: '#1A1A2E' }}>
+              <h3 className="text-xl font-semibold mb-2" style={{ color: '#121212' }}>
                 {t(partner.nameKey)}
               </h3>
               <p className="text-sm mb-3" style={{ color: '#777777' }}>
@@ -133,7 +133,7 @@ export function TrustSignals() {
             <Star className="w-4 h-4" style={{ color: '#C0392B' }} />
             <span className="text-sm tracking-wide font-medium" style={{ color: '#C0392B' }}>{t('trust.testimonials.badge')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
+          <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
             {t('trust.testimonials.heading')}
           </h2>
         </motion.div>
@@ -159,7 +159,7 @@ export function TrustSignals() {
                 "{t(testimonial.quoteKey)}"
               </p>
               <div className="border-t pt-4" style={{ borderColor: '#E0E0E0' }}>
-                <p className="font-semibold mb-1" style={{ color: '#1A1A2E' }}>
+                <p className="font-semibold mb-1" style={{ color: '#121212' }}>
                   {t(testimonial.authorKey)}
                 </p>
                 <p className="text-sm" style={{ color: '#777777' }}>
@@ -177,7 +177,7 @@ export function TrustSignals() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 p-12 rounded-3xl"
-          style={{ backgroundColor: '#1A1A2E' }}
+          style={{ backgroundColor: '#121212' }}
         >
           {stats.map((item, index) => (
             <div key={index} className="text-center">
