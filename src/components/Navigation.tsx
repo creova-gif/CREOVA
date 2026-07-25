@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/button';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
+import { useExploreMenu } from '../context/ExploreMenuContext';
 import { CartDrawer } from './CartDrawer';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Magnetic } from './Magnetic';
@@ -13,10 +14,10 @@ import { Logo } from './Logo';
 import logoWatermark from '../assets/logo-mark-white-faint.png';
 
 export function Navigation() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const { totalItems } = useCart();
   const { t } = useLanguage();
+  const { isOpen: menuOpen, open: openMenu, close } = useExploreMenu();
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,9 +25,7 @@ export function Navigation() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  useFocusTrap(menuRef, menuOpen, () => setMenuOpen(false));
-
-  const close = () => setMenuOpen(false);
+  useFocusTrap(menuRef, menuOpen, () => close());
 
   // The nine destinations collapse into four "worlds". SEEN (the app) and
   // VERSE (the clothing label) are brand groups; Studio is the agency; the
@@ -122,7 +121,7 @@ export function Navigation() {
 
               {/* Explore — opens the full-screen menu (all breakpoints) */}
               <button
-                onClick={() => setMenuOpen(true)}
+                onClick={openMenu}
                 aria-haspopup="dialog"
                 aria-expanded={menuOpen}
                 className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-sm font-medium tracking-wide transition-all duration-300"

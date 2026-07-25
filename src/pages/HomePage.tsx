@@ -13,6 +13,7 @@ import { TrustSignals } from '../components/TrustSignals';
 import { ClientLogos } from '../components/ClientLogos';
 import { CaseStudy } from '../components/CaseStudy';
 import { useLanguage } from '../context/LanguageContext';
+import { useExploreMenu } from '../context/ExploreMenuContext';
 import { VideoHero } from '../components/VideoHero';
 import { SplitText } from '../components/SplitText';
 import { InfiniteMarquee } from '../components/InfiniteMarquee';
@@ -116,6 +117,7 @@ function AnimatedStat({ number, label, icon: Icon, delay }: {
 
 export function HomePage() {
   const { t } = useLanguage();
+  const { open: openExplore } = useExploreMenu();
   const heroRef = useRef<HTMLElement>(null);
   const { galleries } = useGalleries();
   // Prefer galleries flagged as featured; fall back to newest-first
@@ -211,15 +213,35 @@ export function HomePage() {
               </motion.div>
 
               <div className="mb-8">
-                <SplitText
-                  text="CREOVA"
-                  tag="h1"
-                  className="tracking-tight mb-6"
-                  style={{ color: '#F8F9FA', lineHeight: '1.02', fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 6.5vw, 5.5rem)' }}
-                  delay={0.2}
-                  stagger={0.06}
-                  mode="chars"
-                />
+                {/* The wordmark doubles as the primary "enter the site" control —
+                    clicking it opens the full-screen Explore menu. Kept as an h1
+                    for SEO, with a real <button> inside for semantics/keyboard. */}
+                <h1 className="mb-6" style={{ lineHeight: '1.02' }}>
+                  <button
+                    type="button"
+                    onClick={openExplore}
+                    aria-haspopup="dialog"
+                    aria-label={t('nav.explore')}
+                    className="group inline-flex flex-col items-start text-left cursor-pointer bg-transparent border-0 p-0 outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843] focus-visible:ring-offset-4 focus-visible:ring-offset-[#121212] rounded-sm"
+                  >
+                    <SplitText
+                      text="CREOVA"
+                      tag="span"
+                      className="tracking-tight block transition-transform duration-500 group-hover:-translate-y-0.5"
+                      style={{ color: '#F8F9FA', lineHeight: '1.02', fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 6.5vw, 5.5rem)' }}
+                      delay={0.2}
+                      stagger={0.06}
+                      mode="chars"
+                    />
+                    <span
+                      className="mt-1 inline-flex items-center gap-1.5 text-xs tracking-[0.3em] uppercase opacity-0 -translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+                      style={{ color: '#D4A843' }}
+                    >
+                      {t('nav.explore')}
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </button>
+                </h1>
                 <motion.p
                   className="text-xl md:text-2xl font-medium leading-tight mb-2"
                   style={{ color: '#D4A843', letterSpacing: '0.02em' }}

@@ -304,10 +304,12 @@ export function AppShell() {
   return (
     <LanguageProvider>
       <CartProvider>
-        <ScrollToTop />
-        <ErrorBoundary>
-          <AppContent />
-        </ErrorBoundary>
+        <ExploreMenuProvider>
+          <ScrollToTop />
+          <ErrorBoundary>
+            <AppContent />
+          </ErrorBoundary>
+        </ExploreMenuProvider>
       </CartProvider>
     </LanguageProvider>
   );
