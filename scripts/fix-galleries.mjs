@@ -58,7 +58,9 @@ const CORRECTIONS = [
   { match: 'maslab',                              image: `${IMG}/120940011/1524caffdb5a991f73e0772204247f74-large.jpeg` },
   { match: 'communitybash',                       image: `${IMG}/944970901/d4c567d59366203cb5ae2c9612e5fd1a-large.png` },
   { match: 'lulumixingbowls',                     image: `${IMG}/768784801/9402bc808f1919835987b5992f55e408-large.jpeg` },
-  // Black Print — client-supplied photo, not the Pixieset cover
+  // Black Print — the session photo (board game / BSSC lounge) reads far better
+  // as the cover than the old group shot; /card-blackprint-event.jpg now serves
+  // that image (the original group photo was replaced at the client's request).
   { match: 'wellnessandwork',                     image: `/card-blackprint-event.jpg` },
 
   // --- page-2 cover fixes (captured in a later pass; links already correct) ---
