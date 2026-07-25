@@ -1,13 +1,13 @@
 import { Writable } from 'node:stream';
 import { renderToPipeableStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
-import { HelmetProvider, type HelmetServerState } from 'react-helmet-async';
+import { HelmetProvider, type HelmetServerState } from '@dr.pogodin/react-helmet';
 import { AppShell } from './App';
 
 export interface RenderResult {
   /** Rendered markup for #root */
   html: string;
-  /** Serialised <head> tags collected from react-helmet-async */
+  /** Serialised <head> tags collected from @dr.pogodin/react-helmet */
   head: string;
   /** Attributes for <html>, e.g. lang="en" */
   htmlAttrs: string;
@@ -23,8 +23,11 @@ export interface RenderResult {
  */
 export function render(url: string): Promise<RenderResult> {
   return new Promise((resolve, reject) => {
-    // HelmetProvider populates `helmet` on this object during render.
-    const helmetContext: { helmet?: HelmetServerState } = {};
+    // The provider hands us the collected server state via onServerState. It
+    // fires as Helmet tags commit during render; by the time onAllReady has
+    // waited out every lazy boundary (incl. each page's <PageSEO>), the last
+    // value captured here is the final, deepest-wins state.
+    let helmet: HelmetServerState | undefined;
     const errors: unknown[] = [];
     let body = '';
 
@@ -36,7 +39,6 @@ export function render(url: string): Promise<RenderResult> {
     });
 
     sink.on('finish', () => {
-      const { helmet } = helmetContext;
       const head = [helmet?.title, helmet?.meta, helmet?.link, helmet?.script]
         .filter(Boolean)
         .map((tag) => tag!.toString())
@@ -56,7 +58,7 @@ export function render(url: string): Promise<RenderResult> {
     }, 20_000);
 
     const { pipe, abort } = renderToPipeableStream(
-      <HelmetProvider context={helmetContext}>
+      <HelmetProvider onServerState={(state) => { helmet = state; }}>
         <StaticRouter location={url}>
           <AppShell />
         </StaticRouter>

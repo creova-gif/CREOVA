@@ -239,17 +239,14 @@ export function WorkPage() {
 
       {/* ── CINEMATIC HERO ── */}
       <section className="relative overflow-hidden" style={{ height: '100svh', minHeight: '580px' }}>
-        {/*
-          Full-bleed background image — this is the LCP element.
-          React 18 only forwards the lowercase `fetchpriority` DOM attribute;
-          the camelCase form is dropped with a warning, so the priority hint
-          never actually reached the tag. Spread to bypass the JSX prop typing.
-        */}
+        {/* Full-bleed background image — this is the LCP element, so hint the
+            browser to fetch it at high priority (React 19 forwards the
+            camelCase fetchPriority prop natively). */}
         <img
           src={sorted[0].image}
           alt=""
           aria-hidden="true"
-          {...{ fetchpriority: 'high' }}
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: sorted[0].objectPosition }}
         />

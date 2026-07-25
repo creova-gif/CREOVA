@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router';
 import { AnimatePresence } from 'motion/react';
 import { PageTransition } from './components/PageTransition';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from '@dr.pogodin/react-helmet';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { AdminAuth } from './components/AdminAuth';
@@ -154,35 +154,29 @@ export function LenisProvider() {
 
 function AppContent() {
   const { language, t, isChanging } = useLanguage();
-  const location = useLocation();
 
   const currentLang = language || 'en';
   const ogLocale = currentLang === 'fr' ? 'fr_CA' : 'en_CA';
   const ogLocaleAlternate = currentLang === 'fr' ? 'en_CA' : 'fr_CA';
-  const canonicalUrl = `https://creova.one${location.pathname}`;
-  
+
   return (
     <>
+      {/*
+        Site-wide defaults only. Everything page-specific — title, description,
+        canonical, robots, og/twitter title+description+url+image, hreflang,
+        JSON-LD — is owned per-route by <PageSEO>, which is the single source of
+        truth. Duplicating any of those here would ship two of each tag: unlike
+        react-helmet-async v2, the React 19-era helmet does not silently dedupe
+        competing instances, so overlap must be avoided at the source.
+      */}
       <Helmet htmlAttributes={{ lang: currentLang }}>
-        <title>{t('seo.title')}</title>
-        <meta name="description" content={t('seo.description')} />
         <meta name="keywords" content={t('seo.keywords')} />
-        <meta property="og:title" content={t('seo.og.title')} />
-        <meta property="og:description" content={t('seo.og.description')} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content={ogLocale} />
         <meta property="og:locale:alternate" content={ogLocaleAlternate} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={t('seo.og.title')} />
-        <meta name="twitter:description" content={t('seo.og.description')} />
-        <link rel="canonical" href={canonicalUrl} />
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content="Ontario, Niagara Region" />
         <meta name="geo.position" content="43.0896;-79.0849" />
         <meta name="author" content="CREOVA Creative Agency" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="googlebot" content="index, follow" />
         <meta name="theme-color" content="#121212" />
       </Helmet>
 

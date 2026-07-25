@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from '@dr.pogodin/react-helmet';
 import { useLocation } from 'react-router';
 import { localeFromPath, stripLocale, absoluteUrl } from '../i18n/locale';
 import { SEO_FR, FR_TITLE_SUFFIX } from '../i18n/seoCopy';
