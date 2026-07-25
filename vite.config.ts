@@ -50,7 +50,7 @@
           manualChunks: isSsrBuild
             ? undefined
             : {
-                'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+                'react-vendor': ['react', 'react-dom', 'react-router'],
                 'animation-vendor': ['framer-motion'],
               }
         }
