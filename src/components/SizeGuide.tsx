@@ -45,13 +45,13 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
                   exit={{ opacity: 0, scale: 0.95, y: 20 }}
                   transition={{ duration: 0.2 }}
                   className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl p-8 pointer-events-auto outline-none"
-                  style={{ backgroundColor: '#F5F1EB' }}
+                  style={{ backgroundColor: '#F8F9FA' }}
                 >
                   {/* Close Button */}
                   <DialogPrimitive.Close asChild>
                     <button
                       className="absolute top-4 right-4 p-2 rounded-full transition-colors"
-                      style={{ backgroundColor: '#FFFFFF', color: '#121212' }}
+                      style={{ backgroundColor: '#FFFFFF', color: '#1A1A2E' }}
                       aria-label={t('a11y.close')}
                     >
                       <X className="w-5 h-5" />
@@ -59,12 +59,12 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
                   </DialogPrimitive.Close>
 
                   <DialogPrimitive.Title asChild>
-                    <h2 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
+                    <h2 className="text-2xl mb-6 tracking-tight" style={{ color: '#1A1A2E' }}>
                       {t('size.guide.title')}
                     </h2>
                   </DialogPrimitive.Title>
 
-                  <p className="text-sm mb-6" style={{ color: '#4A3E36' }}>
+                  <p className="text-sm mb-6" style={{ color: '#777777' }}>
                     {t('size.measurements')}
                   </p>
 
@@ -72,7 +72,7 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr style={{ backgroundColor: '#121212', color: '#F5F1EB' }}>
+                    <tr style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}>
                       <th className="p-3 text-left text-sm">{t('cart.size')}</th>
                       <th className="p-3 text-left text-sm">{t('size.chest')}</th>
                       <th className="p-3 text-left text-sm">{t('size.waist')}</th>
@@ -84,8 +84,8 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
                       <tr
                         key={row.size}
                         style={{
-                          backgroundColor: index % 2 === 0 ? '#FFFFFF' : '#E3DCD3',
-                          color: '#121212'
+                          backgroundColor: index % 2 === 0 ? '#FFFFFF' : '#E0E0E0',
+                          color: '#1A1A2E'
                         }}
                       >
                         <td className="p-3 text-sm">{row.size}</td>
@@ -99,11 +99,11 @@ export function SizeGuide({ isOpen, onClose }: SizeGuideProps) {
               </div>
 
               {/* How to Measure */}
-              <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: '#E3DCD3' }}>
-                <h3 className="text-lg mb-4" style={{ color: '#121212' }}>
+              <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: '#E0E0E0' }}>
+                <h3 className="text-lg mb-4" style={{ color: '#1A1A2E' }}>
                   How to Measure
                 </h3>
-                <ul className="space-y-2 text-sm" style={{ color: '#4A3E36' }}>
+                <ul className="space-y-2 text-sm" style={{ color: '#777777' }}>
                   <li><strong>Chest:</strong> Measure around the fullest part of your chest</li>
                   <li><strong>Waist:</strong> Measure around your natural waistline</li>
                   <li><strong>Hips:</strong> Measure around the fullest part of your hips</li>

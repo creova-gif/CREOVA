@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 
-const warmGradient = 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
 
 function useLiveClock() {
   const [time, setTime] = useState('');
@@ -48,7 +48,7 @@ export function ContactInfoBanner() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -8 : 0, height: hidden ? 0 : 'auto' }}
       transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
-      style={{ backgroundColor: '#0A0A0A', borderBottom: '1px solid rgba(166,143,89,0.18)', overflow: 'hidden' }}
+      style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.18)', overflow: 'hidden' }}
     >
       {/* Warm gradient top stripe */}
       <div style={{ height: '2px', background: warmGradient }} />
@@ -62,26 +62,26 @@ export function ContactInfoBanner() {
             className="flex items-center gap-2 group min-w-0"
           >
             <div className="w-6 h-6 flex items-center justify-center rounded-sm flex-shrink-0"
-              style={{ backgroundColor: 'rgba(166,143,89,0.12)' }}>
-              <Phone className="w-3 h-3" style={{ color: '#A68F59' }} />
+              style={{ backgroundColor: 'rgba(212,168,67,0.12)' }}>
+              <Phone className="w-3 h-3" style={{ color: '#D4A843' }} />
             </div>
             <div className="min-w-0">
-              <p className="text-xs tracking-[0.3em] uppercase leading-none mb-0.5" style={{ color: '#4A3E36' }}>{t('banner.call')}</p>
-              <p className="text-xs truncate group-hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>+1 (437) 260-8925</p>
+              <p className="text-xs tracking-[0.3em] uppercase leading-none mb-0.5" style={{ color: '#777777' }}>{t('banner.call')}</p>
+              <p className="text-xs truncate group-hover:opacity-70 transition-opacity" style={{ color: '#E0E0E0' }}>+1 (437) 260-8925</p>
             </div>
           </a>
-          <div style={{ width: '1px', height: '28px', backgroundColor: 'rgba(166,143,89,0.2)' }} />
+          <div style={{ width: '1px', height: '28px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
           <a
             href="mailto:support@creova.one"
             className="flex items-center gap-2 group min-w-0"
           >
             <div className="w-6 h-6 flex items-center justify-center rounded-sm flex-shrink-0"
-              style={{ backgroundColor: 'rgba(166,143,89,0.12)' }}>
-              <Mail className="w-3 h-3" style={{ color: '#A68F59' }} />
+              style={{ backgroundColor: 'rgba(212,168,67,0.12)' }}>
+              <Mail className="w-3 h-3" style={{ color: '#D4A843' }} />
             </div>
             <div className="min-w-0">
-              <p className="text-xs tracking-[0.3em] uppercase leading-none mb-0.5" style={{ color: '#4A3E36' }}>{t('banner.email')}</p>
-              <p className="text-xs truncate group-hover:opacity-70 transition-opacity" style={{ color: '#E3DCD3' }}>support@creova.one</p>
+              <p className="text-xs tracking-[0.3em] uppercase leading-none mb-0.5" style={{ color: '#777777' }}>{t('banner.email')}</p>
+              <p className="text-xs truncate group-hover:opacity-70 transition-opacity" style={{ color: '#E0E0E0' }}>support@creova.one</p>
             </div>
           </a>
         </div>
@@ -93,16 +93,16 @@ export function ContactInfoBanner() {
               <div className="flex items-center gap-3 px-5 py-3 w-full group">
                 <div
                   className="w-7 h-7 flex items-center justify-center rounded-sm flex-shrink-0 transition-all duration-200 group-hover:scale-110"
-                  style={{ backgroundColor: 'rgba(166,143,89,0.1)', border: '1px solid rgba(166,143,89,0.15)' }}
+                  style={{ backgroundColor: 'rgba(212,168,67,0.1)', border: '1px solid rgba(212,168,67,0.15)' }}
                 >
-                  <item.icon className="w-3.5 h-3.5" style={{ color: '#A68F59' }} />
+                  <item.icon className="w-3.5 h-3.5" style={{ color: '#D4A843' }} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] tracking-[0.4em] uppercase leading-none mb-1" style={{ color: '#4A3E36' }}>
+                  <p className="text-[10px] tracking-[0.4em] uppercase leading-none mb-1" style={{ color: '#777777' }}>
                     {item.label}
                   </p>
-                  <p className="text-xs tracking-wide truncate leading-none transition-colors duration-200 group-hover:text-[#A68F59]"
-                    style={{ color: '#C8C0B8' }}>
+                  <p className="text-xs tracking-wide truncate leading-none transition-colors duration-200 group-hover:text-[#D4A843]"
+                    style={{ color: '#EFEFEF' }}>
                     {item.value}
                   </p>
                 </div>
@@ -113,7 +113,7 @@ export function ContactInfoBanner() {
               <div
                 key={index}
                 className="flex-1"
-                style={{ borderRight: '1px solid rgba(166,143,89,0.12)' }}
+                style={{ borderRight: '1px solid rgba(212,168,67,0.12)' }}
               >
                 {item.href ? (
                   <a
@@ -133,10 +133,10 @@ export function ContactInfoBanner() {
 
           {/* Availability signal — rightmost */}
           <div className="flex items-center gap-3 px-5 py-3 flex-shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0" style={{ backgroundColor: '#A68F59' }} />
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0" style={{ backgroundColor: '#D4A843' }} />
             <div>
-              <p className="text-[10px] tracking-[0.4em] uppercase leading-none mb-1" style={{ color: '#4A3E36' }}>Availability</p>
-              <p className="text-xs leading-none whitespace-nowrap" style={{ color: '#C8C0B8' }}>
+              <p className="text-[10px] tracking-[0.4em] uppercase leading-none mb-1" style={{ color: '#777777' }}>Availability</p>
+              <p className="text-xs leading-none whitespace-nowrap" style={{ color: '#EFEFEF' }}>
                 Accepting projects · Q3 2026
               </p>
             </div>

@@ -111,14 +111,14 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div 
           className="min-h-screen flex items-center justify-center px-4"
-          style={{ backgroundColor: '#121212' }}
+          style={{ backgroundColor: '#1A1A2E' }}
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="max-w-2xl w-full text-center p-8 rounded-lg"
-            style={{ backgroundColor: '#F5F1EB' }}
+            style={{ backgroundColor: '#F8F9FA' }}
           >
             {/* Icon */}
             <motion.div
@@ -126,15 +126,15 @@ export class ErrorBoundary extends Component<Props, State> {
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6"
-              style={{ backgroundColor: '#B1643B' }}
+              style={{ backgroundColor: '#C0392B' }}
             >
-              <AlertTriangle className="w-10 h-10" style={{ color: '#F5F1EB' }} />
+              <AlertTriangle className="w-10 h-10" style={{ color: '#F8F9FA' }} />
             </motion.div>
 
             {/* Title */}
             <h1 
               className="text-3xl md:text-4xl font-bold mb-4"
-              style={{ color: '#121212' }}
+              style={{ color: '#1A1A2E' }}
             >
               Oops! Something went wrong
             </h1>
@@ -142,7 +142,7 @@ export class ErrorBoundary extends Component<Props, State> {
             {/* Description */}
             <p 
               className="text-lg mb-6"
-              style={{ color: '#7A6F66' }}
+              style={{ color: '#777777' }}
             >
               We're sorry, but something unexpected happened. Our team has been notified and we're working to fix it.
             </p>
@@ -151,16 +151,16 @@ export class ErrorBoundary extends Component<Props, State> {
             {import.meta.env.DEV && this.state.error && (
               <div 
                 className="mb-8 p-4 rounded-lg text-left overflow-auto max-h-64"
-                style={{ backgroundColor: '#E3DCD3' }}
+                style={{ backgroundColor: '#E0E0E0' }}
               >
-                <p className="font-mono text-sm font-bold mb-2" style={{ color: '#121212' }}>
+                <p className="font-mono text-sm font-bold mb-2" style={{ color: '#1A1A2E' }}>
                   Error Details (Dev Only):
                 </p>
-                <p className="font-mono text-xs mb-2" style={{ color: '#B1643B' }}>
+                <p className="font-mono text-xs mb-2" style={{ color: '#C0392B' }}>
                   {this.state.error.toString()}
                 </p>
                 {this.state.errorInfo && (
-                  <pre className="font-mono text-xs whitespace-pre-wrap" style={{ color: '#7A6F66' }}>
+                  <pre className="font-mono text-xs whitespace-pre-wrap" style={{ color: '#777777' }}>
                     {this.state.errorInfo.componentStack}
                   </pre>
                 )}
@@ -174,8 +174,8 @@ export class ErrorBoundary extends Component<Props, State> {
                 size="lg"
                 className="gap-2"
                 style={{ 
-                  backgroundColor: '#B1643B',
-                  color: '#F5F1EB'
+                  backgroundColor: '#C0392B',
+                  color: '#F8F9FA'
                 }}
               >
                 <RefreshCw className="w-5 h-5" />
@@ -188,8 +188,8 @@ export class ErrorBoundary extends Component<Props, State> {
                 variant="outline"
                 className="gap-2"
                 style={{ 
-                  borderColor: '#B1643B',
-                  color: '#B1643B'
+                  borderColor: '#C0392B',
+                  color: '#C0392B'
                 }}
               >
                 <Home className="w-5 h-5" />
@@ -200,13 +200,13 @@ export class ErrorBoundary extends Component<Props, State> {
             {/* Support Info */}
             <p 
               className="text-sm mt-8"
-              style={{ color: '#7A6F66' }}
+              style={{ color: '#777777' }}
             >
               If this problem persists, please contact us at{' '}
               <a 
                 href="mailto:support@creova.one" 
                 className="underline"
-                style={{ color: '#B1643B' }}
+                style={{ color: '#C0392B' }}
               >
                 support@creova.one
               </a>

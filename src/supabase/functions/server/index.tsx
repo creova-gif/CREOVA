@@ -1095,7 +1095,7 @@ app.post("/make-server-feacf0d8/submit-contact", async (c) => {
                 from: 'CREOVA <support@creova.one>',
                 to: [email],
                 subject: "We've received your message — CREOVA",
-                html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#121212"><h2 style="color:#A68F59">Thanks for reaching out, ${name}!</h2><p>We've received your message and will get back to you within 1–2 business days.</p><p style="color:#7A6F66;font-size:14px">In the meantime, follow us on Instagram <a href="https://www.instagram.com/creativeinnovation__" style="color:#A68F59">@creativeinnovation__</a></p><p>— The CREOVA Team</p></div>`
+                html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1A1A2E"><h2 style="color:#D4A843">Thanks for reaching out, ${name}!</h2><p>We've received your message and will get back to you within 1–2 business days.</p><p style="color:#777777;font-size:14px">In the meantime, follow us on Instagram <a href="https://www.instagram.com/creativeinnovation__" style="color:#D4A843">@creativeinnovation__</a></p><p>— The CREOVA Team</p></div>`
               })
             }),
             fetch('https://api.resend.com/emails', {
@@ -1859,7 +1859,7 @@ app.post("/make-server-feacf0d8/admin/galleries", requireAdmin, async (c) => {
       image,
       objectPosition: objectPosition || "center",
       url,
-      accent: accent || "#A68F59",
+      accent: accent || "#D4A843",
       featured: !!featured,
       order: typeof order === "number" ? order : Date.now(),
       created_at: new Date().toISOString(),

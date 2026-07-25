@@ -48,12 +48,12 @@ function PageLoader() {
   return (
     <div
       className="min-h-screen flex items-center justify-center"
-      style={{ backgroundColor: '#0A0A0A' }}
+      style={{ backgroundColor: '#1A1A2E' }}
       aria-label="Loading page"
     >
       <div
         className="w-8 h-8 rounded-full border-2 border-t-transparent animate-spin"
-        style={{ borderColor: '#A68F59', borderTopColor: 'transparent' }}
+        style={{ borderColor: '#D4A843', borderTopColor: 'transparent' }}
         role="status"
       />
     </div>
@@ -181,7 +181,7 @@ function AppContent() {
         <meta name="author" content="CREOVA Creative Agency" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
-        <meta name="theme-color" content="#121212" />
+        <meta name="theme-color" content="#1A1A2E" />
       </Helmet>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -255,7 +255,7 @@ function AppContent() {
         <div
           className="fixed inset-0 z-[9999] pointer-events-none"
           style={{
-            backgroundColor: '#080808',
+            backgroundColor: '#1A1A2E',
             opacity: 0.18,
             transition: 'opacity 120ms ease',
           }}
@@ -265,7 +265,7 @@ function AppContent() {
 
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#121212] focus:text-[#F5F1EB] focus:px-4 focus:py-2 focus:rounded"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#1A1A2E] focus:text-[#F8F9FA] focus:px-4 focus:py-2 focus:rounded"
       >
         {t('a11y.skip.content')}
       </a>

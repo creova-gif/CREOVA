@@ -81,9 +81,9 @@ function CheckoutForm({
   if (paymentSuccess) {
     return (
       <div className="text-center py-8">
-        <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#A68F59' }} />
+        <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#D4A843' }} />
         <h3 className="text-xl mb-2">Payment Successful!</h3>
-        <p className="text-sm" style={{ color: '#4A3E36' }}>
+        <p className="text-sm" style={{ color: '#777777' }}>
           Thank you for your purchase. You'll receive a confirmation email shortly.
         </p>
       </div>
@@ -94,10 +94,10 @@ function CheckoutForm({
     <form onSubmit={handleSubmit} className="space-y-6">
       <PaymentElement />
       
-      <div className="border-t pt-4" style={{ borderColor: '#E3DCD3' }}>
+      <div className="border-t pt-4" style={{ borderColor: '#E0E0E0' }}>
         <div className="flex justify-between items-center mb-4">
-          <span style={{ color: '#4A3E36' }}>Total Amount:</span>
-          <span className="text-xl" style={{ color: '#121212' }}>
+          <span style={{ color: '#777777' }}>Total Amount:</span>
+          <span className="text-xl" style={{ color: '#1A1A2E' }}>
             ${amount.toFixed(2)} CAD
           </span>
         </div>
@@ -117,7 +117,7 @@ function CheckoutForm({
           type="submit"
           className="flex-1"
           disabled={!stripe || isProcessing}
-          style={{ backgroundColor: '#121212' }}
+          style={{ backgroundColor: '#1A1A2E' }}
         >
           {isProcessing ? (
             <>
@@ -219,15 +219,15 @@ export function PaymentDialog({
               />
             </div>
 
-            <div className="border-t pt-4" style={{ borderColor: '#E3DCD3' }}>
+            <div className="border-t pt-4" style={{ borderColor: '#E0E0E0' }}>
               <div className="flex justify-between items-center mb-4">
-                <span style={{ color: '#4A3E36' }}>Total Amount:</span>
-                <span className="text-xl" style={{ color: '#121212' }}>
+                <span style={{ color: '#777777' }}>Total Amount:</span>
+                <span className="text-xl" style={{ color: '#1A1A2E' }}>
                   ${amount.toFixed(2)} CAD
                 </span>
               </div>
               
-              <div className="space-y-1 text-sm" style={{ color: '#7A6F66' }}>
+              <div className="space-y-1 text-sm" style={{ color: '#777777' }}>
                 {items.map((item, index) => (
                   <div key={index} className="flex justify-between">
                     <span>{item.name} x{item.quantity}</span>
@@ -251,7 +251,7 @@ export function PaymentDialog({
                 type="submit"
                 className="flex-1"
                 disabled={isCreating}
-                style={{ backgroundColor: '#121212' }}
+                style={{ backgroundColor: '#1A1A2E' }}
               >
                 {isCreating ? (
                   <>
@@ -273,7 +273,7 @@ export function PaymentDialog({
                 appearance: {
                   theme: 'stripe',
                   variables: {
-                    colorPrimary: '#121212',
+                    colorPrimary: '#1A1A2E',
                   }
                 }
               }}

@@ -39,16 +39,16 @@ export function ScrollToTop() {
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-3xl"
           style={{ 
-            backgroundColor: '#121212',
-            border: '2px solid #A68F59'
+            backgroundColor: '#1A1A2E',
+            border: '2px solid #D4A843'
           }}
           whileHover={{ 
-            backgroundColor: '#A68F59',
-            borderColor: '#121212'
+            backgroundColor: '#D4A843',
+            borderColor: '#1A1A2E'
           }}
           aria-label="Scroll to top"
         >
-          <ArrowUp className="w-6 h-6" style={{ color: '#F5F1EB' }} />
+          <ArrowUp className="w-6 h-6" style={{ color: '#F8F9FA' }} />
         </motion.button>
       )}
     </AnimatePresence>

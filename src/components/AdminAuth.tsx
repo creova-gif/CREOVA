@@ -65,11 +65,11 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F5F1EB' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <PageSEO title="Admin" description="CREOVA staff admin dashboard." path={typeof window !== 'undefined' ? window.location.pathname : '/admin'} noIndex />
         <div className="animate-pulse text-center">
-          <Shield className="w-12 h-12 mx-auto mb-4" style={{ color: '#B1643B' }} />
-          <p style={{ color: '#121212' }}>Verifying access...</p>
+          <Shield className="w-12 h-12 mx-auto mb-4" style={{ color: '#C0392B' }} />
+          <p style={{ color: '#1A1A2E' }}>Verifying access...</p>
         </div>
       </div>
     );
@@ -77,7 +77,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#F5F1EB' }}>
+      <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#F8F9FA' }}>
         <PageSEO title="Admin Access" description="CREOVA staff admin dashboard." path={typeof window !== 'undefined' ? window.location.pathname : '/admin'} noIndex />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,20 +86,20 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
         >
           <div 
             className="bg-white rounded-3xl p-8 shadow-2xl border"
-            style={{ borderColor: '#E3DCD3' }}
+            style={{ borderColor: '#E0E0E0' }}
           >
             {/* Header */}
             <div className="text-center mb-8">
               <div 
                 className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center"
-                style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}
+                style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}
               >
-                <Lock className="w-8 h-8" style={{ color: '#B1643B' }} />
+                <Lock className="w-8 h-8" style={{ color: '#C0392B' }} />
               </div>
-              <h2 className="text-3xl mb-2" style={{ color: '#121212' }}>
+              <h2 className="text-3xl mb-2" style={{ color: '#1A1A2E' }}>
                 Admin Access
               </h2>
-              <p style={{ color: '#7A6F66' }}>
+              <p style={{ color: '#777777' }}>
                 Enter password to access CREOVA admin dashboard
               </p>
             </div>
@@ -107,7 +107,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
             {/* Login Form */}
             <form onSubmit={handleLogin} className="space-y-6">
               <div>
-                <label className="block text-sm mb-2" style={{ color: '#121212' }}>
+                <label className="block text-sm mb-2" style={{ color: '#1A1A2E' }}>
                   Password
                 </label>
                 <div className="relative">
@@ -117,14 +117,14 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter admin password"
                     className="pr-12"
-                    style={{ borderColor: '#E3DCD3' }}
+                    style={{ borderColor: '#E0E0E0' }}
                     autoFocus
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2"
-                    style={{ color: '#7A6F66' }}
+                    style={{ color: '#777777' }}
                   >
                     {showPassword ? (
                       <EyeOff className="w-5 h-5" />
@@ -139,7 +139,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
                 type="submit"
                 disabled={submitting}
                 className="w-full py-6 rounded-xl text-base disabled:opacity-60"
-                style={{ backgroundColor: '#B1643B', color: '#F5F1EB' }}
+                style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
               >
                 <Lock className="w-5 h-5 mr-2" />
                 {submitting ? 'Verifying...' : 'Login to Admin Dashboard'}
@@ -149,15 +149,15 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
             {/* Security Notice */}
             <div 
               className="mt-6 p-4 rounded-xl border"
-              style={{ backgroundColor: '#F5F1EB', borderColor: '#E3DCD3' }}
+              style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
             >
               <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 mt-0.5" style={{ color: '#B1643B' }} />
+                <Shield className="w-5 h-5 mt-0.5" style={{ color: '#C0392B' }} />
                 <div>
-                  <p className="text-sm mb-1" style={{ color: '#121212' }}>
+                  <p className="text-sm mb-1" style={{ color: '#1A1A2E' }}>
                     <strong>Secure Access</strong>
                   </p>
-                  <p className="text-xs" style={{ color: '#7A6F66' }}>
+                  <p className="text-xs" style={{ color: '#777777' }}>
                     Your session will automatically expire after 4 hours of inactivity
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
           onClick={handleLogout}
           size="sm"
           className="rounded-xl shadow-lg"
-          style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+          style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
         >
           <Lock className="w-4 h-4 mr-2" />
           Logout

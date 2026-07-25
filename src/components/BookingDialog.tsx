@@ -105,38 +105,38 @@ export function BookingDialog({
 
           {step === 'success' ? (
             <div className="text-center py-8">
-              <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#A68F59' }} />
+              <CheckCircle2 className="w-16 h-16 mx-auto mb-4" style={{ color: '#D4A843' }} />
               <h3 className="text-xl mb-2">Booking & Payment Successful!</h3>
-              <p className="text-sm mb-4" style={{ color: '#4A3E36' }}>
+              <p className="text-sm mb-4" style={{ color: '#777777' }}>
                 You'll receive a confirmation email at {customerInfo.email} with all the details.
               </p>
-              <p className="text-xs" style={{ color: '#7A6F66' }}>
+              <p className="text-xs" style={{ color: '#777777' }}>
                 We'll contact you within 24 hours to finalize the details.
               </p>
             </div>
           ) : (
             <form onSubmit={handleBookingSubmit} className="space-y-4">
               {/* Service Info */}
-              <div className="p-4 rounded-lg" style={{ backgroundColor: '#F5F1EB' }}>
+              <div className="p-4 rounded-lg" style={{ backgroundColor: '#F8F9FA' }}>
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h4 style={{ color: '#121212' }}>{service.name}</h4>
+                    <h4 style={{ color: '#1A1A2E' }}>{service.name}</h4>
                     {service.description && (
-                      <p className="text-sm mt-1" style={{ color: '#4A3E36' }}>
+                      <p className="text-sm mt-1" style={{ color: '#777777' }}>
                         {service.description}
                       </p>
                     )}
                   </div>
                   <div className="text-right">
-                    <div style={{ color: '#B1643B' }}>${service.price.toFixed(2)}</div>
-                    <div className="text-xs" style={{ color: '#7A6F66' }}>CAD</div>
+                    <div style={{ color: '#C0392B' }}>${service.price.toFixed(2)}</div>
+                    <div className="text-xs" style={{ color: '#777777' }}>CAD</div>
                   </div>
                 </div>
               </div>
 
               {/* Customer Information */}
               <div className="space-y-3">
-                <h4 className="text-sm" style={{ color: '#A68F59' }}>Your Information</h4>
+                <h4 className="text-sm" style={{ color: '#D4A843' }}>Your Information</h4>
                 
                 <div>
                   <Label htmlFor="name">Full Name *</Label>
@@ -176,7 +176,7 @@ export function BookingDialog({
 
               {/* Booking Details */}
               <div className="space-y-3">
-                <h4 className="text-sm" style={{ color: '#A68F59' }}>Booking Details</h4>
+                <h4 className="text-sm" style={{ color: '#D4A843' }}>Booking Details</h4>
                 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
@@ -223,7 +223,7 @@ export function BookingDialog({
                 </div>
               </div>
 
-              <div className="text-xs" style={{ color: '#7A6F66' }}>
+              <div className="text-xs" style={{ color: '#777777' }}>
                 * A 50% deposit (${(service.price * 0.5).toFixed(2)} CAD) is required to secure your booking. 
                 The remaining balance is due on the day of service.
               </div>
@@ -242,7 +242,7 @@ export function BookingDialog({
                   type="submit"
                   className="flex-1"
                   disabled={isCreating}
-                  style={{ backgroundColor: '#121212' }}
+                  style={{ backgroundColor: '#1A1A2E' }}
                 >
                   {isCreating ? (
                     <>

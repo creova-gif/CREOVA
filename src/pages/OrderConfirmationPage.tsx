@@ -34,7 +34,7 @@ export function OrderConfirmationPage() {
   }
 
   return (
-    <div style={{ backgroundColor: '#F5F1EB', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#F8F9FA', minHeight: '100vh' }}>
       <PageSEO
         title="Order Confirmation"
         description="Your CREOVA order confirmation."
@@ -54,9 +54,9 @@ export function OrderConfirmationPage() {
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: 'spring' }}
               className="w-24 h-24 rounded-full mx-auto mb-8 flex items-center justify-center"
-              style={{ backgroundColor: '#A68F59' }}
+              style={{ backgroundColor: '#D4A843' }}
             >
-              <CheckCircle2 className="w-12 h-12" style={{ color: '#F5F1EB' }} />
+              <CheckCircle2 className="w-12 h-12" style={{ color: '#F8F9FA' }} />
             </motion.div>
 
             <motion.h1
@@ -64,7 +64,7 @@ export function OrderConfirmationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl mb-4"
-              style={{ color: '#121212' }}
+              style={{ color: '#1A1A2E' }}
             >
               {fr ? 'Commande confirmée !' : 'Order Confirmed!'}
             </motion.h1>
@@ -74,7 +74,7 @@ export function OrderConfirmationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-xl mb-8"
-              style={{ color: '#7A6F66' }}
+              style={{ color: '#777777' }}
             >
               {fr ? 'Merci pour votre achat. Votre commande a été traitée avec succès.' : 'Thank you for your purchase. Your order has been successfully processed.'}
             </motion.p>
@@ -86,20 +86,20 @@ export function OrderConfirmationPage() {
               transition={{ delay: 0.5 }}
               className="bg-white rounded-2xl p-8 mb-8"
             >
-              <p className="text-sm mb-2" style={{ color: '#7A6F66' }}>{fr ? 'Numéro de commande' : 'Order Number'}</p>
-              <p className="text-3xl mb-6" style={{ color: '#121212' }}>
+              <p className="text-sm mb-2" style={{ color: '#777777' }}>{fr ? 'Numéro de commande' : 'Order Number'}</p>
+              <p className="text-3xl mb-6" style={{ color: '#1A1A2E' }}>
                 #{orderDetails.orderId}
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 text-left">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                    <Mail className="w-5 h-5" style={{ color: '#A68F59' }} />
+                       style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
+                    <Mail className="w-5 h-5" style={{ color: '#D4A843' }} />
                   </div>
                   <div>
-                    <h3 className="mb-1" style={{ color: '#121212' }}>{fr ? 'Courriel envoyé' : 'Email Sent'}</h3>
-                    <p className="text-sm" style={{ color: '#7A6F66' }}>
+                    <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{fr ? 'Courriel envoyé' : 'Email Sent'}</h3>
+                    <p className="text-sm" style={{ color: '#777777' }}>
                       {fr ? 'Confirmation de commande envoyée à votre courriel' : 'Order confirmation sent to your email'}
                     </p>
                   </div>
@@ -107,12 +107,12 @@ export function OrderConfirmationPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                    <Package className="w-5 h-5" style={{ color: '#A68F59' }} />
+                       style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
+                    <Package className="w-5 h-5" style={{ color: '#D4A843' }} />
                   </div>
                   <div>
-                    <h3 className="mb-1" style={{ color: '#121212' }}>{fr ? 'Traitement' : 'Processing'}</h3>
-                    <p className="text-sm" style={{ color: '#7A6F66' }}>
+                    <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{fr ? 'Traitement' : 'Processing'}</h3>
+                    <p className="text-sm" style={{ color: '#777777' }}>
                       {fr ? 'Votre commande est en préparation' : 'Your order is being prepared'}
                     </p>
                   </div>
@@ -120,12 +120,12 @@ export function OrderConfirmationPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                       style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                    <Download className="w-5 h-5" style={{ color: '#A68F59' }} />
+                       style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
+                    <Download className="w-5 h-5" style={{ color: '#D4A843' }} />
                   </div>
                   <div>
-                    <h3 className="mb-1" style={{ color: '#121212' }}>{fr ? 'Reçu' : 'Receipt'}</h3>
-                    <p className="text-sm" style={{ color: '#7A6F66' }}>
+                    <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{fr ? 'Reçu' : 'Receipt'}</h3>
+                    <p className="text-sm" style={{ color: '#777777' }}>
                       {fr ? 'Disponible dans votre courriel' : 'Available in your email'}
                     </p>
                   </div>
@@ -140,18 +140,18 @@ export function OrderConfirmationPage() {
               transition={{ delay: 0.6 }}
               className="bg-white rounded-2xl p-8 mb-8 text-left"
             >
-              <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+              <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                 {fr ? 'Et ensuite ?' : "What's Next?"}
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                       style={{ backgroundColor: '#A68F59' }}>
-                    <span className="text-xs" style={{ color: '#F5F1EB' }}>1</span>
+                       style={{ backgroundColor: '#D4A843' }}>
+                    <span className="text-xs" style={{ color: '#F8F9FA' }}>1</span>
                   </div>
                   <div>
-                    <h3 className="mb-1" style={{ color: '#121212' }}>{fr ? 'Traitement de la commande' : 'Order Processing'}</h3>
-                    <p className="text-sm" style={{ color: '#7A6F66' }}>
+                    <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{fr ? 'Traitement de la commande' : 'Order Processing'}</h3>
+                    <p className="text-sm" style={{ color: '#777777' }}>
                       {fr ? 'Nous préparons vos articles pour expédition. Cela prend généralement 1 à 2 jours ouvrables.' : "We're preparing your items for shipment. This typically takes 1-2 business days."}
                     </p>
                   </div>
@@ -159,12 +159,12 @@ export function OrderConfirmationPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                       style={{ backgroundColor: '#A68F59' }}>
-                    <span className="text-xs" style={{ color: '#F5F1EB' }}>2</span>
+                       style={{ backgroundColor: '#D4A843' }}>
+                    <span className="text-xs" style={{ color: '#F8F9FA' }}>2</span>
                   </div>
                   <div>
-                    <h3 className="mb-1" style={{ color: '#121212' }}>{fr ? "Avis d'expédition" : 'Shipping Notification'}</h3>
-                    <p className="text-sm" style={{ color: '#7A6F66' }}>
+                    <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{fr ? "Avis d'expédition" : 'Shipping Notification'}</h3>
+                    <p className="text-sm" style={{ color: '#777777' }}>
                       {fr ? "Vous recevrez un courriel avec les informations de suivi dès que votre commande sera expédiée." : "You'll receive an email with tracking information once your order ships."}
                     </p>
                   </div>
@@ -172,12 +172,12 @@ export function OrderConfirmationPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                       style={{ backgroundColor: '#A68F59' }}>
-                    <span className="text-xs" style={{ color: '#F5F1EB' }}>3</span>
+                       style={{ backgroundColor: '#D4A843' }}>
+                    <span className="text-xs" style={{ color: '#F8F9FA' }}>3</span>
                   </div>
                   <div>
-                    <h3 className="mb-1" style={{ color: '#121212' }}>{fr ? 'Livraison' : 'Delivery'}</h3>
-                    <p className="text-sm" style={{ color: '#7A6F66' }}>
+                    <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{fr ? 'Livraison' : 'Delivery'}</h3>
+                    <p className="text-sm" style={{ color: '#777777' }}>
                       {fr ? 'Livraison estimée : 5 à 7 jours ouvrables pour la livraison standard.' : 'Estimated delivery: 5-7 business days for standard shipping.'}
                     </p>
                   </div>
@@ -196,13 +196,13 @@ export function OrderConfirmationPage() {
                 asChild
                 size="lg"
                 className="px-8 py-6 rounded-xl text-lg transition-all duration-300"
-                style={{ backgroundColor: '#121212' }}
+                style={{ backgroundColor: '#1A1A2E' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#A68F59';
+                  e.currentTarget.style.backgroundColor = '#D4A843';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#121212';
+                  e.currentTarget.style.backgroundColor = '#1A1A2E';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -219,14 +219,14 @@ export function OrderConfirmationPage() {
                 size="lg"
                 variant="outline"
                 className="px-8 py-6 rounded-xl text-lg border-2 transition-all duration-300"
-                style={{ borderColor: '#E3DCD3', color: '#121212' }}
+                style={{ borderColor: '#E0E0E0', color: '#1A1A2E' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#A68F59';
-                  e.currentTarget.style.color = '#A68F59';
+                  e.currentTarget.style.borderColor = '#D4A843';
+                  e.currentTarget.style.color = '#D4A843';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#E3DCD3';
-                  e.currentTarget.style.color = '#121212';
+                  e.currentTarget.style.borderColor = '#E0E0E0';
+                  e.currentTarget.style.color = '#1A1A2E';
                 }}
               >
                 <Link to="/">{fr ? "Aller à l'accueil" : 'Go to Homepage'}</Link>
@@ -239,11 +239,11 @@ export function OrderConfirmationPage() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
               className="mt-12 pt-8 border-t"
-              style={{ borderColor: '#E3DCD3' }}
+              style={{ borderColor: '#E0E0E0' }}
             >
-              <p className="text-sm" style={{ color: '#7A6F66' }}>
+              <p className="text-sm" style={{ color: '#777777' }}>
                 {fr ? 'Des questions sur votre commande ?' : 'Questions about your order?'}{' '}
-                <Link to="/contact" className="underline" style={{ color: '#A68F59' }}>
+                <Link to="/contact" className="underline" style={{ color: '#D4A843' }}>
                   {fr ? 'Contactez notre équipe de soutien' : 'Contact our support team'}
                 </Link>
               </p>

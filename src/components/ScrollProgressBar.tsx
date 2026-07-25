@@ -11,7 +11,7 @@ export function ScrollProgressBar() {
         height: '2px',
         scaleX,
         transformOrigin: '0% 50%',
-        background: 'linear-gradient(90deg, #A68F59 0%, #B1643B 60%, #A68F59 100%)',
+        background: 'linear-gradient(90deg, #D4A843 0%, #C0392B 60%, #D4A843 100%)',
         backgroundSize: '200% 100%',
       }}
     />

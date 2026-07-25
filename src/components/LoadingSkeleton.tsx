@@ -16,19 +16,19 @@ export function ProductCardSkeleton() {
         {/* Image skeleton */}
         <div 
           className="aspect-square mb-4 rounded-lg"
-          style={{ backgroundColor: '#E3DCD3' }}
+          style={{ backgroundColor: '#E0E0E0' }}
         />
         
         {/* Title skeleton */}
         <div 
           className="h-4 mb-2 rounded"
-          style={{ backgroundColor: '#E3DCD3', width: '70%' }}
+          style={{ backgroundColor: '#E0E0E0', width: '70%' }}
         />
         
         {/* Price skeleton */}
         <div 
           className="h-3 rounded"
-          style={{ backgroundColor: '#E3DCD3', width: '30%' }}
+          style={{ backgroundColor: '#E0E0E0', width: '30%' }}
         />
       </motion.div>
     </div>
@@ -37,7 +37,7 @@ export function ProductCardSkeleton() {
 
 export function PageLoadingSkeleton() {
   return (
-    <div className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="py-20" style={{ backgroundColor: '#F8F9FA' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           animate={{
@@ -54,11 +54,11 @@ export function PageLoadingSkeleton() {
           <div className="space-y-4">
             <div 
               className="h-8 rounded mx-auto"
-              style={{ backgroundColor: '#E3DCD3', width: '40%' }}
+              style={{ backgroundColor: '#E0E0E0', width: '40%' }}
             />
             <div 
               className="h-4 rounded mx-auto"
-              style={{ backgroundColor: '#E3DCD3', width: '60%' }}
+              style={{ backgroundColor: '#E0E0E0', width: '60%' }}
             />
           </div>
 

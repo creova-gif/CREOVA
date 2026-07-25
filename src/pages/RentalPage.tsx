@@ -298,20 +298,20 @@ export function RentalPage() {
   const pricing = calculateTotal();
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F8F9FA' }}>
       <PageSEO
         title="Equipment Rental"
         description="Rent professional photography and videography equipment from CREOVA — cameras, lenses, lighting, and audio gear for creators across Ontario."
         path="/rental"
       />
       {/* Hero — editorial asymmetric split */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A', minHeight: '420px' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', minHeight: '420px' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(166,143,89,0.07) 0%, transparent 60%),
-                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(177,100,59,0.05) 0%, transparent 60%)`
+          background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
+                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(192,57,43,0.05) 0%, transparent 60%)`
         }} />
-        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.2)' }} />
+        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-[1fr_auto] gap-0 items-center py-14 sm:py-20">
@@ -322,7 +322,7 @@ export function RentalPage() {
                 variant="ghost"
                 onClick={() => navigate(-1)}
                 className="mb-8 text-xs px-0 tracking-widest uppercase"
-                style={{ color: 'rgba(166,143,89,0.6)' }}
+                style={{ color: 'rgba(212,168,67,0.6)' }}
               >
                 <ArrowLeft className="w-3.5 h-3.5 mr-2" />
                 {fr ? 'Retour' : 'Back'}
@@ -334,8 +334,8 @@ export function RentalPage() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center gap-3 mb-6"
               >
-                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? "Location d'équipement" : 'Equipment Rental'}</span>
+                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? "Location d'équipement" : 'Equipment Rental'}</span>
               </motion.div>
 
               <motion.h1
@@ -343,7 +343,7 @@ export function RentalPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 className="font-light leading-none tracking-tighter"
-                style={{ fontSize: 'clamp(64px, 12vw, 160px)', color: '#F5F1EB' }}
+                style={{ fontSize: 'clamp(64px, 12vw, 160px)', color: '#F8F9FA' }}
               >
                 {fr ? 'Louez.' : 'Rent.'}
               </motion.h1>
@@ -355,7 +355,7 @@ export function RentalPage() {
                 className="italic leading-none tracking-tight mb-8"
                 style={{
                   fontSize: 'clamp(18px, 3vw, 40px)',
-                  backgroundImage: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',
@@ -369,7 +369,7 @@ export function RentalPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 className="text-sm font-light max-w-sm"
-                style={{ color: 'rgba(245,241,235,0.4)' }}
+                style={{ color: 'rgba(248,249,250,0.4)' }}
               >
                 {fr ? 'Caméras · Éclairage · Audio — pour votre prochain projet créatif.' : 'Cameras · Lighting · Audio — for your next creative project.'}
               </motion.p>
@@ -383,10 +383,10 @@ export function RentalPage() {
               className="hidden md:flex flex-col gap-3 w-56 ml-16"
             >
               {[
-                { icon: Camera, label: fr ? 'Trousse Photographie' : 'Photography Kit', desc: fr ? '150 $/jour · dépôt 350 $' : '$150/day · $350 deposit', color: '#A68F59' },
-                { icon: Video, label: fr ? 'Trousse Créateur' : 'Creator Kit', desc: fr ? '175 $/jour · dépôt 400 $' : '$175/day · $400 deposit', color: '#B1643B' },
-                { icon: Lightbulb, label: fr ? "Trousse Éclairage" : 'Lighting Kit', desc: fr ? '85 $/jour · dépôt 200 $' : '$85/day · $200 deposit', color: '#A68F59' },
-                { icon: Zap, label: fr ? 'Économies multi-jours' : 'Multi-day savings', desc: fr ? "Jusqu'à 15 % de rabais dès 7 jours" : 'Up to 15% off 7+ days', color: '#B1643B' },
+                { icon: Camera, label: fr ? 'Trousse Photographie' : 'Photography Kit', desc: fr ? '150 $/jour · dépôt 350 $' : '$150/day · $350 deposit', color: '#D4A843' },
+                { icon: Video, label: fr ? 'Trousse Créateur' : 'Creator Kit', desc: fr ? '175 $/jour · dépôt 400 $' : '$175/day · $400 deposit', color: '#C0392B' },
+                { icon: Lightbulb, label: fr ? "Trousse Éclairage" : 'Lighting Kit', desc: fr ? '85 $/jour · dépôt 200 $' : '$85/day · $200 deposit', color: '#D4A843' },
+                { icon: Zap, label: fr ? 'Économies multi-jours' : 'Multi-day savings', desc: fr ? "Jusqu'à 15 % de rabais dès 7 jours" : 'Up to 15% off 7+ days', color: '#C0392B' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -395,17 +395,17 @@ export function RentalPage() {
                   transition={{ delay: 0.4 + i * 0.08 }}
                   className="flex items-center gap-3 px-4 py-3.5 rounded-xl"
                   style={{
-                    backgroundColor: 'rgba(245,241,235,0.04)',
-                    border: '1px solid rgba(166,143,89,0.12)',
+                    backgroundColor: 'rgba(248,249,250,0.04)',
+                    border: '1px solid rgba(212,168,67,0.12)',
                   }}
                 >
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: 'rgba(166,143,89,0.1)' }}>
+                    style={{ backgroundColor: 'rgba(212,168,67,0.1)' }}>
                     <item.icon className="w-3.5 h-3.5" style={{ color: item.color }} />
                   </div>
                   <div>
-                    <div className="text-xs font-medium" style={{ color: '#F5F1EB' }}>{item.label}</div>
-                    <p className="text-[10px] mt-0.5" style={{ color: 'rgba(245,241,235,0.3)' }}>{item.desc}</p>
+                    <div className="text-xs font-medium" style={{ color: '#F8F9FA' }}>{item.label}</div>
+                    <p className="text-[10px] mt-0.5" style={{ color: 'rgba(248,249,250,0.3)' }}>{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -427,10 +427,10 @@ export function RentalPage() {
             <div className="space-y-8">
               {/* Equipment Selection */}
               <div>
-                <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>
+                <h2 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>
                   {fr ? "Sélectionner l'équipement" : 'Select Equipment'}
                 </h2>
-                <p className="text-sm mb-6" style={{ color: '#7A6F66' }}>
+                <p className="text-sm mb-6" style={{ color: '#777777' }}>
                   {fr ? 'Choisissez un ou plusieurs forfaits d\'équipement pour votre location' : 'Choose one or more equipment packages for your rental'}
                 </p>
                 <div className="space-y-4">
@@ -442,8 +442,8 @@ export function RentalPage() {
                         key={equipment.id}
                         className="p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer"
                         style={{
-                          borderColor: isSelected ? '#A68F59' : '#E3DCD3',
-                          backgroundColor: isSelected ? 'rgba(166, 143, 89, 0.05)' : '#FFFFFF'
+                          borderColor: isSelected ? '#D4A843' : '#E0E0E0',
+                          backgroundColor: isSelected ? 'rgba(212, 168, 67, 0.05)' : '#FFFFFF'
                         }}
                         onClick={() => toggleEquipment(equipment.id)}
                       >
@@ -455,16 +455,16 @@ export function RentalPage() {
                           />
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
-                              <Icon className="w-6 h-6" style={{ color: isSelected ? '#A68F59' : '#121212' }} />
+                              <Icon className="w-6 h-6" style={{ color: isSelected ? '#D4A843' : '#1A1A2E' }} />
                               <div>
-                                <h3 className="font-medium" style={{ color: '#121212' }}>
+                                <h3 className="font-medium" style={{ color: '#1A1A2E' }}>
                                   {equipment.name}
                                 </h3>
                                 <div className="flex items-center gap-4 mt-1">
-                                  <span className="text-lg" style={{ color: '#A68F59' }}>
+                                  <span className="text-lg" style={{ color: '#D4A843' }}>
                                     ${equipment.price}{fr ? '/jour' : '/day'}
                                   </span>
-                                  <span className="text-sm" style={{ color: '#7A6F66' }}>
+                                  <span className="text-sm" style={{ color: '#777777' }}>
                                     {fr ? 'Dépôt' : 'Deposit'}: ${equipment.deposit}
                                   </span>
                                 </div>
@@ -472,8 +472,8 @@ export function RentalPage() {
                             </div>
                             <ul className="space-y-1 ml-2">
                               {equipment.includes.map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-2 text-sm" style={{ color: '#7A6F66' }}>
-                                  <CheckCircle2 className="w-3 h-3" style={{ color: '#A68F59' }} />
+                                <li key={idx} className="flex items-center gap-2 text-sm" style={{ color: '#777777' }}>
+                                  <CheckCircle2 className="w-3 h-3" style={{ color: '#D4A843' }} />
                                   {item}
                                 </li>
                               ))}
@@ -487,15 +487,15 @@ export function RentalPage() {
               </div>
 
               {/* Rental Period */}
-              <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+              <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Période de location' : 'Rental Period'}
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Start Date */}
                   <div>
-                    <Label className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Date de début *' : 'Start Date *'}
                     </Label>
                     <Popover>
@@ -503,7 +503,7 @@ export function RentalPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: startDate ? '#121212' : '#7A6F66' }}
+                          style={{ color: startDate ? '#1A1A2E' : '#777777' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {startDate ? format(startDate, 'PPP') : (fr ? 'Choisir la date de début' : 'Pick start date')}
@@ -523,7 +523,7 @@ export function RentalPage() {
 
                   {/* End Date */}
                   <div>
-                    <Label className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Date de fin *' : 'End Date *'}
                     </Label>
                     <Popover>
@@ -531,7 +531,7 @@ export function RentalPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: endDate ? '#121212' : '#7A6F66' }}
+                          style={{ color: endDate ? '#1A1A2E' : '#777777' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {endDate ? format(endDate, 'PPP') : (fr ? 'Choisir la date de fin' : 'Pick end date')}
@@ -556,32 +556,32 @@ export function RentalPage() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     className="mt-6 p-4 rounded-xl"
-                    style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', border: '1px solid #A68F59' }}
+                    style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)', border: '1px solid #D4A843' }}
                   >
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span style={{ color: '#121212' }}>{fr ? 'Tarif quotidien :' : 'Daily Rate:'}</span>
-                        <span style={{ color: '#121212' }}>${pricing.daily}{fr ? '/jour' : '/day'}</span>
+                        <span style={{ color: '#1A1A2E' }}>{fr ? 'Tarif quotidien :' : 'Daily Rate:'}</span>
+                        <span style={{ color: '#1A1A2E' }}>${pricing.daily}{fr ? '/jour' : '/day'}</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span style={{ color: '#121212' }}>{fr ? 'Durée de location :' : 'Rental Duration:'}</span>
-                        <span style={{ color: '#121212' }}>{pricing.days} {fr ? (pricing.days > 1 ? 'jours' : 'jour') : `day${pricing.days > 1 ? 's' : ''}`}</span>
+                        <span style={{ color: '#1A1A2E' }}>{fr ? 'Durée de location :' : 'Rental Duration:'}</span>
+                        <span style={{ color: '#1A1A2E' }}>{pricing.days} {fr ? (pricing.days > 1 ? 'jours' : 'jour') : `day${pricing.days > 1 ? 's' : ''}`}</span>
                       </div>
                       {pricing.discount > 0 && (
                         <div className="flex justify-between items-center">
-                          <span style={{ color: '#B1643B' }}>{fr ? 'Rabais multi-jours :' : 'Multi-day Discount:'}</span>
-                          <span style={{ color: '#B1643B' }}>-{pricing.discount}%</span>
+                          <span style={{ color: '#C0392B' }}>{fr ? 'Rabais multi-jours :' : 'Multi-day Discount:'}</span>
+                          <span style={{ color: '#C0392B' }}>-{pricing.discount}%</span>
                         </div>
                       )}
-                      <div className="flex justify-between items-center pt-2 border-t" style={{ borderColor: '#A68F59' }}>
-                        <span className="font-medium" style={{ color: '#121212' }}>{fr ? 'Coût total de location :' : 'Total Rental Cost:'}</span>
-                        <span className="text-xl font-medium" style={{ color: '#A68F59' }}>${pricing.total} CAD</span>
+                      <div className="flex justify-between items-center pt-2 border-t" style={{ borderColor: '#D4A843' }}>
+                        <span className="font-medium" style={{ color: '#1A1A2E' }}>{fr ? 'Coût total de location :' : 'Total Rental Cost:'}</span>
+                        <span className="text-xl font-medium" style={{ color: '#D4A843' }}>${pricing.total} CAD</span>
                       </div>
-                      <div className="flex justify-between items-center pt-2 border-t" style={{ borderColor: '#A68F59' }}>
-                        <span className="font-medium" style={{ color: '#B1643B' }}>{fr ? 'Dépôt de garantie :' : 'Security Deposit:'}</span>
-                        <span className="text-lg font-medium" style={{ color: '#B1643B' }}>${pricing.deposit} CAD</span>
+                      <div className="flex justify-between items-center pt-2 border-t" style={{ borderColor: '#D4A843' }}>
+                        <span className="font-medium" style={{ color: '#C0392B' }}>{fr ? 'Dépôt de garantie :' : 'Security Deposit:'}</span>
+                        <span className="text-lg font-medium" style={{ color: '#C0392B' }}>${pricing.deposit} CAD</span>
                       </div>
-                      <p className="text-xs pt-2" style={{ color: '#7A6F66' }}>
+                      <p className="text-xs pt-2" style={{ color: '#777777' }}>
                         {fr ? "Le dépôt est entièrement remboursable au retour de l'équipement en bon état" : 'Deposit is fully refundable upon equipment return in good condition'}
                       </p>
                     </div>
@@ -590,15 +590,15 @@ export function RentalPage() {
               </div>
 
               {/* Contact Information */}
-              <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+              <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Vos informations' : 'Your Information'}
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
-                    <Label htmlFor="name" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="name" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Nom complet *' : 'Full Name *'}
                     </Label>
                     <Input
@@ -613,7 +613,7 @@ export function RentalPage() {
 
                   {/* Email */}
                   <div>
-                    <Label htmlFor="email" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="email" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Adresse courriel *' : 'Email Address *'}
                     </Label>
                     <Input
@@ -629,7 +629,7 @@ export function RentalPage() {
 
                   {/* Phone */}
                   <div>
-                    <Label htmlFor="phone" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="phone" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Numéro de téléphone *' : 'Phone Number *'}
                     </Label>
                     <Input
@@ -645,7 +645,7 @@ export function RentalPage() {
 
                   {/* Pickup Location */}
                   <div>
-                    <Label htmlFor="pickupLocation" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="pickupLocation" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Lieu de ramassage préféré' : 'Preferred Pickup Location'}
                     </Label>
                     <Input
@@ -660,15 +660,15 @@ export function RentalPage() {
               </div>
 
               {/* Additional Details */}
-              <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+              <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Détails supplémentaires' : 'Additional Details'}
                 </h2>
 
                 <div className="space-y-6">
                   {/* Purpose */}
                   <div>
-                    <Label htmlFor="purpose" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="purpose" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'But de la location' : 'Purpose of Rental'}
                     </Label>
                     <Input
@@ -682,7 +682,7 @@ export function RentalPage() {
 
                   {/* Special Requests */}
                   <div>
-                    <Label htmlFor="specialRequests" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="specialRequests" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Demandes spéciales ou questions' : 'Special Requests or Questions'}
                     </Label>
                     <Textarea
@@ -702,10 +702,10 @@ export function RentalPage() {
                       onCheckedChange={(checked) => setFormData({ ...formData, hasInsurance: checked as boolean })}
                     />
                     <div>
-                      <Label htmlFor="hasInsurance" className="cursor-pointer" style={{ color: '#121212' }}>
+                      <Label htmlFor="hasInsurance" className="cursor-pointer" style={{ color: '#1A1A2E' }}>
                         {fr ? "J'ai une couverture d'assurance pour l'équipement" : 'I have equipment insurance coverage'}
                       </Label>
-                      <p className="text-xs mt-1" style={{ color: '#7A6F66' }}>
+                      <p className="text-xs mt-1" style={{ color: '#777777' }}>
                         {fr ? 'Facultatif, mais recommandé pour les locations de grande valeur' : 'Optional but recommended for high-value rentals'}
                       </p>
                     </div>
@@ -720,10 +720,10 @@ export function RentalPage() {
                       required
                     />
                     <div>
-                      <Label htmlFor="agreedToTerms" className="cursor-pointer" style={{ color: '#121212' }}>
+                      <Label htmlFor="agreedToTerms" className="cursor-pointer" style={{ color: '#1A1A2E' }}>
                         {fr ? "J'accepte les conditions de location *" : 'I agree to the rental terms and conditions *'}
                       </Label>
-                      <p className="text-xs mt-1" style={{ color: '#7A6F66' }}>
+                      <p className="text-xs mt-1" style={{ color: '#777777' }}>
                         {fr ? 'Y compris la politique de dommages, les exigences de retour et les conditions du dépôt de garantie' : 'Including damage policy, return requirements, and security deposit terms'}
                       </p>
                     </div>
@@ -746,7 +746,7 @@ export function RentalPage() {
                   type="submit"
                   disabled={isSubmitting}
                   className="flex-1 h-14 text-base group"
-                  style={{ backgroundColor: '#121212' }}
+                  style={{ backgroundColor: '#1A1A2E' }}
                 >
                   {isSubmitting ? (
                     <>
@@ -770,7 +770,7 @@ export function RentalPage() {
                 </Button>
               </div>
 
-              <p className="text-xs text-center" style={{ color: '#7A6F66' }}>
+              <p className="text-xs text-center" style={{ color: '#777777' }}>
                 {fr ? "En soumettant ce formulaire, vous acceptez d'être contacté par CREOVA au sujet de votre demande de location d'équipement. Nous répondons généralement dans les 24 heures pour confirmer la disponibilité." : 'By submitting this form, you agree to be contacted by CREOVA regarding your equipment rental request. We typically respond within 24 hours to confirm availability.'}
               </p>
             </div>
@@ -779,9 +779,9 @@ export function RentalPage() {
       </section>
 
       {/* Rental Terms */}
-      <section className="py-16" style={{ backgroundColor: '#121212' }}>
+      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl text-center mb-12" style={{ color: '#F5F1EB' }}>
+          <h2 className="text-3xl md:text-4xl text-center mb-12" style={{ color: '#F8F9FA' }}>
             {fr ? 'Conditions et politiques de location' : 'Rental Terms & Policies'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -857,15 +857,15 @@ export function RentalPage() {
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full" style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                    <feature.icon className="w-6 h-6" style={{ color: '#A68F59' }} />
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full" style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
+                    <feature.icon className="w-6 h-6" style={{ color: '#D4A843' }} />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg mb-2" style={{ color: '#F5F1EB' }}>
+                  <h3 className="text-lg mb-2" style={{ color: '#F8F9FA' }}>
                     {feature.title}
                   </h3>
-                  <p style={{ color: '#E3DCD3' }}>
+                  <p style={{ color: '#E0E0E0' }}>
                     {feature.description}
                   </p>
                 </div>

@@ -225,7 +225,7 @@ export function BookingPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#F5F1EB' }}>
+      <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#F8F9FA' }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -234,19 +234,19 @@ export function BookingPage() {
         >
           <div
             className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
-            style={{ backgroundColor: 'rgba(166,143,89,0.12)', border: '1px solid rgba(166,143,89,0.3)' }}
+            style={{ backgroundColor: 'rgba(212,168,67,0.12)', border: '1px solid rgba(212,168,67,0.3)' }}
           >
-            <CheckCircle2 className="w-10 h-10" style={{ color: '#A68F59' }} />
+            <CheckCircle2 className="w-10 h-10" style={{ color: '#D4A843' }} />
           </div>
-          <h1 className="text-3xl font-light mb-3" style={{ color: '#121212' }}>{fr ? 'Demande de réservation reçue' : 'Booking Request Received'}</h1>
-          <p className="text-base mb-8 leading-relaxed" style={{ color: '#7A6F66' }}>
+          <h1 className="text-3xl font-light mb-3" style={{ color: '#1A1A2E' }}>{fr ? 'Demande de réservation reçue' : 'Booking Request Received'}</h1>
+          <p className="text-base mb-8 leading-relaxed" style={{ color: '#777777' }}>
             {fr ? 'Merci ! Nous vous joindrons dans les 24 heures pour confirmer votre séance et discuter des détails.' : "Thank you! We'll reach out within 24 hours to confirm your session and discuss details."}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button
               onClick={() => navigate('/')}
               className="px-8 py-3 rounded-xl"
-              style={{ backgroundColor: '#121212', color: '#F5F1EB' }}
+              style={{ backgroundColor: '#1A1A2E', color: '#F8F9FA' }}
             >
               {fr ? "Retour à l'accueil" : 'Back to Home'}
             </Button>
@@ -264,20 +264,20 @@ export function BookingPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#F8F9FA' }}>
       <PageSEO
         title="Book a Session"
         description="Book your photography, videography, brand design, or social media session with CREOVA. Professional creative services across Ontario starting from $450."
       path="/booking"
       />
       {/* Hero — Editorial asymmetric */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A', minHeight: '400px' }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', minHeight: '400px' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(166,143,89,0.07) 0%, transparent 60%),
-                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(177,100,59,0.05) 0%, transparent 60%)`
+          background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
+                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(192,57,43,0.05) 0%, transparent 60%)`
         }} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.2)' }} />
-        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
+        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-[1fr_auto] gap-0 items-center py-14 sm:py-20">
@@ -288,7 +288,7 @@ export function BookingPage() {
                 variant="ghost"
                 onClick={() => navigate('/pricing')}
                 className="mb-8 text-xs px-0 tracking-widest uppercase"
-                style={{ color: 'rgba(166,143,89,0.6)' }}
+                style={{ color: 'rgba(212,168,67,0.6)' }}
               >
                 <ArrowLeft className="w-3.5 h-3.5 mr-2" />
                 {fr ? 'Retour aux tarifs' : 'Back to Pricing'}
@@ -300,8 +300,8 @@ export function BookingPage() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center gap-3 mb-6"
               >
-                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Services créatifs professionnels' : 'Professional Creative Services'}</span>
+                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Services créatifs professionnels' : 'Professional Creative Services'}</span>
               </motion.div>
 
               {/* MASSIVE "Book" */}
@@ -310,7 +310,7 @@ export function BookingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 className="font-light leading-none tracking-tighter"
-                style={{ fontSize: 'clamp(64px, 12vw, 160px)', color: '#F5F1EB' }}
+                style={{ fontSize: 'clamp(64px, 12vw, 160px)', color: '#F8F9FA' }}
               >
                 {fr ? 'Réservez.' : 'Book.'}
               </motion.h1>
@@ -323,7 +323,7 @@ export function BookingPage() {
                 className="italic leading-none tracking-tight mb-8"
                 style={{
                   fontSize: 'clamp(20px, 3.2vw, 42px)',
-                  backgroundImage: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',
@@ -337,7 +337,7 @@ export function BookingPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 className="text-sm font-light max-w-sm"
-                style={{ color: 'rgba(245,241,235,0.4)' }}
+                style={{ color: 'rgba(248,249,250,0.4)' }}
               >
                 {fr ? 'Partagez votre vision — nous répondons dans les 24 heures.' : "Share your vision — we'll respond within 24 hours."}
               </motion.p>
@@ -362,17 +362,17 @@ export function BookingPage() {
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className="flex items-center gap-4 px-5 py-4 rounded-xl"
                   style={{
-                    backgroundColor: 'rgba(245,241,235,0.04)',
-                    border: '1px solid rgba(166,143,89,0.12)',
+                    backgroundColor: 'rgba(248,249,250,0.04)',
+                    border: '1px solid rgba(212,168,67,0.12)',
                   }}
                 >
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: 'rgba(166,143,89,0.1)' }}>
-                    <item.icon className="w-4 h-4" style={{ color: '#A68F59' }} />
+                    style={{ backgroundColor: 'rgba(212,168,67,0.1)' }}>
+                    <item.icon className="w-4 h-4" style={{ color: '#D4A843' }} />
                   </div>
                   <div>
-                    <div className="text-sm font-medium" style={{ color: '#F5F1EB' }}>{item.label}</div>
-                    <p className="text-[11px] mt-0.5" style={{ color: 'rgba(245,241,235,0.3)' }}>{item.desc}</p>
+                    <div className="text-sm font-medium" style={{ color: '#F8F9FA' }}>{item.label}</div>
+                    <p className="text-[11px] mt-0.5" style={{ color: 'rgba(248,249,250,0.3)' }}>{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -382,7 +382,7 @@ export function BookingPage() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
+      <section className="py-16" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.form
             initial={{ opacity: 0, y: 20 }}
@@ -390,15 +390,15 @@ export function BookingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             onSubmit={handleSubmit}
             className="rounded-2xl p-8 md:p-12"
-            style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(18,18,18,0.1)' }}
+            style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(26,26,46,0.1)' }}
           >
             <div className="space-y-8">
               {/* Service Selection */}
               <div>
-                <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>
+                <h2 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Commençons par votre projet' : "Let's Start With Your Project"}
                 </h2>
-                <p className="text-sm mb-4" style={{ color: '#7A6F66' }}>
+                <p className="text-sm mb-4" style={{ color: '#777777' }}>
                   {fr ? 'Choisissez le service qui correspond le mieux à votre vision' : 'Choose the service that best fits your vision'}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -411,13 +411,13 @@ export function BookingPage() {
                         onClick={() => setFormData({ ...formData, service: service.id, package: '' })}
                         className="p-4 rounded-xl border-2 transition-all duration-300 text-left"
                         style={{
-                          borderColor: formData.service === service.id ? '#A68F59' : '#E3DCD3',
-                          backgroundColor: formData.service === service.id ? 'rgba(166, 143, 89, 0.05)' : '#FFFFFF'
+                          borderColor: formData.service === service.id ? '#D4A843' : '#E0E0E0',
+                          backgroundColor: formData.service === service.id ? 'rgba(212, 168, 67, 0.05)' : '#FFFFFF'
                         }}
                       >
                         <div className="flex items-center gap-3">
-                          <Icon className="w-6 h-6" style={{ color: formData.service === service.id ? '#A68F59' : '#121212' }} />
-                          <span className="text-sm font-medium" style={{ color: '#121212' }}>
+                          <Icon className="w-6 h-6" style={{ color: formData.service === service.id ? '#D4A843' : '#1A1A2E' }} />
+                          <span className="text-sm font-medium" style={{ color: '#1A1A2E' }}>
                             {service.name}
                           </span>
                         </div>
@@ -434,7 +434,7 @@ export function BookingPage() {
                   animate={{ opacity: 1, height: 'auto' }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Label htmlFor="package" className="text-base mb-3 block" style={{ color: '#121212' }}>
+                  <Label htmlFor="package" className="text-base mb-3 block" style={{ color: '#1A1A2E' }}>
                     {fr ? 'Choisissez votre forfait *' : 'Choose Your Package *'}
                   </Label>
                   <Select value={formData.package} onValueChange={(value) => setFormData({ ...formData, package: value })}>
@@ -452,18 +452,18 @@ export function BookingPage() {
                 </motion.div>
               )}
 
-              <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <h2 className="text-2xl mb-2" style={{ color: '#121212' }}>
+              <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
+                <h2 className="text-2xl mb-2" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Comment pouvons-nous vous joindre ?' : 'How Can We Reach You?'}
                 </h2>
-                <p className="text-sm mb-6" style={{ color: '#7A6F66' }}>
+                <p className="text-sm mb-6" style={{ color: '#777777' }}>
                   {fr ? 'Nous nous en servirons pour vous envoyer la confirmation de réservation et les détails de la séance' : "We'll use this to send you booking confirmation and session details"}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
-                    <Label htmlFor="name" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="name" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Nom complet *' : 'Full Name *'}
                     </Label>
                     <Input
@@ -479,7 +479,7 @@ export function BookingPage() {
 
                   {/* Email */}
                   <div>
-                    <Label htmlFor="email" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="email" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Adresse courriel *' : 'Email Address *'}
                     </Label>
                     <Input
@@ -496,7 +496,7 @@ export function BookingPage() {
 
                   {/* Phone */}
                   <div>
-                    <Label htmlFor="phone" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="phone" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Numéro de téléphone *' : 'Phone Number *'}
                     </Label>
                     <Input
@@ -513,7 +513,7 @@ export function BookingPage() {
 
                   {/* Date */}
                   <div>
-                    <Label className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Date préférée *' : 'Preferred Date *'}
                     </Label>
                     <Popover>
@@ -521,7 +521,7 @@ export function BookingPage() {
                         <Button
                           variant="outline"
                           className="w-full h-12 justify-start text-left font-normal"
-                          style={{ color: date ? '#121212' : '#7A6F66' }}
+                          style={{ color: date ? '#1A1A2E' : '#777777' }}
                         >
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {date ? format(date, 'PPP') : (fr ? 'Choisir une date' : 'Pick a date')}
@@ -541,7 +541,7 @@ export function BookingPage() {
 
                   {/* Preferred Time */}
                   <div>
-                    <Label htmlFor="preferredTime" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="preferredTime" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Heure préférée' : 'Preferred Time'}
                     </Label>
                     <Select value={formData.preferredTime} onValueChange={(value) => setFormData({ ...formData, preferredTime: value })}>
@@ -559,7 +559,7 @@ export function BookingPage() {
 
                   {/* Location */}
                   <div>
-                    <Label htmlFor="location" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="location" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Lieu/Emplacement' : 'Location/Venue'}
                     </Label>
                     <Input
@@ -575,15 +575,15 @@ export function BookingPage() {
               </div>
 
               {/* Additional Details */}
-              <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+              <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Détails supplémentaires' : 'Additional Details'}
                 </h2>
 
                 <div className="space-y-6">
                   {/* Number of People */}
                   <div>
-                    <Label htmlFor="numberOfPeople" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="numberOfPeople" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Nombre de personnes (le cas échéant)' : 'Number of People (if applicable)'}
                     </Label>
                     <Input
@@ -597,7 +597,7 @@ export function BookingPage() {
 
                   {/* Special Requests */}
                   <div>
-                    <Label htmlFor="specialRequests" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="specialRequests" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Demandes spéciales ou vision' : 'Special Requests or Vision'}
                     </Label>
                     <Textarea
@@ -611,7 +611,7 @@ export function BookingPage() {
 
                   {/* Budget */}
                   <div>
-                    <Label htmlFor="budget" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="budget" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Fourchette budgétaire' : 'Budget Range'}
                     </Label>
                     <Select value={formData.budget} onValueChange={(value) => setFormData({ ...formData, budget: value })}>
@@ -630,7 +630,7 @@ export function BookingPage() {
 
                   {/* How did you hear about us */}
                   <div>
-                    <Label htmlFor="hearAboutUs" className="mb-2 block" style={{ color: '#121212' }}>
+                    <Label htmlFor="hearAboutUs" className="mb-2 block" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Comment avez-vous entendu parler de nous ?' : 'How did you hear about us?'}
                     </Label>
                     <Select value={formData.hearAboutUs} onValueChange={(value) => setFormData({ ...formData, hearAboutUs: value })}>
@@ -651,8 +651,8 @@ export function BookingPage() {
               </div>
 
               {/* CAPTCHA */}
-              <div className="border-t pt-8" style={{ borderColor: '#E3DCD3' }}>
-                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+              <div className="border-t pt-8" style={{ borderColor: '#E0E0E0' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Vérifiez votre réservation' : 'Verify Your Booking'}
                 </h2>
                 <Captcha onVerify={handleCaptchaVerify} onExpire={handleCaptchaExpire} onError={handleCaptchaError} />
@@ -664,7 +664,7 @@ export function BookingPage() {
                   type="submit"
                   disabled={isSubmitting}
                   className="flex-1 h-14 text-base group"
-                  style={{ backgroundColor: '#121212' }}
+                  style={{ backgroundColor: '#1A1A2E' }}
                 >
                   {isSubmitting ? (
                     <>
@@ -688,7 +688,7 @@ export function BookingPage() {
                 </Button>
               </div>
 
-              <p className="text-xs text-center" style={{ color: '#7A6F66' }}>
+              <p className="text-xs text-center" style={{ color: '#777777' }}>
                 {fr ? "En soumettant ce formulaire, vous acceptez d'être contacté par CREOVA au sujet de votre demande de réservation. Nous répondons généralement dans les 24 heures." : 'By submitting this form, you agree to be contacted by CREOVA regarding your booking request. We typically respond within 24 hours.'}
               </p>
             </div>
@@ -697,19 +697,19 @@ export function BookingPage() {
       </section>
 
       {/* Why Book With Us */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(166,143,89,0.07) 0%, transparent 65%)'
+          background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(212,168,67,0.07) 0%, transparent 65%)'
         }} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Notre promesse' : 'Our Promise'}</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Notre promesse' : 'Our Promise'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>{fr ? 'Pourquoi réserver avec CREOVA ?' : 'Why Book With CREOVA?'}</h2>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>{fr ? 'Pourquoi réserver avec CREOVA ?' : 'Why Book With CREOVA?'}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -737,19 +737,19 @@ export function BookingPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 className="p-8 rounded-2xl"
-                style={{ border: '1px solid rgba(166,143,89,0.18)', backgroundColor: 'rgba(166,143,89,0.04)' }}
+                style={{ border: '1px solid rgba(212,168,67,0.18)', backgroundColor: 'rgba(212,168,67,0.04)' }}
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ border: '1px solid rgba(166,143,89,0.3)', backgroundColor: 'rgba(166,143,89,0.08)' }}
+                  style={{ border: '1px solid rgba(212,168,67,0.3)', backgroundColor: 'rgba(212,168,67,0.08)' }}
                 >
-                  <feature.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
+                  <feature.icon className="w-5 h-5" style={{ color: '#D4A843' }} />
                 </div>
-                <div style={{ height: '1px', width: '24px', backgroundColor: 'rgba(166,143,89,0.4)', marginBottom: '16px' }} />
-                <h3 className="text-lg mb-3 tracking-tight" style={{ color: '#F5F1EB' }}>
+                <div style={{ height: '1px', width: '24px', backgroundColor: 'rgba(212,168,67,0.4)', marginBottom: '16px' }} />
+                <h3 className="text-lg mb-3 tracking-tight" style={{ color: '#F8F9FA' }}>
                   {feature.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#7A6F66' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>
                   {feature.description}
                 </p>
               </motion.div>

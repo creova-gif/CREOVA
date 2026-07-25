@@ -5,8 +5,8 @@ import { useLanguage } from '../context/LanguageContext';
 export function CommunityInsights() {
   const { t } = useLanguage();
   const topInterests = [
-    { icon: Camera, label: t('insights.interest1'), percentage: '85%', color: '#B1643B' },
-    { icon: ShoppingBag, label: t('insights.interest2'), percentage: '75%', color: '#A68F59' },
+    { icon: Camera, label: t('insights.interest1'), percentage: '85%', color: '#C0392B' },
+    { icon: ShoppingBag, label: t('insights.interest2'), percentage: '75%', color: '#D4A843' },
     { icon: Calendar, label: t('insights.interest3'), percentage: '70%', color: '#A2542D' },
     { icon: Palette, label: t('insights.interest4'), percentage: '65%', color: '#8A9777' }
   ];
@@ -41,11 +41,11 @@ export function CommunityInsights() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="h-1 w-16 mx-auto mb-8" style={{ backgroundColor: '#B1643B' }}></div>
-          <h2 className="text-3xl md:text-4xl mb-4 tracking-tight" style={{ color: '#121212' }}>
+          <div className="h-1 w-16 mx-auto mb-8" style={{ backgroundColor: '#C0392B' }}></div>
+          <h2 className="text-3xl md:text-4xl mb-4 tracking-tight" style={{ color: '#1A1A2E' }}>
             {t('insights.heading')}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#4A3E36' }}>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#777777' }}>
             {t('insights.sub')}
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export function CommunityInsights() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="text-center p-8 border"
-              style={{ backgroundColor: '#F5F1EB', borderColor: '#E3DCD3' }}
+              style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
             >
               <div 
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -69,7 +69,7 @@ export function CommunityInsights() {
                 <interest.icon className="w-8 h-8" style={{ color: interest.color }} />
               </div>
               <div className="text-3xl mb-2" style={{ color: interest.color }}>{interest.percentage}</div>
-              <div className="text-sm" style={{ color: '#4A3E36' }}>{interest.label}</div>
+              <div className="text-sm" style={{ color: '#777777' }}>{interest.label}</div>
             </motion.div>
           ))}
         </div>
@@ -83,17 +83,17 @@ export function CommunityInsights() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="p-8 border"
-            style={{ backgroundColor: '#F5F1EB', borderColor: '#E3DCD3' }}
+            style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
           >
-            <Heart className="w-8 h-8 mb-4" style={{ color: '#B1643B' }} />
-            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
+            <Heart className="w-8 h-8 mb-4" style={{ color: '#C0392B' }} />
+            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#1A1A2E' }}>
               {t('insights.content.heading')}
             </h3>
             <div className="space-y-3">
               {contentDesires.map((desire, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59' }}></div>
-                  <span style={{ color: '#4A3E36' }}>{desire}</span>
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D4A843' }}></div>
+                  <span style={{ color: '#777777' }}>{desire}</span>
                 </div>
               ))}
             </div>
@@ -106,20 +106,20 @@ export function CommunityInsights() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="p-8 border"
-            style={{ backgroundColor: '#F5F1EB', borderColor: '#E3DCD3' }}
+            style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
           >
-            <Globe className="w-8 h-8 mb-4" style={{ color: '#B1643B' }} />
-            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
+            <Globe className="w-8 h-8 mb-4" style={{ color: '#C0392B' }} />
+            <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#1A1A2E' }}>
               {t('insights.global.heading')}
             </h3>
             <div className="grid grid-cols-1 gap-2">
               {globalReach.slice(0, 8).map((location, index) => (
                 <div key={index} className="flex items-center gap-3 text-sm">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59' }}></div>
-                  <span style={{ color: '#4A3E36' }}>{location}</span>
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D4A843' }}></div>
+                  <span style={{ color: '#777777' }}>{location}</span>
                 </div>
               ))}
-              <div className="text-sm mt-2" style={{ color: '#A68F59' }}>{t('insights.global.more')}</div>
+              <div className="text-sm mt-2" style={{ color: '#D4A843' }}>{t('insights.global.more')}</div>
             </div>
           </motion.div>
         </div>
@@ -131,13 +131,13 @@ export function CommunityInsights() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="mt-12 text-center p-8"
-          style={{ backgroundColor: '#121212' }}
+          style={{ backgroundColor: '#1A1A2E' }}
         >
-          <TrendingUp className="w-10 h-10 mx-auto mb-4" style={{ color: '#A68F59' }} />
-          <h3 className="text-2xl mb-3" style={{ color: '#F5F1EB' }}>
+          <TrendingUp className="w-10 h-10 mx-auto mb-4" style={{ color: '#D4A843' }} />
+          <h3 className="text-2xl mb-3" style={{ color: '#F8F9FA' }}>
             {t('insights.finding.heading')}
           </h3>
-          <p className="text-lg" style={{ color: '#E3DCD3' }}>
+          <p className="text-lg" style={{ color: '#E0E0E0' }}>
             {t('insights.finding.desc')}
           </p>
         </motion.div>

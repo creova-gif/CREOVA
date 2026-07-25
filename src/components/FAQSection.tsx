@@ -25,26 +25,26 @@ export function FAQSection({
   const colors = {
     light: {
       bg: '#FFFFFF',
-      border: '#E3DCD3',
-      text: '#121212',
-      subtext: '#7A6F66',
-      accent: '#A68F59',
-      hoverBg: '#F5F1EB'
+      border: '#E0E0E0',
+      text: '#1A1A2E',
+      subtext: '#777777',
+      accent: '#D4A843',
+      hoverBg: '#F8F9FA'
     },
     dark: {
-      bg: '#121212',
-      border: '#2A2A2A',
-      text: '#F5F1EB',
-      subtext: '#E3DCD3',
-      accent: '#A68F59',
-      hoverBg: 'rgba(166, 143, 89, 0.1)'
+      bg: '#1A1A2E',
+      border: '#22314F',
+      text: '#F8F9FA',
+      subtext: '#E0E0E0',
+      accent: '#D4A843',
+      hoverBg: 'rgba(212, 168, 67, 0.1)'
     }
   };
 
   const theme = colors[variant];
 
   return (
-    <section className="py-20" style={{ backgroundColor: variant === 'light' ? '#F5F1EB' : '#0F0F0F' }}>
+    <section className="py-20" style={{ backgroundColor: variant === 'light' ? '#F8F9FA' : '#0F0F0F' }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -145,8 +145,8 @@ export function FAQSection({
             href="mailto:support@creova.one"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg"
             style={{ 
-              backgroundColor: '#121212',
-              color: '#F5F1EB'
+              backgroundColor: '#1A1A2E',
+              color: '#F8F9FA'
             }}
           >
             Contact Support

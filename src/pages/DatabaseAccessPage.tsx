@@ -121,16 +121,16 @@ WHERE value::text LIKE '%customer@email.com%';
   ];
 
   const dataTypes = [
-    { prefix: 'contact_', type: 'Contact Forms', color: '#A68F59' },
-    { prefix: 'collaboration_', type: 'Collaboration Requests', color: '#B1643B' },
-    { prefix: 'order_', type: 'Shop Orders', color: '#A68F59' },
-    { prefix: 'ticket_', type: 'Event Tickets', color: '#B1643B' },
-    { prefix: 'membership_', type: 'Memberships', color: '#A68F59' },
-    { prefix: 'rental_', type: 'Equipment Rentals', color: '#B1643B' },
-    { prefix: 'digital_', type: 'Digital Products', color: '#A68F59' },
-    { prefix: 'notification_', type: 'Email Signups', color: '#B1643B' },
-    { prefix: 'booking_', type: 'Service Bookings', color: '#A68F59' },
-    { prefix: 'preorder_', type: 'Pre-orders', color: '#B1643B' }
+    { prefix: 'contact_', type: 'Contact Forms', color: '#D4A843' },
+    { prefix: 'collaboration_', type: 'Collaboration Requests', color: '#C0392B' },
+    { prefix: 'order_', type: 'Shop Orders', color: '#D4A843' },
+    { prefix: 'ticket_', type: 'Event Tickets', color: '#C0392B' },
+    { prefix: 'membership_', type: 'Memberships', color: '#D4A843' },
+    { prefix: 'rental_', type: 'Equipment Rentals', color: '#C0392B' },
+    { prefix: 'digital_', type: 'Digital Products', color: '#D4A843' },
+    { prefix: 'notification_', type: 'Email Signups', color: '#C0392B' },
+    { prefix: 'booking_', type: 'Service Bookings', color: '#D4A843' },
+    { prefix: 'preorder_', type: 'Pre-orders', color: '#C0392B' }
   ];
 
   return (
@@ -141,23 +141,23 @@ WHERE value::text LIKE '%customer@email.com%';
         path="/admin/database"
         noIndex
       />
-      <div className="min-h-screen" style={{ backgroundColor: '#F5F1EB' }}>
+      <div className="min-h-screen" style={{ backgroundColor: '#F8F9FA' }}>
         {/* Header */}
-        <div className="border-b" style={{ backgroundColor: '#FFFFFF', borderColor: '#E3DCD3' }}>
+        <div className="border-b" style={{ backgroundColor: '#FFFFFF', borderColor: '#E0E0E0' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div 
                   className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}
+                  style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}
                 >
-                  <Database className="w-8 h-8" style={{ color: '#A68F59' }} />
+                  <Database className="w-8 h-8" style={{ color: '#D4A843' }} />
                 </div>
                 <div>
-                  <h1 className="text-3xl mb-1" style={{ color: '#121212' }}>
+                  <h1 className="text-3xl mb-1" style={{ color: '#1A1A2E' }}>
                     Supabase Database Access
                   </h1>
-                  <p style={{ color: '#7A6F66' }}>
+                  <p style={{ color: '#777777' }}>
                     Direct access to your CREOVA data
                   </p>
                 </div>
@@ -165,7 +165,7 @@ WHERE value::text LIKE '%customer@email.com%';
               <Button
                 onClick={() => window.open('https://supabase.com/dashboard', '_blank')}
                 className="flex items-center gap-2"
-                style={{ backgroundColor: '#121212' }}
+                style={{ backgroundColor: '#1A1A2E' }}
               >
                 Open Supabase Dashboard
                 <ExternalLink className="w-4 h-4" />
@@ -181,19 +181,19 @@ WHERE value::text LIKE '%customer@email.com%';
             animate={{ opacity: 1, y: 0 }}
             className="mb-12"
           >
-            <Card style={{ backgroundColor: '#FFFFFF', borderColor: '#E3DCD3' }}>
+            <Card style={{ backgroundColor: '#FFFFFF', borderColor: '#E0E0E0' }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5" style={{ color: '#A68F59' }} />
+                  <CheckCircle className="w-5 h-5" style={{ color: '#D4A843' }} />
                   Quick Access
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#F5F1EB' }}>
-                    <div className="text-sm mb-2" style={{ color: '#7A6F66' }}>Database Table</div>
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
+                    <div className="text-sm mb-2" style={{ color: '#777777' }}>Database Table</div>
                     <div className="flex items-center justify-between gap-4">
-                      <code className="text-lg" style={{ color: '#121212' }}>kv_store_feacf0d8</code>
+                      <code className="text-lg" style={{ color: '#1A1A2E' }}>kv_store_feacf0d8</code>
                       <Button
                         size="sm"
                         variant="outline"
@@ -204,10 +204,10 @@ WHERE value::text LIKE '%customer@email.com%';
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#F5F1EB' }}>
-                    <div className="text-sm mb-2" style={{ color: '#7A6F66' }}>Dashboard URL</div>
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#F8F9FA' }}>
+                    <div className="text-sm mb-2" style={{ color: '#777777' }}>Dashboard URL</div>
                     <div className="flex items-center justify-between gap-4">
-                      <div className="text-sm" style={{ color: '#121212' }}>supabase.com/dashboard</div>
+                      <div className="text-sm" style={{ color: '#1A1A2E' }}>supabase.com/dashboard</div>
                       <Button
                         size="sm"
                         variant="outline"
@@ -221,13 +221,13 @@ WHERE value::text LIKE '%customer@email.com%';
 
                 <div 
                   className="p-4 rounded-xl border-l-4"
-                  style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)', borderColor: '#A68F59' }}
+                  style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)', borderColor: '#D4A843' }}
                 >
                   <div className="flex items-start gap-3">
-                    <Database className="w-5 h-5 mt-0.5" style={{ color: '#A68F59' }} />
+                    <Database className="w-5 h-5 mt-0.5" style={{ color: '#D4A843' }} />
                     <div>
-                      <div className="mb-1" style={{ color: '#121212' }}>How to Access:</div>
-                      <ol className="text-sm space-y-1 list-decimal list-inside" style={{ color: '#7A6F66' }}>
+                      <div className="mb-1" style={{ color: '#1A1A2E' }}>How to Access:</div>
+                      <ol className="text-sm space-y-1 list-decimal list-inside" style={{ color: '#777777' }}>
                         <li>Go to supabase.com/dashboard</li>
                         <li>Login to your account</li>
                         <li>Select your CREOVA project</li>
@@ -248,7 +248,7 @@ WHERE value::text LIKE '%customer@email.com%';
             transition={{ delay: 0.1 }}
             className="mb-12"
           >
-            <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+            <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
               Data Types in Your Database
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -267,16 +267,16 @@ WHERE value::text LIKE '%customer@email.com%';
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm mb-1" style={{ color: '#7A6F66' }}>
+                      <div className="text-sm mb-1" style={{ color: '#777777' }}>
                         Key Prefix
                       </div>
                       <code className="text-sm" style={{ color: item.color }}>
                         {item.prefix}
                       </code>
                     </div>
-                    <Copy className="w-4 h-4" style={{ color: '#7A6F66' }} />
+                    <Copy className="w-4 h-4" style={{ color: '#777777' }} />
                   </div>
-                  <div className="mt-2" style={{ color: '#121212' }}>
+                  <div className="mt-2" style={{ color: '#1A1A2E' }}>
                     {item.type}
                   </div>
                 </motion.div>
@@ -290,7 +290,7 @@ WHERE value::text LIKE '%customer@email.com%';
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+            <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
               Ready-to-Use SQL Queries
             </h2>
             <div className="grid gap-6">
@@ -301,17 +301,17 @@ WHERE value::text LIKE '%customer@email.com%';
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Card style={{ backgroundColor: '#FFFFFF', borderColor: '#E3DCD3' }}>
+                  <Card style={{ backgroundColor: '#FFFFFF', borderColor: '#E0E0E0' }}>
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <query.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
+                          <query.icon className="w-5 h-5" style={{ color: '#D4A843' }} />
                           {query.title}
                         </div>
                         <Button
                           size="sm"
                           onClick={() => copyToClipboard(query.sql, 'Query')}
-                          style={{ backgroundColor: '#121212' }}
+                          style={{ backgroundColor: '#1A1A2E' }}
                         >
                           <Copy className="w-4 h-4 mr-2" />
                           Copy Query
@@ -341,10 +341,10 @@ WHERE value::text LIKE '%customer@email.com%';
             transition={{ delay: 0.3 }}
             className="mt-12"
           >
-            <Card style={{ backgroundColor: '#FFFFFF', borderColor: '#E3DCD3' }}>
+            <Card style={{ backgroundColor: '#FFFFFF', borderColor: '#E0E0E0' }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <FileText className="w-5 h-5" style={{ color: '#A68F59' }} />
+                  <FileText className="w-5 h-5" style={{ color: '#D4A843' }} />
                   Additional Resources
                 </CardTitle>
               </CardHeader>
@@ -355,11 +355,11 @@ WHERE value::text LIKE '%customer@email.com%';
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-xl border-2 hover:shadow-md transition-all"
-                    style={{ borderColor: '#E3DCD3' }}
+                    style={{ borderColor: '#E0E0E0' }}
                   >
-                    <Code className="w-6 h-6 mb-2" style={{ color: '#A68F59' }} />
-                    <div className="mb-1" style={{ color: '#121212' }}>Supabase Docs</div>
-                    <div className="text-sm" style={{ color: '#7A6F66' }}>
+                    <Code className="w-6 h-6 mb-2" style={{ color: '#D4A843' }} />
+                    <div className="mb-1" style={{ color: '#1A1A2E' }}>Supabase Docs</div>
+                    <div className="text-sm" style={{ color: '#777777' }}>
                       Complete documentation
                     </div>
                   </a>
@@ -369,11 +369,11 @@ WHERE value::text LIKE '%customer@email.com%';
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-xl border-2 hover:shadow-md transition-all"
-                    style={{ borderColor: '#E3DCD3' }}
+                    style={{ borderColor: '#E0E0E0' }}
                   >
-                    <Database className="w-6 h-6 mb-2" style={{ color: '#B1643B' }} />
-                    <div className="mb-1" style={{ color: '#121212' }}>SQL Reference</div>
-                    <div className="text-sm" style={{ color: '#7A6F66' }}>
+                    <Database className="w-6 h-6 mb-2" style={{ color: '#C0392B' }} />
+                    <div className="mb-1" style={{ color: '#1A1A2E' }}>SQL Reference</div>
+                    <div className="text-sm" style={{ color: '#777777' }}>
                       Learn SQL queries
                     </div>
                   </a>
@@ -384,11 +384,11 @@ WHERE value::text LIKE '%customer@email.com%';
                       toast.success('Opening documentation in new tab');
                     }}
                     className="p-4 rounded-xl border-2 hover:shadow-md transition-all text-left"
-                    style={{ borderColor: '#E3DCD3' }}
+                    style={{ borderColor: '#E0E0E0' }}
                   >
-                    <Download className="w-6 h-6 mb-2" style={{ color: '#A68F59' }} />
-                    <div className="mb-1" style={{ color: '#121212' }}>Full Guide</div>
-                    <div className="text-sm" style={{ color: '#7A6F66' }}>
+                    <Download className="w-6 h-6 mb-2" style={{ color: '#D4A843' }} />
+                    <div className="mb-1" style={{ color: '#1A1A2E' }}>Full Guide</div>
+                    <div className="text-sm" style={{ color: '#777777' }}>
                       View complete documentation
                     </div>
                   </button>

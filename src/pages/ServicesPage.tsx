@@ -206,7 +206,7 @@ export function ServicesPage() {
     : services.filter(s => s.category === activeTab);
 
   return (
-    <div style={{ backgroundColor: '#F5F1EB' }}>
+    <div style={{ backgroundColor: '#F8F9FA' }}>
       <PageSEO
         title="Creative Services"
         description="Professional photography, videography, brand design, social media management, and event coverage for BIPOC entrepreneurs and brands across Ontario."
@@ -216,21 +216,21 @@ export function ServicesPage() {
       {/* Hero — Asymmetric editorial split */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: '#0A0A0A', minHeight: '480px' }}
+        style={{ backgroundColor: '#1A1A2E', minHeight: '480px' }}
       >
         {/* Warm left accent stripe */}
         <div
           className="absolute left-0 top-0 bottom-0 w-1"
-          style={{ background: 'linear-gradient(to bottom, #A68F59, #B1643B)' }}
+          style={{ background: 'linear-gradient(to bottom, #D4A843, #C0392B)' }}
         />
         {/* Subtle diagonal rule */}
         <div
           className="absolute inset-0 pointer-events-none hidden lg:block"
           style={{
-            background: 'linear-gradient(105deg, rgba(166,143,89,0.04) 0%, transparent 50%)'
+            background: 'linear-gradient(105deg, rgba(212,168,67,0.04) 0%, transparent 50%)'
           }}
         />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.18)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.18)' }} />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
           <div className="flex flex-col lg:flex-row lg:items-end lg:gap-16">
@@ -243,8 +243,8 @@ export function ServicesPage() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center gap-3 mb-8"
               >
-                <div style={{ width: '32px', height: '1px', backgroundColor: '#A68F59' }} />
-                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>
+                <div style={{ width: '32px', height: '1px', backgroundColor: '#D4A843' }} />
+                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>
                   {fr ? 'Histoires créatives' : 'Creative Stories'}
                 </span>
               </motion.div>
@@ -256,11 +256,11 @@ export function ServicesPage() {
                 className="font-light leading-none tracking-tighter"
                 style={{ fontSize: 'clamp(48px, 9vw, 116px)' }}
               >
-                <span className="block" style={{ color: '#F5F1EB' }}>{fr ? 'Ce qu’on' : 'What'}</span>
+                <span className="block" style={{ color: '#F8F9FA' }}>{fr ? 'Ce qu’on' : 'What'}</span>
                 <span
                   className="block"
                   style={{
-                    backgroundImage: 'linear-gradient(95deg, #A68F59 0%, #E3DCD3 65%)',
+                    backgroundImage: 'linear-gradient(95deg, #D4A843 0%, #E0E0E0 65%)',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
                     color: 'transparent',
@@ -275,7 +275,7 @@ export function ServicesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="mt-6 text-base leading-relaxed max-w-sm"
-                style={{ color: 'rgba(245,241,235,0.45)' }}
+                style={{ color: 'rgba(248,249,250,0.45)' }}
               >
                 {fr ? "Photographie, vidéo, image de marque, médias sociaux et événements — pour les marques BIPOC partout en Ontario." : 'Photography, video, brand design, social media, and events — for BIPOC brands across Ontario.'}
               </motion.p>
@@ -299,11 +299,11 @@ export function ServicesPage() {
                 <div
                   key={label}
                   className="flex flex-col gap-2 p-3 rounded-xl border"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.03)', borderColor: 'rgba(166,143,89,0.12)' }}
+                  style={{ backgroundColor: 'rgba(255,255,255,0.03)', borderColor: 'rgba(212,168,67,0.12)' }}
                 >
-                  <Icon className="w-4 h-4" style={{ color: '#A68F59' }} />
-                  <div className="text-lg font-light" style={{ color: '#F5F1EB' }}>{n}</div>
-                  <div className="text-[9px] tracking-[0.25em] uppercase leading-tight" style={{ color: 'rgba(245,241,235,0.35)' }}>
+                  <Icon className="w-4 h-4" style={{ color: '#D4A843' }} />
+                  <div className="text-lg font-light" style={{ color: '#F8F9FA' }}>{n}</div>
+                  <div className="text-[9px] tracking-[0.25em] uppercase leading-tight" style={{ color: 'rgba(248,249,250,0.35)' }}>
                     {label}
                   </div>
                 </div>
@@ -314,7 +314,7 @@ export function ServicesPage() {
       </section>
 
       {/* Service Category Tabs — refined */}
-      <section id="services-tabs" className="sticky top-16 z-40 border-b" style={{ backgroundColor: '#0E0E0E', borderColor: 'rgba(166,143,89,0.2)' }}>
+      <section id="services-tabs" className="sticky top-16 z-40 border-b" style={{ backgroundColor: '#1A1A2E', borderColor: 'rgba(212,168,67,0.2)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto gap-1 py-3 scrollbar-hide">
             {tabs.map((tab) => (
@@ -332,19 +332,19 @@ export function ServicesPage() {
                 }}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-lg whitespace-nowrap transition-all duration-300"
                 style={{
-                  backgroundColor: activeTab === tab.id ? 'rgba(166,143,89,0.15)' : 'transparent',
-                  color: activeTab === tab.id ? '#A68F59' : '#4A3E36',
-                  border: activeTab === tab.id ? '1px solid rgba(166,143,89,0.4)' : '1px solid transparent',
+                  backgroundColor: activeTab === tab.id ? 'rgba(212,168,67,0.15)' : 'transparent',
+                  color: activeTab === tab.id ? '#D4A843' : '#777777',
+                  border: activeTab === tab.id ? '1px solid rgba(212,168,67,0.4)' : '1px solid transparent',
                 }}
                 onMouseEnter={(e) => {
                   if (activeTab !== tab.id) {
-                    e.currentTarget.style.color = '#A68F59';
-                    e.currentTarget.style.borderColor = 'rgba(166,143,89,0.2)';
+                    e.currentTarget.style.color = '#D4A843';
+                    e.currentTarget.style.borderColor = 'rgba(212,168,67,0.2)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (activeTab !== tab.id) {
-                    e.currentTarget.style.color = '#4A3E36';
+                    e.currentTarget.style.color = '#777777';
                     e.currentTarget.style.borderColor = 'transparent';
                   }
                 }}
@@ -358,9 +358,9 @@ export function ServicesPage() {
       </section>
 
       {/* Services List — editorial numbered list */}
-      <section id="services-list" style={{ backgroundColor: '#0A0A0A' }}>
+      <section id="services-list" style={{ backgroundColor: '#1A1A2E' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div style={{ borderTop: '1px solid rgba(166,143,89,0.15)' }}>
+          <div style={{ borderTop: '1px solid rgba(212,168,67,0.15)' }}>
             {filteredServices.map((service, index) => (
               <motion.div
                 key={index}
@@ -372,13 +372,13 @@ export function ServicesPage() {
                 onMouseEnter={() => setHoveredService(index)}
                 onMouseLeave={() => setHoveredService(null)}
                 className="relative cursor-pointer"
-                style={{ borderBottom: '1px solid rgba(166,143,89,0.15)' }}
+                style={{ borderBottom: '1px solid rgba(212,168,67,0.15)' }}
               >
                 {/* Hover wash */}
                 <div
                   className="absolute inset-0 pointer-events-none transition-opacity duration-400"
                   style={{
-                    background: 'linear-gradient(90deg, rgba(166,143,89,0.05) 0%, transparent 70%)',
+                    background: 'linear-gradient(90deg, rgba(212,168,67,0.05) 0%, transparent 70%)',
                     opacity: hoveredService === index ? 1 : 0
                   }}
                 />
@@ -388,7 +388,7 @@ export function ServicesPage() {
                   {/* Number */}
                   <span
                     className="text-xs tracking-[0.4em] flex-shrink-0 w-8 transition-colors duration-300"
-                    style={{ color: hoveredService === index ? '#A68F59' : 'rgba(166,143,89,0.3)' }}
+                    style={{ color: hoveredService === index ? '#D4A843' : 'rgba(212,168,67,0.3)' }}
                   >
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -398,7 +398,7 @@ export function ServicesPage() {
                     className="flex-1 font-light tracking-tight transition-colors duration-300"
                     style={{
                       fontSize: 'clamp(1.4rem, 3vw, 2.4rem)',
-                      color: hoveredService === index ? '#F5F1EB' : 'rgba(245,241,235,0.55)'
+                      color: hoveredService === index ? '#F8F9FA' : 'rgba(248,249,250,0.55)'
                     }}
                   >
                     {service.title}
@@ -408,7 +408,7 @@ export function ServicesPage() {
                   <div className="flex items-center gap-4 flex-shrink-0">
                     <span
                       className="text-[10px] tracking-[0.4em] uppercase hidden md:block transition-opacity duration-300"
-                      style={{ color: '#A68F59', opacity: hoveredService === index ? 1 : 0.35 }}
+                      style={{ color: '#D4A843', opacity: hoveredService === index ? 1 : 0.35 }}
                     >
                       {fr
                         ? ({ photography: 'Photographie', video: 'Vidéo', brand: 'Image de marque', social: 'Médias sociaux', events: 'Événements', rental: 'Équipement' } as Record<string, string>)[service.category]
@@ -417,12 +417,12 @@ export function ServicesPage() {
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300"
                       style={{
-                        border: '1px solid rgba(166,143,89,0.25)',
-                        backgroundColor: hoveredService === index ? 'rgba(166,143,89,0.12)' : 'transparent',
+                        border: '1px solid rgba(212,168,67,0.25)',
+                        backgroundColor: hoveredService === index ? 'rgba(212,168,67,0.12)' : 'transparent',
                         transform: hoveredService === index ? 'translateX(4px)' : 'translateX(0)'
                       }}
                     >
-                      <ArrowRight className="w-3.5 h-3.5" style={{ color: '#A68F59' }} />
+                      <ArrowRight className="w-3.5 h-3.5" style={{ color: '#D4A843' }} />
                     </div>
                   </div>
                 </div>
@@ -440,24 +440,24 @@ export function ServicesPage() {
                       <div className="pb-8 pl-[3.25rem] md:pl-[4.5rem] flex flex-col sm:flex-row sm:items-center gap-5">
                         <p
                           className="text-sm leading-relaxed flex-1 max-w-xl"
-                          style={{ color: 'rgba(245,241,235,0.45)' }}
+                          style={{ color: 'rgba(248,249,250,0.45)' }}
                         >
                           {service.description}
                         </p>
                         <div className="flex gap-3 flex-shrink-0">
                           <Button
                             className="text-sm px-6 py-4 rounded-xl transition-all duration-300"
-                            style={{ backgroundColor: 'rgba(166,143,89,0.12)', color: '#A68F59', border: '1px solid rgba(166,143,89,0.3)' }}
+                            style={{ backgroundColor: 'rgba(212,168,67,0.12)', color: '#D4A843', border: '1px solid rgba(212,168,67,0.3)' }}
                             onClick={() => navigate(service.category === 'rental' ? '/rental' : `/booking${'id' in service && service.id ? `?service=${service.id}` : ''}`)}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#A68F59';
-                              e.currentTarget.style.color = '#121212';
-                              e.currentTarget.style.borderColor = '#A68F59';
+                              e.currentTarget.style.backgroundColor = '#D4A843';
+                              e.currentTarget.style.color = '#1A1A2E';
+                              e.currentTarget.style.borderColor = '#D4A843';
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = 'rgba(166,143,89,0.12)';
-                              e.currentTarget.style.color = '#A68F59';
-                              e.currentTarget.style.borderColor = 'rgba(166,143,89,0.3)';
+                              e.currentTarget.style.backgroundColor = 'rgba(212,168,67,0.12)';
+                              e.currentTarget.style.color = '#D4A843';
+                              e.currentTarget.style.borderColor = 'rgba(212,168,67,0.3)';
                             }}
                           >
                             {fr ? 'Démarrer un projet' : 'Start a Project'}
@@ -465,16 +465,16 @@ export function ServicesPage() {
                           <button
                             type="button"
                             aria-label={fr ? `Voir les forfaits pour ${service.title}` : `See packages for ${service.title}`}
-                            className="text-sm px-6 py-4 rounded-xl tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A68F59]"
-                            style={{ color: 'rgba(245,241,235,0.4)', border: '1px solid rgba(245,241,235,0.1)' }}
+                            className="text-sm px-6 py-4 rounded-xl tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843]"
+                            style={{ color: 'rgba(248,249,250,0.4)', border: '1px solid rgba(248,249,250,0.1)' }}
                             onClick={() => navigate('/pricing')}
                             onMouseEnter={(e) => {
-                              (e.currentTarget as HTMLElement).style.color = '#F5F1EB';
-                              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(245,241,235,0.25)';
+                              (e.currentTarget as HTMLElement).style.color = '#F8F9FA';
+                              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(248,249,250,0.25)';
                             }}
                             onMouseLeave={(e) => {
-                              (e.currentTarget as HTMLElement).style.color = 'rgba(245,241,235,0.4)';
-                              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(245,241,235,0.1)';
+                              (e.currentTarget as HTMLElement).style.color = 'rgba(248,249,250,0.4)';
+                              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(248,249,250,0.1)';
                             }}
                           >
                             {fr ? 'Voir les forfaits →' : 'See Packages →'}
@@ -491,9 +491,9 @@ export function ServicesPage() {
       </section>
 
       {/* Our Process */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.15)' }} />
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.15)' }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -502,17 +502,17 @@ export function ServicesPage() {
             className="mb-16"
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-10 h-px" style={{ backgroundColor: '#A68F59' }} />
-              <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Notre façon de travailler' : 'How We Work'}</span>
+              <div className="w-10 h-px" style={{ backgroundColor: '#D4A843' }} />
+              <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Notre façon de travailler' : 'How We Work'}</span>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>
               {fr ? "Du premier appel à la livraison finale" : 'From first call to final delivery'}
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-0 relative">
             {/* Connector line desktop */}
-            <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-px" style={{ backgroundColor: 'rgba(166,143,89,0.2)' }} />
+            <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-px" style={{ backgroundColor: 'rgba(212,168,67,0.2)' }} />
             {[
               { step: '01', title: fr ? 'Découvrir' : 'Discover', desc: fr ? "On apprend à connaître votre marque, vos objectifs et votre vision lors d'un appel gratuit de 30 minutes. Sans engagement." : 'We learn your brand, goals, and vision in a free 30-minute call. No obligation.' },
               { step: '02', title: fr ? 'Créer' : 'Create', desc: fr ? "On planifie le tournage ou le sprint de conception, on exécute avec intention et on donne vie à votre histoire." : 'We plan the shoot or design sprint, execute with intent, and bring your story to life.' },
@@ -529,12 +529,12 @@ export function ServicesPage() {
               >
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center relative z-10"
-                  style={{ backgroundColor: '#0A0A0A', border: '1px solid rgba(166,143,89,0.35)' }}
+                  style={{ backgroundColor: '#1A1A2E', border: '1px solid rgba(212,168,67,0.35)' }}
                 >
-                  <span className="text-xs tracking-[0.25em]" style={{ color: '#A68F59' }}>{item.step}</span>
+                  <span className="text-xs tracking-[0.25em]" style={{ color: '#D4A843' }}>{item.step}</span>
                 </div>
-                <h3 className="text-xl tracking-tight mb-3" style={{ color: '#F5F1EB' }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#7A6F66' }}>{item.desc}</p>
+                <h3 className="text-xl tracking-tight mb-3" style={{ color: '#F8F9FA' }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -549,14 +549,14 @@ export function ServicesPage() {
             <Button
               size="lg"
               className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
-              style={{ backgroundColor: '#A68F59', color: '#121212' }}
+              style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
               onClick={() => navigate('/contact')}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#F5F1EB';
+                e.currentTarget.style.backgroundColor = '#F8F9FA';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#A68F59';
+                e.currentTarget.style.backgroundColor = '#D4A843';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -567,9 +567,9 @@ export function ServicesPage() {
       </section>
 
       {/* Marquee + Stats */}
-      <section className="overflow-hidden" style={{ backgroundColor: '#0A0A0A', borderTop: '1px solid rgba(166,143,89,0.15)', borderBottom: '1px solid rgba(166,143,89,0.15)' }}>
+      <section className="overflow-hidden" style={{ backgroundColor: '#1A1A2E', borderTop: '1px solid rgba(212,168,67,0.15)', borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
         {/* Row 1 — scrolls left */}
-        <div className="py-5 flex" style={{ borderBottom: '1px solid rgba(166,143,89,0.08)' }}>
+        <div className="py-5 flex" style={{ borderBottom: '1px solid rgba(212,168,67,0.08)' }}>
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
@@ -579,8 +579,8 @@ export function ServicesPage() {
               <div key={rep} className="flex gap-10 items-center">
                 {(fr ? ['Photographie de marque', "Couverture d'événements", 'Vision aérienne', 'Médias sociaux', 'Identité de marque', 'Photographie de produits', 'Vidéographie', 'Direction créative', 'Design graphique', "Location d'équipement"] : ['Brand Photography', 'Event Coverage', 'Aerial Vision', 'Social Media', 'Brand Identity', 'Product Photography', 'Videography', 'Creative Direction', 'Graphic Design', 'Equipment Rental']).map((item) => (
                   <span key={item} className="flex items-center gap-10">
-                    <span className="text-sm tracking-[0.3em] uppercase" style={{ color: 'rgba(245,241,235,0.35)' }}>{item}</span>
-                    <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: '#A68F59' }} />
+                    <span className="text-sm tracking-[0.3em] uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>{item}</span>
+                    <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: '#D4A843' }} />
                   </span>
                 ))}
               </div>
@@ -599,8 +599,8 @@ export function ServicesPage() {
               <div key={rep} className="flex gap-10 items-center">
                 {(fr ? ["L'Ontario et au-delà", 'Marques BIPOC', 'Récits culturels', 'Licencié et assuré', 'Droits commerciaux inclus', 'Guidé par la stratégie', 'Sur place', 'Studio et lifestyle', 'Équipement pro', 'Qualité éditoriale'] : ['Ontario & Beyond', 'BIPOC Brands', 'Cultural Storytelling', 'Licensed & Insured', 'Commercial Rights Included', 'Strategy-Led', 'On-Location', 'Studio & Lifestyle', 'Pro Equipment', 'Editorial Quality']).map((item) => (
                   <span key={item} className="flex items-center gap-10">
-                    <span className="text-sm tracking-[0.3em] uppercase italic" style={{ color: 'rgba(166,143,89,0.4)' }}>{item}</span>
-                    <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: 'rgba(166,143,89,0.3)' }} />
+                    <span className="text-sm tracking-[0.3em] uppercase italic" style={{ color: 'rgba(212,168,67,0.4)' }}>{item}</span>
+                    <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: 'rgba(212,168,67,0.3)' }} />
                   </span>
                 ))}
               </div>
@@ -610,7 +610,7 @@ export function ServicesPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="py-16" style={{ backgroundColor: '#F5F1EB', borderBottom: '1px solid rgba(18,18,18,0.08)' }}>
+      <section className="py-16" style={{ backgroundColor: '#F8F9FA', borderBottom: '1px solid rgba(26,26,46,0.08)' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x" style={{ '--tw-divide-opacity': 1 } as React.CSSProperties}>
             {[
@@ -627,8 +627,8 @@ export function ServicesPage() {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="text-center md:px-8"
               >
-                <p className="text-4xl font-light tracking-tight mb-2" style={{ color: '#121212' }}>{stat.n}</p>
-                <p className="text-xs tracking-[0.3em] uppercase" style={{ color: 'rgba(18,18,18,0.4)' }}>{stat.label}</p>
+                <p className="text-4xl font-light tracking-tight mb-2" style={{ color: '#1A1A2E' }}>{stat.n}</p>
+                <p className="text-xs tracking-[0.3em] uppercase" style={{ color: 'rgba(26,26,46,0.4)' }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -636,10 +636,10 @@ export function ServicesPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(166,143,89,0.05) 0%, transparent 60%)'
+          background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212,168,67,0.05) 0%, transparent 60%)'
         }} />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -649,11 +649,11 @@ export function ServicesPage() {
             className="text-center mb-16"
           >
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Témoignages clients' : 'Client Stories'}</span>
-              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(166,143,89,0.5)' }} />
+              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Témoignages clients' : 'Client Stories'}</span>
+              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.5)' }} />
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>
               {fr ? 'Les résultats parlent.' : 'The results speak.'}
             </h2>
           </motion.div>
@@ -664,19 +664,19 @@ export function ServicesPage() {
                 quote: fr ? "CREOVA a transformé l'image et le ressenti de notre marque en ligne. La photographie a tout rehaussé — les clients remarquent la différence immédiatement." : "CREOVA transformed how our brand looks and feels online. The photography elevated everything — clients notice the difference immediately.",
                 author: "Amara N.",
                 role: fr ? "Fondatrice, Nairobi Kitchen Co." : "Founder, Nairobi Kitchen Co.",
-                accent: '#A68F59',
+                accent: '#D4A843',
               },
               {
                 quote: fr ? "De la séance de marque à la stratégie sur les médias sociaux, CREOVA a compris notre culture et notre vision. Ils n'ont pas seulement exécuté — ils ont élevé." : "From the brand shoot to the social media strategy, CREOVA understood our culture and our vision. They didn't just execute — they elevated.",
                 author: "Marcus T.",
                 role: fr ? "Directeur créatif, BLOK Studios" : "Creative Director, BLOK Studios",
-                accent: '#B1643B',
+                accent: '#C0392B',
               },
               {
                 quote: fr ? "La couverture de l'événement était à couper le souffle. Nos invités nous écrivent encore au sujet des photos. CREOVA a capté une énergie qu'on ne se savait même pas en train de créer." : "The event coverage was breathtaking. Our guests still message us about the photos. CREOVA captured energy we didn't even know we were creating.",
                 author: "Priya K.",
                 role: fr ? "Responsable des événements, AfroFutures Conference" : "Events Lead, AfroFutures Conference",
-                accent: '#A68F59',
+                accent: '#D4A843',
               },
             ].map((item, i) => (
               <motion.div
@@ -697,12 +697,12 @@ export function ServicesPage() {
                 }}
               >
                 <div style={{ width: '32px', height: '2px', backgroundColor: item.accent }} />
-                <p className="text-base leading-relaxed flex-1" style={{ color: '#E3DCD3' }}>
+                <p className="text-base leading-relaxed flex-1" style={{ color: '#E0E0E0' }}>
                   "{item.quote}"
                 </p>
                 <div>
-                  <p className="text-sm font-medium" style={{ color: '#F5F1EB' }}>{item.author}</p>
-                  <p className="text-xs mt-0.5" style={{ color: '#7A6F66' }}>{item.role}</p>
+                  <p className="text-sm font-medium" style={{ color: '#F8F9FA' }}>{item.author}</p>
+                  <p className="text-xs mt-0.5" style={{ color: '#777777' }}>{item.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -712,8 +712,8 @@ export function ServicesPage() {
 
       {/* Drone & Video Preview */}
       {(activeTab === 'video' || activeTab === 'all') && (
-        <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
-          <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+        <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+          <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -723,13 +723,13 @@ export function ServicesPage() {
               className="mb-12"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-px" style={{ backgroundColor: '#A68F59' }} />
-                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Événements et vidéo' : 'Events & Video'}</span>
+                <div className="w-12 h-px" style={{ backgroundColor: '#D4A843' }} />
+                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Événements et vidéo' : 'Events & Video'}</span>
               </div>
-              <h2 className="text-4xl md:text-5xl tracking-tight font-light" style={{ color: '#F5F1EB' }}>
+              <h2 className="text-4xl md:text-5xl tracking-tight font-light" style={{ color: '#F8F9FA' }}>
                 {fr ? "L'œuvre en mouvement" : 'See the Work in Motion'}
               </h2>
-              <p className="text-base mt-4 max-w-xl leading-relaxed" style={{ color: '#7A6F66' }}>
+              <p className="text-base mt-4 max-w-xl leading-relaxed" style={{ color: '#777777' }}>
                 {fr ? "Couverture d'événements cinématographique et récit de marque — un aperçu de notre façon de capter les moments et de donner vie aux marques à l'écran. Survolez pour prévisualiser." : 'Cinematic event coverage and brand storytelling — a glimpse of how we capture moments and bring brands to life on screen. Hover to preview.'}
               </p>
             </motion.div>
@@ -741,14 +741,14 @@ export function ServicesPage() {
                   sub: fr ? "Couverture d'événements et de conférences" : 'Events & Conference Coverage',
                   src: '/hero-reel.mp4',
                   poster: '/card-blackprint.jpg',
-                  accent: '#A68F59',
+                  accent: '#D4A843',
                 },
                 {
                   label: fr ? 'Bobine de marque' : 'Brand Reel',
                   sub: fr ? 'Vidéographie et création de contenu' : 'Videography & Content Creation',
                   src: '/hero-reel.mp4',
                   poster: '/card-blackprint-session.jpg',
-                  accent: '#B1643B',
+                  accent: '#C0392B',
                 },
               ].map((vid, i) => (
                 <motion.div
@@ -783,7 +783,7 @@ export function ServicesPage() {
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="w-8 h-0.5 mb-3 rounded-full" style={{ backgroundColor: vid.accent }} />
                     <p className="text-xs tracking-[0.35em] uppercase mb-1" style={{ color: vid.accent }}>{vid.sub}</p>
-                    <h3 className="text-2xl tracking-tight" style={{ color: '#F5F1EB' }}>{vid.label}</h3>
+                    <h3 className="text-2xl tracking-tight" style={{ color: '#F8F9FA' }}>{vid.label}</h3>
                     <div className="mt-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
                       style={{ color: vid.accent }}>
                       <div className="w-8 h-8 rounded-full border flex items-center justify-center"
@@ -801,11 +801,11 @@ export function ServicesPage() {
       )}
 
       {/* Add-Ons & Extras */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0E0E0E' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(166,143,89,0.06) 0%, transparent 70%)'
+          background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(212,168,67,0.06) 0%, transparent 70%)'
         }} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -816,11 +816,11 @@ export function ServicesPage() {
             className="mb-12"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Bonifications' : 'Enhancements'}</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Bonifications' : 'Enhancements'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>{fr ? 'Options et extras' : 'Add-Ons & Extras'}</h2>
-            <p className="text-base mt-2" style={{ color: '#4A3E36' }}>{fr ? "Bonifiez n'importe quel forfait de service" : 'Enhance any service package'}</p>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>{fr ? 'Options et extras' : 'Add-Ons & Extras'}</h2>
+            <p className="text-base mt-2" style={{ color: '#777777' }}>{fr ? "Bonifiez n'importe quel forfait de service" : 'Enhance any service package'}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -840,18 +840,18 @@ export function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 className="flex justify-between items-center px-6 py-4 rounded-xl transition-all duration-300"
-                style={{ border: '1px solid rgba(166,143,89,0.15)', backgroundColor: 'rgba(166,143,89,0.04)' }}
+                style={{ border: '1px solid rgba(212,168,67,0.15)', backgroundColor: 'rgba(212,168,67,0.04)' }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.35)';
-                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.08)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.35)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(212,168,67,0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.15)';
-                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.04)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.15)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(212,168,67,0.04)';
                 }}
               >
-                <span className="text-sm" style={{ color: '#E3DCD3' }}>{addon.name}</span>
-                <span className="text-sm font-light" style={{ color: '#A68F59' }}>{addon.price}</span>
+                <span className="text-sm" style={{ color: '#E0E0E0' }}>{addon.name}</span>
+                <span className="text-sm font-light" style={{ color: '#D4A843' }}>{addon.price}</span>
               </motion.div>
             ))}
           </div>
@@ -860,21 +860,21 @@ export function ServicesPage() {
 
       {/* Equipment Rental Terms */}
       {(activeTab === 'rental' || activeTab === 'all') && (
-        <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
+        <section className="py-16" style={{ backgroundColor: '#F8F9FA' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden"
-              style={{ border: '1px solid rgba(18,18,18,0.12)' }}
+              style={{ border: '1px solid rgba(26,26,46,0.12)' }}
             >
-              <div className="px-8 py-5 flex items-center gap-4" style={{ backgroundColor: '#121212' }}>
+              <div className="px-8 py-5 flex items-center gap-4" style={{ backgroundColor: '#1A1A2E' }}>
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                     style={{ border: '1px solid rgba(177,100,59,0.4)', backgroundColor: 'rgba(177,100,59,0.1)' }}>
-                  <AlertCircle className="w-5 h-5" style={{ color: '#B1643B' }} />
+                     style={{ border: '1px solid rgba(192,57,43,0.4)', backgroundColor: 'rgba(192,57,43,0.1)' }}>
+                  <AlertCircle className="w-5 h-5" style={{ color: '#C0392B' }} />
                 </div>
-                <h3 className="text-xl tracking-tight" style={{ color: '#F5F1EB' }}>{fr ? "Conditions de location d'équipement" : 'Equipment Rental Terms'}</h3>
+                <h3 className="text-xl tracking-tight" style={{ color: '#F8F9FA' }}>{fr ? "Conditions de location d'équipement" : 'Equipment Rental Terms'}</h3>
               </div>
 
               <div className="p-8 space-y-5" style={{ backgroundColor: '#FFFFFF' }}>
@@ -885,10 +885,10 @@ export function ServicesPage() {
                   { label: fr ? 'Politique de dommages' : 'Damage Policy', text: fr ? "Le locataire est responsable des dommages ou de la perte de l'équipement. Options d'assurance disponibles." : 'Renter is responsible for equipment damage or loss. Insurance options available.' },
                   { label: fr ? 'Réservation' : 'Reservation', text: fr ? "Réservez au moins 48 heures à l'avance. Pièce d'identité valide et entente de location signée requises." : 'Book at least 48 hours in advance. Valid ID and signed rental agreement required.' }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 pb-5" style={{ borderBottom: i < 4 ? '1px solid rgba(18,18,18,0.06)' : 'none' }}>
-                    <span className="mt-0.5 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#A68F59', marginTop: '8px' }} />
-                    <p className="text-sm leading-relaxed" style={{ color: '#4A3E36' }}>
-                      <strong style={{ color: '#121212' }}>{item.label}:</strong> {item.text}
+                  <div key={i} className="flex items-start gap-4 pb-5" style={{ borderBottom: i < 4 ? '1px solid rgba(26,26,46,0.06)' : 'none' }}>
+                    <span className="mt-0.5 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D4A843', marginTop: '8px' }} />
+                    <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>
+                      <strong style={{ color: '#1A1A2E' }}>{item.label}:</strong> {item.text}
                     </p>
                   </div>
                 ))}
@@ -900,7 +900,7 @@ export function ServicesPage() {
 
       {/* Recent Work */}
       {recentGalleries.length > 0 && (
-        <section className="py-20" style={{ backgroundColor: '#0A0A0A', borderTop: '1px solid rgba(166,143,89,0.12)' }}>
+        <section className="py-20" style={{ backgroundColor: '#1A1A2E', borderTop: '1px solid rgba(212,168,67,0.12)' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -910,17 +910,17 @@ export function ServicesPage() {
             >
               <div>
                 <div className="flex items-center gap-4 mb-3">
-                  <div style={{ height: '1px', width: '40px', backgroundColor: '#A68F59' }} />
-                  <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Travaux récents' : 'Recent Work'}</span>
+                  <div style={{ height: '1px', width: '40px', backgroundColor: '#D4A843' }} />
+                  <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Travaux récents' : 'Recent Work'}</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl tracking-tight font-light" style={{ color: '#F5F1EB' }}>
+                <h2 className="text-4xl md:text-5xl tracking-tight font-light" style={{ color: '#F8F9FA' }}>
                   {fr ? 'À voir en action' : 'See it in action'}
                 </h2>
               </div>
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 text-sm tracking-wide transition-colors duration-300 flex-shrink-0"
-                style={{ color: '#A68F59' }}
+                style={{ color: '#D4A843' }}
               >
                 {fr ? 'Parcourir tout le portfolio' : 'Browse full portfolio'}
                 <ArrowRight className="w-4 h-4" />
@@ -957,7 +957,7 @@ export function ServicesPage() {
                     {gallery.org && (
                       <p className="text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: gallery.accent }}>{gallery.org}</p>
                     )}
-                    <h3 className="text-base tracking-tight leading-tight" style={{ color: '#F5F1EB' }}>{gallery.title}</h3>
+                    <h3 className="text-base tracking-tight leading-tight" style={{ color: '#F8F9FA' }}>{gallery.title}</h3>
                   </div>
                 </motion.a>
               ))}
@@ -967,10 +967,10 @@ export function ServicesPage() {
       )}
 
       {/* Community & Loyalty Discounts */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(166,143,89,0.07) 0%, transparent 65%)'
+          background: 'radial-gradient(ellipse 60% 70% at 50% 100%, rgba(212,168,67,0.07) 0%, transparent 65%)'
         }} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -981,10 +981,10 @@ export function ServicesPage() {
             className="mb-12"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Pour notre communauté' : 'For Our Community'}</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Pour notre communauté' : 'For Our Community'}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>{fr ? 'Rabais communauté et fidélité' : 'Community & Loyalty Discounts'}</h2>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>{fr ? 'Rabais communauté et fidélité' : 'Community & Loyalty Discounts'}</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-5 mb-12">
@@ -1000,22 +1000,22 @@ export function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="p-8 rounded-2xl text-center transition-all duration-300"
-                style={{ border: '1px solid rgba(166,143,89,0.2)', backgroundColor: 'rgba(166,143,89,0.05)' }}
+                style={{ border: '1px solid rgba(212,168,67,0.2)', backgroundColor: 'rgba(212,168,67,0.05)' }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.45)';
-                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.09)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.45)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(212,168,67,0.09)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.2)';
-                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.05)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.2)';
+                  (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(212,168,67,0.05)';
                 }}
               >
-                <div className="text-4xl font-light tracking-tight mb-4" style={{ color: '#A68F59' }}>
+                <div className="text-4xl font-light tracking-tight mb-4" style={{ color: '#D4A843' }}>
                   {item.discount}
                 </div>
-                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(166,143,89,0.4)', margin: '0 auto 16px' }} />
-                <h3 className="text-lg mb-2 tracking-tight" style={{ color: '#F5F1EB' }}>{item.title}</h3>
-                <p className="text-sm" style={{ color: '#7A6F66' }}>{item.desc}</p>
+                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(212,168,67,0.4)', margin: '0 auto 16px' }} />
+                <h3 className="text-lg mb-2 tracking-tight" style={{ color: '#F8F9FA' }}>{item.title}</h3>
+                <p className="text-sm" style={{ color: '#777777' }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -1024,14 +1024,14 @@ export function ServicesPage() {
             <Button
               size="lg"
               className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
-              style={{ backgroundColor: '#A68F59', color: '#121212' }}
+              style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
               onClick={() => navigate('/booking')}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#F5F1EB';
+                e.currentTarget.style.backgroundColor = '#F8F9FA';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#A68F59';
+                e.currentTarget.style.backgroundColor = '#D4A843';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
@@ -1041,14 +1041,14 @@ export function ServicesPage() {
               size="lg"
               variant="outline"
               className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300 border"
-              style={{ backgroundColor: 'transparent', borderColor: 'rgba(166,143,89,0.4)', color: '#A68F59' }}
+              style={{ backgroundColor: 'transparent', borderColor: 'rgba(212,168,67,0.4)', color: '#D4A843' }}
               onClick={() => navigate('/pricing')}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#A68F59';
+                e.currentTarget.style.borderColor = '#D4A843';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(166,143,89,0.4)';
+                e.currentTarget.style.borderColor = 'rgba(212,168,67,0.4)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >

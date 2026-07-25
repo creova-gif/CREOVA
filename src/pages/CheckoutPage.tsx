@@ -90,15 +90,15 @@ function CheckoutForm({ customerInfo }: CheckoutFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="bg-white rounded-2xl p-6 border-2" style={{ borderColor: '#E3DCD3' }}>
+      <div className="bg-white rounded-2xl p-6 border-2" style={{ borderColor: '#E0E0E0' }}>
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-full flex items-center justify-center" 
-               style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-            <CreditCard className="w-5 h-5" style={{ color: '#A68F59' }} />
+               style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
+            <CreditCard className="w-5 h-5" style={{ color: '#D4A843' }} />
           </div>
           <div>
-            <h3 className="text-lg" style={{ color: '#121212' }}>{fr ? 'Informations de paiement' : 'Payment Information'}</h3>
-            <p className="text-sm" style={{ color: '#7A6F66' }}>{fr ? 'Paiement sécurisé propulsé par Stripe' : 'Secure payment powered by Stripe'}</p>
+            <h3 className="text-lg" style={{ color: '#1A1A2E' }}>{fr ? 'Informations de paiement' : 'Payment Information'}</h3>
+            <p className="text-sm" style={{ color: '#777777' }}>{fr ? 'Paiement sécurisé propulsé par Stripe' : 'Secure payment powered by Stripe'}</p>
           </div>
         </div>
 
@@ -120,16 +120,16 @@ function CheckoutForm({ customerInfo }: CheckoutFormProps) {
         type="submit"
         disabled={!stripe || isProcessing}
         className="w-full py-6 rounded-xl text-lg transition-all duration-300"
-        style={{ backgroundColor: '#121212' }}
+        style={{ backgroundColor: '#1A1A2E' }}
         onMouseEnter={(e) => {
           if (!isProcessing) {
-            e.currentTarget.style.backgroundColor = '#A68F59';
+            e.currentTarget.style.backgroundColor = '#D4A843';
             e.currentTarget.style.transform = 'translateY(-2px)';
           }
         }}
         onMouseLeave={(e) => {
           if (!isProcessing) {
-            e.currentTarget.style.backgroundColor = '#121212';
+            e.currentTarget.style.backgroundColor = '#1A1A2E';
             e.currentTarget.style.transform = 'translateY(0)';
           }
         }}
@@ -147,7 +147,7 @@ function CheckoutForm({ customerInfo }: CheckoutFormProps) {
         )}
       </Button>
 
-      <div className="flex items-center justify-center gap-2 text-sm" style={{ color: '#7A6F66' }}>
+      <div className="flex items-center justify-center gap-2 text-sm" style={{ color: '#777777' }}>
         <Lock className="w-4 h-4" />
         <span>{fr ? 'Sécurisé par Stripe • Chiffrement SSL' : 'Secured by Stripe • SSL Encrypted'}</span>
       </div>
@@ -236,38 +236,38 @@ export function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div style={{ backgroundColor: '#0A0A0A', minHeight: '100vh' }}>
+      <div style={{ backgroundColor: '#1A1A2E', minHeight: '100vh' }}>
         <PageSEO title="Checkout" description="Complete your CREOVA purchase." path="/checkout" noIndex />
         {/* Warm gradient top stripe */}
-        <div style={{ height: '2px', background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }} />
+        <div style={{ height: '2px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
         <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8"
-            style={{ backgroundColor: 'rgba(166,143,89,0.1)', border: '1px solid rgba(166,143,89,0.2)' }}
+            style={{ backgroundColor: 'rgba(212,168,67,0.1)', border: '1px solid rgba(212,168,67,0.2)' }}
           >
-            <CreditCard className="w-8 h-8" style={{ color: '#A68F59' }} />
+            <CreditCard className="w-8 h-8" style={{ color: '#D4A843' }} />
           </div>
           <div className="flex items-center gap-4 mb-4">
-            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
-            <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>{fr ? 'Paiement' : 'Checkout'}</p>
-            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.4)' }} />
+            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.4)' }} />
+            <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Paiement' : 'Checkout'}</p>
+            <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.4)' }} />
           </div>
-          <h1 className="text-3xl md:text-4xl font-light mb-4" style={{ color: '#F5F1EB' }}>{fr ? 'Votre panier est vide' : 'Your cart is empty'}</h1>
-          <p className="text-base mb-10 max-w-sm" style={{ color: '#7A6F66' }}>
+          <h1 className="text-3xl md:text-4xl font-light mb-4" style={{ color: '#F8F9FA' }}>{fr ? 'Votre panier est vide' : 'Your cart is empty'}</h1>
+          <p className="text-base mb-10 max-w-sm" style={{ color: '#777777' }}>
             {fr ? 'Parcourez la collection VERSE ou nos ressources numériques pour trouver quelque chose qui en vaut la peine.' : 'Browse the VERSE collection or our digital resources to find something worth owning.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => navigate('/shop')}
               className="px-8 py-3 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }}
             >
               {fr ? 'Parcourir la boutique VERSE' : 'Browse the VERSE Shop'}
             </button>
             <button
               onClick={() => navigate('/shop/digital')}
               className="px-8 py-3 rounded-lg text-sm font-medium border transition-colors"
-              style={{ borderColor: 'rgba(166,143,89,0.35)', color: '#C8C0B8', backgroundColor: 'transparent' }}
+              style={{ borderColor: 'rgba(212,168,67,0.35)', color: '#EFEFEF', backgroundColor: 'transparent' }}
             >
               {fr ? 'Ressources numériques' : 'Digital Resources'}
             </button>
@@ -278,7 +278,7 @@ export function CheckoutPage() {
   }
 
   return (
-    <div style={{ backgroundColor: '#F5F1EB', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#F8F9FA', minHeight: '100vh' }}>
       <PageSEO
         title="Checkout"
         description="Complete your CREOVA purchase."
@@ -286,7 +286,7 @@ export function CheckoutPage() {
         noIndex
       />
       {/* Header */}
-      <section className="py-12 bg-white border-b" style={{ borderColor: '#E3DCD3' }}>
+      <section className="py-12 bg-white border-b" style={{ borderColor: '#E0E0E0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -296,13 +296,13 @@ export function CheckoutPage() {
               variant="ghost"
               onClick={() => navigate('/shop')}
               className="mb-4 hover:bg-transparent"
-              style={{ color: '#7A6F66' }}
+              style={{ color: '#777777' }}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               {fr ? 'Retour à la boutique' : 'Back to Shop'}
             </Button>
-            <h1 className="text-3xl md:text-4xl" style={{ color: '#121212' }}>{fr ? 'Paiement sécurisé' : 'Secure Checkout'}</h1>
-            <p className="text-lg mt-2" style={{ color: '#7A6F66' }}>
+            <h1 className="text-3xl md:text-4xl" style={{ color: '#1A1A2E' }}>{fr ? 'Paiement sécurisé' : 'Secure Checkout'}</h1>
+            <p className="text-lg mt-2" style={{ color: '#777777' }}>
               {fr ? 'Complétez votre achat avec un paiement sécurisé' : 'Complete your purchase with secure payment'}
             </p>
           </motion.div>
@@ -323,7 +323,7 @@ export function CheckoutPage() {
                 <form onSubmit={handleCreatePaymentIntent} className="space-y-6">
                   {/* Customer Information */}
                   <div className="bg-white rounded-2xl p-8">
-                    <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+                    <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Coordonnées' : 'Contact Information'}
                     </h2>
 
@@ -359,7 +359,7 @@ export function CheckoutPage() {
 
                   {/* Shipping Address */}
                   <div className="bg-white rounded-2xl p-8">
-                    <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+                    <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                       {fr ? 'Adresse de livraison' : 'Shipping Address'}
                     </h2>
 
@@ -399,8 +399,8 @@ export function CheckoutPage() {
                             required
                             value={customerInfo.province}
                             onChange={(e) => setCustomerInfo({ ...customerInfo, province: e.target.value })}
-                            className="w-full border-2 rounded-xl px-4 py-3 focus:border-[#A68F59] focus:outline-none"
-                            style={{ borderColor: '#E3DCD3' }}
+                            className="w-full border-2 rounded-xl px-4 py-3 focus:border-[#D4A843] focus:outline-none"
+                            style={{ borderColor: '#E0E0E0' }}
                           >
                             {provinces.map(prov => (
                               <option key={prov} value={prov}>{prov}</option>
@@ -429,7 +429,7 @@ export function CheckoutPage() {
                     type="submit"
                     disabled={isLoading}
                     className="w-full py-4 rounded-xl text-base font-medium text-white transition-opacity disabled:opacity-50"
-                    style={{ background: 'linear-gradient(135deg, #A68F59 0%, #B1643B 100%)', boxShadow: '0 4px 14px rgba(166,143,89,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)', boxShadow: '0 4px 14px rgba(212,168,67,0.3)' }}
                   >
                     {isLoading ? (
                       <span className="flex items-center justify-center gap-2">
@@ -455,14 +455,14 @@ export function CheckoutPage() {
               transition={{ delay: 0.3 }}
             >
               <div className="bg-white rounded-2xl p-8 sticky top-24">
-                <h2 className="text-2xl mb-6" style={{ color: '#121212' }}>
+                <h2 className="text-2xl mb-6" style={{ color: '#1A1A2E' }}>
                   {fr ? 'Récapitulatif de commande' : 'Order Summary'}
                 </h2>
 
                 {/* Cart Items */}
                 <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
                   {items.map((item) => (
-                    <div key={item.id} className="flex gap-4 pb-4 border-b" style={{ borderColor: '#E3DCD3' }}>
+                    <div key={item.id} className="flex gap-4 pb-4 border-b" style={{ borderColor: '#E0E0E0' }}>
                       {item.image && (
                         <img 
                           src={item.image} 
@@ -471,11 +471,11 @@ export function CheckoutPage() {
                         />
                       )}
                       <div className="flex-1">
-                        <h3 className="mb-1" style={{ color: '#121212' }}>{item.name}</h3>
-                        <p className="text-sm mb-1" style={{ color: '#7A6F66' }}>
+                        <h3 className="mb-1" style={{ color: '#1A1A2E' }}>{item.name}</h3>
+                        <p className="text-sm mb-1" style={{ color: '#777777' }}>
                           {fr ? 'Quantité' : 'Quantity'}: {item.quantity}
                         </p>
-                        <p style={{ color: '#A68F59' }}>
+                        <p style={{ color: '#D4A843' }}>
                           ${(item.price * item.quantity).toFixed(2)}
                         </p>
                       </div>
@@ -484,43 +484,43 @@ export function CheckoutPage() {
                 </div>
 
                 {/* Pricing Breakdown */}
-                <div className="space-y-3 pb-4 mb-4 border-b" style={{ borderColor: '#E3DCD3' }}>
+                <div className="space-y-3 pb-4 mb-4 border-b" style={{ borderColor: '#E0E0E0' }}>
                   <div className="flex justify-between">
-                    <span style={{ color: '#7A6F66' }}>{fr ? 'Sous-total' : 'Subtotal'}</span>
-                    <span style={{ color: '#121212' }}>${subtotal.toFixed(2)}</span>
+                    <span style={{ color: '#777777' }}>{fr ? 'Sous-total' : 'Subtotal'}</span>
+                    <span style={{ color: '#1A1A2E' }}>${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span style={{ color: '#7A6F66' }}>{fr ? 'Livraison' : 'Shipping'}</span>
-                    <span style={{ color: '#121212' }}>
+                    <span style={{ color: '#777777' }}>{fr ? 'Livraison' : 'Shipping'}</span>
+                    <span style={{ color: '#1A1A2E' }}>
                       {shipping === 0 ? (fr ? 'GRATUIT' : 'FREE') : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span style={{ color: '#7A6F66' }}>{fr ? 'TVH (13 %)' : 'HST (13%)'}</span>
-                    <span style={{ color: '#121212' }}>${hst.toFixed(2)}</span>
+                    <span style={{ color: '#777777' }}>{fr ? 'TVH (13 %)' : 'HST (13%)'}</span>
+                    <span style={{ color: '#1A1A2E' }}>${hst.toFixed(2)}</span>
                   </div>
                 </div>
 
                 {/* Total */}
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-xl" style={{ color: '#121212' }}>{fr ? 'Total' : 'Total'}</span>
-                  <span className="text-3xl" style={{ color: '#121212' }}>
+                  <span className="text-xl" style={{ color: '#1A1A2E' }}>{fr ? 'Total' : 'Total'}</span>
+                  <span className="text-3xl" style={{ color: '#1A1A2E' }}>
                     ${total.toFixed(2)}
                   </span>
                 </div>
 
                 {/* Security Badges */}
-                <div className="pt-6 border-t space-y-3" style={{ borderColor: '#E3DCD3' }}>
-                  <div className="flex items-center gap-2 text-sm" style={{ color: '#7A6F66' }}>
-                    <CheckCircle2 className="w-4 h-4" style={{ color: '#A68F59' }} />
+                <div className="pt-6 border-t space-y-3" style={{ borderColor: '#E0E0E0' }}>
+                  <div className="flex items-center gap-2 text-sm" style={{ color: '#777777' }}>
+                    <CheckCircle2 className="w-4 h-4" style={{ color: '#D4A843' }} />
                     <span>{fr ? 'Chiffrement SSL sécurisé' : 'Secure SSL encryption'}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm" style={{ color: '#7A6F66' }}>
-                    <CheckCircle2 className="w-4 h-4" style={{ color: '#A68F59' }} />
+                  <div className="flex items-center gap-2 text-sm" style={{ color: '#777777' }}>
+                    <CheckCircle2 className="w-4 h-4" style={{ color: '#D4A843' }} />
                     <span>{fr ? 'Traitement des paiements conforme PCI' : 'PCI compliant payment processing'}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm" style={{ color: '#7A6F66' }}>
-                    <CheckCircle2 className="w-4 h-4" style={{ color: '#A68F59' }} />
+                  <div className="flex items-center gap-2 text-sm" style={{ color: '#777777' }}>
+                    <CheckCircle2 className="w-4 h-4" style={{ color: '#D4A843' }} />
                     <span>{fr ? 'Garantie de remboursement' : 'Money-back guarantee'}</span>
                   </div>
                 </div>

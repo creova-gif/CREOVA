@@ -55,7 +55,7 @@ export function AddToCartDialog({
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Product Image */}
-          <div className="aspect-square rounded-lg overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
+          <div className="aspect-square rounded-lg overflow-hidden" style={{ backgroundColor: '#F8F9FA' }}>
             <img 
               src={product.image} 
               alt={product.name}
@@ -66,10 +66,10 @@ export function AddToCartDialog({
           {/* Product Details & Options */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl mb-2" style={{ color: '#121212' }}>
+              <h3 className="text-xl mb-2" style={{ color: '#1A1A2E' }}>
                 {product.name}
               </h3>
-              <p className="text-2xl" style={{ color: '#121212' }}>
+              <p className="text-2xl" style={{ color: '#1A1A2E' }}>
                 ${product.price} CAD
               </p>
             </div>
@@ -77,12 +77,12 @@ export function AddToCartDialog({
             {/* Size Selection */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-sm tracking-wider" style={{ color: '#121212' }}>
-                  SIZE {!selectedSize && <span style={{ color: '#B1643B' }}>*</span>}
+                <label className="text-sm tracking-wider" style={{ color: '#1A1A2E' }}>
+                  SIZE {!selectedSize && <span style={{ color: '#C0392B' }}>*</span>}
                 </label>
                 <button
                   className="text-xs underline"
-                  style={{ color: '#A68F59' }}
+                  style={{ color: '#D4A843' }}
                   onClick={() => {/* Open size guide */}}
                 >
                   Size Guide
@@ -95,9 +95,9 @@ export function AddToCartDialog({
                     onClick={() => setSelectedSize(size)}
                     className="relative px-4 py-3 text-sm border-2 rounded-lg transition-all duration-200"
                     style={{
-                      borderColor: selectedSize === size ? '#121212' : '#E3DCD3',
-                      backgroundColor: selectedSize === size ? '#121212' : '#FFFFFF',
-                      color: selectedSize === size ? '#FFFFFF' : '#121212'
+                      borderColor: selectedSize === size ? '#1A1A2E' : '#E0E0E0',
+                      backgroundColor: selectedSize === size ? '#1A1A2E' : '#FFFFFF',
+                      color: selectedSize === size ? '#FFFFFF' : '#1A1A2E'
                     }}
                   >
                     {size}
@@ -112,7 +112,7 @@ export function AddToCartDialog({
             {/* Color Selection */}
             {product.colors.length > 1 && (
               <div>
-                <label className="block text-sm tracking-wider mb-3" style={{ color: '#121212' }}>
+                <label className="block text-sm tracking-wider mb-3" style={{ color: '#1A1A2E' }}>
                   COLOR {selectedColor && `- ${selectedColor.name}`}
                 </label>
                 <div className="flex gap-3 flex-wrap">
@@ -130,7 +130,7 @@ export function AddToCartDialog({
                         className="w-10 h-10 rounded-full border-2 transition-all duration-200"
                         style={{
                           backgroundColor: colorPalette[colorName],
-                          borderColor: selectedColor?.name === colorName ? '#121212' : '#E3DCD3',
+                          borderColor: selectedColor?.name === colorName ? '#1A1A2E' : '#E0E0E0',
                           transform: selectedColor?.name === colorName ? 'scale(1.1)' : 'scale(1)'
                         }}
                       />
@@ -140,12 +140,12 @@ export function AddToCartDialog({
                           style={{ 
                             color: colorName === 'Jet Black' || colorName === 'Charcoal Gray' 
                               ? '#FFFFFF' 
-                              : '#121212' 
+                              : '#1A1A2E' 
                           }}
                         />
                       )}
                       <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity"
-                            style={{ color: '#7A6F66' }}>
+                            style={{ color: '#777777' }}>
                         {colorName}
                       </span>
                     </button>
@@ -155,14 +155,14 @@ export function AddToCartDialog({
             )}
 
             {/* Add to Cart Button */}
-            <div className="pt-4 border-t" style={{ borderColor: '#E3DCD3' }}>
+            <div className="pt-4 border-t" style={{ borderColor: '#E0E0E0' }}>
               <Button
                 onClick={handleAddToCart}
                 disabled={!selectedSize}
                 className="w-full py-6 text-sm tracking-wider transition-all duration-300"
                 style={{
-                  backgroundColor: selectedSize ? '#121212' : '#E3DCD3',
-                  color: selectedSize ? '#F5F1EB' : '#7A6F66'
+                  backgroundColor: selectedSize ? '#1A1A2E' : '#E0E0E0',
+                  color: selectedSize ? '#F8F9FA' : '#777777'
                 }}
               >
                 <ShoppingBag className="w-4 h-4 mr-2" />
@@ -170,7 +170,7 @@ export function AddToCartDialog({
               </Button>
               
               {!selectedSize && (
-                <p className="text-xs text-center mt-2" style={{ color: '#B1643B' }}>
+                <p className="text-xs text-center mt-2" style={{ color: '#C0392B' }}>
                   Please select a size to continue
                 </p>
               )}

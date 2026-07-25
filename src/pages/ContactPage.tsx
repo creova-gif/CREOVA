@@ -117,7 +117,7 @@ export function ContactPage() {
   };
 
   return (
-    <div style={{ backgroundColor: '#F5F1EB' }}>
+    <div style={{ backgroundColor: '#F8F9FA' }}>
       <PageSEO
         title="Contact Us"
         description="Get in touch with CREOVA. Book a consultation, ask about our creative services, or start your photography, videography, or brand design project today."
@@ -126,10 +126,10 @@ export function ContactPage() {
       {/* Hero — full-width dark with large email CTA treatment */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: '#080808', borderBottom: '1px solid rgba(166,143,89,0.15)' }}
+        style={{ backgroundColor: '#1A1A2E', borderBottom: '1px solid rgba(212,168,67,0.15)' }}
       >
         {/* Top accent stripe */}
-        <div style={{ height: '2px', background: 'linear-gradient(90deg, #A68F59, #B1643B, transparent)' }} />
+        <div style={{ height: '2px', background: 'linear-gradient(90deg, #D4A843, #C0392B, transparent)' }} />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
@@ -141,8 +141,8 @@ export function ContactPage() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center gap-3 mb-8"
               >
-                <div style={{ width: '32px', height: '1px', backgroundColor: '#A68F59' }} />
-                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>
+                <div style={{ width: '32px', height: '1px', backgroundColor: '#D4A843' }} />
+                <span className="text-[10px] tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>
                   {t('contact.badge.getintouch')}
                 </span>
               </motion.div>
@@ -156,8 +156,8 @@ export function ContactPage() {
                 {/* Massive "Let's" */}
                 <motion.span
                   className="block font-light tracking-tighter cursor-default select-none"
-                  style={{ fontSize: 'clamp(72px, 14vw, 190px)', color: '#F5F1EB' }}
-                  whileHover={{ x: 6, color: 'rgba(245,241,235,0.7)' }}
+                  style={{ fontSize: 'clamp(72px, 14vw, 190px)', color: '#F8F9FA' }}
+                  whileHover={{ x: 6, color: 'rgba(248,249,250,0.7)' }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 >
                   Let's
@@ -168,7 +168,7 @@ export function ContactPage() {
                     className="block italic leading-none tracking-tight cursor-default select-none"
                     style={{
                       fontSize: 'clamp(20px, 3.2vw, 42px)',
-                      backgroundImage: 'linear-gradient(95deg, #B1643B 0%, #A68F59 100%)',
+                      backgroundImage: 'linear-gradient(95deg, #C0392B 0%, #D4A843 100%)',
                       WebkitBackgroundClip: 'text',
                       backgroundClip: 'text',
                       color: 'transparent',
@@ -185,8 +185,8 @@ export function ContactPage() {
                     transition={{ delay: 0.9 }}
                     className="hidden sm:flex items-center gap-2 pb-1 flex-shrink-0"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#A68F59' }} />
-                    <span className="text-[9px] tracking-[0.4em] uppercase" style={{ color: 'rgba(245,241,235,0.25)' }}>
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#D4A843' }} />
+                    <span className="text-[9px] tracking-[0.4em] uppercase" style={{ color: 'rgba(248,249,250,0.25)' }}>
                       Replies within 24 hrs
                     </span>
                   </motion.div>
@@ -199,7 +199,7 @@ export function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="mt-6 text-base leading-relaxed max-w-sm"
-                style={{ color: 'rgba(245,241,235,0.42)' }}
+                style={{ color: 'rgba(248,249,250,0.42)' }}
               >
                 {t('contact.hero.subtitle')}
               </motion.p>
@@ -219,10 +219,10 @@ export function ContactPage() {
                 { icon: Clock, label: 'Hours', value: 'Mon–Fri 9AM–6PM', href: null },
               ].map(({ icon: Icon, label, value, href }) => {
                 const inner = (
-                  <div className="flex flex-col gap-2 p-4 rounded-xl border transition-colors" style={{ backgroundColor: 'rgba(255,255,255,0.03)', borderColor: 'rgba(166,143,89,0.12)' }}>
-                    <Icon className="w-4 h-4" style={{ color: '#A68F59' }} />
-                    <div className="text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(245,241,235,0.3)' }}>{label}</div>
-                    <div className="text-xs leading-tight" style={{ color: 'rgba(245,241,235,0.7)' }}>{value}</div>
+                  <div className="flex flex-col gap-2 p-4 rounded-xl border transition-colors" style={{ backgroundColor: 'rgba(255,255,255,0.03)', borderColor: 'rgba(212,168,67,0.12)' }}>
+                    <Icon className="w-4 h-4" style={{ color: '#D4A843' }} />
+                    <div className="text-[9px] tracking-[0.3em] uppercase" style={{ color: 'rgba(248,249,250,0.3)' }}>{label}</div>
+                    <div className="text-xs leading-tight" style={{ color: 'rgba(248,249,250,0.7)' }}>{value}</div>
                   </div>
                 );
                 return href ? (
@@ -237,7 +237,7 @@ export function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16" style={{ backgroundColor: '#F5F1EB' }}>
+      <section className="py-16" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -245,27 +245,27 @@ export function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Booking Callout — dark card */}
-            <div className="rounded-2xl p-6 mb-8 overflow-hidden" style={{ backgroundColor: '#121212', border: '1px solid rgba(166,143,89,0.25)' }}>
+            <div className="rounded-2xl p-6 mb-8 overflow-hidden" style={{ backgroundColor: '#1A1A2E', border: '1px solid rgba(212,168,67,0.25)' }}>
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <h2 className="text-lg mb-1 tracking-tight" style={{ color: '#F5F1EB' }}>
+                  <h2 className="text-lg mb-1 tracking-tight" style={{ color: '#F8F9FA' }}>
                     {t('contact.book.title')}
                   </h2>
-                  <p className="text-sm mb-4" style={{ color: '#7A6F66' }}>
+                  <p className="text-sm mb-4" style={{ color: '#777777' }}>
                     {t('contact.book.desc')}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button
-                      style={{ backgroundColor: '#A68F59', color: '#121212' }}
-                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F5F1EB'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#A68F59'; }}
+                      style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F8F9FA'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#D4A843'; }}
                       asChild
                     >
                       <Link to="/booking">{t('contact.book.btn.now')}</Link>
                     </Button>
                     <Button
                       variant="outline"
-                      style={{ borderColor: 'rgba(166,143,89,0.4)', color: '#A68F59', backgroundColor: 'transparent' }}
+                      style={{ borderColor: 'rgba(212,168,67,0.4)', color: '#D4A843', backgroundColor: 'transparent' }}
                       onClick={() => {
                         window.dispatchEvent(new CustomEvent('sankofa:open'));
                       }}
@@ -279,12 +279,12 @@ export function ContactPage() {
 
             {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
-              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(18,18,18,0.1)' }} />
-              <p className="text-xs tracking-widest uppercase" style={{ color: '#7A6F66' }}>{t('contact.form.or')}</p>
-              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(18,18,18,0.1)' }} />
+              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(26,26,46,0.1)' }} />
+              <p className="text-xs tracking-widest uppercase" style={{ color: '#777777' }}>{t('contact.form.or')}</p>
+              <div style={{ flex: 1, height: '1px', backgroundColor: 'rgba(26,26,46,0.1)' }} />
             </div>
 
-            <div className="rounded-2xl p-8 md:p-12" style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(18,18,18,0.1)' }}>
+            <div className="rounded-2xl p-8 md:p-12" style={{ backgroundColor: '#FFFFFF', border: '1px solid rgba(26,26,46,0.1)' }}>
               <h2 className="text-2xl mb-6">{t('contact.form.title')}</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -318,7 +318,7 @@ export function ContactPage() {
                 <div>
                   <Label htmlFor="phone">
                     {t('contact.form.label.phone')}
-                    <span className="text-xs ml-1" style={{ color: '#7A6F66' }}>({t('form.optional')})</span>
+                    <span className="text-xs ml-1" style={{ color: '#777777' }}>({t('form.optional')})</span>
                   </Label>
                   <Input
                     id="phone"
@@ -356,7 +356,7 @@ export function ContactPage() {
                   <div>
                     <Label htmlFor="budget">
                       {t('contact.form.label.budget')}
-                      <span className="text-xs ml-1" style={{ color: '#7A6F66' }}>({t('form.optional')})</span>
+                      <span className="text-xs ml-1" style={{ color: '#777777' }}>({t('form.optional')})</span>
                     </Label>
                     <Input
                       id="budget"
@@ -369,7 +369,7 @@ export function ContactPage() {
                   <div>
                     <Label htmlFor="timeline">
                       {t('contact.form.label.timeline')}
-                      <span className="text-xs ml-1" style={{ color: '#7A6F66' }}>({t('form.optional')})</span>
+                      <span className="text-xs ml-1" style={{ color: '#777777' }}>({t('form.optional')})</span>
                     </Label>
                     <Input
                       id="timeline"
@@ -393,9 +393,9 @@ export function ContactPage() {
                 </div>
 
                 {/* CAPTCHA Verification */}
-                <div className="border-t pt-6" style={{ borderColor: '#E3DCD3' }}>
-                  <h3 className="text-lg mb-2" style={{ color: '#121212' }}>{t('contact.form.security')}</h3>
-                  <p className="text-xs mb-4" style={{ color: '#7A6F66' }}>
+                <div className="border-t pt-6" style={{ borderColor: '#E0E0E0' }}>
+                  <h3 className="text-lg mb-2" style={{ color: '#1A1A2E' }}>{t('contact.form.security')}</h3>
+                  <p className="text-xs mb-4" style={{ color: '#777777' }}>
                     {t('contact.captcha.security')}
                   </p>
                   <Captcha 
@@ -419,19 +419,19 @@ export function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq-section" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+      <section id="faq-section" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 50% 60% at 50% 100%, rgba(166,143,89,0.06) 0%, transparent 65%)'
+          background: 'radial-gradient(ellipse 50% 60% at 50% 100%, rgba(212,168,67,0.06) 0%, transparent 65%)'
         }} />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>{t('contact.faq.badge')}</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{t('contact.faq.badge')}</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>{t('contact.faq.title')}</h2>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>{t('contact.faq.title')}</h2>
           </div>
           
           <Accordion 
@@ -462,13 +462,13 @@ export function ContactPage() {
                 key={i}
                 value={`item-${i + 1}`}
                 className="px-6 rounded-xl"
-                style={{ border: '1px solid rgba(166,143,89,0.18)', backgroundColor: 'rgba(166,143,89,0.04)' }}
+                style={{ border: '1px solid rgba(212,168,67,0.18)', backgroundColor: 'rgba(212,168,67,0.04)' }}
               >
                 <AccordionTrigger className="hover:no-underline py-5">
-                  <span className="text-base text-left" style={{ color: '#F5F1EB' }}>{item.q}</span>
+                  <span className="text-base text-left" style={{ color: '#F8F9FA' }}>{item.q}</span>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="leading-relaxed pb-4 text-sm" style={{ color: '#7A6F66' }}>{item.a}</p>
+                  <p className="leading-relaxed pb-4 text-sm" style={{ color: '#777777' }}>{item.a}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}

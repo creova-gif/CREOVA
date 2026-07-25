@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Link } from '../i18n/LocaleLink';
 import { motion, useInView } from 'motion/react';
 import { ArrowUpRight, Instagram, Mail, Linkedin, Star, MapPin } from 'lucide-react';
-import creovaLogo from '../assets/creova-logo.png';
+import { Logo } from './Logo';
 import photoInline from '../assets/photo-duo-portrait.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -20,7 +20,7 @@ function FooterMarquee({ items }: { items: string[] }) {
           <span
             key={i}
             className="text-sm tracking-[0.35em] uppercase flex-shrink-0"
-            style={{ color: item === '·' ? '#A68F59' : 'rgba(227,220,211,0.35)' }}
+            style={{ color: item === '·' ? '#D4A843' : 'rgba(224,224,224,0.35)' }}
           >
             {item}
           </span>
@@ -44,12 +44,12 @@ function SocialIcon({
       transition={{ type: 'spring', stiffness: 400, damping: 17 }}
       className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
       style={{
-        backgroundColor: 'rgba(245,241,235,0.05)',
-        border: '1px solid rgba(166,143,89,0.18)',
-        color: '#7A6F66',
+        backgroundColor: 'rgba(248,249,250,0.05)',
+        border: '1px solid rgba(212,168,67,0.18)',
+        color: '#777777',
       }}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#A68F59'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.45)'; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#7A6F66'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.18)'; }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#D4A843'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.45)'; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#777777'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.18)'; }}
     >
       {children}
     </motion.a>
@@ -126,7 +126,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ backgroundColor: '#080808', color: '#E3DCD3' }}
+      style={{ backgroundColor: '#1A1A2E', color: '#E0E0E0' }}
     >
       {/* Ambient radial glow */}
       <div
@@ -134,15 +134,15 @@ export function Footer() {
         style={{
           inset: 0,
           background:
-            'radial-gradient(ellipse 70% 60% at 85% 95%, rgba(166,143,89,0.08) 0%, transparent 65%), ' +
-            'radial-gradient(ellipse 40% 40% at 15% 85%, rgba(177,100,59,0.05) 0%, transparent 60%)',
+            'radial-gradient(ellipse 70% 60% at 85% 95%, rgba(212,168,67,0.08) 0%, transparent 65%), ' +
+            'radial-gradient(ellipse 40% 40% at 15% 85%, rgba(192,57,43,0.05) 0%, transparent 60%)',
         }}
       />
       {/* Dot-grid texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
         style={{
-          backgroundImage: 'radial-gradient(circle, #A68F59 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, #D4A843 1px, transparent 1px)',
           backgroundSize: '28px 28px',
         }}
       />
@@ -150,23 +150,23 @@ export function Footer() {
       {/* ── 1. AVAILABILITY STRIP ──────────────────────────────────────── */}
       <div
         className="relative border-b"
-        style={{ borderColor: 'rgba(166,143,89,0.12)' }}
+        style={{ borderColor: 'rgba(212,168,67,0.12)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span
               className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0"
-              style={{ backgroundColor: '#B1643B' }}
+              style={{ backgroundColor: '#C0392B' }}
             />
-            <p className="text-xs tracking-[0.08em]" style={{ color: '#7A6F66' }}>
-              <span style={{ color: '#E3DCD3' }}>{t('footer.avail.text')}</span>
+            <p className="text-xs tracking-[0.08em]" style={{ color: '#777777' }}>
+              <span style={{ color: '#E0E0E0' }}>{t('footer.avail.text')}</span>
               {' '}{t('footer.avail.sub')}
             </p>
           </div>
           <Link
             to="/contact"
             className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:opacity-60"
-            style={{ color: '#A68F59' }}
+            style={{ color: '#D4A843' }}
           >
             {t('footer.avail.cta')}
             <ArrowUpRight className="w-3 h-3" />
@@ -191,8 +191,8 @@ export function Footer() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-8"
             >
-              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>
+              <div className="w-10 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#D4A843' }}>
                 {t('footer.eyebrow')}
               </span>
             </motion.div>
@@ -203,7 +203,7 @@ export function Footer() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(3.2rem, 8vw, 9rem)',
-                color: '#F5F1EB',
+                color: '#F8F9FA',
               }}
             >
               {HEADLINE_TOKENS.map((token, i) =>
@@ -215,7 +215,7 @@ export function Footer() {
                       width: 'clamp(4rem, 7vw, 8rem)',
                       height: 'clamp(2.4rem, 4.2vw, 4.8rem)',
                       verticalAlign: '-0.06em',
-                      boxShadow: '0 0 0 2px rgba(166,143,89,0.25)',
+                      boxShadow: '0 0 0 2px rgba(212,168,67,0.25)',
                     }}
                     initial={{ opacity: 0, scale: 0.7 }}
                     animate={headlineInView ? { opacity: 1, scale: 1 } : {}}
@@ -241,7 +241,7 @@ export function Footer() {
                     {token === t('footer.headline.4') ? (
                       <span
                         style={{
-                          backgroundImage: 'linear-gradient(135deg, #F5F1EB 10%, #A68F59 80%)',
+                          backgroundImage: 'linear-gradient(135deg, #F8F9FA 10%, #D4A843 80%)',
                           WebkitBackgroundClip: 'text',
                           backgroundClip: 'text',
                           color: 'transparent',
@@ -258,7 +258,7 @@ export function Footer() {
             {/* Sub-text */}
             <motion.p
               className="text-base md:text-lg mb-10 max-w-xl leading-relaxed"
-              style={{ color: '#7A6F66' }}
+              style={{ color: '#777777' }}
               initial={{ opacity: 0 }}
               animate={headlineInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -275,8 +275,8 @@ export function Footer() {
             >
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-400 hover:shadow-[0_8px_32px_rgba(166,143,89,0.2)] hover:-translate-y-0.5"
-                style={{ backgroundColor: '#F5F1EB', color: '#121212' }}
+                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-400 hover:shadow-[0_8px_32px_rgba(212,168,67,0.2)] hover:-translate-y-0.5"
+                style={{ backgroundColor: '#F8F9FA', color: '#1A1A2E' }}
               >
                 {t('footer.cta.book')}
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -286,11 +286,11 @@ export function Footer() {
                 className="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all duration-400 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: 'transparent',
-                  color: '#A68F59',
-                  border: '1px solid rgba(166,143,89,0.3)',
+                  color: '#D4A843',
+                  border: '1px solid rgba(212,168,67,0.3)',
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.6)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.3)'; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.6)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.3)'; }}
               >
                 {t('footer.cta.pricing')}
               </Link>
@@ -312,9 +312,9 @@ export function Footer() {
               <div key={i} className="flex items-center gap-3">
                 <div
                   className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: 'rgba(166,143,89,0.08)', border: '1px solid rgba(166,143,89,0.14)' }}
+                  style={{ backgroundColor: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.14)' }}
                 >
-                  <Icon className="w-4 h-4" style={{ color: '#A68F59' }} />
+                  <Icon className="w-4 h-4" style={{ color: '#D4A843' }} />
                 </div>
                 {href ? (
                   <a
@@ -322,12 +322,12 @@ export function Footer() {
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel="noopener noreferrer"
                     className="text-sm hover:opacity-70 transition-opacity"
-                    style={{ color: '#E3DCD3' }}
+                    style={{ color: '#E0E0E0' }}
                   >
                     {text}
                   </a>
                 ) : (
-                  <span className="text-sm" style={{ color: '#E3DCD3' }}>{text}</span>
+                  <span className="text-sm" style={{ color: '#E0E0E0' }}>{text}</span>
                 )}
               </div>
             ))}
@@ -338,7 +338,7 @@ export function Footer() {
       {/* ── 3. MARQUEE DIVIDER ─────────────────────────────────────────── */}
       <div
         className="relative border-y py-5 overflow-hidden"
-        style={{ borderColor: 'rgba(166,143,89,0.1)' }}
+        style={{ borderColor: 'rgba(212,168,67,0.1)' }}
       >
         <FooterMarquee items={MARQUEE_ITEMS} />
       </div>
@@ -359,10 +359,10 @@ export function Footer() {
             >
               {/* Column header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-4 h-px" style={{ backgroundColor: '#A68F59' }} />
+                <div className="w-4 h-px" style={{ backgroundColor: '#D4A843' }} />
                 <p
                   className="text-xs tracking-[0.4em] uppercase"
-                  style={{ color: '#A68F59' }}
+                  style={{ color: '#D4A843' }}
                 >
                   {t(col.titleKey)}
                 </p>
@@ -385,9 +385,9 @@ export function Footer() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group inline-flex items-center gap-1.5 text-sm transition-all duration-250"
-                          style={{ color: '#7A6F66' }}
-                          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#E3DCD3'; }}
-                          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#7A6F66'; }}
+                          style={{ color: '#777777' }}
+                          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#E0E0E0'; }}
+                          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#777777'; }}
                         >
                           {label}
                           {link.href !== '#' && (
@@ -400,9 +400,9 @@ export function Footer() {
                         <Link
                           to={link.href}
                           className="text-sm transition-all duration-250"
-                          style={{ color: '#7A6F66' }}
-                          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#E3DCD3'; }}
-                          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#7A6F66'; }}
+                          style={{ color: '#777777' }}
+                          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#E0E0E0'; }}
+                          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#777777'; }}
                         >
                           {label}
                         </Link>
@@ -419,27 +419,22 @@ export function Footer() {
       {/* ── 5. BOTTOM BAR ──────────────────────────────────────────────── */}
       <div
         className="relative border-t"
-        style={{ borderColor: 'rgba(245,241,235,0.05)' }}
+        style={{ borderColor: 'rgba(248,249,250,0.05)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
           <div className="flex flex-col md:flex-row items-center justify-between gap-5">
 
             {/* Logo */}
-            <Link to="/" className="flex-shrink-0 group">
-              <img
-                src={creovaLogo}
-                alt="CREOVA"
-                className="h-8 w-auto transition-opacity duration-300 group-hover:opacity-70"
-                style={{ mixBlendMode: 'screen' }}
-              />
+            <Link to="/" className="flex-shrink-0 group" aria-label="CREOVA">
+              <Logo variant="white" className="h-8 w-auto transition-opacity duration-300 group-hover:opacity-70" interactive={false} />
             </Link>
 
             {/* Legal strip */}
             <div className="flex flex-col items-center gap-1.5 text-center">
-              <p className="text-xs" style={{ color: '#9A9088' }}>
+              <p className="text-xs" style={{ color: '#8C7B75' }}>
                 {t('footer.bottom.rights').replace('{year}', String(new Date().getFullYear()))}
               </p>
-              <p className="text-xs" style={{ color: '#9A9088' }}>
+              <p className="text-xs" style={{ color: '#8C7B75' }}>
                 {t('footer.bottom.tax')}
               </p>
             </div>
@@ -470,7 +465,7 @@ export function Footer() {
                     key={href}
                     to={href}
                     className="text-xs transition-opacity duration-200 hover:opacity-70"
-                    style={{ color: '#9A9088' }}
+                    style={{ color: '#8C7B75' }}
                   >
                     {t(labelKey)}
                   </Link>

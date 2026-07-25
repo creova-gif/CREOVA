@@ -177,7 +177,7 @@ export function CommunityPage() {
     subtitle: language === 'fr' ? 'Rejoignez la famille' : 'Join the Family',
     price: language === 'fr' ? 'Gratuit' : 'Free',
     icon: Heart,
-    color: '#A68F59',
+    color: '#D4A843',
     perks: language === 'fr' ? [
       '10% de réduction sur votre première commande VERSE',
       'Accès à la newsletter exclusive mensuelle',
@@ -223,16 +223,16 @@ export function CommunityPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#F5F1EB' }}>
+    <div style={{ backgroundColor: '#F8F9FA' }}>
       <PageSEO
         title="Community"
         description="Join the CREOVA community — a home for BIPOC creatives, entrepreneurs, and cultural storytellers across Canada. Connect, collaborate, and grow."
       path="/community"
       />
       {/* Hero Section — Asymmetric Editorial */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
-        <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, transparent, #A68F59, transparent)' }} />
-        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ backgroundColor: 'rgba(166,143,89,0.25)' }} />
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, transparent, #D4A843, transparent)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.25)' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-0 items-center">
@@ -242,20 +242,20 @@ export function CommunityPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="py-24 pr-0 lg:pr-16"
-              style={{ borderRight: '1px solid rgba(166,143,89,0.1)' }}
+              style={{ borderRight: '1px solid rgba(212,168,67,0.1)' }}
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-10 h-px" style={{ backgroundColor: '#A68F59' }} />
-                <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>
+                <div className="w-10 h-px" style={{ backgroundColor: '#D4A843' }} />
+                <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#D4A843' }}>
                   {language === 'fr' ? 'Bienvenue' : 'Welcome'}
                 </span>
               </div>
               <h1 className="tracking-tight leading-none mb-8" style={{ fontSize: 'clamp(3rem, 7vw, 7rem)' }}>
-                <span className="block font-light mb-2" style={{ color: '#F5F1EB' }}>
+                <span className="block font-light mb-2" style={{ color: '#F8F9FA' }}>
                   {language === 'fr' ? 'Notre' : 'Our'}
                 </span>
                 <span className="block italic" style={{
-                  backgroundImage: 'linear-gradient(95deg, #A68F59 0%, #E3DCD3 65%)',
+                  backgroundImage: 'linear-gradient(95deg, #D4A843 0%, #E0E0E0 65%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',
@@ -263,7 +263,7 @@ export function CommunityPage() {
                   {language === 'fr' ? 'Communauté.' : 'Community.'}
                 </span>
               </h1>
-              <p className="text-base leading-relaxed max-w-lg" style={{ color: '#7A6F66' }}>
+              <p className="text-base leading-relaxed max-w-lg" style={{ color: '#777777' }}>
                 {language === 'fr'
                   ? 'Une agence créative transformant des idées en expériences captivantes et une communauté culturelle célébrant l\'excellence créative BIPOC'
                   : 'A creative agency transforming ideas into engaging experiences and a cultural movement celebrating BIPOC creative excellence'}
@@ -289,12 +289,12 @@ export function CommunityPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 + i * 0.07 }}
                   className="p-5 rounded-2xl flex flex-col gap-3"
-                  style={{ backgroundColor: 'rgba(245,241,235,0.03)', border: '1px solid rgba(166,143,89,0.1)' }}
+                  style={{ backgroundColor: 'rgba(248,249,250,0.03)', border: '1px solid rgba(212,168,67,0.1)' }}
                 >
-                  <stat.icon className="w-5 h-5" style={{ color: '#A68F59' }} />
+                  <stat.icon className="w-5 h-5" style={{ color: '#D4A843' }} />
                   <div>
-                    <div className="text-2xl font-semibold" style={{ color: '#F5F1EB' }}>{stat.value}</div>
-                    <div className="text-xs tracking-wide uppercase mt-0.5" style={{ color: 'rgba(245,241,235,0.35)' }}>{stat.label}</div>
+                    <div className="text-2xl font-semibold" style={{ color: '#F8F9FA' }}>{stat.value}</div>
+                    <div className="text-xs tracking-wide uppercase mt-0.5" style={{ color: 'rgba(248,249,250,0.35)' }}>{stat.label}</div>
                   </div>
                 </motion.div>
               ))}
@@ -314,19 +314,19 @@ export function CommunityPage() {
             className="text-center"
           >
             <div className="flex items-center justify-center gap-5 mb-6">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(177,100,59,0.4)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#B1643B' }}>Mission</p>
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(177,100,59,0.4)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C0392B' }}>Mission</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
             </div>
-            <h2 className="text-3xl md:text-4xl mb-8 tracking-tight font-light" style={{ color: '#121212' }}>
+            <h2 className="text-3xl md:text-4xl mb-8 tracking-tight font-light" style={{ color: '#1A1A2E' }}>
               {language === 'fr' ? 'Notre Mission' : 'Our Mission'}
             </h2>
-            <p className="text-lg leading-relaxed mb-6" style={{ color: '#4A3E36' }}>
+            <p className="text-lg leading-relaxed mb-6" style={{ color: '#777777' }}>
               {language === 'fr'
                 ? 'Chez CREOVA, nous sommes passionnés par donner vie à votre marque à travers une création de contenu exceptionnelle. Nous ne capturons pas seulement des moments; nous créons des expériences qui génèrent de l\'engagement et laissent une impression durable.'
                 : 'At CREOVA, we\'re passionate about bringing your brand to life through exceptional content creation. We don\'t just capture moments; we craft experiences that drive engagement and leave a lasting impression.'}
             </p>
-            <p className="text-lg leading-relaxed" style={{ color: '#4A3E36' }}>
+            <p className="text-lg leading-relaxed" style={{ color: '#777777' }}>
               {language === 'fr'
                 ? 'Que ce soit de la photographie d\'événements, de la vidéographie, de la gestion de marque ou de la gestion des médias sociaux, notre équipe d\'experts est là pour vous aider à raconter votre histoire unique et à élever la présence en ligne de votre marque.'
                 : 'Whether it\'s event photography, videography, brand management, or social media management, our expert team is here to help you tell your unique story and elevate your brand\'s online presence.'}
@@ -336,11 +336,11 @@ export function CommunityPage() {
       </section>
 
       {/* What We Do */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(166,143,89,0.3)' }} />
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
+        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
+        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.3)' }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(166,143,89,0.06) 0%, transparent 65%)'
+          background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(212,168,67,0.06) 0%, transparent 65%)'
         }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -352,13 +352,13 @@ export function CommunityPage() {
             className="mb-14"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(166,143,89,0.5)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#A68F59' }}>Services</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(212,168,67,0.5)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>Services</p>
             </div>
-            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>
+            <h2 className="text-4xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>
               {language === 'fr' ? 'Ce Que Nous Faisons' : 'What We Do'}
             </h2>
-            <p className="text-base mt-2" style={{ color: '#4A3E36' }}>
+            <p className="text-base mt-2" style={{ color: '#777777' }}>
               {language === 'fr'
                 ? 'Services créatifs complets qui donnent vie à votre vision'
                 : 'Comprehensive creative services that bring your vision to life'}
@@ -370,25 +370,25 @@ export function CommunityPage() {
               <RevealOnScroll key={index} mode='3d' delay={index * 0.1}>
                 <div
                   className="p-7 rounded-xl transition-all duration-300"
-                  style={{ border: '1px solid rgba(166,143,89,0.18)', backgroundColor: 'rgba(166,143,89,0.04)' }}
+                  style={{ border: '1px solid rgba(212,168,67,0.18)', backgroundColor: 'rgba(212,168,67,0.04)' }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.4)';
-                    (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.08)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.4)';
+                    (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(212,168,67,0.08)';
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(166,143,89,0.18)';
-                    (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(166,143,89,0.04)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.18)';
+                    (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(212,168,67,0.04)';
                   }}
                 >
                   <div
                     className="w-11 h-11 rounded-lg flex items-center justify-center mb-5"
-                    style={{ border: '1px solid rgba(177,100,59,0.35)', backgroundColor: 'rgba(177,100,59,0.1)' }}
+                    style={{ border: '1px solid rgba(192,57,43,0.35)', backgroundColor: 'rgba(192,57,43,0.1)' }}
                   >
-                    <service.icon className="w-5 h-5" style={{ color: '#B1643B' }} />
+                    <service.icon className="w-5 h-5" style={{ color: '#C0392B' }} />
                   </div>
-                  <div style={{ height: '1px', width: '24px', backgroundColor: 'rgba(166,143,89,0.4)', marginBottom: '14px' }} />
-                  <h3 className="text-lg mb-2 tracking-tight" style={{ color: '#F5F1EB' }}>{service.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: '#7A6F66' }}>{service.description}</p>
+                  <div style={{ height: '1px', width: '24px', backgroundColor: 'rgba(212,168,67,0.4)', marginBottom: '14px' }} />
+                  <h3 className="text-lg mb-2 tracking-tight" style={{ color: '#F8F9FA' }}>{service.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#777777' }}>{service.description}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -407,13 +407,13 @@ export function CommunityPage() {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(177,100,59,0.5)' }} />
-                <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#B1643B' }}>Vision</p>
+                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(192,57,43,0.5)' }} />
+                <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#C0392B' }}>Vision</p>
               </div>
-              <h2 className="text-3xl md:text-4xl mb-6 tracking-tight font-light" style={{ color: '#121212' }}>
+              <h2 className="text-3xl md:text-4xl mb-6 tracking-tight font-light" style={{ color: '#1A1A2E' }}>
                 {language === 'fr' ? 'Plus Qu\'une Agence' : 'Beyond an Agency'}
               </h2>
-              <div className="space-y-4" style={{ color: '#4A3E36' }}>
+              <div className="space-y-4" style={{ color: '#777777' }}>
                 <p className="text-lg leading-relaxed">
                   {language === 'fr'
                     ? 'CREOVA est plus qu\'une simple agence créative—c\'est une vision de fusionner la création de contenu, la narration et la culture en quelque chose d\'impactant.'
@@ -438,9 +438,9 @@ export function CommunityPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
-              style={{ borderColor: '#A68F59', backgroundColor: '#FFFFFF' }}
+              style={{ borderColor: '#D4A843', backgroundColor: '#FFFFFF' }}
             >
-              <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', aspectRatio: '4/3' }}>
+              <div className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', aspectRatio: '4/3' }}>
                 <img
                   src="/photo-beyond-agency.jpg"
                   alt="CREOVA — Beyond an Agency"
@@ -451,16 +451,16 @@ export function CommunityPage() {
                 <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
                   <div className="flex items-end justify-between">
                     <div>
-                      <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#A68F59', fontFamily: 'var(--font-display)' }}>BROCK UNIVERSITY</p>
+                      <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#D4A843', fontFamily: 'var(--font-display)' }}>BROCK UNIVERSITY</p>
                       <h4 className="text-lg italic leading-tight" style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>BLACK STUDENT<br />ASSOCIATION</h4>
                     </div>
                     <div className="text-right space-y-1">
                       <div className="flex flex-col items-end">
-                        <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>President</span>
+                        <span className="text-[9px] tracking-widest uppercase" style={{ color: '#D4A843' }}>President</span>
                         <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Ivie Omoregie</span>
                       </div>
                       <div className="flex flex-col items-end">
-                        <span className="text-[9px] tracking-widest uppercase" style={{ color: '#A68F59' }}>Vice President</span>
+                        <span className="text-[9px] tracking-widest uppercase" style={{ color: '#D4A843' }}>Vice President</span>
                         <span className="text-xs font-semibold" style={{ color: '#FFFFFF' }}>Jason Asiruwa</span>
                       </div>
                     </div>
@@ -469,11 +469,11 @@ export function CommunityPage() {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#A68F59', fontFamily: 'var(--font-display)' }}>BLSA</span>
-                  <span className="text-[10px] tracking-widest uppercase" style={{ color: '#7A6F66' }}>Student Leadership</span>
+                  <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#1A1A2E', color: '#D4A843', fontFamily: 'var(--font-display)' }}>BLSA</span>
+                  <span className="text-[10px] tracking-widest uppercase" style={{ color: '#777777' }}>Student Leadership</span>
                 </div>
-                <h3 className="text-xl mb-3" style={{ color: '#121212' }}>Black Student Association (BLSA)</h3>
-                <p className="leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
+                <h3 className="text-xl mb-3" style={{ color: '#1A1A2E' }}>Black Student Association (BLSA)</h3>
+                <p className="leading-relaxed mb-4" style={{ color: '#777777' }}>
                   {language === 'fr'
                     ? 'L\'Association des étudiants noirs de l\'Université Brock unit, élève et célèbre les étudiants noirs à travers la culture, le leadership et la communauté.'
                     : 'The Black Student Association at Brock University unites, elevates, and celebrates Black students through culture, leadership, and community.'}
@@ -493,10 +493,10 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
               {language === 'fr' ? 'Rejoignez Notre Famille' : 'Join Our Family'}
             </h2>
-            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#7A6F66' }}>
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#777777' }}>
               {language === 'fr'
                 ? 'Rejoignez gratuitement notre communauté créative'
                 : 'Join our creative community, free'}
@@ -517,8 +517,8 @@ export function CommunityPage() {
                        style={{ backgroundColor: `${communityTier.color}20` }}>
                     <communityTier.icon className="w-8 h-8" style={{ color: communityTier.color }} />
                   </div>
-                  <h3 className="text-3xl mb-2" style={{ color: '#121212' }}>{communityTier.name}</h3>
-                  <p className="text-sm mb-4" style={{ color: '#7A6F66' }}>{communityTier.subtitle}</p>
+                  <h3 className="text-3xl mb-2" style={{ color: '#1A1A2E' }}>{communityTier.name}</h3>
+                  <p className="text-sm mb-4" style={{ color: '#777777' }}>{communityTier.subtitle}</p>
 
                   <div className="mb-2">
                     <span className="text-4xl" style={{ color: communityTier.color }}>
@@ -531,7 +531,7 @@ export function CommunityPage() {
                   {communityTier.perks.map((perk, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <Check className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: communityTier.color }} />
-                      <span className="text-sm" style={{ color: '#121212' }}>{perk}</span>
+                      <span className="text-sm" style={{ color: '#1A1A2E' }}>{perk}</span>
                     </div>
                   ))}
                 </div>
@@ -575,10 +575,10 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
               {language === 'fr' ? 'Plus Qu\'une Adhésion' : 'More Than Membership'}
             </h2>
-            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#7A6F66' }}>
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#777777' }}>
               {language === 'fr'
                 ? 'Une communauté qui élève, connecte et célèbre l\'excellence créative BIPOC'
                 : 'A community that elevates, connects, and celebrates BIPOC creative excellence'}
@@ -592,14 +592,14 @@ export function CommunityPage() {
                 <RevealOnScroll key={index} mode='3d' delay={index * 0.08}>
                   <div
                     className="rounded-2xl p-6 border-2 hover:shadow-xl transition-all duration-300 group"
-                    style={{ backgroundColor: '#F5F1EB', borderColor: '#E3DCD3' }}
+                    style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
                   >
                     <div className="w-12 h-12 rounded-xl mb-4 flex items-center justify-center group-hover:scale-110 transition-transform"
-                         style={{ backgroundColor: 'rgba(166, 143, 89, 0.1)' }}>
-                      <Icon className="w-6 h-6" style={{ color: '#A68F59' }} />
+                         style={{ backgroundColor: 'rgba(212, 168, 67, 0.1)' }}>
+                      <Icon className="w-6 h-6" style={{ color: '#D4A843' }} />
                     </div>
-                    <h3 className="text-xl mb-2" style={{ color: '#121212' }}>{benefit.title}</h3>
-                    <p className="leading-relaxed" style={{ color: '#7A6F66' }}>{benefit.description}</p>
+                    <h3 className="text-xl mb-2" style={{ color: '#1A1A2E' }}>{benefit.title}</h3>
+                    <p className="leading-relaxed" style={{ color: '#777777' }}>{benefit.description}</p>
                   </div>
                 </RevealOnScroll>
               );
@@ -609,7 +609,7 @@ export function CommunityPage() {
       </section>
 
       {/* Community Partners */}
-      <section className="py-20" style={{ backgroundColor: '#F5F1EB' }}>
+      <section className="py-20" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -617,10 +617,10 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
+            <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#1A1A2E' }}>
               {language === 'fr' ? 'Nos Partenaires Communautaires' : 'Our Community Partners'}
             </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#7A6F66' }}>
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#777777' }}>
               {language === 'fr'
                 ? 'Fièrement soutenu par des organisations dédiées à l\'excellence et l\'autonomisation des communautés BIPOC'
                 : 'Proudly supported by organizations dedicated to BIPOC community excellence and empowerment'}
@@ -632,9 +632,9 @@ export function CommunityPage() {
               <RevealOnScroll key={index} mode='3d' delay={index * 0.12}>
               <div
                 className="rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 group"
-                style={{ borderColor: '#E3DCD3', backgroundColor: '#FFFFFF' }}
+                style={{ borderColor: '#E0E0E0', backgroundColor: '#FFFFFF' }}
               >
-                <div className="relative overflow-hidden" style={{ backgroundColor: '#121212', aspectRatio: '4/3' }}>
+                <div className="relative overflow-hidden" style={{ backgroundColor: '#1A1A2E', aspectRatio: '4/3' }}>
                   <img
                     src={partner.image}
                     alt={partner.name}
@@ -645,7 +645,7 @@ export function CommunityPage() {
                   <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
                     <div className="flex items-end justify-between">
                       <div>
-                        <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#A68F59', fontFamily: 'var(--font-display)' }}>{partner.captionLeft.line1}</p>
+                        <p className="text-[10px] tracking-[0.2em] font-semibold mb-1" style={{ color: '#D4A843', fontFamily: 'var(--font-display)' }}>{partner.captionLeft.line1}</p>
                         <h4 className="text-lg italic leading-tight whitespace-pre-line" style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>{partner.captionLeft.line2}</h4>
                       </div>
                     </div>
@@ -653,11 +653,11 @@ export function CommunityPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#121212', color: '#A68F59', fontFamily: 'var(--font-display)' }}>{partner.badge}</span>
-                    <span className="text-[10px] tracking-widest uppercase" style={{ color: '#7A6F66' }}>{partner.badgeSub}</span>
+                    <span className="text-[10px] tracking-[0.15em] uppercase font-semibold px-2 py-1 rounded" style={{ backgroundColor: '#1A1A2E', color: '#D4A843', fontFamily: 'var(--font-display)' }}>{partner.badge}</span>
+                    <span className="text-[10px] tracking-widest uppercase" style={{ color: '#777777' }}>{partner.badgeSub}</span>
                   </div>
-                  <h3 className="text-xl mb-3" style={{ color: '#121212' }}>{partner.name}</h3>
-                  <p className="leading-relaxed mb-4" style={{ color: '#7A6F66' }}>
+                  <h3 className="text-xl mb-3" style={{ color: '#1A1A2E' }}>{partner.name}</h3>
+                  <p className="leading-relaxed mb-4" style={{ color: '#777777' }}>
                     {partner.description}
                   </p>
                   {partner.website !== '#' ? (
@@ -666,7 +666,7 @@ export function CommunityPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center group/link p-0 h-auto hover:underline"
-                      style={{ color: '#A68F59' }}
+                      style={{ color: '#D4A843' }}
                     >
                       {language === 'fr' ? 'En savoir plus' : 'Learn more'}
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
@@ -675,7 +675,7 @@ export function CommunityPage() {
                     <Button
                       variant="ghost"
                       className="group/link p-0 h-auto"
-                      style={{ color: '#A68F59' }}
+                      style={{ color: '#D4A843' }}
                     >
                       {language === 'fr' ? 'En savoir plus' : 'Learn more'}
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
@@ -691,7 +691,7 @@ export function CommunityPage() {
 
       {/* Recent Work with Our Partners */}
       {partnerGalleries.length > 0 && (
-        <section className="py-20" style={{ backgroundColor: '#0A0A0A' }}>
+        <section className="py-20" style={{ backgroundColor: '#1A1A2E' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -701,19 +701,19 @@ export function CommunityPage() {
             >
               <div>
                 <div className="flex items-center gap-4 mb-3">
-                  <div style={{ height: '1px', width: '40px', backgroundColor: '#A68F59' }} />
-                  <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#A68F59' }}>Recent Work</span>
+                  <div style={{ height: '1px', width: '40px', backgroundColor: '#D4A843' }} />
+                  <span className="text-xs tracking-[0.45em] uppercase" style={{ color: '#D4A843' }}>Recent Work</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#F5F1EB' }}>
+                <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#F8F9FA' }}>
                   {language === 'fr' ? 'Aux côtés de nos partenaires' : 'Shot alongside our partners'}
                 </h2>
               </div>
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 text-sm tracking-wide transition-colors duration-300 flex-shrink-0"
-                style={{ color: '#A68F59' }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#F5F1EB'}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#A68F59'}
+                style={{ color: '#D4A843' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#F8F9FA'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#D4A843'}
               >
                 {language === 'fr' ? 'Voir tout le portfolio' : 'Browse full portfolio'}
                 <ArrowRight className="w-4 h-4" />
@@ -747,14 +747,14 @@ export function CommunityPage() {
                   }} />
                   {gallery.locked && (
                     <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full text-[9px] tracking-widest uppercase"
-                         style={{ backgroundColor: 'rgba(18,18,18,0.6)', color: 'rgba(245,241,235,0.7)', border: '1px solid rgba(245,241,235,0.15)' }}>
+                         style={{ backgroundColor: 'rgba(26,26,46,0.6)', color: 'rgba(248,249,250,0.7)', border: '1px solid rgba(248,249,250,0.15)' }}>
                       <Lock className="w-2.5 h-2.5" /> Private
                     </div>
                   )}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <div className="w-6 mb-2" style={{ height: '1px', backgroundColor: gallery.accent }} />
                     <p className="text-[10px] tracking-[0.25em] uppercase mb-1" style={{ color: gallery.accent }}>{gallery.org}</p>
-                    <h3 className="text-base tracking-tight leading-tight" style={{ color: '#F5F1EB' }}>{gallery.title}</h3>
+                    <h3 className="text-base tracking-tight leading-tight" style={{ color: '#F8F9FA' }}>{gallery.title}</h3>
                   </div>
                 </motion.a>
               ))}
@@ -764,23 +764,23 @@ export function CommunityPage() {
       )}
 
       {/* CTA Section */}
-      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#0E0E0E' }}>
+      <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#1A1A2E' }}>
         {/* Ambient gold radial glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(166,143,89,0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(212,168,67,0.18) 0%, transparent 70%)',
         }} />
         {/* Subtle warm arc — top */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 80% 40% at 50% -10%, rgba(177,100,59,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 40% at 50% -10%, rgba(192,57,43,0.12) 0%, transparent 70%)',
         }} />
         {/* Fine grain dot texture */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
-          backgroundImage: `radial-gradient(circle, #A68F59 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, #D4A843 1px, transparent 1px)`,
           backgroundSize: '28px 28px',
         }} />
 
         {/* Horizontal gold rule */}
-        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #A68F59, transparent)' }} />
+        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #D4A843, transparent)' }} />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -791,20 +791,20 @@ export function CommunityPage() {
           >
             {/* Eyebrow */}
             <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="h-px w-12" style={{ backgroundColor: '#A68F59' }} />
-              <span className="text-xs tracking-[0.3em] uppercase" style={{ color: '#A68F59', fontFamily: 'var(--font-display)' }}>
+              <div className="h-px w-12" style={{ backgroundColor: '#D4A843' }} />
+              <span className="text-xs tracking-[0.3em] uppercase" style={{ color: '#D4A843', fontFamily: 'var(--font-display)' }}>
                 {language === 'fr' ? 'Rejoignez le Mouvement' : 'Join the Movement'}
               </span>
-              <div className="h-px w-12" style={{ backgroundColor: '#A68F59' }} />
+              <div className="h-px w-12" style={{ backgroundColor: '#D4A843' }} />
             </div>
 
-            <h2 className="text-4xl md:text-6xl mb-6 leading-tight" style={{ color: '#F5F1EB', fontFamily: 'var(--font-display)' }}>
+            <h2 className="text-4xl md:text-6xl mb-6 leading-tight" style={{ color: '#F8F9FA', fontFamily: 'var(--font-display)' }}>
               {language === 'fr'
-                ? <>Prêt à Faire Partie de<br /><em style={{ color: '#A68F59' }}>Quelque Chose de Spécial?</em></>
-                : <>Ready to Be Part of<br /><em style={{ color: '#A68F59' }}>Something Special?</em></>}
+                ? <>Prêt à Faire Partie de<br /><em style={{ color: '#D4A843' }}>Quelque Chose de Spécial?</em></>
+                : <>Ready to Be Part of<br /><em style={{ color: '#D4A843' }}>Something Special?</em></>}
             </h2>
 
-            <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(245,241,235,0.65)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(248,249,250,0.65)', fontFamily: 'var(--font-body)' }}>
               {language === 'fr'
                 ? 'Rejoignez CREOVA aujourd\'hui et déverrouillez un monde de créativité, communauté et culture.'
                 : 'Join CREOVA today and unlock a world of creativity, community, and culture.'}
@@ -814,7 +814,7 @@ export function CommunityPage() {
               <Button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="px-10 py-6 rounded-xl text-base font-semibold group"
-                style={{ backgroundColor: '#A68F59', color: '#121212' }}
+                style={{ backgroundColor: '#D4A843', color: '#1A1A2E' }}
               >
                 {language === 'fr' ? 'Commencer Gratuitement' : 'Start Free'}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -824,15 +824,15 @@ export function CommunityPage() {
                 className="px-10 py-6 rounded-xl text-base font-semibold border"
                 style={{
                   backgroundColor: 'transparent',
-                  color: '#F5F1EB',
-                  borderColor: 'rgba(245,241,235,0.25)',
+                  color: '#F8F9FA',
+                  borderColor: 'rgba(248,249,250,0.25)',
                 }}
               >
                 {language === 'fr' ? 'Magasiner VERSE' : 'Shop VERSE'}
               </Button>
             </div>
 
-            <p className="mt-8 text-xs tracking-widest uppercase" style={{ color: 'rgba(245,241,235,0.3)', fontFamily: 'var(--font-display)' }}>
+            <p className="mt-8 text-xs tracking-widest uppercase" style={{ color: 'rgba(248,249,250,0.3)', fontFamily: 'var(--font-display)' }}>
               {language === 'fr'
                 ? 'Aucune carte de crédit requise pour l\'adhésion Communauté'
                 : 'No credit card required for Community membership'}
@@ -841,11 +841,11 @@ export function CommunityPage() {
         </div>
 
         {/* Bottom gold rule */}
-        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #A68F59, transparent)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #D4A843, transparent)' }} />
       </section>
 
       {/* Land Acknowledgment */}
-      <section className="py-16" style={{ backgroundColor: '#121212' }}>
+      <section className="py-16" style={{ backgroundColor: '#1A1A2E' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -853,11 +853,11 @@ export function CommunityPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl mb-6" style={{ color: '#A68F59' }}>
+            <h2 className="text-3xl md:text-4xl mb-6" style={{ color: '#D4A843' }}>
               {language === 'fr' ? 'Reconnaissance du Territoire' : 'Land Acknowledgment'}
             </h2>
-            <div className="w-16 h-1 mx-auto mb-8 rounded-full" style={{ backgroundColor: '#B1643B' }}></div>
-            <div className="leading-relaxed text-lg space-y-4" style={{ color: '#E3DCD3' }}>
+            <div className="w-16 h-1 mx-auto mb-8 rounded-full" style={{ backgroundColor: '#C0392B' }}></div>
+            <div className="leading-relaxed text-lg space-y-4" style={{ color: '#E0E0E0' }}>
               <p>
                 {language === 'fr'
                   ? 'Nous reconnaissons que le territoire sur lequel nous nous réunissons est le territoire traditionnel des peuples Haudenosaunee et Anishinaabe, dont beaucoup continuent de vivre et de travailler ici aujourd\'hui. Ce territoire est couvert par les traités du Haut-Canada et se trouve dans les terres protégées par l\'accord Wampum du Plat à Une Cuillère.'
@@ -868,14 +868,14 @@ export function CommunityPage() {
                   ? 'Aujourd\'hui, le foyer de nombreux peuples des Premières Nations, Métis et Inuits est également notre foyer. Nous reconnaissons les sacrifices faits, forcés et librement consentis, par les peuples autochtones du Canada dans la formation du pays que nous appelons notre foyer.'
                   : 'Today, the home to many First Nations, Métis, and Inuit peoples is home to us too. We acknowledge the sacrifices made, forced and freely, by the Indigenous peoples of Canada in the formation of the country we call our home.'}
               </p>
-              <p style={{ color: '#F5F1EB' }}>
+              <p style={{ color: '#F8F9FA' }}>
                 {language === 'fr'
                   ? 'Alors que nous reconnaissons leurs contributions continues et leur présence ainsi que la nôtre sur cette terre, nous nous engageons à répondre à la Commission de vérité et réconciliation et à notre relation avec les peuples autochtones.'
                   : 'As we acknowledge their continued contributions and their presence and ours upon this land, we are committed to being responsive to the Truth and Reconciliation Commission and to our relationship with Indigenous peoples.'}
               </p>
             </div>
-            <div className="mt-8 pt-8 border-t" style={{ borderColor: 'rgba(166, 143, 89, 0.3)' }}>
-              <p className="text-sm" style={{ color: '#7A6F66' }}>
+            <div className="mt-8 pt-8 border-t" style={{ borderColor: 'rgba(212, 168, 67, 0.3)' }}>
+              <p className="text-sm" style={{ color: '#777777' }}>
                 {language === 'fr'
                   ? '🌿 Avec respect, gratitude et engagement envers la réconciliation'
                   : '🌿 With respect, gratitude, and commitment to reconciliation'}
