@@ -571,6 +571,7 @@ const translations = {
     'testimonials.stat.projects': 'Projects Completed',
     'testimonials.stat.rating': 'Average Rating',
     'testimonials.stat.years': 'Years in Business',
+    'testimonials.stat.bipoc': 'BIPOC-Led',
     'testimonials.stat.communities': 'Communities Reached',
     'testimonials.values.heading': 'What We Stand For',
     'testimonials.value.1': 'Cultural Authenticity',
@@ -658,6 +659,7 @@ const translations = {
     'home.stat.projects': 'Projects Delivered',
     'home.stat.communities': 'Communities Served',
     'home.stat.years': 'Year of Excellence',
+    'home.stat.rating': 'Google Rating',
 
     // SEEN Platform Teaser
     'home.seen.badge': 'Coming Soon',
@@ -1301,6 +1303,7 @@ const translations = {
     'testimonials.stat.projects': 'Projets Complétés',
     'testimonials.stat.rating': 'Note Moyenne',
     'testimonials.stat.years': 'Années en Affaires',
+    'testimonials.stat.bipoc': 'Dirigé par des BIPOC',
     'testimonials.stat.communities': 'Communautés Rejointes',
     'testimonials.values.heading': 'Ce en Quoi Nous Croyons',
     'testimonials.value.1': 'Authenticité Culturelle',
@@ -1388,6 +1391,7 @@ const translations = {
     'home.stat.projects': 'Projets Réalisés',
     'home.stat.communities': 'Communautés Servies',
     'home.stat.years': 'An d\'Excellence',
+    'home.stat.rating': 'Note Google',
 
     // SEEN Platform Teaser
     'home.seen.badge': 'Bientôt Disponible',

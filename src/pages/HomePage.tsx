@@ -4,7 +4,7 @@ import { PageSEO } from '../components/PageSEO';
 import { Button } from '../components/ui/button';
 import {
   Camera, Video, Palette, TrendingUp, ShoppingBag, Calendar,
-  CheckCircle2, Globe, Users, ArrowRight, Heart, Award,
+  CheckCircle2, Globe, Users, ArrowRight, Heart, Award, Star,
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -53,6 +53,8 @@ function AnimatedStat({ number, label, icon: Icon, delay }: {
     const numericStr = number.replace(/[^0-9.]/g, '');
     const suffix = number.replace(/[0-9.]/g, '');
     const target = parseFloat(numericStr) || 0;
+    // Preserve decimals (e.g. the 5.0 rating) instead of flooring to 5.
+    const decimals = numericStr.includes('.') ? (numericStr.split('.')[1]?.length ?? 1) : 0;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -73,7 +75,8 @@ function AnimatedStat({ number, label, icon: Icon, delay }: {
             update() {
               const display = el.querySelector('[data-counter]');
               if (display) {
-                display.textContent = Math.floor(counter.value) + suffix;
+                const shown = decimals > 0 ? counter.value.toFixed(decimals) : String(Math.floor(counter.value));
+                display.textContent = shown + suffix;
               }
             },
           });
@@ -145,10 +148,12 @@ export function HomePage() {
     { icon: Calendar, title: t('home.feature.6.title'), description: t('home.feature.6.desc'), link: '/experience', image: photoServiceEvents, objectPosition: 'center 40%', accent: '#B1643B', startingPrice: '$750' },
   ];
 
+  // One canonical, defensible proof set — matches the 30 real galleries on
+  // /work and the 5.0 shown by TrustSignals/Google. No unsourced vanity metrics.
   const stats = [
-    { number: '50+', label: t('home.stat.projects'), icon: Award },
+    { number: '30+', label: t('home.stat.projects'), icon: Award },
     { number: '5+', label: t('home.stat.communities'), icon: Globe },
-    { number: '98%', label: 'Client Satisfaction', icon: Heart },
+    { number: '5.0', label: t('home.stat.rating'), icon: Star },
   ];
 
   const marqueeItems = [

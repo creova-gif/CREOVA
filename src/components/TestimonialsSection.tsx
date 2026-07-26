@@ -36,9 +36,9 @@ export function TestimonialsSection() {
   ];
 
   const stats = [
-    { value: '15+', label: t('testimonials.stat.projects'), icon: Award },
-    { value: '5★', label: t('testimonials.stat.rating'), icon: CheckCircle },
-    { value: '1+', label: t('testimonials.stat.years'), icon: TrendingUp },
+    { value: '30+', label: t('testimonials.stat.projects'), icon: Award },
+    { value: '5.0', label: t('testimonials.stat.rating'), icon: CheckCircle },
+    { value: '100%', label: t('testimonials.stat.bipoc'), icon: TrendingUp },
     { value: '5+', label: t('testimonials.stat.communities'), icon: Globe }
   ];
 
