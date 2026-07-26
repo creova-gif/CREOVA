@@ -3,6 +3,7 @@ import { Link } from '../i18n/LocaleLink';
 import { motion, useInView } from 'motion/react';
 import { ArrowUpRight, Instagram, Mail, Linkedin, Star, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
+import { SERVICE_AREAS } from '../data/serviceAreas';
 import photoInline from '../assets/photo-duo-portrait.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -59,7 +60,7 @@ function SocialIcon({
 /* ─── MAIN COMPONENT ─────────────────────────────────────────────────────── */
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const headlineRef = useRef<HTMLDivElement>(null);
   const linksRef    = useRef<HTMLDivElement>(null);
   const headlineInView = useInView(headlineRef, { once: true, margin: '-5% 0px' });
@@ -413,6 +414,28 @@ export function Footer() {
               </ul>
             </motion.div>
           ))}
+        </div>
+
+        {/* Service areas — internal links so the local landing pages are
+            crawlable and discoverable from every page. */}
+        <div className="mt-14 pt-8 border-t" style={{ borderColor: 'rgba(248,249,250,0.06)' }}>
+          <p className="text-[10px] tracking-[0.35em] uppercase mb-4" style={{ color: '#8C7B75' }}>
+            {t('footer.areas.title')}
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2.5">
+            {SERVICE_AREAS.map((a) => (
+              <Link
+                key={a.slug}
+                to={`/${a.slug}`}
+                className="text-xs sm:text-sm transition-colors duration-200"
+                style={{ color: '#777777' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#D4A843'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#777777'; }}
+              >
+                {(language === 'fr' ? a.fr : a.en).kicker}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

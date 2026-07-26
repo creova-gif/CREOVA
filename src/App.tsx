@@ -9,6 +9,7 @@ import { AdminAuth } from './components/AdminAuth';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { CartProvider } from './context/CartContext';
 import { ExploreMenuProvider } from './context/ExploreMenuContext';
+import { SERVICE_AREAS } from './data/serviceAreas';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Toaster } from './components/ui/sonner';
 import { BackToTop } from './components/BackToTop';
@@ -44,6 +45,7 @@ const AdminHubPage = lazy(() => import('./pages/AdminHubPage').then(m => ({ defa
 const AdminGalleriesPage = lazy(() => import('./pages/AdminGalleriesPage').then(m => ({ default: m.AdminGalleriesPage })));
 const DatabaseAccessPage = lazy(() => import('./pages/DatabaseAccessPage').then(m => ({ default: m.DatabaseAccessPage })));
 const WorkPage = lazy(() => import('./pages/WorkPage').then(m => ({ default: m.WorkPage })));
+const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage').then(m => ({ default: m.ServiceAreaPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 function PageLoader() {
@@ -81,6 +83,8 @@ const LOCALIZED_ROUTES: Array<{ path: string; element: React.ReactNode }> = [
   { path: 'seen', element: <SEENPage /> },
   { path: 'terms-of-service', element: <TermsOfServicePage /> },
   { path: 'privacy-policy', element: <PrivacyPolicyPage /> },
+  // Service-area SEO landing pages (data-driven — see data/serviceAreas.ts).
+  ...SERVICE_AREAS.map((a) => ({ path: a.slug, element: <ServiceAreaPage slug={a.slug} /> })),
 ];
 
 /** Legacy paths kept alive as redirects. English only — they were never localized. */

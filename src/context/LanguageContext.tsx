@@ -488,6 +488,7 @@ const translations = {
 
     // Footer
     'footer.col.services': 'Services',
+    'footer.areas.title': 'Serving the Niagara Region & Ontario',
     'footer.col.company': 'Company',
     'footer.col.platform': 'Platform',
     'footer.col.connect': 'Connect',
@@ -1220,6 +1221,7 @@ const translations = {
 
     // Footer
     'footer.col.services': 'Services',
+    'footer.areas.title': 'Au service de la région de Niagara et de l’Ontario',
     'footer.col.company': 'Entreprise',
     'footer.col.platform': 'Plateforme',
     'footer.col.connect': 'Connecter',

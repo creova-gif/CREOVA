@@ -35,11 +35,44 @@ const BASE_ROUTES = [
   '/privacy-policy',
 ];
 
+// Service-area SEO pages are defined once in src/data/serviceAreas.ts; read
+// their slugs from source so adding an entry there auto-prerenders it (Node
+// can't import .ts directly, so parse the slug literals as text).
+function serviceAreaRoutes() {
+  try {
+    const src = readFileSync(join(root, 'src/data/serviceAreas.ts'), 'utf8');
+    return [...src.matchAll(/slug:\s*'([^']+)'/g)].map((m) => `/${m[1]}`);
+  } catch {
+    return [];
+  }
+}
+
+const ALL_BASE = [...BASE_ROUTES, ...serviceAreaRoutes()];
+
 // English at the bare path, French under /fr — mirrors src/i18n/locale.ts.
 const ROUTES = [
-  ...BASE_ROUTES,
-  ...BASE_ROUTES.map((r) => (r === '/' ? '/fr' : `/fr${r}`)),
+  ...ALL_BASE,
+  ...ALL_BASE.map((r) => (r === '/' ? '/fr' : `/fr${r}`)),
 ];
+
+// Priority hints for the generated sitemap. Anything unlisted defaults to 0.7.
+const SITEMAP_PRIORITY = {
+  '/': '1.0', '/services': '0.9', '/pricing': '0.9', '/work': '0.8',
+  '/contact': '0.8', '/experience': '0.8', '/community': '0.8',
+  '/terms-of-service': '0.3', '/privacy-policy': '0.3',
+};
+
+function writeSitemap() {
+  const urls = ROUTES.map((r) => {
+    const loc = `https://creova.one${r === '/' ? '/' : r}`;
+    const priority = SITEMAP_PRIORITY[r] ?? (r.startsWith('/fr') ? '0.6' : '0.7');
+    const changefreq = r === '/' ? 'weekly' : 'monthly';
+    return `  <url><loc>${loc}</loc><priority>${priority}</priority><changefreq>${changefreq}</changefreq></url>`;
+  }).join('\n');
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  writeFileSync(join(buildDir, 'sitemap.xml'), xml, 'utf8');
+  console.log(`[prerender] sitemap.xml written (${ROUTES.length} urls).`);
+}
 
 /**
  * Fetch the admin-managed gallery list once and expose it on globalThis, where
@@ -146,6 +179,7 @@ async function main() {
     console.error(`\n[prerender] ${failed} route(s) failed or produced no title.`);
     process.exit(1);
   }
+  writeSitemap();
   console.log(`\n[prerender] ${ROUTES.length} routes written.`);
 }
 
