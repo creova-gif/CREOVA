@@ -12,6 +12,7 @@ import { CommunityInsights } from '../components/CommunityInsights';
 import { TrustSignals } from '../components/TrustSignals';
 import { ClientLogos } from '../components/ClientLogos';
 import { CaseStudy } from '../components/CaseStudy';
+import { FounderSection } from '../components/FounderSection';
 import { useLanguage } from '../context/LanguageContext';
 import { useExploreMenu } from '../context/ExploreMenuContext';
 import { VideoHero } from '../components/VideoHero';
@@ -798,6 +799,7 @@ export function HomePage() {
         </div>
       </section>
 
+      <FounderSection />
       <TrustSignals />
       <TestimonialsSection />
 
