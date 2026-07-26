@@ -49,6 +49,7 @@ const WorkPage = lazy(() => import('./pages/WorkPage').then(m => ({ default: m.W
 const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage').then(m => ({ default: m.ServiceAreaPage })));
 const JournalPage = lazy(() => import('./pages/JournalPage').then(m => ({ default: m.JournalPage })));
 const JournalPostPage = lazy(() => import('./pages/JournalPostPage').then(m => ({ default: m.JournalPostPage })));
+const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 function PageLoader() {
@@ -84,6 +85,7 @@ const LOCALIZED_ROUTES: Array<{ path: string; element: React.ReactNode }> = [
   { path: 'booking', element: <BookingPage /> },
   { path: 'rental', element: <RentalPage /> },
   { path: 'seen', element: <SEENPage /> },
+  { path: 'about', element: <AboutPage /> },
   { path: 'terms-of-service', element: <TermsOfServicePage /> },
   { path: 'privacy-policy', element: <PrivacyPolicyPage /> },
   // Service-area SEO landing pages (data-driven — see data/serviceAreas.ts).
@@ -98,7 +100,6 @@ const LEGACY_REDIRECTS: Array<{ from: string; to: string }> = [
   { from: '/digital-products', to: '/shop/digital' },
   { from: '/events', to: '/experience' },
   { from: '/collaborate', to: '/experience' },
-  { from: '/about', to: '/community' },
 ];
 
 function AnimatedRoutes() {

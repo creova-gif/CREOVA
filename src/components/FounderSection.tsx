@@ -71,8 +71,8 @@ export function FounderSection() {
 
             <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#E0E0E0', maxWidth: '54ch' }}>
               {fr
-                ? "CREOVA est née d’une conviction : les organisations, artistes et communautés dirigés par des personnes BIPOC méritent une narration visuelle du calibre que les plus grandes marques tiennent pour acquis. De la Vitrine d’innovation Brock LINC aux événements culturels à travers la région de Niagara, Justin a fait de CREOVA un studio qui documente la culture en temps réel — et lui donne le soin qu’elle mérite."
-                : "CREOVA began with one conviction: BIPOC-led organizations, artists and communities deserve visual storytelling at the level the biggest brands take for granted. From the Brock LINC Innovation Showcase to cultural events and campaigns across the Niagara Region, Justin has grown CREOVA into a studio that documents culture as it happens — and gives it the craft it’s owed."}
+                ? "CREOVA a commencé par quelque chose de simple : en explorant sa ville, Justin a vu d’excellents commerces locaux passer inaperçus — non par manque de talent ou de qualité, mais de visibilité. Il a bâti CREOVA pour combler ce fossé et rendre le travail créatif de classe mondiale accessible à toute personne ayant une histoire à raconter."
+                : "CREOVA started with something simple: exploring his city, Justin watched excellent local businesses get overlooked — not for lack of talent or quality, but for lack of visibility. He built CREOVA to close that gap, and make world-class creative work accessible to everyone with a story worth telling."}
             </p>
 
             <blockquote className="pl-5 mb-9" style={{ borderLeft: '2px solid #B1643B' }}>
@@ -81,14 +81,23 @@ export function FounderSection() {
               </p>
             </blockquote>
 
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-px hover:shadow-lg"
-              style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
-            >
-              {fr ? 'Travaillez avec nous' : 'Work with us'}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-px hover:shadow-lg"
+                style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
+              >
+                {fr ? 'Lire son histoire' : 'Read the full story'}
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 text-sm tracking-wide transition-colors duration-200 hover:text-[#D4A843]"
+                style={{ color: '#E0E0E0' }}
+              >
+                {fr ? 'Travaillez avec nous' : 'Work with us'}
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>

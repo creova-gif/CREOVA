@@ -20,6 +20,7 @@ const buildDir = join(root, 'build');
 
 const BASE_ROUTES = [
   '/',
+  '/about',
   '/work',
   '/services',
   '/pricing',
