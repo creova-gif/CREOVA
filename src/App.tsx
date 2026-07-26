@@ -11,6 +11,7 @@ import { CartProvider } from './context/CartContext';
 import { ExploreMenuProvider } from './context/ExploreMenuContext';
 import { SERVICE_AREAS } from './data/serviceAreas';
 import { JOURNAL } from './data/journal';
+import { CASE_STUDIES } from './data/caseStudies';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Toaster } from './components/ui/sonner';
 import { BackToTop } from './components/BackToTop';
@@ -50,6 +51,7 @@ const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage').then(m => (
 const JournalPage = lazy(() => import('./pages/JournalPage').then(m => ({ default: m.JournalPage })));
 const JournalPostPage = lazy(() => import('./pages/JournalPostPage').then(m => ({ default: m.JournalPostPage })));
 const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const CaseStudyPage = lazy(() => import('./pages/CaseStudyPage').then(m => ({ default: m.CaseStudyPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 function PageLoader() {
@@ -93,6 +95,8 @@ const LOCALIZED_ROUTES: Array<{ path: string; element: React.ReactNode }> = [
   // Journal (blog) — index + one route per post (data-driven — see data/journal.ts).
   { path: 'journal', element: <JournalPage /> },
   ...JOURNAL.map((p) => ({ path: `journal/${p.slug}`, element: <JournalPostPage slug={p.slug} /> })),
+  // Case studies — deep-dive proof pages at /work/<slug> (data/caseStudies.ts).
+  ...CASE_STUDIES.map((cs) => ({ path: `work/${cs.slug}`, element: <CaseStudyPage slug={cs.slug} /> })),
 ];
 
 /** Legacy paths kept alive as redirects. English only — they were never localized. */

@@ -59,7 +59,17 @@ function journalRoutes() {
   }
 }
 
-const ALL_BASE = [...BASE_ROUTES, ...serviceAreaRoutes(), ...journalRoutes()];
+// Case studies live at /work/<slug> (slug parsed from the data file).
+function caseStudyRoutes() {
+  try {
+    const src = readFileSync(join(root, 'src/data/caseStudies.ts'), 'utf8');
+    return [...src.matchAll(/slug:\s*'([^']+)'/g)].map((m) => `/work/${m[1]}`);
+  } catch {
+    return [];
+  }
+}
+
+const ALL_BASE = [...BASE_ROUTES, ...serviceAreaRoutes(), ...journalRoutes(), ...caseStudyRoutes()];
 
 // English at the bare path, French under /fr — mirrors src/i18n/locale.ts.
 const ROUTES = [

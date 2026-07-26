@@ -9,6 +9,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { useGalleries, type Gallery } from '../hooks/useGalleries';
 import { galleryListSchema } from '../utils/structuredData';
+import { CASE_STUDIES } from '../data/caseStudies';
 
 const MONTHS_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -418,6 +419,34 @@ export function WorkPage() {
           ))}
         </div>
       </div>
+
+      {/* ── FEATURED CASE STUDY ── */}
+      {CASE_STUDIES[0] && (() => {
+        const cs = CASE_STUDIES[0];
+        const c = fr ? cs.fr : cs.en;
+        return (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <Link
+              to={`/work/${cs.slug}`}
+              className="group grid sm:grid-cols-[minmax(0,1fr)_1.4fr] gap-0 overflow-hidden rounded-2xl"
+              style={{ backgroundColor: '#0E0E0E', border: '1px solid rgba(212,168,67,0.15)' }}
+            >
+              <div className="relative overflow-hidden" style={{ minHeight: '200px', aspectRatio: '16/10' }}>
+                <img src={cs.cover} alt={c.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: 'center 40%' }} loading="lazy" />
+              </div>
+              <div className="flex flex-col justify-center p-7 lg:p-10">
+                <span className="text-[10px] tracking-[0.35em] uppercase mb-3" style={{ color: '#D4A843' }}>{fr ? 'Étude de cas en vedette' : 'Featured case study'}</span>
+                <h3 className="tracking-tight mb-3 transition-colors duration-200 group-hover:text-[#D4A843]" style={{ color: '#F8F9FA', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', lineHeight: 1.1 }}>{c.title}</h3>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: '#8C7B75', maxWidth: '48ch' }}>{cs.partner} · {cs.org}</p>
+                <span className="inline-flex items-center gap-2 text-sm tracking-wide" style={{ color: '#E0E0E0' }}>
+                  {fr ? 'Lire l’étude de cas' : 'Read the case study'}
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" style={{ color: '#D4A843' }} />
+                </span>
+              </div>
+            </Link>
+          </div>
+        );
+      })()}
 
       {/* ── FILTER TABS ── */}
       <div
