@@ -82,6 +82,29 @@ export function Navigation() {
               <Logo variant="navy" animateIn className="h-10 w-auto" interactive />
             </Link>
 
+            {/* Primary destinations, surfaced directly on desktop so the pages
+                that close a client (work / services / pricing) aren't hidden a
+                click deep. Explore still holds the full four-world map. */}
+            <div className="hidden lg:flex items-center gap-8">
+              {[
+                { name: t('nav.work'), path: '/work' },
+                { name: t('nav.services'), path: '/services' },
+                { name: t('nav.pricing'), path: '/pricing' },
+              ].map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={close}
+                  className="text-sm tracking-wide transition-colors duration-200"
+                  style={{ color: '#121212' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#B1643B')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#121212')}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
             {/* Right cluster */}
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="hidden sm:flex">
