@@ -91,6 +91,10 @@ const translations = {
     'trust.test3.quote': 'Their photography captures the essence of our community. CREOVA is our go-to creative partner.',
     'trust.test3.author': 'BSA Leadership',
     'trust.test3.org': 'Black Students Association',
+    'trust.stat1.label': 'Projects delivered',
+    'trust.stat2.label': 'Communities served',
+    'trust.stat3.label': 'Bilingual delivery',
+    'trust.stat4.label': 'BIPOC-led',
     'cart.cad': ' CAD',
 
     // Contact Page Keys
@@ -662,6 +666,10 @@ const translations = {
     'home.stat.communities': 'Communities Served',
     'home.stat.years': 'Year of Excellence',
     'home.stat.rating': 'Google Rating',
+    'home.stat.bipoc': 'BIPOC-Led',
+    'home.review.title': 'Worked with us? We\'d love your review.',
+    'home.review.sub': 'We\'re building our presence on Google — your words help other founders and communities find us.',
+    'home.review.cta': 'Leave a Google review',
 
     // SEEN Platform Teaser
     'home.seen.badge': 'Coming Soon',
@@ -825,6 +833,10 @@ const translations = {
     'trust.test3.quote': 'Leur photographie capture l\'essence de notre communauté. CREOVA est notre partenaire créatif de choix.',
     'trust.test3.author': 'Leadership BSA',
     'trust.test3.org': 'Association des Étudiants Noirs',
+    'trust.stat1.label': 'Projets réalisés',
+    'trust.stat2.label': 'Communautés servies',
+    'trust.stat3.label': 'Livraison bilingue',
+    'trust.stat4.label': 'Dirigé par des BIPOC',
 
     // Contact Page Keys
     'contact.toast.captcha.expired': 'La vérification de sécurité a expiré. Veuillez vérifier à nouveau.',
@@ -1396,6 +1408,10 @@ const translations = {
     'home.stat.communities': 'Communautés Servies',
     'home.stat.years': 'An d\'Excellence',
     'home.stat.rating': 'Note Google',
+    'home.stat.bipoc': 'Dirigé par des BIPOC',
+    'home.review.title': 'Vous avez travaillé avec nous ? On adorerait votre avis.',
+    'home.review.sub': 'On bâtit notre présence sur Google — vos mots aident d\'autres fondateurs et communautés à nous trouver.',
+    'home.review.cta': 'Laisser un avis Google',
 
     // SEEN Platform Teaser
     'home.seen.badge': 'Bientôt Disponible',

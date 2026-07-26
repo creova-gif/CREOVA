@@ -57,10 +57,10 @@ export function TrustSignals() {
   ];
 
   const stats = [
-    { icon: Users, stat: '20+', labelKey: 'trust.stat1.label' },
-    { icon: Award, stat: '5+',  labelKey: 'trust.stat2.label' },
-    { icon: Star,  stat: '5.0', labelKey: 'trust.stat3.label' },
-    { icon: Users, stat: '100%',labelKey: 'trust.stat4.label' },
+    { icon: Award, stat: '30+',   labelKey: 'trust.stat1.label' },
+    { icon: Users, stat: '5+',    labelKey: 'trust.stat2.label' },
+    { icon: Star,  stat: 'EN·FR', labelKey: 'trust.stat3.label' },
+    { icon: Users, stat: '100%',  labelKey: 'trust.stat4.label' },
   ];
 
   return (

@@ -4,7 +4,7 @@ import { PageSEO } from '../components/PageSEO';
 import { Button } from '../components/ui/button';
 import {
   Camera, Video, Palette, TrendingUp, ShoppingBag, Calendar,
-  CheckCircle2, Globe, Users, ArrowRight, Heart, Award, Star,
+  CheckCircle2, Globe, Users, ArrowRight, Heart, Award,
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -150,11 +150,12 @@ export function HomePage() {
   ];
 
   // One canonical, defensible proof set — matches the 30 real galleries on
-  // /work and the 5.0 shown by TrustSignals/Google. No unsourced vanity metrics.
+  // Matches the 30 real galleries on /work. Only claims we can defend — no
+  // Google rating shown until real reviews exist (the account is new).
   const stats = [
     { number: '30+', label: t('home.stat.projects'), icon: Award },
     { number: '5+', label: t('home.stat.communities'), icon: Globe },
-    { number: '5.0', label: t('home.stat.rating'), icon: Star },
+    { number: '100%', label: t('home.stat.bipoc'), icon: Heart },
   ];
 
   const marqueeItems = [
@@ -821,16 +822,8 @@ export function HomePage() {
                 G
               </div>
               <div className="text-center sm:text-left">
-                <div className="flex items-center justify-center sm:justify-start gap-1 mb-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="ml-1 text-sm font-semibold" style={{ color: '#121212' }}>5.0</span>
-                </div>
-                <p className="text-sm font-medium" style={{ color: '#121212' }}>Rated 5 stars on Google</p>
-                <p className="text-xs mt-0.5" style={{ color: '#777777' }}>Happy with our work? Share your experience.</p>
+                <p className="text-base font-medium mb-1" style={{ color: '#121212' }}>{t('home.review.title')}</p>
+                <p className="text-sm" style={{ color: '#777777', maxWidth: '44ch' }}>{t('home.review.sub')}</p>
               </div>
             </div>
             <a
@@ -840,7 +833,7 @@ export function HomePage() {
               className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"
               style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
             >
-              Leave a Review
+              {t('home.review.cta')}
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
