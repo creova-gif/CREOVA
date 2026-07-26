@@ -135,7 +135,7 @@ export function Footer() {
           inset: 0,
           background:
             'radial-gradient(ellipse 70% 60% at 85% 95%, rgba(212,168,67,0.08) 0%, transparent 65%), ' +
-            'radial-gradient(ellipse 40% 40% at 15% 85%, rgba(192,57,43,0.05) 0%, transparent 60%)',
+            'radial-gradient(ellipse 40% 40% at 15% 85%, rgba(177,100,59,0.05) 0%, transparent 60%)',
         }}
       />
       {/* Dot-grid texture */}
@@ -156,7 +156,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <span
               className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0"
-              style={{ backgroundColor: '#C0392B' }}
+              style={{ backgroundColor: '#B1643B' }}
             />
             <p className="text-xs tracking-[0.08em]" style={{ color: '#777777' }}>
               <span style={{ color: '#E0E0E0' }}>{t('footer.avail.text')}</span>

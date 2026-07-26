@@ -274,10 +274,10 @@ export function BookingPage() {
       <section className="relative overflow-hidden" style={{ backgroundColor: '#121212', minHeight: '400px' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
-                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(192,57,43,0.05) 0%, transparent 60%)`
+                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(177,100,59,0.05) 0%, transparent 60%)`
         }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
-        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
+        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)' }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-[1fr_auto] gap-0 items-center py-14 sm:py-20">
@@ -323,7 +323,7 @@ export function BookingPage() {
                 className="italic leading-none tracking-tight mb-8"
                 style={{
                   fontSize: 'clamp(20px, 3.2vw, 42px)',
-                  backgroundImage: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',

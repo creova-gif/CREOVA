@@ -681,7 +681,7 @@ export const adminCollaborationNotification = (data: CollaborationEmailData): st
       overflow: hidden;
     }
     .header {
-      background: linear-gradient(135deg, #D4A843 0%, #C0392B 100%);
+      background: linear-gradient(135deg, #D4A843 0%, #B1643B 100%);
       color: #F8F9FA;
       padding: 30px;
       text-align: center;

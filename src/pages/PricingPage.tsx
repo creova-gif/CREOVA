@@ -62,7 +62,7 @@ export function PricingPage() {
       {/* Hero Section — Asymmetric Editorial */}
       <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
         {/* Left accent stripe */}
-        <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, #D4A843, #C0392B, transparent)' }} />
+        <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: 'linear-gradient(to bottom, #D4A843, #B1643B, transparent)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ backgroundColor: 'rgba(212,168,67,0.3)' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -244,7 +244,7 @@ export function PricingPage() {
                   className="group bg-white border-2 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-500"
                   style={{ borderColor: '#E0E0E0' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#C0392B';
+                    e.currentTarget.style.borderColor = '#B1643B';
                     e.currentTarget.style.transform = 'translateY(-4px)';
                   }}
                   onMouseLeave={(e) => {
@@ -253,8 +253,8 @@ export function PricingPage() {
                   }}
                 >
                   <div className="w-14 h-14 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
-                       style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}>
-                    <item.icon className="w-7 h-7" style={{ color: '#C0392B' }} />
+                       style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}>
+                    <item.icon className="w-7 h-7" style={{ color: '#B1643B' }} />
                   </div>
                   <h3 className="text-xl mb-3" style={{ color: '#121212' }}>
                     {item.title}
@@ -425,7 +425,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#C0392B' }}></div>
+            <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#B1643B' }}></div>
             <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? "Série Identité de marque CREOVA" : 'CREOVA Brand Identity Series'}
             </h2>
@@ -466,11 +466,11 @@ export function PricingPage() {
                 className={`relative bg-white rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl ${
                   pkg.highlighted ? 'border-2' : 'border'
                 }`}
-                style={{ borderColor: pkg.highlighted ? '#C0392B' : '#E0E0E0' }}
+                style={{ borderColor: pkg.highlighted ? '#B1643B' : '#E0E0E0' }}
               >
                 {pkg.highlighted && (
                   <div className="absolute -top-4 right-6 px-4 py-1.5 rounded-full text-xs"
-                       style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}>
+                       style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}>
                     {fr ? 'RECOMMANDÉ' : 'RECOMMENDED'}
                   </div>
                 )}
@@ -500,7 +500,7 @@ export function PricingPage() {
                   className="w-full rounded-xl py-6 transition-all duration-300"
                   style={{ backgroundColor: '#121212', color: '#F8F9FA' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#C0392B';
+                    e.currentTarget.style.backgroundColor = '#B1643B';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
@@ -709,18 +709,18 @@ export function PricingPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white border-2 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 relative"
-              style={{ borderColor: '#C0392B' }}
+              style={{ borderColor: '#B1643B' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = '#D4A843';
                 e.currentTarget.style.transform = 'translateY(-4px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#C0392B';
+                e.currentTarget.style.borderColor = '#B1643B';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               {/* Premium Badge */}
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs tracking-wider" style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)', color: '#C0392B' }}>
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs tracking-wider" style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)', color: '#B1643B' }}>
                 PREMIUM
               </div>
 
@@ -762,7 +762,7 @@ export function PricingPage() {
                   ])
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#C0392B' }} />
+                    <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#B1643B' }} />
                     <span className="text-sm" style={{ color: '#777777' }}>{feature}</span>
                   </div>
                 ))}
@@ -772,13 +772,13 @@ export function PricingPage() {
                 asChild
                 size="lg"
                 className="w-full px-8 py-6 rounded-xl transition-all duration-300"
-                style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+                style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#D4A843';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#C0392B';
+                  e.currentTarget.style.backgroundColor = '#B1643B';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
@@ -852,7 +852,7 @@ export function PricingPage() {
                 className="bg-white border-2 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-500"
                 style={{ borderColor: '#E0E0E0' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#C0392B';
+                  e.currentTarget.style.borderColor = '#B1643B';
                   e.currentTarget.style.transform = 'translateY(-4px)';
                 }}
                 onMouseLeave={(e) => {
@@ -932,7 +932,7 @@ export function PricingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#C0392B' }}></div>
+            <div className="h-1 w-20 mx-auto mb-6" style={{ backgroundColor: '#B1643B' }}></div>
             <h2 className="text-4xl mb-4" style={{ color: '#121212' }}>
               {fr ? 'Design graphique et image de marque' : 'Graphic Design & Branding'}
             </h2>
@@ -1079,8 +1079,8 @@ export function PricingPage() {
               className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-500"
             >
               <div className="w-12 h-12 rounded-2xl mb-6 flex items-center justify-center"
-                   style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}>
-                <Award className="w-6 h-6" style={{ color: '#C0392B' }} />
+                   style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}>
+                <Award className="w-6 h-6" style={{ color: '#B1643B' }} />
               </div>
               <h3 className="text-2xl mb-4" style={{ color: '#121212' }}>
                 {fr ? 'Rabais fidélité et recommandation' : 'Loyalty & Referral Discounts'}
@@ -1224,7 +1224,7 @@ export function PricingPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{ 
             backgroundImage: `radial-gradient(circle at 70% 30%, #D4A843 0%, transparent 50%), 
-                             radial-gradient(circle at 30% 70%, #C0392B 0%, transparent 50%)` 
+                             radial-gradient(circle at 30% 70%, #B1643B 0%, transparent 50%)` 
           }}></div>
         </div>
         

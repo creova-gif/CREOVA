@@ -20,8 +20,8 @@ export function CaseStudy() {
           className="mb-14"
         >
           <div className="flex items-center gap-4 mb-5">
-            <div className="w-12 h-px" style={{ backgroundColor: '#C0392B' }} />
-            <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#C0392B' }}>{t('casestudy.badge')}</span>
+            <div className="w-12 h-px" style={{ backgroundColor: '#B1643B' }} />
+            <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#B1643B' }}>{t('casestudy.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl tracking-tight" style={{ color: '#121212' }}>
             {t('casestudy.heading')}
@@ -194,11 +194,11 @@ export function CaseStudy() {
               className="group relative overflow-hidden rounded-2xl flex-1"
               style={{
                 backgroundColor: '#121212',
-                border: '1px solid rgba(192,57,43,0.15)',
+                border: '1px solid rgba(177,100,59,0.15)',
                 minHeight: '200px',
               }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(192,57,43,0.4)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(192,57,43,0.15)'; }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(177,100,59,0.4)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(177,100,59,0.15)'; }}
             >
               <div className="relative overflow-hidden" style={{ aspectRatio: '16/7' }}>
                 <img
@@ -216,7 +216,7 @@ export function CaseStudy() {
                 />
                 <div
                   className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
-                  style={{ backgroundColor: 'rgba(192,57,43,0.9)', color: '#F8F9FA' }}
+                  style={{ backgroundColor: 'rgba(177,100,59,0.9)', color: '#F8F9FA' }}
                 >
                   <ExternalLink className="w-3 h-3" />
                   {t('casestudy.card2.badge')}
@@ -228,9 +228,9 @@ export function CaseStudy() {
                   <span
                     className="text-xs tracking-widest uppercase px-2.5 py-1 rounded-full"
                     style={{
-                      backgroundColor: 'rgba(192,57,43,0.1)',
-                      border: '1px solid rgba(192,57,43,0.2)',
-                      color: '#C0392B',
+                      backgroundColor: 'rgba(177,100,59,0.1)',
+                      border: '1px solid rgba(177,100,59,0.2)',
+                      color: '#B1643B',
                     }}
                   >
                     {t('casestudy.card2.tag')}
@@ -245,7 +245,7 @@ export function CaseStudy() {
                 </p>
                 <div
                   className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                  style={{ color: '#C0392B' }}
+                  style={{ color: '#B1643B' }}
                 >
                   <span>{t('casestudy.card2.link')}</span>
                   <ArrowRight className="w-4 h-4" />

@@ -308,9 +308,9 @@ export function RentalPage() {
       <section className="relative overflow-hidden" style={{ backgroundColor: '#121212', minHeight: '420px' }}>
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
-                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(192,57,43,0.05) 0%, transparent 60%)`
+                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(177,100,59,0.05) 0%, transparent 60%)`
         }} />
-        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
+        <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)' }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -355,7 +355,7 @@ export function RentalPage() {
                 className="italic leading-none tracking-tight mb-8"
                 style={{
                   fontSize: 'clamp(18px, 3vw, 40px)',
-                  backgroundImage: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)',
+                  backgroundImage: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',
@@ -384,9 +384,9 @@ export function RentalPage() {
             >
               {[
                 { icon: Camera, label: fr ? 'Trousse Photographie' : 'Photography Kit', desc: fr ? '150 $/jour · dépôt 350 $' : '$150/day · $350 deposit', color: '#D4A843' },
-                { icon: Video, label: fr ? 'Trousse Créateur' : 'Creator Kit', desc: fr ? '175 $/jour · dépôt 400 $' : '$175/day · $400 deposit', color: '#C0392B' },
+                { icon: Video, label: fr ? 'Trousse Créateur' : 'Creator Kit', desc: fr ? '175 $/jour · dépôt 400 $' : '$175/day · $400 deposit', color: '#B1643B' },
                 { icon: Lightbulb, label: fr ? "Trousse Éclairage" : 'Lighting Kit', desc: fr ? '85 $/jour · dépôt 200 $' : '$85/day · $200 deposit', color: '#D4A843' },
-                { icon: Zap, label: fr ? 'Économies multi-jours' : 'Multi-day savings', desc: fr ? "Jusqu'à 15 % de rabais dès 7 jours" : 'Up to 15% off 7+ days', color: '#C0392B' },
+                { icon: Zap, label: fr ? 'Économies multi-jours' : 'Multi-day savings', desc: fr ? "Jusqu'à 15 % de rabais dès 7 jours" : 'Up to 15% off 7+ days', color: '#B1643B' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -569,8 +569,8 @@ export function RentalPage() {
                       </div>
                       {pricing.discount > 0 && (
                         <div className="flex justify-between items-center">
-                          <span style={{ color: '#C0392B' }}>{fr ? 'Rabais multi-jours :' : 'Multi-day Discount:'}</span>
-                          <span style={{ color: '#C0392B' }}>-{pricing.discount}%</span>
+                          <span style={{ color: '#B1643B' }}>{fr ? 'Rabais multi-jours :' : 'Multi-day Discount:'}</span>
+                          <span style={{ color: '#B1643B' }}>-{pricing.discount}%</span>
                         </div>
                       )}
                       <div className="flex justify-between items-center pt-2 border-t" style={{ borderColor: '#D4A843' }}>
@@ -578,8 +578,8 @@ export function RentalPage() {
                         <span className="text-xl font-medium" style={{ color: '#D4A843' }}>${pricing.total} CAD</span>
                       </div>
                       <div className="flex justify-between items-center pt-2 border-t" style={{ borderColor: '#D4A843' }}>
-                        <span className="font-medium" style={{ color: '#C0392B' }}>{fr ? 'Dépôt de garantie :' : 'Security Deposit:'}</span>
-                        <span className="text-lg font-medium" style={{ color: '#C0392B' }}>${pricing.deposit} CAD</span>
+                        <span className="font-medium" style={{ color: '#B1643B' }}>{fr ? 'Dépôt de garantie :' : 'Security Deposit:'}</span>
+                        <span className="text-lg font-medium" style={{ color: '#B1643B' }}>${pricing.deposit} CAD</span>
                       </div>
                       <p className="text-xs pt-2" style={{ color: '#777777' }}>
                         {fr ? "Le dépôt est entièrement remboursable au retour de l'équipement en bon état" : 'Deposit is fully refundable upon equipment return in good condition'}

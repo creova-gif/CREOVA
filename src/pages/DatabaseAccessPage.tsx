@@ -122,15 +122,15 @@ WHERE value::text LIKE '%customer@email.com%';
 
   const dataTypes = [
     { prefix: 'contact_', type: 'Contact Forms', color: '#D4A843' },
-    { prefix: 'collaboration_', type: 'Collaboration Requests', color: '#C0392B' },
+    { prefix: 'collaboration_', type: 'Collaboration Requests', color: '#B1643B' },
     { prefix: 'order_', type: 'Shop Orders', color: '#D4A843' },
-    { prefix: 'ticket_', type: 'Event Tickets', color: '#C0392B' },
+    { prefix: 'ticket_', type: 'Event Tickets', color: '#B1643B' },
     { prefix: 'membership_', type: 'Memberships', color: '#D4A843' },
-    { prefix: 'rental_', type: 'Equipment Rentals', color: '#C0392B' },
+    { prefix: 'rental_', type: 'Equipment Rentals', color: '#B1643B' },
     { prefix: 'digital_', type: 'Digital Products', color: '#D4A843' },
-    { prefix: 'notification_', type: 'Email Signups', color: '#C0392B' },
+    { prefix: 'notification_', type: 'Email Signups', color: '#B1643B' },
     { prefix: 'booking_', type: 'Service Bookings', color: '#D4A843' },
-    { prefix: 'preorder_', type: 'Pre-orders', color: '#C0392B' }
+    { prefix: 'preorder_', type: 'Pre-orders', color: '#B1643B' }
   ];
 
   return (
@@ -371,7 +371,7 @@ WHERE value::text LIKE '%customer@email.com%';
                     className="p-4 rounded-xl border-2 hover:shadow-md transition-all"
                     style={{ borderColor: '#E0E0E0' }}
                   >
-                    <Database className="w-6 h-6 mb-2" style={{ color: '#C0392B' }} />
+                    <Database className="w-6 h-6 mb-2" style={{ color: '#B1643B' }} />
                     <div className="mb-1" style={{ color: '#121212' }}>SQL Reference</div>
                     <div className="text-sm" style={{ color: '#777777' }}>
                       Learn SQL queries

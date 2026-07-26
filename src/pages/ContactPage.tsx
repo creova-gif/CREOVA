@@ -129,7 +129,7 @@ export function ContactPage() {
         style={{ backgroundColor: '#121212', borderBottom: '1px solid rgba(212,168,67,0.15)' }}
       >
         {/* Top accent stripe */}
-        <div style={{ height: '2px', background: 'linear-gradient(90deg, #D4A843, #C0392B, transparent)' }} />
+        <div style={{ height: '2px', background: 'linear-gradient(90deg, #D4A843, #B1643B, transparent)' }} />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
@@ -168,7 +168,7 @@ export function ContactPage() {
                     className="block italic leading-none tracking-tight cursor-default select-none"
                     style={{
                       fontSize: 'clamp(20px, 3.2vw, 42px)',
-                      backgroundImage: 'linear-gradient(95deg, #C0392B 0%, #D4A843 100%)',
+                      backgroundImage: 'linear-gradient(95deg, #B1643B 0%, #D4A843 100%)',
                       WebkitBackgroundClip: 'text',
                       backgroundClip: 'text',
                       color: 'transparent',

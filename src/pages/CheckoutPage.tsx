@@ -239,7 +239,7 @@ export function CheckoutPage() {
       <div style={{ backgroundColor: '#121212', minHeight: '100vh' }}>
         <PageSEO title="Checkout" description="Complete your CREOVA purchase." path="/checkout" noIndex />
         {/* Warm gradient top stripe */}
-        <div style={{ height: '2px', background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }} />
+        <div style={{ height: '2px', background: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)' }} />
         <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8"
@@ -260,7 +260,7 @@ export function CheckoutPage() {
             <button
               onClick={() => navigate('/shop')}
               className="px-8 py-3 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)' }}
             >
               {fr ? 'Parcourir la boutique VERSE' : 'Browse the VERSE Shop'}
             </button>
@@ -429,7 +429,7 @@ export function CheckoutPage() {
                     type="submit"
                     disabled={isLoading}
                     className="w-full py-4 rounded-xl text-base font-medium text-white transition-opacity disabled:opacity-50"
-                    style={{ background: 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)', boxShadow: '0 4px 14px rgba(212,168,67,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)', boxShadow: '0 4px 14px rgba(212,168,67,0.3)' }}
                   >
                     {isLoading ? (
                       <span className="flex items-center justify-center gap-2">

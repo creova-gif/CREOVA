@@ -44,7 +44,7 @@ export function AnalyticsDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState(30); // Default: last 30 days
 
-  const COLORS = ['#C0392B', '#D4A843', '#D4A843', '#E0E0E0', '#121212'];
+  const COLORS = ['#B1643B', '#D4A843', '#D4A843', '#E0E0E0', '#121212'];
 
   const fetchAnalytics = async () => {
     setLoading(true);
@@ -99,7 +99,7 @@ export function AnalyticsDashboardPage() {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="text-center">
-          <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#C0392B' }} />
+          <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#B1643B' }} />
           <p style={{ color: '#121212' }}>Loading analytics...</p>
         </div>
       </div>
@@ -141,7 +141,7 @@ export function AnalyticsDashboardPage() {
             <Button 
               onClick={fetchAnalytics}
               className="px-6 py-3 rounded-xl"
-              style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+              style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
             >
               <RefreshCw className="w-5 h-5 mr-2" />
               Refresh
@@ -165,7 +165,7 @@ export function AnalyticsDashboardPage() {
                 className="rounded-xl"
                 style={
                   period === days
-                    ? { backgroundColor: '#C0392B', color: '#F8F9FA' }
+                    ? { backgroundColor: '#B1643B', color: '#F8F9FA' }
                     : { color: '#F8F9FA', borderColor: '#E0E0E0' }
                 }
               >
@@ -183,7 +183,7 @@ export function AnalyticsDashboardPage() {
             icon={Eye}
             label="Total Pageviews"
             value={analytics.summary.totalPageviews.toLocaleString()}
-            color="#C0392B"
+            color="#B1643B"
           />
           <StatCard
             icon={Users}
@@ -215,7 +215,7 @@ export function AnalyticsDashboardPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-              <Activity className="w-5 h-5" style={{ color: '#C0392B' }} />
+              <Activity className="w-5 h-5" style={{ color: '#B1643B' }} />
               Daily Traffic
             </h3>
             <ResponsiveContainer width="100%" height={300}>
@@ -234,9 +234,9 @@ export function AnalyticsDashboardPage() {
                 <Line 
                   type="monotone" 
                   dataKey="views" 
-                  stroke="#C0392B" 
+                  stroke="#B1643B" 
                   strokeWidth={2}
-                  dot={{ fill: '#C0392B', r: 4 }}
+                  dot={{ fill: '#B1643B', r: 4 }}
                   activeDot={{ r: 6 }}
                 />
               </LineChart>
@@ -252,7 +252,7 @@ export function AnalyticsDashboardPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-              <BarChart3 className="w-5 h-5" style={{ color: '#C0392B' }} />
+              <BarChart3 className="w-5 h-5" style={{ color: '#B1643B' }} />
               Top Pages
             </h3>
             <ResponsiveContainer width="100%" height={300}>
@@ -268,7 +268,7 @@ export function AnalyticsDashboardPage() {
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#F8F9FA', border: '1px solid #E0E0E0', borderRadius: '8px' }}
                 />
-                <Bar dataKey="count" fill="#C0392B" radius={[0, 8, 8, 0]} />
+                <Bar dataKey="count" fill="#B1643B" radius={[0, 8, 8, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </motion.div>
@@ -285,7 +285,7 @@ export function AnalyticsDashboardPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-              <Monitor className="w-5 h-5" style={{ color: '#C0392B' }} />
+              <Monitor className="w-5 h-5" style={{ color: '#B1643B' }} />
               Devices
             </h3>
             <ResponsiveContainer width="100%" height={250}>
@@ -319,7 +319,7 @@ export function AnalyticsDashboardPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-              <Globe className="w-5 h-5" style={{ color: '#C0392B' }} />
+              <Globe className="w-5 h-5" style={{ color: '#B1643B' }} />
               Browsers
             </h3>
             <ResponsiveContainer width="100%" height={250}>
@@ -353,7 +353,7 @@ export function AnalyticsDashboardPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-              <ExternalLink className="w-5 h-5" style={{ color: '#C0392B' }} />
+              <ExternalLink className="w-5 h-5" style={{ color: '#B1643B' }} />
               Traffic Sources
             </h3>
             <div className="space-y-3">
@@ -388,7 +388,7 @@ export function AnalyticsDashboardPage() {
             style={{ borderColor: '#E0E0E0' }}
           >
             <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-              <PieChart className="w-5 h-5" style={{ color: '#C0392B' }} />
+              <PieChart className="w-5 h-5" style={{ color: '#B1643B' }} />
               Top Events
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -398,7 +398,7 @@ export function AnalyticsDashboardPage() {
                   className="p-4 rounded-xl border"
                   style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
                 >
-                  <div className="text-2xl mb-1" style={{ color: '#C0392B' }}>{event.count}</div>
+                  <div className="text-2xl mb-1" style={{ color: '#B1643B' }}>{event.count}</div>
                   <div className="text-sm" style={{ color: '#121212' }}>{event.event}</div>
                 </div>
               ))}
@@ -415,7 +415,7 @@ export function AnalyticsDashboardPage() {
           style={{ borderColor: '#E0E0E0' }}
         >
           <h3 className="text-xl mb-4 flex items-center gap-2" style={{ color: '#121212' }}>
-            <Activity className="w-5 h-5" style={{ color: '#C0392B' }} />
+            <Activity className="w-5 h-5" style={{ color: '#B1643B' }} />
             Recent Pageviews
           </h3>
           <div className="overflow-x-auto">

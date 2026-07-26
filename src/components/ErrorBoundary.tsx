@@ -126,7 +126,7 @@ export class ErrorBoundary extends Component<Props, State> {
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6"
-              style={{ backgroundColor: '#C0392B' }}
+              style={{ backgroundColor: '#B1643B' }}
             >
               <AlertTriangle className="w-10 h-10" style={{ color: '#F8F9FA' }} />
             </motion.div>
@@ -156,7 +156,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <p className="font-mono text-sm font-bold mb-2" style={{ color: '#121212' }}>
                   Error Details (Dev Only):
                 </p>
-                <p className="font-mono text-xs mb-2" style={{ color: '#C0392B' }}>
+                <p className="font-mono text-xs mb-2" style={{ color: '#B1643B' }}>
                   {this.state.error.toString()}
                 </p>
                 {this.state.errorInfo && (
@@ -174,7 +174,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 size="lg"
                 className="gap-2"
                 style={{ 
-                  backgroundColor: '#C0392B',
+                  backgroundColor: '#B1643B',
                   color: '#F8F9FA'
                 }}
               >
@@ -188,8 +188,8 @@ export class ErrorBoundary extends Component<Props, State> {
                 variant="outline"
                 className="gap-2"
                 style={{ 
-                  borderColor: '#C0392B',
-                  color: '#C0392B'
+                  borderColor: '#B1643B',
+                  color: '#B1643B'
                 }}
               >
                 <Home className="w-5 h-5" />
@@ -206,7 +206,7 @@ export class ErrorBoundary extends Component<Props, State> {
               <a 
                 href="mailto:support@creova.one" 
                 className="underline"
-                style={{ color: '#C0392B' }}
+                style={{ color: '#B1643B' }}
               >
                 support@creova.one
               </a>

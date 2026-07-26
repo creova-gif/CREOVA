@@ -207,7 +207,7 @@ export function Sankofa() {
               aria-label={language === 'fr' ? 'Ouvrir le chat Sankofa' : 'Open Sankofa chat'}
               aria-expanded={isOpen}
               className="w-16 h-16 rounded-full shadow-2xl relative overflow-hidden group p-0"
-              style={{ backgroundColor: '#C0392B' }}
+              style={{ backgroundColor: '#B1643B' }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843] to-[#121212] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
@@ -217,7 +217,7 @@ export function Sankofa() {
               />
               
               {/* Pulse animation */}
-              <span className={`absolute inset-0 rounded-full opacity-20${prefersReduced ? '' : ' animate-ping'}`} style={{ backgroundColor: '#C0392B' }} />
+              <span className={`absolute inset-0 rounded-full opacity-20${prefersReduced ? '' : ' animate-ping'}`} style={{ backgroundColor: '#B1643B' }} />
             </Button>
           </motion.div>
         )}
@@ -242,7 +242,7 @@ export function Sankofa() {
           >
             {/* Header */}
             <div className="relative p-4 border-b" style={{ backgroundColor: '#121212', borderColor: '#2A2A2A' }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843]/20 to-[#C0392B]/20" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843]/20 to-[#B1643B]/20" />
               <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center relative overflow-hidden p-0" style={{ backgroundColor: '#FFFFFF' }}>
@@ -408,7 +408,7 @@ export function Sankofa() {
               >
               {/* Header */}
               <div className="relative p-6 border-b" style={{ backgroundColor: '#121212', borderColor: '#2A2A2A' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843]/20 to-[#C0392B]/20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#D4A843]/20 to-[#B1643B]/20" />
                 <div className="relative flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <img
@@ -482,7 +482,7 @@ export function Sankofa() {
                     
                     <div className="space-y-4">
                       <div className="p-4 rounded-lg" style={{ backgroundColor: '#FFFFFF' }}>
-                        <h4 className="text-sm mb-2" style={{ color: '#C0392B' }}>
+                        <h4 className="text-sm mb-2" style={{ color: '#B1643B' }}>
                           {language === 'fr' ? '1. Sankofa : Réfléchir au passé pour éclairer l\'avenir' : '1. Sankofa: Reflecting on the Past to Inform the Future'}
                         </h4>
                         <p className="text-sm leading-relaxed" style={{ color: '#121212' }}>
@@ -493,7 +493,7 @@ export function Sankofa() {
                       </div>
 
                       <div className="p-4 rounded-lg" style={{ backgroundColor: '#FFFFFF' }}>
-                        <h4 className="text-sm mb-2" style={{ color: '#C0392B' }}>
+                        <h4 className="text-sm mb-2" style={{ color: '#B1643B' }}>
                           {language === 'fr' ? '2. Intersectionnalité et la vision de Lorde' : '2. Intersectionality and Lorde\'s Vision'}
                         </h4>
                         <p className="text-sm leading-relaxed mb-2" style={{ color: '#121212' }}>
@@ -509,7 +509,7 @@ export function Sankofa() {
                       </div>
 
                       <div className="p-4 rounded-lg" style={{ backgroundColor: '#FFFFFF' }}>
-                        <h4 className="text-sm mb-2" style={{ color: '#C0392B' }}>
+                        <h4 className="text-sm mb-2" style={{ color: '#B1643B' }}>
                           {language === 'fr' ? '3. La Charte de Scarborough et la transformation institutionnelle' : '3. The Scarborough Charter and Institutional Transformation'}
                         </h4>
                         <p className="text-sm leading-relaxed" style={{ color: '#121212' }}>

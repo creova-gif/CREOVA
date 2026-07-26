@@ -221,7 +221,7 @@ export function ServicesPage() {
         {/* Warm left accent stripe */}
         <div
           className="absolute left-0 top-0 bottom-0 w-1"
-          style={{ background: 'linear-gradient(to bottom, #D4A843, #C0392B)' }}
+          style={{ background: 'linear-gradient(to bottom, #D4A843, #B1643B)' }}
         />
         {/* Subtle diagonal rule */}
         <div
@@ -670,7 +670,7 @@ export function ServicesPage() {
                 quote: fr ? "De la séance de marque à la stratégie sur les médias sociaux, CREOVA a compris notre culture et notre vision. Ils n'ont pas seulement exécuté — ils ont élevé." : "From the brand shoot to the social media strategy, CREOVA understood our culture and our vision. They didn't just execute — they elevated.",
                 author: "Marcus T.",
                 role: fr ? "Directeur créatif, BLOK Studios" : "Creative Director, BLOK Studios",
-                accent: '#C0392B',
+                accent: '#B1643B',
               },
               {
                 quote: fr ? "La couverture de l'événement était à couper le souffle. Nos invités nous écrivent encore au sujet des photos. CREOVA a capté une énergie qu'on ne se savait même pas en train de créer." : "The event coverage was breathtaking. Our guests still message us about the photos. CREOVA captured energy we didn't even know we were creating.",
@@ -748,7 +748,7 @@ export function ServicesPage() {
                   sub: fr ? 'Vidéographie et création de contenu' : 'Videography & Content Creation',
                   src: '/hero-reel.mp4',
                   poster: '/card-blackprint-session.jpg',
-                  accent: '#C0392B',
+                  accent: '#B1643B',
                 },
               ].map((vid, i) => (
                 <motion.div
@@ -871,8 +871,8 @@ export function ServicesPage() {
             >
               <div className="px-8 py-5 flex items-center gap-4" style={{ backgroundColor: '#121212' }}>
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                     style={{ border: '1px solid rgba(192,57,43,0.4)', backgroundColor: 'rgba(192,57,43,0.1)' }}>
-                  <AlertCircle className="w-5 h-5" style={{ color: '#C0392B' }} />
+                     style={{ border: '1px solid rgba(177,100,59,0.4)', backgroundColor: 'rgba(177,100,59,0.1)' }}>
+                  <AlertCircle className="w-5 h-5" style={{ color: '#B1643B' }} />
                 </div>
                 <h3 className="text-xl tracking-tight" style={{ color: '#F8F9FA' }}>{fr ? "Conditions de location d'équipement" : 'Equipment Rental Terms'}</h3>
               </div>

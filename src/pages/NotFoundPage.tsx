@@ -4,7 +4,7 @@ import { Home, Mail, ArrowRight } from 'lucide-react';
 import { PageSEO } from '../components/PageSEO';
 import { useLanguage } from '../context/LanguageContext';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 export function NotFoundPage() {
   // Transactional/utility page → vous register.

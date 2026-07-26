@@ -276,7 +276,7 @@ export function BookingModal({ isOpen, onClose, service, package: packageName, p
               {t('booking.deposit.desc')}
             </p>
             {price && (
-              <p className="text-lg mt-2" style={{ color: '#C0392B' }}>
+              <p className="text-lg mt-2" style={{ color: '#B1643B' }}>
                 <strong>
                   {t('booking.deposit.label')}
                   {(price * 0.5).toLocaleString('en-CA', { style: 'currency', currency: 'CAD' })}

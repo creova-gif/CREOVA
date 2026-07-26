@@ -129,9 +129,9 @@ export function TrustSignals() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)', border: '1px solid rgba(192, 57, 43, 0.2)' }}>
-            <Star className="w-4 h-4" style={{ color: '#C0392B' }} />
-            <span className="text-sm tracking-wide font-medium" style={{ color: '#C0392B' }}>{t('trust.testimonials.badge')}</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)', border: '1px solid rgba(177, 100, 59, 0.2)' }}>
+            <Star className="w-4 h-4" style={{ color: '#B1643B' }} />
+            <span className="text-sm tracking-wide font-medium" style={{ color: '#B1643B' }}>{t('trust.testimonials.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl mb-4" style={{ color: '#121212' }}>
             {t('trust.testimonials.heading')}

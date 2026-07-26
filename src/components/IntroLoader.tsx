@@ -10,7 +10,7 @@ const SESSION_KEY = 'creova-intro-shown';
 // white variant. Navy is left out on purpose — it's near-invisible on the
 // #121212 backdrop. The last entry is the resting colour.
 const CYCLE = [
-  { src: logoRed, glow: 'rgba(192,57,43,0.35)' },
+  { src: logoRed, glow: 'rgba(177,100,59,0.35)' },
   { src: logoBlue, glow: 'rgba(46,64,87,0.45)' },
   { src: logoWhite, glow: 'rgba(212,168,67,0.30)' },
 ];

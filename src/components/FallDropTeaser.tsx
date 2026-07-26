@@ -6,7 +6,7 @@ import { Input } from './ui/input';
 import { toast } from 'sonner';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 const LAUNCH_DATE = new Date('2026-11-01T00:00:00');
 
 // Real style codes from the FW2026 tech pack — names redacted
@@ -164,10 +164,10 @@ export function FallDropTeaser() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm mb-5"
-              style={{ backgroundColor: 'rgba(192,57,43,0.1)', border: '1px solid rgba(192,57,43,0.25)' }}
+              style={{ backgroundColor: 'rgba(177,100,59,0.1)', border: '1px solid rgba(177,100,59,0.25)' }}
             >
-              <Lock className="w-2.5 h-2.5" style={{ color: '#C0392B' }} />
-              <span className="text-[9px] tracking-[0.4em] uppercase font-medium" style={{ color: '#C0392B' }}>
+              <Lock className="w-2.5 h-2.5" style={{ color: '#B1643B' }} />
+              <span className="text-[9px] tracking-[0.4em] uppercase font-medium" style={{ color: '#B1643B' }}>
                 Classified · Fall/Winter Capsule · Vol. 01
               </span>
             </motion.div>
@@ -282,7 +282,7 @@ export function FallDropTeaser() {
             <div className="flex items-center gap-3 mb-4">
               <span
                 className="text-[9px] tracking-[0.45em] uppercase px-2 py-1"
-                style={{ backgroundColor: 'rgba(192,57,43,0.1)', color: '#C0392B', border: '1px solid rgba(192,57,43,0.2)' }}
+                style={{ backgroundColor: 'rgba(177,100,59,0.1)', color: '#B1643B', border: '1px solid rgba(177,100,59,0.2)' }}
               >
                 Drop 02
               </span>

@@ -236,7 +236,7 @@ export function AdminGalleriesPage() {
                         <Pencil className="w-3.5 h-3.5 mr-1.5" /> Edit
                       </Button>
                       <Button size="sm" variant="outline" onClick={() => handleDelete(gallery.id, gallery.title)}>
-                        <Trash2 className="w-3.5 h-3.5 mr-1.5" style={{ color: '#C0392B' }} />
+                        <Trash2 className="w-3.5 h-3.5 mr-1.5" style={{ color: '#B1643B' }} />
                       </Button>
                       <a href={gallery.url} target="_blank" rel="noopener noreferrer" className="ml-auto">
                         <ExternalLink className="w-4 h-4" style={{ color: '#777777' }} />

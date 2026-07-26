@@ -78,7 +78,7 @@ export function AddToCartDialog({
             <div>
               <div className="flex items-center justify-between mb-3">
                 <label className="text-sm tracking-wider" style={{ color: '#121212' }}>
-                  SIZE {!selectedSize && <span style={{ color: '#C0392B' }}>*</span>}
+                  SIZE {!selectedSize && <span style={{ color: '#B1643B' }}>*</span>}
                 </label>
                 <button
                   className="text-xs underline"
@@ -170,7 +170,7 @@ export function AddToCartDialog({
               </Button>
               
               {!selectedSize && (
-                <p className="text-xs text-center mt-2" style={{ color: '#C0392B' }}>
+                <p className="text-xs text-center mt-2" style={{ color: '#B1643B' }}>
                   Please select a size to continue
                 </p>
               )}

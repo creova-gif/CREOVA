@@ -127,7 +127,7 @@ export function ExitIntentModal() {
             >
               {/* Top accent line */}
               <div className="absolute top-0 left-0 right-0 h-px" style={{
-                background: 'linear-gradient(90deg, transparent, #D4A843, #C0392B, transparent)',
+                background: 'linear-gradient(90deg, transparent, #D4A843, #B1643B, transparent)',
               }} />
 
               {/* Close */}
@@ -160,10 +160,10 @@ export function ExitIntentModal() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.15 }}
                       className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-                      style={{ backgroundColor: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)' }}
+                      style={{ backgroundColor: 'rgba(177,100,59,0.12)', border: '1px solid rgba(177,100,59,0.3)' }}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#C0392B' }} />
-                      <span className="text-xs tracking-[0.25em] uppercase font-medium" style={{ color: '#C0392B' }}>
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#B1643B' }} />
+                      <span className="text-xs tracking-[0.25em] uppercase font-medium" style={{ color: '#B1643B' }}>
                         Limited offer
                       </span>
                     </motion.div>
@@ -303,7 +303,7 @@ export function ExitIntentModal() {
                             type="submit"
                             disabled={isSubmitting}
                             className="w-full py-5 text-sm font-semibold rounded-xl tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"
-                            style={{ backgroundColor: '#C0392B', color: '#F8F9FA', border: 'none' }}
+                            style={{ backgroundColor: '#B1643B', color: '#F8F9FA', border: 'none' }}
                           >
                             {isSubmitting ? 'Sending…' : 'Claim 15% Off →'}
                           </Button>

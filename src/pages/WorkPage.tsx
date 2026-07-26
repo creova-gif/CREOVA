@@ -256,7 +256,7 @@ export function WorkPage() {
           background: 'linear-gradient(to top, #121212 0%, rgba(10,10,10,0.78) 45%, rgba(10,10,10,0.25) 100%)'
         }} />
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(192,57,43,0.18) 0%, transparent 60%)'
+          background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(177,100,59,0.18) 0%, transparent 60%)'
         }} />
 
         {/* Subtle film-grain noise overlay */}

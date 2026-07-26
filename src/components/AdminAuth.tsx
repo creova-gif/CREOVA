@@ -68,7 +68,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <PageSEO title="Admin" description="CREOVA staff admin dashboard." path={typeof window !== 'undefined' ? window.location.pathname : '/admin'} noIndex />
         <div className="animate-pulse text-center">
-          <Shield className="w-12 h-12 mx-auto mb-4" style={{ color: '#C0392B' }} />
+          <Shield className="w-12 h-12 mx-auto mb-4" style={{ color: '#B1643B' }} />
           <p style={{ color: '#121212' }}>Verifying access...</p>
         </div>
       </div>
@@ -92,9 +92,9 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
             <div className="text-center mb-8">
               <div 
                 className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center"
-                style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}
+                style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}
               >
-                <Lock className="w-8 h-8" style={{ color: '#C0392B' }} />
+                <Lock className="w-8 h-8" style={{ color: '#B1643B' }} />
               </div>
               <h2 className="text-3xl mb-2" style={{ color: '#121212' }}>
                 Admin Access
@@ -139,7 +139,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
                 type="submit"
                 disabled={submitting}
                 className="w-full py-6 rounded-xl text-base disabled:opacity-60"
-                style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+                style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
               >
                 <Lock className="w-5 h-5 mr-2" />
                 {submitting ? 'Verifying...' : 'Login to Admin Dashboard'}
@@ -152,7 +152,7 @@ export function AdminAuth({ children }: { children: React.ReactNode }) {
               style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
             >
               <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 mt-0.5" style={{ color: '#C0392B' }} />
+                <Shield className="w-5 h-5 mt-0.5" style={{ color: '#B1643B' }} />
                 <div>
                   <p className="text-sm mb-1" style={{ color: '#121212' }}>
                     <strong>Secure Access</strong>

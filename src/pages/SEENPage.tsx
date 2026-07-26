@@ -129,7 +129,7 @@ function AppPreview3D() {
               height: p.size,
               left: `${p.x}%`,
               top: `${p.y}%`,
-              backgroundColor: p.id % 3 === 0 ? '#D4A843' : p.id % 3 === 1 ? '#C0392B' : '#F8F9FA',
+              backgroundColor: p.id % 3 === 0 ? '#D4A843' : p.id % 3 === 1 ? '#B1643B' : '#F8F9FA',
               opacity: p.opacity,
             }}
             animate={{ y: [0, -28, 0], opacity: [p.opacity, p.opacity * 0.3, p.opacity] }}
@@ -154,7 +154,7 @@ function AppPreview3D() {
         <div className="absolute rounded-full" style={{
           width: '500px', height: '500px',
           top: '30%', left: '15%',
-          background: 'radial-gradient(circle, rgba(192,57,43,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(177,100,59,0.07) 0%, transparent 70%)',
         }} />
       </div>
 
@@ -291,7 +291,7 @@ function AppPreview3D() {
           >
             <div style={{
               width: 'min(196px, 50vw)',
-              filter: 'drop-shadow(0 60px 120px rgba(0,0,0,1)) drop-shadow(0 0 30px rgba(192,57,43,0.2))',
+              filter: 'drop-shadow(0 60px 120px rgba(0,0,0,1)) drop-shadow(0 0 30px rgba(177,100,59,0.2))',
               transformStyle: 'preserve-3d',
             }}>
               <div className="relative rounded-[2.8rem]" style={{
@@ -335,7 +335,7 @@ function AppPreview3D() {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
                 className="absolute -top-10 right-0 px-3 py-1.5 rounded-full text-xs tracking-widest uppercase backdrop-blur-sm"
-                style={{ backgroundColor: 'rgba(192,57,43,0.15)', border: '1px solid rgba(192,57,43,0.35)', color: '#C0392B' }}
+                style={{ backgroundColor: 'rgba(177,100,59,0.15)', border: '1px solid rgba(177,100,59,0.35)', color: '#B1643B' }}
               >
                 iOS · Android
               </motion.div>
@@ -721,7 +721,7 @@ export function SEENPage() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: '#C0392B' }}>{fr ? "L'écart" : 'The Gap'}</p>
+            <p className="text-xs tracking-[0.4em] uppercase mb-6" style={{ color: '#B1643B' }}>{fr ? "L'écart" : 'The Gap'}</p>
             <h2 className="text-3xl md:text-5xl mb-8 leading-tight" style={{ color: '#F8F9FA' }}>
               {fr ? "Le Canada est l'un des pays les plus multiculturels au monde." : "Canada is one of the world's most multicultural countries."}{' '}
               <span style={{ color: '#777777' }}>
@@ -800,7 +800,7 @@ export function SEENPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#C0392B' }}>{fr ? 'Ce que SEEN offre' : 'What SEEN Provides'}</p>
+            <p className="text-xs tracking-[0.4em] uppercase mb-4" style={{ color: '#B1643B' }}>{fr ? 'Ce que SEEN offre' : 'What SEEN Provides'}</p>
             <h2 className="text-3xl md:text-5xl" style={{ color: '#F8F9FA' }}>
               {fr ? 'Conçu différemment. Par choix.' : 'Built different. By design.'}
             </h2>

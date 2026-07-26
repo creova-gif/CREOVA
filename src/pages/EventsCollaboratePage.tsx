@@ -18,7 +18,7 @@ const blsaImage = '/card-blsa.jpg';
 const busuClubsImage = '/card-busu.jpg';
 const fbfImage = '/card-fbf.jpg';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 export function EventsCollaboratePage() {
   const { addItem } = useCart();
@@ -463,25 +463,25 @@ export function EventsCollaboratePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               className="group relative rounded-2xl p-7 overflow-hidden text-left transition-all duration-400"
-              style={{ border: '1px solid rgba(192,57,43,0.2)', backgroundColor: 'rgba(192,57,43,0.05)' }}
+              style={{ border: '1px solid rgba(177,100,59,0.2)', backgroundColor: 'rgba(177,100,59,0.05)' }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(192,57,43,0.5)';
-                e.currentTarget.style.backgroundColor = 'rgba(192,57,43,0.1)';
+                e.currentTarget.style.borderColor = 'rgba(177,100,59,0.5)';
+                e.currentTarget.style.backgroundColor = 'rgba(177,100,59,0.1)';
                 e.currentTarget.style.transform = 'translateY(-3px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(192,57,43,0.2)';
-                e.currentTarget.style.backgroundColor = 'rgba(192,57,43,0.05)';
+                e.currentTarget.style.borderColor = 'rgba(177,100,59,0.2)';
+                e.currentTarget.style.backgroundColor = 'rgba(177,100,59,0.05)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5"
-                   style={{ border: '1px solid rgba(192,57,43,0.3)', backgroundColor: 'rgba(192,57,43,0.1)' }}>
-                <Handshake className="w-4 h-4" style={{ color: '#C0392B' }} />
+                   style={{ border: '1px solid rgba(177,100,59,0.3)', backgroundColor: 'rgba(177,100,59,0.1)' }}>
+                <Handshake className="w-4 h-4" style={{ color: '#B1643B' }} />
               </div>
               <h2 className="text-lg tracking-tight mb-2" style={{ color: '#F8F9FA' }}>{fr ? 'Occasions de partenariat' : 'Partnership Opportunities'}</h2>
               <p className="text-xs leading-relaxed mb-5" style={{ color: '#777777' }}>{fr ? 'Campagnes co-marquées, projets créatifs et initiatives communautaires' : 'Co-branded campaigns, creative projects & community initiatives'}</p>
-              <div className="flex items-center gap-2 text-xs group-hover:translate-x-1.5 transition-transform duration-300" style={{ color: '#C0392B' }}>
+              <div className="flex items-center gap-2 text-xs group-hover:translate-x-1.5 transition-transform duration-300" style={{ color: '#B1643B' }}>
                 <span>{fr ? 'Voir les occasions' : 'View Opportunities'}</span>
                 <ArrowRight className="w-3 h-3" />
               </div>
@@ -528,7 +528,7 @@ export function EventsCollaboratePage() {
               style={{ background: warmGradient }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(192,57,43,0.3)';
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(177,100,59,0.3)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -673,7 +673,7 @@ export function EventsCollaboratePage() {
                       onMouseEnter={(e) => {
                         e.currentTarget.style.opacity = '0.9';
                         e.currentTarget.style.transform = 'translateY(-1px)';
-                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(192,57,43,0.3)';
+                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(177,100,59,0.3)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.opacity = '1';
@@ -778,8 +778,8 @@ export function EventsCollaboratePage() {
             className="mb-14"
           >
             <div className="flex items-center gap-5 mb-3">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C0392B' }}>{fr ? 'Associe-toi à nous' : 'Partner With Us'}</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(177,100,59,0.4)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#B1643B' }}>{fr ? 'Associe-toi à nous' : 'Partner With Us'}</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>{fr ? "S'associer à CREOVA" : 'Partner with CREOVA'}</h2>
             <p className="text-base mt-3 max-w-2xl" style={{ color: '#777777' }}>
@@ -802,9 +802,9 @@ export function EventsCollaboratePage() {
                 <div className="px-7 py-6 flex items-center gap-4" style={{ backgroundColor: '#121212' }}>
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ border: '1px solid rgba(192,57,43,0.4)', backgroundColor: 'rgba(192,57,43,0.12)' }}
+                    style={{ border: '1px solid rgba(177,100,59,0.4)', backgroundColor: 'rgba(177,100,59,0.12)' }}
                   >
-                    <type.icon className="w-4 h-4" style={{ color: '#C0392B' }} />
+                    <type.icon className="w-4 h-4" style={{ color: '#B1643B' }} />
                   </div>
                   <h3 className="text-lg tracking-tight" style={{ color: '#F8F9FA' }}>{type.title}</h3>
                 </div>
@@ -914,7 +914,7 @@ export function EventsCollaboratePage() {
               transition={{ delay: 0.15 }}
               whileHover={{ y: -5 }}
               className="group overflow-hidden rounded-2xl block"
-              style={{ border: '1px solid rgba(192,57,43,0.2)' }}
+              style={{ border: '1px solid rgba(177,100,59,0.2)' }}
             >
               <div className="relative overflow-hidden aspect-video">
                 <img
@@ -927,7 +927,7 @@ export function EventsCollaboratePage() {
                   background: 'linear-gradient(to top, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.3) 55%, transparent 100%)'
                 }} />
                 <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
-                  style={{ backgroundColor: 'rgba(192,57,43,0.9)', color: '#F8F9FA' }}>
+                  style={{ backgroundColor: 'rgba(177,100,59,0.9)', color: '#F8F9FA' }}>
                   <ExternalLink className="w-3 h-3" />
                   {fr ? 'Voir sur Instagram' : 'View on Instagram'}
                 </div>
@@ -935,7 +935,7 @@ export function EventsCollaboratePage() {
               <div className="p-7" style={{ backgroundColor: '#121212' }}>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-full"
-                    style={{ backgroundColor: 'rgba(192,57,43,0.12)', color: '#C0392B', border: '1px solid rgba(192,57,43,0.25)' }}>
+                    style={{ backgroundColor: 'rgba(177,100,59,0.12)', color: '#B1643B', border: '1px solid rgba(177,100,59,0.25)' }}>
                     {fr ? 'Événement communautaire' : 'Community Event'}
                   </span>
                   <span className="text-xs" style={{ color: '#777777' }}>Black Student Success Centre</span>
@@ -944,7 +944,7 @@ export function EventsCollaboratePage() {
                 <p className="text-sm leading-relaxed mb-5" style={{ color: '#777777' }}>
                   {fr ? "La séance de clôture de mercredi de The Black Print, en partenariat avec le Black Student Success Centre — une conversation remplie de joie, de bonnes vibrations et de moments de connexion puissants." : "Wednesday's closing session of The Black Print, in partnership with the Black Student Success Centre — a conversation filled with joy, good vibes, and powerful moments of connection."}
                 </p>
-                <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#C0392B' }}>
+                <div className="flex items-center gap-2 text-sm group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#B1643B' }}>
                   <span>{fr ? 'Lire la publication' : 'Read the post'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -1006,7 +1006,7 @@ export function EventsCollaboratePage() {
                   <time className="text-xs mb-2 block tracking-wide" style={{ color: '#D4A843' }}>{collab.date}</time>
                   <div style={{ height: '1px', width: '20px', backgroundImage: warmGradient, marginBottom: '10px' }} />
                   <h3 className="text-base tracking-tight mb-1" style={{ color: '#121212' }}>{collab.title}</h3>
-                  <p className="text-xs mb-2 font-medium" style={{ color: '#C0392B' }}>{collab.partner}</p>
+                  <p className="text-xs mb-2 font-medium" style={{ color: '#B1643B' }}>{collab.partner}</p>
                   <p className="text-xs leading-relaxed" style={{ color: '#777777' }}>{collab.description}</p>
                 </div>
               </motion.article>
@@ -1037,7 +1037,7 @@ export function EventsCollaboratePage() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-6 top-4 bottom-4 w-px" style={{ background: 'linear-gradient(to bottom, rgba(212,168,67,0.6), rgba(192,57,43,0.6))' }} />
+            <div className="absolute left-6 top-4 bottom-4 w-px" style={{ background: 'linear-gradient(to bottom, rgba(212,168,67,0.6), rgba(177,100,59,0.6))' }} />
 
             <div className="space-y-6">
               {[
@@ -1193,7 +1193,7 @@ export function EventsCollaboratePage() {
                   if (!isSubmitting) {
                     e.currentTarget.style.opacity = '0.9';
                     e.currentTarget.style.transform = 'translateY(-1px)';
-                    e.currentTarget.style.boxShadow = '0 8px 28px rgba(192,57,43,0.3)';
+                    e.currentTarget.style.boxShadow = '0 8px 28px rgba(177,100,59,0.3)';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -1251,7 +1251,7 @@ export function EventsCollaboratePage() {
                 size="lg"
                 onClick={() => scrollToSection('#workshops')}
                 className="px-10 py-6 rounded-xl text-sm tracking-wide transition-all duration-300"
-                style={{ backgroundColor: '#FFFFFF', color: '#C0392B' }}
+                style={{ backgroundColor: '#FFFFFF', color: '#B1643B' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#121212';
                   e.currentTarget.style.color = '#F8F9FA';
@@ -1259,7 +1259,7 @@ export function EventsCollaboratePage() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#FFFFFF';
-                  e.currentTarget.style.color = '#C0392B';
+                  e.currentTarget.style.color = '#B1643B';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >

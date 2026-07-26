@@ -11,7 +11,7 @@ import { FallDropTeaser } from '../components/FallDropTeaser';
 import { DigitalProductsPage } from './DigitalProductsPage';
 import { productListSchema } from '../utils/structuredData';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 export function ShopPage() {
   const { t } = useLanguage();
@@ -40,7 +40,7 @@ export function ShopPage() {
     'Ocean Blue': '#1E5F74',
     'Mustard Gold': '#D4A02F',
     'Mocha Brown': '#7B5E57',
-    'Earth Clay': '#C0392B',
+    'Earth Clay': '#B1643B',
     'Olive Gold': '#D4A843'
   };
 
@@ -121,7 +121,7 @@ export function ShopPage() {
         {/* Subtle ambient glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
-                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(192,57,43,0.05) 0%, transparent 60%)`
+                       radial-gradient(ellipse 35% 55% at 100% 30%, rgba(177,100,59,0.05) 0%, transparent 60%)`
         }} />
         {/* Left accent stripe */}
         <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: warmGradient }} />
@@ -191,7 +191,7 @@ export function ShopPage() {
             >
               {[
                 { icon: Shirt, label: 'Apparel', count: '12+', desc: 'Tees · Hoodies · Hats', color: '#D4A843' },
-                { icon: Tag, label: 'Limited Drops', count: '3', desc: 'Seasonal collections', color: '#C0392B' },
+                { icon: Tag, label: 'Limited Drops', count: '3', desc: 'Seasonal collections', color: '#B1643B' },
                 { icon: Sparkles, label: 'Collaborations', count: '5+', desc: 'Artist partnerships', color: '#D4A843' },
               ].map((cat, i) => (
                 <motion.div
@@ -336,7 +336,7 @@ export function ShopPage() {
                   {product.badge && (
                     <div className="absolute top-2 left-2 px-2 py-0.5 text-[8px] tracking-widest z-10"
                       style={{
-                        backgroundColor: product.badge === 'PREMIUM' ? 'rgba(212,168,67,0.9)' : product.badge === 'LIMITED' ? 'rgba(192,57,43,0.9)' : 'rgba(18,18,18,0.85)',
+                        backgroundColor: product.badge === 'PREMIUM' ? 'rgba(212,168,67,0.9)' : product.badge === 'LIMITED' ? 'rgba(177,100,59,0.9)' : 'rgba(18,18,18,0.85)',
                         color: '#FFFFFF'
                       }}>
                       {product.badge}

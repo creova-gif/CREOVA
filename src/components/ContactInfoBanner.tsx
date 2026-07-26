@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 function useLiveClock() {
   const [time, setTime] = useState('');

@@ -143,7 +143,7 @@ export function RefundManagementPage() {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="text-center">
-          <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#C0392B' }} />
+          <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#B1643B' }} />
           <p style={{ color: '#121212' }}>Loading payment data...</p>
         </div>
       </div>
@@ -173,7 +173,7 @@ export function RefundManagementPage() {
             <Button 
               onClick={fetchData}
               className="px-6 py-3 rounded-xl"
-              style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+              style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
             >
               <RefreshCw className="w-5 h-5 mr-2" />
               Refresh
@@ -184,7 +184,7 @@ export function RefundManagementPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="bg-white rounded-2xl p-6" style={{ borderColor: '#E0E0E0', border: '1px solid' }}>
               <div className="flex items-center gap-3 mb-2">
-                <DollarSign className="w-6 h-6" style={{ color: '#C0392B' }} />
+                <DollarSign className="w-6 h-6" style={{ color: '#B1643B' }} />
                 <span className="text-sm" style={{ color: '#777777' }}>Total Revenue</span>
               </div>
               <div className="text-3xl" style={{ color: '#121212' }}>
@@ -250,7 +250,7 @@ export function RefundManagementPage() {
                   className="flex-1 rounded-xl"
                   style={
                     filterStatus === status
-                      ? { backgroundColor: '#C0392B', color: '#F8F9FA' }
+                      ? { backgroundColor: '#B1643B', color: '#F8F9FA' }
                       : { color: '#121212', borderColor: '#E0E0E0' }
                   }
                 >
@@ -307,7 +307,7 @@ export function RefundManagementPage() {
                           ${payment.amount.toFixed(2)} {payment.currency.toUpperCase()}
                         </div>
                         {payment.refund_amount && (
-                          <div className="text-xs" style={{ color: '#C0392B' }}>
+                          <div className="text-xs" style={{ color: '#B1643B' }}>
                             Refunded: ${payment.refund_amount.toFixed(2)}
                           </div>
                         )}
@@ -341,7 +341,7 @@ export function RefundManagementPage() {
                                   setRefundAmount(payment.amount.toString());
                                 }}
                                 className="rounded-xl"
-                                style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+                                style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
                               >
                                 Process Refund
                               </Button>
@@ -368,7 +368,7 @@ export function RefundManagementPage() {
                                   <Label className="text-sm mb-2 block" style={{ color: '#121212' }}>
                                     Original Amount
                                   </Label>
-                                  <div className="text-2xl" style={{ color: '#C0392B' }}>
+                                  <div className="text-2xl" style={{ color: '#B1643B' }}>
                                     ${selectedPayment?.amount.toFixed(2)} {selectedPayment?.currency.toUpperCase()}
                                   </div>
                                 </div>
@@ -436,7 +436,7 @@ export function RefundManagementPage() {
                                     onClick={handleRefund}
                                     disabled={isRefunding}
                                     className="flex-1 rounded-xl"
-                                    style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+                                    style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
                                   >
                                     {isRefunding ? (
                                       <>
@@ -486,16 +486,16 @@ export function RefundManagementPage() {
                   <div className="flex items-center justify-between mb-4">
                     <div 
                       className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}
+                      style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}
                     >
-                      <RefreshCw className="w-5 h-5" style={{ color: '#C0392B' }} />
+                      <RefreshCw className="w-5 h-5" style={{ color: '#B1643B' }} />
                     </div>
                     <span className="text-xs px-2 py-1 rounded-full bg-green-100" style={{ color: '#22c55e' }}>
                       {refund.status}
                     </span>
                   </div>
 
-                  <div className="text-2xl mb-2" style={{ color: '#C0392B' }}>
+                  <div className="text-2xl mb-2" style={{ color: '#B1643B' }}>
                     ${refund.amount.toFixed(2)}
                   </div>
 

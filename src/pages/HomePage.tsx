@@ -138,11 +138,11 @@ export function HomePage() {
 
   const features = [
     { icon: Camera, title: t('home.feature.1.title'), description: t('home.feature.1.desc'), link: '/services', image: photoServicePhotography, objectPosition: 'center 25%', accent: '#D4A843', startingPrice: '$450' },
-    { icon: Video, title: t('home.feature.2.title'), description: t('home.feature.2.desc'), link: '/services', image: photoServiceVideography, objectPosition: 'center top', accent: '#C0392B', startingPrice: '$500' },
+    { icon: Video, title: t('home.feature.2.title'), description: t('home.feature.2.desc'), link: '/services', image: photoServiceVideography, objectPosition: 'center top', accent: '#B1643B', startingPrice: '$500' },
     { icon: Palette, title: t('home.feature.3.title'), description: t('home.feature.3.desc'), link: '/services', image: photoCommunity2, objectPosition: 'center 20%', accent: '#D4A843', startingPrice: '$750' },
-    { icon: TrendingUp, title: t('home.feature.4.title'), description: t('home.feature.4.desc'), link: '/services', image: photoSocialLaptop, objectPosition: 'center top', accent: '#C0392B', startingPrice: '$950/mo' },
+    { icon: TrendingUp, title: t('home.feature.4.title'), description: t('home.feature.4.desc'), link: '/services', image: photoSocialLaptop, objectPosition: 'center top', accent: '#B1643B', startingPrice: '$950/mo' },
     { icon: ShoppingBag, title: t('home.feature.5.title'), description: t('home.feature.5.desc'), link: '/shop', image: 'https://images.unsplash.com/photo-1749413067075-d3d4efa2959a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', objectPosition: 'center', accent: '#D4A843', startingPrice: '$15' },
-    { icon: Calendar, title: t('home.feature.6.title'), description: t('home.feature.6.desc'), link: '/experience', image: photoServiceEvents, objectPosition: 'center 40%', accent: '#C0392B', startingPrice: '$750' },
+    { icon: Calendar, title: t('home.feature.6.title'), description: t('home.feature.6.desc'), link: '/experience', image: photoServiceEvents, objectPosition: 'center 40%', accent: '#B1643B', startingPrice: '$750' },
   ];
 
   const stats = [
@@ -187,7 +187,7 @@ export function HomePage() {
         }} />
         <div className="absolute inset-0 pointer-events-none opacity-20" style={{
           backgroundImage: `radial-gradient(circle at 30% 50%, #D4A843 0%, transparent 50%),
-                            radial-gradient(circle at 70% 70%, #C0392B 0%, transparent 60%)`,
+                            radial-gradient(circle at 70% 70%, #B1643B 0%, transparent 60%)`,
         }} />
         <FloatingOrbs />
 
@@ -270,10 +270,10 @@ export function HomePage() {
               <motion.div
                 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.35, duration: 0.7 }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-                style={{ backgroundColor: 'rgba(192,57,43,0.1)', border: '1px solid rgba(192,57,43,0.25)' }}
+                style={{ backgroundColor: 'rgba(177,100,59,0.1)', border: '1px solid rgba(177,100,59,0.25)' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#C0392B' }} />
-                <span className="text-xs tracking-wide" style={{ color: '#C0392B' }}>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#B1643B' }} />
+                <span className="text-xs tracking-wide" style={{ color: '#B1643B' }}>
                   {t('home.hero.availability')}
                 </span>
               </motion.div>
@@ -378,7 +378,7 @@ export function HomePage() {
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 70% 50%, #D4A843 0%, transparent 55%),
-                             radial-gradient(circle at 20% 70%, #C0392B 0%, transparent 50%)`,
+                             radial-gradient(circle at 20% 70%, #B1643B 0%, transparent 50%)`,
           }} />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -391,7 +391,7 @@ export function HomePage() {
               </div>
               <h2 className="italic leading-none mb-6 tracking-tight" style={{
                 fontSize: 'clamp(4rem, 10vw, 7rem)', color: 'transparent',
-                backgroundImage: 'linear-gradient(135deg, #F8F9FA 0%, #D4A843 55%, #C0392B 100%)',
+                backgroundImage: 'linear-gradient(135deg, #F8F9FA 0%, #D4A843 55%, #B1643B 100%)',
                 WebkitBackgroundClip: 'text', backgroundClip: 'text',
               }}>SEEN</h2>
               <p className="text-base md:text-lg mb-4 leading-relaxed" style={{ color: '#E0E0E0' }}>
@@ -646,8 +646,8 @@ export function HomePage() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }} viewport={{ once: true }}>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-px" style={{ backgroundColor: '#C0392B' }} />
-                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#C0392B' }}>{t('home.fall.badge')}</span>
+                <div className="w-10 h-px" style={{ backgroundColor: '#B1643B' }} />
+                <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#B1643B' }}>{t('home.fall.badge')}</span>
               </div>
               <SplitText text={t('home.fall.heading')} tag="h2"
                 className="text-4xl md:text-5xl mb-6 tracking-tight leading-tight"
@@ -744,7 +744,7 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }} viewport={{ once: true }}>
-            <div className="h-1 w-24 mb-10" style={{ backgroundColor: '#C0392B' }} />
+            <div className="h-1 w-24 mb-10" style={{ backgroundColor: '#B1643B' }} />
             <div className="mb-12">
               <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }} viewport={{ once: true }}>
@@ -767,8 +767,8 @@ export function HomePage() {
                       className="group flex gap-4 p-5 rounded-2xl hover:shadow-lg transition-all duration-300"
                       style={{ backgroundColor: '#F8F9FA' }}>
                       <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                        style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)' }}>
-                        <item.icon className="w-6 h-6" style={{ color: '#C0392B' }} />
+                        style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)' }}>
+                        <item.icon className="w-6 h-6" style={{ color: '#B1643B' }} />
                       </div>
                       <div>
                         <h3 className="text-lg mb-2 group-hover:text-[#D4A843] transition-colors" style={{ color: '#121212' }}>{item.title}</h3>
@@ -855,9 +855,9 @@ export function HomePage() {
             <div className="flex flex-col md:flex-row gap-10 items-start">
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
-                  style={{ backgroundColor: 'rgba(192,57,43,0.08)', border: '1px solid rgba(192,57,43,0.2)' }}>
-                  <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#C0392B' }} />
-                  <span className="text-xs tracking-wide" style={{ color: '#C0392B' }}>{t('home.urgency.badge')}</span>
+                  style={{ backgroundColor: 'rgba(177,100,59,0.08)', border: '1px solid rgba(177,100,59,0.2)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#B1643B' }} />
+                  <span className="text-xs tracking-wide" style={{ color: '#B1643B' }}>{t('home.urgency.badge')}</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl mb-4 tracking-tight" style={{ color: '#121212' }}>
                   {t('home.urgency.heading')}
@@ -904,7 +904,7 @@ export function HomePage() {
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 70% 30%, #D4A843 0%, transparent 50%),
-                             radial-gradient(circle at 30% 70%, #C0392B 0%, transparent 50%)`,
+                             radial-gradient(circle at 30% 70%, #B1643B 0%, transparent 50%)`,
           }} />
         </div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

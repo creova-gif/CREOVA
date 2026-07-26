@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 export function CommunityInsights() {
   const { t } = useLanguage();
   const topInterests = [
-    { icon: Camera, label: t('insights.interest1'), percentage: '85%', color: '#C0392B' },
+    { icon: Camera, label: t('insights.interest1'), percentage: '85%', color: '#B1643B' },
     { icon: ShoppingBag, label: t('insights.interest2'), percentage: '75%', color: '#D4A843' },
     { icon: Calendar, label: t('insights.interest3'), percentage: '70%', color: '#A2542D' },
     { icon: Palette, label: t('insights.interest4'), percentage: '65%', color: '#8A9777' }
@@ -41,7 +41,7 @@ export function CommunityInsights() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="h-1 w-16 mx-auto mb-8" style={{ backgroundColor: '#C0392B' }}></div>
+          <div className="h-1 w-16 mx-auto mb-8" style={{ backgroundColor: '#B1643B' }}></div>
           <h2 className="text-3xl md:text-4xl mb-4 tracking-tight" style={{ color: '#121212' }}>
             {t('insights.heading')}
           </h2>
@@ -85,7 +85,7 @@ export function CommunityInsights() {
             className="p-8 border"
             style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
           >
-            <Heart className="w-8 h-8 mb-4" style={{ color: '#C0392B' }} />
+            <Heart className="w-8 h-8 mb-4" style={{ color: '#B1643B' }} />
             <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
               {t('insights.content.heading')}
             </h3>
@@ -108,7 +108,7 @@ export function CommunityInsights() {
             className="p-8 border"
             style={{ backgroundColor: '#F8F9FA', borderColor: '#E0E0E0' }}
           >
-            <Globe className="w-8 h-8 mb-4" style={{ color: '#C0392B' }} />
+            <Globe className="w-8 h-8 mb-4" style={{ color: '#B1643B' }} />
             <h3 className="text-2xl mb-6 tracking-tight" style={{ color: '#121212' }}>
               {t('insights.global.heading')}
             </h3>

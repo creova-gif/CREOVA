@@ -85,7 +85,7 @@ export function AdminSubmissionsPage() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'new': return '#C0392B';
+      case 'new': return '#B1643B';
       case 'contacted': return '#D4A843';
       case 'completed': return '#4CAF50';
       default: return '#777777';
@@ -124,7 +124,7 @@ export function AdminSubmissionsPage() {
             <Button 
               onClick={fetchSubmissions}
               className="px-6 py-3 rounded-xl"
-              style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+              style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
             >
               <RefreshCw className="w-5 h-5 mr-2" />
               Refresh
@@ -143,7 +143,7 @@ export function AdminSubmissionsPage() {
                 onClick={() => setFilter('all')}
                 variant={filter === 'all' ? 'default' : 'outline'}
                 className="rounded-xl"
-                style={filter === 'all' ? { backgroundColor: '#C0392B', color: '#F8F9FA' } : { color: '#F8F9FA', borderColor: '#E0E0E0' }}
+                style={filter === 'all' ? { backgroundColor: '#B1643B', color: '#F8F9FA' } : { color: '#F8F9FA', borderColor: '#E0E0E0' }}
               >
                 All ({submissions.length})
               </Button>
@@ -151,7 +151,7 @@ export function AdminSubmissionsPage() {
                 onClick={() => setFilter('contact')}
                 variant={filter === 'contact' ? 'default' : 'outline'}
                 className="rounded-xl"
-                style={filter === 'contact' ? { backgroundColor: '#C0392B', color: '#F8F9FA' } : { color: '#F8F9FA', borderColor: '#E0E0E0' }}
+                style={filter === 'contact' ? { backgroundColor: '#B1643B', color: '#F8F9FA' } : { color: '#F8F9FA', borderColor: '#E0E0E0' }}
               >
                 Contact ({submissions.filter(s => s.type === 'contact').length})
               </Button>
@@ -159,7 +159,7 @@ export function AdminSubmissionsPage() {
                 onClick={() => setFilter('collaboration')}
                 variant={filter === 'collaboration' ? 'default' : 'outline'}
                 className="rounded-xl"
-                style={filter === 'collaboration' ? { backgroundColor: '#C0392B', color: '#F8F9FA' } : { color: '#F8F9FA', borderColor: '#E0E0E0' }}
+                style={filter === 'collaboration' ? { backgroundColor: '#B1643B', color: '#F8F9FA' } : { color: '#F8F9FA', borderColor: '#E0E0E0' }}
               >
                 Collaboration ({submissions.filter(s => s.type === 'collaboration').length})
               </Button>
@@ -209,7 +209,7 @@ export function AdminSubmissionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {loading ? (
             <div className="text-center py-20">
-              <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#C0392B' }} />
+              <RefreshCw className="w-12 h-12 mx-auto mb-4 animate-spin" style={{ color: '#B1643B' }} />
               <p style={{ color: '#121212' }}>Loading submissions...</p>
             </div>
           ) : filteredSubmissions.length === 0 ? (
@@ -242,7 +242,7 @@ export function AdminSubmissionsPage() {
                         </span>
                         <span 
                           className="px-3 py-1 rounded-full text-xs"
-                          style={{ backgroundColor: submission.type === 'contact' ? '#D4A84320' : '#C0392B20', color: submission.type === 'contact' ? '#D4A843' : '#C0392B' }}
+                          style={{ backgroundColor: submission.type === 'contact' ? '#D4A84320' : '#B1643B20', color: submission.type === 'contact' ? '#D4A843' : '#B1643B' }}
                         >
                           {submission.type.toUpperCase()}
                         </span>
@@ -315,7 +315,7 @@ export function AdminSubmissionsPage() {
                         <div className="space-y-2">
                           {submission.organization && (
                             <div className="flex items-start gap-2">
-                              <Briefcase className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
+                              <Briefcase className="w-4 h-4 mt-1" style={{ color: '#B1643B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Organization: </span>
                                 <span style={{ color: '#121212' }}>{submission.organization}</span>
@@ -324,7 +324,7 @@ export function AdminSubmissionsPage() {
                           )}
                           {submission.collaborationType && (
                             <div className="flex items-start gap-2">
-                              <FileText className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
+                              <FileText className="w-4 h-4 mt-1" style={{ color: '#B1643B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Type: </span>
                                 <span style={{ color: '#121212' }}>{submission.collaborationType}</span>
@@ -333,7 +333,7 @@ export function AdminSubmissionsPage() {
                           )}
                           {submission.budget && (
                             <div className="flex items-start gap-2">
-                              <DollarSign className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
+                              <DollarSign className="w-4 h-4 mt-1" style={{ color: '#B1643B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Budget: </span>
                                 <span style={{ color: '#121212' }}>{submission.budget}</span>
@@ -342,7 +342,7 @@ export function AdminSubmissionsPage() {
                           )}
                           {submission.timeline && (
                             <div className="flex items-start gap-2">
-                              <Clock className="w-4 h-4 mt-1" style={{ color: '#C0392B' }} />
+                              <Clock className="w-4 h-4 mt-1" style={{ color: '#B1643B' }} />
                               <div>
                                 <span className="text-sm" style={{ color: '#777777' }}>Timeline: </span>
                                 <span style={{ color: '#121212' }}>{submission.timeline}</span>

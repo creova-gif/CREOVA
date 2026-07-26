@@ -314,9 +314,9 @@ export function CommunityPage() {
             className="text-center"
           >
             <div className="flex items-center justify-center gap-5 mb-6">
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C0392B' }}>Mission</p>
-              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(192,57,43,0.4)' }} />
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(177,100,59,0.4)' }} />
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#B1643B' }}>Mission</p>
+              <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(177,100,59,0.4)' }} />
             </div>
             <h2 className="text-3xl md:text-4xl mb-8 tracking-tight font-light" style={{ color: '#121212' }}>
               {language === 'fr' ? 'Notre Mission' : 'Our Mission'}
@@ -382,9 +382,9 @@ export function CommunityPage() {
                 >
                   <div
                     className="w-11 h-11 rounded-lg flex items-center justify-center mb-5"
-                    style={{ border: '1px solid rgba(192,57,43,0.35)', backgroundColor: 'rgba(192,57,43,0.1)' }}
+                    style={{ border: '1px solid rgba(177,100,59,0.35)', backgroundColor: 'rgba(177,100,59,0.1)' }}
                   >
-                    <service.icon className="w-5 h-5" style={{ color: '#C0392B' }} />
+                    <service.icon className="w-5 h-5" style={{ color: '#B1643B' }} />
                   </div>
                   <div style={{ height: '1px', width: '24px', backgroundColor: 'rgba(212,168,67,0.4)', marginBottom: '14px' }} />
                   <h3 className="text-lg mb-2 tracking-tight" style={{ color: '#F8F9FA' }}>{service.title}</h3>
@@ -407,8 +407,8 @@ export function CommunityPage() {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(192,57,43,0.5)' }} />
-                <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#C0392B' }}>Vision</p>
+                <div style={{ height: '1px', width: '32px', backgroundColor: 'rgba(177,100,59,0.5)' }} />
+                <p className="text-xs tracking-[0.45em] uppercase" style={{ color: '#B1643B' }}>Vision</p>
               </div>
               <h2 className="text-3xl md:text-4xl mb-6 tracking-tight font-light" style={{ color: '#121212' }}>
                 {language === 'fr' ? 'Plus Qu\'une Agence' : 'Beyond an Agency'}
@@ -771,7 +771,7 @@ export function CommunityPage() {
         }} />
         {/* Subtle warm arc — top */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 80% 40% at 50% -10%, rgba(192,57,43,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 40% at 50% -10%, rgba(177,100,59,0.12) 0%, transparent 70%)',
         }} />
         {/* Fine grain dot texture */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
@@ -856,7 +856,7 @@ export function CommunityPage() {
             <h2 className="text-3xl md:text-4xl mb-6" style={{ color: '#D4A843' }}>
               {language === 'fr' ? 'Reconnaissance du Territoire' : 'Land Acknowledgment'}
             </h2>
-            <div className="w-16 h-1 mx-auto mb-8 rounded-full" style={{ backgroundColor: '#C0392B' }}></div>
+            <div className="w-16 h-1 mx-auto mb-8 rounded-full" style={{ backgroundColor: '#B1643B' }}></div>
             <div className="leading-relaxed text-lg space-y-4" style={{ color: '#E0E0E0' }}>
               <p>
                 {language === 'fr'

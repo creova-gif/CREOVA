@@ -7,7 +7,7 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { productListSchema } from '../utils/structuredData';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 interface DigitalProductsPageProps {
   /**
@@ -63,7 +63,7 @@ export function DigitalProductsPage({ embedded = false }: DigitalProductsPagePro
     Templates: 'rgba(212,168,67,0.85)',
     Planning: 'rgba(74,62,54,0.85)',
     Business: 'rgba(18,18,18,0.85)',
-    Presets: 'rgba(192,57,43,0.85)',
+    Presets: 'rgba(177,100,59,0.85)',
     Video: 'rgba(18,18,18,0.85)',
     Marketing: 'rgba(212,168,67,0.85)'
   };
@@ -87,7 +87,7 @@ export function DigitalProductsPage({ embedded = false }: DigitalProductsPagePro
         {/* Subtle ambient glows */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: `radial-gradient(ellipse 50% 80% at 0% 50%, rgba(212,168,67,0.07) 0%, transparent 60%),
-                       radial-gradient(ellipse 40% 60% at 100% 20%, rgba(192,57,43,0.05) 0%, transparent 60%)`
+                       radial-gradient(ellipse 40% 60% at 100% 20%, rgba(177,100,59,0.05) 0%, transparent 60%)`
         }} />
         <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: warmGradient }} />
         <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
@@ -170,7 +170,7 @@ export function DigitalProductsPage({ embedded = false }: DigitalProductsPagePro
             >
               {[
                 { icon: Package, label: 'Templates', count: '12+', desc: 'Canva · Notion · InDesign', color: '#D4A843' },
-                { icon: Sliders, label: 'Presets', count: '30+', desc: 'Lightroom · Mobile', color: '#C0392B' },
+                { icon: Sliders, label: 'Presets', count: '30+', desc: 'Lightroom · Mobile', color: '#B1643B' },
                 { icon: Wrench, label: 'Tools', count: '8+', desc: 'Workbooks · Guides', color: '#D4A843' },
               ].map((cat, i) => (
                 <motion.div

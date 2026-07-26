@@ -112,7 +112,7 @@ export function Navigation() {
                 {totalItems > 0 && (
                   <span
                     className="absolute -top-1 -right-1 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-                    style={{ backgroundColor: '#C0392B' }}
+                    style={{ backgroundColor: '#B1643B' }}
                   >
                     {totalItems}
                   </span>
@@ -150,7 +150,7 @@ export function Navigation() {
           >
             {/* Ambient warm glow */}
             <div className="absolute inset-0 pointer-events-none" style={{
-              background: 'radial-gradient(ellipse 60% 50% at 20% 0%, rgba(212,168,67,0.10) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 90% 100%, rgba(192,57,43,0.08) 0%, transparent 55%)',
+              background: 'radial-gradient(ellipse 60% 50% at 20% 0%, rgba(212,168,67,0.10) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 90% 100%, rgba(177,100,59,0.08) 0%, transparent 55%)',
             }} />
 
             {/* Slowly-turning watermark mark, ambient brand texture */}
@@ -258,7 +258,7 @@ export function Navigation() {
                   to="/contact"
                   onClick={close}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold tracking-wide"
-                  style={{ backgroundColor: '#C0392B', color: '#F8F9FA' }}
+                  style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#F8F9FA' }} />
                   {t('nav.book.call')}

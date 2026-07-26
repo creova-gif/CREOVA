@@ -6,7 +6,7 @@ import { useNavigate } from '../i18n/LocaleLink';
 import { motion, AnimatePresence } from 'motion/react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #C0392B 100%)';
+const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 interface CartDrawerProps {
   open: boolean;

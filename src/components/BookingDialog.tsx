@@ -128,7 +128,7 @@ export function BookingDialog({
                     )}
                   </div>
                   <div className="text-right">
-                    <div style={{ color: '#C0392B' }}>${service.price.toFixed(2)}</div>
+                    <div style={{ color: '#B1643B' }}>${service.price.toFixed(2)}</div>
                     <div className="text-xs" style={{ color: '#777777' }}>CAD</div>
                   </div>
                 </div>

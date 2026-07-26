@@ -15,7 +15,7 @@ export function TestimonialsSection() {
       role: t('testimonials.role.mimi'),
       quote: t('testimonials.quote.mimi'),
       initials: 'MM',
-      color: '#C0392B'
+      color: '#B1643B'
     },
     {
       name: 'Emily Katabaro',
@@ -31,7 +31,7 @@ export function TestimonialsSection() {
       role: t('testimonials.role.winston'),
       quote: t('testimonials.quote.winston'),
       initials: 'WO',
-      color: '#C0392B'
+      color: '#B1643B'
     }
   ];
 
@@ -55,7 +55,7 @@ export function TestimonialsSection() {
     <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 rounded-full" style={{ backgroundColor: '#C0392B', filter: 'blur(100px)' }}></div>
+        <div className="absolute top-20 left-10 w-72 h-72 rounded-full" style={{ backgroundColor: '#B1643B', filter: 'blur(100px)' }}></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full" style={{ backgroundColor: '#D4A843', filter: 'blur(120px)' }}></div>
       </div>
 
@@ -70,10 +70,10 @@ export function TestimonialsSection() {
         >
           <motion.div 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ backgroundColor: 'rgba(192, 57, 43, 0.1)', border: '1px solid rgba(192, 57, 43, 0.3)' }}
+            style={{ backgroundColor: 'rgba(177, 100, 59, 0.1)', border: '1px solid rgba(177, 100, 59, 0.3)' }}
           >
-            <MessageCircle className="w-4 h-4" style={{ color: '#C0392B' }} />
-            <span className="text-sm tracking-wide" style={{ color: '#C0392B' }}>{t('testimonials.badge')}</span>
+            <MessageCircle className="w-4 h-4" style={{ color: '#B1643B' }} />
+            <span className="text-sm tracking-wide" style={{ color: '#B1643B' }}>{t('testimonials.badge')}</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl mb-6 tracking-tight" style={{ color: '#F8F9FA' }}>
@@ -103,9 +103,9 @@ export function TestimonialsSection() {
             >
               <stat.icon 
                 className="w-10 h-10 mx-auto mb-3 transition-transform group-hover:scale-110" 
-                style={{ color: '#C0392B' }} 
+                style={{ color: '#B1643B' }} 
               />
-              <div className="text-3xl md:text-4xl mb-2" style={{ color: '#C0392B' }}>{stat.value}</div>
+              <div className="text-3xl md:text-4xl mb-2" style={{ color: '#B1643B' }}>{stat.value}</div>
               <div className="text-xs tracking-wider uppercase" style={{ color: '#E0E0E0' }}>{stat.label}</div>
             </motion.div>
           ))}
@@ -122,13 +122,13 @@ export function TestimonialsSection() {
             className="relative p-10 md:p-16 rounded-3xl overflow-hidden border"
             style={{ 
               backgroundColor: 'rgba(248, 249, 250, 0.03)',
-              borderColor: 'rgba(192, 57, 43, 0.3)',
-              boxShadow: '0 20px 60px rgba(192, 57, 43, 0.15)'
+              borderColor: 'rgba(177, 100, 59, 0.3)',
+              boxShadow: '0 20px 60px rgba(177, 100, 59, 0.15)'
             }}
           >
             {/* Decorative Quote Mark */}
             <div className="absolute top-8 right-8 opacity-10">
-              <Quote className="w-32 h-32 md:w-48 md:h-48" style={{ color: '#C0392B' }} />
+              <Quote className="w-32 h-32 md:w-48 md:h-48" style={{ color: '#B1643B' }} />
             </div>
 
             <div className="relative z-10">
@@ -140,7 +140,7 @@ export function TestimonialsSection() {
                   style={{ 
                     backgroundColor: testimonials[activeTestimonial].color,
                     color: '#F8F9FA',
-                    boxShadow: '0 8px 24px rgba(192, 57, 43, 0.3)'
+                    boxShadow: '0 8px 24px rgba(177, 100, 59, 0.3)'
                   }}
                 >
                   {testimonials[activeTestimonial].initials}
@@ -205,7 +205,7 @@ export function TestimonialsSection() {
                 <div
                   className="w-3 h-3 rounded-full transition-all duration-300"
                   style={{
-                    backgroundColor: activeTestimonial === index ? '#C0392B' : 'rgba(224, 224, 224, 0.3)',
+                    backgroundColor: activeTestimonial === index ? '#B1643B' : 'rgba(224, 224, 224, 0.3)',
                     transform: activeTestimonial === index ? 'scale(1.2)' : 'scale(1)'
                   }}
                 />
