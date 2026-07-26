@@ -40,6 +40,7 @@ export function Navigation() {
         { name: t('nav.work'), path: '/work' },
         { name: t('nav.services'), path: '/services' },
         { name: t('nav.pricing'), path: '/pricing' },
+        { name: t('nav.about'), path: '/about' },
       ],
     },
     {
@@ -66,6 +67,7 @@ export function Navigation() {
       brand: false,
       items: [
         { name: t('nav.community'), path: '/community' },
+        { name: t('nav.journal'), path: '/journal' },
         { name: t('nav.experience'), path: '/experience' },
         { name: t('nav.contact'), path: '/contact' },
       ],
