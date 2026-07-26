@@ -85,6 +85,7 @@ export function Footer() {
       titleKey: 'footer.col.company',
       links: [
         { labelKey: 'footer.link.story',      href: '/community' },
+        { labelKey: 'footer.link.journal',    href: '/journal' },
         { labelKey: 'footer.link.pricing',    href: '/pricing' },
         { labelKey: 'footer.link.book',       href: '/contact' },
         { labelKey: 'footer.link.community',  href: '/community' },

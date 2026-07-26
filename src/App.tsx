@@ -10,6 +10,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { CartProvider } from './context/CartContext';
 import { ExploreMenuProvider } from './context/ExploreMenuContext';
 import { SERVICE_AREAS } from './data/serviceAreas';
+import { JOURNAL } from './data/journal';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Toaster } from './components/ui/sonner';
 import { BackToTop } from './components/BackToTop';
@@ -46,6 +47,8 @@ const AdminGalleriesPage = lazy(() => import('./pages/AdminGalleriesPage').then(
 const DatabaseAccessPage = lazy(() => import('./pages/DatabaseAccessPage').then(m => ({ default: m.DatabaseAccessPage })));
 const WorkPage = lazy(() => import('./pages/WorkPage').then(m => ({ default: m.WorkPage })));
 const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage').then(m => ({ default: m.ServiceAreaPage })));
+const JournalPage = lazy(() => import('./pages/JournalPage').then(m => ({ default: m.JournalPage })));
+const JournalPostPage = lazy(() => import('./pages/JournalPostPage').then(m => ({ default: m.JournalPostPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 function PageLoader() {
@@ -85,6 +88,9 @@ const LOCALIZED_ROUTES: Array<{ path: string; element: React.ReactNode }> = [
   { path: 'privacy-policy', element: <PrivacyPolicyPage /> },
   // Service-area SEO landing pages (data-driven — see data/serviceAreas.ts).
   ...SERVICE_AREAS.map((a) => ({ path: a.slug, element: <ServiceAreaPage slug={a.slug} /> })),
+  // Journal (blog) — index + one route per post (data-driven — see data/journal.ts).
+  { path: 'journal', element: <JournalPage /> },
+  ...JOURNAL.map((p) => ({ path: `journal/${p.slug}`, element: <JournalPostPage slug={p.slug} /> })),
 ];
 
 /** Legacy paths kept alive as redirects. English only — they were never localized. */

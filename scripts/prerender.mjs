@@ -47,7 +47,18 @@ function serviceAreaRoutes() {
   }
 }
 
-const ALL_BASE = [...BASE_ROUTES, ...serviceAreaRoutes()];
+// Journal: the index plus one route per post (slug parsed from the data file).
+function journalRoutes() {
+  try {
+    const src = readFileSync(join(root, 'src/data/journal.ts'), 'utf8');
+    const slugs = [...src.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]);
+    return ['/journal', ...slugs.map((s) => `/journal/${s}`)];
+  } catch {
+    return ['/journal'];
+  }
+}
+
+const ALL_BASE = [...BASE_ROUTES, ...serviceAreaRoutes(), ...journalRoutes()];
 
 // English at the bare path, French under /fr — mirrors src/i18n/locale.ts.
 const ROUTES = [
