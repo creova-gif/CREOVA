@@ -459,9 +459,6 @@ export function Footer() {
               <p className="text-xs" style={{ color: '#8C7B75' }}>
                 {t('footer.bottom.rights').replace('{year}', String(new Date().getFullYear()))}
               </p>
-              <p className="text-xs" style={{ color: '#8C7B75' }}>
-                {t('footer.bottom.tax')}
-              </p>
             </div>
 
             {/* Social icons + legal links */}

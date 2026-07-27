@@ -474,7 +474,7 @@ const translations = {
     'casestudy.badge': 'Client Work',
     'casestudy.heading': 'Stories That Move People',
     'casestudy.tag.1': 'Black History Month',
-    'casestudy.quote': "CREOVA's work on our Black History Month campaign was exceptional. They understood our vision and delivered photography that truly captured the spirit of our community.",
+    'casestudy.quote': "CREOVA's work with the Black Student Success Centre (BSSC) at Brock was exceptional. They understood our vision and delivered photography that truly captured the spirit of our community.",
     'casestudy.author.name': 'Monique Beauregard',
     'casestudy.author.org': 'Black Student Success Centre, Brock University',
     'casestudy.card1.badge': 'LinkedIn Feature',
@@ -540,7 +540,6 @@ const translations = {
     'footer.cta.book': 'Book a Discovery Call',
     'footer.cta.pricing': 'View Pricing',
     'footer.bottom.rights': '© {year} CREOVA Creative Inc. All rights reserved.',
-    'footer.bottom.tax': 'HST/GST registration in progress. Prices in CAD.',
 
     // Lead Magnet Modal
     'leadmagnet.error.fields': 'Please fill in all required fields.',
@@ -1218,7 +1217,7 @@ const translations = {
     'casestudy.badge': 'Travaux Clients',
     'casestudy.heading': 'Des Histoires Qui Touchent les Gens',
     "casestudy.tag.1": "Mois de l'Histoire des Noirs",
-    "casestudy.quote": "Le travail de CREOVA sur notre campagne du Mois de l'Histoire des Noirs a été exceptionnel. Ils ont compris notre vision et livré des photos qui capturaient véritablement l'esprit de notre communauté.",
+    "casestudy.quote": "Le travail de CREOVA avec le Black Student Success Centre (BSSC) à Brock a été exceptionnel. Ils ont compris notre vision et livré des photos qui capturaient véritablement l'esprit de notre communauté.",
     'casestudy.author.name': 'Monique Beauregard',
     "casestudy.author.org": "Centre de Réussite des Étudiants Noirs, Université Brock",
     'casestudy.card1.badge': 'Mention LinkedIn',
@@ -1284,7 +1283,6 @@ const translations = {
     'footer.cta.book': 'Réserver un Appel Découverte',
     'footer.cta.pricing': 'Voir les Tarifs',
     'footer.bottom.rights': '© {year} CREOVA Creative Inc. Tous droits réservés.',
-    'footer.bottom.tax': 'Inscription HST/TPS en cours. Prix en CAD.',
 
     // Lead Magnet Modal
     'leadmagnet.error.fields': 'Veuillez remplir tous les champs obligatoires.',
