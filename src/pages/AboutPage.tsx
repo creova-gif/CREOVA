@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from '../i18n/LocaleLink';
 import { PageSEO } from '../components/PageSEO';
 import { useLanguage } from '../context/LanguageContext';
@@ -174,6 +174,63 @@ export function AboutPage() {
                   : 'Sankofa represents CREOVA’s commitment to honouring cultural heritage, learning from history, and creating an inclusive future through creative excellence.'}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Press — real Brock News coverage, original descriptions with direct
+          outbound links (never reproducing the source articles' text). */}
+      <section className="relative py-16 lg:py-20" style={{ backgroundColor: '#121212' }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#D4A843' }}>
+            {fr ? 'Dans les médias' : 'As Featured In'}
+          </span>
+          <div className="grid sm:grid-cols-2 gap-4 mt-5">
+            {[
+              {
+                outlet: 'Brock News',
+                date: fr ? '13 août 2025' : 'August 13, 2025',
+                title: fr
+                  ? 'Une bourse Enbridge propulse CREOVA'
+                  : 'Enbridge bursary empowers students through work-integrated learning, advocacy',
+                desc: fr
+                  ? 'Brock News revient sur la façon dont la bourse Enbridge et le programme Navigate de Brock LINC ont contribué au lancement de CREOVA, et sur le travail du fondateur pour le Mois de l’histoire des Noirs et le Mois du patrimoine africain.'
+                  : 'Brock News profiles how the Enbridge Career Experience Bursary and Brock LINC’s Navigate program helped launch CREOVA — and covers the founder’s Black History Month and African Heritage Month work with Human Rights & Equity at Brock.',
+                url: 'https://brocku.ca/brock-news/2025/08/enbridge-bursary-empowers-students-through-work-integrated-learning-advocacy/',
+              },
+              {
+                outlet: 'Brock News',
+                date: fr ? '6 avril 2026' : 'April 6, 2026',
+                title: fr
+                  ? 'D’une passion personnelle à une entreprise prometteuse'
+                  : 'Navigate winners turn personal passions into promising ventures',
+                desc: fr
+                  ? 'Justin Mafie, fondateur de CREOVA, a rejoint un panel d’anciens participants de Navigate pour partager son parcours entrepreneurial.'
+                  : 'Justin Mafie, founder of CREOVA, joined a panel of past Navigate participants sharing insights from the entrepreneurial journey.',
+                url: 'https://brocku.ca/brock-news/2026/04/navigate-winners-turn-personal-passions-into-promising-ventures/',
+              },
+            ].map((item) => (
+              <a
+                key={item.url}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-xl p-5 transition-all duration-300 hover:-translate-y-1"
+                style={{ backgroundColor: '#151515', border: '1px solid rgba(212,168,67,0.15)' }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs tracking-[0.15em] uppercase" style={{ color: '#8C7B75' }}>{item.outlet} · {item.date}</span>
+                  <ArrowUpRight className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ color: '#D4A843' }} />
+                </div>
+                <p className="mb-2 transition-colors group-hover:text-[#D4A843]" style={{ color: '#F8F9FA', fontFamily: 'var(--font-display)', fontSize: '1.1rem', lineHeight: 1.3 }}>
+                  {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: '#8C7B75' }}>{item.desc}</p>
+                <span className="inline-block text-xs tracking-[0.15em] uppercase mt-3" style={{ color: '#D4A843' }}>
+                  {fr ? 'Lire l’article complet' : 'Read the full story'}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
