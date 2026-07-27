@@ -331,7 +331,6 @@ const translations = {
     'footer.newsletter.placeholder': 'Enter your email',
     'footer.newsletter.button': 'Subscribe',
     'footer.social.follow': 'Follow Us',
-    'footer.copyright': '© 2026 CREOVA. All rights reserved.',
     'footer.link.about': 'About',
     'footer.link.careers': 'Careers',
     'footer.link.press': 'Press Kit',
@@ -539,7 +538,7 @@ const translations = {
     'footer.sub': "Your story deserves to be told by someone who understands its depth. Book a discovery call and let's see what we can create together.",
     'footer.cta.book': 'Book a Discovery Call',
     'footer.cta.pricing': 'View Pricing',
-    'footer.bottom.rights': '© {year} CREOVA Creative Inc. All rights reserved.',
+    'footer.bottom.rights': '© {year} CREOVA. All rights reserved.',
 
     // Lead Magnet Modal
     'leadmagnet.error.fields': 'Please fill in all required fields.',
@@ -1073,7 +1072,6 @@ const translations = {
     'footer.newsletter.placeholder': 'Entrez votre courriel',
     'footer.newsletter.button': 'S\'abonner',
     'footer.social.follow': 'Suivez-Nous',
-    'footer.copyright': '© 2026 CREOVA. Tous droits réservés.',
     'footer.link.about': 'À Propos',
     'footer.link.careers': 'Carrières',
     'footer.link.press': 'Kit de Presse',
@@ -1282,7 +1280,7 @@ const translations = {
     "footer.sub": "Votre histoire mérite d'être racontée par quelqu'un qui en comprend la profondeur. Réservez un appel découverte et voyons ce que nous pouvons créer ensemble.",
     'footer.cta.book': 'Réserver un Appel Découverte',
     'footer.cta.pricing': 'Voir les Tarifs',
-    'footer.bottom.rights': '© {year} CREOVA Creative Inc. Tous droits réservés.',
+    'footer.bottom.rights': '© {year} CREOVA. Tous droits réservés.',
 
     // Lead Magnet Modal
     'leadmagnet.error.fields': 'Veuillez remplir tous les champs obligatoires.',
