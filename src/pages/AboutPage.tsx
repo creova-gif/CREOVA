@@ -101,6 +101,79 @@ export function AboutPage() {
         <p className="mt-10 text-sm tracking-[0.2em] uppercase" style={{ color: '#8C7B75' }}>— Justin Mafie, {fr ? 'Fondateur' : 'Founder'}</p>
       </article>
 
+      {/* Sankofa — the philosophy behind the work. Previously lived inside the
+          chat widget's info popup; moved here so it gets a real page section
+          instead of being buried in a support-chat modal. */}
+      <section className="relative py-16 lg:py-24 overflow-hidden" style={{ backgroundColor: '#0E0E0E' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 50% 60% at 85% 20%, rgba(212,168,67,0.08) 0%, transparent 55%)',
+        }} />
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
+            {/* Portrait */}
+            <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: '4/5', border: '1px solid rgba(212,168,67,0.15)' }}>
+              <img
+                src="/sankofa-profile.jpg"
+                alt={fr ? 'Symbole Sankofa, un oiseau Adinkra regardant en arrière' : 'The Sankofa symbol, an Adinkra bird looking backward'}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(14,14,14,0.55) 0%, transparent 45%)' }} />
+            </div>
+
+            {/* Story */}
+            <div>
+              <span className="text-xs tracking-[0.4em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'La philosophie' : 'The Philosophy'}</span>
+              <h2 className="tracking-tight mt-4 mb-6" style={{ color: '#F8F9FA', fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4.5vw, 3rem)' }}>
+                Sankofa
+              </h2>
+
+              <p className="leading-relaxed mb-5" style={{ color: '#E0E0E0', fontSize: '1.05rem' }}>
+                {fr
+                  ? 'Le symbole Sankofa représente un oiseau regardant en arrière tout en tenant un œuf dans son bec — l’importance de retourner au passé pour récupérer des connaissances et des traditions précieuses afin de construire un meilleur avenir.'
+                  : 'The Sankofa symbol represents a bird looking backward while holding an egg in its beak — the importance of returning to the past to retrieve valuable knowledge and traditions for building a better future.'}
+              </p>
+
+              <blockquote className="pl-5 mb-7" style={{ borderLeft: '2px solid #D4A843' }}>
+                <p className="italic" style={{ color: '#F8F9FA', fontFamily: 'var(--font-display)', fontSize: '1.2rem' }}>
+                  “Se wo were fi na wosankofa a yenkyi”
+                </p>
+                <p className="text-sm mt-1" style={{ color: '#8C7B75' }}>
+                  {fr ? '« Il n’est pas mal de retourner chercher ce que vous avez oublié »' : '“It is not wrong to go back for that which you have forgotten”'}
+                </p>
+              </blockquote>
+
+              <p className="leading-relaxed mb-7" style={{ color: '#E0E0E0', fontSize: '1.05rem' }}>
+                {fr
+                  ? 'En 2024, le fondateur de CREOVA a développé les actifs créatifs pour le Mois de l’histoire des Noirs et le Mois du patrimoine africain à l’Université Brock, en partenariat avec Human Rights & Equity (HRE). Ce travail — honorer l’héritage tout en construisant pour l’avenir — est devenu le fil conducteur de la manière dont CREOVA aborde chaque projet.'
+                  : 'In 2024, CREOVA’s founder developed creative assets for Black History Month and African Heritage Month at Brock University, in partnership with Human Rights & Equity (HRE). That work — honouring heritage while building for the future — became the through-line for how CREOVA approaches every project since.'}
+              </p>
+
+              <div className="space-y-4 mb-7">
+                <p className="text-sm leading-relaxed" style={{ color: '#8C7B75' }}>
+                  <strong style={{ color: '#D4A843' }}>{fr ? 'Charte de Scarborough — ' : 'The Scarborough Charter — '}</strong>
+                  {fr
+                    ? 'reconnaître les injustices historiques et favoriser la responsabilité institutionnelle.'
+                    : 'acknowledging historical injustices and fostering accountability in institutions.'}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: '#8C7B75' }}>
+                  <strong style={{ color: '#D4A843' }}>Audre Lorde — </strong>
+                  {fr
+                    ? '« Il n’y a pas de lutte à un seul problème parce que nous ne vivons pas de vies à un seul problème. »'
+                    : '“There is no such thing as a single-issue struggle because we do not live single-issue lives.”'}
+                </p>
+              </div>
+
+              <p className="text-base leading-relaxed" style={{ color: '#F8F9FA' }}>
+                {fr
+                  ? 'Sankofa représente l’engagement de CREOVA à honorer l’héritage culturel, à apprendre de l’histoire et à créer un avenir inclusif grâce à l’excellence créative.'
+                  : 'Sankofa represents CREOVA’s commitment to honouring cultural heritage, learning from history, and creating an inclusive future through creative excellence.'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* One company, many brands */}
       <section className="relative py-16 lg:py-24" style={{ backgroundColor: '#0E0E0E' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

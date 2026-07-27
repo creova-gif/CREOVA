@@ -17,7 +17,7 @@ import { Toaster } from './components/ui/sonner';
 import { BackToTop } from './components/BackToTop';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTopOnMount } from './components/ScrollToTopOnMount';
-import { Sankofa } from './components/Sankofa';
+import { SupportChat } from './components/SupportChat';
 import { AnalyticsTracker } from './components/AnalyticsTracker';
 import { ExitIntentModal } from './components/ExitIntentModal';
 import { ContactInfoBanner } from './components/ContactInfoBanner';
@@ -293,7 +293,7 @@ function AppContent() {
         <Footer />
         <Toaster richColors position="top-right" />
         <BackToTop />
-        <Sankofa />
+        <SupportChat />
         <AnalyticsTracker />
         <ExitIntentModal />
         {/* <CustomCursor /> disabled: trailing custom cursor made the site feel laggy; using native cursor */}

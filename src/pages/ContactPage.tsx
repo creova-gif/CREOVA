@@ -268,7 +268,7 @@ export function ContactPage() {
                       variant="outline"
                       style={{ borderColor: 'rgba(212,168,67,0.4)', color: '#D4A843', backgroundColor: 'transparent' }}
                       onClick={() => {
-                        window.dispatchEvent(new CustomEvent('sankofa:open'));
+                        window.dispatchEvent(new CustomEvent('support-chat:open'));
                       }}
                     >
                       {t('contact.book.btn.chat')}
