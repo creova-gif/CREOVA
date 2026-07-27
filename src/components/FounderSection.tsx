@@ -71,8 +71,8 @@ export function FounderSection() {
 
             <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#E0E0E0', maxWidth: '54ch' }}>
               {fr
-                ? "CREOVA a commencé par quelque chose de simple : en explorant sa ville, Justin a vu d’excellents commerces locaux passer inaperçus — non par manque de talent ou de qualité, mais de visibilité. Il a bâti CREOVA pour combler ce fossé et rendre le travail créatif de classe mondiale accessible à toute personne ayant une histoire à raconter."
-                : "CREOVA started with something simple: exploring his city, Justin watched excellent local businesses get overlooked — not for lack of talent or quality, but for lack of visibility. He built CREOVA to close that gap, and make world-class creative work accessible to everyone with a story worth telling."}
+                ? "CREOVA a commencé par quelque chose de simple : en explorant sa ville, Justin a vu d’excellents commerces locaux passer inaperçus — non par manque de talent ou de qualité, mais de représentation et de visibilité. Il a bâti CREOVA autour de la narration visuelle et de l’impact numérique, pour rendre le travail créatif de classe mondiale accessible à toute personne ayant une histoire à raconter."
+                : "CREOVA started with something simple: exploring his city, Justin watched excellent local businesses get overlooked — not for lack of talent or quality, but for lack of representation and visibility. He built CREOVA around visual storytelling and digital impact, to make world-class creative work accessible to everyone with a story worth telling."}
             </p>
 
             <blockquote className="pl-5 mb-9" style={{ borderLeft: '2px solid #B1643B' }}>

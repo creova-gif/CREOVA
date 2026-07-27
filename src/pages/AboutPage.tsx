@@ -7,26 +7,30 @@ import { useLanguage } from '../context/LanguageContext';
 
 const SITE_URL = 'https://creova.one';
 
-// Founder's own words. Edit here; the pull-quote is index PULL of the array.
+// Founder's own words, sharpened with CREOVA's own problem-framing language
+// (from the pitch deck: "the representation & visibility gap for BIPOC
+// creatives") and its tagline ("Creative Stories, Digital Impact"). The
+// personal anecdote is untouched — only the articulation of the problem and
+// mission is enriched. Edit here; the pull-quote is index PULL of the array.
 const STORY_EN = [
   'One of the moments that inspired me to build CREOVA came from simply exploring my city.',
-  'I visited restaurants, cafés, and local businesses that served incredible food and offered amazing experiences. The quality was there — but their story wasn’t. Their social media was inconsistent, their photography didn’t reflect the experience, and many had little to no marketing presence.',
-  'It wasn’t because they lacked passion. Many either couldn’t afford professional creative services or didn’t know how to market themselves effectively in a digital-first world.',
-  'I realized there was a gap — not in talent or quality, but in visibility.',
-  'Great businesses were being overlooked because they didn’t have access to the branding, content, and promotional tools that larger companies take for granted.',
-  'That experience planted the seed for CREOVA.',
-  'I wanted to build a company that helps businesses, creators, and communities tell their stories through world-class design, media, technology, and marketing — making high-quality creative work more accessible, not just for those with the biggest budgets, but for everyone with a great idea worth sharing.',
+  'I visited restaurants, cafés, and local businesses that served incredible food and offered amazing experiences. The quality was there — but the visual storytelling wasn’t. Their social media was inconsistent, their photography didn’t reflect the experience, and many had little to no digital presence at all.',
+  'It wasn’t because they lacked passion. Many simply couldn’t afford professional creative services, or didn’t have the tools to compete in a digital-first world where visual storytelling is what gets a business seen.',
+  'I realized there was a gap — not in talent or quality, but in representation and visibility.',
+  'Talented BIPOC creators, founders, and community organizations were being overlooked, not because their work wasn’t good enough, but because they didn’t have access to the branding, content, and storytelling platforms that larger companies take for granted.',
+  'That gap planted the seed for CREOVA.',
+  'I wanted to build a company rooted in visual storytelling and digital impact — one that helps businesses, creators, and communities tell their stories through world-class design, media, and technology, making high-quality creative work accessible not just to those with the biggest budgets, but to everyone with a story worth telling.',
 ];
 const STORY_FR = [
   'L’un des moments qui m’ont inspiré à bâtir CREOVA est venu simplement en explorant ma ville.',
-  'J’ai visité des restaurants, des cafés et des commerces locaux qui servaient une nourriture incroyable et offraient des expériences remarquables. La qualité était là — mais pas leur histoire. Leurs réseaux sociaux étaient irréguliers, leur photographie ne reflétait pas l’expérience, et beaucoup n’avaient presque aucune présence marketing.',
-  'Ce n’était pas par manque de passion. Beaucoup n’avaient pas les moyens de s’offrir des services créatifs professionnels ou ne savaient pas comment se faire connaître dans un monde d’abord numérique.',
-  'J’ai compris qu’il y avait un fossé — non pas de talent ou de qualité, mais de visibilité.',
-  'De grandes entreprises passaient inaperçues parce qu’elles n’avaient pas accès aux outils de marque, de contenu et de promotion que les grandes sociétés tiennent pour acquis.',
-  'Cette expérience a planté la graine de CREOVA.',
-  'Je voulais bâtir une entreprise qui aide les commerces, les créateurs et les communautés à raconter leur histoire grâce à un design, des médias, une technologie et un marketing de classe mondiale — en rendant le travail créatif de haute qualité plus accessible, pas seulement pour ceux qui ont les plus gros budgets, mais pour toute personne ayant une bonne idée à partager.',
+  'J’ai visité des restaurants, des cafés et des commerces locaux qui servaient une nourriture incroyable et offraient des expériences remarquables. La qualité était là — mais pas la narration visuelle. Leurs réseaux sociaux étaient irréguliers, leur photographie ne reflétait pas l’expérience, et beaucoup n’avaient presque aucune présence numérique.',
+  'Ce n’était pas par manque de passion. Beaucoup n’avaient tout simplement pas les moyens de s’offrir des services créatifs professionnels, ou n’avaient pas les outils pour rivaliser dans un monde d’abord numérique où la narration visuelle fait toute la différence.',
+  'J’ai compris qu’il y avait un fossé — non pas de talent ou de qualité, mais de représentation et de visibilité.',
+  'Des créateurs, fondateurs et organismes communautaires BIPOC talentueux étaient ignorés, non pas parce que leur travail n’était pas assez bon, mais parce qu’ils n’avaient pas accès aux outils de marque, de contenu et de narration que les grandes entreprises tiennent pour acquis.',
+  'Ce fossé a planté la graine de CREOVA.',
+  'Je voulais bâtir une entreprise enracinée dans la narration visuelle et l’impact numérique — qui aide les commerces, les créateurs et les communautés à raconter leur histoire grâce à un design, des médias et une technologie de classe mondiale, en rendant le travail créatif de haute qualité accessible non seulement à ceux qui ont les plus gros budgets, mais à toute personne ayant une histoire qui mérite d’être racontée.',
 ];
-const PULL = 3; // "I realized there was a gap — not in talent or quality, but in visibility."
+const PULL = 3; // "I realized there was a gap — not in talent or quality, but in representation and visibility."
 
 export function AboutPage() {
   const fr = useLanguage().language === 'fr';
