@@ -278,8 +278,6 @@ export function CommunityPage() {
               className="py-16 pl-0 lg:pl-12 grid grid-cols-2 gap-3"
             >
               {[
-                { value: '5+', label: language === 'fr' ? 'Communautés' : 'Communities', icon: Users },
-                { value: '50+', label: language === 'fr' ? 'Projets' : 'Projects', icon: Award },
                 { value: 'BIPOC', label: language === 'fr' ? 'Dirigée' : 'Led', icon: Heart },
                 { value: 'ON', label: language === 'fr' ? 'Canada' : 'Canada', icon: Star },
               ].map((stat, i) => (

@@ -4,6 +4,7 @@ import { motion, useInView } from 'motion/react';
 import { ArrowUpRight, Instagram, Mail, Linkedin, Star, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
 import { SERVICE_AREAS } from '../data/serviceAreas';
+import { GOOGLE_REVIEW_URL } from '../config';
 import photoInline from '../assets/photo-duo-portrait.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -109,7 +110,7 @@ export function Footer() {
         { label: 'LinkedIn',                  href: 'https://www.linkedin.com/company/creovaspace/', external: true },
         { label: 'support@creova.one',         href: 'mailto:support@creova.one',                     external: true },
         { label: t('footer.contact.location'), href: 'https://maps.google.com/?q=Niagara+Region+Ontario+Canada', external: true },
-        { labelKey: 'footer.contact.review',  href: 'https://g.page/r/creova/review',               external: true },
+        { labelKey: 'footer.contact.review',  href: GOOGLE_REVIEW_URL,               external: true },
       ],
     },
   ] as const;
@@ -309,7 +310,7 @@ export function Footer() {
             {[
               { Icon: MapPin, text: t('footer.contact.location') },
               { Icon: Mail,   text: 'support@creova.one', href: 'mailto:support@creova.one' },
-              { Icon: Star,   text: t('footer.contact.rating'), href: 'https://g.page/r/creova/review' },
+              { Icon: Star,   text: t('footer.contact.rating'), href: GOOGLE_REVIEW_URL },
             ].map(({ Icon, text, href }, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div
@@ -475,7 +476,7 @@ export function Footer() {
                 <SocialIcon href="mailto:support@creova.one" label={t('footer.social.email')}>
                   <Mail className="w-4 h-4" />
                 </SocialIcon>
-                <SocialIcon href="https://g.page/r/creova/review" label={t('footer.contact.review')}>
+                <SocialIcon href={GOOGLE_REVIEW_URL} label={t('footer.contact.review')}>
                   <Star className="w-4 h-4" />
                 </SocialIcon>
               </div>

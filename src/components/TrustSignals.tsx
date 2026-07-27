@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Award, Star, Users } from 'lucide-react';
+import { Award, Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import logoBrockU from '../assets/logo-brock-university.webp';
 import logoBSSC from '../assets/logo-bssc.png';
@@ -56,12 +56,6 @@ export function TrustSignals() {
     },
   ];
 
-  const stats = [
-    { icon: Award, stat: '30+',   labelKey: 'trust.stat1.label' },
-    { icon: Users, stat: '5+',    labelKey: 'trust.stat2.label' },
-    { icon: Star,  stat: 'EN·FR', labelKey: 'trust.stat3.label' },
-    { icon: Users, stat: '100%',  labelKey: 'trust.stat4.label' },
-  ];
 
   return (
     <section className="py-20" style={{ backgroundColor: '#F8F9FA' }}>
@@ -170,27 +164,6 @@ export function TrustSignals() {
           ))}
         </div>
 
-        {/* Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 p-12 rounded-3xl"
-          style={{ backgroundColor: '#121212' }}
-        >
-          {stats.map((item, index) => (
-            <div key={index} className="text-center">
-              <item.icon className="w-8 h-8 mx-auto mb-3" style={{ color: '#D4A843' }} />
-              <div className="text-4xl font-bold mb-2" style={{ color: '#F8F9FA' }}>
-                {item.stat}
-              </div>
-              <div className="text-sm tracking-wide" style={{ color: '#E0E0E0' }}>
-                {t(item.labelKey)}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

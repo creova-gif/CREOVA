@@ -351,9 +351,9 @@ export function BookingPage() {
               className="hidden md:flex flex-col gap-3 w-56 ml-16"
             >
               {[
-                { icon: Award, label: fr ? '20+ projets' : '20+ Projects', desc: fr ? "Livrés partout en Ontario" : 'Delivered across Ontario' },
+                { icon: Award, label: fr ? 'Basée à Niagara' : 'Niagara-Based', desc: fr ? "Au service de tout l'Ontario" : 'Serving all of Ontario' },
                 { icon: CheckCircle2, label: fr ? 'Dirigée par des BIPOC' : 'BIPOC-Led', desc: fr ? 'Équipe créative diversifiée' : 'Diverse creative team' },
-                { icon: Star, label: fr ? '5,0 ★' : '5.0 ★ Rating', desc: fr ? 'Avis vérifiés sur Google' : 'Google verified reviews' },
+                { icon: Star, label: fr ? 'Bilingue' : 'Bilingual', desc: fr ? 'Livraison en FR et EN' : 'EN & FR delivery' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -717,7 +717,7 @@ export function BookingPage() {
               {
                 icon: Star,
                 title: fr ? 'Équipe professionnelle' : 'Professional Team',
-                description: fr ? "Des créatifs experts avec plus de 20 projets réussis et des avis 5 étoiles" : 'Expert creatives with 20+ successful projects and 5-star reviews'
+                description: fr ? "Des créatifs experts, licenciés et assurés, au service de l'Ontario" : 'Expert creatives, licensed and insured, serving all of Ontario'
               },
               {
                 icon: Award,

@@ -220,7 +220,7 @@ export function ExitIntentModal() {
                     </motion.div>
                   </div>
 
-                  {/* Stats */}
+                  {/* Facts — no unverified numeric/rating claims */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -228,13 +228,8 @@ export function ExitIntentModal() {
                     className="relative mt-8 flex gap-6"
                   >
                     <div>
-                      <div className="text-xl font-semibold" style={{ color: '#D4A843' }}>50+</div>
-                      <div className="text-[10px] tracking-wide uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>Projects</div>
-                    </div>
-                    <div className="w-px self-stretch" style={{ backgroundColor: 'rgba(212,168,67,0.15)' }} />
-                    <div>
-                      <div className="text-xl font-semibold" style={{ color: '#D4A843' }}>5.0★</div>
-                      <div className="text-[10px] tracking-wide uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>Google Rating</div>
+                      <div className="text-xl font-semibold" style={{ color: '#D4A843' }}>BIPOC</div>
+                      <div className="text-[10px] tracking-wide uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>Led</div>
                     </div>
                     <div className="w-px self-stretch" style={{ backgroundColor: 'rgba(212,168,67,0.15)' }} />
                     <div>

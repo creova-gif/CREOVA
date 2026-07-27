@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageCircle, Quote, Globe, TrendingUp, CheckCircle, MapPin, Award } from 'lucide-react';
+import { MessageCircle, Quote, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 import { useLanguage } from '../context/LanguageContext';
@@ -35,12 +35,6 @@ export function TestimonialsSection() {
     }
   ];
 
-  const stats = [
-    { value: '30+', label: t('testimonials.stat.projects'), icon: Award },
-    { value: '5.0', label: t('testimonials.stat.rating'), icon: CheckCircle },
-    { value: '100%', label: t('testimonials.stat.bipoc'), icon: TrendingUp },
-    { value: '5+', label: t('testimonials.stat.communities'), icon: Globe }
-  ];
 
   // Auto-advance testimonial every 5 seconds
   useEffect(() => {
@@ -83,33 +77,6 @@ export function TestimonialsSection() {
             {t('testimonials.sub')}
           </p>
         </motion.div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="text-center p-8 rounded-2xl border backdrop-blur-sm group"
-              style={{ 
-                backgroundColor: 'rgba(248, 249, 250, 0.05)', 
-                borderColor: 'rgba(224, 224, 224, 0.1)',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
-              }}
-            >
-              <stat.icon 
-                className="w-10 h-10 mx-auto mb-3 transition-transform group-hover:scale-110" 
-                style={{ color: '#B1643B' }} 
-              />
-              <div className="text-3xl md:text-4xl mb-2" style={{ color: '#B1643B' }}>{stat.value}</div>
-              <div className="text-xs tracking-wider uppercase" style={{ color: '#E0E0E0' }}>{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Featured Testimonial Carousel */}
         <div className="max-w-5xl mx-auto mb-12">

@@ -62,6 +62,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       resultLabel: 'The result',
       result:
         'A trusted, recurring partnership. The BSSC and student clubs keep reaching out — for photography, videography and design — and students are always happy to see CREOVA behind the camera.',
+      quote: {
+        text: 'CREOVA’s work on our Black History Month campaign was exceptional. They understood our vision and delivered photography that truly captured the spirit of our community.',
+        name: 'Monique Beauregard',
+        role: 'Black Student Success Centre, Brock University',
+      },
     },
     fr: {
       title: 'Documenter la vie étudiante noire à Brock',
@@ -84,6 +89,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       resultLabel: 'Le résultat',
       result:
         'Un partenariat de confiance et récurrent. Le BSSC et les clubs continuent de faire appel à nous — photo, vidéo, design — et les étudiants sont toujours heureux de voir CREOVA derrière la caméra.',
+      quote: {
+        text: 'Le travail de CREOVA sur notre campagne du Mois de l’Histoire des Noirs a été exceptionnel. Ils ont compris notre vision et livré des photos qui capturaient véritablement l’esprit de notre communauté.',
+        name: 'Monique Beauregard',
+        role: 'Centre de Réussite des Étudiants Noirs, Université Brock',
+      },
     },
   },
 ];

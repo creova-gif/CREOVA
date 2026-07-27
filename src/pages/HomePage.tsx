@@ -29,95 +29,14 @@ import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
 import photoServiceVideography from '../assets/photo-service-videography.jpg';
 import photoCollage2 from '../assets/photo-collage-2.jpg';
-import anime from 'animejs';
 import { FloatingOrbs } from '../components/FloatingOrbs';
 import { Magnetic } from '../components/Magnetic';
 import { TiltCard } from '../components/TiltCard';
 import { FallDropTeaser } from '../components/FallDropTeaser';
 import { organizationSchema } from '../utils/structuredData';
 import { useGalleries } from '../hooks/useGalleries';
+import { GOOGLE_REVIEW_URL } from '../config';
 
-function AnimatedStat({ number, label, icon: Icon, delay }: {
-  number: string;
-  label: string;
-  icon: React.ElementType;
-  delay: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const triggered = useRef(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const numericStr = number.replace(/[^0-9.]/g, '');
-    const suffix = number.replace(/[0-9.]/g, '');
-    const target = parseFloat(numericStr) || 0;
-    // Preserve decimals (e.g. the 5.0 rating) instead of flooring to 5.
-    const decimals = numericStr.includes('.') ? (numericStr.split('.')[1]?.length ?? 1) : 0;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !triggered.current) {
-          triggered.current = true;
-          if (prefersReduced) {
-            const display = el.querySelector('[data-counter]');
-            if (display) display.textContent = number;
-            return;
-          }
-          const counter = { value: 0 };
-          anime({
-            targets: counter,
-            value: target,
-            duration: 1800,
-            delay,
-            easing: 'easeOutExpo',
-            update() {
-              const display = el.querySelector('[data-counter]');
-              if (display) {
-                const shown = decimals > 0 ? counter.value.toFixed(decimals) : String(Math.floor(counter.value));
-                display.textContent = shown + suffix;
-              }
-            },
-          });
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [number, delay]);
-
-  return (
-    <div ref={ref} className="flex-1 flex flex-col items-center justify-center text-center py-14 px-8 relative group cursor-default">
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,168,67,0.05) 0%, transparent 70%)',
-      }} />
-      <motion.div
-        className="relative"
-        whileHover={{ scale: 1.04 }}
-        transition={{ duration: 0.4 }}
-      >
-        <Icon className="w-6 h-6 mx-auto mb-3" style={{ color: '#D4A843' }} strokeWidth={1.5} />
-        <span
-          data-counter
-          className="block font-light tracking-tight leading-none"
-          style={{
-            fontSize: 'clamp(64px, 8vw, 112px)',
-            color: '#D4A843',
-            fontVariantNumeric: 'tabular-nums',
-          }}
-        >
-          0{number.replace(/[0-9.]/g, '')}
-        </span>
-      </motion.div>
-      <div className="w-10 my-4" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.45)' }} />
-      <p className="text-xs tracking-[0.4em] uppercase" style={{ color: '#777777' }}>{label}</p>
-    </div>
-  );
-}
 
 export function HomePage() {
   const { t } = useLanguage();
@@ -149,14 +68,6 @@ export function HomePage() {
     { icon: Calendar, title: t('home.feature.6.title'), description: t('home.feature.6.desc'), link: '/experience', image: photoServiceEvents, objectPosition: 'center 40%', accent: '#B1643B', startingPrice: '$750' },
   ];
 
-  // One canonical, defensible proof set — matches the 30 real galleries on
-  // Matches the 30 real galleries on /work. Only claims we can defend — no
-  // Google rating shown until real reviews exist (the account is new).
-  const stats = [
-    { number: '30+', label: t('home.stat.projects'), icon: Award },
-    { number: '5+', label: t('home.stat.communities'), icon: Globe },
-    { number: '100%', label: t('home.stat.bipoc'), icon: Heart },
-  ];
 
   const marqueeItems = [
     t('home.marquee.1'), t('home.marquee.2'), t('home.marquee.3'), t('home.marquee.4'),
@@ -359,25 +270,6 @@ export function HomePage() {
         <InfiniteMarquee items={marqueeItems} speed={45} direction="left" />
       </div>
 
-      {/* Stats — anime.js count-up */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
-        <div className="absolute top-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.35)' }} />
-        <div className="absolute bottom-0 left-0 right-0" style={{ height: '1px', backgroundColor: 'rgba(212,168,67,0.35)' }} />
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 50% 80% at 50% 50%, rgba(212,168,67,0.07) 0%, transparent 70%)',
-        }} />
-        <div className="relative flex flex-col md:flex-row">
-          {stats.map((stat, index) => (
-            <div key={index} className="relative" style={{ flex: 1 }}>
-              {index > 0 && (
-                <div className="hidden md:block absolute left-0 top-8 bottom-8"
-                  style={{ width: '1px', backgroundColor: 'rgba(212,168,67,0.2)' }} />
-              )}
-              <AnimatedStat number={stat.number} label={stat.label} icon={stat.icon} delay={index * 150} />
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* SEEN Platform Teaser */}
       <section className="relative overflow-hidden" style={{ backgroundColor: '#121212' }}>
@@ -827,7 +719,7 @@ export function HomePage() {
               </div>
             </div>
             <a
-              href="https://g.page/r/creova/review"
+              href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:opacity-90 hover:shadow-lg hover:-translate-y-px"

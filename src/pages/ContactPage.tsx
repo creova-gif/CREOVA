@@ -7,7 +7,8 @@ import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
 import { Captcha } from '../components/Captcha';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star } from 'lucide-react';
+import { GOOGLE_REVIEW_URL } from '../config';
 import { motion } from 'motion/react';
 import { toast } from 'sonner';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
@@ -473,6 +474,32 @@ export function ContactPage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* Leave-a-review CTA */}
+      <section className="py-16" style={{ backgroundColor: '#121212' }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl p-8" style={{ backgroundColor: 'rgba(212,168,67,0.06)', border: '1px solid rgba(212,168,67,0.18)' }}>
+            <div className="flex items-center gap-4 text-center sm:text-left">
+              <span className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(212,168,67,0.15)' }}>
+                <Star className="w-6 h-6" style={{ color: '#D4A843' }} />
+              </span>
+              <div>
+                <p className="text-base font-medium mb-1" style={{ color: '#F8F9FA' }}>{t('home.review.title')}</p>
+                <p className="text-sm" style={{ color: '#8C7B75' }}>{t('home.review.sub')}</p>
+              </div>
+            </div>
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-px hover:shadow-lg"
+              style={{ backgroundColor: '#B1643B', color: '#F8F9FA' }}
+            >
+              {t('home.review.cta')}
+            </a>
+          </div>
         </div>
       </section>
     </div>
