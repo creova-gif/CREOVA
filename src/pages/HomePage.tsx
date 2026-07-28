@@ -23,12 +23,13 @@ import heroBackground from '../assets/photo-community-celebration.jpg';
 import heroImage1 from '../assets/photo-duo-portrait.jpg';
 import heroImage3 from '../assets/photo-duo-bench.jpg';
 import teamPhoto from '../assets/photo-team-atrium.jpg';
-import photoCommunity2 from '../assets/photo-community-chess.jpg';
 import photoServicePhotography from '../assets/photo-carnival-portrait.jpg';
 import photoSocialLaptop from '../assets/photo-social-laptop.jpg';
 import photoServiceEvents from '../assets/photo-service-events.jpg';
 import photoServiceVideography from '../assets/photo-service-videography.jpg';
 import photoCollage2 from '../assets/photo-collage-2.jpg';
+import photoBrandDesign from '../assets/photo-collage-3.jpg';
+import photoShopLifestyle from '../assets/photo-collage-4.jpg';
 import { FloatingOrbs } from '../components/FloatingOrbs';
 import { Magnetic } from '../components/Magnetic';
 import { TiltCard } from '../components/TiltCard';
@@ -62,9 +63,9 @@ export function HomePage() {
   const features = [
     { icon: Camera, title: t('home.feature.1.title'), description: t('home.feature.1.desc'), link: '/services', image: photoServicePhotography, objectPosition: 'center 25%', accent: '#D4A843', startingPrice: '$450' },
     { icon: Video, title: t('home.feature.2.title'), description: t('home.feature.2.desc'), link: '/services', image: photoServiceVideography, objectPosition: 'center top', accent: '#B1643B', startingPrice: '$500' },
-    { icon: Palette, title: t('home.feature.3.title'), description: t('home.feature.3.desc'), link: '/services', image: photoCommunity2, objectPosition: 'center 20%', accent: '#D4A843', startingPrice: '$750' },
+    { icon: Palette, title: t('home.feature.3.title'), description: t('home.feature.3.desc'), link: '/services', image: photoBrandDesign, objectPosition: 'center 15%', accent: '#D4A843', startingPrice: '$750' },
     { icon: TrendingUp, title: t('home.feature.4.title'), description: t('home.feature.4.desc'), link: '/services', image: photoSocialLaptop, objectPosition: 'center top', accent: '#B1643B', startingPrice: '$950/mo' },
-    { icon: ShoppingBag, title: t('home.feature.5.title'), description: t('home.feature.5.desc'), link: '/shop', image: 'https://images.unsplash.com/photo-1749413067075-d3d4efa2959a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080', objectPosition: 'center', accent: '#D4A843', startingPrice: '$15' },
+    { icon: ShoppingBag, title: t('home.feature.5.title'), description: t('home.feature.5.desc'), link: '/shop', image: photoShopLifestyle, objectPosition: 'center 20%', accent: '#D4A843', startingPrice: '$15' },
     { icon: Calendar, title: t('home.feature.6.title'), description: t('home.feature.6.desc'), link: '/experience', image: photoServiceEvents, objectPosition: 'center 40%', accent: '#B1643B', startingPrice: '$750' },
   ];
 
@@ -353,50 +354,64 @@ export function HomePage() {
               {t('home.services.sub')}
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <motion.div key={index}
-                initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.08 }} viewport={{ once: true }}>
-                <TiltCard
-                  spotlight
-                  spotlightColor="rgba(212,168,67,0.14)"
-                  maxAngle={6}
-                  className="group rounded-3xl overflow-hidden transition-shadow duration-700 hover:shadow-2xl"
-                  style={{ height: '380px' }}
+          {/* Asymmetric editorial mosaic — one large featured tile plus
+              varied-size tiles, rather than a uniform grid of equal cards. */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 lg:auto-rows-[190px]">
+            {features.map((feature, index) => {
+              const isFeatured = index === 0;
+              const spanClass = [
+                'sm:col-span-2 lg:col-span-4 lg:row-span-2',
+                'lg:col-span-2 lg:row-span-1',
+                'lg:col-span-2 lg:row-span-1',
+                'lg:col-span-3 lg:row-span-1',
+                'lg:col-span-3 lg:row-span-1',
+                'sm:col-span-2 lg:col-span-6 lg:row-span-1',
+              ][index] || '';
+              return (
+                <motion.div key={index}
+                  initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: index * 0.08 }} viewport={{ once: true }}
+                  className={spanClass}
                 >
-                  <Link to={feature.link} className="absolute inset-0 z-10" aria-label={feature.title} />
-                  <img src={feature.image} alt={feature.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    style={{ objectPosition: feature.objectPosition || 'center center' }}
-                    loading="lazy" />
-                  <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.5) 50%, rgba(18,18,18,0.1) 100%)',
-                  }} />
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end z-[3]">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
-                        style={{ backgroundColor: 'rgba(212, 168, 67, 0.15)', border: `1px solid rgba(212,168,67,0.3)` }}>
-                        <feature.icon className="w-5 h-5" style={{ color: feature.accent }} />
+                  <TiltCard
+                    spotlight
+                    spotlightColor="rgba(212,168,67,0.14)"
+                    maxAngle={6}
+                    className="group rounded-3xl overflow-hidden transition-shadow duration-700 hover:shadow-2xl h-[300px] lg:h-full"
+                  >
+                    <Link to={feature.link} className="absolute inset-0 z-10" aria-label={feature.title} />
+                    <img src={feature.image} alt={feature.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      style={{ objectPosition: feature.objectPosition || 'center center' }}
+                      loading="lazy" />
+                    <div className="absolute inset-0" style={{
+                      background: 'linear-gradient(to top, rgba(18,18,18,0.95) 0%, rgba(18,18,18,0.5) 50%, rgba(18,18,18,0.1) 100%)',
+                    }} />
+                    <div className={`absolute inset-0 flex flex-col justify-end z-[3] ${isFeatured ? 'p-9' : 'p-6'}`}>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${isFeatured ? 'w-14 h-14' : 'w-10 h-10'}`}
+                          style={{ backgroundColor: 'rgba(212, 168, 67, 0.15)', border: `1px solid rgba(212,168,67,0.3)` }}>
+                          <feature.icon className={isFeatured ? 'w-6 h-6' : 'w-4.5 h-4.5'} style={{ color: feature.accent }} />
+                        </div>
+                        <span className="text-xs font-semibold tracking-wide px-2.5 py-1 rounded-full"
+                          style={{ backgroundColor: 'rgba(18,18,18,0.7)', color: feature.accent, border: `1px solid ${feature.accent}40`, backdropFilter: 'blur(4px)' }}>
+                          From {feature.startingPrice}
+                        </span>
                       </div>
-                      <span className="text-xs font-semibold tracking-wide px-2.5 py-1 rounded-full"
-                        style={{ backgroundColor: 'rgba(18,18,18,0.7)', color: feature.accent, border: `1px solid ${feature.accent}40`, backdropFilter: 'blur(4px)' }}>
-                        From {feature.startingPrice}
-                      </span>
+                      <h3 className={`tracking-tight ${isFeatured ? 'text-3xl lg:text-4xl mb-3' : 'text-xl mb-2'}`} style={{ color: '#F8F9FA', fontFamily: isFeatured ? 'var(--font-display)' : undefined }}>{feature.title}</h3>
+                      <p className={`leading-relaxed mb-4 ${isFeatured ? 'text-base max-w-md' : 'text-sm line-clamp-2'}`} style={{ color: '#E0E0E0' }}>{feature.description}</p>
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
+                        style={{ color: feature.accent }}>
+                        <span className="text-sm font-medium">{t('home.services.explore')}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                      <div className="h-px mt-3 w-0 group-hover:w-full transition-all duration-700"
+                        style={{ backgroundColor: feature.accent }} />
                     </div>
-                    <h3 className="text-2xl mb-2 tracking-tight" style={{ color: '#F8F9FA' }}>{feature.title}</h3>
-                    <p className="text-sm leading-relaxed mb-4" style={{ color: '#E0E0E0' }}>{feature.description}</p>
-                    <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
-                      style={{ color: feature.accent }}>
-                      <span className="text-sm font-medium">{t('home.services.explore')}</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                    <div className="h-px mt-3 w-0 group-hover:w-full transition-all duration-700"
-                      style={{ backgroundColor: feature.accent }} />
-                  </div>
-                </TiltCard>
-              </motion.div>
-            ))}
+                  </TiltCard>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

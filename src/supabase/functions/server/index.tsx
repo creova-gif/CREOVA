@@ -5,6 +5,25 @@ import * as kv from "./kv_store.tsx";
 
 const app = new Hono();
 
+// Airtable sync — mirrors website form submissions into the unified
+// "CREOVA Website Data" base (appHQkjX7B97NQPbi) so the team has one place
+// to view sign-ups without touching Supabase directly. Fire-and-forget and
+// silently no-ops until AIRTABLE_API_KEY is set as a Supabase secret, so it
+// never blocks or fails the actual form submission.
+const AIRTABLE_BASE_ID = "appHQkjX7B97NQPbi";
+function syncToAirtable(tableId: string, fields: Record<string, unknown>) {
+  const apiKey = Deno.env.get("AIRTABLE_API_KEY");
+  if (!apiKey) return;
+  fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${tableId}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ records: [{ fields }] }),
+  }).catch((e) => console.error(`Airtable sync failed for ${tableId}:`, e));
+}
+
 // Security: Rate limiting map (in-memory, simple implementation)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
@@ -850,6 +869,12 @@ app.post("/make-server-feacf0d8/subscribe-lead-magnet", rateLimit(3, 60000), asy
 
     console.log(`Lead magnet subscription: ${email} for ${leadMagnetTitle}`);
 
+    syncToAirtable("tblfiwUQFIQMo89Ya", {
+      Email: email, Name: name, "Lead Magnet": leadMagnetTitle || leadMagnetId,
+      "Subscribed At": subscribedAt || new Date().toISOString(),
+      "Supabase Record ID": subscriptionId,
+    });
+
     // TODO: Send email with download link using your email service
     // Example: await sendLeadMagnetEmail(email, name, leadMagnetTitle);
 
@@ -860,6 +885,54 @@ app.post("/make-server-feacf0d8/subscribe-lead-magnet", rateLimit(3, 60000), asy
     });
   } catch (error) {
     console.error("Error subscribing to lead magnet:", error);
+    return c.json({ error: "Failed to subscribe: " + error.message }, 500);
+  }
+});
+
+// Subscribe to event interest (teaser events page — /experience). Full
+// event details are gated behind this signup instead of being sold, since
+// upcoming events aren't confirmed yet.
+app.post("/make-server-feacf0d8/subscribe-event-interest", rateLimit(5, 60000), async (c) => {
+  try {
+    const body = await c.req.json();
+    const { email, eventId, eventName } = body;
+    const name = typeof body.name === "string" && body.name.trim() ? body.name.trim() : email?.split("@")[0];
+
+    if (!email) {
+      return c.json({ error: "Email is required" }, 400);
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return c.json({ error: "Invalid email format" }, 400);
+    }
+
+    const interestId = `event_interest_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+    await kv.set(interestId, {
+      email,
+      name,
+      eventId,
+      eventName,
+      status: 'subscribed',
+      created_at: new Date().toISOString()
+    });
+
+    console.log(`Event interest signup: ${email} for ${eventName || eventId || 'general'}`);
+
+    syncToAirtable("tblEotZPSIfKErLHO", {
+      Email: email, Name: name, Event: eventName || eventId || "General",
+      "Submitted At": new Date().toISOString(), Source: "experience-page",
+      "Supabase Record ID": interestId,
+    });
+
+    return c.json({
+      status: 'success',
+      message: "You're on the list! We'll email you the full details as soon as they're confirmed.",
+      interestId
+    });
+  } catch (error) {
+    console.error("Error subscribing to event interest:", error);
     return c.json({ error: "Failed to subscribe: " + error.message }, 500);
   }
 });
@@ -1081,6 +1154,13 @@ app.post("/make-server-feacf0d8/submit-contact", async (c) => {
 
     console.log(`Contact form submitted: ${contactId} from ${email}`);
 
+    syncToAirtable("tblgMShO3Sa6ynJyb", {
+      Name: name, Email: email, Phone: phone, Message: message,
+      Service: service, Budget: budget, Timeline: timeline,
+      Type: "contact", "Submitted At": new Date().toISOString(),
+      "Supabase Record ID": contactId,
+    });
+
     // Fire-and-forget confirmation emails
     const emailApiKey = Deno.env.get('EMAIL_SERVICE_API_KEY');
     if (emailApiKey) {
@@ -1153,6 +1233,13 @@ app.post("/make-server-feacf0d8/submit-collaboration", async (c) => {
     });
 
     console.log(`Collaboration form submitted: ${collaborationId} from ${email}`);
+
+    syncToAirtable("tblgMShO3Sa6ynJyb", {
+      Name: name, Email: email, Message: projectDescription,
+      Service: collaborationType, Budget: budget, Timeline: timeline,
+      Type: "collaboration", "Submitted At": new Date().toISOString(),
+      "Supabase Record ID": collaborationId,
+    });
 
     return c.json({
       collaborationId,

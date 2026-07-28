@@ -9,12 +9,14 @@ const IMG_CLIENTS = [
   { name: 'Brock University', logo: logoBrock, url: 'https://brocku.ca' },
 ];
 
+// Only list a specific organization here once its partnership is verified —
+// see FBF above (real, linked). Until then, use a generic category label
+// instead of naming a specific club/association we haven't confirmed.
 const TEXT_CLIENTS = [
   { abbr: 'FBF', name: 'Future Black Female', url: 'https://futureblackfemale.com/' },
-  { abbr: 'BUGA', name: 'Brock University Ghana Association', url: '#' },
-  { abbr: 'EASC', name: 'East African Students Club', url: '#' },
-  { abbr: 'NSA', name: 'Nigerian Students Association', url: '#' },
-  { abbr: 'Tray\nArts', name: 'Tray Arts', url: '#' },
+  { abbr: 'Clubs', name: 'Student Clubs', url: '#' },
+  { abbr: 'Culture', name: 'Cultural Associations', url: '#' },
+  { abbr: 'Community', name: 'Community Groups', url: '#' },
 ];
 
 export function ClientLogos() {
@@ -77,38 +79,43 @@ export function ClientLogos() {
           <div className="flex-1" style={{ height: '1px', backgroundColor: 'rgba(18,18,18,0.08)' }} />
         </div>
 
-        {/* Text-badge clients */}
+        {/* Text-badge clients — real, linked partners render as links;
+            generic category placeholders (no confirmed url) render as
+            plain badges so they don't look like dead/broken links. */}
         <div className="flex flex-wrap items-center justify-center gap-3">
-          {TEXT_CLIENTS.map((client, i) => (
-            <motion.a
-              key={client.name}
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="px-4 py-2 rounded-lg transition-all duration-300"
-              style={{
-                border: '1px solid rgba(18,18,18,0.12)',
-                backgroundColor: 'rgba(255,255,255,0.6)',
-                color: '#777777',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.4)';
-                (e.currentTarget as HTMLElement).style.color = '#D4A843';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(18,18,18,0.12)';
-                (e.currentTarget as HTMLElement).style.color = '#777777';
-              }}
-              title={client.name}
-            >
-              <span className="text-xs tracking-wide font-medium">{client.abbr}</span>
-            </motion.a>
-          ))}
+          {TEXT_CLIENTS.map((client, i) => {
+            const isLinked = client.url !== '#';
+            const Tag: any = isLinked ? motion.a : motion.div;
+            return (
+              <Tag
+                key={client.name}
+                {...(isLinked ? { href: client.url, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className="px-4 py-2 rounded-lg transition-all duration-300"
+                style={{
+                  border: '1px solid rgba(18,18,18,0.12)',
+                  backgroundColor: 'rgba(255,255,255,0.6)',
+                  color: '#777777',
+                  cursor: isLinked ? 'pointer' : 'default',
+                }}
+                onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,67,0.4)';
+                  (e.currentTarget as HTMLElement).style.color = '#D4A843';
+                }}
+                onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(18,18,18,0.12)';
+                  (e.currentTarget as HTMLElement).style.color = '#777777';
+                }}
+                title={client.name}
+              >
+                <span className="text-xs tracking-wide font-medium">{client.abbr}</span>
+              </Tag>
+            );
+          })}
         </div>
       </div>
     </section>

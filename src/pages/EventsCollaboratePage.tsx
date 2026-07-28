@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { PageSEO } from '../components/PageSEO';
-import { Calendar, MapPin, Users, Clock, Lightbulb, Handshake, Star, ArrowRight, Award, FileText, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, Users, Lightbulb, Handshake, Star, ArrowRight, Award, FileText, ExternalLink, Mail, Check } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useCart } from '../context/CartContext';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -21,9 +20,11 @@ const fbfImage = '/card-fbf.jpg';
 const warmGradient = 'linear-gradient(135deg, #D4A843 0%, #B1643B 100%)';
 
 export function EventsCollaboratePage() {
-  const { addItem } = useCart();
   // Community/events page → tu register (see mixed-register decision).
   const fr = useLanguage().language === 'fr';
+  const [emailDrafts, setEmailDrafts] = useState<Record<string, string>>({});
+  const [submittedEvents, setSubmittedEvents] = useState<Set<string>>(new Set());
+  const [submittingEventId, setSubmittingEventId] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -277,23 +278,40 @@ export function EventsCollaboratePage() {
     }
   ];
 
-  const handleBuyTicket = (event: typeof upcomingEvents[0]) => {
-    if (event.id === 'innovation-showcase-2026') {
-      window.open('https://brocku.ca/linc/innovation-showcase/', '_blank');
+  const handleEventInterest = async (event: typeof upcomingEvents[0]) => {
+    const email = (emailDrafts[event.id] || '').trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error(fr ? 'Entre un courriel valide' : 'Enter a valid email address');
       return;
     }
-    addItem({
-      id: event.id,
-      name: event.name,
-      price: event.price,
-      type: 'event',
-      image: event.image
-    });
-    toast.success(fr ? 'Billet ajouté au panier !' : 'Ticket added to cart!', {
-      description: event.price > 0
-        ? (fr ? `${event.name} - ${event.price} $ CAD (plus TVH de 13 % au paiement)` : `${event.name} - $${event.price} CAD (plus 13% HST at checkout)`)
-        : `${event.name} - ${fr ? 'GRATUIT' : 'FREE'}`
-    });
+    setSubmittingEventId(event.id);
+    try {
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-feacf0d8/subscribe-event-interest`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${publicAnonKey}` },
+          body: JSON.stringify({ email, eventId: event.id, eventName: event.name })
+        }
+      );
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+      setSubmittedEvents(prev => new Set(prev).add(event.id));
+      toast.success(fr ? 'Tu es sur la liste !' : "You're on the list!", {
+        description: fr
+          ? 'Nous t’enverrons les détails complets et le lien d’inscription dès leur confirmation.'
+          : "We'll email you the full details and registration link as soon as it's confirmed."
+      });
+    } catch {
+      toast.error(fr ? "Échec de l'inscription" : 'Signup failed', {
+        description: fr ? 'Veuillez réessayer plus tard.' : 'Please try again later.'
+      });
+    } finally {
+      setSubmittingEventId(null);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -562,13 +580,15 @@ export function EventsCollaboratePage() {
           >
             <div className="flex items-center gap-5 mb-3">
               <div style={{ height: '1px', width: '40px', backgroundColor: 'rgba(18,18,18,0.2)' }} />
-              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Automne / Hiver 2026' : 'Fall / Winter 2026'}</p>
+              <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#D4A843' }}>{fr ? 'Automne / Hiver 2026 — Détails à venir' : 'Fall / Winter 2026 — Details Coming Soon'}</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight" style={{ color: '#121212' }}>
               {fr ? 'Ateliers et événements à venir' : 'Upcoming Workshops & Events'}
             </h2>
             <p className="text-base mt-3 max-w-2xl" style={{ color: '#777777' }}>
-              {fr ? "Ateliers de photographie professionnels, classes de maître en création de contenu et événements de réseautage pour les créatifs BIPOC à Toronto, Hamilton, Niagara Falls et St. Catharines" : 'Professional photography workshops, content creation masterclasses, and networking events for BIPOC creatives in Toronto, Hamilton, Niagara Falls, and St. Catharines'}
+              {fr
+                ? "Ces ateliers et événements ne sont pas encore confirmés. Entre ton courriel sur une carte ci-dessous pour recevoir les détails complets, la tarification et le lien d'inscription dès leur confirmation."
+                : "These workshops and events aren't confirmed yet. Drop your email on a card below to get full details, pricing, and the registration link as soon as it's locked in."}
             </p>
           </motion.div>
 
@@ -594,19 +614,16 @@ export function EventsCollaboratePage() {
                     <div className="absolute inset-0" style={{
                       background: 'linear-gradient(to right, rgba(18,18,18,0.5) 0%, transparent 60%)'
                     }} />
-                    {/* Price badge over image */}
+                    {/* Date badge over image — no price, nothing confirmed yet */}
                     <div className="absolute bottom-4 left-4">
                       <div
-                        className="text-3xl font-light tracking-tight"
-                        style={{
-                          color: '#FFFFFF',
-                          textShadow: '0 1px 8px rgba(0,0,0,0.6)'
-                        }}
+                        className="text-lg font-light tracking-tight"
+                        style={{ color: '#FFFFFF', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
                       >
-                        ${event.price}
+                        {event.date}
                       </div>
                       <div className="text-xs" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                        {event.price === 0 ? (fr ? 'GRATUIT' : 'FREE') : (fr ? 'CAD + TVH' : 'CAD + HST')}
+                        {fr ? 'Non confirmé' : 'Not yet confirmed'}
                       </div>
                     </div>
                   </div>
@@ -627,10 +644,6 @@ export function EventsCollaboratePage() {
                       >
                         {/Virtual|Virtuel/.test(event.location) ? (fr ? 'Virtuel' : 'Virtual') : (fr ? 'En personne' : 'In-Person')}
                       </span>
-                      <span className="text-xs px-3 py-1 rounded-full tracking-wide"
-                            style={{ backgroundColor: 'rgba(18,18,18,0.04)', color: '#777777', border: '1px solid rgba(18,18,18,0.1)' }}>
-                        {event.capacity}
-                      </span>
                     </div>
 
                     <h3 className="text-xl md:text-2xl tracking-tight mb-3" style={{ color: '#121212' }}>
@@ -640,12 +653,11 @@ export function EventsCollaboratePage() {
                       {event.description}
                     </p>
 
-                    {/* Meta row */}
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-5">
+                    {/* Meta row — general date + location only, no exact time/capacity/price yet */}
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-6">
                       {[
                         { icon: Calendar, label: event.date },
-                        { icon: Clock, label: event.time },
-                        { icon: MapPin, label: event.location }
+                        { icon: MapPin, label: event.location.replace(/\s*\((In-Person|Virtual|En personne|Virtuel)\)/, '') }
                       ].map((meta, i) => (
                         <div key={i} className="flex items-center gap-2">
                           <meta.icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#D4A843' }} />
@@ -654,38 +666,47 @@ export function EventsCollaboratePage() {
                       ))}
                     </div>
 
-                    {/* Includes */}
-                    <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-6">
-                      {event.includes.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: warmGradient }} />
-                          <span className="text-xs" style={{ color: '#777777' }}>{item}</span>
+                    {/* Signup gate — email only, unlocks full details once confirmed */}
+                    {submittedEvents.has(event.id) ? (
+                      <div className="flex items-center gap-2 px-4 py-3 rounded-lg" style={{ backgroundColor: 'rgba(212,168,67,0.1)', border: '1px solid rgba(212,168,67,0.3)' }}>
+                        <Check className="w-4 h-4 flex-shrink-0" style={{ color: '#D4A843' }} />
+                        <span className="text-sm" style={{ color: '#121212' }}>
+                          {fr ? "Tu es sur la liste — on t'écrit dès que c'est confirmé." : "You're on the list — we'll email you once it's confirmed."}
+                        </span>
+                      </div>
+                    ) : (
+                      <form
+                        onSubmit={(e) => { e.preventDefault(); handleEventInterest(event); }}
+                        className="flex flex-col sm:flex-row gap-3"
+                      >
+                        <div className="relative flex-1">
+                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#777777' }} />
+                          <input
+                            type="email"
+                            required
+                            placeholder={fr ? 'Ton courriel' : 'Your email'}
+                            value={emailDrafts[event.id] || ''}
+                            onChange={(e) => setEmailDrafts(prev => ({ ...prev, [event.id]: e.target.value }))}
+                            className="w-full pl-9 pr-3 py-3 rounded-lg text-sm outline-none transition-colors"
+                            style={{ border: '1px solid rgba(18,18,18,0.15)', color: '#121212', backgroundColor: '#FFFFFF' }}
+                          />
                         </div>
-                      ))}
-                    </div>
-
-                    {/* CTA */}
-                    <Button
-                      size="sm"
-                      onClick={() => handleBuyTicket(event)}
-                      className="px-6 py-4 rounded-lg text-sm transition-all duration-300"
-                      style={{ background: warmGradient, color: '#FFFFFF', border: 'none' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.opacity = '0.9';
-                        e.currentTarget.style.transform = 'translateY(-1px)';
-                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(177,100,59,0.3)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.opacity = '1';
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                    >
-                      <span className="flex items-center gap-2">
-                        {fr ? "S'inscrire" : 'Register Now'}
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </Button>
+                        <Button
+                          type="submit"
+                          size="sm"
+                          disabled={submittingEventId === event.id}
+                          className="px-6 py-4 rounded-lg text-sm transition-all duration-300 whitespace-nowrap"
+                          style={{ background: warmGradient, color: '#FFFFFF', border: 'none' }}
+                        >
+                          <span className="flex items-center gap-2">
+                            {submittingEventId === event.id
+                              ? (fr ? 'Envoi...' : 'Sending...')
+                              : (fr ? 'Notifie-moi' : 'Notify Me')}
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
+                        </Button>
+                      </form>
+                    )}
                   </div>
                 </div>
               </motion.article>
