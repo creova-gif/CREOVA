@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 interface VideoHeroProps {
   videoSrc?: string;
@@ -21,6 +21,7 @@ export function VideoHero({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const prefersReduced = useReducedMotion();
 
   useEffect(() => {
     if (!videoSrc) {
@@ -41,7 +42,9 @@ export function VideoHero({
     };
   }, [videoSrc]);
 
-  const showVideo = videoSrc && !videoFailed;
+  // Reduced-motion users get the static poster/fallback image instead of an
+  // autoplaying, looping hero video.
+  const showVideo = videoSrc && !videoFailed && !prefersReduced;
 
   return (
     <div className={`relative w-full h-full overflow-hidden ${className}`}>

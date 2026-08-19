@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useInView, type Variants } from 'motion/react';
+import { motion, useInView, useReducedMotion, type Variants } from 'motion/react';
 
 type SplitTextTag = 'span' | 'div' | 'p' | 'h1' | 'h2' | 'h3';
 
@@ -26,6 +26,7 @@ export function SplitText({
 }: SplitTextProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once, margin: '-10% 0px' });
+  const prefersReduced = useReducedMotion();
 
   const units = mode === 'chars' ? text.split('') : text.split(' ');
 
@@ -67,8 +68,8 @@ export function SplitText({
         className="inline-flex flex-wrap gap-x-[0.22em]"
         style={{ perspective: '800px' }}
         variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
+        initial={prefersReduced ? 'visible' : 'hidden'}
+        animate={prefersReduced ? 'visible' : (isInView ? 'visible' : 'hidden')}
         aria-hidden="true"
       >
         {units.map((unit, i) => (

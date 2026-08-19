@@ -1,5 +1,5 @@
 import { useRef, useCallback, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+import { motion, useMotionValue, useSpring, useReducedMotion } from 'motion/react';
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -27,11 +27,13 @@ export function TiltCard({
   const rotY = useMotionValue(0);
   const springRotX = useSpring(rotX, { stiffness: 250, damping: 24 });
   const springRotY = useSpring(rotY, { stiffness: 250, damping: 24 });
+  const prefersReduced = useReducedMotion();
 
   const [spotPos, setSpotPos] = useState({ x: 0, y: 0 });
   const [spotVisible, setSpotVisible] = useState(false);
 
   const onMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (prefersReduced) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -43,7 +45,7 @@ export function TiltCard({
       setSpotPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
       setSpotVisible(true);
     }
-  }, [rotX, rotY, maxAngle, spotlight]);
+  }, [rotX, rotY, maxAngle, spotlight, prefersReduced]);
 
   const onLeave = useCallback(() => {
     rotX.set(0);
