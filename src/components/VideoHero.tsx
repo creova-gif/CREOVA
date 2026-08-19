@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface VideoHeroProps {
   videoSrc?: string;
@@ -21,7 +22,7 @@ export function VideoHero({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (!videoSrc) {
@@ -67,16 +68,26 @@ export function VideoHero({
         </motion.video>
       )}
 
-      {(!showVideo || !videoReady) && (
-        <motion.img
-          src={fallbackSrc}
+      {prefersReduced ? (
+        <img
+          src={posterSrc || fallbackSrc}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.3 }}
-          transition={{ duration: 0.8 }}
+          style={{ opacity: 0.3 }}
         />
+      ) : (
+        (!showVideo || !videoReady) && (
+          <motion.img
+            src={fallbackSrc}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ duration: 0.8 }}
+          />
+        )
       )}
 
       {overlay && (

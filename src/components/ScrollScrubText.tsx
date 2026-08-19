@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion, MotionValue } from 'motion/react';
+import { motion, useScroll, useTransform, MotionValue } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface ScrollScrubTextProps {
   text: string;
@@ -31,7 +32,7 @@ export function ScrollScrubText({ text, className = '', style }: ScrollScrubText
     target: containerRef,
     offset: ['start 0.85', 'end 0.35'],
   });
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   const words = text.split(' ');
 
