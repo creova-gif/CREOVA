@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate, Link } from '../i18n/LocaleLink';
 import { PageSEO } from '../components/PageSEO';
 import { Button } from '../components/ui/button';
@@ -17,6 +17,14 @@ export function ServicesPage() {
   const { galleries } = useGalleries();
   const { language } = useLanguage();
   const prefersReduced = usePrefersReducedMotion();
+  // The prerendered static HTML always computes prefersReduced=false (no
+  // window server-side) — a <video autoplay> tag would start playing the
+  // instant a real browser parses that markup, before JS loads to check the
+  // real preference, regardless of how CSS opacity hides it. Same fix as
+  // VideoHero: never render <video> until the client has actually mounted.
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => { setHasMounted(true); }, []);
+  const showPreviewVideo = hasMounted && !prefersReduced;
   // Services is a commercial page → vous register (see mixed-register decision).
   const fr = language === 'fr';
 
@@ -765,22 +773,28 @@ export function ServicesPage() {
                   className="group relative overflow-hidden rounded-3xl"
                   style={{ aspectRatio: '16/9', backgroundColor: '#111' }}
                 >
-                  <video
-                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-700"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster={vid.poster}
-                    aria-hidden="true"
-                  >
-                    <source src={vid.src} type="video/mp4" />
-                  </video>
+                  {/* autoPlay starts the moment this element mounts, regardless
+                      of the opacity-0 it's hidden behind on hover-reveal — so
+                      skip rendering it at all under reduced motion rather than
+                      just hiding it, the same reasoning as VideoHero. */}
+                  {showPreviewVideo && (
+                    <video
+                      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-700"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster={vid.poster}
+                      aria-hidden="true"
+                    >
+                      <source src={vid.src} type="video/mp4" />
+                    </video>
+                  )}
                   <img
                     src={vid.poster}
                     alt={vid.label}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-700"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${showPreviewVideo ? 'group-hover:opacity-0' : ''}`}
                   />
                   <div className="absolute inset-0" style={{
                     background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%)',
