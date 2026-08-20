@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { Link } from '../i18n/LocaleLink';
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import { ArrowRight, Play, Globe, Shield, Mic, BookOpen, Heart, Star, ChevronDown, Lock, Layers, Award } from 'lucide-react';
 import seenForyou from '../assets/seen-foryou.jpg';
 import seenOnboard from '../assets/seen-onboard.jpg';
@@ -63,7 +64,7 @@ const pillars = (fr: boolean) => [
 function AppPreview3D() {
   const fr = useLanguage().language === 'fr';
   const stageRef = useRef<HTMLDivElement>(null);
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);

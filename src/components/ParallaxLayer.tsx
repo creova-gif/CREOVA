@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface ParallaxLayerProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ interface ParallaxLayerProps {
 
 export function ParallaxLayer({ children, speed = 0.25, className = '', style }: ParallaxLayerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: ref,

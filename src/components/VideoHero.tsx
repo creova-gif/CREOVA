@@ -22,13 +22,26 @@ export function VideoHero({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const prefersReduced = usePrefersReducedMotion();
 
+  // The prerendered static HTML is generated once, server-side, with no way
+  // to know any individual visitor's reduced-motion preference — so it can
+  // never safely contain a `<video autoplay>` tag. A browser's native HTML
+  // parser starts that autoplay the instant it parses the markup, before any
+  // JS has loaded to check the real preference. Gating on hasMounted (only
+  // ever true client-side, after this effect runs) keeps the initial/server
+  // render on the plain poster image unconditionally, and only swaps in the
+  // real <video> element once we can actually check prefersReduced.
   useEffect(() => {
-    if (!videoSrc) {
-      setVideoFailed(true);
-      return;
-    }
+    setHasMounted(true);
+  }, []);
+
+  const attemptVideo = hasMounted && !prefersReduced && !!videoSrc;
+  const showVideo = attemptVideo && !videoFailed;
+
+  useEffect(() => {
+    if (!attemptVideo) return;
     const vid = videoRef.current;
     if (!vid) return;
 
@@ -41,11 +54,7 @@ export function VideoHero({
       vid.removeEventListener('canplaythrough', onCanPlay);
       vid.removeEventListener('error', onError);
     };
-  }, [videoSrc]);
-
-  // Reduced-motion users get the static poster/fallback image instead of an
-  // autoplaying, looping hero video.
-  const showVideo = videoSrc && !videoFailed && !prefersReduced;
+  }, [attemptVideo]);
 
   return (
     <div className={`relative w-full h-full overflow-hidden ${className}`}>
@@ -68,7 +77,10 @@ export function VideoHero({
         </motion.video>
       )}
 
-      {prefersReduced ? (
+      {/* Before mount (incl. the static prerendered HTML) and whenever
+          reduced motion is preferred, always the plain poster — never the
+          animated crossfade, which would itself be an unnecessary motion. */}
+      {!hasMounted || prefersReduced ? (
         <img
           src={posterSrc || fallbackSrc}
           alt=""

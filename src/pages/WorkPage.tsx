@@ -8,6 +8,7 @@ import { RevealOnScroll } from '../components/RevealOnScroll';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { useGalleries, type Gallery } from '../hooks/useGalleries';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import { galleryListSchema } from '../utils/structuredData';
 import { CASE_STUDIES } from '../data/caseStudies';
 
@@ -140,6 +141,7 @@ function ProjectCard({
 function ScrollIndicator() {
   const fr = useLanguage().language === 'fr';
   const [visible, setVisible] = useState(true);
+  const prefersReduced = usePrefersReducedMotion();
   useEffect(() => {
     const handler = () => setVisible(window.scrollY < 60);
     window.addEventListener('scroll', handler, { passive: true });
@@ -154,8 +156,8 @@ function ScrollIndicator() {
     >
       <span className="text-[9px] tracking-[0.5em] uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>{fr ? 'Défiler' : 'Scroll'}</span>
       <motion.div
-        animate={{ y: [0, 6, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+        animate={prefersReduced ? {} : { y: [0, 6, 0] }}
+        transition={prefersReduced ? undefined : { repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
       >
         <ArrowDown className="w-3.5 h-3.5" style={{ color: 'rgba(248,249,250,0.35)' }} />
       </motion.div>
