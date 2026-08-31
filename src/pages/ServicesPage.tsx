@@ -586,10 +586,12 @@ export function ServicesPage() {
           <motion.div
             animate={prefersReduced ? {} : { x: ['0%', '-50%'] }}
             transition={prefersReduced ? undefined : { duration: 28, repeat: Infinity, ease: 'linear' }}
-            className="flex gap-10 whitespace-nowrap flex-shrink-0"
+            className={prefersReduced
+              ? 'flex flex-wrap justify-center gap-x-10 gap-y-3 px-4 w-full'
+              : 'flex gap-10 whitespace-nowrap flex-shrink-0'}
           >
             {[...Array(prefersReduced ? 1 : 2)].map((_, rep) => (
-              <div key={rep} className="flex gap-10 items-center">
+              <div key={rep} className={prefersReduced ? 'flex flex-wrap justify-center gap-x-10 gap-y-3' : 'flex gap-10 items-center'}>
                 {(fr ? ['Photographie de marque', "Couverture d'événements", 'Vision aérienne', 'Médias sociaux', 'Identité de marque', 'Photographie de produits', 'Vidéographie', 'Direction créative', 'Design graphique', "Location d'équipement"] : ['Brand Photography', 'Event Coverage', 'Aerial Vision', 'Social Media', 'Brand Identity', 'Product Photography', 'Videography', 'Creative Direction', 'Graphic Design', 'Equipment Rental']).map((item) => (
                   <span key={item} className="flex items-center gap-10">
                     <span className="text-sm tracking-[0.3em] uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>{item}</span>
@@ -606,10 +608,12 @@ export function ServicesPage() {
           <motion.div
             animate={prefersReduced ? {} : { x: ['-50%', '0%'] }}
             transition={prefersReduced ? undefined : { duration: 34, repeat: Infinity, ease: 'linear' }}
-            className="flex gap-10 whitespace-nowrap flex-shrink-0"
+            className={prefersReduced
+              ? 'flex flex-wrap justify-center gap-x-10 gap-y-3 px-4 w-full'
+              : 'flex gap-10 whitespace-nowrap flex-shrink-0'}
           >
             {[...Array(prefersReduced ? 1 : 2)].map((_, rep) => (
-              <div key={rep} className="flex gap-10 items-center">
+              <div key={rep} className={prefersReduced ? 'flex flex-wrap justify-center gap-x-10 gap-y-3' : 'flex gap-10 items-center'}>
                 {(fr ? ["L'Ontario et au-delà", 'Marques BIPOC', 'Récits culturels', 'Licencié et assuré', 'Droits commerciaux inclus', 'Guidé par la stratégie', 'Sur place', 'Studio et lifestyle', 'Équipement pro', 'Qualité éditoriale'] : ['Ontario & Beyond', 'BIPOC Brands', 'Cultural Storytelling', 'Licensed & Insured', 'Commercial Rights Included', 'Strategy-Led', 'On-Location', 'Studio & Lifestyle', 'Pro Equipment', 'Editorial Quality']).map((item) => (
                   <span key={item} className="flex items-center gap-10">
                     <span className="text-sm tracking-[0.3em] uppercase italic" style={{ color: 'rgba(212,168,67,0.4)' }}>{item}</span>
