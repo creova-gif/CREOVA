@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface ScrollScrubTextProps {
   text: string;
@@ -31,21 +32,24 @@ export function ScrollScrubText({ text, className = '', style }: ScrollScrubText
     target: containerRef,
     offset: ['start 0.85', 'end 0.35'],
   });
+  const prefersReduced = usePrefersReducedMotion();
 
   const words = text.split(' ');
 
   return (
     <div ref={containerRef} className={className} style={style}>
       <p className="flex flex-wrap gap-x-[0.28em] gap-y-1">
-        {words.map((word, i) => (
-          <WordSpan
-            key={i}
-            word={word}
-            index={i}
-            total={words.length}
-            scrollYProgress={scrollYProgress}
-          />
-        ))}
+        {prefersReduced
+          ? words.map((word, i) => <span key={i} className="inline-block">{word}</span>)
+          : words.map((word, i) => (
+              <WordSpan
+                key={i}
+                word={word}
+                index={i}
+                total={words.length}
+                scrollYProgress={scrollYProgress}
+              />
+            ))}
       </p>
     </div>
   );

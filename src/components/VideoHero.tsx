@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface VideoHeroProps {
   videoSrc?: string;
@@ -21,12 +22,26 @@ export function VideoHero({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+  const prefersReduced = usePrefersReducedMotion();
+
+  // The prerendered static HTML is generated once, server-side, with no way
+  // to know any individual visitor's reduced-motion preference — so it can
+  // never safely contain a `<video autoplay>` tag. A browser's native HTML
+  // parser starts that autoplay the instant it parses the markup, before any
+  // JS has loaded to check the real preference. Gating on hasMounted (only
+  // ever true client-side, after this effect runs) keeps the initial/server
+  // render on the plain poster image unconditionally, and only swaps in the
+  // real <video> element once we can actually check prefersReduced.
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const attemptVideo = hasMounted && !prefersReduced && !!videoSrc;
+  const showVideo = attemptVideo && !videoFailed;
 
   useEffect(() => {
-    if (!videoSrc) {
-      setVideoFailed(true);
-      return;
-    }
+    if (!attemptVideo) return;
     const vid = videoRef.current;
     if (!vid) return;
 
@@ -39,9 +54,7 @@ export function VideoHero({
       vid.removeEventListener('canplaythrough', onCanPlay);
       vid.removeEventListener('error', onError);
     };
-  }, [videoSrc]);
-
-  const showVideo = videoSrc && !videoFailed;
+  }, [attemptVideo]);
 
   return (
     <div className={`relative w-full h-full overflow-hidden ${className}`}>
@@ -64,16 +77,29 @@ export function VideoHero({
         </motion.video>
       )}
 
-      {(!showVideo || !videoReady) && (
-        <motion.img
-          src={fallbackSrc}
+      {/* Before mount (incl. the static prerendered HTML) and whenever
+          reduced motion is preferred, always the plain poster — never the
+          animated crossfade, which would itself be an unnecessary motion. */}
+      {!hasMounted || prefersReduced ? (
+        <img
+          src={posterSrc || fallbackSrc}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.3 }}
-          transition={{ duration: 0.8 }}
+          style={{ opacity: 0.3 }}
         />
+      ) : (
+        (!showVideo || !videoReady) && (
+          <motion.img
+            src={fallbackSrc}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ duration: 0.8 }}
+          />
+        )
       )}
 
       {overlay && (

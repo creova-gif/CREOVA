@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { useReducedMotion } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface RevealOnScrollProps {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export function RevealOnScroll({
   mode = 'fade',
   once = true,
 }: RevealOnScrollProps) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   const offset = { up: { y: 40 }, left: { x: -40 }, right: { x: 40 }, none: {} };
 

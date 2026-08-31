@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Link } from '../i18n/LocaleLink';
 import { PageSEO } from '../components/PageSEO';
 import { Button } from '../components/ui/button';
@@ -36,6 +36,7 @@ import { TiltCard } from '../components/TiltCard';
 import { FallDropTeaser } from '../components/FallDropTeaser';
 import { organizationSchema } from '../utils/structuredData';
 import { useGalleries } from '../hooks/useGalleries';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import { GOOGLE_REVIEW_URL } from '../config';
 
 
@@ -43,6 +44,7 @@ export function HomePage() {
   const { t } = useLanguage();
   const { open: openExplore } = useExploreMenu();
   const heroRef = useRef<HTMLElement>(null);
+  const prefersReduced = usePrefersReducedMotion();
   const { galleries } = useGalleries();
   // Prefer galleries flagged as featured; fall back to newest-first
   const featuredGalleries = (() => {
@@ -259,7 +261,7 @@ export function HomePage() {
 
         <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
           initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: 'reverse' }}>
+          transition={prefersReduced ? { delay: 2, duration: 1 } : { delay: 2, duration: 1, repeat: Infinity, repeatType: 'reverse' }}>
           <div className="w-6 h-10 border-2 rounded-full flex items-start justify-center p-2" style={{ borderColor: '#D4A843' }}>
             <div className="w-1 h-2 rounded-full" style={{ backgroundColor: '#D4A843' }} />
           </div>

@@ -10,6 +10,7 @@ import { CartDrawer } from './CartDrawer';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Magnetic } from './Magnetic';
 import { useFocusTrap } from '../hooks/useFocusTrap';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import { Logo } from './Logo';
 import logoWatermark from '../assets/logo-mark-white-faint.png';
 
@@ -19,6 +20,7 @@ export function Navigation() {
   const { t } = useLanguage();
   const { isOpen: menuOpen, open: openMenu, close } = useExploreMenu();
   const menuRef = useRef<HTMLDivElement>(null);
+  const prefersReduced = usePrefersReducedMotion();
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -178,16 +180,20 @@ export function Navigation() {
               background: 'radial-gradient(ellipse 60% 50% at 20% 0%, rgba(212,168,67,0.10) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 90% 100%, rgba(177,100,59,0.08) 0%, transparent 55%)',
             }} />
 
-            {/* Slowly-turning watermark mark, ambient brand texture */}
-            <motion.img
-              src={logoWatermark}
-              alt=""
-              aria-hidden="true"
-              className="absolute pointer-events-none select-none"
-              style={{ width: '70vw', maxWidth: 900, right: '-15vw', top: '10%', opacity: 0.05 }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 90, repeat: Infinity, ease: 'linear' }}
-            />
+            {/* Slowly-turning watermark mark, ambient brand texture — purely
+                decorative, so skip it entirely under reduced motion rather
+                than just holding it static (matches FloatingOrbs). */}
+            {!prefersReduced && (
+              <motion.img
+                src={logoWatermark}
+                alt=""
+                aria-hidden="true"
+                className="absolute pointer-events-none select-none"
+                style={{ width: '70vw', maxWidth: 900, right: '-15vw', top: '10%', opacity: 0.05 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 90, repeat: Infinity, ease: 'linear' }}
+              />
+            )}
 
             <div
               ref={menuRef}

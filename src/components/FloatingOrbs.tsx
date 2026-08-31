@@ -1,5 +1,6 @@
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface OrbConfig {
   size: number;
@@ -51,7 +52,7 @@ const orbs: OrbConfig[] = [
 ];
 
 export function FloatingOrbs() {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {

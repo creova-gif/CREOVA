@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useAnimationFrame, useMotionValue } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface InfiniteMarqueeProps {
   items: string[];
@@ -19,8 +20,18 @@ export function InfiniteMarquee({
   const trackRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const lastTime = useRef<number | null>(null);
+  const prefersReduced = usePrefersReducedMotion();
 
   useAnimationFrame((time) => {
+    // Continuous auto-scrolling content needs a way to stop for
+    // reduced-motion users (WCAG 2.2.2) — leave it static instead. Reset
+    // lastTime so that if the preference later turns back off, the delta
+    // calc restarts cleanly instead of applying one giant paused-duration
+    // jump on the first resumed frame.
+    if (prefersReduced) {
+      lastTime.current = null;
+      return;
+    }
     if (lastTime.current === null) {
       lastTime.current = time;
       return;

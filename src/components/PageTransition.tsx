@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 interface PageTransitionProps {
   children: React.ReactNode;
@@ -28,7 +29,7 @@ const reducedVariants = {
 };
 
 export function PageTransition({ children, locationKey }: PageTransitionProps) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   return (
     <motion.div
       key={locationKey}

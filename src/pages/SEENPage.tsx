@@ -1,6 +1,7 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { Link } from '../i18n/LocaleLink';
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import { ArrowRight, Play, Globe, Shield, Mic, BookOpen, Heart, Star, ChevronDown, Lock, Layers, Award } from 'lucide-react';
 import seenForyou from '../assets/seen-foryou.jpg';
 import seenOnboard from '../assets/seen-onboard.jpg';
@@ -63,7 +64,7 @@ const pillars = (fr: boolean) => [
 function AppPreview3D() {
   const fr = useLanguage().language === 'fr';
   const stageRef = useRef<HTMLDivElement>(null);
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
@@ -88,12 +89,25 @@ function AppPreview3D() {
     const ny = ((e.clientY - top) / height) * 2 - 1;
     rawX.set(nx);
     rawY.set(ny);
-  }, [rawX, rawY]);
+  }, [rawX, rawY, prefersReduced]);
 
   const handleMouseLeave = useCallback(() => {
     rawX.set(0);
     rawY.set(0);
   }, [rawX, rawY]);
+
+  // handleMouseMove is memoized on prefersReduced now (fixed above), but a
+  // tilt already applied before the preference changed would otherwise sit
+  // there until the next mouse move — jump both the raw and spring values
+  // back to neutral immediately instead.
+  useEffect(() => {
+    if (prefersReduced) {
+      rawX.jump(0);
+      rawY.jump(0);
+      springX.jump(0);
+      springY.jump(0);
+    }
+  }, [prefersReduced, rawX, rawY, springX, springY]);
 
   const particles = Array.from({ length: 22 }, (_, i) => ({
     id: i,

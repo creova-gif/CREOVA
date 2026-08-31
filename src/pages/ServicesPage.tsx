@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate, Link } from '../i18n/LocaleLink';
 import { PageSEO } from '../components/PageSEO';
 import { Button } from '../components/ui/button';
@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Camera, Users, Package, PartyPopper, Plane, TrendingUp, Palette, Video, Settings, AlertCircle, Calendar, ArrowRight } from 'lucide-react';
 import { useGalleries } from '../hooks/useGalleries';
 import { useLanguage } from '../context/LanguageContext';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 type ServiceCategory = 'photography' | 'video' | 'brand' | 'social' | 'events' | 'rental' | 'all';
 
@@ -15,6 +16,15 @@ export function ServicesPage() {
   const navigate = useNavigate();
   const { galleries } = useGalleries();
   const { language } = useLanguage();
+  const prefersReduced = usePrefersReducedMotion();
+  // The prerendered static HTML always computes prefersReduced=false (no
+  // window server-side) — a <video autoplay> tag would start playing the
+  // instant a real browser parses that markup, before JS loads to check the
+  // real preference, regardless of how CSS opacity hides it. Same fix as
+  // VideoHero: never render <video> until the client has actually mounted.
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => { setHasMounted(true); }, []);
+  const showPreviewVideo = hasMounted && !prefersReduced;
   // Services is a commercial page → vous register (see mixed-register decision).
   const fr = language === 'fr';
 
@@ -568,15 +578,20 @@ export function ServicesPage() {
 
       {/* Marquee + Stats */}
       <section className="overflow-hidden" style={{ backgroundColor: '#121212', borderTop: '1px solid rgba(212,168,67,0.15)', borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
-        {/* Row 1 — scrolls left */}
+        {/* Row 1 — scrolls left. The duplicated Array(2) content is what
+            makes the loop seamless while scrolling; under reduced motion
+            it's held static, so only one copy renders (otherwise the
+            duplicate would just sit there, visibly repeated, doing nothing). */}
         <div className="py-5 flex" style={{ borderBottom: '1px solid rgba(212,168,67,0.08)' }}>
           <motion.div
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
-            className="flex gap-10 whitespace-nowrap flex-shrink-0"
+            animate={prefersReduced ? {} : { x: ['0%', '-50%'] }}
+            transition={prefersReduced ? undefined : { duration: 28, repeat: Infinity, ease: 'linear' }}
+            className={prefersReduced
+              ? 'flex flex-wrap justify-center gap-x-10 gap-y-3 px-4 w-full'
+              : 'flex gap-10 whitespace-nowrap flex-shrink-0'}
           >
-            {[...Array(2)].map((_, rep) => (
-              <div key={rep} className="flex gap-10 items-center">
+            {[...Array(prefersReduced ? 1 : 2)].map((_, rep) => (
+              <div key={rep} className={prefersReduced ? 'flex flex-wrap justify-center gap-x-10 gap-y-3' : 'flex gap-10 items-center'}>
                 {(fr ? ['Photographie de marque', "Couverture d'événements", 'Vision aérienne', 'Médias sociaux', 'Identité de marque', 'Photographie de produits', 'Vidéographie', 'Direction créative', 'Design graphique', "Location d'équipement"] : ['Brand Photography', 'Event Coverage', 'Aerial Vision', 'Social Media', 'Brand Identity', 'Product Photography', 'Videography', 'Creative Direction', 'Graphic Design', 'Equipment Rental']).map((item) => (
                   <span key={item} className="flex items-center gap-10">
                     <span className="text-sm tracking-[0.3em] uppercase" style={{ color: 'rgba(248,249,250,0.35)' }}>{item}</span>
@@ -591,12 +606,14 @@ export function ServicesPage() {
         {/* Row 2 — scrolls right */}
         <div className="py-5 flex">
           <motion.div
-            animate={{ x: ['-50%', '0%'] }}
-            transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
-            className="flex gap-10 whitespace-nowrap flex-shrink-0"
+            animate={prefersReduced ? {} : { x: ['-50%', '0%'] }}
+            transition={prefersReduced ? undefined : { duration: 34, repeat: Infinity, ease: 'linear' }}
+            className={prefersReduced
+              ? 'flex flex-wrap justify-center gap-x-10 gap-y-3 px-4 w-full'
+              : 'flex gap-10 whitespace-nowrap flex-shrink-0'}
           >
-            {[...Array(2)].map((_, rep) => (
-              <div key={rep} className="flex gap-10 items-center">
+            {[...Array(prefersReduced ? 1 : 2)].map((_, rep) => (
+              <div key={rep} className={prefersReduced ? 'flex flex-wrap justify-center gap-x-10 gap-y-3' : 'flex gap-10 items-center'}>
                 {(fr ? ["L'Ontario et au-delà", 'Marques BIPOC', 'Récits culturels', 'Licencié et assuré', 'Droits commerciaux inclus', 'Guidé par la stratégie', 'Sur place', 'Studio et lifestyle', 'Équipement pro', 'Qualité éditoriale'] : ['Ontario & Beyond', 'BIPOC Brands', 'Cultural Storytelling', 'Licensed & Insured', 'Commercial Rights Included', 'Strategy-Led', 'On-Location', 'Studio & Lifestyle', 'Pro Equipment', 'Editorial Quality']).map((item) => (
                   <span key={item} className="flex items-center gap-10">
                     <span className="text-sm tracking-[0.3em] uppercase italic" style={{ color: 'rgba(212,168,67,0.4)' }}>{item}</span>
@@ -760,22 +777,28 @@ export function ServicesPage() {
                   className="group relative overflow-hidden rounded-3xl"
                   style={{ aspectRatio: '16/9', backgroundColor: '#111' }}
                 >
-                  <video
-                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-700"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster={vid.poster}
-                    aria-hidden="true"
-                  >
-                    <source src={vid.src} type="video/mp4" />
-                  </video>
+                  {/* autoPlay starts the moment this element mounts, regardless
+                      of the opacity-0 it's hidden behind on hover-reveal — so
+                      skip rendering it at all under reduced motion rather than
+                      just hiding it, the same reasoning as VideoHero. */}
+                  {showPreviewVideo && (
+                    <video
+                      className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-700"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster={vid.poster}
+                      aria-hidden="true"
+                    >
+                      <source src={vid.src} type="video/mp4" />
+                    </video>
+                  )}
                   <img
                     src={vid.poster}
                     alt={vid.label}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-700"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${showPreviewVideo ? 'group-hover:opacity-0' : ''}`}
                   />
                   <div className="absolute inset-0" style={{
                     background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%)',
