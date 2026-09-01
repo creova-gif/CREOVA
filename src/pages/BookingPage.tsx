@@ -533,7 +533,7 @@ export function BookingPage() {
                           selected={date}
                           onSelect={setDate}
                           disabled={(date) => date < new Date()}
-                          initialFocus
+                          autoFocus
                         />
                       </PopoverContent>
                     </Popover>

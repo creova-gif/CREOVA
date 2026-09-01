@@ -515,7 +515,7 @@ export function RentalPage() {
                           selected={startDate}
                           onSelect={setStartDate}
                           disabled={(date) => date < new Date()}
-                          initialFocus
+                          autoFocus
                         />
                       </PopoverContent>
                     </Popover>
@@ -543,7 +543,7 @@ export function RentalPage() {
                           selected={endDate}
                           onSelect={setEndDate}
                           disabled={(date) => !startDate || date < startDate}
-                          initialFocus
+                          autoFocus
                         />
                       </PopoverContent>
                     </Popover>

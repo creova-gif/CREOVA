@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Link } from '../i18n/LocaleLink';
 import { motion, useInView } from 'motion/react';
-import { ArrowUpRight, Instagram, Mail, Linkedin, Star, MapPin } from 'lucide-react';
+import { ArrowUpRight, Mail, Star, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
 import { SERVICE_AREAS } from '../data/serviceAreas';
 import { GOOGLE_REVIEW_URL } from '../config';
@@ -55,6 +55,24 @@ function SocialIcon({
     >
       {children}
     </motion.a>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M5.1 3.5A1.6 1.6 0 1 0 5.1 6.7a1.6 1.6 0 0 0 0-3.2ZM3.7 8.1h2.8v8.4H3.7V8.1Zm4.6 0h2.7v1.1h.04c.38-.72 1.3-1.48 2.67-1.48 2.85 0 3.38 1.88 3.38 4.32v4.45h-2.8v-3.94c0-.94-.02-2.15-1.31-2.15-1.31 0-1.51 1.02-1.51 2.08v4.01H8.3V8.1Z" />
+    </svg>
   );
 }
 
@@ -465,10 +483,10 @@ export function Footer() {
             <div className="flex flex-col items-end gap-3">
               <div className="flex items-center gap-2">
                 <SocialIcon href="https://instagram.com/creativeinnovation__" label={t('footer.social.instagram')}>
-                  <Instagram className="w-4 h-4" />
+                  <InstagramIcon className="w-4 h-4" />
                 </SocialIcon>
                 <SocialIcon href="https://www.linkedin.com/company/creovaspace/" label={t('footer.social.linkedin')}>
-                  <Linkedin className="w-4 h-4" />
+                  <LinkedInIcon className="w-4 h-4" />
                 </SocialIcon>
                 <SocialIcon href="mailto:support@creova.one" label={t('footer.social.email')}>
                   <Mail className="w-4 h-4" />
